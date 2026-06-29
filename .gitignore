@@ -1,0 +1,19 @@
+# File tạm của LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# BibTeX
+*.bbl
+*.blg
+
+# File editor
+*.swp
+*.bak
+*.tmp
