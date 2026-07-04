@@ -1,0 +1,531 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+            at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i*0.65}) -- (\textwidth-4pt,-{\i*0.65});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newcommand{\questionTrueFalse}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{#2}{#3}
+    
+    \nopagebreak
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+        \hline
+        \rowcolor{amberorange!20}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Tốc độ thay đổi của một đại lượng}{Hàm số: Tốc độ thay đổi đại lượng}
+
+% --- CÂU 1 ---
+\questionTrueFalse{0}{1}{Một nhà nghiên cứu tiến hành mô hình hóa nhiệt độ \( T \) (đơn vị: độ C) trong khoảng từ 6h sáng đến 6h tối tại thành phố X bằng hàm số:
+
+\[T(t) = -\frac{1}{36}t^3 + \frac{1}{8}t^2 + \frac{7}{2}t - 2 \quad (0 \leq t \leq 12),\]
+
+trong đó \( t \) là thời gian tính theo giờ kể từ thời điểm 6h sáng. Các kết quả sau đây được làm tròn đến hàng phần trăm.}{
+    \textbf{a)} & Nhiệt độ tại thành phố X vào lúc 11h trưa là 14,65°C.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nhiệt độ cao nhất tại thành phố X trong một ngày là 19,79°C.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Vào lúc 13h30 trưa, tốc độ thay đổi nhiệt độ tại thành phố X là 0,69°C/h.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ thay đổi nhiệt độ tại thành phố X đạt giá trị lớn nhất vào lúc 7h30 sáng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 2 ---
+\questionTrueFalse{0}{2}{Tỉ lệ phụ thuộc là thước đo tỉ lệ tổng số dân có độ tuổi phụ thuộc từ 0 đến 14 tuổi và trên 65 tuổi, so với tổng số dân có độ tuổi từ 15 đến 64 (độ tuổi lao động). Tỉ lệ này được các nhà kinh tế học quan tâm sâu sắc, do nếu tỉ lệ phụ thuộc tăng thì gánh nặng của nền kinh tế sẽ lớn hơn. Giả sử tại quốc gia Y, tỉ lệ phụ thuộc (đơn vị: phần trăm) trong thế kỉ 21 được dự báo bởi công thức:
+
+\[R(t) = 0,00713t^4 - 0,175t^3 + 1,582t^2 + 0,84t + 17,1,\]
+
+trong đó \( t \) là số thập kỉ tính từ năm 2001 (\( 0 \leq t \leq 10 \)).}{
+    \textbf{a)} & Hàm số biểu thị tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y là:
+    \(R'(t) = 0,02852t^3 - 0,525t^2 + 3,164t + 0,84.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tỉ lệ phụ thuộc của quốc gia Y luôn tăng trong thế kỉ 21.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Vào khoảng năm 2054, tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y đạt giá trị lớn nhất.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Khi tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y đạt giá trị cực đại, lúc đó quốc gia này có khoảng 54,32 triệu người trong độ tuổi lao động (kết quả làm tròn đến hàng phần trăm của triệu người).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 3 ---
+\questionTrueFalse{0}{3}{Giả sử nồng độ thuốc \( C(t) \) tính theo \( mg/cm^3 \) trong máu của một bệnh nhân được tính bởi công thức  
+\(C(t) = \dfrac{t}{t^2 + 1}\)
+trong đó \( t \) là thời gian tính theo giờ kể từ khi tiêm thuốc cho bệnh nhân.}{
+    \textbf{a)} & Sau một thời gian dài tính từ khi tiêm thuốc (có thể coi như tiến đến vô cùng), nồng độ thuốc trong máu của bệnh nhân sẽ tiến đến 0.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Đạo hàm của hàm số \( C(t) \) là  
+    \(C'(t) = \dfrac{t^2 - 1}{(t^2 + 1)^2}.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Nồng độ thuốc trong máu lớn nhất vào thời điểm nửa giờ sau khi tiêm.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ thay đổi nồng độ thuốc trong máu nhỏ nhất vào thời điểm \( \sqrt{k} \) giờ (\( k \) là số nguyên dương) khi đó  
+    \( k - 1, \, k \, \text{và} \, (k - 1)^2 \) theo thứ tự lập thành một cấp số cộng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 4 ---
+\questionTrueFalse{0}{4}{Giả sử số người bị lây nhiễm bởi một chủng loại virus được mô hình hóa bởi hàm số  
+\(P(t) = \dfrac{10\ln(0,19t + 1)}{0,19t + 1},\)
+trong đó \( t > 0 \) là số ngày kể từ khi virus bắt đầu lây lan, \( P(t) \) được tính bằng nghìn người.}{
+    \textbf{a)} & Sau 7 ngày, có khoảng 3630 người bị lây nhiễm.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Trong 7 ngày đầu lây lan virus, số lượng người bị lây nhiễm luôn tăng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Số lượng người bị lây nhiễm cao nhất trong ngày thứ 9 kể từ khi virus bắt đầu lây lan.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ lây lan của virus đạt mức thấp nhất trong ngày thứ 19 kể từ khi virus bắt đầu lây lan.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 5 ---
+\questionTrueFalse{0}{5}{Nhà sách Lovebook ước tính rằng nếu bán được \( x \) trăm sản phẩm trong một tháng, khi đó lợi nhuận hàng tháng của công ty này được mô hình hóa bởi hàm số \( P(x) = 2025(15-x)(x-2) \) (đơn vị: nghìn đồng).}{
+    \textbf{a)} & Nếu nhà sách bán Lovebook được ít hơn 2 sản phẩm hoặc nhiều hơn 15 sản phẩm thì công ty này sẽ bị lỗ.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số biểu diễn lợi nhuận biên của nhà sách Lovebook là \( P'(x) = 2025(17-2x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Lợi nhuận lớn nhất mà nhà sách Lovebook có thể đạt được là 85,5 triệu đồng (kết quả làm tròn đến hàng phần mười).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Lợi nhuận biên của Nhà sách Lovebook giảm dần khi \( x \) tăng dần.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 6 ---
+\questionTrueFalse{0}{6}{Người ta mô hình hóa nhiệt độ trung bình hàng tháng ở thành phố Honolulu, Hawaii bằng hàm số \( F(t) = -0,0418t^3 + 0,605t^2 - 1,16t + 73,4 \) (đơn vị: độ Fahrenheit), với \( t \) là số tháng, \( t = 0 \) ứng với thời điểm đầu tháng 1/2024. Cho biết công thức đổi từ độ Fahrenheit sang độ Celsius là \( F = \dfrac{9}{5}C + 32 \), với \( F \) và \( C \) lần lượt là độ Fahrenheit và độ Celsius.}{
+    \textbf{a)} & Trong năm 2024, nhiệt độ trung bình hàng tháng ở thành phố Honolulu tăng liên tục trong hơn 7 tháng liên tiếp.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nhiệt độ trung bình cao nhất trong năm 2024 ở thành phố Honolulu là \( 27,5^\circ C \) (Làm tròn kết quả đến hàng phần mười của độ Celsius).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Vào cuối tháng 8/2024, nhiệt độ trung bình hàng tháng ở thành phố Honolulu đang giảm với tốc độ là \( 0,49^\circ F/\text{tháng} \) (kết quả làm tròn đến hàng phần trăm).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nhiệt độ trung bình hàng tháng ở thành phố Honolulu tăng nhanh nhất vào khoảng cuối tháng 5/2024.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 7 ---
+\questionTrueFalse{0}{7}{Để khắc phục tình trạng thất nghiệp tại quốc gia X, chính phủ của quốc gia này quyết định sẽ đưa ra các gói trợ cấp để tuyển dụng những người đang thất nghiệp vào làm việc cho các dự án của chính phủ.  
+Giả sử rằng sau \( t \) tháng kể từ khi triển khai việc cung cấp các gói trợ cấp, khi đó quốc gia X có  
+\(N(t) = -t^3 + 45t^2 + 408t + 3078\) 
+người thất nghiệp. Cho biết rằng việc cung cấp các gói trợ cấp này được triển khai trong 4 năm.}{
+    \textbf{a)} & Sau 3 năm kể từ khi triển khai việc cung cấp các gói trợ cấp, quốc gia X có 4680 người thất nghiệp.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Trong thời gian triển khai việc cung cấp các gói trợ cấp, số người thất nghiệp nhiều nhất tại cùng một thời điểm là 29699 người.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Sau 1 năm kể từ khi triển khai việc cung cấp các gói trợ cấp, tốc độ tăng số người thất nghiệp tại thời điểm đó là 1056 người/tháng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Số người thất nghiệp tại quốc gia X tăng nhanh nhất sau 1 năm 3 tháng kể từ khi triển khai việc cung cấp các gói trợ cấp.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 8 ---
+\questionTrueFalse{0}{8}{Tin đồn là những thông tin chưa được kiểm chứng, không có nguồn gốc xác thực nhưng vẫn đạt được trạng thái "viral". Tin đồn càng ảnh hưởng, nằm trong phạm vi quan tâm của nhiều người và càng khó kiểm chứng thì tính hấp dẫn với cộng đồng càng cao, lôi kéo được nhiều người và tăng được tính lan tỏa.  
+Giả sử tỉ lệ phần trăm học sinh trong một trường học biết về một tin đồn mới được lan truyền được mô hình hóa bởi hàm số  
+\(p(t) = \frac{100}{1 + 5e^{-0,2t}}\)
+trong đó \( t \) là số giờ kể từ khi tin đồn bắt đầu được lan truyền. Biết rằng tin đồn này được bắt đầu lan truyền vào lúc 7 giờ ngày 26/06/2025, và ngôi trường này có 2000 học sinh.}{
+    \textbf{a)} & Vào lúc 10 giờ ngày 26/06/2025, có khoảng 543 học sinh đã biết đến tin đồn (kết quả làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Vào lúc 10 giờ ngày 26/06/2025, tốc độ lan truyền của tin đồn này là \( 3,92\% \) (kết quả làm tròn đến hàng phần trăm).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Tốc độ lan truyền của tin đồn này đạt giá trị lớn nhất sau \( a \ln b \) giờ kể từ khi tin đồn bắt đầu được lan truyền (\( a; b \in \mathbb{Z}, b \) là số nguyên tố). Khi đó, giá trị của \( a + b = 10 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Vào thời điểm tốc độ lan truyền của tin đồn này đạt giá trị lớn nhất, khi đó tin đồn này đã có 1000 học sinh biết đến.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 9 ---
+\questionTrueFalse{0}{9}{Sau \( x \) tháng kể từ khi hãng xe buýt MIN được khởi chạy tại thành phố NHLB, số lượng người sử dụng xe buýt này được biểu thị bởi hàm số  
+\(N(x) = 4x^3 + 250x + 6000\) 
+(người). Biết rằng xe buýt được khởi chạy vào ngày 01/01/2025.}{
+    \textbf{a)} & Theo thời gian, số lượng người dùng xe buýt MIN tại thành phố NHLB luôn tăng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Trung bình số lượng người dùng xe buýt MIN tại thành phố NHLB trong một tháng đạt giá trị nhỏ nhất bằng 1240 người/tháng (kết quả làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Trung bình số lượng người dùng xe buýt MIN tại thành phố NHLB trong một tháng đạt giá trị nhỏ nhất vào ngày 03/10/2025.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ thay đổi trung bình số lượng người dùng xe buýt MIN tại thành phố NHLB trong một tháng luôn tăng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 10 ---
+\questionTrueFalse{0}{10}{Số lượng cá thể vi khuẩn của một quần thể sau \( t \) giờ kể từ khi tiêm một loại thuốc được cho bởi công thức  
+\(P(t) = \dfrac{48t + 20}{t^2 + 1}\) 
+(triệu con vi khuẩn).}{
+    \textbf{a)} & Sau 2 giờ kể từ khi tiêm thuốc, quần thể này có 23,2 triệu con vi khuẩn.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Theo thời gian dài (có thể coi như tiến đến vô cùng), số lượng cá thể vi khuẩn của quần thể này sẽ tiến đến 0.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Sau 45 phút kể từ khi tiêm thuốc, số lượng cá thể vi khuẩn trong quần thể này đạt giá trị lớn nhất.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Sau 78 phút kể từ khi tiêm thuốc, tốc độ thay đổi số lượng cá thể vi khuẩn trong quần thể này đạt giá trị nhỏ nhất (kết quả làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 11 ---
+\questionShortAnswer{0}{11}{Vào mùa hè, khi bật điều hòa, nhiệt độ trong phòng làm việc của cô Huyền sau \( t \) giờ kể từ khi cô bật điều hòa được cho bởi hàm số \( f(t) = \dfrac{18t^2 + 52t + 344}{t^2 + 2t + 10} \) (\(^\circ C\)). Hỏi tốc độ thay đổi nhiệt độ trong phòng làm việc của cô Huyền đạt giá trị nhỏ nhất sau bao nhiêu giờ kể từ khi điều hòa được bật (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 12 ---
+\questionShortAnswer{0}{12}{Sự tăng trưởng của một loại vi khuẩn trong môi trường nuôi cấy sẽ tuân theo công thức \( N = N_0 e^{rt} \), trong đó \( N_0 \) là số lượng vi khuẩn ban đầu, \( r \) là tỉ lệ tăng trưởng (\( r > 0 \)), \( t \) (giờ) là thời gian tăng trưởng. Biết rằng số lượng vi khuẩn ban đầu là 500 con và sau 3 giờ thì có 3000 con vi khuẩn. Hỏi sau bao nhiêu giờ thì tốc độ tăng số lượng vi khuẩn là 1000 con/giờ (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 13 ---
+\questionShortAnswer{0}{13}{Tỷ lệ trao đổi chất trong cơ thể của một người vừa hoàn thành một bữa ăn sẽ tăng dần, sau đó sẽ giảm dần sau một thời gian để cơ thể trở về trạng thái nghỉ. Hiện tượng này được gọi là hiệu ứng nhiệt của thực phẩm. Các nhà nghiên cứu đã chỉ ra rằng hiệu ứng nhiệt của thực phẩm cho một người trưởng thành được tính bởi công thức \( F(t) = -10,28 + 175,9t e^{-1,3t} \), với \( F(t) \) là hiệu ứng nhiệt của thực phẩm (đơn vị: kJ/h) và \( t \) (đơn vị: giờ, \( t > 0 \)) là thời gian trôi qua tính từ khi hoàn thành bữa ăn. Hỏi tốc độ thay đổi hiệu ứng nhiệt của thực phẩm đạt giá trị nhỏ nhất sau bao nhiêu phút kể từ khi hoàn thành bữa ăn?}
+
+% --- CÂU 14 ---
+\questionShortAnswer{0}{14}{Một nhóm các nhà nghiên cứu về xu hướng hành vi của con người nhận thấy rằng với những đoạn video mang tính chất học thuật, người xem sẽ thường có xu hướng xem những video có thời lượng vừa phải, do những video quá ngắn thì thường không cung cấp đủ thông tin, còn những video quá dài thì thường sẽ dễ gây ra sự nhàm chán. Với một video nói về toán học, các nhà nghiên cứu nhận thấy rằng tỉ suất người xem của một video kéo dài \( t \) phút được cho bởi hàm số  
+\(R(t) = \dfrac{25t}{t^2 + 100}\) 
+(đơn vị: phần trăm, \( t > 0 \)). Hỏi với độ dài của video toán học là bao nhiêu phút thì tỉ suất người xem video sẽ giảm nhanh nhất (kết quả làm tròn đến hàng phần mười)?}
+
+% --- CÂU 15 ---
+\questionShortAnswer{0}{15}{Mối liên hệ giữa cân nặng của một con nai sừng tấm cái với độ tuổi của nó có thể được biểu diễn bởi hàm số  
+\(M(t) = 369 \cdot 0,93^t \cdot t^{0,36} \quad (0 \leq t \leq 15),\)  
+với \( M(t) \) là cân nặng của một con nai sừng tấm cái (đơn vị: kg) và \( t \) là độ tuổi của con nai sừng tấm (tính bằng năm). Hỏi sau bao nhiêu năm kể từ khi được sinh ra thì con nai sừng tấm cái sẽ có tốc độ thay đổi cân nặng nhanh nhất (kết quả làm tròn đến hàng phần mười)?}
+
+% --- CÂU 16 ---
+\questionShortAnswer{0}{16}{Một bao cát nặng 100g bị rách ở đáy bao. Người ta mô hình hóa lượng cát còn lại trong bao cát này sau \( t \) giây kể từ khi bao cát bị rách bởi hàm số  
+\(S(t) = 100\left(1 - \dfrac{t^2}{15}\right)^3\)
+(đơn vị: gam). Biết rằng cát chảy ra khỏi bao nhanh nhất tại thời điểm \( t = a \) giây kể từ khi bao cát bị rách. Giá trị của \( a^6 \) bằng bao nhiêu?}
+
+% --- CÂU 17 ---
+\questionShortAnswer{0}{17}{Một người quản lý ở một trại nuôi cá xác định rằng sau \( t \) tuần kể từ khi thả 500 con cá của một chúng cá vào một chiếc hồ, cân nặng trung bình của một con cá (đơn vị: kg) được cho bởi công thức  
+\(w(t) = -0,025t^2 + 0,6t + 1,5.\)
+Ngoài ra, người này còn thấy rằng tỉ lệ cá còn sống sót sau \( t \) tuần được cho bởi công thức  
+\(p(t) = \dfrac{25}{25 + t}.\)
+Cho biết tổng sản lượng của loại cá này được tính bằng tổng khối lượng của những con cá còn sống trong ao tại thời điểm \( t \). Hỏi tổng sản lượng của loại cá này đạt giá trị lớn nhất là bao nhiêu tấn (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 18 ---
+\questionShortAnswer{0}{18}{Một cuộc khảo sát về tình hình ủng hộ của nhà chính trị gia MIN cho thấy rằng sau khi tham gia một cuộc tranh luận với nhà chính trị gia MAX, tỉ lệ phần trăm dân số ủng hộ cho MIN sẽ thay đổi theo hàm số  
+
+\(S(t) = \frac{100(t^2 - 3t + 25)}{t^2 + 7t + 25},\)
+
+trong đó \( t \) là số ngày tính từ khi cuộc tranh luận diễn ra. Biết rằng cuộc bầu cử chính thức sẽ được diễn ra vào thời điểm \( t = 10 \). Hỏi tỉ lệ phần trăm dân số ủng hộ cho MIN tăng nhanh nhất sau bao nhiêu ngày kể từ khi cuộc tranh luận diễn ra (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 19 ---
+\questionShortAnswer{0}{19}{Nhiệt độ cơ thể \( T \) (tính bằng độ Celsius) của một người bị cảm có thể được mô hình hóa bởi hàm số  
+\(T(t) = \frac{5}{9} \left( \frac{12t}{t^2 + 8} + 66,6 \right),\)
+trong đó \( t \) là số giờ kể từ khi một người bắt đầu có dấu hiệu của việc bị cảm.  
+Biết rằng tại thời điểm \( t = a \) giờ thì nhiệt độ cơ thể của người này là cao nhất, và tại thời điểm \( t = b \) giờ thì nhiệt độ cơ thể của người này giảm nhanh nhất. Giá trị của \( a + b \) bằng bao nhiêu (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 20 ---
+\questionShortAnswer{0}{20}{Vào đầu tháng 4/2016, Công ty F đã xả thải ra biển miền T, gây ra sự cố ô nhiễm môi trường nghiêm trọng, làm cá chết hàng loạt dọc bờ biển bốn tỉnh HT, QB, QT, và TTH. Nguyên nhân được xác định là do công ty đã xả thải chưa qua xử lý, có chứa độc tố phenol, xyanua ra môi trường. Sự cố này đã gây ra những hậu quả nặng nề cho môi trường và người dân địa phương, đặc biệt là ngành thủy sản.
+
+Công ty F muốn chi ra \( C \) triệu đồng để xử lý \( p\% \) lượng hóa chất có trong nước thải của nhà máy này, với biểu thức liên hệ giữa \( C \) và \( p \) là \( C(p) = \dfrac{310p}{(10 + p)(100 - p)} \). Tại giá trị \( p \) mà tốc độ tăng số tiền cần chi cho việc xử lý hóa chất đạt giá trị nhỏ nhất, công ty cần chi ra bao nhiêu triệu đồng để xử lý hóa chất (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 21 ---
+\questionShortAnswer{0}{21}{Trong một thử nghiệm về việc học tiếng Anh, thời gian cần thiết để một bạn học sinh khá học được phiên âm của \( n \) từ vựng mới được mô hình hóa bởi hàm số \( f(n) = 4n\sqrt{n-4} \) (đơn vị: giây). Khi tốc độ học phiên âm của bạn học sinh đạt mức thấp nhất, thì khi đó bạn học sinh sẽ học được phiên âm của một từ vựng trong trung bình là bao nhiêu giây?}
+
+% --- CÂU 22 ---
+\questionShortAnswer{0}{22}{Năm 1885, nhà tâm lý học Hermann Ebbinghaus đưa ra lý thuyết về đường cong quên lãng. Theo đó, khi học tập, mọi thông tin mới tiếp xúc đều sẽ được lưu vào khu trí nhớ ngắn hạn. Nếu như không được nhắc lại hay sử dụng thường xuyên, các thông tin này sẽ bị lãng quên nhanh; từ đó hình thành đường cong quên lãng. Cho biết đường cong quên lãng được mô hình hóa cho con người có dạng  
+\(p(t) = (100 - a)e^{-bt} + a,\)
+trong đó \( p(t) \) là tỉ lệ phần trăm thông tin mà một người còn nhớ được sau \( t \) tuần; còn \( a \) và \( b \) là các tham số ứng với từng người.  
+
+Giả sử rằng sau khi BONNER MIN học xong một chương kiến thức mới và không ôn tập lại, sau 1 tuần BONNER MIN đã quên mất 47,5\% nội dung của chương, và tỉ lệ này sau 2 tuần tăng lên thành 71,25\%.  
+Khi đó, tốc độ thay đổi lượng thông tin nhớ được của BONNER MIN sau 3 tuần kể từ khi học xong chương kiến thức là bao nhiêu phần trăm/tuần (kết quả làm tròn đến hàng phần mười)?}
+
+% --- CÂU 23 ---
+\questionShortAnswer{0}{23}{Tại cửa hàng thời trang Nhân Hậu Shop, có chủ Nhân Hậu muốn theo dõi hiệu suất làm việc của các bạn nhân viên đóng gói của cửa hàng. Cô Nhân Hậu thấy rằng sau \( x \) giờ kể từ khi vào ca làm việc, một nhân viên đóng gói sẽ đóng xong được \( f(x) = -x^3 + 6x^2 + 15x \) sản phẩm. Ngoài ra, trong ca làm việc, cô Nhân Hậu sẽ cho phép các bạn nhân viên nghỉ giải lao 15 phút, và cô thấy rằng sau \( x \) giờ kể từ khi kết thúc giải lao, một nhân viên đóng gói sẽ đóng xong được \( g(x) = -\dfrac{1}{3}x^3 + x^2 + 23x \) sản phẩm. Biết rằng ca làm việc bắt đầu vào lúc 13 giờ và kết thúc lúc 17 giờ 45 phút, và trong ca làm sẽ có 1 lần nghỉ giải lao 15 phút. Hỏi để các bạn nhân viên đóng gói được nhiều sản phẩm nhất khi ca làm kết thúc, thời gian nghỉ giải lao cần bắt đầu sau bao nhiêu giờ kể từ khi bắt đầu ca làm việc (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 24 ---
+\questionShortAnswer{0}{24}{Nhiệt độ của một nồi trà sau khi bỏ vào tủ đông mềm \( t \) phút được mô hình hóa bởi hàm số  
+\(T(t) = \dfrac{1300}{t^2 + 2t + 25}\)
+(đơn vị: độ Celsius). Hỏi sau bao nhiêu phút kể từ khi nồi trà được bỏ vào tủ đông mềm thì nhiệt độ của nó sẽ giảm nhanh nhất (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 25 ---
+\questionShortAnswer{0}{25}{Giả sử doanh số bán hàng (đơn vị triệu đồng) của một sản phẩm điện tử mới được mô hình hóa bằng hàm số  
+\( f(t) = 600 \left( t^2 + ne^{-t} \right), \) 
+với \( t \geq 0 \) là thời gian tính bằng năm kể từ khi phát hành sản phẩm mới, và \( n \leq 0 \) là tham số. Khi đó đạo hàm \( f'(t) \) biểu thị tốc độ bán hàng. Biết rằng tốc độ bán hàng luôn tăng trong khoảng thời gian 8 năm đầu từ khi ra mắt sản phẩm. Hỏi giá trị nhỏ nhất của \( n \) là bao nhiêu để điều kiện này được thỏa mãn?}
+
+
+
+
+\end{document}
