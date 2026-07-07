@@ -277,33 +277,40 @@
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
 \titlebox{Chủ đề: Hàm số}{Tính đơn điệu của hàm số}{Hàm số: Tính đơn điệu}
 
-\questionLinesManual{0}{7}{
-    Cho hàm số $y = f(x)$ liên tục trên $\mathbb{R}$ và có bảng biến thiên như sau:
-    \begin{center}
-        \begin{tikzpicture}[>=stealth]
-            % Chuyển nocadre=false thành nocadre=true ở dòng dưới đây
-            \tkzTabInit[nocadre=true,lgt=1.2,espcl=2.5]
-            {$x$ / 1, $y'$ / 1, $y$ / 2.5}
-            {$-\infty$, $-3$, $-2$, $+\infty$}
-            \tkzTabLine{ , +, 0, +, 0, -, }
-            
-            \node (y1) at (1.7, -4.1) {$-\infty$};
-            \node (y2) at (4.2, -3.35) {$0$};
-            \node (y3) at (6.7, -2.4) {$5$};
-            \node (y4) at (9.1, -4.1) {$-\infty$};
-            
-            \draw[->] (y1) -- (y2);
-            \draw[->] (y2) -- (y3);
-            \draw[->] (y3) -- (y4);
-        \end{tikzpicture}
-    \end{center}
-}{
-    \begin{tasks}(1)
-        \task Mệnh đề A
-        \task Mệnh đề Bbb
-        \task Mệnh đề C
-        \task Mệnh đề D
-    \end{tasks}
+% --- CÂU 1 ---
+\questionTrueFalse{0}{1}{Ông An cần xây dựng một bể chứa nước có dạng hình hộp chữ nhật không có nắp đậy để phục vụ cho việc tưới cây trong vườn. Do các điều kiện về diện tích vườn, ông An cần bể có thể tích là \( 24m^3 \), đáy bể có chiều dài gấp hai lần chiều rộng và chiều rộng không quá \( 4m \), biết rằng chi phí vật liệu xây dựng mỗi mét vuông diện tích bề mặt là \( 600\,000 \) đồng. Gọi \( x \, (m) \) là chiều rộng của bể, ta có \( 0 < x \leq 4 \). Khi đó:}{
+    \textbf{a)} & Chiều cao của bể là \( \dfrac{12}{x^2} \, (m) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tổng diện tích các mặt cần xây là \( 2x^2 + \dfrac{36}{x} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Để tổng chi phí vật liệu xây dựng là thấp nhất thì chiều cao của bể nước là \( h = \dfrac{2\sqrt[3]{18}}{3} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Ông An dự tính với ngân sách \( 24,5 \) triệu đồng thì sẽ đủ để ông có thể xây dựng bể chứa nước như mong muốn.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
+
+% --- CÂU 2 ---
+\questionTrueFalse{0}{2}{Khi xây nhà, anh Cường cần xây một bể nước mưa có thể tích \( V = 6m^3 \) dạng hình hộp chữ nhật với chiều dài gấp ba lần chiều rộng với chiều rộng là \( x(m) \), đáy và nắp và các mặt xung quanh đều được đổ bê tông cốt thép. Phần nắp bể để hở một khoảng hình vuông có diện tích bằng \( \dfrac{2}{9} \) nắp bể. Biết rằng chi phí nhân công và vật liệu là 800.000 đồng/\( 1m^2 \) tính theo diện tích xây dựng. Khi đó:}{
+    \textbf{a)} & Chiều dài của bể là \( 3x \, (m) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Chiều cao của bể là \( h = \dfrac{2}{x} \, (m) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Tổng diện tích xây dựng là \( T = 16\left(\dfrac{x^2}{3} + \dfrac{1}{x}\right) \, (m^2) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Chi phí thấp nhất mà anh Cường phải trả khi xây bể là 16,7 triệu đồng (kết quả làm tròn đến hàng phần mười).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+
+
+
+
 
 \end{document}

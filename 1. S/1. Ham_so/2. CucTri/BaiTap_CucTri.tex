@@ -76,7 +76,7 @@
             
         % Logo góc trái Header
         \node[anchor=west, inner sep=0pt] 
-            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../image/logo-header.png}};
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
             
         % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
         \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
@@ -153,7 +153,7 @@
             \begin{minipage}[c]{4.2cm}
                 \centering
                 % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
-                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../image/logo.png}}
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
                 \centering\vspace{0.15cm}
@@ -275,35 +275,194 @@
 \begin{document}
 
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
-\titlebox{Chủ đề: Hàm số}{Tính đơn điệu của hàm số}{Hàm số: Tính đơn điệu}
+\titlebox{Chủ đề: Hàm số}{Bài tập cực trị của hàm số}{Hàm số: Cực trị}
 
-\questionLinesManual{0}{7}{
-    Cho hàm số $y = f(x)$ liên tục trên $\mathbb{R}$ và có bảng biến thiên như sau:
-    \begin{center}
-        \begin{tikzpicture}[>=stealth]
-            % Chuyển nocadre=false thành nocadre=true ở dòng dưới đây
-            \tkzTabInit[nocadre=true,lgt=1.2,espcl=2.5]
-            {$x$ / 1, $y'$ / 1, $y$ / 2.5}
-            {$-\infty$, $-3$, $-2$, $+\infty$}
-            \tkzTabLine{ , +, 0, +, 0, -, }
-            
-            \node (y1) at (1.7, -4.1) {$-\infty$};
-            \node (y2) at (4.2, -3.35) {$0$};
-            \node (y3) at (6.7, -2.4) {$5$};
-            \node (y4) at (9.1, -4.1) {$-\infty$};
-            
-            \draw[->] (y1) -- (y2);
-            \draw[->] (y2) -- (y3);
-            \draw[->] (y3) -- (y4);
-        \end{tikzpicture}
-    \end{center}
-}{
-    \begin{tasks}(1)
-        \task Mệnh đề A
-        \task Mệnh đề Bbb
-        \task Mệnh đề C
-        \task Mệnh đề D
-    \end{tasks}
+\questionLinesManual{0}{1}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \tkzTabInit[nocadre=false,lgt=1.2,espcl=2.5]
+    {$x$ / 1, $y'$ / 1, $y$ / 2.5}
+    {$-\infty$, $0$, $2$, $+\infty$}
+    \tkzTabLine{ , +, 0, -, 0, + }
+    \tkzTabVar{-/$-\infty$, +/$1$, -/$-4$, +/$+\infty$}
+
+\end{tikzpicture}
+\end{center}
+Hàm số đã cho đạt cực tiểu tại điểm nào sau đây?}{%
+\begin{tasks}(4)
+\task \( x = -4 \)
+\task \( x = 2 \)
+\task \( x = 1 \)
+\task \( x = 0 \)
+\end{tasks}
+}
+
+% ====== CÂU 3 ======
+\questionLinesManual{0}{2}{Cho hàm số \( y = f(x) \) có bảng biến thiên sau:
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \tkzTabInit[nocadre=false,lgt=1.2,espcl=2]
+    {$x$ / 1, $y'$ / 1, $y$ / 2.5}
+    {$-\infty$, $-3$, $-2$, $1$, $+\infty$}
+    \tkzTabLine{ , -, 0, +, d, +, 0, - }
+    \tkzTabVar{+/$+\infty$, -/$5$,+D-/$+\infty$ /$-\infty$, +/$0$, -/$-\infty$}
+
+\end{tikzpicture}
+\end{center}
+Giá trị cực đại của hàm số \( y = f(x) \) là:}{%
+\begin{tasks}(4)
+\task 0
+\task 1
+\task $-3$
+\task 5
+\end{tasks}
+}
+
+\questionLinesManual{0}{3}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \tkzTabInit[nocadre=false,lgt=1.2,espcl=2.5]
+    {$x$ / 1, $f'(x)$ / 1}
+    {$-\infty$, $-1$, $2$, $+\infty$}
+    \tkzTabLine{ , +, 0, -, 0, + }
+\end{tikzpicture}
+\end{center}
+Hàm số đã cho đạt cực đại tại}{%
+\begin{tasks}(4)
+\task \( x = -2 \)
+\task \( x = 2 \)
+\task \( x = 1 \)
+\task \( x = -1 \)
+\end{tasks}
+}
+
+\questionLinesManual{0}{4}{Cho hàm số \( y = f(x) \) xác định trên \(\mathbb{R} \setminus \{1\}\) có bảng xét dấu như sau:
+\begin{center}
+\begin{tikzpicture}[>=stealth]
+    \tkzTabInit[nocadre=false,lgt=1.2,espcl=2]
+    {$x$ / 1, $y'$ / 1}
+    {$-\infty$, $-1$, $0$, $1$, $+\infty$}
+    \tkzTabLine{ , -, d, +, 0, -, d, + }
+\end{tikzpicture}
+\end{center}
+Hàm số có bao nhiêu điểm cực trị}{%
+\begin{tasks}(4)
+\task 0
+\task 1
+\task 2
+\task 3
+\end{tasks}
+}
+
+\questionLinesManual{0}{5}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị như hình vẽ bên. Số điểm cực trị của hàm số này là
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,3.5) node[right] {$y$};
+    \node[above left] at (0,0) {$O$};
+    
+    
+    % Vẽ đồ thị hàm bậc 3 y = x^3 - 3x
+    \draw[thick, color=black!80, samples=150, domain=-2.1:2.1] 
+        plot (\x, {\x*\x*\x - 3*\x});
+    
+\end{tikzpicture}
+\end{center}}{%
+\begin{tasks}(4)
+\task 3
+\task 2
+\task 0
+\task 1
+\end{tasks}
+}
+
+\questionLinesManual{0}{6}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,3.5) node[right] {$y$};
+    \node[above left] at (0,0) {$O$};
+    
+    % Đánh dấu các điểm trên trục
+    \node[below] at (-1,0) {$-1$};
+    \node[below] at (1,0) {$1$};
+    \node[right] at (0,-2) {$-2$};
+    \node[left] at (0,2) {$2$};
+    
+    % Vẽ đồ thị hàm số bậc 3 y = x^3 - 3x
+    \draw[thick, color=black!80, samples=150, domain=-3:-0.3] 
+       plot (\x, {(\x*\x + 1)/\x});
+    \draw[thick, color=black!80, samples=150, domain=0.3:3] 
+       plot (\x, {(\x*\x + 1)/\x});
+    % Đường nét đứt
+    \draw[dashed] (-1,0) -- (-1,-2) -- (0,-2);
+    \draw[dashed] (1,0) -- (1,2)-- (0,2);
+\end{tikzpicture}
+\end{center}
+Giá trị cực tiểu của hàm số đã cho là}{%
+\begin{tasks}(4)
+\task 1
+\task $-1$
+\task $-2$
+\task 2
+\end{tasks}
+}
+
+\questionLinesManual{0}{7}{Cho hàm số \( y = x^3 - 3x^2 + 2 \). Mệnh đề nào dưới đây đúng?}{%
+\begin{tasks}(2)
+\task Hàm số đạt cực tiểu tại điểm \( x = 0 \)
+\task Hàm số đạt cực đại tại điểm \( M(0; 2) \)
+\task Hàm số đạt cực đại tại điểm \( x = 0 \)
+\task Hàm số đạt cực đại tại điểm \( x = 2 \)
+\end{tasks}
+}
+
+\questionLinesManual{0}{8}{Hàm số \( y = \dfrac{2x + 3}{x + 1} \) có bao nhiêu điểm cực trị?}{%
+\begin{tasks}(4)
+\task 1
+\task 3
+\task 0
+\task 2
+\end{tasks}
+}
+
+\questionLinesManual{0}{9}{Cho hàm số \( f(x) \) có đạo hàm \( f'(x) = x^3(x-1)(x-2) \), \( \forall x \in \mathbb{R} \). Số điểm cực trị của hàm số đã cho là}{%
+\begin{tasks}(4)
+\task 1
+\task 3
+\task 5
+\task 2
+\end{tasks}
+}
+
+\questionLinesManual{0}{10}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \). Biết hàm số \( y = f'(x) \) có đồ thị như hình vẽ. Phát biểu nào sau đây là đúng?
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-2) -- (0,3.5) node[right] {$y$};
+    \node[above left] at (0,0) {$O$};
+    
+    % Đánh dấu các điểm
+    \node[below] at (-2,0) {$-2$};
+    \node[below] at (1,0) {$1$};
+    \node[right] at (0,2) {$2$};
+    
+    % Vẽ đồ thị f'(x) là parabol hướng xuống có nghiệm tại x = -2 và x = 1
+    \draw[thick, color=black!80, samples=150, domain=-2.3:1.3] 
+        plot (\x, {-(\x+2)*(\x-1)});
+    
+    \node[right] at (1.5,2) {$y = f'(x)$};
+\end{tikzpicture}
+\end{center}}{%
+\begin{tasks}(1)
+\task Hàm số \( y = f(x) \) đạt cực đại tại \( x_1 = -2 \) và đạt cực tiểu tại \( x_2 = 1 \).
+\task Hàm số \( y = f(x) \) đạt cực tiểu tại hai điểm \( x_1 = -2 \) và \( x_2 = 1 \).
+\task Hàm số \( y = f(x) \) đạt cực đại tại hai điểm \( x_1 = -2 \) và \( x_2 = 1 \).
+\task Hàm số \( y = f(x) \) đạt cực tiểu tại \( x_1 = -2 \) và đạt cực đại tại \( x_2 = 1 \).
+\end{tasks}
 }
 
 \end{document}
