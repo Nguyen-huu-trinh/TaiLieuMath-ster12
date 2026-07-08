@@ -284,7 +284,7 @@
 \tkzTabInit[color, lgt=1.5, espcl=3]  % <--- espcl là khoảng cách cột (tăng số này để bảng rộng hơn)
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
+\tkzTabLine{ , -, 0, +, 0, -,0, + }
 \tkzTabVar{+/$+\infty$, -/$-1$, +/$0$, -/$-1$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
@@ -304,8 +304,8 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
-\tkzTabVar{+/$+\infty$, -/$3$, +/$0$, -/$0$, +/$+\infty$}
+\tkzTabLine{ , -, 0, +, 0, - ,0,+}
+\tkzTabVar{+/$+\infty$, -/$0$, +/$3$, -/$0$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
 Hàm số đã cho đồng biến trên khoảng nào sau đây?}{%
@@ -331,7 +331,7 @@ Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \((-\infty; -2)\).
 \task Hàm số đồng biến trên khoảng \((-2; 0)\).
-\task Hàm số đồng biến trên khoảng \((0; 2)\).
+\task Hàm số đồng biến trên khoảng \((-\infty; 0)\).
 \task Hàm số nghịch biến trên khoảng \((0; 2)\).
 \end{tasks}
 }
@@ -479,7 +479,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
+\tkzTabLine{ , +, 0, -, 0, +,0,- }
 \tkzTabVar{-/$-\infty$, +/$2$, -/$1$, +/$2$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -499,7 +499,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, + ,0,-}
 \tkzTabVar{-/$-\infty$, +/$2$, -/$1$, +/$2$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -519,7 +519,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, + ,0,-}
 \tkzTabVar{-/$-\infty$, +/$4$, -/$1$, +/$4$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -539,7 +539,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-2$, $0$, $2$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, +, 0, - }
 \tkzTabVar{-/$-\infty$, +/$3$, -/$2$, +/$3$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -559,7 +559,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-3$, $0$, $3$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, +, 0, - }
+\tkzTabLine{ , -, 0, +, 0, -, 0, + }
 \tkzTabVar{+/$+\infty$, -/$-1$, +/$1$, -/$-1$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
@@ -978,9 +978,9 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 \questionLinesManual{0}{30}{Cho hàm số \( y = x^3 - 2x^2 + x + 1 \). Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \( (1; +\infty) \)
-\task Hàm số nghịch biến trên khoảng \( (-\dfrac{1}{3}; 1) \)
-\task Hàm số nghịch biến trên khoảng \( (-\infty; -\dfrac{1}{3}) \)
-\task Hàm số đồng biến trên khoảng \( (-\dfrac{1}{3}; 1) \)
+\task Hàm số nghịch biến trên khoảng \( (\dfrac{1}{3}; 1) \)
+\task Hàm số nghịch biến trên khoảng \( (-\infty; \dfrac{1}{3}) \)
+\task Hàm số đồng biến trên khoảng \( (\dfrac{1}{3}; 1) \)
 \end{tasks}
 }
 
@@ -1378,7 +1378,7 @@ Hàm số \( f(x) \) nghịch biến trên khoảng nào trong các khoảng sau
 \end{center}}{
     \textbf{a)} & Hàm số đồng biến trên khoảng \( (1; 2) \). 
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    \textbf{b)} & \( f\left(\frac{1}{2}\right) > 0 \).
+    \textbf{b)} & \( f'\left(\frac{1}{2}\right) > 0 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     \textbf{c)} & Hàm số nghịch biến trên khoảng \( (2; +\infty) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline

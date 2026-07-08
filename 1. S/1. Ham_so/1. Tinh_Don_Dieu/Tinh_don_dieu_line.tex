@@ -199,7 +199,7 @@
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray, line width=0.2pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                \draw[softgray, line width=0.2pt] (0,-{\i*0.65}) -- (\textwidth-4pt,-{\i*0.65});
             }
         \end{tikzpicture}
         \par
@@ -277,14 +277,14 @@
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
 \titlebox{Chủ đề: Hàm số}{Tính đơn điệu của hàm số}{Hàm số: Tính đơn điệu}
 
-\questionLinesManual{3}{1}{ Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{1}{ Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3]  % <--- espcl là khoảng cách cột (tăng số này để bảng rộng hơn)
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
+\tkzTabLine{ , -, 0, +, 0, -,0, + }
 \tkzTabVar{+/$+\infty$, -/$-1$, +/$0$, -/$-1$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
@@ -298,14 +298,14 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \end{tasks}
 }
 % ====== CÂU 2 ======
-\questionLinesManual{3}{2}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{2}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
-\tkzTabVar{+/$+\infty$, -/$3$, +/$0$, -/$0$, +/$+\infty$}
+\tkzTabLine{ , -, 0, +, 0, - ,0,+}
+\tkzTabVar{+/$+\infty$, -/$0$, +/$3$, -/$0$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
 Hàm số đã cho đồng biến trên khoảng nào sau đây?}{%
@@ -318,7 +318,7 @@ Hàm số đã cho đồng biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 3 ======
-\questionLinesManual{3}{3}{Cho hàm số \( y = f(x) \) có bảng xét dấu đạo hàm như sau:
+\questionLinesManual{5}{3}{Cho hàm số \( y = f(x) \) có bảng xét dấu đạo hàm như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3]
@@ -331,13 +331,13 @@ Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \((-\infty; -2)\).
 \task Hàm số đồng biến trên khoảng \((-2; 0)\).
-\task Hàm số đồng biến trên khoảng \((0; 2)\).
+\task Hàm số đồng biến trên khoảng \((-\infty; 0)\).
 \task Hàm số nghịch biến trên khoảng \((0; 2)\).
 \end{tasks}
 }
 
 % ====== CÂU 4 ======
-\questionLinesManual{3}{4}{Cho hàm số \( y = f(x) \) có bảng xét dấu của đạo hàm như hình vẽ.
+\questionLinesManual{5}{4}{Cho hàm số \( y = f(x) \) có bảng xét dấu của đạo hàm như hình vẽ.
 Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
 \begin{center}
 \begin{tikzpicture}
@@ -356,7 +356,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
 }
 
 % ====== CÂU 5 ======
-\questionLinesManual{3}{5}{Cho hàm số \( y = f(x) \) có bảng biến thiên như hình dưới đây. Mệnh đề nào sau đây là đúng?
+\questionLinesManual{5}{5}{Cho hàm số \( y = f(x) \) có bảng biến thiên như hình dưới đây. Mệnh đề nào sau đây là đúng?
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -376,7 +376,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
 
 % ====== CÂU 6 ======
 % ====== CÂU 6 ======
-\questionLinesManual{3}{6}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{6}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -395,7 +395,7 @@ Hàm số đã cho đồng biến trên khoảng nào sau đây?}{%
 \end{tasks}
 }
 % ====== CÂU 7 ======
-\questionLinesManual{3}{7}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) có bảng xét dấu \( f'(x) \) cho như hình vẽ.
+\questionLinesManual{5}{7}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) có bảng xét dấu \( f'(x) \) cho như hình vẽ.
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -414,7 +414,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 8 ======
-\questionLinesManual{3}{8}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{8}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -434,7 +434,7 @@ Hàm số đã cho đồng biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 9 ======
-\questionLinesManual{3}{9}{Cho hàm số \( y = f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{9}{Cho hàm số \( y = f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -454,7 +454,7 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 10 ======
-\questionLinesManual{3}{10}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) có bảng xét dấu \( f'(x) \) cho như hình vẽ.
+\questionLinesManual{5}{10}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) có bảng xét dấu \( f'(x) \) cho như hình vẽ.
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -473,13 +473,13 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 11 ======
-\questionLinesManual{3}{11}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{11}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, - }
+\tkzTabLine{ , +, 0, -, 0, +,0,- }
 \tkzTabVar{-/$-\infty$, +/$2$, -/$1$, +/$2$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -493,13 +493,13 @@ Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 12 ======
-\questionLinesManual{3}{12}{Cho hàm số \( y = f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{12}{Cho hàm số \( y = f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, + ,0,-}
 \tkzTabVar{-/$-\infty$, +/$2$, -/$1$, +/$2$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -513,13 +513,13 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 13 ======
-\questionLinesManual{3}{13}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{13}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-1$, $0$, $1$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, + ,0,-}
 \tkzTabVar{-/$-\infty$, +/$4$, -/$1$, +/$4$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -533,13 +533,13 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 14 (hoặc 15 theo ảnh) ======
-\questionLinesManual{3}{14}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{14}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-2$, $0$, $2$, $+\infty$}
-\tkzTabLine{ , -, 0, +, 0, -, 0, + }
+\tkzTabLine{ , +, 0, -, 0, +, 0, - }
 \tkzTabVar{-/$-\infty$, +/$3$, -/$2$, +/$3$, -/$-\infty$}
 \end{tikzpicture}
 \end{center}
@@ -553,13 +553,13 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 15 ======
-\questionLinesManual{3}{15}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{5}{15}{Cho hàm số \( f(x) \) có bảng biến thiên như sau:
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
 {$x$ / 1, $f'(x)$ / 1, $f(x)$ / 2.5}
 {$-\infty$, $-3$, $0$, $3$, $+\infty$}
-\tkzTabLine{ , +, 0, -, 0, +, 0, - }
+\tkzTabLine{ , -, 0, +, 0, -, 0, + }
 \tkzTabVar{+/$+\infty$, -/$-1$, +/$1$, -/$-1$, +/$+\infty$}
 \end{tikzpicture}
 \end{center}
@@ -573,7 +573,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 16 ======
-\questionLinesManual{3}{16}{Cho hàm số \( y = f(x) \) có đồ thị là đường cong hình bên. Hàm số đã cho đồng biến trên khoảng nào dưới đây?
+\questionLinesManual{5}{16}{Cho hàm số \( y = f(x) \) có đồ thị là đường cong hình bên. Hàm số đã cho đồng biến trên khoảng nào dưới đây?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=1]
     % 1. Vẽ hệ trục tọa độ Ox, Oy
@@ -606,7 +606,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 
 
 % ====== CÂU 17 (Câu 23 trong ảnh gốc) ======
-\questionLinesManual{3}{17}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho đồng biến trên khoảng nào dưới đây?
+\questionLinesManual{5}{17}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho đồng biến trên khoảng nào dưới đây?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -637,7 +637,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 18 (Câu 24 trong ảnh) ======
-\questionLinesManual{3}{18}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
+\questionLinesManual{5}{18}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -670,7 +670,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 19 (Câu 25 trong ảnh) ======
-\questionLinesManual{3}{19}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
+\questionLinesManual{5}{19}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào dưới đây?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -695,7 +695,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 \end{tikzpicture}
 \end{center}}{%
 \begin{tasks}(4)
-\task \((-\infty; -1)\).
+\task \((-\infty; 1)\).
 \task \((-1; 1)\).
 \task \((1; 2)\).
 \task \((0; 1)\).
@@ -703,7 +703,7 @@ Hàm số đã cho đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 20 (Câu 26 trong ảnh) ======
-\questionLinesManual{3}{20}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên.
+\questionLinesManual{5}{20}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên.
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -737,7 +737,7 @@ Mệnh đề nào sau đây là \textbf{đúng}?}{%
 }
 
 % ====== CÂU 21 (Câu 27 trong ảnh) ======
-\questionLinesManual{3}{21}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho đồng biến trên khoảng nào?
+\questionLinesManual{5}{21}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho đồng biến trên khoảng nào?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -770,7 +770,7 @@ Mệnh đề nào sau đây là \textbf{đúng}?}{%
 }
 
 % ====== CÂU 22 (Câu 28 trong ảnh) ======
-\questionLinesManual{3}{22}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào?
+\questionLinesManual{5}{22}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -801,7 +801,7 @@ Mệnh đề nào sau đây là \textbf{đúng}?}{%
 }
 
 % ====== CÂU 23 (Câu 29 trong ảnh) ======
-\questionLinesManual{3}{23}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào?
+\questionLinesManual{5}{23}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -836,7 +836,7 @@ Mệnh đề nào sau đây là \textbf{đúng}?}{%
 }
 
 % ====== CÂU 24 (Câu 30 trong ảnh) ======
-\questionLinesManual{3}{24}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên.
+\questionLinesManual{5}{24}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ bên.
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Vẽ hệ trục tọa độ Ox, Oy
@@ -875,7 +875,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 25 ======
-\questionLinesManual{3}{25}{Cho hàm số \( f(x) \) liên tục trên \( \mathbb{R} \) và có đồ thị như hình vẽ bên. Khẳng định nào sau đây là đúng?
+\questionLinesManual{5}{25}{Cho hàm số \( f(x) \) liên tục trên \( \mathbb{R} \) và có đồ thị như hình vẽ bên. Khẳng định nào sau đây là đúng?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=1]
     % Hệ trục tọa độ
@@ -899,7 +899,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 26 ======
-\questionLinesManual{3}{26}{Cho hàm số \( y = f(x) \) đồ thị hàm số như hình vẽ. Hàm số đồng biến trên khoảng nào?
+\questionLinesManual{5}{26}{Cho hàm số \( y = f(x) \) đồ thị hàm số như hình vẽ. Hàm số đồng biến trên khoảng nào?
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.5]
     % Vẽ hệ trục tọa độ Ox, Oy màu đen
@@ -944,7 +944,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 27 (Câu 4 trong ảnh) ======
-\questionLinesManual{3}{27}{Cho hàm số \( y = x^3 - 3x^2 \). Mệnh đề nào dưới đây đúng?
+\questionLinesManual{5}{27}{Cho hàm số \( y = x^3 - 3x^2 \). Mệnh đề nào dưới đây đúng?
 
 \begin{tasks}(2)
 \task Hàm số đồng biến trên khoảng \( (0; 2) \)
@@ -955,7 +955,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 28 (Câu 5 trong ảnh) ======
-\questionLinesManual{3}{28}{Hỏi hàm số \( y = 2x^4 + 1 \) đồng biến trên khoảng nào?
+\questionLinesManual{5}{28}{Hỏi hàm số \( y = 2x^4 + 1 \) đồng biến trên khoảng nào?
 \begin{tasks}(4)
 \task \( (-\infty; 0) \)
 \task \( (-\infty; -\dfrac{1}{2}) \)
@@ -965,7 +965,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 29 (Câu 6 trong ảnh) ======
-\questionLinesManual{3}{29}{Cho hàm số \( y = f(x) \) có đạo hàm \( f'(x) = x^2 + 1 \), \( \forall x \in \mathbb{R} \). Mệnh đề nào dưới đây đúng?}{%
+\questionLinesManual{5}{29}{Cho hàm số \( y = f(x) \) có đạo hàm \( f'(x) = x^2 + 1 \), \( \forall x \in \mathbb{R} \). Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \( (1; +\infty) \)
 \task Hàm số nghịch biến trên khoảng \( (-1; 1) \)
@@ -975,17 +975,17 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 30 (Câu 7 trong ảnh) ======
-\questionLinesManual{3}{30}{Cho hàm số \( y = x^3 - 2x^2 + x + 1 \). Mệnh đề nào dưới đây đúng?}{%
+\questionLinesManual{5}{30}{Cho hàm số \( y = x^3 - 2x^2 + x + 1 \). Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \( (1; +\infty) \)
-\task Hàm số nghịch biến trên khoảng \( (-\dfrac{1}{3}; 1) \)
-\task Hàm số nghịch biến trên khoảng \( (-\infty; -\dfrac{1}{3}) \)
-\task Hàm số đồng biến trên khoảng \( (-\dfrac{1}{3}; 1) \)
+\task Hàm số nghịch biến trên khoảng \( (\dfrac{1}{3}; 1) \)
+\task Hàm số nghịch biến trên khoảng \( (-\infty; \dfrac{1}{3}) \)
+\task Hàm số đồng biến trên khoảng \( (\dfrac{1}{3}; 1) \)
 \end{tasks}
 }
 
 % ====== CÂU 31 (Câu 8 trong ảnh) ======
-\questionLinesManual{3}{31}{Cho hàm số \( y = x^4 - 2x^2 \). Mệnh đề nào dưới đây đúng?
+\questionLinesManual{5}{31}{Cho hàm số \( y = x^4 - 2x^2 \). Mệnh đề nào dưới đây đúng?
 \begin{tasks}(2)
 \task Hàm số nghịch biến trên khoảng \((-\infty; -2)\)
 \task Hàm số đồng biến trên khoảng \((-1; 1)\)
@@ -995,7 +995,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 32 (Câu 10 trong ảnh) ======
-\questionLinesManual{3}{32}{Cho hàm số \( y = x^3 + 3x + 2 \). Mệnh đề nào dưới đây là đúng?}{%
+\questionLinesManual{5}{32}{Cho hàm số \( y = x^3 + 3x + 2 \). Mệnh đề nào dưới đây là đúng?}{%
 \begin{tasks}(1)
 \task Hàm số nghịch biến trên khoảng \((-\infty; 0)\) và đồng biến trên khoảng \((0; +\infty)\)
 \task Hàm số đồng biến trên khoảng \((-\infty; 0)\) và đồng biến trên khoảng \((0; +\infty)\)
@@ -1005,7 +1005,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 33 (Câu 11 trong ảnh) ======
-\questionLinesManual{3}{33}{Cho hàm số \( y = \sqrt{2x^2 + 1} \). Mệnh đề nào dưới đây đúng?}{%
+\questionLinesManual{5}{33}{Cho hàm số \( y = \sqrt{2x^2 + 1} \). Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(1)
 \task Hàm số đồng biến trên khoảng \((0; +\infty)\)
 \task Hàm số đồng biến trên khoảng \((-\infty; 0)\)
@@ -1015,7 +1015,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 34 (Câu 12 trong ảnh) ======
-\questionLinesManual{3}{34}{Cho hàm số \( y = \dfrac{x^3}{3} - x^2 + x + 2019 \). Mệnh đề nào dưới đây đúng?}{%
+\questionLinesManual{5}{34}{Cho hàm số \( y = \dfrac{x^3}{3} - x^2 + x + 2019 \). Mệnh đề nào dưới đây đúng?}{%
 \begin{tasks}(1)
 \task Hàm số đã cho đồng biến trên \( \mathbb{R} \).
 \task Hàm số đã cho nghịch biến trên \( (-\infty; 1) \).
@@ -1025,7 +1025,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 35 (Câu 15 trong ảnh) ======
-\questionLinesManual{3}{35}{Hàm số \( y = -x^3 + 3x^2 - 2 \) đồng biến trên khoảng
+\questionLinesManual{5}{35}{Hàm số \( y = -x^3 + 3x^2 - 2 \) đồng biến trên khoảng
 
 \begin{tasks}(4)
 \task \( (0; 2) \)
@@ -1036,7 +1036,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 36 (Câu 16 trong ảnh) ======
-\questionLinesManual{3}{36}{Hàm số \( y = x^4 - 4x^3 \) đồng biến trên khoảng
+\questionLinesManual{5}{36}{Hàm số \( y = x^4 - 4x^3 \) đồng biến trên khoảng
 
 \begin{tasks}(4)
 \task \( (-\infty; +\infty) \)
@@ -1047,7 +1047,7 @@ Hàm số đã cho nghịch biến trên khoảng nào?}{%
 }
 
 % ====== CÂU 37 (Câu 18 trong ảnh) ======
-\questionLinesManual{3}{37}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) và có đạo hàm  
+\questionLinesManual{5}{37}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) và có đạo hàm  
 \( f'(x) = (1 - x)^2 (x + 1)^3 (3 - x). \)  
 Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 \begin{tasks}(4)
@@ -1059,7 +1059,7 @@ Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 38 (Câu 19 trong ảnh) ======
-\questionLinesManual{3}{38}{Cho hàm số \( y = \log_3 (x^2 - 2x + 3) \). Hàm số đồng biến trên khoảng nào sau đây?}{%
+\questionLinesManual{5}{38}{Cho hàm số \( y = \log_3 (x^2 - 2x + 3) \). Hàm số đồng biến trên khoảng nào sau đây?}{%
 \begin{tasks}(4)
 \task \((-\infty; 1)\)
 \task \((-1; +\infty)\)
@@ -1069,7 +1069,7 @@ Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 39 (Câu 26 trong ảnh) ======
-\questionLinesManual{3}{39}{Cho hàm số \( y = f(x) \) có đạo hàm \( f'(x) = x(x - 2)^3 \), với mọi \( x \in \mathbb{R} \). Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
+\questionLinesManual{5}{39}{Cho hàm số \( y = f(x) \) có đạo hàm \( f'(x) = x(x - 2)^3 \), với mọi \( x \in \mathbb{R} \). Hàm số đã cho nghịch biến trên khoảng nào dưới đây?}{%
 \begin{tasks}(4)
 \task \((1; 3)\)
 \task \((-1; 0)\)
@@ -1079,7 +1079,7 @@ Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 40 (Câu 24 trong ảnh) ======
-\questionLinesManual{3}{40}{Cho hàm \( y = \sqrt{x^2 - 6x + 5} \). Mệnh đề nào sau đây là đúng?}{%
+\questionLinesManual{5}{40}{Cho hàm \( y = \sqrt{x^2 - 6x + 5} \). Mệnh đề nào sau đây là đúng?}{%
 \begin{tasks}(2)
 \task Hàm số đồng biến trên khoảng \((5; +\infty)\)
 \task Hàm số đồng biến trên khoảng \((3; +\infty)\)
@@ -1089,7 +1089,7 @@ Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 41 (Câu 22 trong ảnh) ======
-\questionLinesManual{3}{41}{Hàm số \( y = f(x) \) có đạo hàm \( y' = x^2 \). Mệnh đề nào sau đây đúng?}{%
+\questionLinesManual{5}{41}{Hàm số \( y = f(x) \) có đạo hàm \( y' = x^2 \). Mệnh đề nào sau đây đúng?}{%
 \begin{tasks}(1)
 \task Hàm số nghịch biến trên \( \mathbb{R} \)
 \task Hàm số nghịch biến trên \((-\infty; 0)\) và đồng biến trên \((0; +\infty)\)
@@ -1099,7 +1099,7 @@ Hàm số \( y = f(x) \) đồng biến trên khoảng nào dưới đây?}{%
 }
 
 % ====== CÂU 42 (Câu 18 trong ảnh) ======
-\questionLinesManual{3}{42}{Cho hàm số \( f(x) \) liên tục trên \( \mathbb{R} \) có đạo hàm  
+\questionLinesManual{5}{42}{Cho hàm số \( f(x) \) liên tục trên \( \mathbb{R} \) có đạo hàm  
 \( f'(x) = (x+2)(x-1), \forall x \in \mathbb{R}. \) 
 Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 \begin{tasks}(4)
@@ -1111,7 +1111,7 @@ Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 43 (Câu 17 trong ảnh) ======
-\questionLinesManual{3}{43}{Hàm số nào dưới đây đồng biến trên khoảng \((-\infty;+\infty)\)?}{%
+\questionLinesManual{5}{43}{Hàm số nào dưới đây đồng biến trên khoảng \((-\infty;+\infty)\)?}{%
 \begin{tasks}(4)
 \task \(y = -x^3 - 2x + 1\)
 \task \(y = \frac{x-2}{x+1}\)
@@ -1121,7 +1121,7 @@ Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 44 (Câu 21 trong ảnh) ======
-\questionLinesManual{3}{44}{Trong các hàm số cho dưới đây, hàm số nào đồng biến trên \( \mathbb{R} \)?}{%
+\questionLinesManual{5}{44}{Trong các hàm số cho dưới đây, hàm số nào đồng biến trên \( \mathbb{R} \)?}{%
 \begin{tasks}(4)
 \task \(y = \left(\dfrac{2024}{2025}\right)^x\)
 \task \(y = \log_{2025}x\)
@@ -1131,7 +1131,7 @@ Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 45 (Câu 25 trong ảnh) ======
-\questionLinesManual{3}{45}{Hàm số nào sau đây nghịch biến trên các khoảng xác định của nó?}{%
+\questionLinesManual{5}{45}{Hàm số nào sau đây nghịch biến trên các khoảng xác định của nó?}{%
 \begin{tasks}(4)
 \task \(y = e^{-x}\)
 \task \(y = \log_{\sqrt{3}}x\)
@@ -1141,7 +1141,7 @@ Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 46 (Câu 26 trong ảnh) ======
-\questionLinesManual{3}{46}{Hàm số nào dưới đây nghịch biến trên \((-\infty;+\infty)\)?}{%
+\questionLinesManual{5}{46}{Hàm số nào dưới đây nghịch biến trên \((-\infty;+\infty)\)?}{%
 \begin{tasks}(4)
 \task \(y = \ln x\)
 \task \(y = \log_{\frac{1}{7}}x\)
@@ -1151,7 +1151,7 @@ Hàm số đã cho nghịch biến trên khoảng nào sau đây?}{%
 }
 
 % ====== CÂU 47 (Câu 14 trong ảnh) ======
-\questionLinesManual{3}{47}{Cho hàm số \( y = f(x) \) xác định, có đạo hàm trên \( \mathbb{R} \) và \( f'(x) \) có đồ thị như hình vẽ bên dưới
+\questionLinesManual{5}{47}{Cho hàm số \( y = f(x) \) xác định, có đạo hàm trên \( \mathbb{R} \) và \( f'(x) \) có đồ thị như hình vẽ bên dưới
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=1]
     % Hệ trục tọa độ
@@ -1182,7 +1182,7 @@ Mệnh đề nào sau đây đúng?}{%
 }
 
 % ====== CÂU 48 (Câu 16 trong ảnh) ======
-\questionLinesManual{3}{48}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \) và đồ thị của hàm số \( y = f'(x) \) như hình vẽ.
+\questionLinesManual{5}{48}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \) và đồ thị của hàm số \( y = f'(x) \) như hình vẽ.
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Hệ trục tọa độ
@@ -1213,7 +1213,7 @@ Hàm số \( g(x) = f(x) - 2 \) nghịch biến trên khoảng nào trong các k
 }
 
 % ====== CÂU 49 (Câu 22 trong ảnh) ======
-\questionLinesManual{3}{49}{Cho hàm số \( y = f(x) \) xác định, có đạo hàm trên \( \mathbb{R} \) và \( f'(x) \) có đồ thị như hình vẽ bên dưới
+\questionLinesManual{5}{49}{Cho hàm số \( y = f(x) \) xác định, có đạo hàm trên \( \mathbb{R} \) và \( f'(x) \) có đồ thị như hình vẽ bên dưới
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
     % Hệ trục tọa độ
@@ -1241,7 +1241,7 @@ Mệnh đề nào sau đây sai?}{%
 \end{tasks}
 }
 % ====== CÂU 50 (Câu 27 trong ảnh) ======
-\questionLinesManual{3}{50}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \) thỏa mãn \( f'(x) > 0, \forall x \in (-1; 0) \) và \( f'(x) < 0, \forall x \in (0; 1) \). Khẳng định nào sau đây là đúng?}{%
+\questionLinesManual{5}{50}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \) thỏa mãn \( f'(x) > 0, \forall x \in (-1; 0) \) và \( f'(x) < 0, \forall x \in (0; 1) \). Khẳng định nào sau đây là đúng?}{%
 \begin{tasks}(1)
 \task Hàm số \( f(x) \) nghịch biến trên khoảng \( (-1; 0) \) và đồng biến trên khoảng \( (0; 1) \).
 \task Hàm số \( f(x) \) đồng biến trên các khoảng \( (-1; 0) \) và \( (0; 1) \).
@@ -1251,7 +1251,7 @@ Mệnh đề nào sau đây sai?}{%
 }
 
 % ====== CÂU 51 (Câu 30 trong ảnh) ======
-\questionLinesManual{3}{51}{Cho hàm số \( y = f(x) \) xác định với mọi \( x \neq 0 \) và có bảng xét dấu \( f'(x) \) như hình vẽ dưới đây.
+\questionLinesManual{5}{51}{Cho hàm số \( y = f(x) \) xác định với mọi \( x \neq 0 \) và có bảng xét dấu \( f'(x) \) như hình vẽ dưới đây.
 \begin{center}
 \begin{tikzpicture}
 \tkzTabInit[color, lgt=1.5, espcl=3.5]
@@ -1378,7 +1378,7 @@ Hàm số \( f(x) \) nghịch biến trên khoảng nào trong các khoảng sau
 \end{center}}{
     \textbf{a)} & Hàm số đồng biến trên khoảng \( (1; 2) \). 
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    \textbf{b)} & \( f\left(\frac{1}{2}\right) > 0 \).
+    \textbf{b)} & \( f'\left(\frac{1}{2}\right) > 0 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     \textbf{c)} & Hàm số nghịch biến trên khoảng \( (2; +\infty) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
