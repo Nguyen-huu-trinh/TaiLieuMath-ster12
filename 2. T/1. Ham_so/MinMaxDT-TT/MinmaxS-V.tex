@@ -276,7 +276,7 @@
 \begin{document}
 
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
-\titlebox{Chủ đề: Hàm số}{Tính đơn điệu của hàm số}{Hàm số: Tính đơn điệu}
+\titlebox{Chủ đề: Hàm số}{Min Max diện tích thể tích vật thế}{Hàm số: Min Max DT-TT}
 
 % --- CÂU 1 ---
 \questionTrueFalse{0}{1}{Ông An cần xây dựng một bể chứa nước có dạng hình hộp chữ nhật không có nắp đậy để phục vụ cho việc tưới cây trong vườn. Do các điều kiện về diện tích vườn, ông An cần bể có thể tích là \( 24m^3 \), đáy bể có chiều dài gấp hai lần chiều rộng và chiều rộng không quá \( 4m \), biết rằng chi phí vật liệu xây dựng mỗi mét vuông diện tích bề mặt là \( 600\,000 \) đồng. Gọi \( x \, (m) \) là chiều rộng của bể, ta có \( 0 < x \leq 4 \). Khi đó:}{
@@ -344,9 +344,13 @@
     \node[below right] at (2.83,-1) {$C$};
     \node[below left] at (-2.83,-1) {$D$};
     
-    % Nhãn x, y
-    \node[below] at (2.5,-3.5) {$x$};
-    \node[right] at (3.5,-2.5) {$y$};
+     \draw[dashed, thick, ->] (-3.7, 2.5) -- (-2.5, 1);
+    \node[above left] at (-3.7, 2.5) {$x$};
+    
+    % Nhãn y chỉ vào khoảng cách bề rộng phía bên trái của khối trái
+    \draw[dashed, thick, ->] (-3.7, 1) -- (-2.8, 0);
+    \node[above left] at (-3.7, 1) {$y$};
+     \draw[dashed, thick] (-2.83,-1) -- (2.83,1) node[midway, above, yshift=2pt] {$d$};
 \end{tikzpicture}
 \end{minipage}
 \end{center}

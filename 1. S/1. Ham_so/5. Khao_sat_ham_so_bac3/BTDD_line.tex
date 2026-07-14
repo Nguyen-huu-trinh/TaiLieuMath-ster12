@@ -1,0 +1,511 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+            at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i*1}) -- (\textwidth-4pt,-{\i*1});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newcommand{\questionTrueFalse}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{#2}{#3}
+    
+    \nopagebreak
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+        \hline
+        \rowcolor{amberorange!20}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{BT điểm danh hàm số bậc 3}{Hàm số: Hàm bậc 3}
+
+\questionLinesManual{3}{1}{Đồ thị của hàm số dưới đây có dạng như đường cong bên?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-2.5,0) -- (2.5,0) node[below] {\small $x$};
+    \draw[->] (0,-2) -- (0,3.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    % Đồ thị hàm bậc 3: y = -x^3 + 3x + 1
+    \draw[thick, samples=100, domain=-2.1:2.1] 
+        plot (\x, {\x*\x*\x - 3*\x + 1});
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = x^3 - 3x + 1 \)
+        \task \( y = x^4 - 2x^2 + 1 \)
+        \task \( y = -x^4 + 2x^2 + 1 \)
+        \task \( y = -x^3 + 3x + 1 \)
+    \end{tasks}
+}
+
+\questionLinesManual{5}{2}{Đồ thị hàm số nào sau đây có dạng như hình vẽ?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-2,0) -- (3.5,0) node[below] {\small $x$};
+    \draw[->] (0,-4.5) -- (0,1) node[right] {\small $y$};
+    \node[above left] at (0,0) {\small $O$};
+    
+    % Đánh dấu các mốc
+    \foreach \x in {1,2} {
+         \draw (\x,0.05) -- (\x,-0.05)  node[above] {\small $\x$};
+    }
+    \foreach \y in {-4,-2} {
+          \draw (0.05,\y) -- (-0.05,\y)   node[left] {\small $\y$};
+    }
+    
+    % Đồ thị hàm bậc 3: y = -x^3 + 3x
+    \draw[thick, samples=100, domain=-1.05:3.1] 
+        plot (\x, {\x*\x*\x - 3*\x*\x});
+    
+    % Đánh dấu điểm cực trị
+    \draw[dashed] (1,0) -- (1,-2) -- (0,-2);
+    \draw[dashed] (2,0) -- (2,-4) -- (0,-4);
+\end{tikzpicture}
+
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = x^3 - 3x^2 \)
+        \task \( y = x^3 + 3x \)
+        \task \( y = -x^3 + 3x^2 \)
+        \task \( y = -x^3 + 3x \)
+    \end{tasks}
+}
+
+\questionLinesManual{3}{3}{Hình vẽ sau là bảng biến thiên của hàm số nào dưới đây?
+
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2.5]
+    {$x$ /1, $y'$ /1, $y$ /2.5}
+    {$-\infty$, $-1$, $1$, $+\infty$}
+    \tkzTabLine{, -, 0, +, 0, -, }
+    \tkzTabVar{+/ $+\infty$ / , -/ $-5$ / , +/ $3$ / , -/ $-\infty$ /}
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = -2x^4 + x^2 - 1 \)
+        \task \( y = \dfrac{-2x + 7}{x + 3} \)
+        \task \( y = -2x^2 + x - 1 \)
+        \task \( y = -2x^3 + 6x - 1 \)
+    \end{tasks}
+}
+
+\questionLinesManual{3}{4}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) (\( a \neq 0 \)) có đồ thị như hình vẽ.
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-2,0) -- (4,0) node[below] {\small $x$};
+    \draw[->] (0,-4.5) -- (0,2.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    
+    % Đồ thị hàm bậc 3: y = x^3 - 3x
+    \draw[thick, samples=100, domain=-1.1:3.1] 
+        plot (\x, {\x*\x*\x - 3*\x*\x + 1});
+    
+    % Đánh dấu điểm cực trị
+    \draw[dashed] (2,0) -- (2,-3) -- (0,-3);
+    \node[below] at (1,0) {\small $1$};
+    \node[below] at (2,0) {\small $2$};
+    \node[left] at (0,-3) {\small $-3$};
+\end{tikzpicture}
+\end{center}
+
+Số nghiệm của phương trình \( f(x) = -2 \) là}{
+    \begin{tasks}(4)
+        \task $2$
+        \task $0$
+        \task $1$
+        \task $3$
+    \end{tasks}
+}
+
+\questionLinesManual{5}{5}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Khẳng định nào dưới đây đúng?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (4,0) node[below] {\small $x$};
+    \draw[->] (0,-4.5) -- (0,2) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};   
+    % Đồ thị hàm bậc 3: y = x^3 - 3x
+    \draw[thick, samples=100, domain=-2:2] 
+        plot (\x, {-\x*\x*\x + 3*\x-1});
+   
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(2)
+        \task Hàm số đã cho đồng biến trên khoảng \((-\infty; +\infty)\).
+        \task \( a > 0, d < 0 \).
+        \task \( a < 0, d > 0 \).
+        \task Hàm số đã cho có hai điểm cực trị.
+    \end{tasks}
+}
+
+\questionLinesManual{5}{6}{Cho đường cong \( (C) : y = ax^3 + bx^2 + cx + d \) có đồ thị như hình bên.
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {\small $x$};
+    \draw[->] (0,-3) -- (0,4) node[right] {\small $y$};
+    \node[below right] at (0,0) {\small $O$};
+   
+    % Đồ thị hàm bậc 3: y = -x^3 + 3x^2 + 2
+    \draw[thick, samples=100, domain=-3.5:2.5] 
+        plot (\x, {0.2*(2*\x*\x*\x + 3*\x*\x - 12*\x)-1});
+    \draw[dashed] (1,0) -- (1,-2.4);
+    \draw[dashed] (-2,0) -- (-2,3);
+    \node[above] at (1,0) {\small $1$};
+    \node[below] at (-2,0) {\small $-2$};
+\end{tikzpicture}
+\end{center}
+
+Khẳng định nào sau đây là đúng?}{
+    \begin{tasks}(2)
+        \task \( a > 0, b < 0, c < 0, d < 0 \)
+        \task \( a > 0, b > 0, c < 0, d > 0 \)
+        \task \( a < 0, b > 0, c > 0, d < 0 \)
+        \task \( a > 0, b > 0, c < 0, d < 0 \)
+    \end{tasks}
+}
+
+\questionLinesManual{5}{7}{Hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên dưới:
+
+\begin{center}
+
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Hệ trục tọa độ
+    \draw[->] (-2,0) -- (6,0) node[below] {\small $x$};
+    \draw[->] (0,-4) -- (0,4) node[right] {\small $y$};
+    \node[below right] at (0,0) {\small $O$};
+    
+   
+    % Đồ thị hàm bậc 3: y = x^3 - 3x
+    \draw[thick, samples=100, domain=-1.5:5.1] 
+        plot (\x, {-0.25*(\x+1)*(\x-3)*(\x-4)});
+  
+\end{tikzpicture}
+\end{center}
+
+Khẳng định nào là đúng?}{
+    \begin{tasks}(2)
+        \task \( a < 0, b < 0, c < 0, d < 0 \)
+        \task \( a > 0, b > 0, c > 0, d < 0 \)
+        \task \( a > 0, b > 0, c > 0, d > 0 \)
+        \task \( a > 0, b < 0, c > 0, d > 0 \)
+    \end{tasks}
+}
+
+
+\questionLinesManual{5}{8}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
+
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.5, espcl=2.5]
+    {$x$ /1, $f'(x)$ /1, $f(x)$ /2.5}
+    {$-\infty$, $-2$, $0$, $+\infty$}
+    \tkzTabLine{, +, 0, -, 0, +, }
+    \tkzTabVar{-/ $-\infty$ / , +/ $1$ / , -/ $-1$ / , +/ $+\infty$ /}
+\end{tikzpicture}
+\end{center}
+
+Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
+    \begin{tasks}(4)
+        \task $3$
+        \task $4$
+        \task $2$
+        \task $1$
+    \end{tasks}
+}
+
+\questionLinesManual{8}{9}{Tìm điểm \( M \) có hoành độ âm trên đồ thị \( (C) \): \( y = \dfrac{1}{3}x^3 - x + \dfrac{2}{3} \) sao cho tiếp tuyến tại \( M \) vuông góc với đường thẳng \( y = -\dfrac{1}{3}x + \dfrac{2}{3} \).}{
+    \begin{tasks}(4)
+        \task \( M\left(-1; \dfrac{4}{3}\right) \)
+        \task \( M(-2; 0) \)
+        \task \( M\left(2; \dfrac{4}{3}\right) \)
+        \task \( M(-2; -4) \)
+    \end{tasks}
+}
+
+\questionLinesManual{5}{10}{Số giao điểm của đồ thị hàm số \( y = x^3 - 5x^2 \) và đồ thị hàm số \( y = -x^2 + 3x \) là}{
+    \begin{tasks}(4)
+        \task $3$
+        \task $1$
+        \task $2$
+        \task $0$
+    \end{tasks}
+}
+\end{document}
