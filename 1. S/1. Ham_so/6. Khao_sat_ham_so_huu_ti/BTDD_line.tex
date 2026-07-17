@@ -1,0 +1,667 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+            at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i}) -- (\textwidth-4pt,-{\i});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newcommand{\questionTrueFalse}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{#2}{#3}
+    
+    \nopagebreak
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+        \hline
+        \rowcolor{amberorange!20}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{BTDD hàm số hữu tỉ}{Hàm số: Hàm hữu tỉ}
+
+\questionLinesManual{3}{1}{Hàm số nào dưới đây có đồ thị như hình vẽ sau?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % 1. Vẽ lưới
+    \draw[color=gray!30, thin, step=1] (-3.5,-3.5) grid (5.5,5.5);
+    
+    % 2. Vẽ hệ trục tọa độ
+    \draw[->] (-3.5,0) -- (5.5,0) node[below] {\small $x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    % 4. Vẽ đồ thị hàm số y = x/(x-1)
+    \draw[thick, samples=100, domain=-3.5:0.78] 
+        plot (\x, {\x/(\x - 1)});
+    \draw[thick, samples=100, domain=1.22:5.5] 
+        plot (\x, {\x/(\x - 1)});
+    
+    % 5. Đường tiệm cận
+    \draw[dashed] (1,-3.5) -- (1,5.5);
+    \draw[dashed] (-3.5,1) -- (5.5,1) ;
+    \node[below right] at ( 1,0) {\small $1$};
+    \node [ above left] at (0,1) {\small $1$};
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = \dfrac{x}{x+1} \)
+        \task \( y = -\dfrac{x}{x-1} \)
+        \task \( y = -\dfrac{x}{x+1} \)
+        \task \( y = \dfrac{x}{x-1} \)
+    \end{tasks}
+}
+
+\questionLinesManual{3}{2}{Đường cong ở hình dưới đây là đồ thị của hàm số
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.6]
+    \draw[->] (-3.5,0) -- (4.5,0) node[below] {\small $x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {\small $y$};
+    \node[below right] at (0,0) {\tiny $O$};
+    
+    % 3. Đánh dấu các mốc
+    \foreach \x in {-3,-2,1,2,3,4} {
+        \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
+    }
+    \foreach \val in {-3,-2,-1,1,2,3} {
+        \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
+    }
+    
+    % 4. Vẽ đồ thị hàm số y = (x^2 - x + 1)/(x - 1)
+    \draw[thick, samples=100, domain=-3.5:0.76] 
+        plot (\x, {(\x*\x - \x + 1)/(\x - 1)});
+    \draw[thick, samples=100, domain=1.23:5.5] 
+        plot (\x, {(\x*\x - \x + 1)/(\x - 1)});
+    
+    % 5. Đường tiệm cận
+    \draw[dashed] (1,5.5) -- (1,-3.5) node[below] {\small $x=1$};
+    \draw[dashed] (-3.5,-3.5) -- (5.5,5.5) node[ below right] {\small $y=x$};
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = \dfrac{x^2 - 4x + 5}{x - 2} \)
+        \task \( y = \dfrac{x^2 - 4x - 1}{x + 1} \)
+        \task \( y = \dfrac{x^2 - x + 1}{x - 1} \)
+        \task \( y = \dfrac{x^2 + x - 1}{x - 1} \)
+    \end{tasks}
+}
+
+\questionLinesManual{3}{3}{Cho hàm số \( y = \dfrac{ax + b}{cx + d} \) (\(a, b, c \in \mathbb{R}\)) có đồ thị là đường cong như hình vẽ bên:
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % 1. Hệ trục tọa độ
+    \draw[->] (-4.5,0) -- (3.5,0) node[below] {\small $x$};
+    \draw[->] (0,-3.5) -- (0,4.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    % 3. Vẽ đồ thị hàm số y = (x+1)/(x-1)
+    \draw[thick, samples=100, domain=-4.5:-1.56] 
+        plot (\x, {(\x - 1)/(\x + 1)});
+    \draw[thick, samples=100, domain=-0.56:3.5] 
+        plot (\x, {(\x - 1)/(\x +1)});
+    
+    % 4. Đường tiệm cận
+    \draw[dashed] (-1,-3.5) -- (-1,4.5);
+    \draw[dashed] (-4.5,1) -- (3.5,1);
+    
+    \node[below left] at (-1,0) {\small $-1$};
+    \node [above left] at ( 0,1) {\small $1$};
+\end{tikzpicture}
+\end{center}
+
+Toạ độ tâm đối xứng của đồ thị hàm số đã cho là:}{
+    \begin{tasks}(4)
+        \task \((-1; 1)\)
+        \task \((1; 1)\)
+        \task \((1; -1)\)
+        \task \((0; 1)\)
+    \end{tasks}
+}
+
+\questionLinesManual{3}{4}{Đường cong như hình vẽ dưới đây là đồ thị của hàm số nào?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % 1. Hệ trục tọa độ
+    \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
+    \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    % 2. Đánh dấu các mốc
+    \foreach \x in {1,2} {
+        \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+    }
+    \foreach \val in {-2,1,2} {
+        \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
+    }
+    
+    % 3. Vẽ đồ thị hàm số y = (-x^2 + 2x - 2)/(x-1)
+    \draw[thick, samples=100, domain=-3.5:0.76] 
+        plot (\x, {(-\x*\x + 2*\x - 2)/(\x - 1)});
+    \draw[thick, samples=100, domain=1.24:5] 
+        plot (\x, {(-\x*\x + 2*\x - 2)/(\x - 1)});
+     \draw[thick, samples=100, domain=-3.5:5] 
+        plot (\x, {(-\x+1});
+    % 4. Đường tiệm cận
+    \draw[thick] (1,-4.5) -- (1,4.5);
+    \draw [dashed] (2,0) -- ( 2,-2) -- ( 0,-2);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( y = \dfrac{x-2}{x-1} \)
+        \task \( y = \dfrac{x^2 + 2x - 2}{x-1} \)
+        \task \( y = \dfrac{-x^2 + 2x - 2}{x-1} \)
+        \task \( y = \dfrac{-x^2 + x - 2}{x-1} \)
+    \end{tasks}
+}
+
+\questionLinesManual{10}{5}{Hình vẽ bên là đồ thị hàm số \( y = \dfrac{ax + b}{cx + d} \). Mệnh đề nào dưới đây đúng?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-5.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-5.5:-1.33] 
+        plot (\x, {(\x - 0.5)/(\x + 1)});
+    \draw[thick, samples=100, domain=-0.67:3.5] 
+        plot (\x, {(\x - 0.5)/(\x + 1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (-1,-3.5) -- (-1,5.5);
+    \draw[dashed] (-5.5,1) -- (3.5,1);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( ad > 0 \) và \( bd > 0 \)
+        \task \( ad > 0 \) và \( ab < 0 \)
+        \task \( bd < 0 \) và \( ab > 0 \)
+        \task \( ad < 0 \) và \( ab < 0 \)
+    \end{tasks}
+}
+
+\questionLinesManual{10}{6}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{a'x + b'} \) (\(a>0, a' \neq 0 \))  có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào trong các khoảng sau đây?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % 1. Hệ trục tọa độ
+    \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
+    \draw[->] (0,-6.5) -- (0,2.5) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    % 2. Đánh dấu các mốc
+    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+        \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
+    }
+    \foreach \val in {,-6,-5,-4,-3,-2,-1,1,} {
+        \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
+    }
+    
+    % 3. Vẽ đồ thị hàm số y = (x^2 + 2x + 2)/(x + 1)
+    \draw[thick, samples=100, domain=-5:-1.23] 
+        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-2});
+    \draw[thick, samples=100, domain=-0.77:3] 
+        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-2});
+    \draw[thick, samples=100, domain=-5:3] 
+        plot (\x, {\x-1});
+    \draw[dashed] (-2,0) -- (-2,-4) --(0,-4);
+    % 4. Đường tiệm cận
+    \draw[thick] (-1,-6.5) -- (-1,2.5);
+\end{tikzpicture}
+\end{center}
+
+Trong các số \( b, c, a', b' \) có tất cả bao nhiêu số dương?}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $2$
+        \task $3$
+        \task $4$
+    \end{tasks}
+}
+
+\questionLinesManual{5}{7}{Cho hàm số \( y = \dfrac{x^2 + 2x + 2}{x + 1} \). Tâm đối xứng của đồ thị hàm số là:}{
+    \begin{tasks}(4)
+        \task \( I(-1; 0) \)
+        \task \( I(-1; 1) \)
+        \task \( I(-1; 2) \)
+        \task \( I(1; 1) \)
+    \end{tasks}
+}
+
+\questionLinesManual{5}{8}{Đồ thị của hàm số \( y = \dfrac{x+1}{-x+1} \) là đường cong nào trong các hình vẽ sau?
+
+\begin{center}
+
+\end{center}
+
+}{
+    \begin{tasks}(2)
+        \task \(
+        \begin{tikzpicture}[>=latex, scale=0.8]
+                % 1. Hệ trục tọa độ
+                \draw[->] (-4.5,0) -- (3.5,0) node[below] {\small $x$};
+                \draw[->] (0,-3.5) -- (0,4.5) node[right] {\small $y$};
+                \node[below left] at (0,0) {\small $O$};
+                
+                % 2. Đánh dấu các mốc
+                \foreach \x in {-1,1} {
+                    \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+                }
+                \foreach \val in {1} {
+                    \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
+                }
+                
+                % 3. Vẽ đồ thị hàm số y = (x+1)/(-x+1) = -(x+1)/(x-1)
+                \draw[thick, samples=100, domain=-4.5:-1.57] 
+                    plot (\x, {(\x - 1)/(\x + 1)});
+                \draw[thick, samples=100, domain=-0.57:3.5] 
+                    plot (\x, {(\x - 1)/(\x + 1)});
+                
+                % 4. Đường tiệm cận
+                \draw[dashed] (-1,-3.5) -- (-1,4.5) ;
+                \draw[dashed] (-4.5,1) -- (3.5,1) ;
+            \end{tikzpicture}
+        \)
+        
+        \task \(
+        \begin{tikzpicture}[>=latex, scale=0.8]
+                % 1. Hệ trục tọa độ
+                \draw[->] (-3.5,0) -- (4.5,0) node[below] {\small $x$};
+                \draw[->] (0,-4.5) -- (0,3.5) node[right] {\small $y$};
+                \node[below left] at (0,0) {\small $O$};
+                
+                % 2. Đánh dấu các mốc
+                \foreach \x in {-1,1} {
+                    \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+                }
+                \foreach \val in {-1,1} {
+                    \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
+                }
+                
+                % 3. Vẽ đồ thị hàm số y = (x+1)/(-x+1) = -(x+1)/(x-1)
+                \draw[thick, samples=100, domain=-3.5:0.56] 
+                    plot (\x, {(\x + 1)/(-\x + 1)});
+                \draw[thick, samples=100, domain=1.57:4.5] 
+                    plot (\x, {(\x + 1)/(-\x + 1)});
+                
+                % 4. Đường tiệm cận
+                \draw[dashed] (1,-4.5) -- (1,3.5) ;
+                \draw[dashed] (-3.5,-1) -- (4.5,-1) ;
+            \end{tikzpicture}
+        \)
+        \task \(
+        \begin{tikzpicture}[>=latex, scale=0.8]
+                % 1. Hệ trục tọa độ
+                \draw[->] (-4.5,0) -- (3.5,0) node[below] {\small $x$};
+                \draw[->] (0,-4.5) -- (0,3.5) node[right] {\small $y$};
+                \node[below left] at (0,0) {\small $O$};
+                
+                % 2. Đánh dấu các mốc
+                \foreach \x in {-1,1} {
+                    \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+                }
+                \foreach \val in {-1,1} {
+                    \draw (0.05,\val) -- (-0.05,\val) node[below left] {\small $\val$};
+                }
+                
+                % 3. Vẽ đồ thị hàm số y = (x+1)/(-x+1) = -(x+1)/(x-1)
+                \draw[thick, samples=100, domain=-4.5:-1.57] 
+                    plot (\x, {(\x - 1)/(-\x - 1)});
+                \draw[thick, samples=100, domain=-0.56:3.5] 
+                    plot (\x, {(\x - 1)/(-\x - 1)});
+                
+                % 4. Đường tiệm cận
+                \draw[dashed] (-1,-4.5) -- (-1,3.5);
+                \draw[dashed] (-4.5,-1) -- (3.5,-1);
+            \end{tikzpicture}
+        \)
+        \task \(
+        \begin{tikzpicture}[>=latex, scale=0.8]
+                % 1. Hệ trục tọa độ
+                \draw[->] (-3.5,0) -- (4.5,0) node[below] {\small $x$};
+                \draw[->] (0,-3.5) -- (0,4.5) node[right] {\small $y$};
+                \node[below left] at (0,0) {\small $O$};
+                
+                % 2. Đánh dấu các mốc
+                \foreach \x in {-1,1} {
+                    \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+                }
+                \foreach \val in {-1,1} {
+                    \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
+                }
+                
+                % 3. Vẽ đồ thị hàm số y = (x+1)/(-x+1) = -(x+1)/(x-1)
+                \draw[thick, samples=100, domain=-3.5:0.56] 
+                    plot (\x, {(\x + 1)/(\x - 1)});
+                \draw[thick, samples=100, domain=1.57:4.5] 
+                    plot (\x, {(\x + 1)/(\x - 1)});
+                
+                % 4. Đường tiệm cận
+                \draw[dashed] (1,-3.5) -- (1,4.5) ;
+                \draw[dashed] (-3.5,1) -- (4.5,1);
+            \end{tikzpicture}
+        \)
+    \end{tasks}
+}
+
+\questionLinesManual{5}{9}{Phương trình tiếp tuyến của đồ thị hàm số \( y = \dfrac{x - 2}{x + 1} \) tại điểm có tung độ \(y_0 = -2\) là}{
+    \begin{tasks}(4)
+        \task \( y = 3x - 2 \)
+        \task \( y = -3x + 2 \)
+        \task \( y = 3x + 2 \)
+        \task \( y = -3x - 2 \)
+    \end{tasks}
+}
+
+\questionLinesManual{8}{10}{Cho hàm số \( y = \dfrac{ax + b}{x + c} \) có đồ thị như hình sau đây
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.6]
+    % 1. Vẽ lưới
+    \draw[color=gray!30, thin, step=1] (-5,-5) grid (8,7);
+    
+    % 2. Vẽ hệ trục tọa độ
+    \draw[->] (-5,0) -- (8,0) node[below] {\small $x$};
+    \draw[->] (0,-5) -- (0,7) node[right] {\small $y$};
+    \node[below left] at (0,0) {\small $O$};
+    
+    % 3. Đánh dấu các mốc
+    \foreach \x in {-4,-2,1,2,6} {
+        \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+    }
+    \foreach \val in {-4,-2,1,3,5} {
+        \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
+    }
+    
+    % 4. Vẽ đồ thị hàm số y = (2x+1)/(x+1)
+    \draw[thick, samples=100, domain=-5:1.3] 
+        plot (\x, {(\x + 2)/(\x -2)});
+    \draw[thick, samples=100, domain=2.7:8] 
+        plot (\x, {(\x + 2)/(\x - 2)});
+    
+    % 5. Đường tiệm cận
+    \draw[dashed] (2,-5) -- (2,7);
+    \draw[dashed] (-5,1) -- (8,1);
+\end{tikzpicture}
+\end{center}
+
+Tính giá trị của biểu thức \( P = 2a - b + 3c \).}{
+    \begin{tasks}(4)
+        \task $6$
+        \task $-6$
+        \task $10$
+        \task $-2$
+    \end{tasks}
+}
+
+\end{document}
