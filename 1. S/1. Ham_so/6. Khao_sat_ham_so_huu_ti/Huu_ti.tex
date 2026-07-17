@@ -1405,8 +1405,218 @@ Hàm số đã cho đồng biến trên khoảng nào trong các khoảng sau?}{
     \end{tasks}
 }
 
+\questionLinesManual{0}{29}{Cho hàm số \( y = \dfrac{ax + b}{cx + d} \) có đồ thị như sau.
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-3.5,0) -- (5.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {$y$};
+    \node[below right] at (0,0) {$O$};
+   
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-3.5:0.55] 
+        plot (\x, {(\x + 1)/(\x -1)});
+    \draw[thick, samples=100, domain=1.45:5.5] 
+        plot (\x, {(\x + 1)/(\x - 1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (1,-3.5) -- (1,5.5) ;
+    \draw[dashed] (-3.5,1) -- (5.5,1);
+\end{tikzpicture}
+\end{center}
+
+Mệnh đề nào sau đây đúng?}{
+    \begin{tasks}(4)
+        \task \( ac > 0; \, bd > 0 \)
+        \task \( ab < 0; \, cd < 0 \)
+        \task \( bc > 0; \, ad < 0 \)
+        \task \( ad > 0; \, bd < 0 \)
+    \end{tasks}
+}
+
+% --- CÂU 30 ---
+\questionLinesManual{0}{30}{Cho hàm số \( y = \dfrac{(a-1)x + b}{(c-1)x + d} \), \( d < 0 \) có đồ thị như hình trên. Khẳng định nào dưới đây là đúng?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-3.5,0) -- (5.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {$y$};
+    \node[below right] at (0,0) {$O$};
+    
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-3.5:0.55] 
+        plot (\x, {(\x + 1)/(\x -1)});
+    \draw[thick, samples=100, domain=1.45:5.5] 
+        plot (\x, {(\x + 1)/(\x -1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (1,-3.5) -- (1,5.5);
+    \draw[dashed] (-3.5,1) -- (5.5,1);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( a > 1, b > 0, c < 1 \)
+        \task \( a > 1, b < 0, c > 1 \)
+        \task \( a < 1, b > 0, c < 1 \)
+        \task \( a > 1, b > 0, c > 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 31 ---
+\questionLinesManual{0}{31}{Cho hàm số \( y = \dfrac{ax + b}{cx + d} \) có đồ thị như trong hình bên dưới. Biết rằng \( a \) là số thực dương, hỏi trong các số \( b, c, d \) có tất cả bao nhiêu số dương?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-5.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-2.5) -- (0,6.5) node[right] {$y$};
+    \node[below left] at (0,0) {$O$};
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-5.5:-1.7] 
+        plot (\x, {(2*\x - 1)/(\x + 1)});
+    \draw[thick, samples=100, domain=-0.35:3.5] 
+        plot (\x, {(2*\x - 1)/(\x + 1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (-1,-2.5) -- (-1,6.5);
+    \draw[dashed] (-5.5,2) -- (3.5,2);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $2$
+        \task $0$
+        \task $3$
+    \end{tasks}
+}
+
+% --- CÂU 32 ---
+\questionLinesManual{0}{32}{Cho hàm số \( y = \dfrac{ax + b}{cx + d} \) có đồ thị như hình vẽ bên. Khẳng định nào sau đây là khẳng định đúng?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.5]
+    % Vẽ hệ trục
+    \draw[->] (-7.5,0) -- (4.5,0) node[below] {$x$};
+    \draw[->] (0,-4.5) -- (0,6.5) node[right] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-7.5:-2.55] 
+        plot (\x, {(\x - 1)/(\x + 2)});
+    \draw[thick, samples=100, domain=-1.45:4.5] 
+        plot (\x, {(\x - 1)/(\x + 2)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (-2,-4.5) -- (-2,6.5);
+    \draw[dashed] (-7.5,1) -- (4.5,1);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task 
+        \(\begin{cases} 
+        ad < 0 \\ 
+        bc > 0 
+        \end{cases}\)
+        \task 
+        \(\begin{cases} 
+        ad < 0 \\ 
+        bc < 0 
+        \end{cases}\)
+        \task 
+        \(\begin{cases} 
+        ad > 0 \\ 
+        bc < 0 
+        \end{cases}\)
+        \task 
+        \(\begin{cases} 
+        ad > 0 \\ 
+        bc > 0 
+        \end{cases}\)
+    \end{tasks}
+}
+
+% --- CÂU 33 ---
+\questionLinesManual{0}{33}{Hình vẽ bên là đồ thị hàm số \( y = \dfrac{ax + b}{cx + d} \). Mệnh đề nào dưới đây đúng?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-5.5,0) -- (3.5,0) node[below] {$x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-5.5:-1.33] 
+        plot (\x, {(\x - 0.5)/(\x + 1)});
+    \draw[thick, samples=100, domain=-0.67:3.5] 
+        plot (\x, {(\x - 0.5)/(\x + 1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (-1,-3.5) -- (-1,5.5);
+    \draw[dashed] (-5.5,1) -- (3.5,1);
+\end{tikzpicture}
+\end{center}
+
+}{
+    \begin{tasks}(4)
+        \task \( ad > 0 \) và \( bd > 0 \)
+        \task \( ad > 0 \) và \( ab < 0 \)
+        \task \( bd < 0 \) và \( ab > 0 \)
+        \task \( ad < 0 \) và \( ab < 0 \)
+    \end{tasks}
+}
+
+% --- CÂU 34 ---
+\questionLinesManual{0}{34}{Cho hàm số \( y = \dfrac{ax - b}{x - 1} \) có đồ thị như hình vẽ dưới đây:
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.6]
+    % Vẽ hệ trục
+    \draw[->] (-3.5,0) -- (5.5,0) node[below] {\tiny$x$};
+    \draw[->] (0,-5.5) -- (0,3.5) node[right] {\tiny$y$};
+    \node[below left] at (0,0) {\tiny$O$};
+    
+    % Đánh dấu các mốc
+    \foreach \x in {1,2} {
+        \draw (\x,0.1) -- (\x,-0.1) node[below left] {\tiny$\x$};
+    }
+    \foreach \y in {-2,-1} {
+        \draw (0.1,\y) -- (-0.1,\y) node[below left] {\tiny$\y$};
+    }
+    
+    % Vẽ đồ thị hàm số
+    \draw[thick, samples=100, domain=-3.5:0.78] 
+        plot (\x, {(-\x +2)/(\x - 1)});
+    \draw[thick, samples=100, domain=1.22:5.5] 
+        plot (\x, {(-\x + 2)/(\x - 1)});
+    
+    % Đường tiệm cận
+    \draw[dashed] (1,-5.5) -- (1,3.5);
+    \draw[dashed] (-3.5,-1) -- (5.5,-1);
+\end{tikzpicture}
+\end{center}
+
+Khẳng định nào sau đây đúng?}{
+    \begin{tasks}(4)
+        \task \( b < a < 0 \)
+        \task \( a < b < 0 \)
+        \task \( b > a \) và \( a < 0 \)
+        \task \( a < 0 < b \)
+    \end{tasks}
+}
+
+
+
 % --- CÂU 29 ---
-\questionLinesManual{0}{29}{Cho hàm số \( y = f(x) \) có đồ thị là đường cong bên dưới
+\questionLinesManual{0}{35}{Cho hàm số \( y = \dfrac{x^2 + bx + c}{mx + n} \) (\( m \neq 0 \))  có đồ thị là đường cong bên dưới
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.6]
@@ -1436,17 +1646,17 @@ Hàm số đã cho đồng biến trên khoảng nào trong các khoảng sau?}{
 \end{tikzpicture}
 \end{center}
 
-Trong các khẳng định sau, khẳng định nào đúng?}{
-    \begin{tasks}(2)
-        \task Hàm số đạt cực tiểu tại \( x = 0 \).
-        \task Hàm số đạt cực đại tại \( x = 0 \).
-        \task Hàm số đạt cực đại tại \( x = 2 \).
-        \task Hàm số đạt cực tiểu tại \( x = 6 \).
+Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $2$
+        \task $3$
+        \task $4$
     \end{tasks}
 }
 
 % --- CÂU 30 ---
-\questionLinesManual{0}{30}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ sau:
+\questionLinesManual{0}{36}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{x + d} \) (\( a \neq 0 \))  có đồ thị như hình vẽ sau:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1478,17 +1688,17 @@ Trong các khẳng định sau, khẳng định nào đúng?}{
 \end{tikzpicture}
 \end{center}
 
-Điểm cực đại của đồ thị hàm số đã cho là:}{
+Trong các số \( a, b, c, d \) có tất cả bao nhiêu số dương?}{
     \begin{tasks}(4)
-        \task \( N(-1;1) \)
-        \task \( x = -3 \)
-        \task \( x = -1 \)
-        \task \( M(-3;-3) \)
+        \task $1$
+        \task $2$
+        \task $3$
+        \task $4$
     \end{tasks}
 }
 
 % --- CÂU 31 ---
-\questionLinesManual{0}{31}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{a'x + b'} \) có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào trong các khoảng sau đây?
+\questionLinesManual{0}{37}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{a'x + b'} \) (\(a>0, a' \neq 0 \))  có đồ thị như hình vẽ bên. Hàm số đã cho nghịch biến trên khoảng nào trong các khoảng sau đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1518,17 +1728,17 @@ Trong các khẳng định sau, khẳng định nào đúng?}{
 \end{tikzpicture}
 \end{center}
 
-}{
+Trong các số \( b, c, a', b' \) có tất cả bao nhiêu số dương?}{
     \begin{tasks}(4)
-        \task \((-2; 0)\)
-        \task \((-1; 1)\)
-        \task \((-\infty; -2)\)
-        \task \((-2; -1)\)
+        \task $1$
+        \task $2$
+        \task $3$
+        \task $4$
     \end{tasks}
 }
 
 % --- CÂU 32 ---
-\questionLinesManual{0}{32}{Cho hàm số \( y = ax + b - \dfrac{r}{x} \) (\(ab  \neq 0\)) và có đồ thị là \( (C) \) có dạng như hình vẽ sau.
+\questionLinesManual{0}{38}{Cho hàm số \( y = ax + b - \dfrac{r}{x} \) (\(ab  \neq 0\)) và có đồ thị là \( (C) \) có dạng như hình vẽ sau.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1570,14 +1780,14 @@ Các hệ số \( a, b, r \) phải thỏa mãn điều kiện nào dưới đâ
         \task 
         \(\begin{cases} 
         a > 0 \\ 
-        b > 0 \\ 
+        b < 0 \\ 
         r < 0 
         \end{cases}\)
     \end{tasks}
 }
 
 % --- CÂU 33 ---
-\questionLinesManual{0}{33}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{mx + n} \) (\( a > 0, m \neq 0 \)) có đồ thị như hình vẽ bên.
+\questionLinesManual{0}{39}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{mx + n} \) (\( a > 0, m \neq 0 \)) có đồ thị như hình vẽ bên.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1620,7 +1830,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 34 ---
-\questionLinesManual{0}{34}{Tập xác định của hàm số \( f(x) = \dfrac{x^2 - 4x - 3}{x + 3} \) là}{
+\questionLinesManual{0}{40}{Tập xác định của hàm số \( f(x) = \dfrac{x^2 - 4x - 3}{x + 3} \) là}{
     \begin{tasks}(4)
         \task \( D = \mathbb{R} \setminus \{3\} \)
         \task \( D = \mathbb{R} \setminus \{0\} \)
@@ -1630,7 +1840,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 35 ---
-\questionLinesManual{0}{35}{Giá trị nhỏ nhất của hàm số \( y = x - 3 + \dfrac{9}{x + 2} \) trên đoạn \([-1; 3]\) bằng}{
+\questionLinesManual{0}{41}{Giá trị nhỏ nhất của hàm số \( y = x - 3 + \dfrac{9}{x + 2} \) trên đoạn \([-1; 3]\) bằng}{
     \begin{tasks}(4)
         \task $0$
         \task $5$
@@ -1640,7 +1850,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 36 ---
-\questionLinesManual{0}{36}{Đường thẳng qua 2 điểm cực trị của đồ thị hàm số \( y = \dfrac{x^2 - x + 2}{x + 2} \) có phương trình là}{
+\questionLinesManual{0}{42}{Đường thẳng qua 2 điểm cực trị của đồ thị hàm số \( y = \dfrac{x^2 - x + 2}{x + 2} \) có phương trình là}{
     \begin{tasks}(4)
         \task \( y = 2x - 1 \)
         \task \( y = 2x + 1 \)
@@ -1650,7 +1860,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 37 ---
-\questionLinesManual{0}{37}{Cho hàm số \( y = \dfrac{x^2 + 3x + 3}{x + 1} \) có đồ thị \((C)\). Tiếp tuyến của đồ thị \((C)\) tại giao điểm của đồ thị với trục tung cắt đường tiệm cận xiên của đồ thị tại điểm có tọa độ là}{
+\questionLinesManual{0}{43}{Cho hàm số \( y = \dfrac{x^2 + 3x + 3}{x + 1} \) có đồ thị \((C)\). Tiếp tuyến của đồ thị \((C)\) tại giao điểm của đồ thị với trục tung cắt đường tiệm cận xiên của đồ thị tại điểm có tọa độ là}{
     \begin{tasks}(4)
         \task $(1; 2)$
         \task $(1; 3)$
@@ -1660,7 +1870,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 38 ---
-\questionLinesManual{0}{38}{Phương trình tiếp tuyến của đồ thị hàm số \( y = \dfrac{x - 2}{x + 1} \) tại điểm có tung độ \(y_0 = -2\) là}{
+\questionLinesManual{0}{44}{Phương trình tiếp tuyến của đồ thị hàm số \( y = \dfrac{x - 2}{x + 1} \) tại điểm có tung độ \(y_0 = -2\) là}{
     \begin{tasks}(4)
         \task \( y = 3x - 2 \)
         \task \( y = -3x + 2 \)
@@ -1670,7 +1880,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 39 ---
-\questionLinesManual{0}{39}{Cho hàm số \( y = \dfrac{x - 1}{x + 1} \) có đồ thị \((C)\). Có bao nhiêu điểm thuộc đồ thị \((C)\) sao cho tiếp tuyến của đồ thị \((C)\) tại các điểm đó song song với đường thẳng \(y = 2x + 7\)?}{
+\questionLinesManual{0}{45}{Cho hàm số \( y = \dfrac{x - 1}{x + 1} \) có đồ thị \((C)\). Có bao nhiêu điểm thuộc đồ thị \((C)\) sao cho tiếp tuyến của đồ thị \((C)\) tại các điểm đó song song với đường thẳng \(y = 2x + 7\)?}{
     \begin{tasks}(4)
         \task $2$
         \task $1$
@@ -1680,7 +1890,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 40 ---
-\questionLinesManual{0}{40}{Cho hàm số \( y = \dfrac{2x - 1}{x + 1} \) (C). Tiếp tuyến của (C) vuông góc với đường thẳng \( x + 3y + 2 = 0 \) tại điểm có hoành độ là}{
+\questionLinesManual{0}{46}{Cho hàm số \( y = \dfrac{2x - 1}{x + 1} \) (C). Tiếp tuyến của (C) vuông góc với đường thẳng \( x + 3y + 2 = 0 \) tại điểm có hoành độ là}{
     \begin{tasks}(4)
         \task \( x = 0 \)
         \task \( x = -2 \)
@@ -1697,23 +1907,83 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     \end{tasks}
 }
 
-% --- CÂU 41 ---
-\questionTrueFalse{0}{41}{Cho hàm số \( y = \dfrac{2x+1}{x-1} \) có đồ thị \( (C) \).}{
-    \textbf{a)} & Đồ thị \( (C) \) có tiệm cận đứng \( x=1 \) và tiệm cận ngang \( y=1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Hàm số đã cho nghịch biến trên các khoảng xác định của nó.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Có đúng 3 điểm thuộc đồ thị \( (C) \) mà tọa độ của chúng là những số nguyên.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Gọi \( M \) là điểm nằm trên đồ thị \( (C) \) và \( H, K \) tương ứng là hình chiếu vuông góc của \( M \) trên các trục \( Ox \) và \( Oy \). Có 2 điểm \( M \) có hoành độ dương thỏa mãn tứ giác \( MHOK \) có diện tích bằng 2.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% --- CÂU 1: HÀM BẬC 3 ---
+\questionLinesManual{0}{47}{Cho hàm số \( y = x^3 - 3x^2 + 2 \). Tìm tọa độ tâm đối xứng của đồ thị hàm số.}{
+    \begin{tasks}(4)
+        \task \( I(1; 0) \)
+        \task \( I(1; 2) \)
+        \task \( I(1; -2) \)
+        \task \( I(0; 2) \)
+    \end{tasks}
 }
 
+% --- CÂU 2: HÀM BẬC 3 ---
+\questionLinesManual{0}{48}{Cho hàm số \( y = -2x^3 + 6x^2 - 4x + 1 \). Tâm đối xứng của đồ thị hàm số có tung độ bằng:}{
+    \begin{tasks}(4)
+        \task \( 1 \)
+        \task \( -1 \)
+        \task \( 3 \)
+        \task \( -3 \)
+    \end{tasks}
+}
+
+% --- CÂU 3: HÀM B1/B1 ---
+\questionLinesManual{0}{49}{Cho hàm số \( y = \dfrac{2x + 1}{x - 1} \). Tâm đối xứng của đồ thị hàm số là:}{
+    \begin{tasks}(4)
+        \task \( I(1; 2) \)
+        \task \( I(1; -2) \)
+        \task \( I(-1; 2) \)
+        \task \( I(2; 1) \)
+    \end{tasks}
+}
+
+% --- CÂU 4: HÀM B1/B1 ---
+\questionLinesManual{0}{50}{Cho hàm số \( y = \dfrac{-x + 3}{x + 2} \). Tổng hoành độ và tung độ của tâm đối xứng là:}{
+    \begin{tasks}(4)
+        \task \( 1 \)
+        \task \( -1 \)
+        \task \( 3 \)
+        \task \( -3 \)
+    \end{tasks}
+}
+
+% --- CÂU 5: HÀM B2/B1 ---
+\questionLinesManual{0}{51}{Cho hàm số \( y = \dfrac{x^2 + 2x + 2}{x + 1} \). Tâm đối xứng của đồ thị hàm số là:}{
+    \begin{tasks}(4)
+        \task \( I(-1; 0) \)
+        \task \( I(-1; 1) \)
+        \task \( I(-1; 2) \)
+        \task \( I(1; 1) \)
+    \end{tasks}
+}
+
+% --- CÂU 6: HÀM B2/B1 ---
+\questionLinesManual{0}{52}{Cho hàm số \( y = \dfrac{x^2 - 4x + 5}{x - 2} \). Tọa độ tâm đối xứng của đồ thị hàm số là:}{
+    \begin{tasks}(4)
+        \task \( I(2; 0) \)
+        \task \( I(2; 2) \)
+        \task \( I(2; -2) \)
+        \task \( I(0; 2) \)
+    \end{tasks}
+}
+
+% % --- CÂU 41 ---
+% \questionTrueFalse{0}{41}{Cho hàm số \( y = \dfrac{2x+1}{x-1} \) có đồ thị \( (C) \).}{
+%     \textbf{a)} & Đồ thị \( (C) \) có tiệm cận đứng \( x=1 \) và tiệm cận ngang \( y=1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{b)} & Hàm số đã cho nghịch biến trên các khoảng xác định của nó.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{c)} & Có đúng 3 điểm thuộc đồ thị \( (C) \) mà tọa độ của chúng là những số nguyên.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{d)} & Gọi \( M \) là điểm nằm trên đồ thị \( (C) \) và \( H, K \) tương ứng là hình chiếu vuông góc của \( M \) trên các trục \( Ox \) và \( Oy \). Có 2 điểm \( M \) có hoành độ dương thỏa mãn tứ giác \( MHOK \) có diện tích bằng 2.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
+
 % --- CÂU 42 ---
-\questionTrueFalse{0}{42}{Cho hàm số \( y = f(x) = \dfrac{ax - 1}{bx + c} \) với \( a, b, c \in \mathbb{R} \) có bảng biến thiên như hình vẽ dưới đây
+\questionTrueFalse{0}{53}{Cho hàm số \( y = f(x) = \dfrac{ax - 1}{bx + c} \) với \( a, b, c \in \mathbb{R} \) có bảng biến thiên như hình vẽ dưới đây
 
 \begin{center}
 \begin{tikzpicture}
@@ -1739,53 +2009,53 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 43 ---
-\questionTrueFalse{0}{43}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + 1}{cx + d} \) đạt cực đại tại \( x = 0 \) và có đồ thị như hình vẽ sau:
+% % --- CÂU 43 ---
+% \questionTrueFalse{0}{43}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + 1}{cx + d} \) đạt cực đại tại \( x = 0 \) và có đồ thị như hình vẽ sau:
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
-    % 1. Hệ trục tọa độ
-    \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
-    \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
-    \node[below right] at (0,0) {\small $O$};
+% \begin{center}
+% \begin{tikzpicture}[>=latex, scale=0.8]
+%     % 1. Hệ trục tọa độ
+%     \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
+%     \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
+%     \node[below right] at (0,0) {\small $O$};
     
-    % 2. Đánh dấu các mốc
-    \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
-        \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
-    }
-    \foreach \val in {-4,-3,-2,-1,1,2,3,4} {
-        \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
-    }
+%     % 2. Đánh dấu các mốc
+%     \foreach \x in {-4,-3,-2,-1,1,2,3,4} {
+%         \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
+%     }
+%     \foreach \val in {-4,-3,-2,-1,1,2,3,4} {
+%         \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
+%     }
     
-    % 3. Vẽ đồ thị hàm số y = (x^2 + x - 1)/(x - 1)
-    \draw[thick, samples=100, domain=-4.5:0.81] 
-        plot (\x, {(\x*\x - \x + 1)/(\x - 1)});
-    \draw[thick, samples=100, domain=1.29:4.3] 
-        plot (\x, {(\x*\x - \x +1)/(\x - 1)});
-    \draw[thick, samples=100, domain=-4.5:4.5] 
-        plot (\x, {(\x});
-    % 4. Đường tiệm cận
-    \draw[thick] (1,-4.5) -- (1,4.5) ;
+%     % 3. Vẽ đồ thị hàm số y = (x^2 + x - 1)/(x - 1)
+%     \draw[thick, samples=100, domain=-4.5:0.81] 
+%         plot (\x, {(\x*\x - \x + 1)/(\x - 1)});
+%     \draw[thick, samples=100, domain=1.29:4.3] 
+%         plot (\x, {(\x*\x - \x +1)/(\x - 1)});
+%     \draw[thick, samples=100, domain=-4.5:4.5] 
+%         plot (\x, {(\x});
+%     % 4. Đường tiệm cận
+%     \draw[thick] (1,-4.5) -- (1,4.5) ;
     
-\end{tikzpicture}
-\end{center}
+% \end{tikzpicture}
+% \end{center}
 
-}{
-    \textbf{a)} & Giá trị của biểu thức \( a + b + c + d = 0 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% }{
+%     \textbf{a)} & Giá trị của biểu thức \( a + b + c + d = 0 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Hàm số đồng biến trên \((-1; 0)\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Hàm số đồng biến trên \((-1; 0)\).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Gọi \( A, B \) là các điểm cực trị của đồ thị hàm số; \( M \) là điểm di động trên trục \( Ox \) sao cho góc \( AMB \) không tù. Giá trị nhỏ nhất của hoành độ điểm \( M \) là 3.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Gọi \( A, B \) là các điểm cực trị của đồ thị hàm số; \( M \) là điểm di động trên trục \( Ox \) sao cho góc \( AMB \) không tù. Giá trị nhỏ nhất của hoành độ điểm \( M \) là 3.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Đường thẳng đi qua hai điểm cực trị của hàm số có phương trình: \( y = x - 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Đường thẳng đi qua hai điểm cực trị của hàm số có phương trình: \( y = x - 1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 % --- CÂU 44 ---
-\questionTrueFalse{0}{44}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + c}{mx + n} \) (với \( a, m \neq 0 \)) có đồ thị là đường cong như Hình.
+\questionTrueFalse{0}{54}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + c}{mx + n} \) (với \( a, m \neq 0 \)) có đồ thị là đường cong như Hình.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1830,30 +2100,30 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 45 ---
-\questionTrueFalse{0}{45}{Cho hàm số \( f(x) = 
-\begin{cases} 
-\dfrac{3x-2}{2x-1} + 1 & \text{khi } x > 1 \\ 
-12 & \text{khi } x = 1 \\ 
-\dfrac{x^2 - 3x - 1}{x - 1} & \text{khi } x < 1 
-\end{cases} \)
+% % --- CÂU 45 ---
+% \questionTrueFalse{0}{45}{Cho hàm số \( f(x) = 
+% \begin{cases} 
+% \dfrac{3x-2}{2x-1} + 1 & \text{khi } x > 1 \\ 
+% 12 & \text{khi } x = 1 \\ 
+% \dfrac{x^2 - 3x - 1}{x - 1} & \text{khi } x < 1 
+% \end{cases} \)
 
-}{
-    \textbf{a)} & Ba đường tiệm cận của đồ thị hàm số cắt nhau tạo thành tam giác có diện tích bằng 50.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% }{
+%     \textbf{a)} & Ba đường tiệm cận của đồ thị hàm số cắt nhau tạo thành tam giác có diện tích bằng 50.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Tiệm cận ngang của đồ thị hàm số là đường thẳng \( y = 12 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Tiệm cận ngang của đồ thị hàm số là đường thẳng \( y = 12 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Hàm số liên tục tại điểm \( x = 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Hàm số liên tục tại điểm \( x = 1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Đồ thị hàm số có tiệm cận đứng là đường thẳng \( x = 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Đồ thị hàm số có tiệm cận đứng là đường thẳng \( x = 1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 % --- CÂU 46 ---
-\questionTrueFalse{0}{46}{Cho hàm số \( f(x) = \dfrac{ax + b}{cx + d} \) với \( a, b, c, d \in \mathbb{R} \) và \( c \neq 0 \) có đồ thị hàm số \( y = f'(x) \) nhận đường thẳng \( x = -1 \) làm tiệm cận đứng như hình vẽ dưới. Biết rằng giá trị lớn nhất của hàm số \( y = f(x) \) trên đoạn \([-3; -2]\) bằng 8.
+\questionTrueFalse{0}{55}{Cho hàm số \( f(x) = \dfrac{ax + b}{cx + d} \) với \( a, b, c, d \in \mathbb{R} \) và \( c \neq 0 \) có đồ thị hàm số \( y = f'(x) \) nhận đường thẳng \( x = -1 \) làm tiệm cận đứng như hình vẽ dưới. Biết rằng giá trị lớn nhất của hàm số \( y = f(x) \) trên đoạn \([-3; -2]\) bằng 8.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1896,53 +2166,10 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 47 ---
-\questionTrueFalse{0}{47}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + c}{x + d} \) có đồ thị là đường cong trong hình vẽ dưới đây, biết đường tiệm cận xiên của đồ thị hàm số đi qua hai điểm \((0;1)\) và \((1;0)\).
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.3]
-    % 1. Hệ trục tọa độ
-    \draw[->] (-10,0) -- (10,0) node[below] {\small $x$};
-    \draw[->] (0,-7) -- (0,15) node[right] {\small $y$};
-    \node[above left] at (0,0) {\tiny $O$};
-    
-    % 2. Đánh dấu các mốc
-    \foreach \x in {-8,-4,-2,4,8} {
-        \draw (\x,0.1) -- (\x,-0.1) node[above] {\tiny $\x$};
-    }
-    \foreach \val in {-4,-1,4,7,12} {
-        \draw (0.1,\val) -- (-0.1,\val) node[left] {\tiny $\val$};
-    }
-    
-    % 3. Vẽ đồ thị hàm số
-    \draw[thick, samples=100, domain=-10:-2.35] 
-        plot (\x, {(-\x*\x - \x - 2)/(\x + 2)});
-    \draw[thick, samples=100, domain=-1.6:7] 
-        plot (\x, {(-\x*\x - \x - 2)/(\x + 2)});
-    \draw[thick, samples=100, domain=-10:7] 
-        plot (\x, {-\x + 1});
-    % 4. Đường tiệm cận
-    \draw[thick] (-2,-7) -- (-2,15);
-    \draw[dashed] (-4,0) -- (-4,7) -- (0,7);
-\end{tikzpicture}
-\end{center}
-
-}{
-    \textbf{a)} & Hàm số đồng biến trên khoảng \((-4; 0)\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Ta có \( a + b + c + d = -2 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Khoảng cách từ \( M(1; -8) \) đến đường thẳng đi qua các điểm cực trị của đồ thị hàm số là \( \sqrt{5} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Tập xác định của hàm số là \( \mathbb{R} \setminus \{2\} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 % --- CÂU 48 ---
-\questionTrueFalse{0}{48}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + c}{x + d} \) có đồ thị là đường cong như hình vẽ dưới đây, biết đường tiệm xiên của đồ thị hàm số đi qua hai điểm \( (0;1) \) và \( (1;0) \).
+\questionTrueFalse{0}{56}{Cho hàm số \( y = f(x) = \dfrac{ax^2 + bx + c}{x + d} \) có đồ thị là đường cong như hình vẽ dưới đây, biết đường tiệm xiên của đồ thị hàm số đi qua hai điểm \( (0;1) \) và \( (1;0) \).
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.3]
@@ -1987,7 +2214,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 49 ---
-\questionTrueFalse{0}{49}{Cho hàm số \( y = \dfrac{x+1}{x-1} \) có đồ thị là đường cong \( (C) \). Giả sử \( A, B \) là hai điểm thuộc hai nhánh và \( AB \) đi qua tâm đối xứng của \( (C) \).}{
+\questionTrueFalse{0}{57}{Cho hàm số \( y = \dfrac{x+1}{x-1} \) có đồ thị là đường cong \( (C) \). Giả sử \( A, B \) là hai điểm thuộc hai nhánh và \( AB \) đi qua tâm đối xứng của \( (C) \).}{
     \textbf{a)} & Tâm đối xứng của \( (C) \) là điểm \( I(1; -1) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2002,7 +2229,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 50 ---
-\questionTrueFalse{0}{50}{Cho hàm số \( y = f(x) = ax + b + \dfrac{c}{x+d} \) có đồ thị như hình vẽ sau:
+\questionTrueFalse{0}{58}{Cho hàm số \( y = f(x) = ax + b + \dfrac{c}{x+d} \) có đồ thị như hình vẽ sau:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.5]
@@ -2041,98 +2268,98 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 51 ---
-\questionTrueFalse{0}{51}{Cho hàm số \( y = \dfrac{x^2 + bx + c}{x + n} \) có đồ thị và hai đường tiệm cận \( d_1, d_2 \) như hình vẽ dưới đây.
+% % --- CÂU 51 ---Hỏi lại
+% \questionTrueFalse{0}{51}{Cho hàm số \( y = \dfrac{x^2 + bx + c}{x + n} \) có đồ thị và hai đường tiệm cận \( d_1, d_2 \) như hình vẽ dưới đây.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
-    % 1. Hệ trục tọa độ
-    \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
-    \draw[->] (0,-5.5) -- (0,3.5) node[right] {\small $y$};
-    \node[below right] at (0,0) {\small $O$};
+% \begin{center}
+% \begin{tikzpicture}[>=latex, scale=0.8]
+%     % 1. Hệ trục tọa độ
+%     \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
+%     \draw[->] (0,-5.5) -- (0,3.5) node[right] {\small $y$};
+%     \node[below right] at (0,0) {\small $O$};
     
-    % 2. Đánh dấu các mốc
-    \foreach \x in {-4,-2,-1,1,3} {
-        \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
-    }
-    \foreach \val in {-5,-3,-1,1,2} {
-        \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
-    }
+%     % 2. Đánh dấu các mốc
+%     \foreach \x in {-4,-2,-1,1,3} {
+%         \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
+%     }
+%     \foreach \val in {-5,-3,-1,1,2} {
+%         \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
+%     }
     
-    % 3. Vẽ đồ thị hàm số y = (x^2 + 2x + 2)/(x + 1)
-    \draw[thick, samples=100, domain=-5:-1.23] 
-        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-1});
-    \draw[thick, samples=100, domain=-0.77:3] 
-        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-1});
-    \draw[thick, samples=100, domain=-5:3] 
-        plot (\x, {\x});
-    \draw[dashed] (-2,0) -- (-2,-3) --(0,-3);
-    % 4. Đường tiệm cận
-    \draw[thick] (-1,-5.5) -- (-1,3.5);
-\end{tikzpicture}
-\end{center}
+%     % 3. Vẽ đồ thị hàm số y = (x^2 + 2x + 2)/(x + 1)
+%     \draw[thick, samples=100, domain=-5:-1.23] 
+%         plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-1});
+%     \draw[thick, samples=100, domain=-0.77:3] 
+%         plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)-1});
+%     \draw[thick, samples=100, domain=-5:3] 
+%         plot (\x, {\x});
+%     \draw[dashed] (-2,0) -- (-2,-3) --(0,-3);
+%     % 4. Đường tiệm cận
+%     \draw[thick] (-1,-5.5) -- (-1,3.5);
+% \end{tikzpicture}
+% \end{center}
 
-}{
-    \textbf{a)} & Đồ thị hàm số có tiệm cận đứng là \( x = -1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% }{
+%     \textbf{a)} & Đồ thị hàm số có tiệm cận đứng là \( x = -1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Hàm số đồng biến trên khoảng \( (0; +\infty) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Hàm số đồng biến trên khoảng \( (0; +\infty) \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Điểm \( M(50; 98) \) và hai điểm cực trị của đồ thị hàm số thẳng hàng.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Điểm \( M(50; 98) \) và hai điểm cực trị của đồ thị hàm số thẳng hàng.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Đồ thị hàm số có một trục đối xứng là đường thẳng \( y = (p + \sqrt{q})(x + 1) - r \) (trong đó \( p, q, r \) là các số nguyên). Khi đó \( p + 10q + 15r = 90 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Đồ thị hàm số có một trục đối xứng là đường thẳng \( y = (p + \sqrt{q})(x + 1) - r \) (trong đó \( p, q, r \) là các số nguyên). Khi đó \( p + 10q + 15r = 90 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 52 ---
-\questionTrueFalse{0}{52}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{mx + n} \) có đồ thị như hình vẽ sau
+% % --- CÂU 52 ---Hỏi lại
+% \questionTrueFalse{0}{52}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{mx + n} \) có đồ thị như hình vẽ sau
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
-    % 1. Hệ trục tọa độ
-    \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
-    \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
-    \node[below right] at (0,0) {\small $O$};
+% \begin{center}
+% \begin{tikzpicture}[>=latex, scale=0.8]
+%     % 1. Hệ trục tọa độ
+%     \draw[->] (-4.5,0) -- (4.5,0) node[below] {\small $x$};
+%     \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
+%     \node[below right] at (0,0) {\small $O$};
     
-    % 2. Đánh dấu các mốc
-    \foreach \x in {-4,-2,-1,1,3} {
-        \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
-    }
-    \foreach \val in {-4,-2,-1,3,2} {
-        \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
-    }
+%     % 2. Đánh dấu các mốc
+%     \foreach \x in {-4,-2,-1,1,3} {
+%         \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
+%     }
+%     \foreach \val in {-4,-2,-1,3,2} {
+%         \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny $\val$};
+%     }
     
-    % 3. Vẽ đồ thị hàm số y = (x^2 + 2x + 2)/(x + 1)
-    \draw[thick, samples=100, domain=-5:-1.23] 
-        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)});
-    \draw[thick, samples=100, domain=-0.77:3] 
-        plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)});
-    \draw[thick, samples=100, domain=-5:3] 
-        plot (\x, {\x+1});
-    \draw[dashed] (-2,0) -- (-2,-2) --(0,-2);
-    % 4. Đường tiệm cận
-    \draw[thick] (-1,-4.5) -- (-1,4.5);
-\end{tikzpicture}
-\end{center}
+%     % 3. Vẽ đồ thị hàm số y = (x^2 + 2x + 2)/(x + 1)
+%     \draw[thick, samples=100, domain=-5:-1.23] 
+%         plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)});
+%     \draw[thick, samples=100, domain=-0.77:3] 
+%         plot (\x, {(\x*\x + 2*\x + 2)/(\x + 1)});
+%     \draw[thick, samples=100, domain=-5:3] 
+%         plot (\x, {\x+1});
+%     \draw[dashed] (-2,0) -- (-2,-2) --(0,-2);
+%     % 4. Đường tiệm cận
+%     \draw[thick] (-1,-4.5) -- (-1,4.5);
+% \end{tikzpicture}
+% \end{center}
 
-}{
-    \textbf{a)} & Hàm số đã cho nghịch biến trên khoảng \((-2; 0)\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% }{
+%     \textbf{a)} & Hàm số đã cho nghịch biến trên khoảng \((-2; 0)\).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Đồ thị của hàm số đã cho có tiệm cận xiên \( y = x + 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Đồ thị của hàm số đã cho có tiệm cận xiên \( y = x + 1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Gọi \( A, B \) là hai điểm cực trị của đồ thị hàm số đã cho, diện tích của tam giác \( OAB \) bằng \( 8 \) (với \( O \) là gốc tọa độ).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Gọi \( A, B \) là hai điểm cực trị của đồ thị hàm số đã cho, diện tích của tam giác \( OAB \) bằng \( 8 \) (với \( O \) là gốc tọa độ).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Một trục đối xứng của đồ thị đã cho là \( d: y = (x + 1)\tan\dfrac{3\pi}{8} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Một trục đối xứng của đồ thị đã cho là \( d: y = (x + 1)\tan\dfrac{3\pi}{8} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 % --- CÂU 53 ---
-\questionTrueFalse{0}{53}{Cho hàm số \( y = \dfrac{x^2 + 3x - 8}{x - 2} \) và đường tròn \( (C): (x + 3)^2 + (y - 1)^2 = 4 \). Gọi I là tâm đường tròn (C).}{
+\questionTrueFalse{0}{59}{Cho hàm số \( y = \dfrac{x^2 + 3x - 8}{x - 2} \) và đường tròn \( (C): (x + 3)^2 + (y - 1)^2 = 4 \). Gọi I là tâm đường tròn (C).}{
     \textbf{a)} & Hàm số (1) đồng biến trên khoảng \((-\infty; 0)\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2147,7 +2374,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 54 ---
-\questionTrueFalse{0}{54}{Cho hàm số \( y = \dfrac{mx^2 + nx + 1}{px + 2} \) có đồ thị như hình vẽ bên dưới.
+\questionTrueFalse{0}{60}{Cho hàm số \( y = \dfrac{mx^2 + nx + 1}{px + 2} \) có đồ thị như hình vẽ bên dưới.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.6]
@@ -2169,6 +2396,9 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     \node [below] at (-2,0) {\small $-2$};
     \node [below] at (-1,0) {\small $-1$};
     \node [left] at (0,1) {\small $1$};
+    \fill (-2,0) circle (2.5pt);
+    \fill (-1,0) circle (2.5pt);
+    \fill (0,1) circle (2.5pt);
 \end{tikzpicture}
 \end{center}
 
@@ -2186,23 +2416,23 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 55 ---
-\questionTrueFalse{0}{55}{Cho hàm số \( y = \dfrac{2x+1}{x-1} \) (C). Các mệnh đề sau đây đúng hay sai}{
-    \textbf{a)} & Hàm số \( y = \dfrac{2x+1}{x-1} \) nghịch biến trên \( \mathbb{R} \setminus \{1\} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% % --- CÂU 55 ---
+% \questionTrueFalse{0}{55}{Cho hàm số \( y = \dfrac{2x+1}{x-1} \) (C). Các mệnh đề sau đây đúng hay sai}{
+%     \textbf{a)} & Hàm số \( y = \dfrac{2x+1}{x-1} \) nghịch biến trên \( \mathbb{R} \setminus \{1\} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Hàm số đã cho có hai điểm cực trị.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Hàm số đã cho có hai điểm cực trị.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Tiếp tuyến với đồ thị (C) tại điểm có hoành độ bằng 2 tạo với hai trục tọa độ một tam giác có diện tích bằng \( \dfrac{a}{b} \) (với \( a, b \in \mathbb{N} \) và \((a, b) = 1\)). Khi đó \( a - 20b = 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Tiếp tuyến với đồ thị (C) tại điểm có hoành độ bằng 2 tạo với hai trục tọa độ một tam giác có diện tích bằng \( \dfrac{a}{b} \) (với \( a, b \in \mathbb{N} \) và \((a, b) = 1\)). Khi đó \( a - 20b = 1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Lấy hai điểm \( A, B \) thuộc một nhánh của đồ thị (C) sao cho \( x_A > 1; x_B > 1 \) và hai điểm \( C, D \) thuộc đường thẳng \( \Delta: y = -x + 1 \). Khi \( ABCD \) là hình vuông thì diện tích hình vuông đó (làm tròn đến hàng phần chục) là \( 23,7 \) đơn vị diện tích.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Lấy hai điểm \( A, B \) thuộc một nhánh của đồ thị (C) sao cho \( x_A > 1; x_B > 1 \) và hai điểm \( C, D \) thuộc đường thẳng \( \Delta: y = -x + 1 \). Khi \( ABCD \) là hình vuông thì diện tích hình vuông đó (làm tròn đến hàng phần chục) là \( 23,7 \) đơn vị diện tích.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 % --- CÂU 56 ---
-\questionTrueFalse{0}{56}{Cho hàm số \( y = f(x) = \dfrac{ax + b}{cx + 1} \) với \( a, b, c \in \mathbb{R} \) có đồ thị như hình vẽ dưới:
+\questionTrueFalse{0}{61}{Cho hàm số \( y = f(x) = \dfrac{ax + b}{cx + 1} \) với \( a, b, c \in \mathbb{R} \) có đồ thị như hình vẽ dưới:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -2244,7 +2474,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 57 ---
-\questionTrueFalse{0}{57}{Cho hàm số \( y = \dfrac{3x - 2}{x + 2} \) có đồ thị \( (C) \).}{
+\questionTrueFalse{0}{62}{Cho hàm số \( y = \dfrac{3x - 2}{x + 2} \) có đồ thị \( (C) \).}{
     \textbf{a)} & Tiếp tuyến của đồ thị \( (C) \) tại giao điểm của đồ thị \( (C) \) với trục \( Oy \) là đường thẳng \( y = 2x + 1 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2259,7 +2489,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 58 ---
-\questionTrueFalse{0}{58}{Cho hàm số \( y = f(x) = \dfrac{x^2 + 2x - 1}{x - 1} \).}{
+\questionTrueFalse{0}{63}{Cho hàm số \( y = f(x) = \dfrac{x^2 + 2x - 1}{x - 1} \).}{
     \textbf{a)} & Đường thẳng \( y = x + 3 \) là tiệm cận xiên của đồ thị hàm số đã cho.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2274,7 +2504,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 59 ---
-\questionTrueFalse{0}{59}{Cho hàm số \( y = \dfrac{x^2 + x - 1}{x - 1} \) có đồ thị là \( (C) \). Xét tính đúng sai của các mệnh đề sau:}{
+\questionTrueFalse{0}{64}{Cho hàm số \( y = \dfrac{x^2 + x - 1}{x - 1} \) có đồ thị là \( (C) \). Xét tính đúng sai của các mệnh đề sau:}{
     \textbf{a)} & Tập xác định \( D = \mathbb{R} \setminus \{1\} \) và đạo hàm \( y' = \dfrac{x^2 - 2x - 2}{(x - 1)^2} \) với \( x \neq 1 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2289,22 +2519,22 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 60 ---
-\questionTrueFalse{0}{60}{Cho hàm số \( y = \dfrac{x^2 - 3x + 6}{x - 1} \).}{
-    \textbf{a)} & Điểm cực tiểu của đồ thị hàm số là \( (a; b) \) với \( a^2 + b = 12 \).
+\questionTrueFalse{0}{65}{Cho hàm số \( y = \dfrac{x^2 - 3x + 6}{x - 1} \).}{
+    \textbf{a)} & Tập xác định \( D = \mathbb{R} \setminus \{1\} \) .
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Tiệm cận xiên của đồ thị hàm số là \( y = x - 2 \).
+    \textbf{b)} & Điểm cực tiểu của đồ thị hàm số là \( (a; b) \) với \( a^2 + b = 12 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Gọi \( I \) là giao điểm hai đường tiệm cận của đồ thị hàm số. Tiếp tuyến của đồ thị hàm số tại điểm có hoành độ \( x = 2 \) cắt hai đường tiệm cận tại \( A, B \). Diện tích tam giác \( IAB \) bằng 12.
+    \textbf{c)} & Tiệm cận xiên của đồ thị hàm số là \( y = x - 2 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Có tất cả 9 giá trị nguyên của tham số \( m \) để phương trình \( \dfrac{x^2 - 3x + 6}{x - 1} = m \) có hai nghiệm phân biệt \( x_1, x_2 \) thỏa mãn \( x_1 < 2 < x_2 < 15 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+    \textbf{d)} & Gọi \( I \) là giao điểm hai đường tiệm cận của đồ thị hàm số. Tiếp tuyến của đồ thị hàm số tại điểm có hoành độ \( x = 2 \) cắt hai đường tiệm cận tại \( A, B \). Diện tích tam giác \( IAB \) bằng 12.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ 
 }
 
 % --- CÂU 61 ---
-\questionTrueFalse{0}{61}{Cho hàm số \( y = \dfrac{-x^2 - 3x + 4}{x - 3} \) có đồ thị là \( (C) \).}{
+\questionTrueFalse{0}{66}{Cho hàm số \( y = \dfrac{-x^2 - 3x + 4}{x - 3} \) có đồ thị là \( (C) \).}{
     \textbf{a)} & Đồ thị \( (C) \) có hai điểm cực trị nằm hai phía đối với \( Oy \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2319,7 +2549,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 62 ---
-\questionTrueFalse{0}{62}{Cho hàm số \( y = f(x) = \dfrac{x^2 + x - 1}{x + 2} \).}{
+\questionTrueFalse{0}{67}{Cho hàm số \( y = f(x) = \dfrac{x^2 + x - 1}{x + 2} \).}{
     \textbf{a)} & Tập xác định của hàm số \( y = f(x) \) là \( \mathbb{R} \setminus \{-2\} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2334,7 +2564,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 63 ---
-\questionTrueFalse{0}{63}{Cho hàm số \( f(x) = \dfrac{x^2 - x - 1}{x + 1} \) và điểm \( A(-1; -3) \).}{
+\questionTrueFalse{0}{68}{Cho hàm số \( f(x) = \dfrac{x^2 - x - 1}{x + 1} \) và điểm \( A(-1; -3) \).}{
     \textbf{a)} & Hàm số \( f(x) \) có đúng 2 điểm cực trị.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2348,23 +2578,10 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 64 ---
-\questionTrueFalse{0}{64}{Cho hàm số \( y = \dfrac{x^2 - 3x + 6}{x - 1} \).}{
-    \textbf{a)} & Điểm cực tiểu của đồ thị hàm số là \( (a; b) \) với \( a^2 + b = 12 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Tiệm cận xiên của đồ thị hàm số là \( y = x - 2 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Gọi \( I \) là giao điểm hai đường tiệm cận của đồ thị hàm số. Tiếp tuyến của đồ thị hàm số tại điểm có hoành độ \( x = 2 \) cắt hai đường tiệm cận tại \( A, B \). Diện tích tam giác \( IAB \) bằng 12.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Có tất cả 9 giá trị nguyên của tham số \( m \) để phương trình \( \dfrac{x^2 - 3x + 6}{x - 1} = m \) có hai nghiệm phân biệt \( x_1, x_2 \) thỏa mãn \( x_1 < 2 < x_2 < 15 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+
 
 % --- CÂU 65 ---
-\questionTrueFalse{0}{65}{Cho hàm số \( y = \dfrac{2x + 1}{x - 1} \) có đồ thị \( (C) \).}{
+\questionTrueFalse{0}{69}{Cho hàm số \( y = \dfrac{2x + 1}{x - 1} \) có đồ thị \( (C) \).}{
     \textbf{a)} & Hàm số đạt cực đại tại \( x = -3 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2379,37 +2596,23 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 66 ---
-\questionTrueFalse{0}{66}{Cho hàm số \( y = \dfrac{x^2 - 2x - 3}{x - 1} \).}{
+\questionTrueFalse{0}{70}{Cho hàm số \( y = \dfrac{x^2 - 2x - 3}{x - 1} \).}{
     \textbf{a)} & Đồ thị hàm số nhận đường thẳng \( y = x + 1 \) làm tiệm cận xiên.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
     \textbf{b)} & Hàm số có 2 điểm cực trị.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Gọi \( A, B, C \) là giao điểm của đồ thị hàm số với các trục \( Ox, Oy \). Diện tích tam giác \( ABC \) bằng 6.
+    \textbf{c)} & Đồ thị có tâm đối xứng là (1,2).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Có đúng 2 giá trị nguyên của tham số \( m \) để hàm số \( f(x) = \dfrac{x^2 - 2x - 3}{x - 1} - m^2 x \) đồng biến trên từng khoảng xác định.
+    \textbf{d)} & Gọi \( A, B, C \) là giao điểm của đồ thị hàm số với các trục \( Ox, Oy \). Diện tích tam giác \( ABC \) bằng 6.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 67 ---
-\questionTrueFalse{0}{67}{Cho hàm số \( y = f(x) = \dfrac{x^2 + x - m}{x - 2} \), có đồ thị \( (C_m) \) (với \( m \) là tham số thực). Khi đó:}{
-    \textbf{a)} & Đồ thị \( (C_m) \) luôn có hai điểm cực trị.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Khi \( m = 5 \) thì hàm số \( f(x) \) đồng biến trên khoảng \( (3; +\infty) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Hàm số \( f(x) \) nghịch biến trên \( \mathbb{R} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Hàm số \( f(x) \) có hai điểm cực trị khi \( m > 6 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 % --- CÂU 68 ---
-\questionTrueFalse{0}{68}{Cho hàm số \( y = ax + b + \dfrac{c}{x + d} \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị như hình vẽ sau:
+\questionTrueFalse{0}{71}{Cho hàm số \( y = ax + b + \dfrac{c}{x + d} \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị như hình vẽ sau:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.5]
@@ -2449,7 +2652,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 69 ---
-\questionTrueFalse{0}{69}{Cho hàm số \( f(x) = -x + 4 - \dfrac{9}{x+2} \).}{
+\questionTrueFalse{0}{72}{Cho hàm số \( f(x) = -x + 4 - \dfrac{9}{x+2} \).}{
     \textbf{a)} & \( f(-7) = \dfrac{64}{5} \); \( f(-4) = \dfrac{25}{2} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2464,7 +2667,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 70 ---
-\questionTrueFalse{0}{70}{Cho hàm số \( f(x) = \dfrac{x^2 + 2x - 1}{x - 1} \).}{
+\questionTrueFalse{0}{73}{Cho hàm số \( f(x) = \dfrac{x^2 + 2x - 1}{x - 1} \).}{
     \textbf{a)} & Hàm số đồng biến trên khoảng \( (-\infty; 0) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2479,7 +2682,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 71 ---
-\questionTrueFalse{0}{71}{Cho hàm số \( f(x) = \dfrac{x^2 - 3x + 3}{x - 1} \).}{
+\questionTrueFalse{0}{74}{Cho hàm số \( f(x) = \dfrac{x^2 - 3x + 3}{x - 1} \).}{
     \textbf{a)} & Tập xác định của hàm số là \( D = (-\infty; 1) \cup (1; +\infty) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2494,19 +2697,28 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 72 ---
-\questionTrueFalse{0}{72}{Cho hàm số \( f(x) = \dfrac{x - 2}{x + 1} \).
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\questionTrueFalse{0}{75}{Cho hàm số \( f(x) = \dfrac{x - 2}{x + 1} \).
+
+}{
+    \textbf{a)} & Đạo hàm của hàm số đã cho là hàm số \( f'(x) = \dfrac{3}{(x + 1)^2} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giá trị lớn nhất của hàm số trên nửa khoảng \((-1; 3]\) bằng 1.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Hàm số có đồ thị là đường cong trong hình bên dưới.
+    \begin{center}
+\begin{tikzpicture}[>=latex, scale=0.4]
     % 1. Hệ trục tọa độ
-    \draw[->] (-5.5,0) -- (3.5,0) node[below] {\small $x$};
-    \draw[->] (0,-3.5) -- (0,5.5) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-5.5,0) -- (3.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-3.5) -- (0,5.5) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
      % 2. Đánh dấu các mốc
             \foreach \x in {-4,-2,-1,2} {
-                \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
+                \draw (\x,0.05) -- (\x,-0.05) node[below] {\tiny $\x$};
             }
             \foreach \val in {-2,1,2,4} {
-                \draw (0.05,\val) -- (-0.05,\val) node[left] {\small$\val$};
+                \draw (0.05,\val) -- (-0.05,\val) node[left] {\tiny$\val$};
             }
     % 3. Vẽ đồ thị hàm số y = (x+1)/(x-1)
     \draw[thick, samples=100, domain=-4.5:-1.69] 
@@ -2523,14 +2735,6 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
    
 \end{tikzpicture}
 \end{center}
-}{
-    \textbf{a)} & Đạo hàm của hàm số đã cho là hàm số \( f'(x) = \dfrac{3}{(x + 1)^2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Giá trị lớn nhất của hàm số trên nửa khoảng \((-1; 3]\) bằng 1.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Hàm số có đồ thị là đường cong trong hình bên dưới.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
     \textbf{d)} & \( f(0) = 2, f(-2) = 0 \).
@@ -2538,7 +2742,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 73 ---
-\questionTrueFalse{0}{73}{Cho hàm số \( y = \dfrac{x^2 + 2x - 1}{x - 1} \) có đồ thị (C).}{
+\questionTrueFalse{0}{76}{Cho hàm số \( y = \dfrac{x^2 + 2x - 1}{x - 1} \) có đồ thị (C).}{
     \textbf{a)} & Hàm số có 2 điểm cực trị.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2553,7 +2757,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 74 ---
-\questionTrueFalse{0}{74}{Cho hàm số \( y = x - 1 + \dfrac{9}{x + 2} \).}{
+\questionTrueFalse{0}{77}{Cho hàm số \( y = x - 1 + \dfrac{9}{x + 2} \).}{
     \textbf{a)} & Tập xác định của hàm số là \( \mathbb{R} \setminus \{-2\} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2568,7 +2772,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 75 ---
-\questionTrueFalse{0}{75}{Cho hàm số \( f(x) = \dfrac{ax^2 + x + b}{x + c} \) (\( a > 0 \)), có đồ thị \( C \) như hình vẽ bên dưới. Biết đường tiệm cận xiên của đồ thị \( C \) tạo với hai trục toạ độ một tam giác cân.
+\questionTrueFalse{0}{78}{Cho hàm số \( f(x) = \dfrac{ax^2 + x + b}{x + c} \) (\( a > 0 \)), có đồ thị \( C \) như hình vẽ bên dưới. Biết đường tiệm cận xiên của đồ thị \( C \) tạo với hai trục toạ độ một tam giác cân.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.4]
@@ -2606,7 +2810,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 76 ---
-\questionTrueFalse{0}{76}{Cho hàm số \( y = f(x) = \dfrac{a_1 x^2 + b_1 x + c_1}{a_2 x + b_2} \) có đồ thị như hình dưới đây:
+\questionTrueFalse{0}{79}{Cho hàm số \( y = f(x) = \dfrac{a_1 x^2 + b_1 x + c_1}{a_2 x + b_2} \) có đồ thị như hình dưới đây:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.6]
@@ -2644,68 +2848,68 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 77 ---
-\questionTrueFalse{0}{77}{Cho hàm số \( y = \dfrac{-x^2 + x + 1}{x + 1} \) có đồ thị \( (C) \).}{
-    \textbf{a)} & Gọi \( (C') \) là đường tròn tâm \( I(-1; 3) \), bán kính bằng 1. Khoảng cách nhỏ nhất giữa hai điểm \( M, N \) với \( M \in (C) \) và \( N \in (C') \) bằng \( 1 + 2\sqrt{2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% % --- CÂU 77 ---
+% \questionTrueFalse{0}{77}{Cho hàm số \( y = \dfrac{-x^2 + x + 1}{x + 1} \) có đồ thị \( (C) \).}{
+%     \textbf{a)} & Gọi \( (C') \) là đường tròn tâm \( I(-1; 3) \), bán kính bằng 1. Khoảng cách nhỏ nhất giữa hai điểm \( M, N \) với \( M \in (C) \) và \( N \in (C') \) bằng \( 1 + 2\sqrt{2} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Đường thẳng nối hai điểm cực trị của đồ thị \( (C) \) cắt hai trục tọa độ tại hai điểm \( A \) và \( B \). Khi đó diện tích tam giác \( OAB \) là \( S = \dfrac{1}{2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Đường thẳng nối hai điểm cực trị của đồ thị \( (C) \) cắt hai trục tọa độ tại hai điểm \( A \) và \( B \). Khi đó diện tích tam giác \( OAB \) là \( S = \dfrac{1}{2} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Hàm số đồng biến trên các khoảng \((-2; -1)\) và \((-1; 0)\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Hàm số đồng biến trên các khoảng \((-2; -1)\) và \((-1; 0)\).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Tiệm cận đứng của đồ thị \( (C) \) là đường thẳng có phương trình \( x = -1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Tiệm cận đứng của đồ thị \( (C) \) là đường thẳng có phương trình \( x = -1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 78 ---
-\questionTrueFalse{0}{78}{Cho hàm số \( y = f(x) = \dfrac{x^2 + 2x - 2}{x - 1} \) có đồ thị \( (C) \).}{
-    \textbf{a)} & Hàm số đã cho nghịch biến trên khoảng \( (0; 2) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% % --- CÂU 78 ---
+% \questionTrueFalse{0}{78}{Cho hàm số \( y = f(x) = \dfrac{x^2 + 2x - 2}{x - 1} \) có đồ thị \( (C) \).}{
+%     \textbf{a)} & Hàm số đã cho nghịch biến trên khoảng \( (0; 2) \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Đường tiệm cận xiên của \( (C) \) có phương trình là \( y = x + 3 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Đường tiệm cận xiên của \( (C) \) có phương trình là \( y = x + 3 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Giá trị nhỏ nhất của hàm số \( y = f(x) \) trên đoạn \( [2; 4] \) bằng \( \dfrac{13}{2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Giá trị nhỏ nhất của hàm số \( y = f(x) \) trên đoạn \( [2; 4] \) bằng \( \dfrac{13}{2} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Có 3 số nguyên dương \( m \) để hàm số \( y = \dfrac{x^2 + 2x - m}{x - 1} \) có hai điểm cực trị.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Có 3 số nguyên dương \( m \) để hàm số \( y = \dfrac{x^2 + 2x - m}{x - 1} \) có hai điểm cực trị.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 79 ---
-\questionTrueFalse{0}{79}{Cho hàm số \( y = f(x) = \dfrac{-x^2 + x - 2}{x + 1} \) có đồ thị \( (C) \). Khi đó}{
-    \textbf{a)} & \( y' = f'(x) = \dfrac{-x^2 - 2x + 3}{(x + 1)^2}, \, \forall x \neq -1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% % --- CÂU 79 ---
+% \questionTrueFalse{0}{79}{Cho hàm số \( y = f(x) = \dfrac{-x^2 + x - 2}{x + 1} \) có đồ thị \( (C) \). Khi đó}{
+%     \textbf{a)} & \( y' = f'(x) = \dfrac{-x^2 - 2x + 3}{(x + 1)^2}, \, \forall x \neq -1 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Hàm số có hai điểm cực trị trái dấu.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Hàm số có hai điểm cực trị trái dấu.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Khoảng cách giữa hai điểm cực trị của đồ thị \( (C) \) bằng 4.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Khoảng cách giữa hai điểm cực trị của đồ thị \( (C) \) bằng 4.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Trên đồ thị \( (C) \) có đúng 8 điểm có tọa độ nguyên.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Trên đồ thị \( (C) \) có đúng 8 điểm có tọa độ nguyên.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 80 ---
-\questionTrueFalse{0}{80}{Cho hàm số \( y = \dfrac{3x + 2}{x + 2} \) có đồ thị là \( (C) \). Hai điểm \( A, B \) thuộc hai nhánh của đồ thị \( (C) \).}{
-    \textbf{a)} & Giá trị nhỏ nhất của hàm số \( y = \dfrac{3x + 2}{x + 2} \) trên đoạn \([2; 5]\) là 2.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% % --- CÂU 80 ---
+% \questionTrueFalse{0}{80}{Cho hàm số \( y = \dfrac{3x + 2}{x + 2} \) có đồ thị là \( (C) \). Hai điểm \( A, B \) thuộc hai nhánh của đồ thị \( (C) \).}{
+%     \textbf{a)} & Giá trị nhỏ nhất của hàm số \( y = \dfrac{3x + 2}{x + 2} \) trên đoạn \([2; 5]\) là 2.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Khi độ dài đoạn \( AB \) ngắn nhất thì \( OA \cdot OB = \sqrt{29} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Khi độ dài đoạn \( AB \) ngắn nhất thì \( OA \cdot OB = \sqrt{29} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Hàm số đồng biến trên \( \mathbb{R} \setminus \{-2\} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Hàm số đồng biến trên \( \mathbb{R} \setminus \{-2\} \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Đường thẳng \( y = 3 \) là tiệm cận ngang của đồ thị \( (C) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Đường thẳng \( y = 3 \) là tiệm cận ngang của đồ thị \( (C) \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 % --- CÂU 81 ---
-\questionTrueFalse{0}{81}{Cho hàm số \( y = f(x) = x + 2 + \dfrac{1}{x - 1} \).}{
+\questionTrueFalse{0}{80}{Cho hàm số \( y = f(x) = x + 2 + \dfrac{1}{x - 1} \).}{
     \textbf{a)} & Tập xác định của hàm số \( D = \mathbb{R} \setminus \{1\} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2720,7 +2924,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 82 ---
-\questionTrueFalse{0}{82}{Cho hàm số \( f(x) = \dfrac{2x^2 + 3x - 5}{x + 3} \).}{
+\questionTrueFalse{0}{81}{Cho hàm số \( f(x) = \dfrac{2x^2 + 3x - 5}{x + 3} \).}{
     \textbf{a)} & Hàm số có đạo hàm \( f'(x) = \dfrac{2x^2 + 12x - 14}{(x + 3)^2} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2734,48 +2938,10 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 83 ---
-\questionTrueFalse{0}{83}{Cho hàm số \( y = ax + b + \dfrac{c}{x + d} \) \((a, b, c, d \in \mathbb{R})\) có đồ thị như hình vẽ sau:
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.4]
-    % 1. Hệ trục tọa độ
-    \draw[->] (-6,0) -- (4.5,0) node[below] {\small $x$};
-    \draw[->] (0,-8) -- (0,8) node[right] {\small $y$};
-    % 3. Vẽ đồ thị hàm số y = -2x - 4 - 2/(x+2)
-    \draw[thick, samples=100, domain=-5.8:-2.27] 
-        plot (\x, {-2*\x - 4 - 2/(\x + 2)});
-    \draw[thick, samples=100, domain=-1.73:1.8] 
-        plot (\x, {-2*\x - 4 - 2/(\x + 2)});
-    \draw[thick, samples=100, domain=-6:2] 
-        plot (\x, {-2*\x - 4 });
-    % 4. Đường tiệm cận
-    \draw[thick] (-2,-8) -- (-2,8);
-    \node[above right] at (0,-4) {\small $-4$};
-    \node[below left] at (0,-5) {\small $-5$};
-    \node[below left] at (-2,0) {\small $-2$};
-    \fill (0,-4) circle (2.5pt);
-    \fill (0,-5) circle (2.5pt);
-    \fill (-2,0) circle (2.5pt);
-   \end{tikzpicture}
-\end{center}
-
-}{
-    \textbf{a)} & Đồ thị hàm số đã cho có tiệm cận đứng là đường thẳng \( x = -2 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Giá trị \( b = -4 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Đồ thị hàm số đã cho có tiệm cận xiên là đường thẳng \( y = 2x - 4 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Hàm số đã cho là \( y = -2x - 4 - \dfrac{2}{x + 2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 % --- CÂU 84 ---
-\questionTrueFalse{0}{84}{Cho hàm số \( y = \dfrac{x^2 + 3x + 3}{x + 2} \) có đồ thị \( (C) \) và 2 điểm \( A, B \) là hai điểm cực trị của \( (C) \).}{
+\questionTrueFalse{0}{82}{Cho hàm số \( y = \dfrac{x^2 + 3x + 3}{x + 2} \) có đồ thị \( (C) \) và 2 điểm \( A, B \) là hai điểm cực trị của \( (C) \).}{
     \textbf{a)} & \( y' = \dfrac{x^2 + 4x + 3}{(x + 2)^2} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2790,7 +2956,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 85 ---
-\questionTrueFalse{0}{85}{Cho hàm số \( y = \dfrac{x^2 - 2x + 2}{x - 1} \).}{
+\questionTrueFalse{0}{83}{Cho hàm số \( y = \dfrac{x^2 - 2x + 2}{x - 1} \).}{
     \textbf{a)} & Hàm số đã cho được viết lại \( y = x - 1 + \dfrac{1}{x - 1} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2832,8 +2998,10 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
+\newpage 
+
 % --- CÂU 86 ---
-\questionTrueFalse{0}{86}{Cho hàm số \( y = \dfrac{x^2 + 4}{x} \).}{
+\questionTrueFalse{0}{84}{Cho hàm số \( y = \dfrac{x^2 + 4}{x} \).}{
     \textbf{a)} & Đạo hàm của hàm số đã cho nhận giá trị âm trên các khoảng \((-2; 0) \cup (0; 2)\) và nhận giá trị dương trên các khoảng \((-\infty; -2) \cup (2; +\infty)\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2855,7 +3023,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     
     \textbf{d)} & Đồ thị của hàm số đã cho là
     \begin{center}
-    \begin{tikzpicture}[>=latex, scale=0.3]
+    \begin{tikzpicture}[>=latex, scale=0.25]
         % 1. Vẽ lưới
         \draw[color=gray!30, thin, step=2] (-10,-10) grid (10,14);
         
@@ -2888,7 +3056,7 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
 }
 
 % --- CÂU 87 ---
-\questionTrueFalse{0}{87}{Cho hàm số \( y = \dfrac{x^2 - 3x + 6}{x - 1} \).
+\questionTrueFalse{0}{85}{Cho hàm số \( y = \dfrac{x^2 - 3x + 6}{x - 1} \).
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.6]
     \draw[->] (-4.5,0) -- (6.5,0) node[below] {\small $x$};
@@ -2930,29 +3098,28 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     \textbf{c)} & Tập xác định của hàm số là \( \mathbb{R} \setminus \{1\} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Đồ thị \( (C) \) của hàm số \( y = f(x) \) là hình vẽ bên.
+    \textbf{d)} & Đồ thị \( (C) \) của hàm số \( y = f(x) \) là hình vẽ trên.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 88 ---
-\questionTrueFalse{0}{88}{Cho hàm số \( y = \dfrac{x^2 + 3x + 3}{x + 2} \) có đồ thị là \( (C) \) và hai điểm \( A, B \) là hai điểm cực trị của \( (C) \). Xét tính đúng sai của các mệnh đề sau:}{
-    \textbf{a)} & Đường thẳng \( AB \) có phương trình là \( y = 2x + 1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Đạo hàm của hàm số là \( y' = \dfrac{x^2 + 4x + 3}{(x + 2)^2} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Hai điểm \( A, B \) đối xứng nhau qua đường thẳng \( \Delta \) có phương trình \( x + 2y + 4 = 0 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Hai điểm \( A \) và \( B \) nằm ở hai phía trục tung.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 % --- CÂU 89 ---
-\questionTrueFalse{0}{89}{Cho hàm số \( y = \dfrac{x^2 - 2x + 2}{x - 1} \).
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\questionTrueFalse{0}{86}{Cho hàm số \( y = \dfrac{x^2 - 2x + 2}{x - 1} \).
+
+
+}{
+    \textbf{a)} & Hàm số đã cho được viết lại \( y = x - 1 + \dfrac{1}{x - 1} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Phương trình \( y' = 0 \) có hai nghiệm là \( x_1 = 2 \) và \( x_2 = 0 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Hàm số đã cho nghịch biến trên khoảng \( (0; 2) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Đồ thị của hàm số là hình vẽ dưới đây:
+    \begin{center}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % 1. Hệ trục tọa độ
     \draw[->] (-3.5,0) -- (6.5,0) node[below] {\small $x$};
     \draw[->] (0,-4.5) -- (0,4.5) node[right] {\small $y$};
@@ -2979,23 +3146,11 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     
 \end{tikzpicture}
 \end{center}
-
-}{
-    \textbf{a)} & Hàm số đã cho được viết lại \( y = x - 1 + \dfrac{1}{x - 1} \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Phương trình \( y' = 0 \) có hai nghiệm là \( x_1 = 2 \) và \( x_2 = 0 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Hàm số đã cho nghịch biến trên khoảng \( (0; 2) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Đồ thị của hàm số là hình vẽ dưới đây.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
 % --- CÂU 90 ---
-\questionTrueFalse{0}{90}{Cho hàm số \( y = \dfrac{x^2 - x + 1}{x + 1} \) có đồ thị là \( C \). Khi đó}{
+\questionTrueFalse{0}{87}{Cho hàm số \( y = \dfrac{x^2 - x + 1}{x + 1} \) có đồ thị là \( C \). Khi đó}{
     \textbf{a)} & Đường thẳng \( y = x - 2 \) là tiệm cận xiên của đồ thị \( C \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -3009,71 +3164,9 @@ Trong các số \( b, c, m, n \) có tất cả bao nhiêu số dương?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% --- CÂU 91 ---
-\questionTrueFalse{0}{91}{Cho hàm số \( y = f(x) = \dfrac{-x^2 + x - 2}{x + 1} \) có đồ thị \( (C) \), khi đó.}{
-    \textbf{a)} & \( y' = f'(x) = \dfrac{-x^2 - 2x + 3}{(x + 1)^2}, \forall x \neq -1 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Tiệm cận xiên của đồ thị hàm số là đường thẳng có phương trình \( y = x - 2 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Khoảng cách giữa hai điểm cực trị của đồ thị \( (C) \) bằng 4.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Trên đồ thị \( (C) \) có đúng 4 điểm \( M \) có tung độ và hoành độ là các số nguyên sao cho tiếp tuyến của \( (C) \) tại \( M \) tạo với hai đường tiệm cận của \( (C) \) một tam giác có diện tích bằng 8.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
-
-% --- CÂU 92 ---
-\questionTrueFalse{0}{92}{Cho hàm số \( y = f(x) \) có đạo hàm trên \( \mathbb{R} \setminus \{1\} \) và đồ thị như hình vẽ bên dưới.
-
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.6]
-    \draw[->] (-4.5,0) -- (6.5,0) node[below] {\small $x$};
-    \draw[->] (0,-7.5) -- (0,5.5) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
-    
-    % 3. Đánh dấu các mốc
-    \foreach \x in {2,3} {
-        \draw (\x,0.05) -- (\x,-0.05) node[below] {\small $\x$};
-    }
-    \foreach \val in {-2,3} {
-        \draw (0.05,\val) -- (-0.05,\val) node[left] {\small $\val$};
-    }
-    
-    % 4. Vẽ đồ thị hàm số
-    \draw[thick, samples=100, domain=-4.5:0.3] 
-        plot (\x, {(\x*\x - 3*\x + 6)/(\x - 1)});
-    \draw[thick, samples=100, domain=1.7:6.5] 
-        plot (\x, {(\x*\x - 3*\x + 6)/(\x - 1)});
-    \draw[thick, samples=100, domain=-4.5:6.5] 
-        plot (\x, {\x-2});
-    % 5. Đường tiệm cận
-    \draw[thick] (1,-7.5) -- (1,5.5);
-    \draw[dashed] (-1,0) -- (-1,-5) -- (0,-5);
-    \draw[dashed] (3,0) -- (3,3)-- (0,3);
-    \node [above] at (-1,0) {\small $-1$};
-    \node [right] at (0,-5) {\small $-5$};
-    \node [below left] at (1,0) {\small $1$};
-    % 6. Đánh dấu các điểm cực trị
-    \fill (-1,-5) circle (2pt);
-    \fill (3,3) circle (2pt);
-\end{tikzpicture}
-\end{center}
-
-}{
-    \textbf{a)} & Hàm số nghịch biến trên khoảng \( (-\infty; -1) \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Hàm số đạt cực tiểu tại điểm \( x_0 = 3 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Tiệm cận đứng của đồ thị hàm số có phương trình là \( x = 0 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-}
 
 % --- CÂU 93 ---
-\questionTrueFalse{0}{93}{Cho hàm số \( y = \dfrac{x^2 - x + 1}{x - 1} \).}{
+\questionTrueFalse{0}{88}{Cho hàm số \( y = \dfrac{x^2 - x + 1}{x - 1} \).}{
     \textbf{a)} & Tập xác định của hàm số đã cho là \( D = \mathbb{R} \setminus \{1\} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     

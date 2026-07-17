@@ -29,6 +29,7 @@
 \usepackage{makecell}
 \usepackage{multirow}
 \usepackage{tasks}
+\usepackage{chngpage}
 
 % Biểu tượng
 \usepackage{fontawesome5}
@@ -199,7 +200,7 @@
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray, line width=0.2pt] (0,-{\i*0.65}) -- (\textwidth-4pt,-{\i*0.65});
+                \draw[softgray, line width=0.2pt] (0,-{\i*1}) -- (\textwidth-4pt,-{\i*1});
             }
         \end{tikzpicture}
         \par
@@ -219,17 +220,18 @@
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
 \newcommand{\questionTrueFalse}[4]{
+    \scriptsize
     \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
     \needspace{\calculatedSpace cm}
-    \questioncore{#2}{#3}
+    \questioncore{{#2}}{#3}
     
     \nopagebreak
-    \begin{center}
+    \begin{flushleft}
     \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.4cm}|m{6cm}|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{1cm}|}
         \hline
         \rowcolor{amberorange!20}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        & \multicolumn{1}{>{\centering\arraybackslash}m{6cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
@@ -237,7 +239,7 @@
         \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
-    \end{center}
+    \end{flushleft}
     
     \par\nopagebreak
     \drawdashlines{#1}
@@ -278,7 +280,7 @@
 \titlebox{Chủ đề: Hàm số}{Khảo sát hàm số bậc 3}{Hàm số: Hàm bậc 3}
 
 % --- CÂU 1 ---
-\questionLinesManual{0}{1}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
+\questionLinesManual{3}{1}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -304,7 +306,7 @@
 }
 
 % --- CÂU 2 ---
-\questionLinesManual{0}{2}{Đồ thị hàm số nào dưới đây có dạng như đường cong hình bên
+\questionLinesManual{6}{2}{Đồ thị hàm số nào dưới đây có dạng như đường cong hình bên
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -330,7 +332,7 @@
 }
 
 % --- CÂU 3 ---
-\questionLinesManual{0}{3}{Đường cong hình bên là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
+\questionLinesManual{6}{3}{Đường cong hình bên là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -357,7 +359,7 @@
 }
 
 % --- CÂU 4 ---
-\questionLinesManual{0}{4}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
+\questionLinesManual{6}{4}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -382,7 +384,7 @@
 }
 
 % --- CÂU 5 ---
-\questionLinesManual{0}{5}{Đồ thị của hàm số dưới đây có dạng như đường cong bên?
+\questionLinesManual{6}{5}{Đồ thị của hàm số dưới đây có dạng như đường cong bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -407,7 +409,7 @@
 }
 
 % --- CÂU 6 ---
-\questionLinesManual{0}{6}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
+\questionLinesManual{6}{6}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -432,7 +434,7 @@
 }
 
 % --- CÂU 7 ---
-\questionLinesManual{0}{7}{Đường cong ở hình bên dưới là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
+\questionLinesManual{3}{7}{Đường cong ở hình bên dưới là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -457,7 +459,7 @@
 }
 
 % --- CÂU 8 ---
-\questionLinesManual{0}{8}{Đường cong trong hình bên là đồ thị của một hàm số trong bốn hàm số được liệt kê ở bốn phương án dưới đây. Hỏi hàm số đó là hàm số nào?
+\questionLinesManual{3}{8}{Đường cong trong hình bên là đồ thị của một hàm số trong bốn hàm số được liệt kê ở bốn phương án dưới đây. Hỏi hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -483,7 +485,7 @@
 }
 
 % --- CÂU 9 ---
-\questionLinesManual{0}{9}{Đường cong bên là đồ thị hàm số nào sau đây?
+\questionLinesManual{3}{9}{Đường cong bên là đồ thị hàm số nào sau đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -507,7 +509,7 @@
     \end{tasks}
 }
 % --- CÂU 10 ---
-\questionLinesManual{0}{10}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình vẽ bên.
+\questionLinesManual{3}{10}{Đồ thị của hàm số nào dưới đây có dạng như đường cong trong hình vẽ bên.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -532,7 +534,7 @@
 }
 
 % --- CÂU 11 ---
-\questionLinesManual{0}{11}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào dưới đây?
+\questionLinesManual{3}{11}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào dưới đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -559,7 +561,7 @@
 }
 
 % --- CÂU 12 ---
-\questionLinesManual{0}{12}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào dưới đây?
+\questionLinesManual{3}{12}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào dưới đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -584,7 +586,7 @@
 }
 
 % --- CÂU 13 ---
-\questionLinesManual{0}{13}{Hình vẽ sau đây là đồ thị của một trong bốn hàm số cho ở các đáp án. Hỏi đó là hàm số nào?
+\questionLinesManual{3}{13}{Hình vẽ sau đây là đồ thị của một trong bốn hàm số cho ở các đáp án. Hỏi đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -615,7 +617,7 @@
 }
 
 % --- CÂU 14 ---
-\questionLinesManual{0}{14}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào sau đây?
+\questionLinesManual{3}{14}{Đường cong trong hình vẽ bên là đồ thị của hàm số nào sau đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -640,7 +642,7 @@
 }
 
 % --- CÂU 15 ---
-\questionLinesManual{0}{15}{Đồ thị của hàm số nào dưới đây có dạng đường cong như hình bên?
+\questionLinesManual{3}{15}{Đồ thị của hàm số nào dưới đây có dạng đường cong như hình bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -664,7 +666,7 @@
 }
 
 % --- CÂU 16 ---
-\questionLinesManual{0}{16}{Đồ thị sau đây là của hàm số nào?
+\questionLinesManual{7}{16}{Đồ thị sau đây là của hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -698,7 +700,7 @@
 }
 
 % --- CÂU 17 ---
-\questionLinesManual{0}{17}{Đường cong ở hình sau là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
+\questionLinesManual{6}{17}{Đường cong ở hình sau là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -732,7 +734,7 @@
 }
 
 % --- CÂU 18 ---
-\questionLinesManual{0}{18}{Đồ thị hàm số nào sau đây có hình dạng như hình vẽ?
+\questionLinesManual{7}{18}{Đồ thị hàm số nào sau đây có hình dạng như hình vẽ?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -769,7 +771,7 @@
 }
 
 % --- CÂU 19 ---
-\questionLinesManual{0}{19}{Đường cong ở hình sau là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
+\questionLinesManual{6}{19}{Đường cong ở hình sau là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -803,7 +805,7 @@
 }
 
 % --- CÂU 20 ---
-\questionLinesManual{0}{20}{Hàm số nào dưới đây có đồ thị là đường cong trong hình vẽ bên?
+\questionLinesManual{6}{20}{Hàm số nào dưới đây có đồ thị là đường cong trong hình vẽ bên?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -837,7 +839,7 @@
 }
 
 % --- CÂU 21 ---
-\questionLinesManual{0}{21}{Đường cong hình bên dưới là đồ thị hàm số nào sau đây?
+\questionLinesManual{6}{21}{Đường cong hình bên dưới là đồ thị hàm số nào sau đây?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -874,7 +876,7 @@
 }
 
 % --- CÂU 22 ---
-\questionLinesManual{0}{22}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ. Công thức của hàm số bậc ba đã cho là:
+\questionLinesManual{6}{22}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ. Công thức của hàm số bậc ba đã cho là:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -906,7 +908,7 @@
 }
 
 % --- CÂU 23 ---
-\questionLinesManual{0}{23}{Đường cong ở hình sau là đồ thị của hàm số nào?
+\questionLinesManual{6}{23}{Đường cong ở hình sau là đồ thị của hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -938,7 +940,7 @@
 }
 
 % --- CÂU 24 ---
-\questionLinesManual{0}{24}{Đồ thị hàm số nào sau đây có dạng như hình vẽ?
+\questionLinesManual{6}{24}{Đồ thị hàm số nào sau đây có dạng như hình vẽ?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -976,7 +978,7 @@
 }
 
 % --- CÂU 25 ---
-\questionLinesManual{0}{25}{Đường cong hình bên là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
+\questionLinesManual{6}{25}{Đường cong hình bên là đồ thị của một trong bốn hàm số dưới đây. Hàm số đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1009,7 +1011,7 @@
 }
 
 % --- CÂU 26 ---
-\questionLinesManual{0}{26}{Hình vẽ sau đây là đồ thị của một trong bốn hàm số cho ở các đáp án. Hỏi đó là hàm số nào?
+\questionLinesManual{6}{26}{Hình vẽ sau đây là đồ thị của một trong bốn hàm số cho ở các đáp án. Hỏi đó là hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1042,7 +1044,7 @@
 }
 
 % --- CÂU 27 ---
-\questionLinesManual{0}{27}{Hình vẽ sau đây là đồ thị hàm số nào?
+\questionLinesManual{6}{27}{Hình vẽ sau đây là đồ thị hàm số nào?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1076,7 +1078,7 @@
 }
 
 % --- CÂU 28 ---
-\questionLinesManual{0}{28}{Cho hàm số bậc ba \( y = f(x) \) có bảng biến thiên như sau:
+\questionLinesManual{6}{28}{Cho hàm số bậc ba \( y = f(x) \) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1098,7 +1100,7 @@ Khẳng định nào sau đây đúng?}{
 }
 
 % --- CÂU 29 ---
-\questionLinesManual{0}{29}{Hình vẽ sau là bảng biến thiên của hàm số nào dưới đây?
+\questionLinesManual{6}{29}{Hình vẽ sau là bảng biến thiên của hàm số nào dưới đây?
 
 \begin{center}
 \begin{tikzpicture}
@@ -1120,7 +1122,7 @@ Khẳng định nào sau đây đúng?}{
 }
 
 % --- CÂU 30 ---
-\questionLinesManual{0}{30}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị là đường cong trong hình dưới đây:
+\questionLinesManual{6}{30}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị là đường cong trong hình dưới đây:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1156,7 +1158,7 @@ Số nghiệm thực của phương trình \( f(x) = 3 \) là}{
 }
 
 % --- CÂU 31 ---
-\questionLinesManual{0}{31}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) (\( a \neq 0 \)) có đồ thị như hình vẽ.
+\questionLinesManual{6}{31}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) (\( a \neq 0 \)) có đồ thị như hình vẽ.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1188,7 +1190,7 @@ Số nghiệm của phương trình \( f(x) = -2 \) là}{
 }
 
 % --- CÂU 32 ---
-\questionLinesManual{0}{32}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) và có đồ thị như hình vẽ.
+\questionLinesManual{6}{32}{Cho hàm số \( y = f(x) \) liên tục trên \( \mathbb{R} \) và có đồ thị như hình vẽ.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1227,7 +1229,7 @@ Phương trình \( f(x) = 0 \) có bao nhiêu nghiệm thực phân biệt?}{
 }
 
 % --- CÂU 33 ---
-\questionLinesManual{0}{33}{Cho hàm số \( y = f(x) \) có đồ thị là đường cong trong hình dưới đây.
+\questionLinesManual{6}{33}{Cho hàm số \( y = f(x) \) có đồ thị là đường cong trong hình dưới đây.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1263,7 +1265,7 @@ Số giao điểm của đồ thị hàm số với trục tung là}{
 }
 
 % --- CÂU 34 ---
-\questionLinesManual{0}{34}{Cho hàm số \( y = ax^3 + 3x - d \) (\( a, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình vẽ.
+\questionLinesManual{6}{34}{Cho hàm số \( y = ax^3 + 3x - d \) (\( a, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình vẽ.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1289,7 +1291,7 @@ Khẳng định nào dưới đây đúng?}{
 }
 
 % --- CÂU 35 ---
-\questionLinesManual{0}{35}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Khẳng định nào dưới đây đúng?
+\questionLinesManual{6}{35}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Khẳng định nào dưới đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1314,7 +1316,7 @@ Khẳng định nào dưới đây đúng?}{
 }
 
 % --- CÂU 37 ---
-\questionLinesManual{0}{36}{Cho hàm số \( y = ax^3 + 3x + d \) (\( a, d \in \mathbb{R} \)) có đồ thị như hình bên. Mệnh đề nào dưới đây đúng?
+\questionLinesManual{6}{36}{Cho hàm số \( y = ax^3 + 3x + d \) (\( a, d \in \mathbb{R} \)) có đồ thị như hình bên. Mệnh đề nào dưới đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1338,7 +1340,7 @@ Khẳng định nào dưới đây đúng?}{
     \end{tasks}
 }
 % --- CÂU 36 ---
-\questionLinesManual{0}{37}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
+\questionLinesManual{6}{37}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1362,7 +1364,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 
 
 % --- CÂU 38 ---
-\questionLinesManual{0}{38}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
+\questionLinesManual{6}{38}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
 
 \begin{center}
 
@@ -1390,7 +1392,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 39 ---
-\questionLinesManual{0}{39}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các hệ số \( a, b, c, d \)?
+\questionLinesManual{6}{39}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các hệ số \( a, b, c, d \)?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1417,7 +1419,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 40 ---
-\questionLinesManual{0}{40}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
+\questionLinesManual{6}{40}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1444,7 +1446,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 41 ---
-\questionLinesManual{0}{41}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
+\questionLinesManual{6}{41}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có đồ thị là đường cong trong hình bên. Có bao nhiêu số dương trong các số \( a, b, c, d \)?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1471,7 +1473,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 42 ---
-\questionLinesManual{0}{42}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau
+\questionLinesManual{6}{42}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau
 
 \begin{center}
 \begin{tikzpicture}
@@ -1493,7 +1495,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 43 ---
-\questionLinesManual{0}{43}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
+\questionLinesManual{6}{43}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1515,7 +1517,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 44 ---
-\questionLinesManual{0}{44}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
+\questionLinesManual{6}{44}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1537,7 +1539,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 45 ---
-\questionLinesManual{0}{45}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
+\questionLinesManual{6}{45}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) (\( a, b, c, d \in \mathbb{R} \)) có bảng biến thiên như sau:
 
 \begin{center}
 \begin{tikzpicture}
@@ -1559,7 +1561,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 46 ---
-\questionLinesManual{0}{46}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên. Mệnh đề nào dưới đây đúng?
+\questionLinesManual{6}{46}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên. Mệnh đề nào dưới đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1586,7 +1588,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 47 ---
-\questionLinesManual{0}{47}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a \neq 0 \)) có đồ thị như hình vẽ dưới đây. Chọn khẳng định đúng về dấu của \( a, b, c, d \)?
+\questionLinesManual{6}{47}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) (\( a \neq 0 \)) có đồ thị như hình vẽ dưới đây. Chọn khẳng định đúng về dấu của \( a, b, c, d \)?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1613,7 +1615,7 @@ Có bao nhiêu số dương trong các số \( a, b, c, d \)?}{
 }
 
 % --- CÂU 48 ---
-\questionLinesManual{0}{48}{Hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên dưới:
+\questionLinesManual{6}{48}{Hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên dưới:
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1640,7 +1642,7 @@ Khẳng định nào là đúng?}{
 }
 
 % --- CÂU 49 ---
-\questionLinesManual{0}{49}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình bên. Trong các mệnh đề sau mệnh đề nào đúng?
+\questionLinesManual{6}{49}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình bên. Trong các mệnh đề sau mệnh đề nào đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1667,7 +1669,7 @@ Khẳng định nào là đúng?}{
 }
 
 % --- CÂU 50 ---
-\questionLinesManual{0}{50}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình dưới. Khẳng định nào sau đây đúng?
+\questionLinesManual{6}{50}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình dưới. Khẳng định nào sau đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1694,7 +1696,7 @@ Khẳng định nào là đúng?}{
 }
 
 % --- CÂU 51 ---
-\questionLinesManual{0}{51}{Hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên dưới:
+\questionLinesManual{6}{51}{Hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên dưới:
 
 \begin{center}
 
@@ -1722,7 +1724,7 @@ Khẳng định nào là đúng?}{
 }
 
 % --- CÂU 52 ---
-\questionLinesManual{0}{52}{Tìm đồ thị hàm số \( y = f(x) \) được cho bởi một trong các phương án dưới đây, biết \( f(x) = (a - x)(b - x)^2 \) với \( a < b \).
+\questionLinesManual{6}{52}{Tìm đồ thị hàm số \( y = f(x) \) được cho bởi một trong các phương án dưới đây, biết \( f(x) = (a - x)(b - x)^2 \) với \( a < b \).
 
 
 }{
@@ -1779,7 +1781,7 @@ Khẳng định nào là đúng?}{
 }
 
 % --- CÂU 53 ---
-\questionLinesManual{0}{53}{Cho đường cong \( (C) : y = ax^3 + bx^2 + cx + d \) có đồ thị như hình bên.
+\questionLinesManual{6}{53}{Cho đường cong \( (C) : y = ax^3 + bx^2 + cx + d \) có đồ thị như hình bên.
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1808,7 +1810,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 54 ---
-\questionLinesManual{0}{54}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ ở bên. Mệnh đề nào sau đây đúng?
+\questionLinesManual{6}{54}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ ở bên. Mệnh đề nào sau đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1839,7 +1841,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 55 ---
-\questionLinesManual{0}{55}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Tính \( S = a + b \)?
+\questionLinesManual{6}{55}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Tính \( S = a + b \)?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1871,7 +1873,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 56 ---
-\questionLinesManual{0}{56}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên. Mệnh đề nào dưới đây đúng?
+\questionLinesManual{6}{56}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên. Mệnh đề nào dưới đây đúng?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1897,7 +1899,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 57 ---
-\questionLinesManual{0}{57}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Trong các số \( a, b, c \) và \( d \) có bao nhiêu số dương?
+\questionLinesManual{6}{57}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ. Trong các số \( a, b, c \) và \( d \) có bao nhiêu số dương?
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.8]
@@ -1923,7 +1925,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 58 ---
-\questionLinesManual{0}{58}{Phương trình tiếp tuyến của đồ thị hàm số \( y = x^3 - 3x \) tại điểm có hoành độ bằng 2 là}{
+\questionLinesManual{6}{58}{Phương trình tiếp tuyến của đồ thị hàm số \( y = x^3 - 3x \) tại điểm có hoành độ bằng 2 là}{
     \begin{tasks}(4)
         \task \( y = -9x + 16 \)
         \task \( y = 9x - 16 \)
@@ -1933,7 +1935,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 59 ---
-\questionLinesManual{0}{59}{Số giao điểm của đồ thị hàm số \( y = x^3 - 3x^2 + 2x \) với trục \( Ox \) là}{
+\questionLinesManual{6}{59}{Số giao điểm của đồ thị hàm số \( y = x^3 - 3x^2 + 2x \) với trục \( Ox \) là}{
     \begin{tasks}(4)
         \task $2$
         \task $0$
@@ -1943,7 +1945,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 60 ---
-\questionLinesManual{0}{60}{Tọa độ điểm cực tiểu của đồ thị hàm số \( y = \dfrac{1}{3}x^3 - 2x^2 + 3x - 1 \) là}{
+\questionLinesManual{6}{60}{Tọa độ điểm cực tiểu của đồ thị hàm số \( y = \dfrac{1}{3}x^3 - 2x^2 + 3x - 1 \) là}{
     \begin{tasks}(4)
         \task \( \left( 4; \dfrac{7}{3} \right) \)
         \task \( \left( 3; -1 \right) \)
@@ -1953,7 +1955,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 61 ---
-\questionLinesManual{0}{61}{Số giao điểm của đồ thị hàm số \( y = x^3 + 3x^2 \) và đồ thị hàm số \( y = 3x^2 + 3x \) là}{
+\questionLinesManual{6}{61}{Số giao điểm của đồ thị hàm số \( y = x^3 + 3x^2 \) và đồ thị hàm số \( y = 3x^2 + 3x \) là}{
     \begin{tasks}(4)
         \task $3$
         \task $1$
@@ -1963,7 +1965,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 62 ---
-\questionLinesManual{0}{62}{Cho hàm số \( f(x) = x^3 + ax^2 + bx + c \) đạt cực tiểu tại điểm \( x = 1 \) và \( f(1) = -3 \). Đồ thị hàm số cắt trục tung tại điểm có tung độ bằng 2. Tính \( T = 3a + b - c \).}{
+\questionLinesManual{6}{62}{Cho hàm số \( f(x) = x^3 + ax^2 + bx + c \) đạt cực tiểu tại điểm \( x = 1 \) và \( f(1) = -3 \). Đồ thị hàm số cắt trục tung tại điểm có tung độ bằng 2. Tính \( T = 3a + b - c \).}{
     \begin{tasks}(4)
         \task \( T = 1 \)
         \task \( T = 9 \)
@@ -1973,7 +1975,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 63 ---
-\questionLinesManual{0}{63}{Tiếp tuyến của đồ thị hàm số \( y = x^3 - 1 \) tại điểm \( M(1; 0) \) song song với đường thẳng nào trong các đường thẳng sau?}{
+\questionLinesManual{6}{63}{Tiếp tuyến của đồ thị hàm số \( y = x^3 - 1 \) tại điểm \( M(1; 0) \) song song với đường thẳng nào trong các đường thẳng sau?}{
     \begin{tasks}(4)
         \task \( y = x + 3 \)
         \task \( y = x - 3 \)
@@ -1983,7 +1985,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 64 ---
-\questionLinesManual{0}{64}{Cho hàm số \( y = x^3 - 3x \) có đồ thị \( (C) \). Có bao nhiêu điểm thuộc đồ thị \( (C) \) sao cho tiếp tuyến của đồ thị \( (C) \) tại các điểm đó song song với đường thẳng \( y = 9x + 16 \)?}{
+\questionLinesManual{6}{64}{Cho hàm số \( y = x^3 - 3x \) có đồ thị \( (C) \). Có bao nhiêu điểm thuộc đồ thị \( (C) \) sao cho tiếp tuyến của đồ thị \( (C) \) tại các điểm đó song song với đường thẳng \( y = 9x + 16 \)?}{
     \begin{tasks}(4)
         \task $2$
         \task $1$
@@ -1993,7 +1995,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 65 ---
-\questionLinesManual{0}{65}{Cho hàm số \( y = 2x^2 + 3x - 1 \) có đồ thị \( C \). Tiếp tuyến của \( C \) vuông góc với đường thẳng \( y = x \) có phương trình là}{
+\questionLinesManual{6}{65}{Cho hàm số \( y = 2x^2 + 3x - 1 \) có đồ thị \( C \). Tiếp tuyến của \( C \) vuông góc với đường thẳng \( y = x \) có phương trình là}{
     \begin{tasks}(4)
         \task \( y = -x \)
         \task \( y = x - 3 \)
@@ -2003,7 +2005,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 66 ---
-\questionLinesManual{0}{66}{Cho hàm số \( y = -x^3 + 3x^2 - 3 \) có đồ thị \( (C) \). Số tiếp tuyến của \( (C) \) vuông góc với đường thẳng \( y = \dfrac{1}{9}x + 2025 \) là}{
+\questionLinesManual{6}{66}{Cho hàm số \( y = -x^3 + 3x^2 - 3 \) có đồ thị \( (C) \). Số tiếp tuyến của \( (C) \) vuông góc với đường thẳng \( y = \dfrac{1}{9}x + 2025 \) là}{
     \begin{tasks}(4)
         \task $2$
         \task $1$
@@ -2013,7 +2015,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 67 ---
-\questionLinesManual{0}{67}{Tìm điểm \( M \) có hoành độ âm trên đồ thị \( (C) \): \( y = \dfrac{1}{3}x^3 - x + \dfrac{2}{3} \) sao cho tiếp tuyến tại \( M \) vuông góc với đường thẳng \( y = -\dfrac{1}{3}x + \dfrac{2}{3} \).}{
+\questionLinesManual{6}{67}{Tìm điểm \( M \) có hoành độ âm trên đồ thị \( (C) \): \( y = \dfrac{1}{3}x^3 - x + \dfrac{2}{3} \) sao cho tiếp tuyến tại \( M \) vuông góc với đường thẳng \( y = -\dfrac{1}{3}x + \dfrac{2}{3} \).}{
     \begin{tasks}(4)
         \task \( M\left(-1; \dfrac{4}{3}\right) \)
         \task \( M(-2; 0) \)
@@ -2023,7 +2025,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 68 ---
-\questionLinesManual{0}{68}{Cho hàm số \( y = x^3 + 3x \) có đồ thị là \( (C) \) và điểm \( M \) thuộc \( (C) \) có tung độ bằng 4. Phương trình tiếp tuyến của đồ thị \( (C) \) tại điểm \( M \) có dạng \( y = ax + b \) với \( a, b \in \mathbb{R} \). Tính \( P = a + 2b \).}{
+\questionLinesManual{6}{68}{Cho hàm số \( y = x^3 + 3x \) có đồ thị là \( (C) \) và điểm \( M \) thuộc \( (C) \) có tung độ bằng 4. Phương trình tiếp tuyến của đồ thị \( (C) \) tại điểm \( M \) có dạng \( y = ax + b \) với \( a, b \in \mathbb{R} \). Tính \( P = a + 2b \).}{
     \begin{tasks}(4)
         \task \( P = 10 \)
         \task \( P = 4 \)
@@ -2033,7 +2035,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 69 ---
-\questionLinesManual{0}{69}{Cho hàm số \( y = x^3 - 2x^2 + 1 \). Phương trình tiếp tuyến của đồ thị song song với đường thẳng \( d: y = -x + 2 \) là:}{
+\questionLinesManual{6}{69}{Cho hàm số \( y = x^3 - 2x^2 + 1 \). Phương trình tiếp tuyến của đồ thị song song với đường thẳng \( d: y = -x + 2 \) là:}{
     \begin{tasks}(2)
         \task \( y = x + 1, y = -x + \dfrac{31}{27} \)
         \task \( y = -x + 1, y = -x + \dfrac{31}{27} \)
@@ -2043,7 +2045,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 70 ---
-\questionLinesManual{0}{70}{Cho hàm số \( y = x^3 - 2x^2 + 1 \). Phương trình tiếp tuyến của đồ thị vuông góc với đường thẳng \( d: y = -\dfrac{1}{4}x - 4 \) là:}{
+\questionLinesManual{3}{70}{Cho hàm số \( y = x^3 - 2x^2 + 1 \). Phương trình tiếp tuyến của đồ thị vuông góc với đường thẳng \( d: y = -\dfrac{1}{4}x - 4 \) là:}{
     \begin{tasks}(2)
         \task \( y = -4x - 7, y = 4x + \dfrac{67}{3} \)
         \task \( y = 4x - 7, y = 4x + \dfrac{67}{3} \)
@@ -2052,15 +2054,16 @@ Khẳng định nào sau đây là đúng?}{
     \end{tasks}
 }
 
-% --- CÂU 71 ---
-\questionTrueFalse{0}{71}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+% --- CÂU 71 ---
+\questionTrueFalse{8}{71}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ.
+
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-2.5,0) -- (2.5,0) node[below] {\small $x$};
-    \draw[->] (0,-1.5) -- (0,4) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-2.5,0) -- (2.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-1.5) -- (0,4) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
     
     % Đánh dấu các mốc
     \foreach \x in {-2,-1,1,2} {
@@ -2077,13 +2080,13 @@ Khẳng định nào sau đây là đúng?}{
     % Đánh dấu điểm cực trị
     \draw[dashed] (-1,0) -- (-1,3) -- (2,3) -- (2,0);
     \draw[dashed] (1,0) -- (1,-1) -- (-2,-1) -- (-2,0);
-    \node [below] at (-1,0)  {\small $-1$};
-    \node [below] at (2,0)  {\small $2$};
-    \node [above] at (1,0)  {\small $1$};
-    \node [below right] at (0,-1)  {\small $-1$};
-    \node [below right] at (0,3)  {\small $3$};
+    \node [below] at (-1,0)  {\tiny $-1$};
+    \node [below] at (2,0)  {\tiny $2$};
+    \node [above] at (1,0)  {\tiny $1$};
+    \node [below right] at (0,-1)  {\tiny $-1$};
+    \node [below right] at (0,3)  {\tiny $3$};
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Hàm số \( f(x) \) nghịch biến trên khoảng \((-1; 1)\).
@@ -2100,7 +2103,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 72 ---
-\questionTrueFalse{0}{72}{Cho hàm số \( f(x) = -2x^4 + 4x^2 + 1 \) có đồ thị \( (C) \).}{
+\questionTrueFalse{8}{72}{Cho hàm số \( f(x) = -2x^4 + 4x^2 + 1 \) có đồ thị \( (C) \).}{
     \textbf{a)} & \(\lim\limits_{x \to -\infty} f(x) = -\infty\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2115,7 +2118,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 73 ---
-\questionTrueFalse{0}{73}{Cho hàm số \( y = f(x) = x^3 - 3x + 2 \).}{
+\questionTrueFalse{8}{73}{Cho hàm số \( y = f(x) = x^3 - 3x + 2 \).}{
     \textbf{a)} & Đạo hàm của hàm số đã cho là \( f'(x) = 3x^2 - 3 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2126,12 +2129,12 @@ Khẳng định nào sau đây là đúng?}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
     \textbf{d)} & Hàm số đã cho có đồ thị như hình vẽ:
-    \begin{center}
-\begin{tikzpicture}[>=latex, scale=0.5]
+    \begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.3]
     % Hệ trục tọa độ
-    \draw[->] (-2,0) -- (4,0) node[below] {\small $x$};
-    \draw[->] (0,-3) -- (0,4) node[right] {\small $y$};
-    \node[below right] at (0,0) {\small $O$};
+    \draw[->] (-2,0) -- (4,0) node[below] {\tiny $x$};
+    \draw[->] (0,-3) -- (0,4) node[right] {\tiny $y$};
+    \node[below right] at (0,0) {\tiny $O$};
     \foreach \x in {-1,1,2,3} {
          \draw (\x,0.05) -- (\x,-0.05) ;
     }
@@ -2142,14 +2145,14 @@ Khẳng định nào sau đây là đúng?}{
     % Đồ thị hàm bậc 3: y = -x^3 + 3x^2 + 2
     \draw[thick, samples=100, domain=-1.05:3.15] 
         plot (\x, {\x*\x*\x - 3*\x*\x + 2});
-    \node [right] at (0,2) {\small$2$};
+    \node [right] at (0,2) {\tiny$2$};
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
 % --- CÂU 74 ---
-\questionTrueFalse{0}{74}{Cho hàm số \( y = -\dfrac{2x^3}{3} + x^2 + 4x - 2 \) đồ thị của hàm số là \( (C) \) và đường thẳng \( d: y = 4x - 1 \).}{
+\questionTrueFalse{8}{74}{Cho hàm số \( y = -\dfrac{2x^3}{3} + x^2 + 4x - 2 \) đồ thị của hàm số là \( (C) \) và đường thẳng \( d: y = 4x - 1 \).}{
     \textbf{a)} & Tập xác định của hàm số là \( D = \mathbb{R} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2164,7 +2167,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 75 ---
-\questionTrueFalse{0}{75}{Cho hàm số \( y = f(x) = x^3 - 3x + 2 \) có đồ thị \( (C) \) và đường thẳng \( (d) \): \( y = 9x + 18 \). Biết đường thẳng \( (d) \) là tiếp tuyến của đồ thị \( (C) \) tại điểm \( M(x_0; y_0) \).}{
+\questionTrueFalse{8}{75}{Cho hàm số \( y = f(x) = x^3 - 3x + 2 \) có đồ thị \( (C) \) và đường thẳng \( (d) \): \( y = 9x + 18 \). Biết đường thẳng \( (d) \) là tiếp tuyến của đồ thị \( (C) \) tại điểm \( M(x_0; y_0) \).}{
     \textbf{a)} & Đạo hàm của hàm số là \( f'(x) = x^2 - 3 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2179,7 +2182,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 76 ---
-\questionTrueFalse{0}{76}{Cho hàm số \( f(x) = x^3 - 4x^2 - 3x + 2 \).}{
+\questionTrueFalse{8}{76}{Cho hàm số \( f(x) = x^3 - 4x^2 - 3x + 2 \).}{
     \textbf{a)} & Hàm số có giá trị lớn nhất trên đoạn \([-1; 4]\) bằng 2.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2194,21 +2197,21 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 77 ---
-\questionTrueFalse{0}{77}{Cho hàm số \( y = f(x) \) có đồ thị như hình bên.
+\questionTrueFalse{8}{77}{Cho hàm số \( y = f(x) \) có đồ thị như hình bên.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-3.5,0) -- (3.5,0) node[below] {\small $x$};
-    \draw[->] (0,-3.5) -- (0,2) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-3.5) -- (0,2) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
     
     % Đánh dấu các mốc
     \foreach \x in {-1,1} {
-         \draw (\x,0.05) -- (\x,-0.05)  node[below] {\small $\x$};
+         \draw (\x,0.05) -- (\x,-0.05)  node[below] {\tiny $\x$};
     }
     \foreach \y in {-3,-1,1} {
-          \draw (0.05,\y) -- (-0.05,\y)   node[left] {\small $\y$};
+          \draw (0.05,\y) -- (-0.05,\y)   node[left] {\tiny $\y$};
     }
     
     % Đồ thị hàm bậc 3: y = x^3 - 3x
@@ -2220,7 +2223,7 @@ Khẳng định nào sau đây là đúng?}{
     \draw[dashed] (1,0) -- (1,-3) -- (0,-3);
     
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Tập xác định của hàm số đã cho là \( \mathbb{R} \).
@@ -2237,7 +2240,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 78 ---
-\questionTrueFalse{0}{78}{Cho hàm số \( f(x) = x^3 - 3x + 91 \).}{
+\questionTrueFalse{8}{78}{Cho hàm số \( f(x) = x^3 - 3x + 91 \).}{
     \textbf{a)} & Hàm số đã cho có đạo hàm là \( f'(x) = 3x^2 - 3 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2252,7 +2255,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 79 ---
-\questionTrueFalse{0}{79}{Cho hàm số \( f(x) = x^3 - 12x - 8 \).}{
+\questionTrueFalse{8}{79}{Cho hàm số \( f(x) = x^3 - 12x - 8 \).}{
     \textbf{a)} & Hàm số đã cho có đạo hàm là \( f'(x) = 3x^2 - 12 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2267,14 +2270,14 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 80 ---
-\questionTrueFalse{0}{80}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ.
+\questionTrueFalse{8}{80}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-1.5,0) -- (4.5,0) node[below] {\small $x$};
-    \draw[->] (0,-1.5) -- (0,4) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-1.5,0) -- (4.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-1.5) -- (0,4) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
 
     % Đồ thị hàm bậc 3: y = (x-2)^3 - 2(x-2) + 1
     \draw[thick, samples=100, domain=-1.05:3.1] 
@@ -2282,11 +2285,11 @@ Khẳng định nào sau đây là đúng?}{
     
     % Đánh dấu điểm cực trị
     \draw[dashed] (2,0) -- (2,-1) -- (0,-1);
-    \node[above] at (2,0) {\small $2$};
-    \node[left] at (0,3) {\small $3$};
-    \node[left] at (0,-1) {\small $-1$};
+    \node[above] at (2,0) {\tiny $2$};
+    \node[left] at (0,3) {\tiny $3$};
+    \node[left] at (0,-1) {\tiny $-1$};
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Giá trị cực tiểu của hàm số đã cho bằng 2.
@@ -2303,7 +2306,7 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 81 ---
-\questionTrueFalse{0}{81}{Cho hàm số \( y = \dfrac{1}{8}(x^3 - 3x^2 - 9x - 5) \) có đồ thị là \( (C) \).}{
+\questionTrueFalse{8}{81}{Cho hàm số \( y = \dfrac{1}{8}(x^3 - 3x^2 - 9x - 5) \) có đồ thị là \( (C) \).}{
     \textbf{a)} & Phương trình tiếp tuyến có hệ số góc nhỏ nhất của đồ thị \( (C) \) đi qua điểm \( A\left(0; -\dfrac{7}{3}\right) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -2318,13 +2321,13 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 82 ---
-\questionTrueFalse{0}{82}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình sau đây.
+\questionTrueFalse{8}{82}{Cho hàm số \( f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình sau đây.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-3.5,0) -- (3.5,0) node[below] {\small $x$};
-    \draw[->] (0,-2) -- (0,4) node[right] {\small $y$};
+    \draw[->] (-3.5,0) -- (3.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-2) -- (0,4) node[right] {\tiny $y$};
     \node[below left] at (0,0) {\tiny $O$};
     
     
@@ -2332,11 +2335,11 @@ Khẳng định nào sau đây là đúng?}{
     \draw[thick, samples=100, domain=-1.1:3.1] 
        plot (\x, {-\x*\x*\x + 3*\x*\x - 1});
     \draw[dashed] (2,0) -- (2,3)--(0,3);
-    \node[left] at (0,-1) {\small $1$};
-    \node[below] at (2,0) {\small $2$};
-    \node[left] at (0,3) {\small $3$};
+    \node[left] at (0,-1) {\tiny $1$};
+    \node[below] at (2,0) {\tiny $2$};
+    \node[left] at (0,3) {\tiny $3$};
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Giá trị cực tiểu của hàm số \( f(x) \) bằng \(-1\).
@@ -2353,14 +2356,14 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 83 ---
-\questionTrueFalse{0}{83}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình dưới đây:
+\questionTrueFalse{8}{83}{Cho hàm số \( y = f(x) = ax^3 + bx^2 + cx + d \) có đồ thị như hình dưới đây:
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-3.5,0) -- (2.5,0) node[below] {\small $x$};
-    \draw[->] (0,-2) -- (0,4.5) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-3.5,0) -- (2.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-2) -- (0,4.5) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
     
     % Đánh dấu các mốc
     \foreach \x in {-3,-2,-1,1,2} {
@@ -2378,7 +2381,7 @@ Khẳng định nào sau đây là đúng?}{
     \draw[dashed] (-2,0) -- (-2,1) -- (0,1);
     \draw[dashed] (-1,0) -- (-1,2) -- (0,2);
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Trong 4 số \( a, b, c, d \) có ba số dương.
@@ -2395,21 +2398,21 @@ Khẳng định nào sau đây là đúng?}{
 }
 
 % --- CÂU 84 ---
-\questionTrueFalse{0}{84}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị là đường cong như hình vẽ.
+\questionTrueFalse{8}{84}{Cho hàm số bậc ba \( y = f(x) \) có đồ thị là đường cong như hình vẽ.
 
-\begin{center}
-\begin{tikzpicture}[>=latex, scale=0.8]
+\begin{flushleft}
+\begin{tikzpicture}[>=latex, scale=0.5]
     % Hệ trục tọa độ
-    \draw[->] (-2.5,0) -- (3.5,0) node[below] {\small $x$};
-    \draw[->] (0,-4.5) -- (0,1.5) node[right] {\small $y$};
-    \node[below left] at (0,0) {\small $O$};
+    \draw[->] (-2.5,0) -- (3.5,0) node[below] {\tiny $x$};
+    \draw[->] (0,-4.5) -- (0,1.5) node[right] {\tiny $y$};
+    \node[below left] at (0,0) {\tiny $O$};
     
     % Đánh dấu các mốc
     \foreach \x in {-1,1,2} {
-         \draw (\x,0.05) -- (\x,-0.05)  node[above] {\small $\x$};
+         \draw (\x,0.05) -- (\x,-0.05)  node[above] {\tiny $\x$};
     }
     \foreach \y in {-4} {
-          \draw (0.05,\y) -- (-0.05,\y)   node[left] {\small$\y$};
+          \draw (0.05,\y) -- (-0.05,\y)   node[left] {\tiny$\y$};
     }
     
     % Đồ thị hàm bậc 3: y = (x-1)^3 - 3(x-1) - 2
@@ -2422,7 +2425,7 @@ Khẳng định nào sau đây là đúng?}{
     % Điểm cắt trục tung
     \fill (0,0) circle (2pt);
 \end{tikzpicture}
-\end{center}
+\end{flushleft}
 
 }{
     \textbf{a)} & Hàm số \( y = f(x) \) có hai điểm cực trị.
