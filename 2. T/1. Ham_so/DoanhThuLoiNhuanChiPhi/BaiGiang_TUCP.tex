@@ -1,0 +1,381 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+            at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i*1}) -- (\textwidth-4pt,-{\i*1});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newcommand{\questionTrueFalse}[4]{
+    \scriptsize
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{{#2}}{#3}
+    
+    \nopagebreak
+    \begin{flushleft}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.4cm}|m{6cm}|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{1cm}|}
+        \hline
+        \rowcolor{amberorange!20}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{6cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{flushleft}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \scriptsize
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Hàm doanh thu, lợi nhuận, tối ưu chi phí}{Hàm số: Doanh thu lợi nhuận chi phí}
+
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+
+% --- CÂU 1 ---
+\questionTrueFalse{15}{1}{Một cơ sở sản xuất dầu ăn đang tính toán các chi phí để vận hành và sản xuất \( x \) lít dầu ăn trong một tháng. Các chi phí bao gồm: 6 triệu đồng chi phí cố định để thuê nhà xưởng, 0,03 triệu đồng chi phí nguyên liệu cần thiết cho mỗi lít dầu ăn, và \( 0,000005x^2 \) triệu đồng chi phí bảo trì máy móc. Biết rằng dầu ăn được bán ra thị trường với giá là 70 nghìn đồng/lít, và giả sử toàn bộ lượng dầu ăn sản xuất được thì đều được bán hết.}{
+    \textbf{a)} & Tổng chi phí của cơ sở sản xuất trong một tháng được tính bằng công thức:  
+    \( C(x) = 0,000005x^2 + 0,03x + 6 \) (đơn vị: triệu đồng).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nếu mỗi tháng cơ sở này sản xuất được 150 lít dầu ăn, khi đó cơ sở sẽ bị lỗ.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Lợi nhuận lớn nhất mà cơ sở này có thể đạt được trong một tháng lớn hơn 75 triệu đồng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Giả sử cơ sở này sản xuất một lượng dầu ăn tiến đến vô cùng, khi đó chi phí trung bình để sản xuất mỗi lít dầu ăn sẽ tiến đến 0.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 2 ---
+\questionTrueFalse{15}{2}{Anh Huy là ông chủ của hãng nước hoa Huy's Secret. Anh ước tính rằng nếu anh bán được \( p \) chai nước hoa mỗi tháng (\( p \geq 4 \)), khi đó giá bán của mỗi chai nước hoa (đơn vị: nghìn đồng) được biểu diễn bởi hàm số  
+\( B(p) = \dfrac{10000}{p + 75} \)
+với tổng chi phí cần thiết để sản xuất \( p \) chai nước hoa được biểu diễn bởi hàm số  
+\( C(p) = \dfrac{1}{2000}p^2 + \dfrac{3}{20}p + 400 \)
+(đơn vị: nghìn đồng). Xét hàm số \( P(p) \) biểu diễn lợi nhuận mà anh Huy thu được khi bán hết \( p \) chai nước hoa.}{
+    \textbf{a)} & Nếu giá bán mỗi chai nước hoa của anh Huy là 100 nghìn đồng/chai, khi đó một tháng anh Huy bán được 25 chai nước hoa.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số \( P(p) = C(p) - p \cdot B(p) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & anh Huy sẽ bị lỗ nếu bán nhiều hơn 4193 chai nước hoa mỗi tháng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Lợi nhuận tối đa mà anh Huy có thể thu về nhờ việc bán nước hoa lớn hơn 8,3 triệu đồng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 3 ---
+\questionTrueFalse{15}{3}{Chị Dung là chủ của thương hiệu Lowlands Coffee. Thương hiệu này tập trung vào xuất khẩu cà phê sang nước ngoài. Người ta ước tính rằng, nếu giá bán của mỗi kilogram cà phê ở nước ngoài là \( x \) (nghìn đồng) thì mỗi tuần khách hàng sẽ mua khoảng \( D(x) = \dfrac{17500}{x^2} \) kilogram cà phê, với \( D(x) \) là hàm số biểu thị nhu cầu mua cà phê của khách hàng. Ngoài ra, chị Dung còn khảo sát thấy rằng giá bán cà phê sau \( t \) tuần tính từ khi bắt đầu tiếp cận thị trường nước ngoài cũng thay đổi theo hàm số \( x(t) = 0,2t^2 - t + 60 \) (đơn vị: nghìn đồng).}{
+    \textbf{a)} & Doanh thu mà thương hiệu của chị Dung đạt được sau \( t \) tuần tính từ khi bắt đầu tiếp cận thị trường nước ngoài là \( R(t) = \dfrac{17500}{(0,2t^2 - t + 60)^2} \) (đơn vị: nghìn đồng).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giá bán cà phê đạt mức thấp nhất sau 2,5 tuần tính từ khi bắt đầu tiếp cận thị trường nước ngoài.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khi giá bán cà phê theo thời gian đạt mức thấp nhất thì thương hiệu của chị Dung cũng đạt mức doanh thu cao nhất.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Sau thời gian dài (có thể coi như tiến đến vô cùng), nhu cầu mua cà phê cũng như doanh thu của thương hiệu cà phê sẽ tiến về 0.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 4 ---
+\questionTrueFalse{15}{4}{Bác Thương có một nông trại nuôi tôm, mỗi ngày bác thu hoạch được nửa tấn tôm. Nếu bác bán cho thương lái với giá 120 nghìn đồng/kg tôm thì bác bán được hết số tôm. Nếu giá bán cứ tăng thêm 1 nghìn đồng/kg thì bác sẽ bị thừa 5kg tôm. Để tránh lãng phí, bác Thương quyết định sẽ bán số tôm thừa này cho các hộ chăn nuôi làm thức ăn cho động vật với giá là 15 nghìn đồng/kg. Xét \( R(x) \) là hàm số biểu thị doanh thu từ việc bán tôm của bác Thương, với \( x \) là số kilogram tôm mà bác đã bán cho thương lái \( (0 \leq x \leq 500) \).}{
+    \textbf{a)} & Nếu bác bán cho thương lái được 400kg tôm thì tổng số tiền bác thu được từ việc bán tôm cho các hộ chăn nuôi là 1,5 triệu đồng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số biểu thị doanh thu từ việc bán tôm cho các hộ chăn nuôi là \( T(a) = 10a \) (nghìn đồng), với \( a \) là số kilogram tôm mà bác đã bán cho các hộ chăn nuôi.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Biết rằng phương trình \( R(x) = 0 \) có hai nghiệm phân biệt, khi đó tích của hai nghiệm này là một số chính phương.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Doanh thu tối đa từ việc bán tôm của bác Thương lớn hơn 60 triệu đồng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+% --- CÂU 11 ---
+\questionShortAnswer{20}{5}{Một công ty sử dụng xe tải để vận chuyển các sản phẩm của họ. Để tính toán chi phí, quản lý của công ty này đã mô hình hóa lượng xăng tiêu thụ ước tính theo hàm số \( G(x) = \dfrac{1}{100}\left(\dfrac{3000}{x} + x\right) \) (lít/km), với \( x \) (km/h) là vận tốc của xe tải (giả định rằng vận tốc này duy trì không đổi trong suốt quá trình di chuyển). Biết rằng giá xăng là 20 nghìn đồng/lít. Ngoài ra, công ty cần thuê người lái xe tải với mức lương 500 nghìn đồng mỗi giờ để lái xe tải cho công ty này, và quãng đường mà người lái xe di chuyển để vận chuyển các sản phẩm của công ty dài 400km. Hỏi người lái xe tải phải duy trì vận tốc của xe bằng bao nhiêu km/h để tổng chi phí của công ty là thấp nhất (kết quả làm tròn đến hàng phần mười)?}
+
+% --- CÂU 12 ---
+\questionShortAnswer{20}{6}{Ở cửa hàng thời trang STER Shop, anh Huy có một sản phẩm thời trang đặc biệt mà giá bán của nó thay đổi theo thời gian. Sau \( t \) tháng kể từ khi ra mắt sản phẩm, giá bán của sản phẩm đó thay đổi theo công thức  
+\(p(t) = \dfrac{2t\sqrt{t}}{25} - t + 170 \ (\text{nghìn đồng}).\)
+Tuy nhiên, nhu cầu mua sản phẩm này cũng thay đổi theo giá bán: Nếu giá bán của sản phẩm là \( p \) (nghìn đồng), dự tính mỗi tháng anh Huy sẽ bán được  
+\(D(p) = \dfrac{40000}{p}\)
+sản phẩm. Hỏi anh Huy có thể bán được tối đa bao nhiêu sản phẩm thời trang đặc biệt trên trong một tháng?}
+
+% --- CÂU 13 ---
+\questionShortAnswer{20}{7}{Một khu chung cư có 100 phòng cần cho thuê với mức giá cho mỗi phòng là 5 triệu đồng/tháng. Với mức giá này thì mọi phòng đều có người đến thuê. Để tăng lợi nhuận, chủ khu chung cư dự định sẽ tăng giá thuê thêm 500 nghìn đồng/tháng, tuy nhiên nếu tăng giá như vậy thì sẽ có 8 phòng bị bỏ trống. Hỏi chủ khu chung cư này nên cho thuê bao nhiêu phòng để doanh thu từ việc cho thuê là lớn nhất?}
+
+% --- CÂU 14 ---
+\questionShortAnswer{20}{8}{Một cửa hàng phân phối gạo với chi phí mua vào là 25 nghìn đồng/kg và bán ra với giá 30 nghìn đồng/kg. Với giá bán này thì số gạo bán được trong một tháng là 10000kg. Để đẩy mạnh hơn nữa doanh số tiêu thụ gạo trong một tháng, cửa hàng dự định giảm giá bán và ước tính rằng nếu giảm 1 nghìn đồng/kg thì số lượng gạo bán ra trong một tháng sẽ tăng thêm 5000kg. Cửa hàng phải định giá bán gạo mới là bao nhiêu nghìn đồng một kilôgam thì lợi nhuận thu được trong tháng cao nhất?}
+
+% --- CÂU 15 ---
+\questionShortAnswer{20}{9}{Trong trung tâm thương mại Lotto thuộc thành phố BLHN, có một nhà hàng bán buffet nướng lẩu. Khi nhà hàng bán với giá 250 nghìn đồng một suất thì mỗi ngày nhà hàng bán được 100 suất. Nhà hàng dự định có đợt giảm giá để kích cầu nhân dịp đầu năm học mới cho học sinh sinh viên. Theo khảo sát từ thị trường, mỗi lần giảm giá 20 nghìn đồng một suất thì nhà hàng bán thêm được 10 suất. Hỏi nhà hàng cần bán với giá mới là bao nhiêu nghìn đồng một suất để doanh thu trong một ngày là lớn nhất?}
+
+% --- CÂU 16 ---
+\questionShortAnswer{20}{10}{Bác Thúy có một bãi nuôi cá, mỗi ngày thu hoạch được 1 tấn cá. Nếu bác bán cho thương lái với giá 30 nghìn đồng/kg thì hết cá, nếu giá bán cứ tăng thêm 5 nghìn đồng/kg thì số cá thừa sẽ tăng thêm 20kg. Số cá thừa này được bán để làm thức ăn cho động vật với giá 10 nghìn đồng/kg. Hỏi doanh thu lớn nhất từ việc bán cá mỗi ngày của bác Thúy là bao nhiêu triệu đồng?}
+
+% --- CÂU 17 ---
+\questionShortAnswer{20}{11}{Một công ty sản xuất dụng cụ thể thao nhận được một đơn đặt hàng sản xuất 10000 quả bóng pickleball trong 1 năm. Công ty này sở hữu một số máy móc, mỗi máy có thể sản xuất 50 quả bóng trong một giờ. Chi phí thiết lập các máy này là 250 nghìn đồng cho mỗi máy. Khi được thiết lập, hoạt động sản xuất sẽ hoàn toàn diễn ra tự động dưới sự giám sát. Số tiền phải trả cho người giám sát là 200 nghìn đồng một giờ. Số máy móc công ty nên sử dụng là bao nhiêu để chi phí hoạt động là thấp nhất?}
+
+% --- CÂU 18 ---
+\questionShortAnswer{20}{12}{Để hạn chế vi phạm thời gian làm việc đối với các công nhân, giám đốc công ty quyết định xử lý bằng cách phạt tiền. Nhờ sự giám sát chặt chẽ của các quản đốc, giám đốc công ty biết được rằng trong một tháng, tỉ lệ công nhân vi phạm đúng \( k \) lần (\( k = 1 \) hoặc \( k = 2 \)) là \( t_k = \dfrac{N_k}{N} \) (trong đó \( N_k \) là số công nhân vi phạm đúng \( k \) lần, \( N \) là tổng số công nhân) và mức phạt cho mỗi lần vi phạm có mối liên hệ như sau: Nếu mỗi công nhân nộp phạt \( x \) nghìn đồng (\( 50 \leq x \leq 500 \)) khi vi phạm lần thứ nhất và nộp phạt \( x + 50 \) nghìn đồng khi vi phạm lần thứ hai thì tỉ lệ công nhân vi phạm lần lượt là \( t_1 = \dfrac{64}{x + 15} \) và \( t_2 = \dfrac{8}{x - 25} \) (giả sử rằng không có công nhân nào vi phạm quá 2 lần trong một tháng). Biết rằng tổng số công nhân bằng 2400, khi đó tổng số tiền nộp phạt của các công nhân vi phạm trong một tháng ít nhất là bao nhiêu triệu đồng (kết quả làm tròn đến hàng đơn vị)?}
+
+
+\end{document}
