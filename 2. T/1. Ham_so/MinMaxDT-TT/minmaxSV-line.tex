@@ -200,7 +200,7 @@
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray, line width=0.2pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                \draw[softgray, line width=0.2pt] (0,-{\i}) -- (\textwidth-4pt,-{\i});
             }
         \end{tikzpicture}
         \par
@@ -217,20 +217,20 @@
     \par\nopagebreak
     \drawdashlines{#1}
 }
-
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
 \newcommand{\questionTrueFalse}[4]{
+    \scriptsize
     \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
     \needspace{\calculatedSpace cm}
-    \questioncore{#2}{#3}
+    \questioncore{{#2}}{#3}
     
     \nopagebreak
-    \begin{center}
-    \renewcommand{\arraystretch}{1.8} % Bóp nhỏ chiều cao của bảng Đ/S
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+    \begin{flushleft}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.4cm}|m{6cm}|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{1cm}|}
         \hline
         \rowcolor{amberorange!20}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        & \multicolumn{1}{>{\centering\arraybackslash}m{6cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
@@ -238,7 +238,7 @@
         \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
-    \end{center}
+    \end{flushleft}
     
     \par\nopagebreak
     \drawdashlines{#1}
@@ -246,6 +246,7 @@
 
 % ----- Dạng 3: Tự luận ngắn -----
 \newcommand{\questionShortAnswer}[3]{
+    \scriptsize
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
     \needspace{\calculatedSpace cm}
     
@@ -275,13 +276,14 @@
 % ==========================================
 \begin{document}
 
+
+
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
 \titlebox{Chủ đề: Hàm số}{Min Max diện tích thể tích vật thế}{Hàm số: Min Max DT-TT}
 
 
-
 % --- CÂU 2 ---
-\questionTrueFalse{0}{1}{Khi xây nhà, anh Cường cần xây một bể nước mưa có thể tích \( V = 6m^3 \) dạng hình hộp chữ nhật với chiều dài gấp ba lần chiều rộng với chiều rộng là \( x(m) \), đáy và nắp và các mặt xung quanh đều được đổ bê tông cốt thép. Phần nắp bể để hở một khoảng hình vuông có diện tích bằng \( \dfrac{2}{9} \) nắp bể. Biết rằng chi phí nhân công và vật liệu là 800.000 đồng/\( 1m^2 \) tính theo diện tích xây dựng. Khi đó:}{
+\questionTrueFalse{14}{1}{Khi xây nhà, anh Cường cần xây một bể nước mưa có thể tích \( V = 6m^3 \) dạng hình hộp chữ nhật với chiều dài gấp ba lần chiều rộng với chiều rộng là \( x(m) \), đáy và nắp và các mặt xung quanh đều được đổ bê tông cốt thép. Phần nắp bể để hở một khoảng hình vuông có diện tích bằng \( \dfrac{2}{9} \) nắp bể. Biết rằng chi phí nhân công và vật liệu là 800.000 đồng/\( 1m^2 \) tính theo diện tích xây dựng. Khi đó:}{
     \textbf{a)} & Chiều dài của bể là \( 3x \, (m) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -295,7 +297,7 @@
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-\questionTrueFalse{0}{2}{Từ một khúc gỗ tròn hình trụ có đường kính đáy bằng 30 cm, người ta cần xé thành một chiếc trụ cột cầu thang có thiết diện ngang là hình vuông và bốn miếng phụ bằng nhau được tô gạch chéo như hình vẽ dưới đây. Gọi \( x, y \) là chiều rộng và chiều dài của miếng phụ.
+\questionTrueFalse{15}{2}{Từ một khúc gỗ tròn hình trụ có đường kính đáy bằng 30 cm, người ta cần xé thành một chiếc trụ cột cầu thang có thiết diện ngang là hình vuông và bốn miếng phụ bằng nhau được tô gạch chéo như hình vẽ dưới đây. Gọi \( x, y \) là chiều rộng và chiều dài của miếng phụ.
 
 \begin{center}
 \begin{minipage}[c]{0.45\textwidth}
@@ -358,7 +360,7 @@
 
 
 % --- CÂU 6 ---
-\questionTrueFalse{0}{3}{Anh M chế tạo một bể cá có dạng khối hộp chữ nhật không nắp có thể tích 0,15 \( m^3 \), chiều cao \( h = 0,6m \), chiều rộng \( x \), chiều dài \( y \) (với \( x, y > 0 \)). Anh M dùng loại kính để làm các mặt bên có giá 60 000 đồng/\( m^2 \) và loại kính để làm đáy có giá 100 000 đồng/\( m^2 \)). Mọi chi phí khác xem như không đáng kể. Khi đó:}{
+\questionTrueFalse{18}{3}{Anh M chế tạo một bể cá có dạng khối hộp chữ nhật không nắp có thể tích 0,15 \( m^3 \), chiều cao \( h = 0,6m \), chiều rộng \( x \), chiều dài \( y \) (với \( x, y > 0 \)). Anh M dùng loại kính để làm các mặt bên có giá 60 000 đồng/\( m^2 \) và loại kính để làm đáy có giá 100 000 đồng/\( m^2 \)). Mọi chi phí khác xem như không đáng kể. Khi đó:}{
     \textbf{a)} & Biểu thức biểu diễn \( y \) theo \( x \) là \( y = \dfrac{0,25}{x} \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -375,7 +377,7 @@
 }
 
 % --- CÂU 7 ---
-\questionTrueFalse{0}{4}{Một tấm kẽm hình vuông \( ABCD \) có cạnh bằng \( 30 \, \text{cm} \). Người ta gấp tấm kẽm theo hai cạnh \( EF \) và \( GH \) cho đến khi \( AD \) và \( BC \) trùng nhau như hình vẽ minh họa để được một hình lăng trụ khuyết hai đáy.
+\questionTrueFalse{10}{4}{Một tấm kẽm hình vuông \( ABCD \) có cạnh bằng \( 30 \, \text{cm} \). Người ta gấp tấm kẽm theo hai cạnh \( EF \) và \( GH \) cho đến khi \( AD \) và \( BC \) trùng nhau như hình vẽ minh họa để được một hình lăng trụ khuyết hai đáy.
 
 \begin{center}
 \begin{tikzpicture}[>=stealth]
@@ -474,7 +476,7 @@
 }
 
 % --- CÂU 8 ---
-\questionTrueFalse{0}{5}{Nhân dịp ngày 1-6, bác T làm một cái đèn lồng cho con. Bác dùng một sợi dây đồng dài 12dm cắt thành 3 đoạn để uốn làm khung đèn. Đoạn thứ nhất bác uốn thành hình vuông \(ABCD\) có cạnh bằng \(x(dm)\) để làm đáy, hai đoạn còn lại có độ dài bằng nhau uốn thành các đường gấp khúc \(ASC\) và \(BSD\). Khung đèn sau khi hoàn thiện có hình dạng là một hình chóp tứ giác đều \(S.ABCD\) và mặt ngoài của đèn được dán giấy màu để trang trí (xem các mối nối, dán là không đáng kể).
+\questionTrueFalse{15}{5}{Nhân dịp ngày 1-6, bác T làm một cái đèn lồng cho con. Bác dùng một sợi dây đồng dài 12dm cắt thành 3 đoạn để uốn làm khung đèn. Đoạn thứ nhất bác uốn thành hình vuông \(ABCD\) có cạnh bằng \(x(dm)\) để làm đáy, hai đoạn còn lại có độ dài bằng nhau uốn thành các đường gấp khúc \(ASC\) và \(BSD\). Khung đèn sau khi hoàn thiện có hình dạng là một hình chóp tứ giác đều \(S.ABCD\) và mặt ngoài của đèn được dán giấy màu để trang trí (xem các mối nối, dán là không đáng kể).
 \begin{center}
 
 \begin{tikzpicture}[>=stealth, scale=0.9, every node/.style={transform shape}]
@@ -582,7 +584,7 @@
 
 
 % --- CÂU 11 ---
-\questionShortAnswer{0}{6}{Một khuôn bánh cupcake được tạo nên từ hình vuông có cạnh bằng 8, người ta cắt bỏ các tam giác vuông cân để tạo thành hình tô đậm như hình vẽ. Sau đó người ta gập thành hình hộp chữ nhật không nắp rồi đổ bột bánh vào. Thể tích lớn nhất của khuôn bánh bằng bao nhiêu (kết quả làm tròn đến hàng phần mười)?
+\questionShortAnswer{18}{6}{Một khuôn bánh cupcake được tạo nên từ hình vuông có cạnh bằng 8, người ta cắt bỏ các tam giác vuông cân để tạo thành hình tô đậm như hình vẽ. Sau đó người ta gập thành hình hộp chữ nhật không nắp rồi đổ bột bánh vào. Thể tích lớn nhất của khuôn bánh bằng bao nhiêu (kết quả làm tròn đến hàng phần mười)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.2]
@@ -635,7 +637,7 @@
 \end{center}}
 
 % --- CÂU 12 ---
-\questionShortAnswer{0}{7}{Người ta muốn thiết kế một bể cá bằng kính không có nắp với thể tích \( 162 \, dm^3 \), chiều cao là \( 3 \, dm \). Một vách ngăn (cùng bằng kính) ở giữa, chia bể cá thành hai ngăn, với các kích thước \( a, b \, (dm) \) như hình vẽ. Biết rằng khi \( a = a_0; b = b_0 \) thì việc làm kính cho bể cá tốn ít nguyên liệu nhất. Tính giá trị của \( T = a_0 + 2b_0 \).
+\questionShortAnswer{18}{7}{Người ta muốn thiết kế một bể cá bằng kính không có nắp với thể tích \( 162 \, dm^3 \), chiều cao là \( 3 \, dm \). Một vách ngăn (cùng bằng kính) ở giữa, chia bể cá thành hai ngăn, với các kích thước \( a, b \, (dm) \) như hình vẽ. Biết rằng khi \( a = a_0; b = b_0 \) thì việc làm kính cho bể cá tốn ít nguyên liệu nhất. Tính giá trị của \( T = a_0 + 2b_0 \).
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.2]
@@ -717,7 +719,7 @@
 
 
 % --- CÂU 14 ---
-\questionShortAnswer{0}{8}{Cho một tấm tôn hình tròn có diện tích \( 8\pi \, dm^2 \). Người ta cắt thành một hình quạt có góc ở tâm là \( \alpha \, (0 < \alpha < 2\pi) \) như Hình 1 để làm thành một cái gầu múc nước hình nón như ở Hình 2. Hỏi thể tích lớn nhất của cái gầu là bao nhiêu lít (kết quả làm tròn đến hàng phần trăm)?
+\questionShortAnswer{18}{8}{Cho một tấm tôn hình tròn có diện tích \( 8\pi \, dm^2 \). Người ta cắt thành một hình quạt có góc ở tâm là \( \alpha \, (0 < \alpha < 2\pi) \) như Hình 1 để làm thành một cái gầu múc nước hình nón như ở Hình 2. Hỏi thể tích lớn nhất của cái gầu là bao nhiêu lít (kết quả làm tròn đến hàng phần trăm)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.1]
@@ -782,7 +784,7 @@
 \end{center}}
 
 % --- CÂU 15 ---
-\questionShortAnswer{0}{9}{Một thùng chứa nhiên liệu gồm phần ở giữa là một hình trụ có chiều dài \( h \, (m) \) và hai đầu là các nửa hình cầu bán kính \( r \, (m) \) (hình vẽ). Biết rằng thể tích của thùng chứa là \( 288\,000\pi \, (m^3) \). Để sơn mặt ngoài của phần hình cầu cần 20 000 đồng trên \( 1m^2 \), còn sơn mặt ngoài cho phần hình trụ cần 10 000 đồng trên \( 1m^2 \). Để chi phí cho việc sơn diện tích mặt ngoài thùng chứa (bao gồm diện tích xung quanh của hình trụ và diện tích hai nửa hình cầu) là nhỏ nhất thì \( r \) bằng bao nhiêu mét (biết rằng bán kính \( r \) không vượt quá \( 50 \, m \), kết quả làm tròn đến hàng đơn vị)?
+\questionShortAnswer{15}{9}{Một thùng chứa nhiên liệu gồm phần ở giữa là một hình trụ có chiều dài \( h \, (m) \) và hai đầu là các nửa hình cầu bán kính \( r \, (m) \) (hình vẽ). Biết rằng thể tích của thùng chứa là \( 288\,000\pi \, (m^3) \). Để sơn mặt ngoài của phần hình cầu cần 20 000 đồng trên \( 1m^2 \), còn sơn mặt ngoài cho phần hình trụ cần 10 000 đồng trên \( 1m^2 \). Để chi phí cho việc sơn diện tích mặt ngoài thùng chứa (bao gồm diện tích xung quanh của hình trụ và diện tích hai nửa hình cầu) là nhỏ nhất thì \( r \) bằng bao nhiêu mét (biết rằng bán kính \( r \) không vượt quá \( 50 \, m \), kết quả làm tròn đến hàng đơn vị)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -837,13 +839,13 @@
 
 
 % --- CÂU 17 ---
-\questionShortAnswer{0}{10}{Một nhóm bạn đi picnic muốn cắm trại qua đêm. Biết trại cắm là một hình chóp đỉnh \( S \) cách đều các chân trại \( A, B, C \) một đoạn bằng \( 4m \). Biết đáy trại là một tam giác vuông tại \( A \) và \( AB = 2m \). Nhóm muốn cắm trại sao cho thể tích của trại là lớn nhất cho không gian thoải mái. Khi đó độ dài \( AC \) bằng bao nhiêu mét (kết quả làm tròn đến hàng phần trăm)?}
+\questionShortAnswer{15}{10}{Một nhóm bạn đi picnic muốn cắm trại qua đêm. Biết trại cắm là một hình chóp đỉnh \( S \) cách đều các chân trại \( A, B, C \) một đoạn bằng \( 4m \). Biết đáy trại là một tam giác vuông tại \( A \) và \( AB = 2m \). Nhóm muốn cắm trại sao cho thể tích của trại là lớn nhất cho không gian thoải mái. Khi đó độ dài \( AC \) bằng bao nhiêu mét (kết quả làm tròn đến hàng phần trăm)?}
 
 % --- CÂU 18 ---
-\questionShortAnswer{0}{11}{Ông Dương muốn làm một cái phễu hình nón có thể tích bằng \( 9\pi\sqrt{2} \). Ông Dương muốn dùng tôn để làm phần mặt xung quanh của phễu. Hỏi bán kính đáy của cái phễu bằng bao nhiêu để diện tích tôn mà ông Dương cần dùng là nhỏ nhất?}
+\questionShortAnswer{15}{11}{Ông Dương muốn làm một cái phễu hình nón có thể tích bằng \( 9\pi\sqrt{2} \). Ông Dương muốn dùng tôn để làm phần mặt xung quanh của phễu. Hỏi bán kính đáy của cái phễu bằng bao nhiêu để diện tích tôn mà ông Dương cần dùng là nhỏ nhất?}
 
 % --- CÂU 19 ---
-\questionShortAnswer{0}{12}{Để chặn đường hành lang hình chữ \( L \), người ta dùng một que sào thẳng dài đặt kín những điểm chạm với hành lang (như hình vẽ). Biết \( a = 18 \) và \( b = 2 \), hỏi cái sào thỏa mãn điều kiện trên có chiều dài ngắn nhất là bao nhiêu (kết quả làm tròn đến hàng phần mười).
+\questionShortAnswer{15}{12}{Để chặn đường hành lang hình chữ \( L \), người ta dùng một que sào thẳng dài đặt kín những điểm chạm với hành lang (như hình vẽ). Biết \( a = 18 \) và \( b = 2 \), hỏi cái sào thỏa mãn điều kiện trên có chiều dài ngắn nhất là bao nhiêu (kết quả làm tròn đến hàng phần mười).
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -902,7 +904,7 @@
 \end{center}}
 
 % --- CÂU 20 ---
-\questionShortAnswer{0}{13}{Cho một tấm bìa hình chữ nhật có chiều dài \( AB = 80 \, \text{cm} \), chiều rộng \( BC = 60 \, \text{cm} \). Người ta cắt 6 hình vuông bằng nhau như hình vẽ, mỗi hình vuông cạnh bằng \( x \, \text{cm} \), rồi gập tấm bìa lại như hình vẽ để được một hộp quà có nắp. Tìm \( x \) để hộp nhận được có thể tích lớn nhất (kết quả làm tròn đến hàng phần mười)?
+\questionShortAnswer{15}{13}{Cho một tấm bìa hình chữ nhật có chiều dài \( AB = 80 \, \text{cm} \), chiều rộng \( BC = 60 \, \text{cm} \). Người ta cắt 6 hình vuông bằng nhau như hình vẽ, mỗi hình vuông cạnh bằng \( x \, \text{cm} \), rồi gập tấm bìa lại như hình vẽ để được một hộp quà có nắp. Tìm \( x \) để hộp nhận được có thể tích lớn nhất (kết quả làm tròn đến hàng phần mười)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.1]
@@ -963,7 +965,7 @@
 \end{center}}
 
 % --- CÂU 21 ---
-\questionShortAnswer{0}{14}{Một mảnh giấy hình chữ nhật có chiều dài 18cm và chiều rộng 9cm. Thực hiện thao tác gấp góc dưới bên phải sao cho đỉnh được gấp nằm trên cạnh chiều dài còn lại (như hình vẽ). Hỏi chiều dài \( L \) tối thiểu của nếp gấp là bao nhiêu \( cm \) (kết quả làm tròn đến hàng phần mười)?
+\questionShortAnswer{15}{14}{Một mảnh giấy hình chữ nhật có chiều dài 18cm và chiều rộng 9cm. Thực hiện thao tác gấp góc dưới bên phải sao cho đỉnh được gấp nằm trên cạnh chiều dài còn lại (như hình vẽ). Hỏi chiều dài \( L \) tối thiểu của nếp gấp là bao nhiêu \( cm \) (kết quả làm tròn đến hàng phần mười)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -1020,7 +1022,7 @@
 \end{center}}
 
 % --- CÂU 22 ---
-\questionShortAnswer{0}{15}{Hình dưới đây là mương dẫn nước thủy lợi tại một địa phương phục vụ tưới tiêu cho ruộng đồng. Phần không gian trong mương để nước chảy có mặt cắt ngang là hình chữ nhật \(ABCD\). Với điều kiện lưu lượng nước qua mương cho phép thì diện tích mặt cắt \(ABCD\) là \(0,48 \, m^2\). Để đảm bảo yêu cầu kỹ thuật tốt nhất cho mương, người ta cần thiết kế sao cho tổng độ dài \(T = AB + BC + CD\) là ngắn nhất. Khi đó chiều rộng đáy mương bằng bao nhiêu mét (biết chiều rộng phải dưới \(1 \, m\), kết quả làm tròn đến hàng phần trăm)?
+\questionShortAnswer{15}{15}{Hình dưới đây là mương dẫn nước thủy lợi tại một địa phương phục vụ tưới tiêu cho ruộng đồng. Phần không gian trong mương để nước chảy có mặt cắt ngang là hình chữ nhật \(ABCD\). Với điều kiện lưu lượng nước qua mương cho phép thì diện tích mặt cắt \(ABCD\) là \(0,48 \, m^2\). Để đảm bảo yêu cầu kỹ thuật tốt nhất cho mương, người ta cần thiết kế sao cho tổng độ dài \(T = AB + BC + CD\) là ngắn nhất. Khi đó chiều rộng đáy mương bằng bao nhiêu mét (biết chiều rộng phải dưới \(1 \, m\), kết quả làm tròn đến hàng phần trăm)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.1]
@@ -1061,7 +1063,7 @@
 
 
 % --- CÂU 26 ---
-\questionShortAnswer{0}{16}{Công ty mĩ phẩm chuẩn bị cho ra một mẫu sản phẩm dưỡng da mới mang tên Ngọc Trai với thiết kế là một khối cầu như viên ngọc trai không lõi, bên trong là một khối trụ nằm trong khối cầu để đựng kem dưỡng da như hình vẽ. Nhà sản xuất dự định thiết kế khối cầu có bán kính là \( R = 4\sqrt{3} \, \text{cm} \). Tìm thể tích lớn nhất của khối trụ đựng kem (đơn vị: \( \text{cm}^3 \), kết quả làm tròn đến hàng đơn vị).
+\questionShortAnswer{15}{16}{Công ty mĩ phẩm chuẩn bị cho ra một mẫu sản phẩm dưỡng da mới mang tên Ngọc Trai với thiết kế là một khối cầu như viên ngọc trai không lõi, bên trong là một khối trụ nằm trong khối cầu để đựng kem dưỡng da như hình vẽ. Nhà sản xuất dự định thiết kế khối cầu có bán kính là \( R = 4\sqrt{3} \, \text{cm} \). Tìm thể tích lớn nhất của khối trụ đựng kem (đơn vị: \( \text{cm}^3 \), kết quả làm tròn đến hàng đơn vị).
 
 \begin{center}
 \begin{tikzpicture}[>=latex, scale=0.5]
@@ -1074,7 +1076,7 @@
 \end{center}}
 
 % --- CÂU 27 ---
-\questionShortAnswer{0}{17}{Một máng nước mưa được làm từ một tấm tôn rộng 45 cm bằng cách gấp hai phía của tấm tôn với kích thước bằng \(\dfrac{1}{3}\) tấm tôn sao cho nó tạo thành một góc \(x\) (như hình vẽ). Hỏi phải chọn \(x\) bằng bao nhiêu độ để máng chứa được lượng nước mưa tối đa.
+\questionShortAnswer{15}{17}{Một máng nước mưa được làm từ một tấm tôn rộng 45 cm bằng cách gấp hai phía của tấm tôn với kích thước bằng \(\dfrac{1}{3}\) tấm tôn sao cho nó tạo thành một góc \(x\) (như hình vẽ). Hỏi phải chọn \(x\) bằng bao nhiêu độ để máng chứa được lượng nước mưa tối đa.
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
