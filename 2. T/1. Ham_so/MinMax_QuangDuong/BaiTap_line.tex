@@ -281,82 +281,10 @@
 
 
 
-% --- CÂU 5 ---
-\questionTrueFalse{10}{1}{Một ngư dân muốn chèo thuyền ở vị trí A tới điểm B về phía hạ lưu bờ đối diện trong thời gian ngắn nhất, trên một bờ sông thẳng rộng 5 km (như hình vẽ). Anh có thể chèo thuyền của mình trực tiếp qua sông để đến C và sau đó chạy đến B hay có thể chèo trực tiếp đến B, hoặc anh ta có thể chèo thuyền đến một điểm D giữa C và B sau đó chạy đến B. Biết vận tốc chèo thuyền của anh ấy là 5 km/h và vận tốc chạy là 9 km/h, quãng đường BC dài 11 km. Biết tốc độ của dòng nước là không đáng kể so với tốc độ chèo thuyền của người đàn ông. Gọi \( x \) (km) là độ dài quãng đường CD.
-\begin{center}
-    \begin{tikzpicture}[>=stealth, scale=1]
 
-    % =================================================================
-    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH
-    % =================================================================
-    \coordinate (A) at (0,4.0);
-    \coordinate (C) at (2.5,4.0);
-    \coordinate (D) at (2.5,1.8);
-    \coordinate (B) at (2.5,0.2);
-
-    % Tọa độ giới hạn vùng background gạch ngang (dòng sông/biển)
-    \coordinate (TopLeftBg) at (0,4.3);
-    \coordinate (TopRightBg) at (2.5,4.3);
-    \coordinate (BottomLeftBg) at (0,-0.2);
-    \coordinate (BottomRightBg) at (2.5,-0.2);
-
-    % =================================================================
-    % 2. TÔ VÙNG HỌA TIẾT NỀN GẠCH NGANG (DÒNG SÔNG) VÀ BIÊN NÉT ĐỨT
-    % =================================================================
-    % Sử dụng họa tiết nằm ngang mờ mờ làm nền cho dòng sông
-    \fill[pattern=horizontal lines, pattern color=gray!60] (BottomLeftBg) rectangle (TopRightBg);
-    
-    % Hai đường biên dọc thể hiện hai bờ sông (nét đứt mỏng)
-    \draw[dashed, gray!80, thin] (BottomLeftBg) -- (TopLeftBg);
-    \draw[dashed, gray!80, thin] (BottomRightBg) -- (TopRightBg);
-
-    % =================================================================
-    % 3. VẼ CÁC TUYẾN ĐƯỜNG NỐI VÀ CÁC ĐIỂM NÚT
-    % =================================================================
-    % Vẽ các đoạn thẳng nối giữa các điểm
-    \draw[thick] (A) -- (C);
-    \draw[thick] (A) -- (D);
-    \draw[thick] (A) -- (B);
-
-    % Vẽ các chấm tròn đen tại các điểm nút đầu mút
-    \fill (A) circle (1.5pt);
-    \fill (C) circle (1.5pt);
-    \fill (D) circle (1.5pt);
-    \fill (B) circle (1.5pt);
-
-    % =================================================================
-    % 4. GÁN NHÃN ĐỈNH VÀ ĐIỀN THÔNG SỐ CHIỀU RỘNG SÔNG
-    % =================================================================
-    % Nhãn các điểm
-    \node[left=2pt] at (A) {$A$};
-    \node[right=2pt] at (C) {$C$};
-    \node[right=2pt] at (D) {$D$};
-    \node[right=2pt] at (B) {$B$};
-
-    % Mũi tên kích thước thể hiện chiều rộng sông 5km phía trên
-    \draw[<->, thick] (0,4.5) -- (2.5,4.5);
-    \node[above] at (1.25,4.5) {$5km$};
-
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & \( 11 - x \) (km) là độ dài quãng đường \( BD \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Thời gian chèo thuyền trên quãng đường \( AD \) là  
-    \(\dfrac{\sqrt{25 + x^2}}{5} \text{ (giờ)}.\)
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Tổng thời gian di chuyển từ \( A \) đến \( B \) là  
-    \(\dfrac{\sqrt{(11 - x)^2 + 25}}{5} + \dfrac{x}{9} \text{ (giờ)}.\)
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & \( D \) cần cách \( B \) một khoảng 7,66 km thì tổng thời gian di chuyển từ \( A \) đến \( B \) là nhỏ nhất (kết quả làm tròn đến hàng phần trăm).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 % --- CÂU 6 ---
-\questionTrueFalse{12}{2}{Một khu vui chơi trẻ em có hai cây cột, cây thứ nhất cao 15m và cây thứ hai cao 30m đứng cách nhau 80m. Chúng được giữ bằng hai sợi dây, gắn vào một cọc duy nhất nối từ mặt đất đến đỉnh mỗi cột (như hình vẽ). Gọi \( x \) là khoảng cách từ cây thứ nhất đến cọc (đơn vị: mét), \( 0 < x < 80 \).
+\questionTrueFalse{10}{1}{Một khu vui chơi trẻ em có hai cây cột, cây thứ nhất cao 15m và cây thứ hai cao 30m đứng cách nhau 80m. Chúng được giữ bằng hai sợi dây, gắn vào một cọc duy nhất nối từ mặt đất đến đỉnh mỗi cột (như hình vẽ). Gọi \( x \) là khoảng cách từ cây thứ nhất đến cọc (đơn vị: mét), \( 0 < x < 80 \).
 \begin{center}
     \begin{tikzpicture}[>=stealth, scale=1]
 
@@ -441,7 +369,7 @@
 }
 
 % --- CÂU 7 ---
-\questionTrueFalse{15}{3}{Có hai người đi ô tô ở hai vị trí A và B. Người ở vị trí A lái xe theo hướng Nam đến vị trí C với vận tốc 60 km/h, còn người ở vị trí B lái xe với vận tốc 45 km/h để đến vị trí D (như hình vẽ). Biết rằng \( AB = 80 \, \text{km} \). Gọi \( t \) (giờ) là thời gian lái xe của mỗi người.
+\questionTrueFalse{15}{2}{Có hai người đi ô tô ở hai vị trí A và B. Người ở vị trí A lái xe theo hướng Nam đến vị trí C với vận tốc 60 km/h, còn người ở vị trí B lái xe với vận tốc 45 km/h để đến vị trí D (như hình vẽ). Biết rằng \( AB = 80 \, \text{km} \). Gọi \( t \) (giờ) là thời gian lái xe của mỗi người.
 \begin{center}
     \begin{tikzpicture}[>=stealth, scale=1.2]
 
@@ -541,7 +469,7 @@
 }
 
 % --- CÂU 8 ---
-\questionTrueFalse{15}{4}{Một ngọn hải đăng được đặt tại vị trí A cách bờ biển một khoảng \( AB = 10 \, km \). Trên bờ biển có một cảng thuyền ở vị trí C cách B một khoảng \( BC = 18 \, km \) (tham khảo hình vẽ). Người canh hải đăng có thể chèo thuyền từ vị trí A đến M với vận tốc 6 km/h và đi xe điện từ vị trí M đến cảng C với vận tốc 15 km/h. Đặt \( BM = x \) (\( 0 < x < 12 \)).
+\questionTrueFalse{15}{3}{Một ngọn hải đăng được đặt tại vị trí A cách bờ biển một khoảng \( AB = 10 \, km \). Trên bờ biển có một cảng thuyền ở vị trí C cách B một khoảng \( BC = 18 \, km \) (tham khảo hình vẽ). Người canh hải đăng có thể chèo thuyền từ vị trí A đến M với vận tốc 6 km/h và đi xe điện từ vị trí M đến cảng C với vận tốc 15 km/h. Đặt \( BM = x \) (\( 0 < x < 12 \)).
 \begin{center}
     \begin{tikzpicture}[>=stealth, scale=1.3]
 
@@ -600,70 +528,10 @@
 }
 
 
-% --- CÂU 16 ---
-\questionShortAnswer{15}{5}{Có hai trường học cùng ở bên phải một con kênh. Người ta đo được khoảng cách từ cổng trường \( A \) và \( B \) của hai trường học đó đến con kênh lần lượt là \( AD = 650 \, m \), \( BC = 900 \, m \) và \( CD = 4000 \, m \). Người ta muốn xây dựng một trạm xe buýt nằm bên bờ kênh cho học sinh hai trường. Để tiết kiệm chi phí, người ta cần chọn vị trí \( M \) của trạm xe buýt đó trên đoạn \( CD \) sao cho tổng khoảng cách từ hai vị trí \( A, B \) đến vị trí \( M \) là nhỏ nhất. Hãy tìm giá trị nhỏ nhất (đơn vị là mét) của tổng khoảng cách đó (kết quả làm tròn đến hàng đơn vị).
 
-\begin{center}
-\begin{tikzpicture}[>=stealth, scale=1.3]
-
-    % =================================================================
-    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH
-    % =================================================================
-    \coordinate (D) at (0,0);
-    \coordinate (M) at (1.8,0);
-    \coordinate (C) at (5.2,0);
-    
-    % Chiều cao các cột tương ứng tỉ lệ hình vẽ
-    \coordinate (A) at (0,1.8);
-    \coordinate (B) at (5.2,2.8);
-
-    % Giới hạn trục mặt đất nằm ngang kéo dài hai đầu
-    \coordinate (GroundStart) at (-0.6,0);
-    \coordinate (GroundEnd) at (5.8,0);
-
-    % Tọa độ cho đường mũi tên nét đứt ở giữa thể hiện khoảng cách ngang
-    \coordinate (ArrowLeft) at (0,1.0);
-    \coordinate (ArrowRight) at (5.2,1.0);
-
-    % =================================================================
-    % 2. VẼ ĐƯỜNG MẶT ĐẤT VÀ CÁC ĐOẠN THẲNG TRÊN HÌNH
-    % =================================================================
-    % Trục mặt đất nằm ngang
-    \draw[thick] (GroundStart) -- (GroundEnd);
-
-    % Hai cột đứng AD và BC
-    \draw[thick] (A) -- (D);
-    \draw[thick] (B) -- (C);
-
-    % Hai sợi dây căng xiên từ đỉnh xuống điểm M trên mặt đất
-    \draw[thick] (A) -- (M);
-    \draw[thick] (B) -- (M);
-
-    % =================================================================
-    % 3. VẼ ĐƯỜNG MŨI TÊN KÍCH THƯỚC NÉT ĐỨT THỂ HIỆN 4000m
-    % =================================================================
-    \draw[<->, dashed, thick] (ArrowLeft) -- (ArrowRight);
-
-    % =================================================================
-    % 4. GÁN NHÃN CÁC ĐỈNH VÀ THÔNG SỐ SỐ ĐO
-    % =================================================================
-    % Nhãn các điểm hình học
-    \node[above] at (A) {$A$};
-    \node[right] at (B) {$B$};
-    \node[below=3pt] at (D) {$D$};
-    \node[below=3pt] at (M) {$M$};
-    \node[below=3pt] at (C) {$C$};
-
-    % Các thông số kích thước, chiều dài
-    \node[left=3pt] at (0,0.9) {$650m$};
-    \node[right=3pt] at (5.2,1.4) {$900m$};
-    \node[above] at (2.6,1.0) {$4000m$};
-
-\end{tikzpicture}
-\end{center}}
 
 % --- CÂU 17 ---
-\questionShortAnswer{15}{6}{Hai trạm khí tượng đặt tại các vị trí \( A \) và \( B \) cách nhau \( 8 \, \text{km} \). Một trạm thu thập dữ liệu được đặt ở vị trí \( C \) nằm trên đường trung trực của đoạn thẳng \( AB \), cách trung điểm \( M \) của đoạn thẳng \( AB \) một khoảng \( 6 \, \text{km} \). Người ta muốn truyền dữ liệu từ trạm \( C \) đến một vị trí \( I \) nằm giữa đoạn thẳng \( MC \) sau đó chia ra hai nhánh dẫn tới hai nhà máy \( A \) và \( B \) (hình vẽ) thông qua dây dẫn. Tổng độ dài dây dẫn nhỏ nhất bằng bao nhiêu \( km \) (kết quả làm tròn đến hàng phần mười)?
+\questionShortAnswer{15}{4}{Hai trạm khí tượng đặt tại các vị trí \( A \) và \( B \) cách nhau \( 8 \, \text{km} \). Một trạm thu thập dữ liệu được đặt ở vị trí \( C \) nằm trên đường trung trực của đoạn thẳng \( AB \), cách trung điểm \( M \) của đoạn thẳng \( AB \) một khoảng \( 6 \, \text{km} \). Người ta muốn truyền dữ liệu từ trạm \( C \) đến một vị trí \( I \) nằm giữa đoạn thẳng \( MC \) sau đó chia ra hai nhánh dẫn tới hai nhà máy \( A \) và \( B \) (hình vẽ) thông qua dây dẫn. Tổng độ dài dây dẫn nhỏ nhất bằng bao nhiêu \( km \) (kết quả làm tròn đến hàng phần mười)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -712,7 +580,7 @@
 \end{center}}
 
 % --- CÂU 18 ---
-\questionShortAnswer{15}{7}{Một đường cáp điện được kéo từ một trạm điện \( A \) ở một bên sông rộng 900 mét đến một nhà máy \( B \) ở bờ bên kia của sông, nhà máy cách trạm điện 3000 mét tính xuôi theo bờ sông. Đường cáp này được mô hình hóa thành đường gấp khúc \( APB \) như hình vẽ, trong đó đoạn \( PB \) đặt trên bờ sông. Giả định rằng tỉ lệ giữa chi phí để kéo 1 mét cáp dưới nước và chi phí kéo 1 mét cáp trên bờ bằng 1,25. Hỏi để tiết kiệm chi phí nhất thì vị trí \( P \) cách nhà máy \( B \) bao nhiêu mét?
+\questionShortAnswer{15}{5}{Một đường cáp điện được kéo từ một trạm điện \( A \) ở một bên sông rộng 900 mét đến một nhà máy \( B \) ở bờ bên kia của sông, nhà máy cách trạm điện 3000 mét tính xuôi theo bờ sông. Đường cáp này được mô hình hóa thành đường gấp khúc \( APB \) như hình vẽ, trong đó đoạn \( PB \) đặt trên bờ sông. Giả định rằng tỉ lệ giữa chi phí để kéo 1 mét cáp dưới nước và chi phí kéo 1 mét cáp trên bờ bằng 1,25. Hỏi để tiết kiệm chi phí nhất thì vị trí \( P \) cách nhà máy \( B \) bao nhiêu mét?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -800,7 +668,7 @@
 \end{center}}
 
 % --- CÂU 19 ---
-\questionShortAnswer{15}{8}{Một con đường cần được xây dựng giữa hai thành phố \( X \) và \( Y \) nằm ở hai bên đối diện của một con sông có chiều rộng \( 1 \, km \). \( X \) cách sông \( 2 \, km \) và \( Y \) cách sông \( 4 \, km \), khoảng cách giữa hai hình chiếu vuông góc của \( X \) và \( Y \) trên cùng một bên bờ sông là \( 6 \, km \). Một cây cầu sẽ được xây dựng để cho phép giao thông đi qua sông. Vị trí của cây cầu \( CD \) cách \( XX' \) là \( x \, (km) \).
+\questionShortAnswer{15}{6}{Một con đường cần được xây dựng giữa hai thành phố \( X \) và \( Y \) nằm ở hai bên đối diện của một con sông có chiều rộng \( 1 \, km \). \( X \) cách sông \( 2 \, km \) và \( Y \) cách sông \( 4 \, km \), khoảng cách giữa hai hình chiếu vuông góc của \( X \) và \( Y \) trên cùng một bên bờ sông là \( 6 \, km \). Một cây cầu sẽ được xây dựng để cho phép giao thông đi qua sông. Vị trí của cây cầu \( CD \) cách \( XX' \) là \( x \, (km) \).
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -891,7 +759,7 @@ Tìm \( x \) để con đường cần được xây dựng giữa hai thành ph
 
 
 % --- CÂU 20 ---
-\questionShortAnswer{15}{9}{Cho một bờ hồ hình bán nguyệt có bán kính bằng \( 4 \, km \), đường kính \( PR \) như hình vẽ sau:
+\questionShortAnswer{15}{7}{Cho một bờ hồ hình bán nguyệt có bán kính bằng \( 4 \, km \), đường kính \( PR \) như hình vẽ sau:
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.4]
@@ -956,7 +824,7 @@ Tìm \( x \) để con đường cần được xây dựng giữa hai thành ph
 Từ điểm \( P \) anh Bắp chèo một chiếc thuyền với vận tốc \( 5 \, km/h \) đến điểm \( Q \) trên bờ hồ, rồi chạy bộ dọc theo thành hồ đến vị trí \( R \) với vận tốc \( 8 \, km/h \). Thời gian lớn nhất mà anh Bắp di chuyển từ \( P \) đến \( R \) là bao nhiêu (thời gian tính bằng giờ, kết quả làm tròn đến hàng phần trăm)?}
 
 % --- CÂU 21 ---
-\questionShortAnswer{15}{10}{Một người chèo một chiếc thuyền xuất phát từ điểm \( A \) trên bờ một con sông thẳng rộng \( 3,5 \, \text{km} \), và muốn đến điểm \( B \) cách điểm \( C \) \( 7 \, \text{km} \). Người này có thể chèo thuyền qua sông đến điểm \( C \) rồi chạy bộ đến \( B \), hoặc anh ta có thể chèo thuyền thẳng đến \( B \). Hoặc anh ta có thể chèo thuyền qua sông đến điểm \( D \) nào đó giữa \( C \) và \( B \) rồi chạy đến điểm \( B \) (hình minh họa).
+\questionShortAnswer{15}{8}{Một người chèo một chiếc thuyền xuất phát từ điểm \( A \) trên bờ một con sông thẳng rộng \( 3,5 \, \text{km} \), và muốn đến điểm \( B \) cách điểm \( C \) \( 7 \, \text{km} \). Người này có thể chèo thuyền qua sông đến điểm \( C \) rồi chạy bộ đến \( B \), hoặc anh ta có thể chèo thuyền thẳng đến \( B \). Hoặc anh ta có thể chèo thuyền qua sông đến điểm \( D \) nào đó giữa \( C \) và \( B \) rồi chạy đến điểm \( B \) (hình minh họa).
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -1034,73 +902,9 @@ Từ điểm \( P \) anh Bắp chèo một chiếc thuyền với vận tốc \(
 
 Biết rằng vận tốc chèo thuyền của anh ta là \( 5 \, \text{km/h} \) (đã tính vận tốc nước), vận tốc chạy bộ của anh ta là \( 9 \, \text{km/h} \). Trong tất cả các phương án đến \( B \) bằng cách chèo thuyền hoặc chèo thuyền rồi chạy bộ, phương án nhanh nhất có tổng thời gian là bao nhiêu giờ (kết quả làm tròn đến hàng phần trăm)?}
 
-% --- CÂU 22 ---
-\questionShortAnswer{15}{11}{Hai nhà máy sản xuất đặt tại các vị trí \( A \) và \( B \) cách nhau \( 4 \, \text{km} \). Một nhà máy cung cấp nước được đặt ở vị trí \( C \) nằm trên đường trung trực của đoạn thẳng \( AB \), cách trung điểm \( M \) của đoạn thẳng \( AB \) một khoảng \( 4 \, \text{km} \). Người ta muốn làm một đường ống dẫn nước từ nhà máy nước \( C \) đến một vị trí \( I \) nằm giữa đoạn thẳng \( MC \) sau đó chia ra hai nhánh dẫn tới hai nhà máy \( A \) và \( B \) (hình vẽ). Hỏi \( I \) cần cách \( C \) bao nhiêu \( \text{km} \) để tổng độ dài đường ống là nhỏ nhất (kết quả làm tròn đến hàng phần trăm)?
-
-\begin{center}
-\begin{tikzpicture}[>=stealth, scale=1.3]
-
-    % =================================================================
-    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH
-    % =================================================================
-    \coordinate (M) at (0,0);
-    \coordinate (A) at (-2.3,0);
-    \coordinate (B) at (2.3,0);
-    \coordinate (I) at (0,0.9);
-    \coordinate (C) at (0,3.2);
-
-    % =================================================================
-    % 2. VẼ CÁC ĐOẠN THẲNG LIỀN NÉT VÀ NÉT ĐỨT
-    % =================================================================
-    % Đoạn thẳng đứng liền nét IC
-    \draw[very thick] (I) -- (C);
-
-    % Hai đoạn xiên liền nét IA và IB
-    \draw[very thick] (I) -- (A);
-    \draw[very thick] (I) -- (B);
-
-    % Các đoạn thẳng nét đứt thể hiện đường gióng hình học
-    \draw[dashed, thick] (A) -- (B);
-    \draw[dashed, thick] (M) -- (I);
-
-    % =================================================================
-    % 3. VẼ CÁC ĐƯỜNG CONG NÉT CHẤM (MÓC ĐO KÍCH THƯỚC)
-    % =================================================================
-    % Đường cong biểu diễn khoảng cách 4km từ C xuống M
-    \draw[densely dotted, thin] (C) to[out=250, in=110] (M);
-
-    % Đường cong biểu diễn khoảng cách 4km từ A đến B
-    \draw[densely dotted, thin] (A) to[out=-20, in=-160] (B);
-
-    % =================================================================
-    % 4. VẼ CÁC ĐIỂM NÚT (CHẤM TRÒN ĐEN)
-    % =================================================================
-    \fill (A) circle (2.0pt);
-    \fill (B) circle (2.0pt);
-    \fill (M) circle (2.0pt);
-    \fill (I) circle (2.0pt);
-    \fill (C) circle (2.0pt);
-
-    % =================================================================
-    % 5. GÁN NHÃN CÁC ĐỈNH VÀ THÔNG SỐ ĐO KÍCH THƯỚC
-    % =================================================================
-    \node[above=3pt] at (C) {$C$};
-    \node[above right=1pt] at (I) {$I$};
-    \node[above right=3pt] at (M) {$M$};
-    \node[left=4pt] at (A) {$A$};
-    \node[right=4pt] at (B) {$B$};
-
-    % Thông số 4km cho chiều dọc CM
-    \node[left=3pt] at (-0.3, 1.4) {$4km$};
-
-    % Thông số 4km cho chiều ngang AB
-    \node[below=8pt] at (M) {$4km$};
-
-\end{tikzpicture}
-\end{center}}
 
 % --- CÂU 23 ---
-\questionShortAnswer{15}{12}{Cho hai vị trí \( A, B \) cách nhau 850 m, cùng nằm về một phía bờ sông như hình vẽ. Khoảng cách từ \( A \) và từ \( B \) đến bờ sông lần lượt là 146 m và 506 m. Một người đi từ \( A \) đến bờ sông để lấy nước mang về \( B \). Đoạn đường ngắn nhất mà người đó có thể đi là bao nhiêu mét (kết quả làm tròn đến hàng đơn vị)?
+\questionShortAnswer{15}{9}{Cho hai vị trí \( A, B \) cách nhau 850 m, cùng nằm về một phía bờ sông như hình vẽ. Khoảng cách từ \( A \) và từ \( B \) đến bờ sông lần lượt là 146 m và 506 m. Một người đi từ \( A \) đến bờ sông để lấy nước mang về \( B \). Đoạn đường ngắn nhất mà người đó có thể đi là bao nhiêu mét (kết quả làm tròn đến hàng đơn vị)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -1163,7 +967,7 @@ Biết rằng vận tốc chèo thuyền của anh ta là \( 5 \, \text{km/h} \)
 \end{center}}
 
 % --- CÂU 24 ---
-\questionShortAnswer{15}{13}{Trong bài thực hành của môn huấn luyện quân sự có tình huống chiến sĩ phải bơi qua một con sông để tấn công một mục tiêu ở phía bờ bên kia sông. Biết rằng lòng sông rộng \( 500 \, m \) và vận tốc bơi của chiến sĩ bằng một nửa vận tốc chạy trên bộ. Chiến sĩ phải bơi bao nhiêu mét để đến được mục tiêu nhanh nhất, nếu như dòng sông là thẳng, mục tiêu ở cách chiến sĩ \( 1 \, km \) theo đường chim bay?
+\questionShortAnswer{15}{10}{Trong bài thực hành của môn huấn luyện quân sự có tình huống chiến sĩ phải bơi qua một con sông để tấn công một mục tiêu ở phía bờ bên kia sông. Biết rằng lòng sông rộng \( 500 \, m \) và vận tốc bơi của chiến sĩ bằng một nửa vận tốc chạy trên bộ. Chiến sĩ phải bơi bao nhiêu mét để đến được mục tiêu nhanh nhất, nếu như dòng sông là thẳng, mục tiêu ở cách chiến sĩ \( 1 \, km \) theo đường chim bay?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
@@ -1261,8 +1065,5 @@ Biết rằng vận tốc chèo thuyền của anh ta là \( 5 \, \text{km/h} \)
 
 \end{tikzpicture}
 \end{center}}
-
-% --- CÂU 25 ---
-\questionShortAnswer{15}{14}{Một con cá hồi bơi ngược dòng nước để vượt một khoảng cách là \( 250 \, \text{km} \). Vận tốc dòng nước là \( 5 \, (\text{km/h}) \). Nếu vận tốc bơi của cá khi nước đứng yên là \( v \, (\text{km/h}) \) thì năng lượng tiêu hao của cá trong \( t \) giờ được cho bởi công thức \( E(v) = cv^3 t \) (trong đó \( c \) là hằng số dương, \( E \) được tính bằng đơn vị Jun). Cá bơi ngược dòng quãng đường \( 250 \, \text{km} \) trong khoảng thời gian \( t \) với vận tốc bằng bao nhiêu \( \text{km/h} \) để năng lượng tiêu hao là thấp nhất?}
 
 \end{document}
