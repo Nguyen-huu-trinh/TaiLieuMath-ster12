@@ -409,73 +409,94 @@
 }
 
 
-% --- CÂU 10 ---
-\questionShortAnswer{0}{3}{Một người đưa thư đang ở điểm \( A \), cách điểm \( B \) một đoạn đường xuyên rừng dài \( 60 \, \text{km} \). Trong rừng, người này chỉ có thể di chuyển với vận tốc \( 25 \, \text{km/h} \), và người này cần đến \( B \) trong tối đa \( 2,25 \, \text{giờ} \). May mắn thay, có một con đường nhựa cách đoạn \( AB \) một khoảng \( 12 \, \text{km} \), chạy song song với nó. Trên đường nhựa, người này có thể di chuyển với vận tốc \( 45 \, \text{km/h} \). Biết rằng, nếu di chuyển trên đường nhựa thì người đó sẽ đi theo đường gấp khúc dạng hình thang cân \( ACDB \). Hỏi thời gian ngắn nhất để người đưa thư đi từ \( A \) đến \( B \) là bao nhiêu giờ (kết quả làm tròn đến hàng phần trăm)?
+% --- CÂU 12 ---
+\questionShortAnswer{0}{3}{Một kỹ sư đang thiết kế một đường ống dẫn để vận chuyển dầu thô từ mỏ dầu \( A \) cách bờ biển 6 km đến cảng xuất khẩu \( B \). Đường ống có thể nối trực tiếp từ \( A \) đến \( B \) hoặc nối từ \( A \) đến một điểm trung chuyển \( D \) trên đoạn \( BC \), rồi tiếp tục nối từ \( D \) đến \( B \). Biết khoảng cách \( BC = 10 \, km \); chi phí lắp đặt mỗi km đường ống trên biển và trên đất liền tương ứng bằng 20 và 4 (đơn vị: triệu USD). Chi phí lắp đặt đường ống thấp nhất là bao nhiêu triệu USD (kết quả làm tròn đến hàng đơn vị)?
 
 \begin{center}
 \begin{tikzpicture}[>=stealth, scale=1.3]
 
     % =================================================================
-    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH
+    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH (Xoay góc xiên ~ 50 độ)
     % =================================================================
-    \coordinate (A) at (0,0);
-    \coordinate (B) at (6.0,0);
-    \coordinate (C) at (1.2,2.5);
-    \coordinate (D) at (4.8,2.5);
-    
-    % Các đỉnh phụ để vẽ đường nét đứt thể hiện chiều cao hình thang
-    \coordinate (TopA) at (0,2.5);
-    \coordinate (TopB) at (6.0,2.5);
-    
-    % Giới hạn trục nằm ngang phía dưới
-    \coordinate (LineStart) at (-0.7,0);
-    \coordinate (LineEnd) at (6.7,0);
+    \coordinate (B) at (0,0);
+    \coordinate (D) at (1.6,1.9);
+    \coordinate (C) at (2.56,3.04);
+    \coordinate (A) at (1.0,4.25);
 
     % =================================================================
-    % 2. VẼ CÁC ĐƯỜNG THẲNG LIỀN NÉT VÀ NÉT ĐỨT
+    % 2. VẼ CÁC ĐOẠN THẲNG HÌNH HỌC VÀ CÁC ĐIỂM NÚT
     % =================================================================
-    % Đường nền nằm ngang phía dưới đi qua A và B
-    \draw[thick] (LineStart) -- (LineEnd);
+    % Đường xiên dọc chính nối liền từ cảng B qua D đến C
+    \draw[thick] (B) -- (C);
 
-    % Đường nhựa nằm ngang phía trên (bao gồm cả các đoạn kéo dài sang hai bên)
-    \draw[thick] (TopA) -- (TopB);
-
-    % Hai đường xiên AC và BD
+    % Các đoạn nối từ giàn khoan A đến C và D
     \draw[thick] (A) -- (C);
-    \draw[thick] (B) -- (D);
+    \draw[thick] (A) -- (D);
 
-    % Hai đoạn thẳng đứng thể hiện chiều cao vuông góc (nét đứt)
-    \draw[dashed, thick] (A) -- (TopA);
-    \draw[dashed, thick] (B) -- (TopB);
-
-    % =================================================================
-    % 3. VẼ CÁC ĐIỂM NÚT (CHẤM TRÒN ĐEN)
-    % =================================================================
-    \fill (A) circle (1.8pt);
-    \fill (B) circle (1.8pt);
-    \fill (C) circle (1.8pt);
-    \fill (D) circle (1.8pt);
+    % Vẽ các chấm tròn đen lớn tại các nút đầu mút hình học
+    \fill (B) circle (2pt);
+    \fill (D) circle (2pt);
+    \fill (C) circle (2pt);
+    \fill (A) circle (2pt);
 
     % =================================================================
-    % 4. GÁN NHÃN ĐỈNH VÀ ĐIỀN CHÚ THÍCH CHỮ
+    % 3. VẼ KÝ HIỆU GÓC VUÔNG TẠI C (Vuông góc góc dưới bên trái)
     % =================================================================
-    % Nhãn các điểm hình học
-    \node[below left] at (A) {$A$};
-    \node[below right] at (B) {$B$};
-    \node[above left] at (C) {$C$};
-    \node[above right] at (D) {$D$};
+    \begin{scope}[shift={(C)}, rotate=-38]
+        \draw[thin] (0,0) -- (-0.2,0) -- (-0.2,-0.2) -- (0,-0.2);
+    \end{scope}
 
-    % Thông số khoảng cách/chiều cao 12km
-    \node[left=3pt] at (0,1.25) {$12km$};
+    % =================================================================
+    % 4. VẼ BIỂU TƯỢNG VECTOR (GIÀN KHOAN A & BẰNG PHẲNG CẢNG B)
+    % =================================================================
+    % Đồ họa giàn khoan A (Phía trên)
+    \begin{scope}[shift={(A)}, scale=0.5, yshift=0.2cm]
+        \draw[thick, fill=white] (-0.8,0) -- (0.8,0) -- (0.5,0.4) -- (-0.5,0.4) -- cycle;
+        \draw[thick] (-0.6,0) -- (-0.4,-0.4) (-0.3,0) -- (-0.1,-0.4) (0.3,0) -- (0.1,-0.4) (0.6,0) -- (0.4,-0.4);
+        \draw[thick] (-0.4,-0.4) -- (0.4,-0.4);
+        \draw[thin] (-0.5,-0.5) sin (-0.2,-0.4) cos (0.1,-0.6) sin (0.5,-0.4);
+        % Tháp khoan
+        \draw[thick] (-0.2,0.4) -- (0,1.8) -- (0.2,0.4);
+        \draw[thin] (-0.1,0.9) -- (0.1,0.9) (-0.05,1.4) -- (0.05,1.4);
+        \draw[thin] (-0.2,0.4) -- (0.1,0.9) -- (-0.1,0.9) -- (0.2,0.4);
+        \draw[thin] (-0.1,0.9) -- (0.05,1.4) -- (-0.05,1.4) -- (0.1,0.9);
+        % Cần cẩu
+        \draw[thick] (0.2,0.4) -- (1.0,1.2);
+        \draw[thick] (0.4,0.4) -- (1.0,1.2);
+        \draw[thin] (1.0,1.2) -- (1.0,0.8);
+    \end{scope}
 
-    % Các nhãn văn bản chú thích địa hình
-    \node[above] at (3.0, 2.5) {Đường nhựa};
-    \node at (3.0, 1.2) {Rừng};
-    \node[below] at (3.0, -0.1) {Rừng};
+    % Đồ họa tàu thuyền và cần cẩu cảng B (Phía dưới)
+    \begin{scope}[shift={(B)}, scale=0.5, xshift=-0.5cm, yshift=-0.5cm]
+        % Chiếc tàu thủy
+        \draw[thick, fill=white] (-1.0,0.2) -- (1.0,0.2) -- (0.8,-0.3) -- (-0.8,-0.3) -- cycle;
+        \draw[thin] (-1.2,-0.4) sin (-0.6,-0.3) cos (0,-0.5) sin (0.6,-0.3);
+        \draw[thick] (-0.7,0.2) rectangle (-0.4,0.5);
+        \draw[thick] (-0.3,0.2) rectangle (0.0,0.5);
+        % Cần cẩu bờ kè
+        \draw[thick] (0.4,0.2) -- (1.2,0.2) -- (1.2,1.5) -- cycle;
+        \draw[thick] (1.2,1.5) -- (0.2,1.8) -- (0.5,1.2);
+        \draw[thick] (0.5,1.8) -- (0.5,1.0);
+        \draw[fill=black] (0.4,0.8) rectangle (0.6,1.0);
+    \end{scope}
+
+    % =================================================================
+    % 5. GÁN NHÃN ĐỈNH VÀ THÔNG SỐ SỐ ĐO
+    % =================================================================
+    \node[above left=3pt] at (A) {$A$};
+    \node[below=8pt] at (B) {$B$};
+    \node[left=3pt] at (D) {$D$};
+    \node[above right=2pt] at (C) {$C$};
+
+    % Đoạn 6km
+    \node[above right] at (1.8,4.0) {$6km$};
+
+    % Mũi tên nét đứt đôi biểu diễn chiều dài 10km dọc đường xiên BC
+    \draw[<->, dashed, thick] (0.4,0.1) -- (2.7,2.8);
+    \node[below right] at (1.8,1.5) {$10km$};
 
 \end{tikzpicture}
 \end{center}}
-
 
 % --- CÂU 13 ---
 \questionShortAnswer{0}{4}{Hai con tàu A và B đang ở cùng một vĩ tuyến và cách nhau 6 hải lí. Cả hai tàu đồng thời cùng khởi hành. Tàu A chạy về hướng Nam với vận tốc 5 hải lí/giờ, còn tàu B chạy về vị trí hiện tại của tàu A với vận tốc 6 hải lí/giờ. Hỏi sau bao nhiêu giờ thì khoảng cách giữa hai tàu là ngắn nhất (kết quả làm tròn đến hàng phần trăm)?
