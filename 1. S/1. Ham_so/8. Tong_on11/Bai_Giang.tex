@@ -76,7 +76,7 @@
             
         % Logo góc trái Header
         \node[anchor=west, inner sep=0pt] 
-            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../image/logo-header.png}};
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
             
         % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
         \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
@@ -153,7 +153,7 @@
             \begin{minipage}[c]{4.2cm}
                 \centering
                 % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
-                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../image/logo.png}}
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
                 \centering\vspace{0.15cm}
@@ -275,15 +275,53 @@
 \begin{document}
 
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
-\titlebox{Chủ đề: Tổng ôn 11}{Lượng giác, cấp số cộng, cấp số nhân, hàm mũ logarit}{Tổng ôn 11}
+\titlebox{Chủ đề: Hàm số}{Lượng giác}{Hàm số: Lượng giác}
+
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+\newpage
+% ==========================================
+% KHỐI CÂU HỎI TRẮC NGHIỆM LƯỢNG GIÁC
+% ==========================================
+
+% --- CÂU 1 ---
+\questionLinesManual{13}{1}{Nghiệm của phương trình \( \cos x = \dfrac{1}{2} \) là:}{}
+
+% --- CÂU 2 ---
+\questionLinesManual{13}{2}{Nghiệm của phương trình \( \cos x = \cos \dfrac{\pi}{12} \) là:}{}
+
+% --- CÂU 3 ---
+\questionLinesManual{13}{3}{Tập nghiệm của phương trình \( \sin x = 1 \) là:}{}
+
+% --- CÂU 4 ---
+\questionLinesManual{13}{4}{Họ nghiệm của phương trình \( \sin\left(x + \dfrac{\pi}{7}\right) = \dfrac{\sqrt{3}}{2} \) là:}{}
+
+% --- CÂU 5 ---
+\questionLinesManual{13}{5}{Tìm tập xác định \( D \) của hàm số \( y = \tan 2x \):}{}
+
+% --- CÂU 6 ---
+\questionLinesManual{13}{6}{Tìm tập xác định \( D \) của hàm số \( y = \dfrac{3\sin x + 1}{1 - \cos 2x} \):}{}
+
+\newpage
+\drawdashlines{18}
+
+% --- CÂU 7 ---
+\questionLinesManual{13}{7}{Số nghiệm của phương trình \( 2\cos x - 1 = 0 \) trên đoạn \([0; 2\pi]\) là:}{}
+
+% --- CÂU 8 ---
+\questionLinesManual{13}{8}{Số nghiệm của phương trình \( \sin x = -\dfrac{\sqrt{3}}{2} \) trên đoạn \(\left[-\dfrac{\pi}{2}; 4\pi\right]\) là:}{}
+
+% --- CÂU 9 ---
+\questionLinesManual{13}{9}{Số nghiệm của phương trình \( \dfrac{\sin 3x}{\cos x + 1} = 0 \) thuộc đoạn \([2\pi; 4\pi]\) là:}{}
 
 \newpage
 \drawdashlines{25}
 \newpage
 
 
-% --- CÂU 2 ---
-\questionLinesManual{5}{2}{Trong các dãy số sau, dãy số nào là một cấp số cộng?}{
+% --- CÂU 10 ---
+\questionLinesManual{5}{10}{Trong các dãy số sau, dãy số nào là một cấp số cộng?}{
     \begin{tasks}(4)
         \task $1; -2; -4; -6; -8$
         \task $1; -3; -6; -9; -12$
@@ -294,8 +332,8 @@
 
 
 
-% --- CÂU 4 ---
-\questionLinesManual{5}{4}{Cho một cấp số cộng \( (u_n) \) có \( u_1 = \dfrac{1}{3} \), \( u_8 = 26 \). Tìm công sai \( d \)}{
+% --- CÂU 11 ---
+\questionLinesManual{5}{11}{Cho một cấp số cộng \( (u_n) \) có \( u_1 = \dfrac{1}{3} \), \( u_8 = 26 \). Tìm công sai \( d \)}{
     \begin{tasks}(4)
         \task \( d = \dfrac{11}{3} \)
         \task \( d = \dfrac{10}{3} \)
@@ -304,8 +342,8 @@
     \end{tasks}
 }
 
-% --- CÂU 5 ---
-\questionLinesManual{5}{5}{Cho cấp số cộng \( (u_n) \) có \( u_1 = -2 \) và công sai \( d = 3 \). Tìm số hạng \( u_{10} \).}{
+% --- CÂU 12 ---
+\questionLinesManual{5}{12}{Cho cấp số cộng \( (u_n) \) có \( u_1 = -2 \) và công sai \( d = 3 \). Tìm số hạng \( u_{10} \).}{
     \begin{tasks}(4)
         \task \( u_{10} = -2 \cdot 3^9 \)
         \task \( u_{10} = 25 \)
@@ -314,8 +352,8 @@
     \end{tasks}
 }
 
-% --- CÂU 6 ---
-\questionLinesManual{5}{6}{Cho cấp số cộng \( (u_n) \) có \( u_1 = 1 \) và công sai \( d = 2 \). Tổng \( S_{10} = u_1 + u_2 + u_3 + \ldots + u_{10} \) bằng:}{
+% --- CÂU 13 ---
+\questionLinesManual{5}{13}{Cho cấp số cộng \( (u_n) \) có \( u_1 = 1 \) và công sai \( d = 2 \). Tổng \( S_{10} = u_1 + u_2 + u_3 + \ldots + u_{10} \) bằng:}{
     \begin{tasks}(4)
         \task \( S_{10} = 110 \)
         \task \( S_{10} = 100 \)
@@ -324,8 +362,8 @@
     \end{tasks}
 }
 
-% --- CÂU 7 ---
-\questionLinesManual{5}{7}{Dãy số nào sau đây \textbf{không} phải là cấp số nhân?}{
+% --- CÂU 14 ---
+\questionLinesManual{5}{14}{Dãy số nào sau đây \textbf{không} phải là cấp số nhân?}{
     \begin{tasks}(4)
         \task $1; 2; 4; 8; \ldots$
         \task $3; 3^2; 3^3; 3^4; \ldots$
@@ -334,8 +372,8 @@
     \end{tasks}
 }
 
-% --- CÂU 8 ---
-\questionLinesManual{5}{8}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -3 \) và \( q = \dfrac{2}{3} \). Mệnh đề nào sau đây đúng?}{
+% --- CÂU 15 ---
+\questionLinesManual{5}{15}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -3 \) và \( q = \dfrac{2}{3} \). Mệnh đề nào sau đây đúng?}{
     \begin{tasks}(4)
         \task \( u_5 = -\dfrac{27}{16} \)
         \task \( u_5 = -\dfrac{16}{27} \)
@@ -344,8 +382,8 @@
     \end{tasks}
 }
 
-% --- CÂU 9 ---
-\questionLinesManual{5}{9}{Một cấp số nhân có 6 số hạng, số hạng đầu bằng 2 và số hạng thứ sáu bằng 486. Tìm công bội \( q \) của cấp số nhân đã cho.}{
+% --- CÂU 16 ---
+\questionLinesManual{5}{16}{Một cấp số nhân có 6 số hạng, số hạng đầu bằng 2 và số hạng thứ sáu bằng 486. Tìm công bội \( q \) của cấp số nhân đã cho.}{
     \begin{tasks}(4)
         \task \( q = 3 \)
         \task \( q = -3 \)
@@ -354,8 +392,8 @@
     \end{tasks}
 }
 
-% --- CÂU 10 ---
-\questionLinesManual{5}{10}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -3 \) và \( q = -2 \). Tính tổng 10 số hạng đầu tiên của cấp số nhân đã cho.}{
+% --- CÂU 17 ---
+\questionLinesManual{5}{17}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -3 \) và \( q = -2 \). Tính tổng 10 số hạng đầu tiên của cấp số nhân đã cho.}{
     \begin{tasks}(4)
         \task \( S_{10} = -511 \)
         \task \( S_{10} = -1025 \)
@@ -372,8 +410,8 @@
 \drawdashlines{25}
 \newpage
 
-% --- CÂU 11 ---
-\questionLinesManual{5}{11}{Với \( a \) là số thực dương tùy ý, biểu thức \( a^{\frac{5}{3}} \cdot a^{\frac{1}{3}} \) là}{
+% --- CÂU 18 ---
+\questionLinesManual{5}{18}{Với \( a \) là số thực dương tùy ý, biểu thức \( a^{\frac{5}{3}} \cdot a^{\frac{1}{3}} \) là}{
     \begin{tasks}(4)
         \task \( a^5 \)
         \task \( a^{\frac{5}{9}} \)
@@ -382,8 +420,8 @@
     \end{tasks}
 }
 
-% --- CÂU 12 ---
-\questionLinesManual{5}{12}{Với \( a \) là số thực dương tùy ý, \( \sqrt{a^3} \) bằng}{
+% --- CÂU 19 ---
+\questionLinesManual{5}{19}{Với \( a \) là số thực dương tùy ý, \( \sqrt{a^3} \) bằng}{
     \begin{tasks}(4)
         \task \( a^6 \)
         \task \( a^{\frac{3}{2}} \)
@@ -392,8 +430,8 @@
     \end{tasks}
 }
 
-% --- CÂU 13 ---
-\questionLinesManual{5}{13}{Rút gọn biểu thức \( P = x^{\frac{1}{3}} \sqrt[6]{x} \) với \( x > 0 \).}{
+% --- CÂU 20 ---
+\questionLinesManual{5}{20}{Rút gọn biểu thức \( P = x^{\frac{1}{3}} \sqrt[6]{x} \) với \( x > 0 \).}{
     \begin{tasks}(4)
         \task \( P = \sqrt{x} \)
         \task \( P = x^{\frac{1}{8}} \)
@@ -402,8 +440,8 @@
     \end{tasks}
 }
 
-% --- CÂU 14 ---
-\questionLinesManual{5}{14}{Với mọi số thực \( a \) dương, \( \log_2 \dfrac{a}{2} \) bằng}{
+% --- CÂU 21 ---
+\questionLinesManual{5}{21}{Với mọi số thực \( a \) dương, \( \log_2 \dfrac{a}{2} \) bằng}{
     \begin{tasks}(4)
         \task \( \dfrac{1}{2} \log_2 a \)
         \task \( \log_2 a + 1 \)
@@ -412,8 +450,8 @@
     \end{tasks}
 }
 
-% --- CÂU 15 ---
-\questionLinesManual{5}{15}{Với \( a \) là số thực dương tùy ý, \( 4\log \sqrt{a} \) bằng}{
+% --- CÂU 22 ---
+\questionLinesManual{5}{22}{Với \( a \) là số thực dương tùy ý, \( 4\log \sqrt{a} \) bằng}{
     \begin{tasks}(4)
         \task \(-4\log a\)
         \task \(8\log a\)
@@ -422,8 +460,8 @@
     \end{tasks}
 }
 
-% --- CÂU 16 ---
-\questionLinesManual{5}{16}{Với \( a \) là số thực dương tùy ý, \( \log(100a) \) bằng}{
+% --- CÂU 23 ---
+\questionLinesManual{5}{23}{Với \( a \) là số thực dương tùy ý, \( \log(100a) \) bằng}{
     \begin{tasks}(4)
         \task \(1 - \log a\)
         \task \(2 + \log a\)
@@ -432,8 +470,8 @@
     \end{tasks}
 }
 
-% --- CÂU 17 ---
-\questionLinesManual{5}{17}{Với \( a, b \) là các số thực dương tùy ý và \( a \neq 1 \), \( \log_a \left( \sqrt[3]{b} \right) \) bằng}{
+% --- CÂU 24 ---
+\questionLinesManual{5}{24}{Với \( a, b \) là các số thực dương tùy ý và \( a \neq 1 \), \( \log_a \left( \sqrt[3]{b} \right) \) bằng}{
     \begin{tasks}(4)
         \task \( 3 + \log_a b \)
         \task \( 3 \log_a b \)
@@ -442,8 +480,8 @@
     \end{tasks}
 }
 
-% --- CÂU 20 ---
-\questionLinesManual{5}{20}{Tập xác định của hàm số \( y = \log_3(x - 4) \) là}{
+% --- CÂU 25 ---
+\questionLinesManual{5}{25}{Tập xác định của hàm số \( y = \log_3(x - 4) \) là}{
     \begin{tasks}(4)
         \task \( (5; +\infty) \)
         \task \( (-\infty; +\infty) \)
@@ -452,8 +490,8 @@
     \end{tasks}
 }
 
-% --- CÂU 19 ---
-\questionLinesManual{5}{19}{Tập xác định của hàm số \( y = 5^x \) là}{
+% --- CÂU 26 ---
+\questionLinesManual{5}{26}{Tập xác định của hàm số \( y = 5^x \) là}{
     \begin{tasks}(4)
         \task \( \mathbb{R} \)
         \task \( (0; +\infty) \)
@@ -462,8 +500,8 @@
     \end{tasks}
 }
 
-% --- CÂU 21 ---
-\questionLinesManual{5}{21}{Tìm tập xác định \( D \) của hàm số \( y = \log_2 (x^2 - 2x - 3) \).}{
+% --- CÂU 27---
+\questionLinesManual{5}{27}{Tìm tập xác định \( D \) của hàm số \( y = \log_2 (x^2 - 2x - 3) \).}{
     \begin{tasks}(2)
         \task \( D = (-\infty; -1] \cup [3; +\infty) \)
         \task \( D = [-1; 3] \)
@@ -472,8 +510,8 @@
     \end{tasks}
 }
 
-% --- CÂU 22 ---
-\questionLinesManual{5}{22}{Nghiệm của phương trình \( \log_3(5x) = 2 \) là}{
+% --- CÂU 28 ---
+\questionLinesManual{5}{28}{Nghiệm của phương trình \( \log_3(5x) = 2 \) là}{
     \begin{tasks}(4)
         \task \( x = \dfrac{8}{5} \)
         \task \( x = 9 \)
@@ -482,8 +520,8 @@
     \end{tasks}
 }
 
-% --- CÂU 23 ---
-\questionLinesManual{5}{23}{Nghiệm của phương trình \( \log_2(x+9) = 5 \) là}{
+% --- CÂU 29 ---
+\questionLinesManual{5}{29}{Nghiệm của phương trình \( \log_2(x+9) = 5 \) là}{
     \begin{tasks}(4)
         \task \( x = 41 \)
         \task \( x = 23 \)
@@ -492,8 +530,8 @@
     \end{tasks}
 }
 
-% --- CÂU 24 ---
-\questionLinesManual{5}{24}{Nghiệm của phương trình \( 5^{2x-4} = 25 \) là}{
+% --- CÂU 30 ---
+\questionLinesManual{5}{30}{Nghiệm của phương trình \( 5^{2x-4} = 25 \) là}{
     \begin{tasks}(4)
         \task \( x = 3 \)
         \task \( x = 2 \)
@@ -502,8 +540,8 @@
     \end{tasks}
 }
 
-% --- CÂU 25 ---
-\questionLinesManual{5}{25}{Nghiệm của phương trình \( 3^{x+2} = 27 \) là}{
+% --- CÂU 31 ---
+\questionLinesManual{5}{31}{Nghiệm của phương trình \( 3^{x+2} = 27 \) là}{
     \begin{tasks}(4)
         \task \( x = -2 \)
         \task \( x = -1 \)
@@ -512,8 +550,8 @@
     \end{tasks}
 }
 
-% --- CÂU 27 ---
-\questionLinesManual{5}{27}{Tập nghiệm \( S \) của bất phương trình \( \log_2 (2x + 3) \geq 0 \) là}{
+% --- CÂU 32 ---
+\questionLinesManual{5}{32}{Tập nghiệm \( S \) của bất phương trình \( \log_2 (2x + 3) \geq 0 \) là}{
     \begin{tasks}(4)
         \task \( S = (-\infty; -1] \)
         \task \( S = [-1; +\infty) \)
@@ -522,8 +560,8 @@
     \end{tasks}
 }
 
-% --- CÂU 26 ---
-\questionLinesManual{5}{26}{Tập nghiệm của bất phương trình \( \log_3 (13 - x^2) \geq 2 \) là}{
+% --- CÂU 33 ---
+\questionLinesManual{5}{33}{Tập nghiệm của bất phương trình \( \log_3 (13 - x^2) \geq 2 \) là}{
     \begin{tasks}(4)
         \task \( (-\infty; -2] \cup [2; +\infty) \)
         \task \( (-\infty; 2] \)
@@ -532,8 +570,8 @@
     \end{tasks}
 }
 
-% --- CÂU 28 ---
-\questionLinesManual{5}{28}{Tập nghiệm của bất phương trình \( 3^{x^2-13} < 27 \) là}{
+% --- CÂU 34 ---
+\questionLinesManual{5}{34}{Tập nghiệm của bất phương trình \( 3^{x^2-13} < 27 \) là}{
     \begin{tasks}(4)
         \task \( (4; +\infty) \)
         \task \( (-4; 4) \)
@@ -542,8 +580,8 @@
     \end{tasks}
 }
 
-% --- CÂU 29 ---
-\questionLinesManual{5}{29}{Tập nghiệm của bất phương trình \( 2^{x^2-1} < 8 \) là}{
+% --- CÂU 35 ---
+\questionLinesManual{5}{35}{Tập nghiệm của bất phương trình \( 2^{x^2-1} < 8 \) là}{
     \begin{tasks}(4)
         \task \( (0; 2) \)
         \task \( (-\infty; 2) \)
