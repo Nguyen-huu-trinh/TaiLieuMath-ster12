@@ -1,0 +1,681 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+            at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i}) -- (\textwidth-4pt,-{\i});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newcommand{\questionTrueFalse}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{#2}{#3}
+    
+    \nopagebreak
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+        \hline
+        \rowcolor{amberorange!20}
+        & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Cấp số cộng- cấp số nhân}{Hàm số: CSC-CSN}
+
+% --- CÂU 1 ---
+\questionLinesManual{5}{1}{Cho cấp số cộng \( (u_n) \) với \( u_1 = 2 \) và công sai \( d = 3 \). Giá trị của \( u_5 \) bằng}{
+    \begin{tasks}(4)
+        \task $14$
+        \task $17$
+        \task $15$
+        \task $12$
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{5}{2}{Cấp số cộng \( (u_n) \) có \( u_1 = 1 \) và \( u_2 = 3 \). Số hạng \( u_5 \) của cấp số cộng là:}{
+    \begin{tasks}(4)
+        \task $5$
+        \task $7$
+        \task $9$
+        \task $11$
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{5}{3}{Cho cấp số cộng \( (u_n) \) có \( u_1 = -2 \) và công sai \( d = 3 \). Tìm số hạng \( u_{10} \).}{
+    \begin{tasks}(4)
+        \task \( u_{10} = -2 \cdot 3^9 \)
+        \task \( u_{10} = 25 \)
+        \task \( u_{10} = -29 \)
+        \task \( u_{10} = 28 \)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{5}{4}{Cho cấp số nhân \( (u_n) \) với \( u_1 = 6 \) và \( u_2 = -12 \). Công bội \( q \) của cấp số nhân đã cho là}{
+    \begin{tasks}(4)
+        \task \( q = -\dfrac{1}{2} \)
+        \task \( q = -2 \)
+        \task \( q = -18 \)
+        \task \( q = -6 \)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{5}{5}{Cho cấp số cộng có số hạng đầu \( u_1 = 3 \), công sai \( d = -4 \). Số hạng thứ năm của cấp số cộng là.}{
+    \begin{tasks}(4)
+        \task $768$
+        \task $-13$
+        \task $-3072$
+        \task $-17$
+    \end{tasks}
+}
+% --- CÂU 6 ---
+\questionLinesManual{5}{6}{Cho cấp số cộng \( (u_n) \), biết \( u_1 = 1 \), \( d = 2 \). Giá trị của \( u_{15} \) bằng:}{
+    \begin{tasks}(4)
+        \task $31$
+        \task $29$
+        \task $35$
+        \task $27$
+    \end{tasks}
+}
+
+
+% --- CÂU 7 ---
+\questionLinesManual{5}{7}{Cho cấp số cộng \( (u_n) \) có công sai \( d = 2 \) và tổng của 25 số hạng đầu là 625. Tính \( u_5 \).}{
+    \begin{tasks}(4)
+        \task \( u_5 = 16 \)
+        \task \( u_5 = 9 \)
+        \task \( u_5 = 12 \)
+        \task \( u_5 = 22 \)
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{5}{8}{Cho cấp số cộng \( (u_n) \) biết \( u_1 = 2 \), công sai \( d = -5 \). Tổng 10 số hạng đầu của cấp số cộng đó là}{
+    \begin{tasks}(4)
+        \task $-410$
+        \task $-205$
+        \task $245$
+        \task $-230$
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{5}{9}{Cho cấp số nhân \( (u_n) \) có số hạng đầu \( u_1 = 2 \) và \( u_6 = 486 \). Công bội \( q \) bằng}{
+    \begin{tasks}(4)
+        \task \( q = 5 \)
+        \task \( q = \dfrac{3}{2} \)
+        \task \( q = \dfrac{2}{3} \)
+        \task \( q = 3 \)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{5}{10}{Cho cấp số cộng \( (u_n) \) có \( u_4 = -12 \), \( u_{14} = 18 \). Tính tổng 18 số hạng đầu tiên của cấp số cộng này.}{
+    \begin{tasks}(4)
+        \task \( S_{18} = -72 \)
+        \task \( S_{18} = 96 \)
+        \task \( S_{18} = -96 \)
+        \task \( S_{18} = 72 \)
+    \end{tasks}
+}
+
+% --- CÂU 11 ---
+\questionLinesManual{5}{11}{Cho cấp số cộng \( (u_n) \) có \( u_1 = -2 \) và công sai \( d = 3 \). Tìm số hạng tổng quát \( u_n \) của cấp số cộng đó.}{
+    \begin{tasks}(4)
+        \task \( u_n = 3n + 5 \)
+        \task \( u_n = 3n - 5 \)
+        \task \( u_n = 3n - 1 \)
+        \task \( u_n = 3n + 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 12 ---
+\questionLinesManual{5}{12}{Dãy số nào sau đây không phải là cấp số nhân?}{
+    \begin{tasks}(4)
+        \task $1; 2; 3; 4; 5$
+        \task $1; 2; 4; 8; 16$
+        \task $1; -1; 1; -1; 1$
+        \task $1; -2; 4; -8; 16$
+    \end{tasks}
+}
+
+% --- CÂU 13 ---
+\questionLinesManual{5}{13}{Cho cấp số nhân \( (u_n) \) có \( u_1 = 3 \) và \( q = 2 \). Khi đó, số hạng tổng quát của cấp số nhân là}{
+    \begin{tasks}(4)
+        \task \( u_n = 2 \cdot 3^{n-1} \)
+        \task \( u_n = 3 \cdot 2^{n-1} \)
+        \task \( u_n = 2 \cdot 3^n \)
+        \task \( u_n = 3 \cdot 2^n \)
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionLinesManual{5}{14}{Cho \( (u_n) \) là cấp số nhân, công bội \( q > 0 \). Biết \( u_1 = 1, u_3 = 4 \). Tìm \( u_4 \).}{
+    \begin{tasks}(4)
+        \task \( \dfrac{11}{2} \)
+        \task $2$
+        \task $16$
+        \task $8$
+    \end{tasks}
+}
+
+% --- CÂU 15 ---
+\questionLinesManual{5}{15}{Cho một cấp số cộng \( (u_n) \) có \( u_1 = 5 \) và \( S_{50} = 5150 \). Tìm \( S_{20} \)?}{
+    \begin{tasks}(4)
+        \task $860$
+        \task $900$
+        \task $1080$
+        \task $1030$
+    \end{tasks}
+}
+
+% --- CÂU 16 ---
+\questionLinesManual{5}{16}{Cho cấp số nhân \( (u_n) \), biết \( u_1 = 2; q = 3 \) có số hạng tổng quát là:}{
+    \begin{tasks}(4)
+        \task \( u_n = 2 \cdot 2^{n-1} \)
+        \task \( u_n = 2 \cdot 3^{n-1} \)
+        \task \( u_n = 2 \cdot 3^{n-2} \)
+        \task \( u_n = 3 \cdot 2^{n-1} \)
+    \end{tasks}
+}
+
+% --- CÂU 17 ---
+\questionLinesManual{5}{17}{Cho cấp số nhân \( (u_n) \) với \( u_1 = 3, u_4 = 24 \). Tìm số hạng thứ 5 của cấp số nhân.}{
+    \begin{tasks}(4)
+        \task \( S_5 = 93 \)
+        \task \( S_5 = -93 \)
+        \task \( u_5 = 48 \)
+        \task \( u_5 = 27 \)
+    \end{tasks}
+}
+
+% --- CÂU 18 ---
+\questionLinesManual{5}{18}{Cho cấp số nhân \( (u_n) \) có số hạng đầu \( u_1 = 5 \) và công bội \( q = -2 \). Số hạng thứ sáu của \( (u_n) \) là:}{
+    \begin{tasks}(4)
+        \task \( u_6 = -320 \)
+        \task \( u_6 = 320 \)
+        \task \( u_6 = 160 \)
+        \task \( u_6 = -160 \)
+    \end{tasks}
+}
+
+% --- CÂU 19 ---
+\questionLinesManual{5}{19}{Cho cấp số nhân \( (u_n) \) biết \( u_n = 2^n, \forall n \in \mathbb{N}^* \). Tìm số hạng đầu \( u_1 \) và công bội \( q \) của cấp số nhân trên:}{
+    \begin{tasks}(4)
+        \task \( u_1 = 2; \, q = -2 \)
+        \task \( u_1 = -2; \, q = 2 \)
+        \task \( u_1 = 1; \, q = 2 \)
+        \task \( u_1 = 2; \, q = 2 \)
+    \end{tasks}
+}
+
+% --- CÂU 20 ---
+\questionLinesManual{5}{20}{Cho cấp số nhân \( (u_n) \) có số hạng đầu \( u_1 = 5 \) và công bội \( q = -2 \). Tính \( S_6 \).}{
+    \begin{tasks}(4)
+        \task \( S_6 = -\dfrac{155}{3} \)
+        \task \( S_6 = -\dfrac{315}{3} \)
+        \task \( S_6 = -315 \)
+        \task \( S_6 = 315 \)
+    \end{tasks}
+}
+
+% --- CÂU 21 ---
+\questionLinesManual{5}{21}{Một cấp số nhân có số hạng thứ hai bằng 4 và số hạng thứ sáu bằng 64, thì số hạng tổng quát của cấp số nhân đó có thể tính theo công thức nào dưới đây}{
+    \begin{tasks}(4)
+        \task \( u_n = 2^{n-1} \)
+        \task \( u_n = 2^n \)
+        \task \( u_n = 2^{n+1} \)
+        \task \( u_n = 2n \)
+    \end{tasks}
+}
+
+% --- CÂU 22 ---
+\questionLinesManual{5}{22}{Cho cấp số nhân \( (u_n) \) có \( u_1 = 3 \) và \( q = -4 \). Số 768 là số hạng thứ bao nhiêu của cấp số nhân đã cho?}{
+    \begin{tasks}(4)
+        \task Số hạng thứ 5
+        \task Số hạng thứ 6
+        \task Số hạng thứ 7
+        \task Không là số hạng của cấp số đã cho
+    \end{tasks}
+}
+
+% --- CÂU 23 ---
+\questionLinesManual{5}{23}{Tìm \( x \) để các số 2; 8; \( x \) theo thứ tự đó lập thành một cấp số nhân.}{
+    \begin{tasks}(4)
+        \task \( x = 14 \)
+        \task \( x = 32 \)
+        \task \( x = 64 \)
+        \task \( x = 68 \)
+    \end{tasks}
+}
+
+% --- CÂU 24 ---
+\questionLinesManual{5}{24}{Cho một cấp số cộng \( (u_n) \) có số hạng tổng quát là \( u_n = 3n - 5 \). Công sai \( d \) của cấp số cộng trên là:}{
+    \begin{tasks}(4)
+        \task \( d = 3 \)
+        \task \( d = 5 \)
+        \task \( d = -5 \)
+        \task \( d = -3 \)
+    \end{tasks}
+}
+
+% --- CÂU 25 ---
+\questionLinesManual{5}{25}{Cho một cấp số cộng \( (u_n) \) có số hạng thứ tự bằng \(-12\) và số hạng thứ mười bốn bằng 18. Tính tổng 16 số hạng đầu tiên của cấp số cộng \( (u_n) \).}{
+    \begin{tasks}(4)
+        \task $-24$
+        \task $25$
+        \task $26$
+        \task $24$
+    \end{tasks}
+}
+
+% --- CÂU 26 ---
+\questionLinesManual{5}{26}{Cho một cấp số nhân \( (u_n) \) có \( u_1 = 2 \) và \( q = -3 \). Số 162 là số hạng thứ mấy của cấp số nhân đã cho?}{
+    \begin{tasks}(4)
+        \task Số hạng thứ 2
+        \task Số hạng thứ 3
+        \task Số hạng thứ 4
+        \task Số hạng thứ 5
+    \end{tasks}
+}
+
+% --- CÂU 27 ---
+\questionLinesManual{5}{27}{Cho một cấp số cộng có 15 số hạng, biết tổng các số hạng của cấp số cộng bằng 225, số hạng cuối bằng 29. Tìm số hạng đầu \( u_1 \) của cấp số cộng đó.}{
+    \begin{tasks}(4)
+        \task \( u_1 = 5 \)
+        \task \( u_1 = 3 \)
+        \task \( u_1 = 1 \)
+        \task \( u_1 = 2 \)
+    \end{tasks}
+}
+
+% --- CÂU 28 ---
+\questionLinesManual{5}{28}{Cho cấp số cộng có \( u_1 = 16 \), \( u_8 = 2 \). Tính \( S_8 \).}{
+    \begin{tasks}(4)
+        \task \( S_8 = 72 \)
+        \task \( S_8 = 144 \)
+        \task \( S_8 = 56 \)
+        \task \( S_8 = 18 \)
+    \end{tasks}
+}
+
+% --- CÂU 29 ---
+\questionLinesManual{5}{29}{Trong các dãy số sau, dãy số nào là cấp số nhân?}{
+    \begin{tasks}(4)
+        \task $-1; \dfrac{1}{3}; \dfrac{1}{9}; -9; \ldots$
+        \task $2; 4; 6; 8; 9; \ldots$
+        \task $1; \dfrac{1}{3}; \dfrac{1}{9}; \dfrac{1}{27}; \dfrac{1}{81}; \ldots$
+        \task $5; 10; 15; 20; 25; \ldots$
+    \end{tasks}
+}
+
+% --- CÂU 30 ---
+\questionLinesManual{5}{30}{Cho dãy số \( (u_n) \) với \( u_n = 3^n \). Số hạng \( u_{n+1} \) bằng}{
+    \begin{tasks}(4)
+        \task \( 3^n + 1 \)
+        \task \( 3^n + 3 \)
+        \task \( 3^n \cdot 3 \)
+        \task \( 3(n + 1) \)
+    \end{tasks}
+}
+
+% --- CÂU 31 ---
+\questionLinesManual{5}{31}{Các số \(-3, -9, a\) theo thứ tự đó lập thành một cấp số nhân. Khi đó \( a \) bằng bao nhiêu?}{
+    \begin{tasks}(4)
+        \task \( a = 27 \)
+        \task \( a = -27 \)
+        \task \( a = -3 \)
+        \task \( a = 3 \)
+    \end{tasks}
+}
+
+% --- CÂU 32 ---
+\questionLinesManual{5}{32}{Xác định công sai của cấp số cộng sau: \( 2; 5; 8; 11; 14; \ldots \)}{
+    \begin{tasks}(4)
+        \task $2$
+        \task $3$
+        \task $5$
+        \task $8$
+    \end{tasks}
+}
+
+% --- CÂU 33 ---
+\questionLinesManual{5}{33}{Cho cấp số nhân, có ba số hạng liên tiếp là \( x - 2 \), \( x \), \( x + 4 \). Công bội của cấp số nhân đó là?}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $2$
+        \task $-1$
+        \task $-2$
+    \end{tasks}
+}
+
+% --- CÂU 34 ---
+\questionLinesManual{5}{34}{Trong các dãy số sau đây, dãy số nào là cấp số cộng?}{
+    \begin{tasks}(4)
+        \task \( u_n = 3n^2 + 2025 \)
+        \task \( u_n = 3n + 2024 \)
+        \task \( u_n = 3^n \)
+        \task \( u_n = (-3)^{n+1} \)
+    \end{tasks}
+}
+
+% --- CÂU 35 ---
+\questionLinesManual{5}{35}{Cho cấp số cộng \( (u_n) \) có số hạng tổng quát là \( u_n = 3n - 2 \). Tìm công sai \( d \) của cấp số cộng.}{
+    \begin{tasks}(4)
+        \task \( d = 3 \)
+        \task \( d = 2 \)
+        \task \( d = -2 \)
+        \task \( d = -3 \)
+    \end{tasks}
+}
+
+% --- CÂU 36 ---
+\questionLinesManual{5}{36}{Trong các dãy số sau đây, dãy số nào là một cấp số cộng?}{
+    \begin{tasks}(2)
+        \task \( u_n = n^2 + 1, n \geq 1 \)
+        \task \( u_n = 2^n, n \geq 1 \)
+        \task \( u_n = \sqrt{n+1}, n \geq 1 \)
+        \task \( u_n = 2n - 3, n \geq 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 37 ---
+\questionLinesManual{5}{37}{Trong các dãy số \( (u_n) \) sau đây, dãy số nào là cấp số nhân?}{
+    \begin{tasks}(4)
+        \task \( u_n = 3n \)
+        \task \( u_n = 2^n \)
+        \task \( u_n = \dfrac{1}{n} \)
+        \task \( u_n = 2^n + 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 38 ---
+\questionLinesManual{5}{38}{Cho cấp số nhân có các số hạng lần lượt là \( \dfrac{1}{4} \); \( \dfrac{1}{2} \); 1; ...; 2048. Tính tổng \( S \) của tất cả các số hạng của cấp số nhân đã cho.}{
+    \begin{tasks}(4)
+        \task \( S = 2047,75 \)
+        \task \( S = 2049,75 \)
+        \task \( S = 4095,75 \)
+        \task \( S = 4096,75 \)
+    \end{tasks}
+}
+
+% --- CÂU 39 ---
+\questionLinesManual{5}{39}{Cho cấp số cộng hữu hạn \( (u_n) : 3, \, a, \, 13, \, b \). Tích \( ab \) bằng}{
+    \begin{tasks}(4)
+        \task $144$
+        \task $39$
+        \task $26$
+        \task $104$
+    \end{tasks}
+}
+
+% --- CÂU 40 ---
+\questionLinesManual{5}{40}{Biết \( x \) thỏa mãn \( x^2 - 2, \, x, \, 5 - 6x \) lập thành cấp số cộng. Tính tổng bình phương các giá trị \( x \) tìm được.}{
+    \begin{tasks}(4)
+        \task $12$
+        \task $17$
+        \task $26$
+        \task $10$
+    \end{tasks}
+}
+
+
+\end{document}
