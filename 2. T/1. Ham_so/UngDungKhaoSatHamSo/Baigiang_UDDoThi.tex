@@ -504,59 +504,6 @@ Lượng nước (lít) & 31 & 47 & 1571 & 7199 \\ \hline
 }
 
 
-% --- CÂU 4 ---
-\questionTrueFalse{12}{7}{Tại công viên trung tâm, người ta xây một cầu vòm cong bằng thép bắc ngang qua một hồ nước nhỏ. Phần mép cong phía dưới của vòm cầu được thiết kế mô phỏng theo một phần của đồ thị hàm phân thức  
-\(y = \dfrac{ax^2 + bx + c}{mx + n} \quad (a \neq 0, m \neq 0)\)
-nhận \(x = -1\) là đường tiệm cận đứng. Đơn vị trên hệ trục tọa độ là mét.
-\begin{center}
-    \begin{tikzpicture}[>=stealth, scale=1]
-
-    % =================================================================
-    % 1. VẼ HỆ TRỤC TỌA ĐỘ Oxy
-    % =================================================================
-    \draw[->, thick] (-4.5, 0) -- (1.0, 0) node[below] {$x$};
-    \draw[->, thick] (0, -2.8) -- (0, 1.5) node[left] {$y$};
-    
-    % Gốc tọa độ O
-    \node[above left] at (0,0) {$O$};
-
-    % =================================================================
-    % 2. VẼ ĐƯỜNG CONG ĐỒ THỊ (HÀM GHÉP ĐỂ ĐẠT ĐỘ DỐC NHƯ HÌNH VẼ)
-    % =================================================================
-    % Nhánh trái: parabol y = -0.5*(x+2)^2 đi qua (-3, -0.5) và đạt cực đại tại (-2, 0)
-    \draw[ultra thick, samples=100, domain=-4.5:-1.25] plot (\x, {(\x*\x + 4*\x +4) /(\x+1)});
-    
-    
-
-    % =================================================================
-    % 3. VẼ CÁC ĐƯỜNG NÉT ĐỨT GIÓNG TỌA ĐỘ
-    % =================================================================
-    \draw[dashed, thick] (-3, 0) -- (-3, -0.5);
-    \draw[dashed, thick] (-3, -0.5) -- (0, -0.5);
-
-    % =================================================================
-    % 4. GÁN NHÃN CÁC ĐIỂM TRÊN TRỤC TỌA ĐỘ
-    % =================================================================
-    \node[above] at (-3, 0) {$-3$};
-    \node[above] at (-2, 0) {$-2$};
-    \node[below right] at (0, -0.5) {$-\dfrac{1}{2}$};
-
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & Hàm số mô phỏng hình dạng vòm cầu là  
-    \(f(x) = \dfrac{2(x + 2)^2}{x + 1}.\)
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Điểm có tọa độ \(\left(-5; -\dfrac{9}{4}\right)\) thuộc đồ thị đường cong vòm cầu.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Đường tiệm cận xiên của đồ thị hàm số mô phỏng hình dạng vòm cầu là \(y = x + 3\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Tại vị trí nằm trên vòm cầu cách trục \(Oy\) theo phương ngang một đoạn 4 mét thì điểm đó cách trục hoành một đoạn là \(\dfrac{8}{3}\) mét.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
 
 
 
