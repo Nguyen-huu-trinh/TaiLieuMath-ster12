@@ -1,0 +1,479 @@
+\documentclass[12pt, a4paper]{article}
+
+% ==========================================
+% 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
+% ==========================================
+% Bảng mã & Font chữ
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+
+% Toán học
+\usepackage{amsmath, amssymb}
+
+% Căn lề & Bố cục trang
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tkz-tab}
+
+% Đồ họa & Màu sắc
+\usepackage{xcolor}
+\usepackage{graphicx} 
+\usepackage{tikz}
+\usetikzlibrary{calc, shapes.geometric, positioning}
+
+
+% Bảng biểu & Danh sách
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{tasks}
+
+% Biểu tượng
+\usepackage{fontawesome5}
+
+% ==========================================
+% 2. THIẾT LẬP MÀU SẮC CHỦ ĐẠO
+% ==========================================
+\definecolor{goldyellow}{RGB}{255, 179, 0}
+\definecolor{amberorange}{RGB}{230, 115, 0}
+\definecolor{lightamber}{RGB}{255, 248, 225}
+\definecolor{deepblue}{RGB}{25, 42, 86}
+\definecolor{accentred}{RGB}{232, 65, 24}
+\definecolor{softgray}{RGB}{220, 220, 222} 
+\definecolor{fbblue}{RGB}{15, 80, 200}
+
+
+% ==========================================
+% 3. CẤU HÌNH HEADER & FOOTER
+% ==========================================
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Khai báo biến lưu trữ nội dung góc phải của Header
+\newcommand{\HeaderRightText}{}
+
+% --- Header ---
+\fancyhead[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        
+        % Dải màu trang trí góc trên
+        \path[fill=deepblue] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.6cm)$) 
+            .. controls ($(current page.north) + (3, -2.0cm)$) and ($(current page.north) + (-3, -0.4cm)$) .. 
+            ($(current page.north west) + (0, -1.0cm)$) -- cycle;
+            
+        \path[fill=goldyellow] (current page.north west) -- (current page.north east) 
+            -- ($(current page.north east) + (0, -1.0cm)$) 
+            .. controls ($(current page.north) + (4, -1.0cm)$) and ($(current page.north) + (-2, -2.2cm)$) .. 
+            ($(current page.north west) + (0, -1.6cm)$) -- cycle;
+            
+        \path[fill=amberorange] (current page.north west) -- ($(current page.north west) + (6.5cm, 0)$) 
+            .. controls ($(current page.north west) + (4.5cm, -1.2cm)$) and ($(current page.north west) + (2cm, -2.0cm)$) .. 
+            ($(current page.north west) + (0, -2.0cm)$) -- cycle;
+            
+        % Logo góc trái Header
+        \node[anchor=west, inner sep=0pt] 
+            at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
+            
+        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
+        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+            at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
+    \end{tikzpicture}
+}
+
+% --- Footer ---
+\fancyfoot[C]{
+    \begin{tikzpicture}[remember picture, overlay]
+        % Đường kẻ ngang
+        \draw[amberorange, line width=1.5pt] 
+            ($(current page.south west) + (0cm, 0.4cm)$) -- ($(current page.south east) + (0cm, 0.4cm)$);
+
+        % Dải cong góc phải
+        \path[fill=goldyellow] (current page.south east) -- ($(current page.south east) + (-5cm, 0)$) 
+            .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
+            ($(current page.south east) + (0, 1.2cm)$) -- cycle;
+
+        % Mạng xã hội
+        \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
+            \small\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
+            \hskip 18pt
+            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+        };
+
+        % Số trang (Thiết kế hình tròn cũ thu nhỏ)
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries, inner sep=0pt, minimum size=0.7cm] 
+            at ($(current page.south east) + (-1.0cm, 0.65cm)$) {\thepage};
+    \end{tikzpicture}
+}
+
+% ==========================================
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% ==========================================
+\newcommand{\titlebox}[3]{
+    % Gán nội dung đối số #3 vào biến HeaderRightText
+    \gdef\HeaderRightText{#3}
+    
+    \begin{center}
+    \vspace*{-0.5cm}
+    \begin{tikzpicture}
+        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
+            \begin{minipage}[c]{4.2cm}
+                \centering\vspace{0.1cm}
+                \rule{2.2cm}{2.2cm} 
+                \vspace{0.1cm}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Đổ bóng & Nền
+        \fill[goldyellow, rounded corners=8pt] ([xshift=5pt, yshift=-5pt]MainBox.south west) rectangle ([xshift=5pt, yshift=-5pt]MainBox.north east);
+        \fill[white, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+        
+        % Lưới ô ly & Nền Logo
+        \begin{scope}
+            \clip[rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+            \draw[step=0.4cm, softgray!50, line width=0.6pt] (MainBox.south west) grid (MainBox.north east);
+            \fill[lightamber!60] (MainBox.south west) rectangle ([xshift=4.2cm]MainBox.north west);
+        \end{scope}
+
+        % Viền ngoài
+        \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
+
+        % Nội dung Text (Lớp trên cùng)
+        \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
+            \begin{minipage}[c]{4.2cm}
+                \centering
+                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
+                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+            \end{minipage}%
+            \begin{minipage}[c]{11.5cm}
+                \centering\vspace{0.15cm}
+                {\huge\bfseries\sffamily\color{deepblue} #2 \par}
+                \vspace{0.15cm} 
+            \end{minipage}
+        };
+        
+        % Trang trí phụ kiện
+        \draw[deepblue, line width=1.5pt, dashed] ([xshift=4.2cm]MainBox.north west) -- ([xshift=4.2cm]MainBox.south west);
+        \node[regular polygon, regular polygon sides=4, rotate=45, fill=white, draw=accentred, line width=1.2pt, inner sep=2.5pt] at ([xshift=4.2cm]MainBox.west) {};
+        \node[anchor=west, fill=amberorange, text=white, font=\large\bfseries\sffamily, rounded corners=4pt, draw=deepblue, line width=1.5pt, inner xsep=12pt, inner ysep=6pt] at ([xshift=1.5cm]MainBox.north west) {#1};
+        \fill[accentred] ([xshift=-1.8cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[amberorange] ([xshift=-1.4cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+        \fill[goldyellow] ([xshift=-1.0cm, yshift=-0.4cm]MainBox.north east) circle (3pt);
+    \end{tikzpicture}
+    \vspace*{0cm}
+    \end{center}
+}
+
+% ==========================================
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% ==========================================
+\newcommand{\questioncore}[2]{
+    % Xóa khoảng cách phía trên, ép sát câu trước
+    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak
+}
+
+% Cấu hình hiển thị đáp án trắc nghiệm
+\settasks{
+    label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
+    label-width=15pt,     
+    item-indent=25pt,     
+    label-offset=6pt,    
+    column-sep=20pt,     
+    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+}
+
+% Hàm vẽ dòng kẻ nháp
+\newcommand{\drawdashlines}[1]{
+    \ifnum#1>0
+        \nopagebreak\vspace{0.1cm}\noindent 
+        \begin{tikzpicture}
+            \foreach \i in {1,...,#1} {
+                \draw[softgray, line width=0.2pt] (0,-{\i}) -- (\textwidth-4pt,-{\i});
+            }
+        \end{tikzpicture}
+        \par
+    \fi
+    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% --- Dạng 1: Trắc nghiệm 4 đáp án ---
+\newcommand{\questionLinesManual}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \needspace{\calculatedSpace cm} 
+    \questioncore{#2}{#3}
+    #4
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{4pt}    % Khoảng đệm tự động phía trên ô
+\setlength\cellspacebottomlimit{4pt} % Khoảng đệm tự động phía dưới ô
+
+
+
+
+\newcommand{\questionTrueFalse}[4]{
+    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \needspace{\calculatedSpace cm}
+    \questioncore{#2}{#3}
+    
+    \nopagebreak
+    \begin{center}
+    \begin{tabular}{|>{\centering\arraybackslash}S{m{0.8cm}}|S{m{12cm}}|>{\centering\arraybackslash}S{m{1.5cm}}|>{\centering\arraybackslash}S{m{1.5cm}}|}
+        \hline
+        \rowcolor{amberorange!20}
+        \multicolumn{1}{|c|}{} & \multicolumn{1}{>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{\textcolor{deepblue}{Đúng}} & 
+        \textbf{\textcolor{deepblue}{Sai}} \\
+        \hline
+        #4
+        \hline
+    \end{tabular}
+    \end{center}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+% ----- Dạng 3: Tự luận ngắn -----
+\newcommand{\questionShortAnswer}[3]{
+    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \needspace{\calculatedSpace cm}
+    
+    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
+    \questioncore{#2}{#3}\par}
+    
+    \nopagebreak
+    \begin{flushright}
+        \begin{tikzpicture}
+            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                at (-0.2, 0.4) {Đáp án:};
+            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                (0,0) rectangle (3.0, 0.8);
+            \foreach \x in {0.75, 1.5, 2.25} {
+                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+            }
+        \end{tikzpicture}
+    \end{flushright}
+    
+    \par\nopagebreak
+    \drawdashlines{#1}
+}
+
+
+\settasks{
+    after-item-skip = 1em % Tương đương row-skip cũ
+}
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Tích phân}{Tích phân}{Nguyên hàm - Tích phân: Tích phân}
+
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+\newpage
+\drawdashlines{25}
+\newpage
+\drawdashlines{25}
+\newpage
+
+% --- CÂU 1 ---
+\questionLinesManual{6}{1}{Nếu \( \displaystyle \int_{1}^{2} f(x) \, dx = -2 \) và \( \displaystyle \int_{2}^{3} f(x) \, dx = 1 \) thì \( \displaystyle \int_{1}^{3} f(x) \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task $-3$
+        \task $-1$
+        \task $1$
+        \task $3$
+    \end{tasks}
+}
+% --- CÂU 2 ---
+\questionLinesManual{6}{2}{Nếu \( \displaystyle \int_{0}^{1} f(x) \, dx = 4 \) thì \( \displaystyle \int_{0}^{1} 2f(x) \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task $16$
+        \task $4$
+        \task $2$
+        \task $8$
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{8}{3}{Biết \( F(x) = x^2 \) là một nguyên hàm của hàm số \( f(x) \) trên \( \mathbb{R} \). Giá trị của \( \displaystyle \int_{1}^{2} [2 + f(x)] \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task $5$
+        \task $3$
+        \task $\dfrac{13}{3}$
+        \task $\dfrac{7}{3}$
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{6}{4}{Biết \( \displaystyle \int_{2}^{3} f(x) \, dx = 4 \) và \( \displaystyle \int_{2}^{3} g(x) \, dx = 1 \). Khi đó \( \displaystyle \int_{2}^{3} [f(x) - g(x)] \, dx \) bằng:}{
+    \begin{tasks}(4)
+        \task $-3$
+        \task $3$
+        \task $4$
+        \task $5$
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{8}{5}{Biết \( \displaystyle \int_{0}^{1} [f(x) + 2x] \, dx = 2 \). Khi đó \( \displaystyle \int_{0}^{1} f(x) \, dx \) bằng:}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $4$
+        \task $2$
+        \task $0$
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{7}{6}{Cho \( \displaystyle \int_{-2}^{2} f(x) \, dx = 1 \), \( \displaystyle \int_{-2}^{4} f(t) \, dt = -4 \). Tính \( \displaystyle \int_{2}^{4} f(y) \, dy \).}{
+    \begin{tasks}(4)
+        \task $I = 5$
+        \task $I = -3$
+        \task $I = 3$
+        \task $I = -5$
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{6}{7}{Cho \( \displaystyle \int_{0}^{1} f(x) \, dx = -1 \); \( \displaystyle \int_{0}^{3} f(x) \, dx = 5 \). Tính \( \displaystyle \int_{1}^{3} f(x) \, dx \).}{
+    \begin{tasks}(4)
+        \task $1$
+        \task $4$
+        \task $6$
+        \task $5$
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{6}{8}{Cho \( \displaystyle \int_{1}^{2} f(x) \, dx = -3 \) và \( \displaystyle \int_{2}^{3} f(x) \, dx = 4 \). Khi đó \( \displaystyle \int_{1}^{3} f(x) \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task $12$
+        \task $7$
+        \task $1$
+        \task $-12$
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{10}{9}{Nếu \( F'(x) = \dfrac{1}{2x-1} \) và \( F(1) = 1 \) thì giá trị của \( F(4) \) bằng}{
+    \begin{tasks}(4)
+        \task $\ln 7$
+        \task $1 + \dfrac{1}{2}\ln 7$
+        \task $\ln 3$
+        \task $1 + \ln 7$
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{6}{10}{Tính tích phân \( I = \displaystyle \int_{0}^{2} (2x + 1) \, dx \).}{
+    \begin{tasks}(4)
+        \task $I = 5$
+        \task $I = 6$
+        \task $I = 2$
+        \task $I = 4$
+    \end{tasks}
+}
+
+% --- CÂU 11 ---
+\questionLinesManual{6}{11}{Với \( a, b \) là các tham số thực. Giá trị tích phân \( \displaystyle \int_{0}^{b} (3x^2 - 2ax - 1) \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task \( b^3 - b^2a - b \)
+        \task \( b^3 + b^2a + b \)
+        \task \( b^3 - ba^2 - b \)
+        \task \( 3b^2 - 2ab - 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 12 ---
+\questionLinesManual{10}{12}{Cho hàm số \( f(x) \). Biết \( f(0) = 4 \) và \( f'(x) = 2\sin x + 1, \, \forall x \in \mathbb{R} \), khi đó \( \displaystyle \int_{0}^{\frac{\pi}{4}} f(x) \, dx \) bằng}
+
+
+% --- CÂU 13 ---
+\questionLinesManual{10}{13}{Biết \( \displaystyle \int_{1}^{3} \dfrac{x+2}{x} \, dx = a + b\ln c \), với \( a, b, c \in \mathbb{Z}, c < 9 \). Tính tổng \( S = a + b + c \).}{
+    \begin{tasks}(4)
+        \task \( S = 7 \)
+        \task \( S = 5 \)
+        \task \( S = 8 \)
+        \task \( S = 6 \)
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionLinesManual{12}{14}{Biết \( I = \displaystyle \int_{-1}^{0} \dfrac{3x^2 + 5x - 1}{x - 2} \, dx = a\ln \dfrac{2}{3} + b, \, (a, b \in \mathbb{R}) \). Khi đó giá trị của \( a + 4b \) bằng}{
+    \begin{tasks}(4)
+        \task $50$
+        \task $60$
+        \task $59$
+        \task $40$
+    \end{tasks}
+}
+
+
+% --- CÂU 15 ---
+\questionLinesManual{23}{15}{Cho \( \displaystyle \int_{0}^{1} \left( \dfrac{1}{x+1} - \dfrac{1}{x+2} \right) dx = a\ln 2 + b\ln 3 \) với \( a, b \) là các số nguyên. Mệnh đề nào dưới đây đúng?}{
+    \begin{tasks}(4)
+        \task \( a + 2b = 0 \)
+        \task \( a + b = 2 \)
+        \task \( a - 2b = 0 \)
+        \task \( a + b = -2 \)
+    \end{tasks}
+}
+
+% --- CÂU 16 ---
+\questionLinesManual{23}{16}{Biết \( \displaystyle \int_{1}^{2} \dfrac{dx}{(x+1)(2x+1)} = a\ln 2 + b\ln 3 + c\ln 5 \). Khi đó giá trị \( a + b + c \) bằng}{
+    \begin{tasks}(4)
+        \task $-3$
+        \task $2$
+        \task $1$
+        \task $0$
+    \end{tasks}
+}
+
+% --- CÂU 17 ---
+\questionLinesManual{23}{17}{Cho \( \displaystyle \int_{1}^{3} \dfrac{x+3}{x^2 + 3x + 2} \, dx = a\ln 2 + b\ln 3 + c\ln 5 \), với \( a, b, c \) là các số nguyên. Giá trị của \( a+b+c \) bằng}{
+    \begin{tasks}(4)
+        \task $0$
+        \task $2$
+        \task $3$
+        \task $1$
+    \end{tasks}
+}
+
+% --- CÂU 18 ---
+\questionLinesManual{23}{18}{Cho \( \displaystyle \int_{3}^{4} \dfrac{5x-8}{x^2 - 3x + 2} \, dx = a\ln 3 + b\ln 2 + c\ln 5 \), với \( a, b, c \) là các số hữu tỉ. Giá trị của \( 2^{a-3b+c} \) bằng}{
+    \begin{tasks}(4)
+        \task $12$
+        \task $6$
+        \task $1$
+        \task $64$
+    \end{tasks}
+}
+
+
+
+
+
+
+
+
+\end{document}
