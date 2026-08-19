@@ -1,0 +1,113 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Cấp số cộng- cấp số nhân}{Hàm số: CSC-CSN}
+
+% --- CÂU 1 ---
+\questionLinesManual{0}{1}{Trong các dãy số sau, dãy số nào không phải cấp số cộng?}{
+    \begin{tasks}(4)
+        \task \( \dfrac{1}{2}, \dfrac{3}{2}, \dfrac{5}{2}, \dfrac{7}{2}, \dfrac{9}{2} \)
+        \task $1; 1; 1; 1; 1$
+        \task $-8; -6; -4; -2; 0$
+        \task $3; 1; -1; -2; -4$
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{0}{2}{Trong các dãy số sau, dãy số nào là một cấp số nhân?}{
+    \begin{tasks}(4)
+        \task $128; -64; 32; -16; 8; \ldots$
+        \task $\sqrt{2}; 2; 4; 4\sqrt{2}; \ldots$
+        \task $5; 6; 7; 8; \ldots$
+        \task $15; 5; 1; \dfrac{1}{5}; \ldots$
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{3}{Dãy số nào dưới đây là cấp số cộng?}{
+    \begin{tasks}(2)
+        \task \( u_n = n + 2^n, (n \in \mathbb{N}^*) \)
+        \task \( u_n = 3n + 1, (n \in \mathbb{N}^*) \)
+        \task \( u_n = 3^n, (n \in \mathbb{N}^*) \)
+        \task \( u_n = \dfrac{3n + 1}{n + 2}, (n \in \mathbb{N}^*) \)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{0}{4}{Trong các dãy số \( (u_n) \) cho bởi số hạng tổng quát \( u_n \) sau, dãy số nào là một cấp số nhân?}{
+    \begin{tasks}(4)
+        \task \( u_n = 7 - 3n \)
+        \task \( u_n = 7 - 3^n \)
+        \task \( u_n = \dfrac{7}{3n} \)
+        \task \( u_n = 7 \cdot 3^n \)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{0}{5}{Tìm \( x \) để các số \( 2; 8; x \) theo thứ tự đó lập thành một cấp số nhân.}{
+    \begin{tasks}(4)
+        \task \( x = 14 \)
+        \task \( x = 32 \)
+        \task \( x = 64 \)
+        \task \( x = 68 \)
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{0}{6}{Cho cấp số cộng \( (u_n) \) có \( u_1 = -3 \), \( u_6 = 27 \). Tính công sai \( d \).}{
+    \begin{tasks}(4)
+        \task \( d = 7 \)
+        \task \( d = 5 \)
+        \task \( d = 8 \)
+        \task \( d = 6 \)
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Cho cấp số cộng \( (u_n) \) với \( u_1 = 8 \) và công sai \( d = 3 \). Giá trị của \( u_5 \) bằng}{
+    \begin{tasks}(4)
+        \task \( \dfrac{8}{3} \)
+        \task $24$
+        \task $20$
+        \task $11$
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{0}{8}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -2 \) và công bội \( q = 3 \). Số hạng \( u_2 \) là:}{
+    \begin{tasks}(4)
+        \task \( u_2 = -6 \)
+        \task \( u_2 = 6 \)
+        \task \( u_2 = 1 \)
+        \task \( u_2 = -18 \)
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{0}{9}{Cho cấp số nhân \( (u_n) \) có \( u_1 = -3 \) và \( q = -2 \). Tính tổng 10 số hạng đầu tiên của cấp số nhân đã cho.}{
+    \begin{tasks}(4)
+        \task \( S_{10} = -511 \)
+        \task \( S_{10} = -1025 \)
+        \task \( S_{10} = 1025 \)
+        \task \( S_{10} = 1023 \)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{0}{10}{Cho cấp số cộng \( (u_n) \) có \( u_5 = -15 \), \( u_{20} = 60 \). Tổng của 10 số hạng đầu tiên của cấp số cộng này là:}{
+    \begin{tasks}(4)
+        \task \( S_{10} = -125 \)
+        \task \( S_{10} = -250 \)
+        \task \( S_{10} = 200 \)
+        \task \( S_{10} = -200 \)
+    \end{tasks}
+}
+
+
+\end{document}

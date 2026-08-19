@@ -1,0 +1,112 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Tích phân}{Nguyên hàm}{Nguyên hàm - Tích phân: Nguyên hàm}
+
+% --- CÂU 1 ---
+\questionLinesManual{8}{1}{Họ tất cả các nguyên hàm của hàm số \( f(x) = 2x + 6 \) là}{
+    \begin{tasks}(4)
+        \task \( x^2 + C \)
+        \task \( x^2 + 6x + C \)
+        \task \( 2x^2 + C \)
+        \task \( 2x^2 + 6x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{8}{2}{Họ nguyên hàm của hàm số \( f(x) = \cos x + 6x \) là}{
+    \begin{tasks}(4)
+        \task \( \sin x + 3x^2 + C \)
+        \task \( -\sin x + 3x^2 + C \)
+        \task \( \sin x + 6x^2 + C \)
+        \task \( -\sin x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{6}{3}{Tìm nguyên hàm của hàm số \( f(x) = x^2 + \dfrac{2}{x^2} \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \dfrac{2}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \left( \dfrac{1}{x} \right) + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{2}{x} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{6}{4}{Họ nguyên hàm của hàm số \( f(x) = e^x + x \) là}{
+    \begin{tasks}(4)
+        \task \( e^x + 1 + C \)
+        \task \( e^x + x^2 + C \)
+        \task \( e^x + \dfrac{1}{2}x^2 + C \)
+        \task \( \dfrac{1}{x+1}e^x + \dfrac{1}{2}x^2 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{6}{5}{Tìm nguyên hàm của hàm số \( f(x) = \dfrac{1}{1 - 2x} \) trên \( \left( -\infty; \dfrac{1}{2} \right) \).}{
+    \begin{tasks}(4)
+        \task \( \dfrac{1}{2} \ln |2x - 1| + C \)
+        \task \( -\dfrac{1}{2} \ln (1 - 2x) + C \)
+        \task \( \dfrac{1}{2} \ln |2x - 1| + C \)
+        \task \( \ln |2x - 1| + C \)
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{6}{6}{Nguyên hàm của hàm số \( f(x) = 2^x + x \) là}{
+    \begin{tasks}(4)
+        \task \( \dfrac{2^x}{\ln 2} + \dfrac{x^2}{2} + C \)
+        \task \( 2^x + x^2 + C \)
+        \task \( \dfrac{2^x}{\ln 2} + x^2 + C \)
+        \task \( 2^x + \dfrac{x^2}{2} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{6}{7}{Cho \( F(x) \) là một nguyên hàm của hàm số \( f(x) = \dfrac{1}{x-2} \), biết \( F(1) = 2 \). Giá trị của \( F(0) \) bằng}{
+    \begin{tasks}(4)
+        \task \( 2 + \ln 2 \)
+        \task \( \ln 2 \)
+        \task \( 2 + \ln(-2) \)
+        \task \( \ln(-2) \)
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{6}{8}{Cho \( F(x) \) là một nguyên hàm của hàm số \( f(x) = e^x + 2x \) thỏa mãn \( F(0) = \dfrac{3}{2} \). Tìm \( F(x) \).}{
+    \begin{tasks}(2)
+        \task \( F(x) = e^x + x^2 + \dfrac{1}{2} \)
+        \task \( F(x) = e^x + x^2 + \dfrac{5}{2} \)
+        \task \( F(x) = e^x + x^2 + \dfrac{3}{2} \)
+        \task \( F(x) = 2e^x + x^2 - \dfrac{1}{2} \)
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{10}{9}{Tìm họ nguyên hàm của hàm số \( y = x^2 - 3^x + \dfrac{1}{x} \).}{
+    \begin{tasks}(2)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} - \dfrac{1}{x^2} + C, \ C \in \mathbb{R} \)
+        \task \( \dfrac{x^3}{3} - 3^x + \dfrac{1}{x^2} + C, \ C \in \mathbb{R} \)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} + \ln |x| + C, \ C \in \mathbb{R} \)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} - \ln |x| + C, \ C \in \mathbb{R} \)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{10}{10}{Công thức nào sau đây là sai?}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int \ln x \, dx = \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int \dfrac{1}{\cos^2 x} \, dx = \tan x + C \)
+        \task \( \displaystyle \int \sin x \, dx = -\cos x + C \)
+        \task \( \displaystyle \int e^x \, dx = e^x + C \)
+    \end{tasks}
+}
+
+\end{document}

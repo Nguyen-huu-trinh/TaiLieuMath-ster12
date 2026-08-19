@@ -1,0 +1,242 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Ứng dụng khảo sát đồ thị hàm số}{Hàm số: Ứng dụng đồ thị}
+
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+\newpage
+
+% --- CÂU 9 ---
+\questionShortAnswer{15}{1}{Một phần đường chạy của tàu lượn siêu tốc (hình 1) khi gắn hệ trục tọa độ Oxy được mô phỏng ở hình 2, đơn vị trên mỗi trục là mét. Biết đường chạy của nó là một phần đồ thị hàm bậc ba  
+\(y = ax^3 + bx^2 + cx + d \quad (0 \leq x \leq 90)\)
+; tàu lượn siêu tốc xuất phát từ điểm \( A \), đi qua các điểm \( C, D \) đồng thời đạt độ cao nhỏ nhất so với mặt đất là \( 6m \). Độ cao lớn nhất mà tàu lượn siêu tốc đạt được là bao nhiêu mét so với mặt đất (kết quả làm tròn đến hàng phần chục)?
+\begin{figure}[h!]
+    \centering
+    % --- HÌNH 1 (BÊN TRÁI): ẢNH CHÈN VÀO ---
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        % Thay "rollercoaster.png" bằng tên file ảnh của bạn
+        \includegraphics[width=\textwidth]{../images/TauLuon.png}
+        \par\vspace{1.5ex} % Tạo khoảng cách nhỏ giữa hình và chữ
+        \textbf{Hình 1}
+    \end{minipage}
+    \hfill
+    % --- HÌNH 2 (BÊN PHẢI): ĐỒ THỊ TIKZ ---
+    \begin{minipage}[b]{0.4\textwidth}
+        \centering
+        \begin{tikzpicture}[>=stealth, scale=0.75]
+            % Vẽ hệ trục tọa độ Oxy
+            \draw[->, thick] (-0.8, 0) -- (9.5, 0) node[below] {$x$};
+            \draw[->, thick] (0, -0.5) -- (0, 5.0) node[left] {$y$};
+            \node[below left] at (0,0) {$O$};
+
+            % Vẽ đường cong đồ thị
+            \draw[ultra thick, samples=100, domain=0:9.0] 
+                plot (\x, {-1/15*\x^3 + 13/15*\x^2 - 8/3*\x + 3});
+
+            % Đường nét đứt gióng từ các điểm quan trọng
+            \draw[dashed, thick] (2, 0) -- (2, 0.6) -- (0, 0.6);
+            \draw[dashed, thick] (0, 3) -- (8, 3);
+            \draw[dashed, thick] (5, 3) -- (5, 0);
+            \draw[dashed, thick] (6.67, 4) -- (6.67, 0);
+            \draw[dashed, thick] (8, 3) -- (8, 0);
+
+            % Các nhãn điểm trên đồ thị
+            \node[above right] at (0, 3) {$A$};
+            \node[above left] at (5, 3) {$C$};
+            \node[above right] at (8, 3) {$D$};
+
+            % Các nhãn số trên trục tọa độ
+            \node[left] at (0, 3) {$30$};
+            \node[left] at (0, 0.6) {$6$};
+            \node[below=3pt] at (5, 0) {$50$};
+            \node[below=3pt] at (8, 0) {$80$};
+        \end{tikzpicture}
+        \par\vspace{1.5ex} % Tạo khoảng cách nhỏ giữa hình và chữ
+        \textbf{Hình 2}
+    \end{minipage}
+\end{figure}}
+
+
+% --- CÂU 11 ---
+\questionShortAnswer{15}{2}{Một hồ nước nhân tạo được xây dựng trong công viên giải trí. Trong mô hình minh họa sau, nó được giới hạn bởi các trục tọa độ và đồ thị hàm số \( y = f(x) = -x^3 + 5x^2 - \dfrac{21}{2}x + 10 \). Đơn vị đo độ dài trên mỗi trục tọa độ là \( 100m \). Trong công viên có một con đường chạy dọc theo đồ thị của hàm số \( y = -\dfrac{7}{2}x + 24 \). Người ta dự định xây dựng bên bờ hồ một bến thuyền đạp nước sao cho khoảng cách từ bến thuyền đến con đường là ngắn nhất. Khi đó tọa độ của điểm để xây bến thuyền là \( M(a; b) \). Tính \( T = 3a - 54b \).
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=0.5]
+
+    % =================================================================
+    % 1. VẼ PHẦN TÔ MÀU DIỆN TÍCH "HỒ NƯỚC" (HÌNH PHẲNG GIỚI HẠN)
+    % =================================================================
+    % Đồ thị f(x) cắt trục hoành tại x = 2 (vì f(2) = -8 + 20 - 21 + 10 = 1)
+    % Để phần tô màu khớp hoàn toàn với đồ thị, ta dùng cấu trúc fill với hàm số
+    \fill[gray!40] (0,0) -- (0,10) 
+        plot[domain=0:2.35, samples=100] (\x, {-\x^3 + 5*\x^2 - 10.5*\x + 10}) 
+        -- (0,0) -- cycle;
+
+    % Chữ "hồ nước" đặt bên trong vùng tô màu
+    \node[align=center, scale=0.8] at (0.7, 1.2) {hồ\\nước};
+
+    % =================================================================
+    % 2. VẼ HỆ TRỤC TỌA ĐỘ Oxy
+    % =================================================================
+    \draw[->, thick] (-1.0, 0) -- (9.0, 0) node[below] {$x$};
+    \draw[->, thick] (0, -1.5) -- (0, 11.5) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % Vạch chia và số trên trục hoành (Ox)
+    \foreach \x in {2, 4, 6, 8} {
+        \draw[shift={(\x,0)}, thin] (0pt,2pt) -- (0pt,-2pt) node[below] {$\x$};
+    }
+
+    % Vạch chia và số trên trục tung (Oy)
+    \foreach \y in {2, 4, 6, 8} {
+        \draw[shift={(0,\y)}, thin] (2pt,0pt) -- (-2pt,0pt) node[left] {$\y$};
+    }
+
+    % =================================================================
+    % 3. VẼ ĐỒ THỊ CÁC HÀM SỐ
+    % =================================================================
+    % Đồ thị hàm số y = f(x)
+    \draw[ultra thick, samples=100, domain=-0.1:2.6] 
+        plot (\x, {-\x^3 + 5*\x^2 - 10.5*\x + 10});
+    \node[right, scale=0.9] at (1.1, 5.0) {$f(x)$};
+
+    % Đồ thị đường thẳng y = -7/2*x + 24
+    \draw[ultra thick, samples=100, domain=3.7:7.1] 
+        plot (\x, {-3.5*\x + 24});
+    \node[right, scale=0.9] at (4.5, 8.0) {$y = -\dfrac{7}{2}x + 24$};
+
+\end{tikzpicture}
+\end{center}}
+
+% --- CÂU 12 ---
+\questionShortAnswer{15}{3}{Lát cắt ngang của một vùng đất được mô hình hóa là một phần hàm số bậc ba \( y = f(x) \) có đồ thị như hình vẽ (đơn vị độ dài trên các trục là kilômét). Biết khoảng cách hai bên chân đồi \( OM = 4 \, (km) \), độ rộng của hồ nước \( MN = 2 \, (km) \) và ngọn đồi cao \( 1056 \, (m) \). Độ sâu của hồ nước là bao nhiêu mét (làm tròn kết quả đến hàng đơn vị của mét)?
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.2]
+
+    % =================================================================
+    % 1. ĐỊNH NGHĨA CÁC ĐƯỜNG CONG & THIẾT LẬP GRAPHICS KHỚP HÌNH VẼ
+    % Hàm số bậc ba mô phỏng đồ thị y = f(x):
+    % f(x) = k * x * (x - 4) * (x - 6)
+    % Cắt trục hoành tại O(0,0), M(4,0), N(6,0). 
+    % Với k = 0.15, ta có đỉnh đồi cao vừa phải và lòng hồ nông hợp lý.
+    % =================================================================
+
+    % --- TÔ HỌA TIẾT CHO CÁC PHẦN ---
+    % Phần Đồi: Giới hạn bởi trục hoành và đường cong từ x=0 đến x=4 (Họa tiết ca-rô mắt cáo)
+    \path[pattern=grid, pattern color=gray!80] (0,0) -- plot[domain=0:4, samples=100] (\x, {0.15*\x*(\x-4)*(\x-6)}) -- (4,0) -- cycle;
+
+    % Phần Hồ Nước: Giới hạn bởi trục hoành và đường cong từ x=4 đến x=6 (Họa tiết sọc chéo)
+    \path[pattern=north west lines, pattern color=gray!80] (4,0) -- plot[domain=4:6, samples=100] (\x, {0.15*\x*(\x-4)*(\x-6)}) -- (6,0) -- cycle;
+
+    % Phần Núi: Giới hạn bởi trục hoành, đường cong từ x=6 đến x=7.1 và trục đứng bên phải x=7.1 (Họa tiết mắt cáo)
+    \path[pattern=grid, pattern color=gray!80] (6,0) -- plot[domain=6:7.1, samples=100] (\x, {0.15*\x*(\x-4)*(\x-6)}) -- (7.1,0) -- cycle;
+
+    % =================================================================
+    % 2. VẼ ĐƯỜNG BIÊN ĐỒ THỊ VÀ HỆ TRỤC TỌA ĐỘ Oxy
+    % =================================================================
+    % Trục hoành Ox và Trục tung Oy
+    \draw[->, thick] (-0.8, 0) -- (8.0, 0) node[below] {$x$};
+    \draw[->, thick] (0, -1.0) -- (0, 3.2) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % Đường biên giới hạn bên phải của núi
+    \draw[thick] (7.1, 0) -- (7.1, {0.15*7.1*(7.1-4)*(7.1-6)});
+
+    % Vẽ toàn bộ đường cong hàm số bậc ba liên tục
+    \draw[ultra thick, samples=150, domain=0:7.1] plot (\x, {0.15*\x*(\x-4)*(\x-6)});
+
+    % =================================================================
+    % 3. CHÚ THÍCH CÁC ĐỊA DANH VÀ ĐIỂM SỐ
+    % =================================================================
+    \node[below=3pt] at (4, 0) {$M$};
+    \node[below=3pt] at (6, 0) {$N$};
+
+    % Tên địa danh tương ứng trên đồ thị
+    \node[above, scale=0.85] at (1.6, 2.5) {Đồi};
+    \node[above, scale=0.85] at (5.0, 0.05) {Mặt hồ};
+    \node[left, scale=0.85] at (6.6, 1.8) {Núi};
+
+\end{tikzpicture}
+\end{center}}
+
+
+
+% --- CÂU 14 ---
+\questionShortAnswer{15}{4}{Đường đi của một khinh khí cầu được gắn trong hệ trục tọa độ là một đường cong bậc hai trên bậc nhất có đồ thị cắt trục hoành tại hai điểm có tọa độ là \( (1;0) \) và \( (8;0) \) với đơn vị trên hệ trục tọa độ là \( 1 \, (km) \). Biết rằng điểm cực đại của đồ thị hàm số là điểm \( (6;5) \). Hỏi khi khinh khí cầu đi qua điểm cực đại và cách mặt đất 3875 \( (m) \) thì khinh khí cầu cách gốc tọa độ theo phương ngang bao nhiêu \( (đơn vị: \, km) \)?
+
+\begin{figure}[h!]
+    \centering % Canh giữa ảnh
+    \includegraphics[width=0.4\textwidth]{../images/Cauvong.png}
+\end{figure}}
+
+% --- CÂU 15 ---
+\questionShortAnswer{15}{5}{Một doanh nghiệp kinh doanh sản xuất đồng hồ có đồ thị hàm tổng chi phí theo số sản phẩm là một phần đồ thị của hàm số bậc hai trên bậc nhất  
+\(f(x) = \dfrac{ax^2 + bx + c}{x + e}\)
+như hình vẽ (mỗi đơn vị trên trục hoành tương ứng 100 sản phẩm và mỗi đơn vị trên trục tung tương ứng 1000 USD).  
+
+Biết rằng tâm đối xứng của đồ thị hàm số \( f(x) \) là \( A\left(-1; \frac{2}{3}\right) \) và đường tiệm cận xiên của đồ thị hàm số đi qua điểm \( B(3; 2) \). Theo khảo sát, tổng doanh thu của doanh nghiệp này được mô tả bởi hàm số \( R(x) = x^2 + 2x \) và lợi nhuận thu về khi bán 200 sản phẩm bằng 5250 USD. Khi chi phí theo số sản phẩm đạt giá trị nhỏ nhất thì số sản phẩm sản xuất được là bao nhiêu (kết quả làm tròn đến hàng đơn vị)?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+    % Vẽ hệ trục
+    \draw[->] (-1,0) -- (5,0) node[below] {$x$};
+    \draw[->] (0,-1) -- (0,4.5) node[right] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Vẽ đồ thị hàm số
+    \draw[ultra thick, samples=100, domain=-0.7:4.5] 
+        plot (\x, {1/3*\x + 1 + 1/(\x + 1)});
+    \draw[dashed, samples=100, domain=-1:4.5] 
+        plot (\x, {1/3*\x + 1 });
+    
+\end{tikzpicture}
+\end{center}}
+
+
+
+
+
+% --- CÂU 2 ---
+\questionTrueFalse{15}{6}{Lượng nước tưới cho vườn cây vào ngày thứ \( t \) (\( 1 \leq t \leq 30 \)) được ghi lại ở bảng sau. Biết rằng hàm số mô tả lượng nước tưới có dạng hàm số bậc ba.  
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5} % Tăng khoảng cách dòng cho thoáng và giống ảnh mẫu
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$t$ (ngày) & 2 & 6 & 12 & 18 \\ \hline
+Lượng nước (lít) & 31 & 47 & 1571 & 7199 \\ \hline
+\end{tabular}
+\end{table}
+
+}{
+    \textbf{a)} & Hàm số mô tả lượng nước tưới vào ngày thứ \( t \) là \( y = 2t^3 - 15t^2 + 20t + 15 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tại thời điểm ngày thứ 10, lượng nước đã tưới cho vườn cây là 320 lít.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Tâm đối xứng của đồ thị hàm số mô tả lượng nước tưới có tổng tung độ và hoành độ là 20.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Kể từ ngày thứ 10, lượng nước tưới đã vượt mức 700 lít.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+
+
+
+
+
+
+\end{document}

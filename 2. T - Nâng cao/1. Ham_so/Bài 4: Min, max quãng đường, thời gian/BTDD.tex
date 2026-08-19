@@ -1,0 +1,330 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{BTDD giá trị lớn nhất nhỏ nhất của quãng đường}{Hàm số: Min Max quảng đường}
+
+
+% --- CÂU 1 ---
+\questionTrueFalse{0}{1}{Một kho hàng được đặt tại vị trí A cách trục đường chính một khoảng \( AB = 8 \, km \). Trên trục đường đó có một trung tâm thương mại ở vị trí C cách B một khoảng \( BC = 20 \, km \) (tham khảo hình vẽ). Người giao hàng có thể đi xe máy từ vị trí A đến vị trí M trên trục đường chính với vận tốc 40 km/h và đi xe ô tô đến trung tâm thương mại C với vận tốc 60 km/h. Đặt \( BM = x \) với \( 0 < x < 20 \).
+\begin{center}
+    \begin{tikzpicture}[>=stealth, scale=1.3]
+
+    % =================================================================
+    % 1. ĐỊNH NGHĨA CÁC ĐIỂM CHÍNH TRÊN TRỤC HOÀNH VÀ ĐƯỜNG CAO
+    % =================================================================
+    % Trục nằm ngang kéo dài sang hai bên một chút
+    \coordinate (StartLine) at (-0.5,0);
+    \coordinate (EndLine) at (5.0,0);
+    
+    % Các điểm chính
+    \coordinate (B) at (0.3,0);
+    \coordinate (M) at (2.2,0);
+    \coordinate (C) at (4.5,0);
+    \coordinate (A) at (0.3,3.0);
+
+    % =================================================================
+    % 2. VẼ CÁC ĐƯỜNG THẲNG
+    % =================================================================
+    % Vẽ đường thẳng nằm ngang chính
+    \draw[thick] (StartLine) -- (EndLine);
+
+    % Vẽ đoạn thẳng đứng AB và đoạn thẳng nghiêng AM
+    \draw[thick] (A) -- (B);
+    \draw[thick] (A) -- (M);
+
+    % =================================================================
+    % 3. VẼ KÝ HIỆU GÓC VUÔNG VÀ ĐIỂM ĐẶC BIỆT
+    % =================================================================
+    % Ký hiệu góc vuông tại đỉnh B (nằm bên trái đoạn thẳng AB)
+    \draw[thin] (B) ++(-0.18,0) -- ++(0,0.18) -- ++(0.18,0);
+
+    % Điểm C được biểu diễn bằng một chấm tròn đen nhỏ
+    \fill (C) circle (1.5pt);
+
+    % =================================================================
+    % 4. GÁN NHÃN CÁC ĐỈNH
+    % =================================================================
+    \node[left=3pt] at (A) {$A$};
+    \node[below=3pt] at (B) {$B$};
+    \node[below=3pt] at (M) {$M$};
+    \node[below=3pt] at (C) {$C$};
+
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Quãng đường đi từ A đến M là \( 64 + x^2 \, (km) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Thời gian đi từ A đến C là \( 40\sqrt{64 + x^2} + 60(20 - x) \) giờ.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Thời gian ngắn nhất đi từ A đến C là khoảng 29 phút.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Muộn nhất 7 giờ 1 phút người đó phải xuất phát từ vị trí A để có mặt tại C lúc 8h sáng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 2 ---
+\questionTrueFalse{0}{2}{Trong một cuộc thi cắm trại, xóm Kim Nghĩa treo bóng nháy cho công trại, sao cho điểm đầu và điểm cuối của dây bóng nằm ở vị trí hai chân của cổng. Ban cán sự xóm muốn treo bóng sao cho nó tạo thành hình tam giác như hình vẽ, biết xà ngang chứa điểm C treo bóng cách mặt đất 15m và cổng trại AB rộng 50m. Đặt \( AM = x \) (\( 0 < x < 50 \)) (m).
+\begin{center}
+    \begin{tikzpicture}[>=stealth, scale=1.2]
+
+    % =================================================================
+    % 1. ĐỊNH NGHĨA CÁC ĐIỂM CHÍNH TRONG TAM GIÁC
+    % =================================================================
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (5.0,0);
+    \coordinate (M) at (1.8,0);
+    \coordinate (C) at (1.8,3.0);
+
+    % Tọa độ hai đầu của thanh xà ngang đi qua C
+    \coordinate (XaTrai) at (-0.1,3.0);
+    \coordinate (XaPhai) at (4.8,3.0);
+
+    % =================================================================
+    % 2. VẼ CÁC ĐƯỜNG LIỀN VÀ XÀ NGANG
+    % =================================================================
+    % Vẽ thanh xà ngang phía trên bằng nét siêu đậm
+    \draw[ultra thick] (XaTrai) -- (XaPhai) node[above left, pos=0.9] {xà ngang};
+
+    % Vẽ các cạnh của tam giác ABC
+    \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+    % =================================================================
+    % 3. VẼ ĐƯỜNG CAO CM (NẾT ĐỨT) VÀ GÓC VUÔNG
+    % =================================================================
+    \draw[dashed, thick] (C) -- (M);
+
+    % Ký hiệu góc vuông tại M (nằm bên phải đường cao CM)
+    \draw[thin] (M) ++(0,0.18) -- ++(0.18,0) -- ++(0,-0.18);
+
+    % =================================================================
+    % 4. GÁN NHÃN CÁC ĐỈNH VÀ THÔNG SỐ TRONG HÌNH
+    % =================================================================
+    \node[left] at (A) {$A$};
+    \node[right] at (B) {$B$};
+    \node[below] at (M) {$M$};
+    \node[above] at (C) {$C$};
+
+    % Điền giá trị độ dài x và 15m
+    \node[above] at (1.0,0.05) {$x$};
+    \node[right] at (1.8,1.5) {$15m$};
+
+    % =================================================================
+    % 5. VẼ MŨI TÊN KÍCH THƯỚC CHIỀU DÀI 50m PHÍA DƯỚI
+    % =================================================================
+    \draw[<->, thick] (0,-0.5) -- (5.0,-0.5);
+    \node[below] at (2.5,-0.5) {$50m$};
+
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Độ dài đoạn \( CB \) bằng \( \sqrt{15^2 + (50 - x)^2} \) (m).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tổng đường dây bóng nối từ \( C \) đến \( A \) và từ \( C \) đến \( B \) là \( \sqrt{x^2 + 15} + \sqrt{(50 - x)^2 + 15} \) (m).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khi \( x = 25 \) (m) thì tổng đường dây bóng cần nối là ngắn nhất.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Biết chi phí mỗi mét dây bóng có giá 15 000 đồng. Chi phí thấp nhất mà ban cán sự xóm cần trả là 874 643 đồng (kết quả làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+% --- CÂU 12 ---
+\questionShortAnswer{0}{3}{Một kỹ sư đang thiết kế một đường ống dẫn để vận chuyển dầu thô từ mỏ dầu \( A \) cách bờ biển 6 km đến cảng xuất khẩu \( B \). Đường ống có thể nối trực tiếp từ \( A \) đến \( B \) hoặc nối từ \( A \) đến một điểm trung chuyển \( D \) trên đoạn \( BC \), rồi tiếp tục nối từ \( D \) đến \( B \). Biết khoảng cách \( BC = 10 \, km \); chi phí lắp đặt mỗi km đường ống trên biển và trên đất liền tương ứng bằng 20 và 4 (đơn vị: triệu USD). Chi phí lắp đặt đường ống thấp nhất là bao nhiêu triệu USD (kết quả làm tròn đến hàng đơn vị)?
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1.3]
+
+    % =================================================================
+    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH (Xoay góc xiên ~ 50 độ)
+    % =================================================================
+    \coordinate (B) at (0,0);
+    \coordinate (D) at (1.6,1.9);
+    \coordinate (C) at (2.56,3.04);
+    \coordinate (A) at (1.0,4.25);
+
+    % =================================================================
+    % 2. VẼ CÁC ĐOẠN THẲNG HÌNH HỌC VÀ CÁC ĐIỂM NÚT
+    % =================================================================
+    % Đường xiên dọc chính nối liền từ cảng B qua D đến C
+    \draw[thick] (B) -- (C);
+
+    % Các đoạn nối từ giàn khoan A đến C và D
+    \draw[thick] (A) -- (C);
+    \draw[thick] (A) -- (D);
+
+    % Vẽ các chấm tròn đen lớn tại các nút đầu mút hình học
+    \fill (B) circle (2pt);
+    \fill (D) circle (2pt);
+    \fill (C) circle (2pt);
+    \fill (A) circle (2pt);
+
+    % =================================================================
+    % 3. VẼ KÝ HIỆU GÓC VUÔNG TẠI C (Vuông góc góc dưới bên trái)
+    % =================================================================
+    \begin{scope}[shift={(C)}, rotate=-38]
+        \draw[thin] (0,0) -- (-0.2,0) -- (-0.2,-0.2) -- (0,-0.2);
+    \end{scope}
+
+    % =================================================================
+    % 4. VẼ BIỂU TƯỢNG VECTOR (GIÀN KHOAN A & BẰNG PHẲNG CẢNG B)
+    % =================================================================
+    % Đồ họa giàn khoan A (Phía trên)
+    \begin{scope}[shift={(A)}, scale=0.5, yshift=0.2cm]
+        \draw[thick, fill=white] (-0.8,0) -- (0.8,0) -- (0.5,0.4) -- (-0.5,0.4) -- cycle;
+        \draw[thick] (-0.6,0) -- (-0.4,-0.4) (-0.3,0) -- (-0.1,-0.4) (0.3,0) -- (0.1,-0.4) (0.6,0) -- (0.4,-0.4);
+        \draw[thick] (-0.4,-0.4) -- (0.4,-0.4);
+        \draw[thin] (-0.5,-0.5) sin (-0.2,-0.4) cos (0.1,-0.6) sin (0.5,-0.4);
+        % Tháp khoan
+        \draw[thick] (-0.2,0.4) -- (0,1.8) -- (0.2,0.4);
+        \draw[thin] (-0.1,0.9) -- (0.1,0.9) (-0.05,1.4) -- (0.05,1.4);
+        \draw[thin] (-0.2,0.4) -- (0.1,0.9) -- (-0.1,0.9) -- (0.2,0.4);
+        \draw[thin] (-0.1,0.9) -- (0.05,1.4) -- (-0.05,1.4) -- (0.1,0.9);
+        % Cần cẩu
+        \draw[thick] (0.2,0.4) -- (1.0,1.2);
+        \draw[thick] (0.4,0.4) -- (1.0,1.2);
+        \draw[thin] (1.0,1.2) -- (1.0,0.8);
+    \end{scope}
+
+    % Đồ họa tàu thuyền và cần cẩu cảng B (Phía dưới)
+    \begin{scope}[shift={(B)}, scale=0.5, xshift=-0.5cm, yshift=-0.5cm]
+        % Chiếc tàu thủy
+        \draw[thick, fill=white] (-1.0,0.2) -- (1.0,0.2) -- (0.8,-0.3) -- (-0.8,-0.3) -- cycle;
+        \draw[thin] (-1.2,-0.4) sin (-0.6,-0.3) cos (0,-0.5) sin (0.6,-0.3);
+        \draw[thick] (-0.7,0.2) rectangle (-0.4,0.5);
+        \draw[thick] (-0.3,0.2) rectangle (0.0,0.5);
+        % Cần cẩu bờ kè
+        \draw[thick] (0.4,0.2) -- (1.2,0.2) -- (1.2,1.5) -- cycle;
+        \draw[thick] (1.2,1.5) -- (0.2,1.8) -- (0.5,1.2);
+        \draw[thick] (0.5,1.8) -- (0.5,1.0);
+        \draw[fill=black] (0.4,0.8) rectangle (0.6,1.0);
+    \end{scope}
+
+    % =================================================================
+    % 5. GÁN NHÃN ĐỈNH VÀ THÔNG SỐ SỐ ĐO
+    % =================================================================
+    \node[above left=3pt] at (A) {$A$};
+    \node[below=8pt] at (B) {$B$};
+    \node[left=3pt] at (D) {$D$};
+    \node[above right=2pt] at (C) {$C$};
+
+    % Đoạn 6km
+    \node[above right] at (1.8,4.0) {$6km$};
+
+    % Mũi tên nét đứt đôi biểu diễn chiều dài 10km dọc đường xiên BC
+    \draw[<->, dashed, thick] (0.4,0.1) -- (2.7,2.8);
+    \node[below right] at (1.8,1.5) {$10km$};
+
+\end{tikzpicture}
+\end{center}}
+
+% --- CÂU 13 ---
+\questionShortAnswer{0}{4}{Hai con tàu A và B đang ở cùng một vĩ tuyến và cách nhau 6 hải lí. Cả hai tàu đồng thời cùng khởi hành. Tàu A chạy về hướng Nam với vận tốc 5 hải lí/giờ, còn tàu B chạy về vị trí hiện tại của tàu A với vận tốc 6 hải lí/giờ. Hỏi sau bao nhiêu giờ thì khoảng cách giữa hai tàu là ngắn nhất (kết quả làm tròn đến hàng phần trăm)?
+\begin{center}
+    \begin{tikzpicture}[>=stealth, scale=1.3]
+
+    % =================================================================
+    % 1. ĐỊNH NGHĨA TỌA ĐỘ CÁC ĐIỂM CHÍNH
+    % =================================================================
+    \coordinate (A) at (0,2.5);
+    \coordinate (A1) at (0,1.0);
+    \coordinate (B1) at (2.2,2.5);
+    \coordinate (B) at (5.5,2.5);
+    
+    % Các đường kéo dài biên
+    \coordinate (LeftEnd) at (-0.5,2.5);
+    \coordinate (RightEnd) at (6.2,2.5);
+    \coordinate (BottomEnd) at (0,-0.2);
+
+    % =================================================================
+    % 2. VẼ CÁC ĐƯỜNG THẲNG LỘ TRÌNH VÀ KHOẢNG CÁCH
+    % =================================================================
+    % Tuyến đường nằm ngang và tuyến dọc xuống dưới
+    \draw[thick] (LeftEnd) -- (RightEnd);
+    \draw[thick] (A) -- (BottomEnd);
+
+    % Đoạn thẳng nối khoảng cách d giữa A1 và B1
+    \draw[thick] (A1) -- (B1);
+
+    % =================================================================
+    % 3. VẼ CÁC ĐIỂM NÚT (CHẤM TRÒN ĐEN)
+    % =================================================================
+    \fill (A) circle (1.8pt);
+    \fill (A1) circle (1.8pt);
+    \fill (B1) circle (1.8pt);
+    \fill (B) circle (1.8pt);
+
+    % =================================================================
+    % 4. VẼ HÌNH VECTOR MINH HỌA CÁC CHIẾC TÀU THUYỀN
+    % =================================================================
+    
+    % --- Tàu lớn tại vị trí A (Tàu chở hàng hướng thẳng mặt) ---
+    \begin{scope}[shift={(A)}, scale=0.45, yshift=0.3cm]
+        % Sóng nước dưới chân tàu lớn
+        \draw[thin] (-1.2,-0.2) sin (-0.9,-0.4) cos (-0.6,-0.2) sin (-0.3,-0.4) cos (0,-0.2) 
+                               sin (0.3,-0.4) cos (0.6,-0.2) sin (0.9,-0.4) cos (1.2,-0.2);
+        \draw[thin] (-1.2,-0.4) sin (-0.9,-0.6) cos (-0.6,-0.4) sin (-0.3,-0.6) cos (0,-0.4) 
+                               sin (0.3,-0.6) cos (0.6,-0.4) sin (0.9,-0.6) cos (1.2,-0.4);
+        % Thân tàu chính
+        \draw[thick, fill=white] (-0.9,0) -- (0.9,0) -- (0.8,0.5) -- (0,0.8) -- (-0.8,0.5) -- cycle;
+        \draw[thick] (-0.8,0.5) -- (0.8,0.5);
+        \fill (0.3,0.3) circle (0.08);
+        \fill (-0.3,0.3) circle (0.08);
+        % Các tầng cabin
+        \draw[thick, fill=white] (-0.6,0.5) rectangle (0.6,0.9);
+        \draw[thin] (-0.4,0.6) rectangle (-0.1,0.8) (0.1,0.6) rectangle (0.4,0.8);
+        \draw[thick, fill=white] (-0.4,0.9) rectangle (0.4,1.2);
+        \draw[thin] (-0.2,1.0) rectangle (0.2,1.1);
+        % Ống khói và cột radar
+        \draw[thick] (0.1,1.2) -- (0.1,1.6) -- (0.2,1.6) -- (0.2,1.2);
+        \draw[thick] (-0.1,1.2) -- (-0.1,1.7) -- (0.0,1.7) -- (0.0,1.2);
+    \end{scope}
+
+    % --- Tàu cano nhỏ tại vị trí B (Hướng sang bên trái) ---
+    \begin{scope}[shift={(B)}, scale=0.45, yshift=0.3cm]
+        % Sóng nước chân tàu nhỏ
+        \draw[thin] (-1.2,-0.2) sin (-0.9,-0.3) cos (-0.6,-0.2) sin (-0.3,-0.3) cos (0,-0.2) 
+                               sin (0.3,-0.3) cos (0.6,-0.2) sin (0.9,-0.3) cos (1.2,-0.2);
+        % Thân cano phóng nhanh
+        \draw[thick, fill=white] (-1.1,0.2) -- (0.8,0.2) -- (1.0,0.5) -- (-0.5,0.5) -- cycle;
+        % Kính chắn gió và cabin vuốt nhọn
+        \draw[thick, fill=white] (-0.4,0.5) -- (0.2,0.8) -- (0.7,0.5) -- cycle;
+        \draw[thin] (-0.1,0.52) -- (0.15,0.73) -- (0.4,0.52) -- cycle;
+    \end{scope}
+
+    % =================================================================
+    % 5. VẼ CÁC MŨI TÊN CHỈ HƯỚNG CHUYỂN ĐỘNG
+    % =================================================================
+    % Mũi tên chỉ hướng dịch chuyển dọc đi xuống bên trái điểm A
+    \draw[->, ultra thick] (-0.7,2.2) -- (-0.7,0.8);
+    
+    % Mũi tên chỉ hướng dịch chuyển ngang đi sang trái ở phía trên trục
+    \draw[->, ultra thick] (4.0,2.8) -- (2.7,2.8);
+
+    % =================================================================
+    % 6. GÁN NHÃN ĐỈNH VÀ THÔNG SỐ TRÊN HÌNH vẽ
+    % =================================================================
+    \node[below left] at (A) {$A$};
+    \node[left=3pt] at (A1) {$A_1$};
+    \node[below right] at (B1) {$B_1$};
+    \node[below=4pt] at (B) {$B$};
+    
+    % Kí hiệu đoạn d
+    \node[below right] at (0.9,1.8) {$d$};
+
+\end{tikzpicture}
+\end{center}
+}
+\end{document}
+

@@ -1,0 +1,129 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Tốc độ thay đổi của một đại lượng}{Hàm số: Tốc độ thay đổi đại lượng}
+
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+
+% --- CÂU 1 ---
+\questionTrueFalse{15}{1}{Một nhà nghiên cứu tiến hành mô hình hóa nhiệt độ \( T \) (đơn vị: độ C) trong khoảng từ 6h sáng đến 6h tối tại thành phố X bằng hàm số:
+
+\[T(t) = -\frac{1}{36}t^3 + \frac{1}{8}t^2 + \frac{7}{2}t - 2 \quad (0 \leq t \leq 12),\]
+
+trong đó \( t \) là thời gian tính theo giờ kể từ thời điểm 6h sáng. Các kết quả sau đây được làm tròn đến hàng phần trăm.}{
+    \textbf{a)} & Nhiệt độ tại thành phố X vào lúc 11h trưa là 14,65°C.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nhiệt độ cao nhất tại thành phố X trong một ngày là 19,79°C.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Vào lúc 13h30 trưa, tốc độ thay đổi nhiệt độ tại thành phố X là 0,69°C/h.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ thay đổi nhiệt độ tại thành phố X đạt giá trị lớn nhất vào lúc 7h30 sáng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 2 ---
+\questionTrueFalse{15}{2}{Tỉ lệ phụ thuộc là thước đo tỉ lệ tổng số dân có độ tuổi phụ thuộc từ 0 đến 14 tuổi và trên 65 tuổi, so với tổng số dân có độ tuổi từ 15 đến 64 (độ tuổi lao động). Tỉ lệ này được các nhà kinh tế học quan tâm sâu sắc, do nếu tỉ lệ phụ thuộc tăng thì gánh nặng của nền kinh tế sẽ lớn hơn. Giả sử tại quốc gia Y, tỉ lệ phụ thuộc (đơn vị: phần trăm) trong thế kỉ 21 được dự báo bởi công thức:
+
+\[R(t) = 0,00713t^4 - 0,175t^3 + 1,582t^2 + 0,84t + 17,1,\]
+
+trong đó \( t \) là số thập kỉ tính từ năm 2001 (\( 0 \leq t \leq 10 \)).}{
+    \textbf{a)} & Hàm số biểu thị tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y là:
+    \(R'(t) = 0,02852t^3 - 0,525t^2 + 3,164t + 0,84.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tỉ lệ phụ thuộc của quốc gia Y luôn tăng trong thế kỉ 21.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Vào khoảng năm 2054, tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y đạt giá trị lớn nhất.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Khi tốc độ thay đổi tỉ lệ phụ thuộc của quốc gia Y đạt giá trị cực đại, lúc đó quốc gia này có khoảng 54,32 triệu người trong độ tuổi lao động (kết quả làm tròn đến hàng phần trăm của triệu người).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 3 ---
+\questionTrueFalse{15}{3}{Giả sử nồng độ thuốc \( C(t) \) tính theo \( mg/cm^3 \) trong máu của một bệnh nhân được tính bởi công thức  
+\(C(t) = \dfrac{t}{t^2 + 1}\)
+trong đó \( t \) là thời gian tính theo giờ kể từ khi tiêm thuốc cho bệnh nhân.}{
+    \textbf{a)} & Sau một thời gian dài tính từ khi tiêm thuốc (có thể coi như tiến đến vô cùng), nồng độ thuốc trong máu của bệnh nhân sẽ tiến đến 0.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Đạo hàm của hàm số \( C(t) \) là  
+    \(C'(t) = \dfrac{t^2 - 1}{(t^2 + 1)^2}.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Nồng độ thuốc trong máu lớn nhất vào thời điểm nửa giờ sau khi tiêm.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ thay đổi nồng độ thuốc trong máu nhỏ nhất vào thời điểm \( \sqrt{k} \) giờ (\( k \) là số nguyên dương) khi đó  
+    \( k - 1, \, k \, \text{và} \, (k - 1)^2 \) theo thứ tự lập thành một cấp số cộng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 4 ---
+\questionTrueFalse{15}{4}{Giả sử số người bị lây nhiễm bởi một chủng loại virus được mô hình hóa bởi hàm số  
+\(P(t) = \dfrac{10\ln(0,19t + 1)}{0,19t + 1},\)
+trong đó \( t > 0 \) là số ngày kể từ khi virus bắt đầu lây lan, \( P(t) \) được tính bằng nghìn người.}{
+    \textbf{a)} & Sau 7 ngày, có khoảng 3630 người bị lây nhiễm.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Trong 7 ngày đầu lây lan virus, số lượng người bị lây nhiễm luôn tăng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Số lượng người bị lây nhiễm cao nhất trong ngày thứ 9 kể từ khi virus bắt đầu lây lan.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Tốc độ lây lan của virus đạt mức thấp nhất trong ngày thứ 19 kể từ khi virus bắt đầu lây lan.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 5 ---
+\questionTrueFalse{15}{5}{Nhà sách STER ước tính rằng nếu bán được \( x \) trăm sản phẩm trong một tháng, khi đó lợi nhuận hàng tháng của công ty này được mô hình hóa bởi hàm số \( P(x) = 2025(15-x)(x-2) \) (đơn vị: nghìn đồng).}{
+    \textbf{a)} & Nếu nhà sách bán STER được ít hơn 2 sản phẩm hoặc nhiều hơn 15 sản phẩm thì công ty này sẽ bị lỗ.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số biểu diễn lợi nhuận biên của nhà sách STER là \( P'(x) = 2025(17-2x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Lợi nhuận lớn nhất mà nhà sách STER có thể đạt được là 85,5 triệu đồng (kết quả làm tròn đến hàng phần mười).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Lợi nhuận biên của Nhà sách STER giảm dần khi \( x \) tăng dần.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+% --- CÂU 11 ---
+\questionShortAnswer{20}{6}{Vào mùa hè, khi bật điều hòa, nhiệt độ trong phòng làm việc của anh Huy sau \( t \) giờ kể từ khi cô bật điều hòa được cho bởi hàm số \( f(t) = \dfrac{18t^2 + 52t + 344}{t^2 + 2t + 10} \) (\(^\circ C\)). Hỏi tốc độ thay đổi nhiệt độ trong phòng làm việc của anh Huy đạt giá trị nhỏ nhất sau bao nhiêu giờ kể từ khi điều hòa được bật (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 12 ---
+\questionShortAnswer{20}{7}{Sự tăng trưởng của một loại vi khuẩn trong môi trường nuôi cấy sẽ tuân theo công thức \( N = N_0 e^{rt} \), trong đó \( N_0 \) là số lượng vi khuẩn ban đầu, \( r \) là tỉ lệ tăng trưởng (\( r > 0 \)), \( t \) (giờ) là thời gian tăng trưởng. Biết rằng số lượng vi khuẩn ban đầu là 500 con và sau 3 giờ thì có 3000 con vi khuẩn. Hỏi sau bao nhiêu giờ thì tốc độ tăng số lượng vi khuẩn là 1000 con/giờ (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 13 ---
+\questionShortAnswer{20}{8}{Tỷ lệ trao đổi chất trong cơ thể của một người vừa hoàn thành một bữa ăn sẽ tăng dần, sau đó sẽ giảm dần sau một thời gian để cơ thể trở về trạng thái nghỉ. Hiện tượng này được gọi là hiệu ứng nhiệt của thực phẩm. Các nhà nghiên cứu đã chỉ ra rằng hiệu ứng nhiệt của thực phẩm cho một người trưởng thành được tính bởi công thức \( F(t) = -10,28 + 175,9t e^{-1,3t} \), với \( F(t) \) là hiệu ứng nhiệt của thực phẩm (đơn vị: kJ/h) và \( t \) (đơn vị: giờ, \( t > 0 \)) là thời gian trôi qua tính từ khi hoàn thành bữa ăn. Hỏi tốc độ thay đổi hiệu ứng nhiệt của thực phẩm đạt giá trị nhỏ nhất sau bao nhiêu phút kể từ khi hoàn thành bữa ăn?}
+
+% --- CÂU 14 ---
+\questionShortAnswer{20}{9}{Một nhóm các nhà nghiên cứu về xu hướng hành vi của con người nhận thấy rằng với những đoạn video mang tính chất học thuật, người xem sẽ thường có xu hướng xem những video có thời lượng vừa phải, do những video quá ngắn thì thường không cung cấp đủ thông tin, còn những video quá dài thì thường sẽ dễ gây ra sự nhàm chán. Với một video nói về toán học, các nhà nghiên cứu nhận thấy rằng tỉ suất người xem của một video kéo dài \( t \) phút được cho bởi hàm số  
+\(R(t) = \dfrac{25t}{t^2 + 100}\) 
+(đơn vị: phần trăm, \( t > 0 \)). Hỏi với độ dài của video toán học là bao nhiêu phút thì tỉ suất người xem video sẽ giảm nhanh nhất (kết quả làm tròn đến hàng phần mười)?}
+
+% --- CÂU 15 ---
+\questionShortAnswer{20}{10}{Mối liên hệ giữa cân nặng của một con nai sừng tấm cái với độ tuổi của nó có thể được biểu diễn bởi hàm số  
+\(M(t) = 369 \cdot 0,93^t \cdot t^{0,36} \quad (0 \leq t \leq 15),\)  
+với \( M(t) \) là cân nặng của một con nai sừng tấm cái (đơn vị: kg) và \( t \) là độ tuổi của con nai sừng tấm (tính bằng năm). Hỏi sau bao nhiêu năm kể từ khi được sinh ra thì con nai sừng tấm cái sẽ có tốc độ thay đổi cân nặng nhanh nhất (kết quả làm tròn đến hàng phần mười)?}
+
+
+
+
+\end{document}

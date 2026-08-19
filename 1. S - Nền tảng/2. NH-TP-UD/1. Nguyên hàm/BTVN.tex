@@ -1,0 +1,552 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Tích phân}{Nguyên hàm}{Nguyên hàm - Tích phân: Nguyên hàm}
+
+% --- CÂU 1 ---
+\questionLinesManual{0}{1}{Hàm số \( F(x) \) là một nguyên hàm của hàm số \( f(x) \) trên khoảng \( K \) nếu}{
+    \begin{tasks}(2)
+        \task \( F'(x) = -f(x), \forall x \in K \)
+        \task \( f'(x) = F(x), \forall x \in K \)
+        \task \( F'(x) = f(x), \forall x \in K \)
+        \task \( f'(x) = -F(x), \forall x \in K \)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{0}{2}{\( \displaystyle \int x^2 \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task \( 2x + C \)
+        \task \( \dfrac{1}{3}x^3 + C \)
+        \task \( x^3 + C \)
+        \task \( 3x^3 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{3}{\( \displaystyle \int 4x^3 \, dx \) bằng}{
+    \begin{tasks}(4)
+        \task \( 4x^4 + C \)
+        \task \( \dfrac{1}{4}x^4 + C \)
+        \task \( 12x^2 + C \)
+        \task \( x^4 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{0}{4}{Nguyên hàm của hàm số \( f(x) = x^4 + x^2 \) là}{
+    \begin{tasks}(4)
+        \task \( \dfrac{1}{5}x^5 + \dfrac{1}{3}x^3 + C \)
+        \task \( x^4 + x^2 + C \)
+        \task \( x^5 + x^3 + C \)
+        \task \( 4x^3 + 2x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{0}{5}{Họ tất cả nguyên hàm của hàm số \( f(x) = 2x + 4 \) là}{
+    \begin{tasks}(4)
+        \task \( x^2 + C \)
+        \task \( 2x^2 + C \)
+        \task \( 2x^2 + 4x + C \)
+        \task \( x^2 + 4x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{0}{6}{Họ nguyên hàm của hàm số \( f(x) = \cos x + 6x \) là}{
+    \begin{tasks}(4)
+        \task \( \sin x + 3x^2 + C \)
+        \task \( -\sin x + 3x^2 + C \)
+        \task \( \sin x + 6x^2 + C \)
+        \task \( -\sin x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Tìm nguyên hàm của hàm số \( f(x) = 2\sin x \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int 2\sin x \, dx = -2\cos x + C \)
+        \task \( \displaystyle \int 2\sin x \, dx = 2\cos x + C \)
+        \task \( \displaystyle \int 2\sin x \, dx = \sin^2 x + C \)
+        \task \( \displaystyle \int 2\sin x \, dx = \sin 2x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{0}{8}{Nguyên hàm của hàm số \( f(x) = x^3 + x \) là}{
+    \begin{tasks}(4)
+        \task \( \dfrac{1}{4}x^4 + \dfrac{1}{2}x^2 + C \)
+        \task \( 3x^2 + 1 + C \)
+        \task \( x^3 + x + C \)
+        \task \( x^4 + x^2 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{0}{9}{Tìm nguyên hàm của hàm số \( f(x) = \sqrt{2x - 1} \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{2}{3}(2x - 1)\sqrt{2x - 1} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{1}{3}(2x - 1)\sqrt{2x - 1} + C \)
+        \task \( \displaystyle \int f(x) \, dx = -\dfrac{1}{3}\sqrt{2x - 1} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{1}{2}\sqrt{2x - 1} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{0}{10}{Tìm nguyên hàm của hàm số \( f(x) = x^2 + \dfrac{2}{x^2} \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \dfrac{2}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \left( \dfrac{1}{x} \right) + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{2}{x} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 11 ---
+\questionLinesManual{0}{11}{Tìm nguyên hàm của hàm số \( f(x) = \dfrac{1}{5x - 2} \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int \dfrac{dx}{5x - 2} = \dfrac{1}{5}\ln|5x - 2| + C \)
+        \task \( \displaystyle \int \dfrac{dx}{5x - 2} = \ln|5x - 2| + C \)
+        \task \( \displaystyle \int \dfrac{dx}{5x - 2} = -\dfrac{1}{2}\ln|5x - 2| + C \)
+        \task \( \displaystyle \int \dfrac{dx}{5x - 2} = 5\ln|5x - 2| + C \)
+    \end{tasks}
+}
+
+% --- CÂU 12 ---
+\questionLinesManual{0}{12}{Tìm nguyên hàm của hàm số \( f(x) = \cos 3x \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int \cos 3x \, dx = 3\sin 3x + C \)
+        \task \( \displaystyle \int \cos 3x \, dx = \dfrac{\sin 3x}{3} + C \)
+        \task \( \displaystyle \int \cos 3x \, dx = \sin 3x + C \)
+        \task \( \displaystyle \int \cos 3x \, dx = -\dfrac{\sin 3x}{3} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 13 ---
+\questionLinesManual{0}{13}{Họ nguyên hàm của hàm số \( f(x) = e^x + x \) là}{
+    \begin{tasks}(4)
+        \task \( e^x + 1 + C \)
+        \task \( e^x + x^2 + C \)
+        \task \( e^x + \dfrac{1}{2}x^2 + C \)
+        \task \( \dfrac{1}{x+1}e^x + \dfrac{1}{2}x^2 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionLinesManual{0}{14}{Tìm nguyên hàm của hàm số \( f(x) = 3^x \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int 3^x \, dx = \dfrac{3^x}{\ln 3} + C \)
+        \task \( \displaystyle \int 3^x \, dx = 3^{x+1} + C \)
+        \task \( \displaystyle \int 3^x \, dx = \dfrac{3^{x+1}}{x+1} + C \)
+        \task \( \displaystyle \int 3^x \, dx = 3^x \ln 3 + C \)
+    \end{tasks}
+}
+
+% --- CÂU 15 ---
+\questionLinesManual{0}{15}{Họ nguyên hàm của hàm số \( f(x) = e^{3x} \) là hàm số nào sau đây?}{
+    \begin{tasks}(4)
+        \task \( 3e^x + C \)
+        \task \( \dfrac{1}{3}e^{3x} + C \)
+        \task \( \dfrac{1}{3}e^x + C \)
+        \task \( 3e^{3x} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 16 ---
+\questionLinesManual{0}{16}{Tính \( \displaystyle \int (x - \sin 2x) \, dx \).}{
+    \begin{tasks}(4)
+        \task \( \dfrac{x^2}{2} + \sin x + C \)
+        \task \( \dfrac{x^2}{2} + \cos 2x + C \)
+        \task \( x^2 + \dfrac{\cos 2x}{2} + C \)
+        \task \( \dfrac{x^2}{2} + \dfrac{\cos 2x}{2} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 17 ---
+\questionLinesManual{0}{17}{Nguyên hàm của hàm số \( y = e^{2x-1} \) là}{
+    \begin{tasks}(4)
+        \task \( 2e^{2x-1} + C \)
+        \task \( e^{2x-1} + C \)
+        \task \( \dfrac{1}{2}e^{2x-1} + C \)
+        \task \( \dfrac{1}{2}e^x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 18 ---
+\questionLinesManual{0}{18}{Tìm họ nguyên hàm của hàm số \( f(x) = \dfrac{1}{2x+3} \).}{
+    \begin{tasks}(4)
+        \task \( \ln|2x+3| + C \)
+        \task \( \dfrac{1}{2}\ln|2x+3| + C \)
+        \task \( \dfrac{1}{\ln 2}\ln|2x+3| + C \)
+        \task \( \dfrac{1}{2}\lg(2x+3) + C \)
+    \end{tasks}
+}
+
+% --- CÂU 19 ---
+\questionLinesManual{0}{19}{Tìm họ nguyên hàm của hàm số \( y = x^2 - 3^x + \dfrac{1}{x} \).}{
+    \begin{tasks}(2)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} - \dfrac{1}{x^2} + C \)
+        \task \( \dfrac{x^3}{3} - 3^x + \dfrac{1}{x^2} + C \)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} + \ln|x| + C \)
+        \task \( \dfrac{x^3}{3} - \dfrac{3^x}{\ln 3} - \ln|x| + C \)
+    \end{tasks}
+}
+
+% --- CÂU 20 ---
+\questionLinesManual{0}{20}{Tìm họ nguyên hàm của hàm số \( f(x) = \sin 3x \).}{
+    \begin{tasks}(4)
+        \task \( -3\cos 3x + C \)
+        \task \( 3\cos 3x + C \)
+        \task \( \dfrac{1}{3}\cos 3x + C \)
+        \task \( -\dfrac{1}{3}\cos 3x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 21 ---
+\questionLinesManual{0}{21}{Họ nguyên hàm của hàm số \( f(x) = 3x^2 + \sin x \) là}{
+    \begin{tasks}(4)
+        \task \( x^3 + \cos x + C \)
+        \task \( 6x + \cos x + C \)
+        \task \( x^3 - \cos x + C \)
+        \task \( 6x - \cos x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 22 ---
+\questionLinesManual{0}{22}{Công thức nào sau đây là sai?}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int \ln x \, dx = \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int \dfrac{1}{\cos^2 x} \, dx = \tan x + C \)
+        \task \( \displaystyle \int \sin x \, dx = -\cos x + C \)
+        \task \( \displaystyle \int e^x \, dx = e^x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 23 ---
+\questionLinesManual{0}{23}{Nếu \( \displaystyle \int f(x) \, dx = 4x^3 + x^2 + C \) thì hàm số \( f(x) \) bằng}{
+    \begin{tasks}(2)
+        \task \( f(x) = x^4 + \dfrac{x^3}{3} + Cx \)
+        \task \( f(x) = 12x^2 + 2x + C \)
+        \task \( f(x) = 12x^2 + 2x \)
+        \task \( f(x) = x^4 + \dfrac{x^3}{3} \)
+    \end{tasks}
+}
+
+% --- CÂU 24 ---
+\questionLinesManual{0}{24}{Trong các khẳng định sau, khẳng định nào sai?}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int \cos 2x \, dx = \dfrac{1}{2}\sin 2x + C \)
+        \task \( \displaystyle \int x^e \, dx = \dfrac{x^{e+1}}{e+1} + C \)
+        \task \( \displaystyle \int \dfrac{1}{x} \, dx = \ln|x| + C \)
+        \task \( \displaystyle \int e^x \, dx = \dfrac{e^{x+1}}{x+1} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 25 ---
+\questionLinesManual{0}{25}{Nguyên hàm của hàm số \( y = 2^x \) là}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int 2^x \, dx = \ln 2 \cdot 2^x + C \)
+        \task \( \displaystyle \int 2^x \, dx = 2^x + C \)
+        \task \( \displaystyle \int 2^x \, dx = \dfrac{2^x}{\ln 2} + C \)
+        \task \( \displaystyle \int 2^x \, dx = \dfrac{2^x}{x+1} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 26 ---
+\questionLinesManual{0}{26}{Họ nguyên hàm của hàm số \( f(x) = \dfrac{1}{x} + \sin x \) là}{
+    \begin{tasks}(4)
+        \task \( \ln x - \cos x + C \)
+        \task \( -\dfrac{1}{x^2} - \cos x + C \)
+        \task \( \ln|x| + \cos x + C \)
+        \task \( \ln|x| - \cos x + C \)
+    \end{tasks}
+}
+
+% --- CÂU 27 ---
+\questionLinesManual{0}{27}{Hàm số \( F(x) = \dfrac{1}{3}x^3 \) là một nguyên hàm của hàm số nào sau đây trên \( (-\infty; +\infty) \)?}{
+    \begin{tasks}(4)
+        \task \( f(x) = 3x^2 \)
+        \task \( f(x) = x^3 \)
+        \task \( f(x) = x^2 \)
+        \task \( f(x) = \dfrac{1}{4}x^4 \)
+    \end{tasks}
+}
+
+% --- CÂU 28 ---
+\questionLinesManual{0}{28}{Tìm họ nguyên hàm của hàm số \( f(x) = 2^x \).}{
+    \begin{tasks}(2)
+        \task \( \displaystyle \int f(x) \, dx = 2^x + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{2^x}{\ln 2} + C \)
+        \task \( \displaystyle \int f(x) \, dx = 2^x \ln 2 + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{2^{x+1}}{x+1} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 29 ---
+\questionLinesManual{0}{29}{Tìm nguyên hàm của hàm số \( f(x) = \dfrac{x^4 + 2}{x^2} \).}{
+    \begin{tasks}(9)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{2}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} + \dfrac{1}{x} + C \)
+        \task \( \displaystyle \int f(x) \, dx = \dfrac{x^3}{3} - \dfrac{2}{x} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 30 ---
+\questionLinesManual{0}{30}{Tính \( F(x) = \displaystyle \int e^x \, dx \).}{
+    \begin{tasks}(4)
+        \task \( F(x) = \dfrac{e^2 x^2}{2} + C \)
+        \task \( F(x) = \dfrac{e^3}{3} + C \)
+        \task \( F(x) = e^2 x + C \)
+        \task \( F(x) = 2ex + C \)
+    \end{tasks}
+}
+
+% --- CÂU 31 ---
+\questionLinesManual{0}{31}{Tìm nguyên hàm của hàm số \( f(x) = \dfrac{1}{1 - 2x} \) trên \( \left(-\infty; \dfrac{1}{2}\right) \).}{
+    \begin{tasks}(4)
+        \task \( \dfrac{1}{2} \ln |2x - 1| + C \)
+        \task \( \dfrac{1}{2} \ln (1 - 2x) + C \)
+        \task \( -\dfrac{1}{2} \ln |2x - 1| + C \)
+        \task \( \ln |2x - 1| + C \)
+    \end{tasks}
+}
+
+% --- CÂU 32 ---
+\questionLinesManual{0}{32}{Hàm số \( F(x) = e^{x^2} \) là nguyên hàm của hàm số nào trong các hàm số sau:}{
+    \begin{tasks}(4)
+        \task \( f(x) = 2xe^{x^2} \)
+        \task \( f(x) = x^2 e^{x^2} - 1 \)
+        \task \( f(x) = e^{x^2} \)
+        \task \( f(x) = \dfrac{e^{x^2}}{2x} \)
+    \end{tasks}
+}
+
+% --- CÂU 33 ---
+\questionLinesManual{0}{33}{Tất cả các nguyên hàm của hàm số \( f(x) = 3^{-x} \) là}{
+    \begin{tasks}(4)
+        \task \( -\dfrac{3^{-x}}{\ln 3} + C \)
+        \task \( -3^{-x} + C \)
+        \task \( 3^{-x} \ln 3 + C \)
+        \task \( \dfrac{3^{-x}}{\ln 3} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 34 ---
+\questionLinesManual{0}{34}{Họ nguyên hàm của hàm số \( f(x) = x^3 + x^2 \) là}{
+    \begin{tasks}(4)
+        \task \( \dfrac{x^4}{4} + \dfrac{x^3}{3} + C \)
+        \task \( x^4 + x^3 + C \)
+        \task \( 3x^2 + 2x + C \)
+        \task \( \dfrac{x^4}{3} + \dfrac{x^3}{4} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 35 ---
+\questionLinesManual{0}{35}{Hàm số nào trong các hàm số sau đây không là nguyên hàm của hàm số \( y = x^{2019} \)?}{
+    \begin{tasks}(4)
+        \task \( \dfrac{x^{2020}}{2020} + 1 \)
+        \task \( \dfrac{x^{2020}}{2020} \)
+        \task \( 2019x^{2018} \)
+        \task \( \dfrac{x^{2020}}{2020} - 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 36 ---
+\questionLinesManual{0}{36}{Cho \( F(x) \) là một nguyên hàm của hàm số \( f(x) = \dfrac{1}{x-2} \), biết \( F(1) = 2 \). Giá trị của \( F(0) \) bằng}{
+    \begin{tasks}(4)
+        \task \( 2 + \ln 2 \)
+        \task \( \ln 2 \)
+        \task \( 2 + \ln(-2) \)
+        \task \( \ln(-2) \)
+    \end{tasks}
+}
+
+% --- CÂU 37 ---
+\questionLinesManual{0}{37}{Cho \( F(x) \) là một nguyên hàm của hàm số \( f(x) = \dfrac{1}{2x+1} \), biết \( F(0) = 2 \). Tính \( F(1) \).}{
+    \begin{tasks}(4)
+        \task \( F(1) = \dfrac{1}{2}\ln 3 - 2 \)
+        \task \( F(1) = \ln 3 + 2 \)
+        \task \( F(1) = 2\ln 3 - 2 \)
+        \task \( F(1) = \dfrac{1}{2}\ln 3 + 2 \)
+    \end{tasks}
+}
+
+% --- CÂU 38 ---
+\questionLinesManual{0}{38}{Cho hàm số \( f(x) \) xác định trên \( \mathbb{R} \setminus \{1\} \) thỏa mãn \(f'(x) = \frac{1}{x-1}\), \(\quad f(0) = 2017\), \(\quad f(2) = 2018\). Tính \( S = f(3) - f(-1) \).}{
+    \begin{tasks}(4)
+        \task \( S = \ln 4035 \)
+        \task \( S = 4 \)
+        \task \( S = \ln 2 \)
+        \task \( S = 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 39 ---
+\questionLinesManual{0}{39}{Hàm số \( f(x) \) có đạo hàm liên tục trên \( \mathbb{R} \) và: \(f'(x) = 2e^{2x} + 1\), \(\quad \forall x\), \(\quad f(0) = 2\). Hàm \( f(x) \) là}{
+    \begin{tasks}(4)
+        \task \( y = 2e^x + 2x \)
+        \task \( y = 2e^x + 2 \)
+        \task \( y = e^{2x} + x + 2 \)
+        \task \( y = e^{2x} + x + 1 \)
+    \end{tasks}
+}
+
+% --- CÂU 40 ---
+\questionLinesManual{0}{40}{Tìm nguyên hàm \( F(x) \) của hàm số \( f(x) = \sin x + \cos x \) thoả mãn \( F\left(\dfrac{\pi}{2}\right) = 2 \).}{
+    \begin{tasks}(2)
+        \task \( F(x) = -\cos x + \sin x + 3 \)
+        \task \( F(x) = -\cos x + \sin x - 1 \)
+        \task \( F(x) = -\cos x + \sin x + 1 \)
+        \task \( F(x) = \cos x - \sin x + 3 \)
+    \end{tasks}
+}
+
+% --- CÂU 41 ---
+\questionLinesManual{0}{41}{Cho hàm số \( f(x) \) thỏa mãn \( f'(x) = 3 - 5\sin x \) và \( f(0) = 10 \). Mệnh đề nào dưới đây đúng?}{
+    \begin{tasks}(2)
+        \task \( f(x) = 3x - 5\cos x + 15 \)
+        \task \( f(x) = 3x - 5\cos x + 2 \)
+        \task \( f(x) = 3x + 5\cos x + 5 \)
+        \task \( f(x) = 3x + 5\cos x + 2 \)
+    \end{tasks}
+}
+
+% --- CÂU 42 ---
+\questionLinesManual{0}{42}{Họ tất cả các nguyên hàm của hàm số \( f(x) = \dfrac{x+2}{x-1} \) trên khoảng \( (1; +\infty) \) là}{
+    \begin{tasks}(4)
+        \task \( x + 3\ln(x-1) + C \)
+        \task \( x - 3\ln(x-1) + C \)
+        \task \( x - \dfrac{3}{(x-1)^2} + C \)
+        \task \( x + \dfrac{3}{(x-1)^2} + C \)
+    \end{tasks}
+}
+
+% --- CÂU 43: TÍNH CHẤT NGUYÊN HÀM ---
+\questionTrueFalse{0}{43}{Cho các hàm số \( y = f(x), y = g(x) \) liên tục trên \( K \). Xét tính đúng sai của các mệnh đề sau}{
+    \textbf{a)} & \( \displaystyle \int [f(x) \cdot g(x)] \, dx = \int f(x) \, dx \cdot \int g(x) \, dx \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\[20pt] \hline
+    
+    \textbf{b)} & \( \displaystyle \int [f(x) + g(x)] \, dx = \int f(x) \, dx + \int g(x) \, dx \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int [f(x) - g(x)] \, dx = \int f(x) \, dx - \int g(x) \, dx \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int \dfrac{f(x)}{g(x)} \, dx = \dfrac{\int f(x) \, dx}{\int g(x) \, dx} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 44: NGUYÊN HÀM VÀ HẰNG SỐ ---
+\questionTrueFalse{0}{44}{Cho \( K \) là một khoảng trên \( \mathbb{R} \); \( F(x) \) là một nguyên hàm của hàm số \( f(x) \) trên \( K \); \( G(x) \) là một nguyên hàm của hàm số \( g(x) \) trên \( K \). Xét tính đúng sai của các mệnh đề sau}{
+    \textbf{a)} & Nếu \( F(x) = G(x) \) thì \( f(x) = g(x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nếu \( f(x) = g(x) \) thì \( F(x) = G(x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int f(x) \, dx = F(x) + C, \ C \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int f'(x) \, dx = F(x) + C, \ C \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 45: TÍNH CHẤT NGUYÊN HÀM ---
+\questionTrueFalse{0}{45}{Giả sử \( F(x) \) là một nguyên hàm của hàm số \( f(x) \) và \( G(x) \) là một nguyên hàm của hàm số \( g(x) \). Xét tính đúng sai của các mệnh đề sau:}{
+    \textbf{a)} & \( F(x) + G(x) \) là một nguyên hàm của \( f(x) + g(x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( kF(x) \) là một nguyên hàm của \( kf(x) \) (với \( k \) là một hằng số thực khác 0).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( F(x) - G(x) \) là một nguyên hàm của \( f(x) - g(x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( F(x)G(x) \) là một nguyên hàm của \( f(x)g(x) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 46: CÔNG THỨC NGUYÊN HÀM CƠ BẢN ---
+\questionTrueFalse{0}{46}{Xét tính đúng sai của các mệnh đề sau:}{
+    \textbf{a)} & \( \displaystyle \int a^x \, dx = \dfrac{a^x}{\ln a} + C, \ (0 < a \neq 1) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( \displaystyle \int \dfrac{1}{x} \, dx = \ln |x| + C, \ x \neq 0 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int e^x \, dx = e^x + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int \sin x \, dx = -\cos x + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 47: CÔNG THỨC NGUYÊN HÀM SAI ---
+\questionTrueFalse{0}{47}{Xét tính đúng sai của các mệnh đề sau:}{
+    \textbf{a)} & \( \displaystyle \int \sin x \, dx = \cos x + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( \displaystyle \int \dfrac{1}{x} \, dx = -\dfrac{1}{x^2} + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int e^x \, dx = e^x + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int \ln x \, dx = \dfrac{1}{x} + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 48: VẬN TỐC VÀ GIA TỐC ---
+\questionTrueFalse{0}{48}{Giả sử \( v(t) \) là phương trình vận tốc của một vật chuyển động theo thời gian \( t \) (giây), \( a(t) \) là phương trình gia tốc của vật đó chuyển động theo thời gian \( t \) (giây). Xét tính đúng sai của các mệnh đề sau.}{
+    \textbf{a)} & \( \displaystyle \int a(t) \, dt = v(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( \displaystyle \int v(t) \, dt = a(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int v'(t) \, dt = a(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int v'(t) \, dt = v(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 49: QUÃNG ĐƯỜNG VÀ VẬN TỐC ---
+\questionTrueFalse{0}{49}{Giả sử \( s(t) \) là phương trình quãng đường chuyển động của một vật theo thời gian \( t \) (giây) và \( v(t) \) là phương trình vận tốc của chuyển động đó theo thời gian \( t \) (giây). Xét tính đúng sai của các mệnh đề sau.}{
+    \textbf{a)} & \( \displaystyle \int s(t) \, dt = v(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( \displaystyle \int v(t) \, dt = s(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( \displaystyle \int s'(t) \, dt = v(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & \( \displaystyle \int s'(t) \, dt = s(t) + C \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 50: NGUYÊN HÀM VÀ HẰNG SỐ ---
+\questionTrueFalse{0}{50}{Cho hàm số \( F(x) = x^3 - 2x + 1, \ x \in \mathbb{R} \) là một nguyên hàm của hàm số \( f(x) \). Xét tính đúng sai của các mệnh đề sau.}{
+    \textbf{a)} & Nếu hàm số \( G(x) \) cũng là một nguyên hàm của hàm số \( f(x) \) và \( G(-1) = 3 \) thì \( G(x) = F(x) - 1, \ x \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Nếu hàm số \( H(x) \) cũng là một nguyên hàm của hàm số \( f(x) \) và \( H(1) = -3 \) thì \( H(x) = F(x) - 3, \ x \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Nếu hàm số \( K(x) \) cũng là một nguyên hàm của hàm số \( f(x) \) và \( K(0) = 0 \) thì \( K(x) = F(x) + 1, \ x \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nếu hàm số \( M(x) \) cũng là một nguyên hàm của hàm số \( f(x) \) và \( M(2) = 4 \) thì \( M(x) = F(x) - 1, \ x \in \mathbb{R} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\end{document}

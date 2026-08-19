@@ -1,0 +1,223 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Hàm số}{Min Max diện tích thể tích vật thế}{Hàm số: Min Max DT-TT}
+\drawdashlines{20}
+\newpage
+\drawdashlines{25}
+\newpage
+\drawdashlines{25}
+\newpage
+\drawdashlines{25}
+\newpage
+\questionShortAnswer{15}{1}{Một chủ trang trại nuôi gia cầm muốn rào 2 chuồng hình chữ nhật sát nhau và sát một con sông, một chuồng nuôi gà và một chuồng nuôi vịt. Biết rằng chủ trang trại có 150m hàng rào và cạnh giáp với bờ sông thì không phải rào. Hỏi diện tích lớn nhất có thể bao quanh chuồng là bao nhiêu mét vuông?
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=0.8]
+
+    % =================================================================
+    % PHẦN 1: HÀNG RÀO LƯỚI B40 PHÍA TRÊN
+    % =================================================================
+    \begin{scope}[xshift=0cm, yshift=3.5cm]
+        % Định nghĩa mẫu lưới (pattern) thủ công bằng vòng lặp để tạo lưới mắt cáo sắc nét
+        % Khung lưới chữ nhật nền trắng ngăn các nét đè nhau
+        \fill[white] (0,0) rectangle (9,1.5);
+        
+        % Các đường chéo xuôi
+        \foreach \x in {-1.5,-1.2,...,9} {
+            \draw[gray, thin] (\x,0) -- (\x+1.5,1.5);
+        }
+        % Các đường chéo ngược
+        \foreach \x in {0.5,0.8,...,11} {
+            \draw[gray, thin] (\x,0) -- (\x-1.5,1.5);
+        }
+        
+        % Khung viền ngang của hàng rào
+        \draw[thick, fill=gray!30] (0,-0.05) rectangle (9,0);
+        \draw[thick, fill=gray!30] (0,1.5) rectangle (9,1.55);
+
+        % Vẽ 3 cột trụ dọc (Trái, Giữa, Phải)
+        \draw[thick, fill=gray!80] (-0.1,-0.1) rectangle (0.1,1.65);
+        \draw[thick, fill=gray!80] (4.4,-0.1) rectangle (4.6,1.65);
+        \draw[thick, fill=gray!80] (8.9,-0.1) rectangle (9.1,1.65);
+        
+        % Chốt bo đầu cột
+        \draw[thick, fill=gray!90] (-0.15,1.65) rectangle (0.15,1.73);
+        \draw[thick, fill=gray!90] (4.35,1.65) rectangle (4.65,1.73);
+        \draw[thick, fill=gray!90] (8.85,1.65) rectangle (9.15,1.73);
+    \end{scope}
+
+    % =================================================================
+    % PHẦN 2: BỜ SÔNG VÀ CHUỒNG GIA CẦM PHÍA DƯỚI
+    % =================================================================
+    \begin{scope}[xshift=0cm, yshift=0cm]
+        % Dải màu xám đại diện cho Sông
+        \draw[thick, fill=gray!70] (-0.2,1.2) rectangle (9.2,1.8);
+        \node[above] at (4.5, 1.8) {\small Sông};
+
+        % Khung chuồng gia cầm (Hình chữ nhật lớn ABCD có vách ngăn FE)
+        \coordinate (A) at (1,1.2);
+        \coordinate (B) at (1,0);
+        \coordinate (C) at (8,0);
+        \coordinate (D) at (8,1.2);
+        \coordinate (E) at (6.3,0);
+        \coordinate (F) at (6.3,1.2);
+
+        % Vẽ các cạnh của chuồng (Nét liền đậm)
+        \draw[thick] (A) -- (B) -- (C) -- (D);
+        \draw[thick] (F) -- (E); % Vách ngăn bên trong
+
+        % Điền chữ tên các đỉnh/điểm
+        \node[below left] at (A) {$A$};
+        \node[below left] at (B) {$B$};
+        \node[below right] at (C) {$C$};
+        \node[below right] at (D) {$D$};
+        \node[below] at (E) {$E$};
+        \node[below right] at (F) {$F$};
+
+        % Ký hiệu biến x bên cạnh đoạn AB
+        \node[left=3pt] at (1,0.4) {$x$};
+
+        % Nhãn văn bản "Chuồng gia cầm" ở trung tâm lòng chuồng lớn
+        \node at (3.6, 0.4) {\small Chuồng gia cầm};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}}
+
+\questionShortAnswer{15}{2}{Bạn Trân Đầu có một mảnh đất rộng và muốn dành ra một khu đất hình chữ nhật có diện tích 288 m² để trồng vài loại cây mới. Bạn dự kiến rào quanh ba cạnh của khu đất hình chữ nhật này bằng lưới thép, cạnh còn lại (chiều dài) sẽ tận dụng bức tường có sẵn (hình vẽ). Do điều kiện địa lí, chiều rộng khu đất không vượt quá 18 m, hỏi chiều dài của khu đất này bằng bao nhiêu mét để tổng chiều dài lưới thép cần dùng là ngắn nhất (nghĩa là chi phí rào lưới thép thấp nhất)?
+
+\begin{center}
+\begin{tikzpicture}[>=latex, scale=0.8]
+   \begin{scope}[xshift=0cm, yshift=0cm]
+        \node[anchor=south west, inner sep=0] at (0,0) {
+            \includegraphics[width=5cm]{../images/NongTrai.png}
+        };
+    \end{scope}
+\end{tikzpicture}
+\end{center}}
+
+% --- CÂU 25 ---
+\questionShortAnswer{15}{3}{Bạn Trô Ngấu có một tấm tôn hình chữ nhật có chu vi 150cm. Bạn Trô Ngấu muốn uốn tấm tôn trên thành một hình trụ (tham khảo hình vẽ). Biết rằng bạn Trô Ngâu muốn hình trụ sau khi uốn có thể tích lớn nhất. Hỏi bạn ấy nên chọn tấm tôn hình chữ nhật có chiều dài là bao nhiêu cm?
+
+\begin{center}
+\begin{tikzpicture}[>=stealth, scale=1]
+
+    % =================================================================
+    % HÌNH BÊN TRÁI: HÌNH CHỮ NHẬT PHẲNG
+    % =================================================================
+    \begin{scope}[xshift=0cm, yshift=0cm]
+        \draw[ultra thick] (0,0) rectangle (4,3);
+    \end{scope}
+
+    % Mũi tên chuyển bước ở giữa
+    \draw[->, line width=4pt, gray!80] (4.4,1.5) -- (5.0,1.5);
+
+    % =================================================================
+    % HÌNH BÊN PHẢI: HÌNH TRỤ TRÒN (ĐÃ SỬA LỖI MẤT ĐỈNH)
+    % =================================================================
+    \begin{scope}[xshift=6.2cm, yshift=0cm]
+        \def\R{0.6}    % Bán kính đáy elip 
+        \def\H{3.0}    % Chiều cao hình trụ
+
+        % Đáy trên: Vẽ toàn bộ bằng nét liền ôm sát hai cạnh bên
+        \draw[ultra thick] (0,\H) ellipse [x radius=\R, y radius=0.22];
+
+        % Đáy dưới: Nửa elip phía trước nét liền, nửa phía sau nét đứt
+        \draw[ultra thick] (-\R,0) arc (180:360:\R\space and 0.22);
+        \draw[ultra thick, dashed] (\R,0) arc (0:180:\R\space and 0.22);
+
+        % Hai đường sinh đứng hai bên nối liền từ đáy lên đỉnh
+        \draw[ultra thick] (-\R,0) -- (-\R,\H);
+        \draw[ultra thick] (\R,0) -- (\R,\H);
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}}
+
+% --- CÂU 16 ---
+\questionShortAnswer{15}{4}{Anh 10 dự định sử dụng hết \( 6 \, m^2 \) kính để làm một bể cá bằng kính có dạng hình hộp chữ nhật không nắp, chiều dài gấp đôi chiều rộng (các mối ghép có kích thước không đáng kể). Hỏi anh 10 có thể làm được bể cá có dung tích lớn nhất bằng bao nhiêu \( m^3 \) (kết quả làm tròn đến hàng phần trăm)?}
+
+% --- CÂU 4 ---
+\questionTrueFalse{15}{5}{Bác thợ hàn dùng một thanh kim loại dài 300cm để uốn thành khung cửa sổ có dạng như hình vẽ. Gọi \( r \) là bán kính của nửa đường tròn.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5, thick]
+        % Định nghĩa các điểm tọa độ gốc
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,0);
+        \coordinate (C) at (2,1.5);
+        \coordinate (E) at (0,1.5);
+        \coordinate (O) at (1,1.5); % Tâm của nửa đường tròn
+        \coordinate (D) at (1,2.5); % Đỉnh cao nhất của nửa đường tròn
+
+        % Vẽ khung hình chữ nhật phía dưới (khuyết cạnh trên)
+        \draw (E) -- (A) -- (B) -- (C);
+
+        % Vẽ nửa đường tròn phía trên từ điểm C đến E, tâm O, bán kính r = 1
+        \draw (C) arc (0:180:1);
+
+        % Vẽ đường đứt nét nối từ E sang C
+        \draw[dashed, thin] (E) -- (C);
+
+        % Vẽ tâm O (dấu chấm nhỏ)
+        \fill (O) circle (1pt);
+
+        % Vẽ điểm D (dấu chấm ở đỉnh đường tròn)
+        \fill (D) circle (1.2pt) node[above] {$D$};
+
+        % Vẽ bán kính r từ tâm O đến một điểm trên cung tròn (góc khoảng 50 độ)
+        \draw (O) -- (1.64, 2.26) node[pos=0.5, right] {$r$};
+
+        % Vẽ mũi tên kích thước chiều cao h bên phải
+        \draw[<->] (2.4, 0) -- (2.4, 1.5) node[pos=0.5, right] {$h$};
+
+        % Gán nhãn các đỉnh
+        \node[left] at (A) {$A$};
+        \node[right] at (B) {$B$};
+        \node[right] at (C) {$C$};
+        \node[left] at (E) {$E$};
+
+    \end{tikzpicture}
+\end{center}
+
+}{
+    \textbf{a)} & Diện tích của nửa hình tròn là \( S_1 = \dfrac{1}{2}\pi r^2 \, (cm^2) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Diện tích của hình chữ nhật là \( S_2 = 300r - \pi r^2 - 2r^2 \, (cm^2) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khi \( r = 12 \) thì diện tích của khung cửa sổ nằm trong khoảng \( (2000; 3000) \) (đơn vị: \( cm^2 \)).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Biết \( r = r_0 \) thì diện tích của khung cửa sổ tạo thành đạt giá trị lớn nhất, khi đó \( r_0 \in (41; 42) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 5 ---
+\questionTrueFalse{15}{6}{Một bạn trâu muốn gò một cái thùng bằng tôn dạng hình hộp chữ nhật không nắp có đáy là hình vuông và đựng đầy được 256 lít nước. Gọi độ dài cạnh đáy của thùng là \( x \, (dm) \), chiều cao của thùng là \( h \, (dm) \).}{
+    \textbf{a)} & Thể tích của thùng là \( V = x^2 h \, (dm^3) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tổng diện tích xung quanh và diện tích đáy của thùng là  
+    \(S(x) = x^2 + \dfrac{1024}{x} \, (dm^2).\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Đạo hàm của hàm số \( S(x) \) là  
+    \(S'(x) = 2x + \dfrac{1024}{x^2}.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Để gò được cái thùng mà tốn ít nguyên liệu nhất thì độ dài cạnh đáy của thùng là \( 7 \, (dm) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+ 
+
+\end{document}
