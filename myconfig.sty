@@ -13,6 +13,7 @@
 \usepackage{fancyhdr}
 \usepackage{needspace}
 \usepackage{tkz-tab}
+\usepackage{fontsize}
 
 % Đồ họa & Màu sắc
 \usepackage{xcolor}
@@ -208,11 +209,13 @@
 % --- Dạng 1: Trắc nghiệm 4 đáp án ---
 \newcommand{\questionLinesManual}[4]{
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
+    \changefontsize{12pt}% <--- Đặt cỡ chữ chính xác (Ví dụ: 14pt) và giãn dòng (18pt)
     \needspace{\calculatedSpace cm} 
     \questioncore{#2}{#3}
     #4
     \par\nopagebreak
     \drawdashlines{#1}
+    \vspace{0.5cm}
 }
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
@@ -239,6 +242,7 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
+    \vspace{0.5cm}
 }
 
 % ----- Dạng 3: Tự luận ngắn -----
@@ -265,4 +269,5 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
+    \vspace{0.5cm}
 }
