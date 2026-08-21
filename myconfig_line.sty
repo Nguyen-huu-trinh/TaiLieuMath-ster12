@@ -220,18 +220,18 @@
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
 \newcommand{\questionTrueFalse}[4]{
+    \scriptsize
     \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
     \needspace{\calculatedSpace cm}
-    \questioncore{#2}{#3}
+    \questioncore{{#2}}{#3}
     
     \nopagebreak
-    \begin{center}
-    \setlength{\extrarowheight}{4pt} % Thêm đệm chiều cao cho các hàng chứa phân số
+    \begin{flushleft}
     \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.4cm}|m{6cm}|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{1cm}|}
         \hline
         \rowcolor{amberorange!20}
-        & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        & \multicolumn{1}{>{\centering\arraybackslash}m{6cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
@@ -239,16 +239,15 @@
         \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
-    \setlength{\extrarowheight}{0pt} % Trả về đệm mặc định
-    \end{center}
+    \end{flushleft}
     
     \par\nopagebreak
     \drawdashlines{#1}
-    \vspace{0.5cm}
 }
 
 % ----- Dạng 3: Tự luận ngắn -----
 \newcommand{\questionShortAnswer}[3]{
+    \scriptsize
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
     \needspace{\calculatedSpace cm}
     
