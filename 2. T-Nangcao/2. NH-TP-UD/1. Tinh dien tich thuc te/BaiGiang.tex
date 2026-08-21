@@ -31,36 +31,41 @@ Hỏi ông An phải trả bao nhiêu tiền để làm cái cửa sắt như v�
     \end{tasks}
 }
 
-\questionShortAnswer{23}{2}{Trang trí một sân hình chữ nhật kích thước 30m × 16m, trong đó hai Parabol \( (P_1) \) đối xứng với \( (P_2) \) qua đường thẳng đi qua hai trung điểm của chiều dài sân (hình vẽ), khoảng cách giữa hai đỉnh Parabol bằng 6m.  
-Chi phí trang trí cho phần hoa văn là 200 ngàn đồng trên một mét vuông, phần trắng là 180 ngàn đồng trên một mét vuông. Tổng chi phí trang trí cho sân là bao nhiêu triệu đồng (kết quả làm tròn đến hàng phần mười)?
+\questionShortAnswer{23}{2}{Mặt cắt ngang của lòng máng dẫn nước là hình phẳng giới hạn bởi một parabol và đường thẳng nằm ngang như Hình (phần được tô màu xám). Tính diện tích của mặt cắt ngang đó.
 
 \begin{center}
-\begin{tikzpicture}[scale=0.25, >=latex]
-    % Khai báo thư viện \usetikzlibrary{patterns} ở Preamble
+\begin{tikzpicture}[scale=1.5, >=latex]
+    % Tô màu nền xám nhạt cho lòng máng
+    \fill[gray!20] plot[domain=-1:1, samples=100] (\x, {2*\x*\x}) -- (-1,2) -- cycle;
 
-    % 1. Tô họa tiết ô caro cho phần hoa văn
-    \begin{scope}
-        % Tô toàn bộ hình chữ nhật bằng mẫu caro (checkerboard)
-        \fill[pattern=checkerboard, pattern color=black!60] (-15,-8) rectangle (15,8);
+    % Vẽ bóng gạch chéo phần đất xung quanh máng
+    \fill[pattern=north east lines, pattern color=gray!60] 
+        (-1.2,-0.2) -- (-1.2,2) -- (-1,2) -- plot[domain=-1:1, samples=100] (\x, {2*\x*\x}) -- (1,2) -- (1.2,2) -- (1.2,-0.2) -- cycle;
 
-        \fill[white] (15,-8) -- plot[domain=-8:-3, samples=100] ({0.28*\x*\x - 3}, \x) -- plot[domain=-3:3, samples=100] ({-0.28*\x*\x + 3}, \x) -- plot[domain=3:8, samples=100] ({0.28*\x*\x - 3}, \x) -- (15,8) -- cycle;
+    % Viền Parabol lòng máng
+    \draw[very thick, black] plot[domain=-1:1, samples=100] (\x, {2*\x*\x});
+    
+    % Đường viền mép trên và mép ngoài
+    \draw[thick, black] (-1.2,2) -- (1.2,2);
+    \draw[thick, black] (-1.2,-0.2) -- (1.2,-0.2);
+    \draw[thick, black] (-1.2,-0.2) -- (-1.2,2.);
+    \draw[thick, black] (1.2,-0.2) -- (1.2,2);
 
-        \fill[white] (-15,-8) -- plot[domain=-8:-3, samples=100] ({-0.28*\x*\x + 3}, \x) -- plot[domain=-3:3, samples=100] ({0.28*\x*\x - 3}, \x) -- plot[domain=3:8, samples=100] ({-0.28*\x*\x + 3}, \x) -- (-15,8) -- cycle;
-            \end{scope}
+    % Đường kích thước đứt nét
+    
+    \draw[dashed] (0,0) -- (1.4,0);
 
-    % 2. Vẽ viền khung hình chữ nhật 30x16
-    \draw[very thick] (-15,-8) rectangle (15,8);
+    % Mũi tên và nhãn kích thước
+    \draw[<->, thick] (-1,2.1) -- (1,2.1) node[midway, above] {\small $2\text{ m}$};
+    \draw[<->, thick] (1.4,0) -- (1.4,2) node[midway, right] {\small $2\text{ m}$};
 
-    % 3. Vẽ hai đường Parabol (P1) và (P2)
-    \draw[very thick, samples=100, domain=-8:8] plot ({-0.28*\x*\x +3}, \x);
-    \draw[very thick, samples=100, domain=-8:8] plot ({0.28*\x*\x - 3}, \x);
-
-    % 4. Đánh dấu nhãn (P1) và (P2)
-    \node at (-7, 3) {\small $(P_1)$};
-    \node at (7, 3) {\small $(P_2)$};
+    % Đỉnh O của parabol
+    \fill[black] (0,0) circle (1.5pt) node[below] {\small $O$};
 \end{tikzpicture}
 \end{center}
 }
+
+
 
 \questionLinesManual{22}{3}{Một mảnh vườn hình tròn tâm \( O \) bán kính \( 6 \, \text{m} \). Người ta cần trồng cây trên dải đất rộng \( 6 \, \text{m} \) nhận \( O \) làm tâm đối xứng, biết kinh phí trồng cây là \( 70000 \, \text{đồng/m}^2 \). Hỏi cần bao nhiêu tiền để trồng cây trên dải đất đó (số tiền được làm tròn đến hàng đơn vị)
 \begin{center}
@@ -140,57 +145,46 @@ Chi phí trang trí cho phần hoa văn là 200 ngàn đồng trên một mét v
     \end{tasks}
 }
 
-\questionLinesManual{22}{5}{Một biển quảng cáo có dạng hình elip với bốn đỉnh \( A_1, A_2, B_1, B_2 \) như hình vẽ bên. Biết chi phí để sơn phần tô đậm là 200.000 vnđ/m² và phần còn lại 100.000 vnđ/m². Hỏi số tiền để sơn theo cách trên gần nhất với số tiền nào dưới đây, biết \( A_1A_2 = 8m \), \( B_1B_2 = 6m \) và tứ giác \( MNPQ \) là hình chữ nhật có \( MQ = 3m \)?
+
+\questionShortAnswer{23}{5}{Người ta cần tính thể tích của một vật thể được chế tác như sau. Trên mặt phẳng với hệ tọa độ \(Oxy\) (một đơn vị độ dài trên mỗi trục tương ứng với một xăng-ti-mét trong thực tế), gọi \((H)\) là hình phẳng được tô đậm, giới hạn bởi đường elip \(\dfrac{x^2}{256} + \dfrac{y^2}{48} = 1\) và đường tròn tâm \(O\) có bán kính \(10\) (xem hình minh họa bên dưới). Vật thể có dạng khối tròn xoay được tạo thành khi quay hình phẳng \((H)\) quanh trục hoành. Thể tích của vật thể nói trên bằng bao nhiêu xăng-ti-mét khối (không làm tròn kết quả các phép tính trung gian, chỉ làm tròn kết quả phép tính cuối cùng đến hàng đơn vị)?
 
 \begin{center}
-\begin{tikzpicture}[scale=0.8, >=latex]
-    % Định nghĩa bán trục
-    \pgfmathsetmacro{\a}{4}
-    \pgfmathsetmacro{\b}{3}
-    \pgfmathsetmacro{\xM}{sqrt(12)} % 2*sqrt(3) ~ 3.464
-    \pgfmathsetmacro{\yM}{1.5}
+\begin{tikzpicture}[scale=0.22, line join=round, line cap=round, >=stealth]
+    % Tọa độ Elip: a = 16, b = 4*sqrt(3) ≈ 6.928
+    % Đường tròn: R = 10
+    
+    % Miền tô đậm (H): giới hạn phía trên bởi Elip, phía dưới bởi đường tròn, y >= 0
+    % Giao điểm giữa elip y = sqrt(48*(1 - x^2/256)) và đường tròn y = sqrt(100 - x^2)
+    % x^2/256 + (100 - x^2)/48 = 1 => 3x^2 + 16(100 - x^2) = 768 => 13x^2 = 832 => x^2 = 64 => x = ±8
+    \begin{scope}
+        \clip (-8, 6) -- (-8, 12) -- (8, 12) -- (8, 6) -- cycle;
+        % Tô màu miền H
+        \fill[softgray!80] 
+            plot[domain=-8:8, samples=100] (\x, {sqrt(48*(1 - (\x)^2/256))}) 
+            -- plot[domain=8:-8, samples=100] (\x, {sqrt(100 - (\x)^2)}) 
+            -- cycle;
+    \end{scope}
 
-    % 1. Tô phần tô đậm (phần giữa hình chữ nhật và elip)
-    \fill[color=gray!45, domain=-\xM:\xM, variable=\x]
-        plot (\x, {3*sqrt(1 - \x*\x/16)}) -- 
-        plot (\x, {1.5}) -- cycle;
-    \fill[color=gray!45, domain=-\xM:\xM, variable=\x]
-        plot (\x, {-1.5}) -- 
-        plot (\x, {-3*sqrt(1 - \x*\x/16)}) -- cycle;
+    % Trục tọa độ Oxy
+    \draw[->, line width=0.8pt] (-19,0) -- (19,0) node[above] {\small \(x\)};
+    \draw[->, line width=0.8pt] (0,-1) -- (0,11) node[right] {\small \(y\)};
+    \node[below left] at (0,0) {\small \(O\)};
 
-    % 2. Tô màu xám đậm cho phần hình chữ nhật MNPQ
-    \fill[gray!45] (-\xM, -\yM) rectangle (\xM, \yM);
+    % Vẽ nửa trên Elip
+    \draw[line width=1.0pt, domain=-16:16, samples=150] 
+        plot (\x, {sqrt(48*(1 - (\x)^2/256))});
 
-    % 3. Vẽ đường Elip
-    \draw[ultra thick, samples=150, domain=-4:4, color=black] 
-        plot (\x, {3*sqrt(1 - \x*\x/16)});
-    \draw[ultra thick, samples=150, domain=-4:4, color=black] 
-        plot (\x, {-3*sqrt(1 - \x*\x/16)});
+    % Vẽ nửa trên đường tròn
+    \draw[line width=1.0pt, domain=-10:10, samples=150] 
+        plot (\x, {sqrt(100 - (\x)^2)});
 
-    % 4. Viền hình chữ nhật MNPQ
-    \draw[thick] (-\xM, -\yM) rectangle (\xM, \yM);
-
-    % 5. Đánh dấu các đỉnh của Elip
-    \fill[black] (-\a,0) circle (2pt) node[left] {\small $A_1$};
-    \fill[black] (\a,0) circle (2pt) node[right] {\small $A_2$};
-    \fill[black] (0,-\b) circle (2pt) node[below] {\small $B_1$};
-    \fill[black] (0,\b) circle (2pt) node[above] {\small $B_2$};
-
-    % 6. Đánh dấu các đỉnh hình chữ nhật
-    \node[above left] at (-\xM, \yM) {\small $M$};
-    \node[above right] at (\xM, \yM) {\small $N$};
-    \node[below right] at (\xM, -\yM) {\small $P$};
-    \node[below left] at (-\xM, -\yM) {\small $Q$};
+    % Mũi tên chỉ miền (H)
+    \draw[->, line width=0.6pt] (-7,8.5) node[left] {\small \((H)\)} -- (-2.5,6.8);
 \end{tikzpicture}
 \end{center}
-}{%
-    \begin{tasks}(4)
-        \task 5.526.000 đồng
-        \task 5.782.000 đồng
-        \task 7.322.000 đồng
-        \task 7.213.000 đồng
-    \end{tasks}
 }
+
+
 
 \questionLinesManual{22}{6}{Một sân chơi cho trẻ em hình chữ nhật có chiều dài 100 và chiều rộng là 60 m người ta làm một con đường nằm trong sân (như hình vẽ). Biết rằng viền ngoài và viền trong của con đường là hai đường elip, Elip của đường viền ngoài có trục lớn và trục bé lần lượt song song với các cạnh hình chữ nhật và chiều rộng của mặt đường là 2 m. Kinh phí cho mỗi m\(^2\) làm đường 600.000 đồng. Tính tổng số tiền làm con đường đó. (Số tiền được làm tròn đến hàng nghìn).
 
