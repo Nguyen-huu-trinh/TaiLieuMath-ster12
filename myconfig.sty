@@ -4,12 +4,13 @@
 % Bảng mã & Font chữ
 \usepackage[utf8]{inputenc}
 \usepackage[T5]{fontenc}
+\usepackage{lmodern}
 
 % Toán học
 \usepackage{amsmath, amssymb}
 
 % Căn lề & Bố cục trang
-\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=60pt]{geometry}
 \usepackage{fancyhdr}
 \usepackage{needspace}
 \usepackage{tkz-tab}
@@ -209,7 +210,7 @@
 % --- Dạng 1: Trắc nghiệm 4 đáp án ---
 \newcommand{\questionLinesManual}[4]{
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
-    \changefontsize{12pt}% <--- Đặt cỡ chữ chính xác (Ví dụ: 14pt) và giãn dòng (18pt)
+    \changefontsize[18pt]{12pt}
     \needspace{\calculatedSpace cm} 
     \questioncore{#2}{#3}
     #4
@@ -221,17 +222,17 @@
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
 \newcommand{\questionTrueFalse}[4]{
     \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \changefontsize[18pt]{12pt}
     \needspace{\calculatedSpace cm}
     \questioncore{#2}{#3}
     
     \nopagebreak
     \begin{center}
-    \setlength{\extrarowheight}{4pt} % Thêm đệm chiều cao cho các hàng chứa phân số
-    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
         \hline
         \rowcolor{amberorange!20}
-        & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \vphantom{\parbox[c]{0.8cm}{\huge A}} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
@@ -239,7 +240,6 @@
         \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
-    \setlength{\extrarowheight}{0pt} % Trả về đệm mặc định
     \end{center}
     
     \par\nopagebreak
@@ -250,6 +250,7 @@
 % ----- Dạng 3: Tự luận ngắn -----
 \newcommand{\questionShortAnswer}[3]{
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \changefontsize[18pt]{12pt}
     \needspace{\calculatedSpace cm}
     
     {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
