@@ -10,65 +10,17 @@
 \titlebox{Chủ đề: Hàm số}{Tổng hợp câu hỏi hàm số}{Hàm số}
 
 
-\questionTrueFalse{0}{1}{Cho hàm số \( y = f(x) = \frac{-x^2 + 10x - 12}{x} \) có đồ thị \( (C) \).
-
-\begin{center}
-\begin{tikzpicture}[scale=0.6, >=latex]
-    % Định nghĩa màu sắc
-    \definecolor{greenland}{RGB}{125, 175, 120}
-    \definecolor{waterblue}{RGB}{185, 240, 255}
-    
-    % 1. Tô màu phần đất dưới đồ thị (C)
-   
-    \begin{scope}
-        \clip (-1,-1) rectangle (10,7);
-        \fill[greenland] 
-            plot[domain=1.2:9.8, samples=100] (\x, {-\x + 10 - 12/\x}) 
-            -- (9.5,-1) -- (1.5,-1) -- cycle;
-    \end{scope}
-
-    % 2. Tô màu ao nuôi tôm (Tam giác ABC)
-    \coordinate (A) at (-3, 5.5);
-    \coordinate (B) at (2.2, 2.35);
-    \coordinate (C) at (0, -0.6);
-
-    \fill[waterblue] (A) -- (B) -- (C) -- cycle;
-
-    % 3. Vẽ đường cong đồ thị (C)
-    \draw[very thick, red!80!black, domain=1.23:9.75, samples=100] 
-        plot (\x, {-\x + 10 - 12/\x});
-
-    % 4. Vẽ tam giác ABC và tiếp tuyến BC
-    \draw[thick, red!70!black] (A) -- (B);
-    \draw[thick, red!70!black] (A) -- (C);
-    \draw[thick, cyan!80!black] (C) -- ($(C)!1.4!(B)$); % Tiếp tuyến kéo dài qua B
-
-    % 5. Đánh dấu các điểm A, B, C và nhãn
-    \fill[black] (A) circle (2.5pt) node[above left] {\small $A$};
-    \fill[black] (B) circle (2.5pt) node[above] {\small $B$};
-    \fill[black] (C) circle (2.5pt) node[below] {\small $C$};
-
-    % 6. Chèn văn bản chú thích
-    \node[font=\small\bfseries\itshape] at (-0.2, 3) {\tiny Ao nuôi tôm};
-    \node[font=\small\bfseries\itshape] at (5.5, 1) {\tiny Phần đất};
-    \node[red!80!black] at (8, 4) {\small $(C)$};
-    \node[red!80!black, font=\bfseries\itshape] at (1,-1.5) {\tiny Hình 1};
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & Hàm số \( y = f(x) \) đồng biến trên khoảng  
-    \(\left( 0; \frac{7}{2} \right)\).
+\questionTrueFalse{0}{1}{Cho hàm số \( y = f(x) = x^3 + 3x^2 - 3x + 1 \). Xét tính đúng sai của các mệnh đề sau:}{
+    \textbf{a)} & Hàm số trên có hai cực trị gồm một cực tiểu và một cực đại.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Đồ thị hàm số \( y = f(x) \) có đường tiệm cận xiên là \( y = -x + 10 \).
+    \textbf{b)} & Giá trị lớn nhất của hàm số trên đoạn \([-1; 2]\) bằng 12.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Khoảng cách giữa hai điểm cực trị của đồ thị hàm số là \( 4\sqrt{15} \).
+    \textbf{c)} & Hàm số nghịch biến trên khoảng \((-2; -1)\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Trong mặt phẳng \( Oxy \) (đơn vị trên mỗi trục là 1 m) mô hình hoá một phần đồ thị hàm số  
-    \(y = f(x) = \dfrac{-x^2 + 10x - 12}{x}, \, (x > 0)\)
-    là bờ của phần đất nhỏ ra. Người ta muốn quay một ao nuôi tôm dạng hình tam giác \( ABC \) với \( A(-6; 6) \), đường thẳng \( BC \) là tiếp tuyến với \( (C) \) nhận \( B \) làm tiếp điểm và \( BC = 10 \, \text{m} \) *(Hình 1).* Diện tích ao nuôi tôm nhất là \( 20\sqrt{5} \, \text{m}^2 \).
+    \textbf{d)} & Đạo hàm của hàm số là \(f'(x) = x^2 + 6x - 3\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
@@ -1334,70 +1286,96 @@ Xét tính đúng sai các mệnh đề sau:}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-\questionTrueFalse{0}{47}{Trong hệ trục \( Oxy \) đường biên của một hòn đảo được mô hình hoá bởi hàm số  
-\(f(x) = \dfrac{-x^2 + 10x - 12}{x} \quad (x > 0)\)
-(đơn vị mỗi trục là \( 100(m) \)). Ban quản lí hòn đảo muốn quây một vùng tam giác an toàn để người dân có thể vui chơi và tắm biển ở khu vực đó. Đặt cố định một điểm ngoài biển toạ độ \( I(2;8) \) sau đó căng hai tấm lưới bảo vệ \( IA, IB \) với hai điểm \( A, B \) (\( x_A > x_B > 0 \)) nằm trên đường biên và luôn thoả mãn \( AB \parallel Ox \).
+
+\questionTrueFalse{0}{47}{Từ một tấm bìa mỏng hình lục giác đều \( ABCDEF \) cạnh 4 cm, bên trong có một lục giác đều nhỏ hơn. Các đường chéo \( AD, BE, CF \) cắt nhau tại \( O \), cắt cạnh lục giác đều nhỏ tại \( M \) (như hình vẽ). Đặt \( OM = x \) (cm). Bạn Khôi cắt bỏ 6 tam giác cân bằng nhau có cạnh đáy là cạnh của lục giác đều ban đầu và đỉnh là đỉnh của lục giác đều nhỏ phía trong rồi gấp lên sao cho các đỉnh \( A, B, C, D, E, F \) trùng nhau tạo thành một khối chóp lục giác đều.
+
 \begin{center}
 \begin{tikzpicture}[scale=0.85, >=latex]
-    % 1. Định nghĩa các tọa độ chính
-    % Điểm ngoài biển I(2; 8)
-    \coordinate (I) at (2, 8);
+    % 1. Định nghĩa các đỉnh của lục giác đều lớn ABCDEF (Bán kính R = 3)
+    \path (180:3) coordinate (A)
+          (240:3) coordinate (B)
+          (300:3) coordinate (C)
+          (0:3)   coordinate (D)
+          (60:3)  coordinate (E)
+          (120:3) coordinate (F);
+
+    % Tâm O
+    \coordinate (O) at (0,0);
+
+    % Điểm M nằm trên đường chéo AD (đoạn AO)
+    % Tỷ lệ x = OM/OA (ở đây chọn 0.35)
+    \coordinate (M) at (-1.05, 0);
+
+    % các đỉnh của lục giác nhỏ phía trong (xoay 30 độ để các cạnh vuông góc với đường chéo)
+    \pgfmathsetmacro{\rsmall}{1.05 / cos(30)}
+    \path (150:\rsmall) coordinate (P1)
+          (210:\rsmall) coordinate (P2)
+          (270:\rsmall) coordinate (P3)
+          (330:\rsmall) coordinate (P4)
+          (30:\rsmall)  coordinate (P5)
+          (90:\rsmall)  coordinate (P6);
+
+    % 2. Vẽ cạnh lục giác đều lớn ngoài cùng ABCDEF (màu tím đậm)
+    \draw[very thick, blue!40!black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- cycle;
+
+    % 3. Vẽ 3 đường chéo chính AD, BE, CF (màu xanh tím)
+    \draw[very thick, blue!50!black] (A) -- (D);
+    \draw[very thick, blue!50!black] (B) -- (E);
+    \draw[very thick, blue!50!black] (C) -- (F);
+
+    % 4. Vẽ các nếp gấp từ đỉnh lục giác nhỏ đến các đỉnh A, B, C, D, E, F
+    \draw[thick, blue!30!black] (P1) -- (A);
+    \draw[thick, blue!30!black] (P1) -- (F);
     
-    % Các điểm trên đường biên đồ thị y = -x + 10 - 12/x
-    % Điểm A và B nằm trên đường ngang y = y_AB
-    \coordinate (B) at (1.5, 0.5);
-    \coordinate (A) at (8, 0.5);
-    
-    % Giao điểm của đường cong với trục nằm ngang dưới cùng (mặt biển)
-    \coordinate (C_left) at (1.25, -0.85);
-    \coordinate (C_right) at (8.75, -0.85);
+    \draw[thick, blue!30!black] (P2) -- (A);
+    \draw[thick, blue!30!black] (P2) -- (B);
 
-    % 2. Tô màu các vùng
-    % Vùng 1: Tam giác an toàn IAB (Màu vàng nhạt)
-    \fill[yellow!20] (I) -- (B) -- (A) -- cycle;
+    \draw[thick, blue!30!black] (P3) -- (B);
+    \draw[thick, blue!30!black] (P3) -- (C);
 
-    % Vùng 2: Hòn Đảo (Vùng dưới đường cong y = f(x) trên đoạn AB - Màu xanh lá cây đậm)
-    \fill[green!50!white] 
-        plot[domain=1.5:8, samples=100] (\x, {-\x + 10 - 12/\x})
-        -- (A) -- (B) -- cycle;
+    \draw[thick, blue!30!black] (P4) -- (C);
+    \draw[thick, blue!30!black] (P4) -- (D);
 
-    % Vùng 3: Mặt biển / Chân đảo (Phần bên dưới đoạn AB - Màu xanh lá tươi)
-    \fill[green!50!black!60] 
-        (8, 0.5) -- (1.5, 0.5) -- (1.25, -0.85)-- (9.6, -0.85) ;
+    \draw[thick, blue!30!black] (P5) -- (D);
+    \draw[thick, blue!30!black] (P5) -- (E);
 
-    % 3. Vẽ đường biên hòn đảo y = f(x)
-    \draw[thick, black, domain=1.25:9.6, samples=100] 
-        plot (\x, {-\x + 10 - 12/\x});
+    \draw[thick, blue!30!black] (P6) -- (E);
+    \draw[thick, blue!30!black] (P6) -- (F);
 
-    % 4. Vẽ hai tấm lưới bảo vệ IA và IB (Màu đỏ)
-    \draw[thick, red!80!black] (I) -- (B);
-    \draw[thick, red!80!black] (I) -- (A);
+    % 5. Vẽ cạnh của lục giác nhỏ phía trong
+    \draw[thick, blue!30!black] (P1) -- (P2) -- (P3) -- (P4) -- (P5) -- (P6) -- cycle;
 
-    % 5. Vẽ đoạn thẳng AB song song Ox (Màu đỏ)
-    \draw[thick, red!80!black] (B) -- (A);
+    % 6. Đánh dấu các điểm nút màu đỏ với viền đen
+    \foreach \pt in {A,B,C,D,E,F,O,M} {
+        \fill[red!80!black] (\pt) circle (2.2pt);
+        \draw[black, thin] (\pt) circle (2.2pt);
+    }
 
-    % 6. Điểm nút và nhãn tên các điểm
-    \fill[black] (I) circle (2pt) node[left] {\small $I$};
-    \fill[black] (B) circle (2pt) node[left] {\small $B$};
-    \fill[black] (A) circle (2pt) node[right] {\small $A$};
-
-    % Nhãn chữ trên hình
-    \node[black, font=\bfseries\itshape] at (4.0, 1.5) {\small Hòn Đảo};
-    \node[black, right] at (8.65, 1.11) {\small $y = f(x)$};
+    % 7. Nhãn các điểm
+    \node[left, font=\bfseries\itshape] at (A) {$A$};
+    \node[below left, font=\bfseries\itshape] at (B) {$B$};
+    \node[below right, font=\bfseries\itshape] at (C) {$C$};
+    \node[right, font=\bfseries\itshape] at (D) {$D$};
+    \node[above right, font=\bfseries\itshape] at (E) {$E$};
+    \node[above left, font=\bfseries\itshape] at (F) {$F$};
+    \node[above right, font=\bfseries\itshape] at (O) {$O$};
+    \node[below, font=\bfseries\itshape] at (M) {$M$};
 \end{tikzpicture}
 \end{center}
 }{
-    \textbf{a)} & Đỉnh cao nhất của hòn đảo (điểm cực đại của đồ thị hàm số) cách \( I \) một khoảng \( 514(m) \) (làm tròn đến hàng đơn vị).
+    \textbf{a)} & Tam giác \( OAB \) đều có cạnh bằng 4 cm.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Tâm đối xứng của đồ thị hàm số  
-    \(f(x) = \dfrac{-x^2 + 10x - 12}{x}\) là điểm \( M(0;10) \).
+    \textbf{b)} & Cạnh đáy của khối chóp lục giác đều bằng  
+    \(\dfrac{x\sqrt{3}}{6}\) (cm).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Quãng đường ngắn nhất từ hòn đảo đến điểm \( I \) là \( 510(m) \) (làm tròn đến hàng đơn vị).
+    \textbf{c)} & Đường cao của khối chóp lục giác đều bằng  
+    \(\sqrt{16 - 8x}\) (cm).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Nếu điều chỉnh dây phao sao cho khoảng cách từ trạm \( I \) đến dây phao \( AB \) bằng đúng chiều dài dây phao \( AB \) thì diện tích vùng an toàn \( \triangle LAB \) là \( 605000(m^2) \).
+    \textbf{d)} & Thể tích lớn nhất của khối chóp lục giác đều có thể đạt được là  
+    \(\dfrac{256\sqrt{10}}{375} \ (cm^3)\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
