@@ -1624,8 +1624,128 @@ Xét tính đúng sai các mệnh đề sau:}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
+\questionTrueFalse{0}{58}{Cho hàm số \( y = f(x) = \dfrac{x^2 - x - 12}{x - 2} \)}{
+    \textbf{a)} & Đồ thị hàm số \( f(x) \) đi qua điểm \( (4;0) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Đồ thị hàm số \( f(x) \) có đường tiệm cận xiên là đường thẳng \( y = x - 1 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Đồ thị hàm số \( f(x) \) có tâm đối xứng là điểm \( I(2;3) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Phương trình đường tiếp tuyến của đồ thị hàm số \( f(x) \) tại điểm \( x = 3 \) có dạng \( y = mx + n \), giá trị \( m - n \) bằng 50.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
 
-\questionTrueFalse{0}{58}{Khối lượng của một cá thể sinh vật \( X \) theo thời gian \( t \) tuần (\( t \geq 0 \)) cho bởi công thức  
+\questionTrueFalse{0}{59}{Cho hàm số \( y = \dfrac{x^2 - x + 2}{x - 2} \) có đồ thị \( (C) \).}{
+    \textbf{a)} & Hàm số nghịch biến trên khoảng \( (1;3) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số có hai điểm cực trị.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & \( M \) là điểm bất kỳ thuộc đồ thị \( (C) \). Tích khoảng cách từ \( M \) đến tiệm cận đứng và tiệm cận xiên của đồ thị \( (C) \) bằng \( 2\sqrt{2} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Đồ thị \( (C) \) có tiệm cận đứng là đường thẳng \( x = 2 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{60}{Cho hàm số \( y = \dfrac{ax^2 + bx + c}{mx + n} \) có đồ thị như hình vẽ dưới đây.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85, >=latex]
+    % 1. Giới hạn vùng hiển thị
+    \clip (-5.2, -3) rectangle (4.2, 6.2);
+
+    % 2. Các đường dóng nét đứt tại điểm cực trị (-2; 4) và tiệm cận
+    \draw[dashed, black] (-2, 0) -- (-2, 4) -- (0, 4);
+    \draw[dashed, black] (-1, 0) -- (-1, 2) -- (0, 2);
+
+    % 3. Tiệm cận đứng x = -1 (màu đen nét đứt)
+    \draw[dashed, thick, black] (-1, -3.5) -- (-1, 6.2);
+
+    % 4. Tiệm cận xiên y = -x + 1 (màu đen nét đứt)
+    \draw[dashed, thick, black, domain=-5.0:3.0] plot (\x, {-\x + 1});
+
+    % 5. Đồ thị hàm số y = -x + 1 + 1/(x + 1) (màu xanh lá cây)
+    % Nhánh trên (x < -1)
+    \draw[very thick, green!50!black, domain=-5.0:-1.2, samples=100] 
+        plot (\x, {-\x + 1 - 1/(\x + 1)});
+    % Nhánh dưới (x > -1)
+    \draw[very thick, green!50!black, domain=-0.8:2.8, samples=100] 
+        plot (\x, {-\x + 1 - 1/(\x + 1)});
+
+    % 6. Trục tọa độ Oxy màu đen (vẽ đè lên đồ thị)
+    \draw[->, thick, black] (-5.0, 0) -- (4.0, 0) node[below] {\small $x$};
+    \draw[->, thick, black] (0, -3.2) -- (0, 6) node[right] {\small $y$};
+
+    % 7. Các điểm nút cực trị và nhãn tọa độ
+    % Gốc tọa độ O
+    \fill[black] (0, 0) circle (1.5pt);
+    \node[below right] at (0, 0) {\small $O$};
+
+    % Điểm cực tiểu nhánh trên (-2; 4)
+    \fill[black] (-2, 4) circle (1.8pt);
+
+    % Các nhãn số trên trục Ox và Oy
+    \node[below left] at (-2, 0) {\small $-2$};
+    \node[below left] at (-1, 0) {\small $-1$};
+    \node[right] at (0, 4) {\small $4$};
+    \node[right] at (0, 2) {\small $2$};
+    \node[above right] at (0, 1) {\small $1$};
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Hàm số nghịch biến trên khoảng \((-1; 0)\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & \( m = n \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Tâm đối xứng của đồ thị hàm số là \( I(-1; 2) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Khoảng cách giữa hai điểm cực trị của đồ thị hàm số bằng \( 2\sqrt{5} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+\questionTrueFalse{0}{61}{Cho hàm số  
+\(y = \dfrac{x^2 - 2x + 2}{x - 1}.\)}{
+    \textbf{a)} & Đạo hàm của hàm số là  
+    \(y' = \dfrac{x^2 - 2x}{x + 1}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giá trị cực đại của hàm số bằng \(-2\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Đường thẳng đi qua hai điểm cực trị của đồ thị hàm số đã cho có phương trình là  
+    \(y = 2x - 2\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Điểm cực tiểu của hàm số bằng \( 0 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{62}{Cho hàm số  
+\(y = \dfrac{x^2 - 2x + 2}{x - 1}.\)}{
+    \textbf{a)} & Đạo hàm của hàm số là  
+    \(y' = \dfrac{x^2 - 2x}{x + 1}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giá trị cực đại của hàm số bằng \(-2\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Đường thẳng đi qua hai điểm cực trị của đồ thị hàm số đã cho có phương trình là \(y = 2x - 2\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Điểm cực tiểu của hàm số bằng \(0\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{63}{Khối lượng của một cá thể sinh vật \( X \) theo thời gian \( t \) tuần (\( t \geq 0 \)) cho bởi công thức  
 \(f(t) = 0,1 + t^2 e^{-kt} \quad (k \in \mathbb{R}),\)  
 đơn vị tính bằng microgram. Biết rằng sinh vật \( X \) chỉ sống được đúng 6 tuần và khối lượng của nó lớn nhất tại thời điểm \( t = 4 \), đúng lúc nó sinh sản.}{
     \textbf{a)} & \( k = \dfrac{1}{2} \).
@@ -1641,7 +1761,7 @@ Xét tính đúng sai các mệnh đề sau:}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-\questionTrueFalse{0}{59}{Cho hàm số  
+\questionTrueFalse{0}{64}{Cho hàm số  
 \(y = f(x) = \dfrac{x^2 - 2x + 100}{x}.\)}{
     \textbf{a)} & Tiệm cận xiên của đồ thị hàm số \( y = f(x) \) là đường thẳng có phương trình \( y = x + 100 \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
@@ -1657,7 +1777,7 @@ Xét tính đúng sai các mệnh đề sau:}{
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-\questionTrueFalse{0}{60}{Một cửa hàng bán đồ thủ công với giá bán một sản phẩm là 40000 đồng / sản phẩm. Giá nhập vào của sản phẩm đó là 15000 đồng / sản phẩm. Với giá này cửa hàng ước chừng bán được 120 sản phẩm / ngày. Cửa hàng dự định giảm giá bán, ước tính cứ giảm 1000 đồng / sản phẩm thì số sản phẩm bán được sẽ tăng thêm là 15 sản phẩm.}{
+\questionTrueFalse{0}{65}{Một cửa hàng bán đồ thủ công với giá bán một sản phẩm là 40000 đồng / sản phẩm. Giá nhập vào của sản phẩm đó là 15000 đồng / sản phẩm. Với giá này cửa hàng ước chừng bán được 120 sản phẩm / ngày. Cửa hàng dự định giảm giá bán, ước tính cứ giảm 1000 đồng / sản phẩm thì số sản phẩm bán được sẽ tăng thêm là 15 sản phẩm.}{
     \textbf{a)} & Nếu giá bán là 25000 đồng /sản phẩm, khi đó cửa hàng bán được 345 sản phẩm / ngày.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
@@ -1669,6 +1789,163 @@ Xét tính đúng sai các mệnh đề sau:}{
     
     \textbf{d)} & Gọi \( x \) (nghìn đồng) là giá tiền mà cửa hàng dự định bán sản phẩm đó \( (15 \leq x \leq 39) \), khi đó lợi nhuận theo ngày của cửa hàng được xác định bởi hàm số:  
     \(f(x) = -15x^2 + 945x - 10800.\)
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{66}{Cho hàm số \( y = f(x) = \dfrac{x^2 - 5x + 4}{x - 5} \) với \( x \neq 5 \).}{
+    \textbf{a)} & \( f'(x) = 1 - \dfrac{4}{(x - 5)^2} \) với mọi \( x \neq 5 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Đồ thị hàm số cắt trục hoành tại hai điểm phân biệt.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Hàm số đạt cực đại tại \( x = 3 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Giá trị cực tiểu bằng 3.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{67}{Cho hàm số \( y = f(x) = \dfrac{x^2 + 4x - 1}{x - 1} \).}{
+    \textbf{a)} & Hàm số đã cho có tập xác định là \( D = \mathbb{R} \setminus \{1\} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Hàm số đã cho có đạo hàm là \( f'(x) = \dfrac{x^2 - 2x - 3}{(x - 1)^2} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Giá trị nhỏ nhất của hàm số \( f(x) \) trên đoạn \([2; 3]\) bằng 7.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Phương trình đường tiệm cận xiên của đồ thị hàm số \( f(x) \) là \( y = x + 5 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{68}{Cho hàm số \( y = f(x) = \frac{-x^2 + 10x - 12}{x} \) có đồ thị \( (C) \).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6, >=latex]
+    % Định nghĩa màu sắc
+    \definecolor{greenland}{RGB}{125, 175, 120}
+    \definecolor{waterblue}{RGB}{185, 240, 255}
+    
+    % 1. Tô màu phần đất dưới đồ thị (C)
+   
+    \begin{scope}
+        \clip (-1,-1) rectangle (10,7);
+        \fill[greenland] 
+            plot[domain=1.2:9.8, samples=100] (\x, {-\x + 10 - 12/\x}) 
+            -- (9.5,-1) -- (1.5,-1) -- cycle;
+    \end{scope}
+
+    % 2. Tô màu ao nuôi tôm (Tam giác ABC)
+    \coordinate (A) at (-3, 5.5);
+    \coordinate (B) at (2.2, 2.35);
+    \coordinate (C) at (0, -0.6);
+
+    \fill[waterblue] (A) -- (B) -- (C) -- cycle;
+
+    % 3. Vẽ đường cong đồ thị (C)
+    \draw[very thick, red!80!black, domain=1.23:9.75, samples=100] 
+        plot (\x, {-\x + 10 - 12/\x});
+
+    % 4. Vẽ tam giác ABC và tiếp tuyến BC
+    \draw[thick, red!70!black] (A) -- (B);
+    \draw[thick, red!70!black] (A) -- (C);
+    \draw[thick, cyan!80!black] (C) -- ($(C)!1.4!(B)$); % Tiếp tuyến kéo dài qua B
+
+    % 5. Đánh dấu các điểm A, B, C và nhãn
+    \fill[black] (A) circle (2.5pt) node[above left] {\small $A$};
+    \fill[black] (B) circle (2.5pt) node[above] {\small $B$};
+    \fill[black] (C) circle (2.5pt) node[below] {\small $C$};
+
+    % 6. Chèn văn bản chú thích
+    \node[font=\small\bfseries\itshape] at (-0.2, 3) {\tiny Ao nuôi tôm};
+    \node[font=\small\bfseries\itshape] at (5.5, 1) {\tiny Phần đất};
+    \node[red!80!black] at (8, 4) {\small $(C)$};
+    \node[red!80!black, font=\bfseries\itshape] at (1,-1.5) {\tiny Hình 1};
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Hàm số \( y = f(x) \) đồng biến trên khoảng  
+    \(\left( 0; \frac{7}{2} \right)\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Đồ thị hàm số \( y = f(x) \) có đường tiệm cận xiên là \( y = -x + 10 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khoảng cách giữa hai điểm cực trị của đồ thị hàm số là \( 4\sqrt{15} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Trong mặt phẳng \( Oxy \) (đơn vị trên mỗi trục là 1 m) mô hình hoá một phần đồ thị hàm số  
+    \(y = f(x) = \dfrac{-x^2 + 10x - 12}{x}, \, (x > 0)\)
+    là bờ của phần đất nhỏ ra. Người ta muốn quay một ao nuôi tôm dạng hình tam giác \( ABC \) với \( A(-6; 6) \), đường thẳng \( BC \) là tiếp tuyến với \( (C) \) nhận \( B \) làm tiếp điểm và \( BC = 10 \, \text{m} \) *(Hình 1).* Diện tích ao nuôi tôm nhất là \( 20\sqrt{5} \, \text{m}^2 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+\questionTrueFalse{0}{69}{Trong hệ trục \( Oxy \) đường biên của một hòn đảo được mô hình hoá bởi hàm số  
+\(f(x) = \dfrac{-x^2 + 10x - 12}{x} \quad (x > 0)\)
+(đơn vị mỗi trục là \( 100(m) \)). Ban quản lí hòn đảo muốn quây một vùng tam giác an toàn để người dân có thể vui chơi và tắm biển ở khu vực đó. Đặt cố định một điểm ngoài biển toạ độ \( I(2;8) \) sau đó căng hai tấm lưới bảo vệ \( IA, IB \) với hai điểm \( A, B \) (\( x_A > x_B > 0 \)) nằm trên đường biên và luôn thoả mãn \( AB \parallel Ox \).
+\begin{center}
+\begin{tikzpicture}[scale=0.85, >=latex]
+    % 1. Định nghĩa các tọa độ chính
+    % Điểm ngoài biển I(2; 8)
+    \coordinate (I) at (2, 8);
+    
+    % Các điểm trên đường biên đồ thị y = -x + 10 - 12/x
+    % Điểm A và B nằm trên đường ngang y = y_AB
+    \coordinate (B) at (1.5, 0.5);
+    \coordinate (A) at (8, 0.5);
+    
+    % Giao điểm của đường cong với trục nằm ngang dưới cùng (mặt biển)
+    \coordinate (C_left) at (1.25, -0.85);
+    \coordinate (C_right) at (8.75, -0.85);
+
+    % 2. Tô màu các vùng
+    % Vùng 1: Tam giác an toàn IAB (Màu vàng nhạt)
+    \fill[yellow!20] (I) -- (B) -- (A) -- cycle;
+
+    % Vùng 2: Hòn Đảo (Vùng dưới đường cong y = f(x) trên đoạn AB - Màu xanh lá cây đậm)
+    \fill[green!50!white] 
+        plot[domain=1.5:8, samples=100] (\x, {-\x + 10 - 12/\x})
+        -- (A) -- (B) -- cycle;
+
+    % Vùng 3: Mặt biển / Chân đảo (Phần bên dưới đoạn AB - Màu xanh lá tươi)
+    \fill[green!50!black!60] 
+        (8, 0.5) -- (1.5, 0.5) -- (1.25, -0.85)-- (9.6, -0.85) ;
+
+    % 3. Vẽ đường biên hòn đảo y = f(x)
+    \draw[thick, black, domain=1.25:9.6, samples=100] 
+        plot (\x, {-\x + 10 - 12/\x});
+
+    % 4. Vẽ hai tấm lưới bảo vệ IA và IB (Màu đỏ)
+    \draw[thick, red!80!black] (I) -- (B);
+    \draw[thick, red!80!black] (I) -- (A);
+
+    % 5. Vẽ đoạn thẳng AB song song Ox (Màu đỏ)
+    \draw[thick, red!80!black] (B) -- (A);
+
+    % 6. Điểm nút và nhãn tên các điểm
+    \fill[black] (I) circle (2pt) node[left] {\small $I$};
+    \fill[black] (B) circle (2pt) node[left] {\small $B$};
+    \fill[black] (A) circle (2pt) node[right] {\small $A$};
+
+    % Nhãn chữ trên hình
+    \node[black, font=\bfseries\itshape] at (4.0, 1.5) {\small Hòn Đảo};
+    \node[black, right] at (8.65, 1.11) {\small $y = f(x)$};
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Đỉnh cao nhất của hòn đảo (điểm cực đại của đồ thị hàm số) cách \( I \) một khoảng \( 514(m) \) (làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tâm đối xứng của đồ thị hàm số  
+    \(f(x) = \dfrac{-x^2 + 10x - 12}{x}\) là điểm \( M(0;10) \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Quãng đường ngắn nhất từ hòn đảo đến điểm \( I \) là \( 510(m) \) (làm tròn đến hàng đơn vị).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nếu điều chỉnh dây phao sao cho khoảng cách từ trạm \( I \) đến dây phao \( AB \) bằng đúng chiều dài dây phao \( AB \) thì diện tích vùng an toàn \( \triangle LAB \) là \( 605000(m^2) \).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
