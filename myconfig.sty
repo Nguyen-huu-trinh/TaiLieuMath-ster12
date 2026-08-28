@@ -8,7 +8,9 @@
 \usepackage{float}
 % Toán học
 \usepackage{amsmath, amssymb}
-
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{5pt}    % Khoảng trống tối thiểu phía trên
+\setlength\cellspacebottomlimit{5pt} % Khoảng trống tối thiểu phía dưới
 % Căn lề & Bố cục trang
 \usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=60pt]{geometry}
 \usepackage{fancyhdr}
@@ -229,16 +231,19 @@
     \nopagebreak
     \begin{center}
     \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}m{12cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+    
+    % Tiền tố S giúp cellspace tự động co giãn chiều cao theo công thức toán/phân số
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}S{m{12cm}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
         \hline
         \rowcolor{amberorange!20}
-        \vphantom{\parbox[c]{0.8cm}{\huge A}} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
         #4
         \hline
     \end{tabular}
+    
     \renewcommand{\arraystretch}{1}
     \end{center}
     
