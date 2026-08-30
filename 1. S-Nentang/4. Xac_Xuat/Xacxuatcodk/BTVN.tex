@@ -1,0 +1,381 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Xác xuất}{Xác xuất có điều kiện}{Xác xuất}
+
+% --- CÂU 1 ---
+\questionLinesManual{0}{1}{Cho hai biến cố \( A \) và \( B \), với \( P(A) = 0,6 \), \( P(B) = 0,7 \), \( P(A \cap B) = 0,3 \). Tính \( P(\overline{B} | A) \).}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{3}{7}\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{6}{7}\)
+        \task \(\dfrac{1}{7}\)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{0}{2}{Cho hai biến cố \( A \) và \( B \), với \( P(A) = 0,6 \), \( P(B) = 0,7 \), \( P(A \cap B) = 0,3 \). Tính \( P(\overline{A} \cap B) \).}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{4}{7}\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{2}{5}\)
+        \task \(\dfrac{1}{7}\)
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{3}{Cho hai biến cố \( A \) và \( B \), với \( P(A) = 0,8 \), \( P(B) = 0,65 \), \( P(A \cap \overline{B}) = 0,55 \). Tính \( P(\overline{A} \cap B) \).}{%
+    \begin{tasks}(4)
+        \task 0,25
+        \task 0,4
+        \task 0,3
+        \task 0,35
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{0}{4}{Gieo lần lượt hai con xúc xắc cân đối và đồng chất. Tính xác suất để tổng số chấm xuất hiện trên hai con xúc xắc bằng 6. Biết rằng con xúc xắc thứ nhất xuất hiện mặt 4 chấm.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{2}{6}\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{1}{6}\)
+        \task \(\dfrac{5}{6}\)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{0}{5}{Trong hộp có 3 viên bi màu trắng và 7 viên bi màu đỏ. Lấy lần lượt mỗi lần một viên theo cách lấy không trả lại. Xác suất để viên bi lấy lần thứ hai là màu đỏ nếu biết rằng viên bi lấy lần thứ nhất cũng là màu đỏ là}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{2}{3}\)
+        \task \(\dfrac{2}{7}\)
+        \task \(\dfrac{1}{5}\)
+        \task \(\dfrac{1}{7}\)
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{0}{6}{Cho hai biến cố \( A \) và \( B \) là hai biến cố độc lập, với \( P(A) = 0,2024 \), \( P(B) = 0,2025 \). Tính \( P(B | \overline{A}) \).}{%
+    \begin{tasks}(4)
+        \task 0,7976
+        \task 0,7975
+        \task 0,2025
+        \task 0,2024
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Cho \( A, B \) là các biến cố của một phép thử \( T \). Biết rằng \( 0 < P(B) < 1 \), xác suất của biến cố \( A \) được tính theo công thức nào sau đây?}{%
+    \begin{tasks}(2)
+        \task \( P(A) = P(B) \cdot P(A|B) + P(\overline{B}) \cdot P(A|\overline{B}) \)
+        \task \( P(A) = P(B) \cdot P(B|A) + P(\overline{B}) \cdot P(B|\overline{A}) \)
+        \task \( P(A) = P(A) \cdot P(A|B) + P(\overline{A}) \cdot P(A|\overline{B}) \)
+        \task \( P(A) = P(A) \cdot P(B|A) + P(\overline{A}) \cdot P(B|\overline{A}) \)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{0}{8}{Cho \( A, B \) là các biến cố của một phép thử \( T \). Biết rằng \( P(A) > 0 \) và \( 0 < P(B) < 1 \). Xác suất của biến cố \( B \) với điều kiện biến cố \( A \) đã xảy ra được tính theo công thức nào sau đây?}{%
+    \begin{tasks}(2)
+        \task \( P(B|A) = \dfrac{P(A)P(B)}{P(B)P(A|B)} \)
+        \task \( P(B|A) = \dfrac{P(B)P(A|B)}{P(A)P(B|A) + P(\overline{A})P(B|\overline{A})} \)
+        \task \( P(B|A) = \dfrac{P(B)P(A|B)}{P(B)P(A|B) + P(\overline{B})P(A|\overline{B})} \)
+        \task \( P(B|A) = \dfrac{P(A)P(B|A)}{P(A)P(B|A) + P(\overline{A})P(B|\overline{A})} \)
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{9}{Nếu hai biến cố \( A, B \) thỏa mãn \( P(A) = 0,3, P(B) = 0,6 \) và \( P(A|B) = 0,4 \) thì \( P(B|A) \) bằng}{%
+    \begin{tasks}(4)
+        \task 0,5
+        \task 0,6
+        \task 0,8
+        \task 0,2
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{0}{10}{Cho hai biến cố \( A, B \) thỏa mãn \( P(A) = 0,4; P(B) = 0,3; P(A|B) = 0,25 \). Khi đó, \( P(B|A) \) bằng}{%
+    \begin{tasks}(4)
+        \task 0,1875
+        \task 0,48
+        \task 0,333
+        \task 0,95
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{0}{11}{Cho hai biến cố \( A, B \) với \( P(B) = 0,6; P(A|B) = 0,7 \) và \( P(A|\overline{B}) = 0,4 \). Khi đó, \( P(A) \) bằng}{%
+    \begin{tasks}(4)
+        \task 0,7
+        \task 0,4
+        \task 0,58
+        \task 0,52
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{0}{12}{Một cuộc thi khoa học có 36 bộ câu hỏi, trong đó có 20 bộ câu hỏi về chủ đề tự nhiên và 16 bộ câu hỏi về chủ đề xã hội. Bạn An lấy ngẫu nhiên 1 bộ câu hỏi (lấy không hoàn lại), sau đó bạn Bình lấy ngẫu nhiên 1 bộ câu hỏi. Xác suất bạn Bình lấy được bộ câu hỏi về chủ đề xã hội bằng}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{15}{35}\)
+        \task \(\dfrac{16}{35}\)
+        \task \(\dfrac{4}{9}\)
+        \task \(\dfrac{5}{9}\)
+    \end{tasks}
+}
+
+
+% --- CÂU 13 ---
+\questionLinesManual{0}{13}{Trong hộp có 3 viên bi màu trắng và 7 viên bi màu đỏ. Lấy lần lượt mỗi lần một viên theo cách lấy không trả lại. Xác suất để viên bi lấy lần thứ hai là màu đỏ nếu biết rằng viên bi lấy lần thứ nhất là màu trắng là:}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{2}{3}\)
+        \task \(\dfrac{1}{3}\)
+        \task \(\dfrac{7}{9}\)
+        \task \(\dfrac{5}{9}\)
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionLinesManual{0}{14}{Cho hai biến cố \( A \) và \( B \), với \( P(A) = 0,8 \), \( P(B) = 0,65 \), \( P(A \cap \overline{B}) = 0,55 \). Tính \( P(A \cap B) \).}{%
+    \begin{tasks}(4)
+        \task 0,25
+        \task 0,1
+        \task 0,15
+        \task 0,35
+    \end{tasks}
+}
+
+% --- CÂU 15 ---
+\questionLinesManual{0}{15}{Cho một hộp kín có 6 thẻ ATM của BIDV và 4 thẻ ATM của Vietcombank. Lấy ngẫu nhiên lần lượt 2 thẻ (lấy không hoàn lại). Tìm xác suất để lần thứ hai lấy được thẻ ATM của Vietcombank nếu biết lần thứ nhất đã lấy được thẻ ATM của BIDV.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{5}{9}\)
+        \task \(\dfrac{2}{3}\)
+        \task \(\dfrac{7}{9}\)
+        \task \(\dfrac{4}{9}\)
+    \end{tasks}
+}
+
+% --- CÂU 16 ---
+\questionLinesManual{0}{16}{Một bình đựng 9 viên bi xanh và 7 viên bi đỏ. Lần lượt lấy ngẫu nhiên ra 2 bi, mỗi lần lấy 1 bi không hoàn lại. Tính xác suất để bi thứ 2 màu xanh nếu biết bi thứ nhất màu đỏ?}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{3}{5}\)
+        \task \(\dfrac{9}{16}\)
+        \task \(\dfrac{9}{17}\)
+        \task \(\dfrac{21}{80}\)
+    \end{tasks}
+}
+
+% --- CÂU 17 ---
+\questionLinesManual{0}{17}{Trong hộp có 20 nắp khoen bia Tiger, trong đó có 2 nắp ghi "Chúc mừng bạn đã trúng thưởng xe Camry". Bạn Minh Hiền được chọn lên rút thăm lần lượt hai nắp khoen, xác suất để cả hai nắp đều trúng thưởng là:}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{1}{20}\)
+        \task \(\dfrac{1}{19}\)
+        \task \(\dfrac{1}{190}\)
+        \task \(\dfrac{1}{10}\)
+    \end{tasks}
+}
+
+% --- CÂU 18 ---
+\questionLinesManual{0}{18}{Áo sơ mi An Phước trước khi xuất khẩu sang Mỹ phải qua 2 lần kiểm tra, nếu cả hai lần đều đạt thì chiếc áo đó mới đủ tiêu chuẩn xuất khẩu. Biết rằng bình quân 98\% sản phẩm làm ra qua được lần kiểm tra thứ nhất, và 95\% sản phẩm qua được lần kiểm tra đầu sẽ tiếp tục qua được lần kiểm tra thứ hai. Tìm xác suất để 1 chiếc áo sơ mi đủ tiêu chuẩn xuất khẩu?}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{95}{98}\)
+        \task \(\dfrac{931}{1000}\)
+        \task \(\dfrac{95}{100}\)
+        \task \(\dfrac{98}{100}\)
+    \end{tasks}
+}
+
+% --- CÂU 19 ---
+\questionLinesManual{0}{19}{Lớp Toán Sư Phạm có 95 sinh viên, trong đó có 40 nam và 55 nữ. Trong kỳ thi môn Xác suất thống kê có 23 sinh viên đạt điểm giỏi (trong đó có 12 nam và 11 nữ). Gọi tên ngẫu nhiên một sinh viên trong danh sách lớp. Tìm xác suất gọi được sinh viên đạt điểm giỏi môn Xác suất thống kê, biết rằng sinh viên đó là nữ?}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{1}{5}\)
+        \task \(\dfrac{11}{23}\)
+        \task \(\dfrac{12}{23}\)
+        \task \(\dfrac{11}{19}\)
+    \end{tasks}
+}
+
+% --- CÂU 20 ---
+\questionLinesManual{0}{20}{Trong một đợt kiểm tra sức khoẻ, có một loại bệnh X mà tỉ lệ người mắc bệnh là 0,2\% và một loại xét nghiệm Y mà ai mắc bệnh X khi xét nghiệm Y cũng có phản ứng dương tính. Tuy nhiên, có 6\% những người không bị bệnh X lại có phản ứng dương tính với xét nghiệm Y. Chọn ngẫu nhiên 1 người trong đợt kiểm tra sức khoẻ đó. Giả sử người đó có phản ứng dương tính với xét nghiệm Y. Xác suất người đó bị mắc bệnh X là bao nhiêu (làm tròn kết quả đến hàng phần trăm)?}{%
+    \begin{tasks}(4)
+        \task 0,3
+        \task 0,03
+        \task 0,04
+        \task 0,4
+    \end{tasks}
+}
+
+% --- CÂU 21 ---
+\questionLinesManual{0}{21}{Một hộp bút bi Thiên Long có 15 chiếc bút trong đó có 9 chiếc bút mới. Người ta lấy ngẫu nhiên 1 chiếc bút để sử dụng sau đó trả lại vào hộp. Lần thứ hai lấy ngẫu nhiên 2 chiếc bút, tính xác suất cả hai chiếc bút lấy ra đều là chiếc mới.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{52}{175}\)
+        \task \(\dfrac{52}{177}\)
+        \task \(\dfrac{53}{175}\)
+        \task \(\dfrac{25}{175}\)
+    \end{tasks}
+}
+
+% --- CÂU 22 ---
+\questionLinesManual{0}{22}{Một công ty du lịch bố trí chỗ cho đoàn khách tại ba khách sạn \( A, B, C \) theo tỉ lệ 20\%; 50\%; 30\%. Tỉ lệ hỏng điều hòa ở ba khách sạn lần lượt là 5\%; 4\%; 8\%. Tính xác suất để một khách nghỉ ở phòng điều hòa bị hỏng.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{2}{500}\)
+        \task \(\dfrac{27}{500}\)
+        \task \(\dfrac{7}{500}\)
+        \task \(\dfrac{23}{500}\)
+    \end{tasks}
+}
+
+% --- CÂU 23 ---
+\questionLinesManual{0}{23}{Có 10 sinh viên thi Xác suất – Thống kê; trong đó có 2 sinh viên giỏi (trả lời 100\% các câu hỏi), 3 sinh viên khá (trả lời 80\% các câu hỏi), 5 sinh viên trung bình (trả lời 50\% các câu hỏi). Gọi ngẫu nhiên một sinh viên vào thi và phát đề có 4 câu hỏi (được lấy ngẫu nhiên từ 20 câu). Thấy sinh viên này trả lời được cả 4 câu, tính xác suất để sinh viên đó là sinh viên khá? Xác suất gần bằng số nào sau đây}{%
+    \begin{tasks}(4)
+        \task 0,336
+        \task 0,3344
+        \task 0,337
+        \task 0,335
+    \end{tasks}
+}
+
+% --- CÂU 24 ---
+\questionLinesManual{0}{24}{Trong một trường học, tỉ lệ học sinh nữ là 52\%. Tỉ lệ học sinh nữ tham gia câu lạc bộ nghệ thuật là 18\% và tỉ lệ học sinh nam tham gia câu lạc bộ nghệ thuật là 15\%. Gặp ngẫu nhiên một học sinh của trường. Biết rằng học sinh có tham gia câu lạc bộ nghệ thuật. Tính xác suất học sinh đó là nam.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{207}{1230}\)
+        \task \(\dfrac{207}{1250}\)
+        \task \(\dfrac{10}{27}\)
+        \task \(\dfrac{10}{23}\)
+    \end{tasks}
+}
+
+% --- CÂU 25 ---
+\questionTrueFalse{0}{25}{Một hộp chứa bốn tấm thẻ cùng loại được ghi số lần lượt từ 1 đến 4. Bạn Lan lấy ra một cách ngẫu nhiên một thẻ từ hộp, xem số trên thẻ rồi bỏ thẻ đó ra ngoài và lại lấy ra một cách ngẫu nhiên thêm một thẻ nữa.}{
+    \textbf{a)} & Không gian mẫu của phép thử có 10 phần tử.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Số kết quả thuận lợi của biến cố "thẻ lấy ra lần thứ hai ghi số lẻ, biết rằng thẻ lấy ra lần thứ nhất ghi số lẻ" bằng 2.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Số kết quả thuận lợi của biến cố "thẻ lấy ra lần thứ hai ghi số lẻ, biết rằng thẻ lấy ra lần thứ nhất ghi số chẵn" bằng 4.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Số kết quả thuận lợi của biến cố "thẻ lấy ra lần thứ hai lớn hơn số 1, biết rằng thẻ lấy ra lần thứ nhất ghi số chẵn" bằng 5.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 26 ---
+\questionTrueFalse{0}{26}{Lớp 10A có 35 học sinh, mỗi học sinh đều giỏi ít nhất một trong hai môn Toán hoặc Văn. Biết rằng có 23 học sinh giỏi môn Toán và 20 học sinh giỏi môn Văn. Chọn ngẫu nhiên một học sinh của lớp 10A.}{
+    \textbf{a)} & Xác suất để học sinh được chọn giỏi môn Toán biết rằng học sinh đó cũng giỏi môn Văn bằng \(\dfrac{2}{5}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Xác suất để học sinh được chọn "giỏi môn Văn biết rằng học sinh đó cũng giỏi môn Toán" bằng \(\dfrac{8}{23}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Xác suất để học sinh được chọn "không giỏi môn Toán biết rằng học sinh đó giỏi môn Văn" bằng \(\dfrac{15}{23}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Xác suất để học sinh được chọn "không giỏi môn Văn biết rằng học sinh đó giỏi môn Toán" bằng \(\dfrac{8}{35}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 27 ---
+\questionTrueFalse{0}{27}{Có hai hộp đựng các viên bi cùng kích thước và khối lượng. Hộp thứ nhất chứa 5 viên bi đỏ và 5 viên bi xanh, hộp thứ hai chứa 6 viên bi đỏ và 4 viên bi xanh. Lấy ngẫu nhiên một viên bi từ hộp thứ nhất chuyển sang hộp thứ hai, sau đó lấy ra ngẫu nhiên một viên bi từ hộp thứ hai. Gọi \( A \) là biến cố "Viên bi được lấy ra từ hộp thứ hai là bi đỏ", \( B \) là biến cố "Viên bi được lấy ra từ hộp thứ nhất chuyển sang hộp thứ hai là bi đỏ".}{
+    \textbf{a)} & Xác suất của biến cố \( B \) là \( P(B) = 0,5 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giả sử viên bi lấy ra từ hộp thứ nhất chuyển sang hộp thứ hai là bi đỏ thì khi đó \( P(A \cap B) = \dfrac{7}{11} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Gọi \( \overline{B} \) là biến cố viên bi được lấy ra từ hộp thứ nhất chuyển sang hộp thứ hai là bi xanh thì \( P(A \cap \overline{B}) = \dfrac{7}{11} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Xác suất để viên bi được lấy ra từ hộp thứ hai là viên bi đỏ là \( P(A) = \dfrac{13}{22} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 28 ---
+\questionTrueFalse{0}{28}{Một chiếc hộp có 80 viên bi, trong đó có 50 viên bi màu đỏ và 30 viên bi màu vàng; các viên bi có kích thước và khối lượng như nhau. Sau khi kiểm tra, người ta thấy có 60\% số viên bi màu đỏ có đánh số và 50\% số viên bi màu vàng có đánh số, những viên bi còn lại không đánh số.}{
+    \textbf{a)} & Số viên bi màu đỏ có đánh số là 30.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Số viên bi màu vàng không đánh số là 15.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Lấy ra ngẫu nhiên một viên bi trong hộp. Xác suất để viên bi được lấy ra có đánh số là \( \dfrac{3}{5} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Lấy ra ngẫu nhiên một viên bi trong hộp. Xác suất để viên bi được lấy ra không có đánh số là \( \dfrac{7}{16} \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 29 ---
+\questionTrueFalse{0}{29}{Một thùng có các hộp loại I và loại II, trong đó có 2 hộp loại I, mỗi hộp có 13 sản phẩm tốt và 2 phế phẩm và có 3 hộp loại II, mỗi hộp có 6 sản phẩm tốt và 4 phế phẩm.}{
+    \textbf{a)} & Số cách chọn được 2 sản phẩm tốt trong hộp loại I là 78 cách.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Xác suất chọn được 2 phế phẩm trong hộp loại II là \(\dfrac{12}{15}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Chọn ngẫu nhiên trong thùng một hộp và từ hộp đó lấy ra hai sản phẩm để kiểm tra, xác suất để hai sản phẩm này đều tốt là \(\dfrac{87}{175}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Chọn ngẫu nhiên trong thùng một hộp và từ hộp đó lấy ra hai sản phẩm để kiểm tra, giả sử hai sản phẩm đó đều tốt thì xác suất để hai sản phẩm đó thuộc hộp loại I là \(\dfrac{52}{87}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 30 ---
+\questionTrueFalse{0}{30}{Giả sử 5\% email của bạn nhận được là email rác. Bạn sử dụng một hệ thống lọc email rác mà khả năng lọc đúng email rác của hệ thống này là 95\% và có 10\% những email không phải là email rác nhưng vẫn bị lọc.}{
+    \textbf{a)} & Xác suất email nhận được là một email rác là 0,05.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Xác suất bị lọc của email rác là 0,93.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Xác suất chọn một email trong số những email bị lọc bất kể có là rác hay không là 0,1425.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Xác suất chọn một email trong số những email bị lọc thực sự là email rác là \(\dfrac{7}{19}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 31 ---
+\questionShortAnswer{0}{31}{Gieo lần lượt hai con xúc xắc cân đối và đồng chất. Cho hai biến cố \( A \): "Tổng số chấm xuất hiện trên hai con xúc xắc lớn hơn 6" và \( B \): "Con xúc xắc thứ nhất xuất hiện mặt 4 chấm". Tính số kết quả thuận lợi cho biến cố \( A \) khi biến cố \( B \) xảy ra.}
+
+% --- CÂU 32 ---
+\questionShortAnswer{0}{32}{Hộp thứ nhất chứa 3 viên bi đen và 2 viên bi trắng. Hộp thứ hai chứa 4 viên bi đen và 5 viên bi trắng. Các viên bi có cùng kích thước và khối lượng. Bạn An lấy ra ngẫu nhiên 1 viên bi từ hộp thứ nhất bỏ vào hộp thứ hai, sau đó lại lấy ra ngẫu nhiên 1 viên bi từ hộp thứ hai.
+
+Gọi \( A \): "Viên bi lấy ra lần thứ nhất là bi đen";  
+Và \( B \): "Viên bi lấy ra lần thứ hai là bi trắng".  
+Biết rằng biến cố \( A \) xảy ra, tính xác suất của biến cố \( B \).}
+
+% --- CÂU 33 ---
+\questionShortAnswer{0}{33}{Một bình đựng 50 viên bi kích thước, chất liệu như nhau, trong đó có 30 viên bi xanh và 20 viên bi trắng. Lấy ngẫu nhiên ra một viên bi, rồi lại lấy ngẫu nhiên ra một viên bi nữa. Tính xác suất để lấy được một viên bi xanh ở lần thứ nhất và một viên bi trắng ở lần thứ hai. Làm tròn kết quả đến chữ số thập phân thứ 2.}
+
+% --- CÂU 34 ---
+\questionShortAnswer{0}{34}{Một người đi săn thú trong rừng, khả năng anh ta bắn trúng thú trong mỗi lần bắn tỷ lệ nghịch với khoảng cách bắn. Anh ta bắn lần đầu ở khoảng cách \( 20m \) với xác suất trúng thú là \( 0,5 \); nếu bị trượt anh ta bắn viên thứ hai ở khoảng cách \( 30m \); nếu lại trượt anh ta bắn viên thứ ba ở khoảng cách \( 40m \). Tính xác suất để người thợ săn bắn được thú.}
+
+% --- CÂU 35 ---
+\questionShortAnswer{0}{35}{Giả sử tỉ lệ người dân của một tỉnh nghiện thuốc lá là 20\%; tỉ lệ người bị bệnh phổi trong số người nghiện thuốc lá là 70\%, trong số người không nghiện thuốc lá là 15\%. Hỏi khi ta gặp ngẫu nhiên một người dân của tỉnh đó thì khả năng mà đó bị bệnh phổi là bao nhiêu? (kết quả làm tròn đến hàng phần trăm)}
+
+% --- CÂU 36 ---
+\questionShortAnswer{0}{36}{Một chiếc hộp có 80 viên bi, trong đó có 50 viên bi màu đỏ và 30 viên bi màu vàng; các viên bi có kích thước và khối lượng như nhau. Sau khi kiểm tra, người ta thấy có 60\% số viên bi màu đỏ có đánh số và 50\% số viên bi màu vàng có đánh số, những viên bi còn lại không đánh số.  
+Lấy ra ngẫu nhiên một viên bi trong hộp. Xác suất để viên bi được lấy ra có đánh số là bao nhiêu? (kết quả làm tròn đến hàng phần trăm)}
+
+% --- CÂU 37 ---
+\questionShortAnswer{0}{37}{Trong một kì thi tốt nghiệp trung học phổ thông, một tỉnh X có 80\% học sinh lựa chọn tổ hợp A00 (gồm các môn Toán, Vật lí, Hoá học). Biết rằng, nếu một học sinh chọn tổ hợp A00 thì xác suất để học sinh đó đỗ đại học là 0,6; còn nếu một học sinh không chọn tổ hợp A00 thì xác suất để học sinh đó đỗ đại học là 0,7. Chọn ngẫu nhiên một học sinh của tỉnh X đã tốt nghiệp trung học phổ thông trong kì thi trên. Biết rằng học sinh này đã đỗ đại học. Tính xác suất để học sinh đó chọn tổ hợp A00. Kết quả làm tròn đến chữ số thập phân thứ 2.}
+
+% --- CÂU 38 ---
+\questionShortAnswer{0}{38}{Có hai chuồng thỏ. Chuồng I có 5 con thỏ đen và 10 con thỏ trắng. Chuồng II có 7 con thỏ đen và 3 con thỏ trắng. Trước tiên, từ chuồng II lấy ra ngẫu nhiên 1 con thỏ rồi cho vào chuồng I. Sau đó, từ chuồng I lấy ra ngẫu nhiên 1 con thỏ. Tính xác suất để con thỏ được lấy ra là con thỏ trắng. Kết quả làm tròn đến chữ số thập phân thứ 2.}
+
+% --- CÂU 39 ---
+\questionShortAnswer{0}{39}{Trong quân sự, một máy bay chiến đấu của đối phương có thể xuất hiện ở vị trí X với xác suất 0,55. Nếu máy bay đó không xuất hiện ở vị trí X thì nó xuất hiện ở vị trí Y. Để phòng thủ, các bộ phóng tên lửa được bố trí tại các vị trí X và Y. Khi máy bay đối phương xuất hiện ở vị trí X hoặc Y thì tên lửa sẽ được phóng để hạ máy bay đó. Xét phương án tác chiến sau: Nếu máy bay xuất hiện tại X thì bắn 2 quả tên lửa và nếu máy bay xuất hiện tại Y thì bắn 1 quả tên lửa.
+
+Biết rằng, xác suất bắn trúng máy bay của mỗi quả tên lửa là 0,8 và các bộ phóng tên lửa hoạt động độc lập. Máy bay bị bắn hạ nếu nó trúng ít nhất 1 quả tên lửa. Tính xác suất bắn hạ máy bay đối phương trong phương án tác chiến nêu trên?}
+
+% --- CÂU 40 ---
+\questionShortAnswer{0}{40}{Trong một túi có một số viên kẹo cùng loại, chỉ khác màu, trong đó có 6 viên kẹo màu cam, còn lại là kẹo màu vàng. Hà lấy ngẫu nhiên 1 viên kẹo từ trong túi, không trả lại.  
+Sau đó Hà lại lấy ngẫu nhiên thêm 1 viên kẹo khác từ trong túi. Biết rằng xác suất Hà lấy được cả hai viên kẹo màu cam là \(\dfrac{1}{3}\). Hỏi ban đầu trong túi có bao nhiêu viên kẹo?}
+
+\end{document}

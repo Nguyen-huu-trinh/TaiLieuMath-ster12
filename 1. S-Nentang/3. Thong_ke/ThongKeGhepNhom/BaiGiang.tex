@@ -1,0 +1,836 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Thống kê}{Các số đặc trưng đó phân tán - ghép nhóm}{Thống kê - ghép nhóm}
+
+\drawdashlines{27}
+\newpage
+\drawdashlines{33}
+\newpage
+
+% --- CÂU 1 ---
+\questionLinesManual{5}{1}{Khảo sát thời gian tự học trung bình vào buổi tối của học sinh lớp 12A, thu được mẫu số liệu ghép nhóm sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Thời gian (phút) & \([0;30)\) & \([30;60)\) & \([60;90)\) & \([90;120)\) & \([120;150)\) & \([150;180)\) \\
+\hline
+Số học sinh & 6 & 8 & 13 & 9 & 7 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+Tìm khoảng biến thiên của mẫu số liệu ghép nhóm về thời gian tự học trung bình vào buổi tối của học sinh lớp 12A.}{%
+    \begin{tasks}(4)
+        \task 150
+        \task 180
+        \task 210
+        \task 240
+    \end{tasks}
+}
+
+\textbf{Dùng dữ kiện sau để trả lời các câu 02, 03, 04 phía dưới}
+
+Kết quả khảo sát khối lượng của 30 quả bơ được cho trong bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\begin{tabular}{c} Khối lượng \\ (g) \end{tabular} & $[150;155)$ & $[155;160)$ & $[160;165)$ & $[165;170)$ & $[170;175)$ & $[175;180)$ \\
+\hline
+Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+% --- CÂU 2 ---
+\questionLinesManual{0}{2}{Khoảng biến thiên của mẫu số liệu trên là}{%
+    \begin{tasks}(4)
+        \task 25
+        \task 20
+        \task 30
+        \task 35
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{3}{Mốt của mẫu số liệu ghép nhóm trên gần bằng}{%
+    \begin{tasks}(4)
+        \task 163,33.
+        \task 162,67.
+        \task 163,67.
+        \task 162,33.
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{15}{4}{Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng}{%
+    \begin{tasks}(4)
+        \task 9,34
+        \task 9,42
+        \task 9,35
+        \task 9,43
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{12}{5}{Mẫu số liệu ghép nhóm thống kê về mức lương của các nhân viên ở công ty X (đơn vị: triệu đồng) được cho trong biểu đồ cột dưới đây:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    % Đường lưới ngang và trục Oy
+    \foreach \y in {0,2,...,20} {
+        \draw[gray!30, thin] (0,\y*0.3) -- (11,\y*0.3);
+        \node[left, font=\small] at (0,\y*0.3) {\y};
+    }
+    
+    % Các cột dữ liệu
+    \fill[cyan!60!blue] (0.8,0) rectangle (1.8, 8*0.3);
+    \fill[cyan!60!blue] (2.8,0) rectangle (3.8, 12*0.3);
+    \fill[cyan!60!blue] (4.8,0) rectangle (5.8, 18*0.3);
+    \fill[cyan!60!blue] (6.8,0) rectangle (7.8, 10*0.3);
+    \fill[cyan!60!blue] (8.8,0) rectangle (9.8, 6*0.3);
+
+    % Trục Ox và Oy
+    \draw[gray!60] (0,0) -- (11,0);
+    \draw[gray!60] (0,0) -- (0,6);
+
+    % Nhãn x
+    \node[below, font=\small] at (1.3,0) {$[6;8)$};
+    \node[below, font=\small] at (3.3,0) {$[8;10)$};
+    \node[below, font=\small] at (5.3,0) {$[10;12)$};
+    \node[below, font=\small] at (7.3,0) {$[12;14)$};
+    \node[below, font=\small] at (9.3,0) {$[14;16)$};
+
+    % Nhãn tên các trục và tiêu đề
+    \node[above, font=\bfseries] at (5.3, 6.4) {Mức lương của các nhân viên ở công ty X};
+    \node[rotate=90, font=\small] at (-1, 3) {Số nhân viên};
+    \node[font=\small] at (5.3, -1) {Triệu đồng};
+\end{tikzpicture}
+\end{center}
+
+Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm về mức lương của các nhân viên ở công ty X bằng:}{%
+    \begin{tasks}(4)
+        \task \( \dfrac{170}{21} \)
+        \task \( \dfrac{107}{21} \)
+        \task \( \dfrac{107}{12} \)
+        \task \( \dfrac{170}{12} \)
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionShortAnswer{8}{6}{Một trại hè về Toán học tổ chức cuộc thi "Khám phá vũ trụ Toán học" cho các học sinh tham gia. Kết quả về điểm của các học sinh được cho trong bảng số liệu ghép nhóm sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Nhóm điểm & \([0;5)\) & \([5;10)\) & \([10;15)\) & \([15;20)\) & \([20;25)\) & \([25;30)\) \\
+\hline
+Số học sinh & 7 & 15 & 30 & 22 & 17 & 9 \\
+\hline
+\end{tabular}
+\end{center}
+
+Ban tổ chức muốn lựa chọn ra một danh sách gồm 25\% số học sinh có điểm cao nhất để trao tặng giấy khen và cúp kỉ niệm. Ngưỡng điểm mà ban tổ chức nên lựa chọn để đưa danh sách là bao nhiêu? (Kết quả làm tròn đến hàng phần chục).
+}
+
+% --- CÂU 15 ---
+\questionShortAnswer{15}{7}{Vào mùa thu hoạch cam, bác nông dân đã thu gom và tiến hành thống kê khối lượng của các quả cam.  
+Dưới đây là biểu đồ số liệu về khối lượng các quả cam thu được:
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    \node[font=\bfseries] at (0, 3.2) {Cân nặng (g)};
+
+    % Nhóm [250;290) - Tần số 2 -> 2/50 * 360 = 14.4 deg
+    \fill[cyan!80!black] (0,0) -- (90:2.2) arc (90:75.6:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (82.8:1.5) {2};
+
+    % Nhóm [290;330) - Tần số 14 -> 14/50 * 360 = 100.8 deg
+    \fill[gray!60] (0,0) -- (75.6:2.2) arc (75.6:-25.2:2.2) -- cycle;
+    \node[black!80, font=\bfseries\small] at (25.2:1.4) {14};
+
+    % Nhóm [330;370) - Tần số 18 -> 18/50 * 360 = 129.6 deg
+    \fill[teal!80!black] (0,0) -- (-25.2:2.2) arc (-25.2:-154.8:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (-90:1.4) {18};
+
+    % Nhóm [370;410) - Tần số 11 -> 11/50 * 360 = 79.2 deg
+    \fill[cyan!30] (0,0) -- (-154.8:2.2) arc (-154.8:-234:2.2) -- cycle;
+    \node[black!80, font=\bfseries\small] at (-194.4:1.4) {11};
+
+    % Nhóm [410;450) - Tần số 5 -> 5/50 * 360 = 36 deg
+    \fill[black!70] (0,0) -- (-234:2.2) arc (-234:-270:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (-252:1.4) {5};
+
+    % Chú thích
+    \begin{scope}[yshift=-3.2cm, xshift=-4.2cm, font=\small]
+        \fill[cyan!80!black] (-1.6,0) rectangle (-1.3,0.2);
+        \node[right] at (-1.3,0.1) {$[250;290)$};
+
+        \fill[gray!60] (1,0) rectangle (1.3,0.2);
+        \node[right] at (1.3,0.1) {$[290;330)$};
+
+        \fill[teal!80!black] (3.6,0) rectangle (3.9,0.2);
+        \node[right] at (3.9,0.1) {$[330;370)$};
+
+        \fill[cyan!30] (6.2,0) rectangle (6.5,0.2);
+        \node[right] at (6.5,0.1) {$[370;410)$};
+
+        \fill[black!70] (8.8,0) rectangle (9.1,0.2);
+        \node[right] at (9.1,0.1) {$[410;450)$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Trong các quả cam có khối lượng: 225g, 280g, 325g, 430g, 485g, 520g và 575g, có bao nhiêu quả cam có khối lượng thuộc vùng giá trị ngoại lệ?
+}
+
+% --- CÂU 1 ---
+\questionLinesManual{8}{8}{Độ tuổi của các khách hàng nữ mua hàng thời trang trong một ngày của một cửa hàng được thống kê trong bảng tần số ghép nhóm như sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Khoảng tuổi & \([20;25)\) & \([25;30)\) & \([30;35)\) & \([35;40)\) & \([40;45)\) & \([45;50)\) \\
+\hline
+Số khách hàng nữ & 18 & 24 & 15 & 10 & 6 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+Phương sai của mẫu số liệu ghép nhóm về độ tuổi của khách hàng nữ mua hàng thời trang trong một ngày của cửa hàng bằng bao nhiêu? (Kết quả làm tròn đến hàng phần chục).}{%
+    \begin{tasks}(4)
+        \task 44,8
+        \task 44,7
+        \task 44,6
+        \task 44,9
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{8}{9}{Trong một buổi tập luyện, một vận động viên điền kinh thực hiện 50 lần ném tạ và ghi lại khoảng cách ném được (tính bằng mét). Để phân tích khả năng của vận động viên, huấn luyện viên đã thống kê các cự li ném theo bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Cự li (m) & \([18,5;19)\) & \([19;19,5)\) & \([19,5;20)\) & \([20;20,5)\) & \([20,5;21)\) \\
+\hline
+Số lần & 6 & 23 & 12 & 6 & 3 \\
+\hline
+\end{tabular}
+\end{center}
+
+Tính độ lệch chuẩn của mẫu số liệu ghép nhóm về cự li ném tạ của vận động viên. (Kết quả làm tròn đến hàng phần trăm).}{%
+    \begin{tasks}(4)
+        \task 0,53
+        \task 0,51
+        \task 0,52
+        \task 0,54
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{12}{10}{Một nông trường trồng rừng tiến hành đo chiều cao (đơn vị: m) của 100 cây keo 3 năm tuổi để đánh giá sự phát triển của cây. Các số liệu thu thập được sẽ được sử dụng để phân tích và đưa ra nhận định về sự đồng đều trong sinh trưởng của rừng keo. Kết quả thu được cho ở biểu đồ sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=stealth]
+    % Tiêu đề biểu đồ
+    \node[font=\bfseries, align=center] at (0, 3.2) {Chiều cao của 100 cây keo 3 năm tuổi};
+
+    % VẼ BIỂU ĐỒ HÌNH QUẠT TRÒN (Tổng n = 100 -> 1 số liệu = 3.6 độ)
+    % Nhóm [8; 8,3): 6 cây -> 21.6 deg (bắt đầu từ góc 90 deg)
+    \fill[cyan!80!black] (0,0) -- (90:2.2) arc (90:68.4:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (79.2:1.5) {6};
+
+    % Nhóm [8,3; 8,6): 13 cây -> 46.8 deg
+    \fill[gray!60] (0,0) -- (68.4:2.2) arc (68.4:21.6:2.2) -- cycle;
+    \node[black!80, font=\bfseries\small] at (45:1.4) {13};
+
+    % Nhóm [8,6; 8,9): 24 cây -> 86.4 deg
+    \fill[teal!80!black] (0,0) -- (21.6:2.2) arc (21.6:-64.8:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (-21.6:1.4) {24};
+
+    % Nhóm [8,9; 9,2): 38 cây -> 136.8 deg
+    \fill[cyan!30] (0,0) -- (-64.8:2.2) arc (-64.8:-201.6:2.2) -- cycle;
+    \node[black!80, font=\bfseries\small] at (-133.2:1.4) {38};
+
+    % Nhóm [9,2; 9,5): 19 cây -> 68.4 deg
+    \fill[black!70] (0,0) -- (-201.6:2.2) arc (-201.6:-270:2.2) -- cycle;
+    \node[white, font=\bfseries\small] at (-235.8:1.4) {19};
+
+    % PHẦN CHÚ THÍCH (LEGEND) PHÍA DƯỚI - ĐÃ ĐƯỢC TĂNG KHOẢNG CÁCH RỘNG RÃI
+    \begin{scope}[yshift=-3.2cm, xshift=-5.2cm, font=\small]
+        % Khoảng cách giữa các mục là 2.1cm để chữ và ô màu không bị dính vào nhau
+        \fill[cyan!80!black] (0,0) rectangle (0.3,0.2);
+        \node[right] at (0.3, 0.1) {$[8; 8{,}3)$};
+
+        \fill[gray!60] (2.1,0) rectangle (2.4,0.2);
+        \node[right] at (2.4, 0.1) {$[8{,}3; 8{,}6)$};
+
+        \fill[teal!80!black] (4.2,0) rectangle (4.5,0.2);
+        \node[right] at (4.5, 0.1) {$[8{,}6; 8{,}9)$};
+
+        \fill[cyan!30] (6.3,0) rectangle (6.6,0.2);
+        \node[right] at (6.6, 0.1) {$[8{,}9; 9{,}2)$};
+
+        \fill[black!70] (8.4,0) rectangle (8.7,0.2);
+        \node[right] at (8.7, 0.1) {$[9{,}2; 9{,}5)$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Phương sai của mẫu số liệu ghép nhóm về chiều cao của 100 cây keo 3 năm tuổi gần nhất với giá trị nào dưới đây?}{%
+    \begin{tasks}(4)
+        \task 0,3
+        \task 0,4
+        \task 0,2
+        \task 0,1
+    \end{tasks}
+}
+
+
+% --- CÂU 11 ---
+\questionShortAnswer{8}{11}{Bộ phận kiểm tra chất lượng sản phẩm dùng máy để đo (chính xác đến 0,001mm) độ dày của một chi tiết máy. Kết quả đo 50 sản phẩm được thống kê ở bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Độ dày (mm) & \([17;18)\) & \([18;19)\) & \([19;20)\) & \([20;21)\) & \([21;22)\) & \([22;23)\) \\
+\hline
+Số sản phẩm & 2 & 6 & 9 & 12 & 17 & 4 \\
+\hline
+\end{tabular}
+\end{center}
+
+Tính phương sai của mẫu số liệu ghép nhóm trên (kết quả làm tròn đến chữ số thập phân thứ hai).
+}
+
+% --- CÂU 12 ---
+\questionShortAnswer{8}{12}{Nhằm tìm hiểu về thói quen rèn luyện sức khỏe của học sinh khối 11, một giáo viên thể dục đã thực hiện khảo sát thời gian tập thể dục hàng ngày (đơn vị: phút) của một số học sinh trong khối. Giáo viên này chọn ngẫu nhiên 50 học sinh và ghi nhận số phút mà mỗi học sinh dành cho hoạt động thể dục trong một ngày. Kết quả thu được mẫu số liệu ghép nhóm sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Thời gian (phút) & \([0;15)\) & \([15;30)\) & \([30;45)\) & \([45;60)\) & \([60;75)\) & \([75;90)\) \\
+\hline
+Số học sinh & 13 & 18 & 10 & 5 & 3 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+Độ lệch chuẩn của mẫu số liệu ghép nhóm về thời gian tập thể dục hàng ngày của một số học sinh trên bằng bao nhiêu? (Kết quả làm tròn đến hàng phần mười).
+}
+
+
+
+% --- CÂU 14 ---
+\questionShortAnswer{15}{13}{Hai trang trại I và II thử nghiệm nuôi một giống gà mới. Sau 6 tháng, người ta thu hoạch và thống kê cân nặng (đơn vị: kg) của các con gà đó và cho kết quả dưới dạng biểu đồ sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=stealth]
+    % Định nghĩa màu sắc
+    \definecolor{colorI}{RGB}{0, 140, 160}  % Trang trại I
+    \definecolor{colorII}{RGB}{128, 128, 128} % Trang trại II
+
+    % 1. Đường lưới ngang và trục Oy
+    \foreach \y in {0, 10, 20, 30, 40, 50, 60, 70, 80, 90} {
+        \draw[gray!30, thin] (0, \y*0.06) -- (12, \y*0.06);
+        \node[left, font=\small] at (0, \y*0.06) {\y};
+    }
+
+    % Macro vẽ cột dữ liệu
+    \newcommand{\drawbar}[4]{
+        \fill[#3] (#1, 0) rectangle (#1 + 0.5, #2*0.06);
+        \node[above, font=\small] at (#1 + 0.25, #2*0.06) {#4};
+    }
+
+    % Nhóm [1; 1.5)
+    \drawbar{0.8}{12}{colorI}{12}
+    \drawbar{1.35}{18}{colorII}{18}
+
+    % Nhóm [1.5; 2)
+    \drawbar{3.1}{38}{colorI}{38}
+    \drawbar{3.65}{42}{colorII}{42}
+
+    % Nhóm [2; 2.5)
+    \drawbar{5.4}{84}{colorI}{84}
+    \drawbar{5.95}{75}{colorII}{75}
+
+    % Nhóm [2.5; 3)
+    \drawbar{7.7}{46}{colorI}{46}
+    \drawbar{8.25}{37}{colorII}{37}
+
+    % Nhóm [3; 3.5)
+    \drawbar{10.0}{20}{colorI}{20}
+    \drawbar{10.55}{28}{colorII}{28}
+
+    % 2. Trục tọa độ và Nhãn trục Ox, Oy
+    \draw[gray!60, thick] (0,0) -- (12.2,0);
+    \draw[gray!60, thick] (0,0) -- (0,5.8);
+
+    \node[below, font=\small] at (1.325, -0.1) {$[1; 1{,}5)$};
+    \node[below, font=\small] at (3.625, -0.1) {$[1{,}5; 2)$};
+    \node[below, font=\small] at (5.925, -0.1) {$[2; 2{,}5)$};
+    \node[below, font=\small] at (8.225, -0.1) {$[2{,}5; 3)$};
+    \node[below, font=\small] at (10.525, -0.1) {$[3; 3{,}5)$};
+
+    \node[rotate=90, font=\small] at (-0.9, 2.8) {Số con};
+    \node[font=\small] at (6.125, -0.8) {Cân nặng};
+
+    % 3. Tiêu đề
+    \node[align=center, font=\bfseries] at (6.125, 6.1) {Cân nặng của các con gà ở hai trang trại I và II};
+
+    % 4. Chú thích (Legend)
+    \begin{scope}[yshift=-1.4cm, xshift=3.2cm, font=\small]
+        \fill[colorI] (0,0) rectangle (0.35, 0.2);
+        \node[right] at (0.35, 0.1) {Trang trại I};
+
+        \fill[colorII] (3.2,0) rectangle (3.55, 0.2);
+        \node[right] at (3.55, 0.1) {Trang trại II};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+
+Gọi \( x \) là độ lệch chuẩn của mẫu số liệu ghép nhóm về cân nặng của các con gà ở trang trại I và \( y \) là độ lệch chuẩn của mẫu số liệu ghép nhóm về cân nặng của các con gà ở trang trại II. Giá trị của \(|x - y|\) bằng bao nhiêu? (Kết quả làm tròn đến hàng phần trăm).
+}
+
+% --- CÂU 15 ---
+\questionShortAnswer{15}{14}{Hai khu phố M và N đang được chính quyền địa phương khảo sát nhằm đánh giá cơ cấu dân số, từ đó đưa ra các chính sách phù hợp về phúc lợi xã hội, y tế và quy hoạch đô thị. Để làm điều này, một cuộc điều tra về độ tuổi của cư dân đã được thực hiện, với kết quả thu thập được như sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % --- BIỂU ĐỒ 1: KHU PHỐ M ---
+    \begin{scope}[xshift=-4cm]
+        \node[font=\bfseries, align=center] at (0, 3.2) {Độ tuổi của dân cư ở\\khu phố M};
+
+        % [0;15): 23% -> 82.8 deg
+        \fill[cyan!80!black] (0,0) -- (90:2.1) arc (90:7.2:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (48.6:1.3) {23};
+
+        % [15;30): 28% -> 100.8 deg
+        \fill[gray!60] (0,0) -- (7.2:2.1) arc (7.2:-93.6:2.1) -- cycle;
+        \node[black!80, font=\bfseries\small] at (-43.2:1.3) {28};
+
+        % [30;45): 21% -> 75.6 deg
+        \fill[teal!80!black] (0,0) -- (-93.6:2.1) arc (-93.6:-169.2:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-131.4:1.3) {21};
+
+        % [45;60): 15% -> 54 deg
+        \fill[black!70] (0,0) -- (-169.2:2.1) arc (-169.2:-223.2:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-196.2:1.3) {15};
+
+        % [60;75): 9% -> 32.4 deg
+        \fill[cyan!30] (0,0) -- (-223.2:2.1) arc (-223.2:-255.6:2.1) -- cycle;
+        \node[black!80, font=\bfseries\small] at (-239.4:1.4) {9};
+
+        % [75;90): 4% -> 14.4 deg
+        \fill[black!90] (0,0) -- (-255.6:2.1) arc (-255.6:-270:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-262.8:1.5) {4};
+
+        % Chú thích cho Khu phố M
+        \begin{scope}[yshift=-2.8cm, xshift=-1.8cm, font=\small]
+            \fill[cyan!80!black] (0,0) rectangle (0.3,0.2);
+            \node[right] at (0.3,0.1) {$[0;15)$};
+
+            \fill[gray!60] (1.6,0) rectangle (1.9,0.2);
+            \node[right] at (1.9,0.1) {$[15;30)$};
+
+            \fill[teal!80!black] (3.2,0) rectangle (3.5,0.2);
+            \node[right] at (3.5,0.1) {$[30;45)$};
+
+            \fill[black!70] (0,-0.5) rectangle (0.3,-0.3);
+            \node[right] at (0.3,-0.4) {$[45;60)$};
+
+            \fill[cyan!30] (1.6,-0.5) rectangle (1.9,-0.3);
+            \node[right] at (1.9,-0.4) {$[60;75)$};
+
+            \fill[black!90] (3.2,-0.5) rectangle (3.5,-0.3);
+            \node[right] at (3.5,-0.4) {$[75;90)$};
+        \end{scope}
+    \end{scope}
+
+    % --- BIỂU ĐỒ 2: KHU PHỐ N ---
+    \begin{scope}[xshift=4cm]
+        \node[font=\bfseries, align=center] at (0, 3.2) {Độ tuổi của cư dân ở\\khu phố N};
+
+        % [0;15): 25% -> 90 deg
+        \fill[cyan!80!black] (0,0) -- (90:2.1) arc (90:0:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (45:1.3) {25};
+
+        % [15;30): 32% -> 115.2 deg
+        \fill[gray!60] (0,0) -- (0:2.1) arc (0:-115.2:2.1) -- cycle;
+        \node[black!80, font=\bfseries\small] at (-57.6:1.3) {32};
+
+        % [30;45): 17% -> 61.2 deg
+        \fill[teal!80!black] (0,0) -- (-115.2:2.1) arc (-115.2:-176.4:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-145.8:1.3) {17};
+
+        % [45;60): 14% -> 50.4 deg
+        \fill[black!70] (0,0) -- (-176.4:2.1) arc (-176.4:-226.8:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-201.6:1.3) {14};
+
+        % [60;75): 7% -> 25.2 deg
+        \fill[cyan!30] (0,0) -- (-226.8:2.1) arc (-226.8:-252:2.1) -- cycle;
+        \node[black!80, font=\bfseries\small] at (-239.4:1.4) {7};
+
+        % [75;90): 5% -> 18 deg
+        \fill[black!90] (0,0) -- (-252:2.1) arc (-252:-270:2.1) -- cycle;
+        \node[white, font=\bfseries\small] at (-261:1.5) {5};
+
+        % Chú thích cho Khu phố N
+        \begin{scope}[yshift=-2.8cm, xshift=-1.8cm, font=\small]
+            \fill[cyan!80!black] (0,0) rectangle (0.3,0.2);
+            \node[right] at (0.3,0.1) {$[0;15)$};
+
+            \fill[gray!60] (1.6,0) rectangle (1.9,0.2);
+            \node[right] at (1.9,0.1) {$[15;30)$};
+
+            \fill[teal!80!black] (3.2,0) rectangle (3.5,0.2);
+            \node[right] at (3.5,0.1) {$[30;45)$};
+
+            \fill[black!70] (0,-0.5) rectangle (0.3,-0.3);
+            \node[right] at (0.3,-0.4) {$[45;60)$};
+
+            \fill[cyan!30] (1.6,-0.5) rectangle (1.9,-0.3);
+            \node[right] at (1.9,-0.4) {$[60;75)$};
+
+            \fill[black!90] (3.2,-0.5) rectangle (3.5,-0.3);
+            \node[right] at (3.5,-0.4) {$[75;90)$};
+        \end{scope}
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+Nếu so sánh theo độ lệch chuẩn thì sự biến động về độ tuổi của dân cư ở khu phố N lớn hơn độ tuổi của dân cư ở khu phố M là bao nhiêu? (Kết quả làm tròn đến chữ số hàng phần trăm).
+}
+
+
+% --- CÂU 7 ---
+\questionTrueFalse{16}{15}{Hiện nay, thời gian sử dụng điện thoại của học sinh quá nhiều dẫn đến suy giảm thị lực. Trung tâm Mắt Kính A tổ chức khám sàng lọc miễn phí cho 200 học sinh của một trường THPT trên địa bàn huyện để kiểm tra tình trạng cận thị của học sinh và thu được mẫu số liệu sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mức độ cận thị (Diop) & \([0;0,5)\) & \([0,5;1)\) & \([1;1,5)\) & \([1,5;2)\) & \([2;2,5)\) & \([2,5;3)\) \\
+\hline
+Số học sinh & 35 & 40 & 54 & 28 & 25 & 18 \\
+\hline
+\end{tabular}
+\end{center}
+}{
+    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm này bằng 3.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm trên bằng 0,5786.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Tứ phân vị thứ ba của mẫu số liệu ghép nhóm trên bằng 1,875.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng 1,3.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+
+% --- CÂU 9 ---
+\questionTrueFalse{33}{16}{Chiều cao (đơn vị: cm) của 36 bé sơ sinh 12 ngày tuổi được chọn ngẫu nhiên ở hai bệnh viện nhi A và B được nghiên cứu thống kê ở biểu đồ dưới đây:
+
+\begin{center}
+\begin{tikzpicture}[scale=1, >=stealth]
+    % Định nghĩa màu sắc
+    \definecolor{colorA}{RGB}{0, 140, 160} % Màu xanh Bệnh viện A
+    \definecolor{colorB}{RGB}{150, 150, 150} % Màu xám Bệnh viện B
+
+    % Chiều sâu 3D
+    \def\dx{0.25}
+    \def\dy{0.25}
+
+    % 1. Đường lưới ngang và trục Oy
+    \foreach \y in {0, 2, 4, 6, 8, 10, 12} {
+        \draw[gray!30, thin] (0, \y*0.4) -- (12.5, \y*0.4);
+        \draw[gray!30, thin] (0, \y*0.4) -- (\dx, \y*0.4 + \dy);
+        \node[left, font=\small] at (0, \y*0.4) {\y};
+    }
+
+    % 2. Vẽ cột 3D cho dữ liệu
+    % Cấu trúc: \drawbar{x_pos}{height}{color}{label}
+    \newcommand{\drawbar}[4]{
+        % Mặt trước
+        \fill[#3] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
+        \draw[white, thin] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
+        
+        % Mặt trên
+        \fill[#3!80!white] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+        \draw[white, thin] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+        
+        % Mặt bên phải
+        \fill[#3!60!black] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+        \draw[white, thin] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+
+        % Số liệu trên đầu cột
+        \node[above, font=\small] at (#1 + 0.3 + \dx/2, #2*0.4 + \dy) {#4};
+    }
+
+    % Nhóm [44;46)
+    \drawbar{0.6}{3}{colorA}{3}
+    \drawbar{1.3}{2}{colorB}{2}
+
+    % Nhóm [46;48)
+    \drawbar{2.6}{6}{colorA}{6}
+    \drawbar{3.3}{7}{colorB}{7}
+
+    % Nhóm [48;50)
+    \drawbar{4.6}{8}{colorA}{8}
+    \drawbar{5.3}{11}{colorB}{11}
+
+    % Nhóm [50;52)
+    \drawbar{6.6}{12}{colorA}{12}
+    \drawbar{7.3}{9}{colorB}{9}
+
+    % Nhóm [52;54)
+    \drawbar{8.6}{5}{colorA}{5}
+    \drawbar{9.3}{6}{colorB}{6}
+
+    % Nhóm [54;56)
+    \drawbar{10.6}{2}{colorA}{2}
+    \drawbar{11.3}{1}{colorB}{1}
+
+    % 3. Trục tọa độ và Nhãn trục Ox
+    \draw[gray!60, thick] (0,0) -- (12.8,0);
+    
+    \node[below, font=\small] at (1.1, -0.1) {$[44;46)$};
+    \node[below, font=\small] at (3.1, -0.1) {$[46;48)$};
+    \node[below, font=\small] at (5.1, -0.1) {$[48;50)$};
+    \node[below, font=\small] at (7.1, -0.1) {$[50;52)$};
+    \node[below, font=\small] at (9.1, -0.1) {$[52;54)$};
+    \node[below, font=\small] at (11.1, -0.1) {$[54;56)$};
+
+    % 4. Tiêu đề
+    \node[align=center, font=\bfseries] at (6.4, 6.2) {Chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi\\A và B};
+
+    % 5. Chú thích (Legend)
+    \begin{scope}[yshift=-1.2cm, xshift=4.2cm, font=\small]
+        \fill[colorA] (-1,0) rectangle (-0.6,0.25);
+        \node[right] at (-0.6,0.12) {Bệnh viện A};
+
+        \fill[colorB] (2.8,0) rectangle (3.2,0.25);
+        \node[right] at (3.2,0.12) {Bệnh viện B};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi A và B cùng bằng 12.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & 25\% bé sơ sinh 12 ngày tuổi ở bệnh viện nhi A có chiều cao nhỏ hơn hoặc bằng \(\dfrac{155}{3}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B bằng \(\dfrac{32}{9}\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B đồng đều hơn bệnh viện nhi A.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 10 ---
+\questionTrueFalse{16}{17}{Dương và Tú là hai học sinh rất giỏi chơi rubik, hai bạn có thể giải nhiều loại khối rubik khác nhau.  
+Trong một lần luyện giải khối rubik 3×3, hai bạn đã tự thống kê lại thời gian giải rubik trong 30 lần giải liên tiếp ở 2 bảng sau:
+
+\begin{center}
+\textbf{Bạn Dương}
+
+\vspace{0.2cm}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
+\hline
+Số lần & 5 & 8 & 11 & 4 & 2 \\
+\hline
+\end{tabular}
+
+\vspace{0.6cm}
+
+\textbf{Bạn Tú}
+
+\vspace{0.2cm}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
+\hline
+Số lần & 3 & 6 & 12 & 8 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+}{
+    \textbf{a)} & Thời gian trung bình giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Khoảng biến thiên của cả hai mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của bạn Tú bằng \( 2,75 \).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì thời gian giải khối rubik 3×3 của bạn Dương đồng đều hơn bạn Tú.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+
+
+
+
+
+% --- CÂU 7 ---
+\questionTrueFalse{16}{18}{Trong 31 ngày của tháng 5, thư viện của trường đại học X đã thống kê số lượt sinh viên đến đọc sách mỗi ngày. Dữ liệu được phân nhóm và thống kê trong bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Số sinh viên & \([24;30)\) & \([30;36)\) & \([36;42)\) & \([42;48)\) & \([48;54)\) \\
+\hline
+Số ngày & 3 & 8 & 12 & 6 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+}{
+    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X bằng 30.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Trung bình số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X khoảng 32 sinh viên.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 40,18.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 6,24.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% --- CÂU 8 ---
+\questionTrueFalse{16}{19}{Một công ty xây dựng đang lên kế hoạch phát triển một khu đô thị mới và muốn tìm hiểu mức giá mà khách hàng có nhu cầu mua nhà nhiều nhất. Để có cơ sở đưa ra quyết định, công ty đã tiến hành khảo sát một số lượng lớn khách hàng về mức giá mà họ quan tâm. Kết quả khảo sát được tổng hợp trong bảng dưới đây:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Mức giá (triệu đồng/m²) & \([10;14)\) & \([14;18)\) & \([18;22)\) & \([22;26)\) & \([26;30)\) \\
+\hline
+Số khách hàng & 62 & 86 & 128 & 54 & 20 \\
+\hline
+\end{tabular}
+\end{center}
+}{
+    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà bằng 16.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Giá trị trung bình của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà gần bằng 18,67 (triệu đồng/m²).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm trên gần bằng 19,64.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm trên gần bằng 4,44.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+% --- CÂU 10 ---
+\questionTrueFalse{33}{20}{Một trung tâm dinh dưỡng muốn đánh giá hiệu quả của một chế độ ăn kiêng mới trong việc giúp giảm cân. Họ tiến hành một nghiên cứu kéo dài 3 tháng trên một số người và cho ra kết quả như sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2, >=stealth]
+    % Định nghĩa màu sắc cho Nam và Nữ
+    \definecolor{colorNam}{RGB}{0, 140, 160} % Màu xanh
+    \definecolor{colorNu}{RGB}{128, 128, 128} % Màu xám
+
+    % 1. Đường lưới ngang và trục Oy
+    \foreach \y in {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20} {
+        \draw[gray!30, thin] (0, \y*0.25) -- (12, \y*0.25);
+        \node[left, font=\small] at (0, \y*0.25) {\y};
+    }
+
+    % Macro vẽ cột dữ liệu
+    % \drawbar{x_pos}{height}{color}{label}
+    \newcommand{\drawbar}[4]{
+        \fill[#3] (#1, 0) rectangle (#1 + 0.5, #2*0.25);
+        \node[above, font=\small] at (#1 + 0.25, #2*0.25) {#4};
+    }
+
+    % Nhóm [-1; 0)
+    \drawbar{0.8}{5}{colorNam}{5}
+    \drawbar{1.35}{7}{colorNu}{7}
+
+    % Nhóm [0; 1)
+    \drawbar{3.1}{11}{colorNam}{11}
+    \drawbar{3.65}{18}{colorNu}{18}
+
+    % Nhóm [1; 2)
+    \drawbar{5.4}{17}{colorNam}{17}
+    \drawbar{5.95}{14}{colorNu}{14}
+
+    % Nhóm [2; 3)
+    \drawbar{7.7}{13}{colorNam}{13}
+    \drawbar{8.25}{9}{colorNu}{9}
+
+    % Nhóm [3; 4)
+    \drawbar{10.0}{4}{colorNam}{4}
+    \drawbar{10.55}{2}{colorNu}{2}
+
+    % 2. Trục tọa độ và Nhãn trục Ox, Oy
+    \draw[gray!60, thick] (0,0) -- (12.2,0);
+    \draw[gray!60, thick] (0,0) -- (0,5.5);
+
+    \node[below, font=\small] at (1.325, -0.1) {$[-1; 0)$};
+    \node[below, font=\small] at (3.625, -0.1) {$[0; 1)$};
+    \node[below, font=\small] at (5.925, -0.1) {$[1; 2)$};
+    \node[below, font=\small] at (8.225, -0.1) {$[2; 3)$};
+    \node[below, font=\small] at (10.525, -0.1) {$[3; 4)$};
+
+    \node[rotate=90, font=\small] at (-0.9, 2.7) {Số người};
+    \node[font=\small] at (6.125, -0.8) {kilogram};
+
+    % 3. Tiêu đề
+    \node[align=center, font=\bfseries] at (6.125, 5.8) {Thay đổi cân nặng của một số người};
+
+    % 4. Chú thích (Legend)
+    \begin{scope}[yshift=-1.4cm, xshift=3.0cm, font=\small]
+        \fill[colorNam] (0,0) rectangle (0.35, 0.2);
+        \node[right] at (0.35, 0.1) {Số người nam};
+
+        \fill[colorNu] (3.8,0) rectangle (4.15, 0.2);
+        \node[right] at (4.15, 0.1) {Số người nữ};
+    \end{scope}
+
+\end{tikzpicture}
+\end{center}
+}{
+    \textbf{a)} & Thay đổi cân nặng trung bình của nam và nữ không bằng nhau.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Phương sai của mẫu số liệu ghép nhóm về thay đổi cân nặng của nam bằng 1,2.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về thay đổi cân nặng của nữ gần bằng 1,06.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Nếu so sánh theo độ lệch chuẩn thì sau ba tháng áp dụng chế độ ăn kiêng, sự biến động về thay đổi cân nặng của nam và nữ như nhau.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+
+
+
+
+\end{document}

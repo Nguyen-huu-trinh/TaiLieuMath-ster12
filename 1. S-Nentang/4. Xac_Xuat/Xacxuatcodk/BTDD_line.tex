@@ -1,0 +1,120 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Xác xuất}{Xác xuất có điều kiện}{Xác xuất}
+
+% --- CÂU 1 ---
+\questionLinesManual{10}{1}{Trong một kỳ thi, có 60\% học sinh đã làm đúng bài toán đầu tiên và 40\% học sinh đã làm đúng bài toán thứ hai. Biết rằng có 20\% học sinh làm đúng cả hai bài toán. Xác suất để một học sinh làm đúng bài toán thứ hai biết rằng học sinh đó đã làm đúng bài toán đầu tiên là bao nhiêu?}{%
+    \begin{tasks}(4)
+        \task 0,5
+        \task 0,333
+        \task 0,2
+        \task 0,667
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{10}{2}{Một hộp chứa 4 quả bóng được đánh số từ 1 đến 4. An lấy ngẫu nhiên một quả bóng, bỏ ra ngoài, rồi lấy tiếp một quả bóng nữa. Xét các biến cố:  
+A: "Quả bóng lấy ra lần đầu có số chẵn"  
+B: "Quả bóng lấy ra lần hai có số lẻ".  
+Tính xác suất có điều kiện \( P(B|A) \).}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{1}{3}\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{2}{3}\)
+        \task \(\dfrac{3}{4}\)
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{8}{3}{Một lô sản phẩm có 30 sản phẩm, trong đó có 4 chất lượng thấp. Lấy liên tiếp hai sản phẩm trong lô sản phẩm trên, trong đó sản phẩm lấy ra ở lần thứ nhất không được bỏ lại vào lô sản phẩm. Tính xác suất để cả hai sản phẩm được lấy ra đều có chất lượng thấp.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{3}{29}\)
+        \task \(\dfrac{1}{10}\)
+        \task \(\dfrac{4}{30}\)
+        \task \(\dfrac{2}{15}\)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{8}{4}{Cho hai biến cố độc lập \( A, B \) với \( P(A) = 0,8; P(B) = 0,3 \). Khi đó, \( P(A|B) \) bằng}{%
+    \begin{tasks}(4)
+        \task 0,8
+        \task 0,3
+        \task 0,4
+        \task 0,6
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{8}{5}{Cho hai biến cố \( A, B \) với  
+\( P(A) = 0,5, \quad P(B) = 0,8 \)  
+và  
+\( P(A \cap B) = 0,38 \). Tính \( P(A|B) \).}{%
+    \begin{tasks}(4)
+        \task 0,475
+        \task 0,76
+        \task 0,52
+        \task 0,425
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{5}{6}{Cho \( A, B \) là các biến cố của một phép thử \( T \). Biết rằng \( 0 < P(A) < 1 \), xác suất của biến cố \( B \) được tính theo công thức nào sau đây?}{%
+    \begin{tasks}(2)
+        \task \( P(B) = P(B|P(A|B)) + P(\overline{B}|P(A|\overline{B})) \)
+        \task \( P(B) = P(B|P(A)) + P(\overline{B}|P(A|\overline{B})) \)
+        \task \( P(B) = P(A)P(B|A) + P(\overline{A})P(B|\overline{A}) \)
+        \task \( P(B) = P(A)P(B|A) + P(\overline{A})P(B|\overline{A}) \)
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{5}{7}{Cho \( A, B \) là các biến cố của một phép thử \( T \). Biết rằng \( P(B) > 0 \), xác suất của biến cố \( A \) với điều kiện biến cố \( B \) đã xảy ra được tính theo công thức nào sau đây?}{%
+    \begin{tasks}(2)
+        \task \( P(A|B) = \dfrac{P(A)}{P(B)} \)
+        \task \( P(A|B) = \dfrac{P(A)P(B|A)}{P(B)} \)
+        \task \( P(A|B) = \dfrac{P(B)P(A|B)}{P(A)} \)
+        \task \( P(A|B) = \dfrac{P(B)}{P(A)} \)
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{10}{8}{Một cửa hàng có hai loại bóng đèn Led, trong đó có 65\% bóng đèn Led là màu trắng và 35\% bóng đèn Led là màu xanh, các bóng đèn có kích thước như nhau. Các bóng đèn Led màu trắng có tỉ lệ hỏng là 2\% và các bóng đèn Led màu xanh có tỉ lệ hỏng là 3\%. Một khách hàng chọn mua ngẫu nhiên 1 bóng đèn Led từ cửa hàng. Xác suất để khách hàng chọn được bóng đèn Led không hỏng bằng}{%
+    \begin{tasks}(4)
+        \task 0,7956
+        \task 0,7965
+        \task 0,9756
+        \task 0,9765
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{10}{9}{Hộp thứ nhất có 3 viên bi xanh và 6 viên bi đỏ. Hộp thứ hai có 3 viên bi xanh và 7 viên bi đỏ. Các viên bi có cùng kích thước và khối lượng. Lấy ngẫu nhiên ra một viên bi từ hộp thứ nhất chuyển sang hộp thứ hai. Sau đó lại lấy ngẫu nhiên đồng thời hai viên từ hộp thứ hai, biết rằng hai bi lấy ra từ hộp thứ hai là bi màu đỏ, tính xác suất viên bi lấy ra từ hộp thứ nhất cũng là bi màu đỏ.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{8}{11}\)
+        \task \(\dfrac{7}{15}\)
+        \task \(\dfrac{8}{15}\)
+        \task \(\dfrac{7}{13}\)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{10}{10}{Một căn bệnh có 1\% dân số mắc phải. Một phương pháp chuẩn đoán được phát triển có tỷ lệ chính xác là 99\%. Với những người bị bệnh, phương pháp này sẽ đưa ra kết quả dương tính 99\% số trường hợp. Với người không mắc bệnh, phương pháp này cũng chuẩn đoán đúng 99 trong 100 trường hợp. Nếu một người kiểm tra và kết quả là dương tính (bị bệnh), xác suất để người đó thực sự bị bệnh là bao nhiêu?}{%
+    \begin{tasks}(4)
+        \task 0,4
+        \task 0,35
+        \task 0,5
+        \task 0,65
+    \end{tasks}
+}
+
+\end{document}
+
+

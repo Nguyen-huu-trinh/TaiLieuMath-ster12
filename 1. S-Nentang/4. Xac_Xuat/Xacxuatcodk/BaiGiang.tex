@@ -1,0 +1,140 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Xác xuất}{Xác xuất có điều kiện}{Xác xuất}
+
+\drawdashlines{27}
+\newpage
+\drawdashlines{33}
+\newpage
+
+% --- CÂU 1 ---
+\questionLinesManual{10}{1}{Lớp 11B có 20 học sinh gồm 12 nữ và 8 nam. Cần chọn ra 2 học sinh của lớp đi lao động. Tính xác suất để chọn được 2 học sinh trong đó có cả nam và nữ.}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{14}{95}\)
+        \task \(\dfrac{48}{95}\)
+        \task \(\dfrac{33}{95}\)
+        \task \(\dfrac{47}{95}\)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{15}{2}{Cho tập hợp $A = \{a ; b ;c ; d\}$. Hỏi có bao nhiêu cách viết 1 chuối gồm 4 kí tự từ tập hợp A (mỗi kí tự chỉ được dùng 1 lần).
+
+Gọi X là tập hợp các chuỗi gồm 3 kí tự được lập từ tập hợp A (mỗi kí tự dùng đúng 1 lần). Xác xuất chọn được 1 chuỗi có kì tự 'a' từ tập hợp X.
+}
+
+\questionLinesManual{10}{3}{Cho tập hợp $A = \{a ;a; b ;c \}$. Hỏi có bao nhiêu cách viết 1 chuối gồm 4 kí tự từ tập hợp A (mỗi kí tự chỉ được dùng 1 lần).
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{15}{4}{Ông An hằng ngày đi làm bằng xe máy hoặc xe buýt. Nếu hôm nay ông đi làm bằng xe buýt thì xác suất để hôm sau ông đi làm bằng xe máy là 0,4. Nếu hôm nay ông đi làm bằng xe máy thì xác suất để hôm sau ông đi làm bằng xe buýt là 0,7. Xét một tuần mà thứ Hai ông An đi làm bằng xe buýt. Tính xác suất để thứ Tư trong tuần đó, ông An đi làm bằng xe máy.}
+
+% --- CÂU 5 ---
+\questionLinesManual{15}{5}{Tại một nhà máy sản xuất linh kiện điện tử tỉ lệ sản phẩm đạt tiêu chuẩn là 80\%. Trước khi xuất xưởng ra thị trường, các linh kiện điện tử đều phải qua khâu kiểm tra chất lượng để đóng dấu OTK. Vì sự kiểm tra không tuyệt đối hoàn hảo nên  
+- Nếu một linh kiện điện tử đạt tiêu chuẩn thì nó có xác suất 0,99 được đóng dấu OTK;  
+- Nếu một linh kiện điện tử không đạt tiêu chuẩn thì nó có xác suất 0,95 không được đóng dấu OTK.  
+
+Chọn ngẫu nhiên một linh kiện điện tử của nhà máy này trên thị trường. Dùng sơ đồ hình cây, hãy mô tả cách tính xác suất để linh kiện điện tử được chọn không được đóng dấu OTK.}
+
+% --- CÂU 6 ---
+\questionLinesManual{15}{6}{Một bình đựng 5 viên bi kích thước và chất liệu giống nhau, chỉ khác nhau về màu sắc. Trong đó có 3 viên bi xanh và 2 viên bi đỏ. Lấy ngẫu nhiên từ bình ra một viên bi ta được viên bi màu xanh, rồi lại lấy ngẫu nhiên ra một viên bi nữa. Tính xác suất để lấy được viên bi đỏ ở lần thứ hai.}
+
+% --- CÂU 7 ---
+\questionLinesManual{15}{7}{Một hộp có 30 viên bi trắng và 10 viên bi đen, các viên bi có cùng kích thước và khối lượng. Lần thứ nhất lấy ngẫu nhiên một viên bi trong hộp, không trả lại. Sau đó, lần thứ 2 lấy ngẫu nhiên thêm một viên bi trong hộp đó.
+
+Gọi \( A \) là biến cố: "Lần thứ hai lấy được viên bi trắng";  
+và \( B \) là biến cố: "Lần thứ nhất lấy được viên bi đen".
+
+Tính \( P(A | B) \).}
+
+
+% --- CÂU 8 ---
+\questionLinesManual{8}{8}{Cho hai biến cố \( A \) và \( B \) có \( P(A) = 0,2; P(B) = 0,6; P(A \cap B) = 0,3 \). Tính \( P(\overline{A}B) \).}{%
+    \begin{tasks}(4)
+        \task 0,18
+        \task 0,42
+        \task 0,24
+        \task 0,02
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{8}{9}{Cho hai biến cố \( A \) và \( B \) là hai biến cố độc lập, với \( P(A) = 0,2024, \, P(B) = 0,2025 \). Tính \( P(A \cup B) \).}{%
+    \begin{tasks}(4)
+        \task 0,7976
+        \task 0,7975
+        \task 0,2025
+        \task 0,2024
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{8}{10}{Cho hai biến cố \( A \) và \( B \), với \( P(A) = 0,6, \, P(B) = 0,7, \, P(A \cap B) = 0,3 \). Tính \( P(A \cup B) \).}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{3}{7}\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{6}{7}\)
+        \task \(\dfrac{1}{7}\)
+    \end{tasks}
+}
+
+% --- CÂU 11 ---
+\questionLinesManual{10}{11}{Cho hai biến cố \( A \) và \( B \) với \( 0 < P(A) < 1 \).
+
+(1) Viết công thức xác suất toàn phần tính \( P(B) \).
+
+(2) Với \( P(A) = 0,1; P(\overline{A}) = 0,9; P(B | A) = 0,3; P(B | \overline{A}) = 0,6 \). Tính \( P(B) \)?}
+
+
+\questionLinesManual{15}{12}{Cho hai biến cố \( A \) và \( B \) với \( P(B) = 0,2; \, P(A \mid B) = 0,5; \, P(A \mid \overline{B}) = 0,4 \). Tính \( P(B \mid A) \)?}
+
+\questionLinesManual{15}{13}{Người ta khảo sát khả năng chơi nhạc cụ của một nhóm học sinh nam nữ tại một trường phổ thông H. Xét phép thử chọn ngẫu nhiên 1 học sinh trong nhóm đó.
+
+Gọi \( A \) là biến cố "học sinh được chọn biết chơi ít nhất một nhạc cụ",
+và \( B \) là biến cố "học sinh được chọn là nam".
+
+Biết xác suất học sinh được chọn là nam bằng 0,6; xác suất học sinh được chọn là nam và biết chơi ít nhất một nhạc cụ là 0,3; xác suất học sinh được chọn là nữ và biết chơi ít nhất một nhạc cụ là 0,15. Tính \( P(A) \).}
+
+% --- CÂU 14 ---
+\questionLinesManual{15}{14}{Trong một trường học, tỉ lệ học sinh nữ là 53\%. Tỉ lệ học sinh nữ và tỉ lệ học sinh nam tham gia câu lạc bộ nghệ thuật X lần lượt là 21\% và 17\%. Chọn ngẫu nhiên 1 học sinh của trường. Tính xác suất học sinh đó có tham gia câu lạc bộ nghệ thuật X.}
+
+% --- CÂU 15 ---
+\questionLinesManual{15}{15}{Một căn bệnh có 1\% dân số mắc phải. Một phương pháp chuẩn đoán được phát triển có tỷ lệ chính xác là 99\%. Với những người bị bệnh, phương pháp này sẽ đưa ra kết quả dương tính 99\% số trường hợp. Với người không mắc bệnh, phương pháp này cũng chuẩn đoán đúng 99 trong 100 trường hợp. Nếu một người kiểm tra và kết quả là dương tính (bị bệnh), xác suất để người đó thực sự bị bệnh là bao nhiêu?}
+
+% --- CÂU 16 ---
+\questionLinesManual{15}{16}{Giả sử tỉ lệ người dân của tỉnh X nghiện thuốc lá là 20\%; tỉ lệ người bị bệnh phổi trong số người nghiện thuốc lá là 70\%, trong số người không nghiện thuốc lá là 15\%.
+
+(1) Hỏi khi ta gặp ngẫu nhiên một người dân của tỉnh X thì khả năng mà đó bị bệnh phổi là bao nhiêu \%?
+
+(2) Tính xác suất mà người đó là nghiện thuốc lá khi biết bị bệnh phổi.}
+
+% --- CÂU 17 ---
+\questionLinesManual{15}{17}{Một trạm chỉ phát hai tín hiệu \( A \) và \( B \) với xác suất tương ứng 0,85 và 0,15. Do có nhiễu trên đường truyền nên \(\dfrac{1}{7}\) tín hiệu \( A \) bị méo và thu được như tín hiệu \( B \) còn \(\dfrac{1}{8}\) tín hiệu \( B \) bị méo và thu được như \( A \).
+
+(1) Xác suất thu được tín hiệu \( A \) là bao nhiêu?
+
+(2) Giả sử đã thu được tín hiệu \( A \). Tìm xác suất thu được đúng tín hiệu lúc phát.}
+
+\questionTrueFalse{15}{18}{Một trường đại học trao hai loại học bổng A và B cho sinh viên trong trường, một sinh viên có thể được nhận cả hai loại học bổng A và B. Trong số các sinh viên được trao học bổng loại A có \(12\%\) số bạn được trao học bổng loại B và trong số các sinh viên không được trao học bổng loại A có \(10\%\) số bạn được trao học bổng loại B. Có \(10{,}2\%\) số sinh viên toàn trường được trao học bổng loại B. Chọn ngẫu nhiên một sinh viên trong trường.}{
+    \textbf{a)} & Xác suất để sinh viên đó không được trao học bổng loại B là \(0{,}898\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+    \textbf{b)} & Xác suất để sinh viên đó không được trao học bổng loại B, biết sinh viên đó không được trao học bổng loại A, là \(0{,}88\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+    \textbf{c)} & Xác suất để sinh viên đó không được trao học bổng loại A là \(0{,}89\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+    \textbf{d)} & Xác suất để sinh viên đó không được trao học bổng loại A, biết sinh viên đó không được trao học bổng loại B, lớn hơn \(0{,}9\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+
+\end{document}
