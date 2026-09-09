@@ -9,13 +9,93 @@
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
 \titlebox{Chủ đề: Thống kê}{Các số đặc trưng đó phân tán - ghép nhóm}{Thống kê - ghép nhóm}
 
+
+\begin{center}
+    {\Large\bfseries BẢNG TỔNG HỢP CÔNG THỨC THỐNG KÊ THPT}\\[4pt]
+\end{center}
+
+\vspace{0.3cm}
+
+\textbf{1. Ký Hiệu Dùng Trong Mẫu Ghép Nhóm}
+Cho mẫu số liệu ghép nhóm gồm $k$ nhóm $[a_i; a_{i+1})$ với tần số tương ứng là $n_i$:
+\begin{itemize}
+    \item \textbf{Kích thước mẫu (tổng số số liệu):} $n = \sum_{i=1}^{k} n_i = n_1 + n_2 + \dots + n_k$
+    \item \textbf{Giá trị đại diện của nhóm $[a_i; a_{i+1})$:} $x_i = \dfrac{a_i + a_{i+1}}{2}$
+    \item \textbf{Độ dài của nhóm $[a_i; a_{i+1})$:} $h_i = a_{i+1} - a_i$
+\end{itemize}
+
+
+\section*{2. Các Đại Lượng Đo Xu Hướng Trung Tâm (Toán 11)}
+
+\begin{enumerate}
+    \item \textbf{Số trung bình ($\bar{x}$):}
+    \[
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{k} n_i x_i = \frac{n_1 x_1 + n_2 x_2 + \dots + n_k x_k}{n}
+    \]
+
+    \item \textbf{Trung vị ($M_e$):}
+    Giả sử nhóm $p = [a_p; a_{p+1})$ chứa trung vị (nhóm đầu tiên có tần số tích lũy $n_1 + \dots + n_p \ge \frac{n}{2}$):
+    \[
+    M_e = a_p + \frac{\frac{n}{2} - (n_1 + n_2 + \dots + n_{p-1})}{n_p} \cdot (a_{p+1} - a_p)
+    \]
+
+\item \textbf{Tứ phân vị ($Q_1, Q_2, Q_3$):}
+    \begin{itemize}
+        \item \textbf{Bước 1:} Tìm nhóm $p = [a_p; a_{p+1})$ chứa tứ phân vị $Q_k$ ($k \in \{1, 2, 3\}$) bằng \(\dfrac{k.n}{4}.\)
+        \item \textbf{Bước 2:} Áp dụng công thức tổng quát:
+        \[
+        Q_k = a_p + \frac{\frac{k \cdot n}{4} - (n_1 + \dots + n_{p-1})}{n_p} \cdot (a_{p+1} - a_p)
+        \]
+    \end{itemize}
+
+    \item \textbf{Mốt ($M_o$):}
+    Giả sử nhóm $j = [a_j; a_{j+1})$ có tần số lớn nhất $n_j$:
+    \[
+    M_o = a_j + \frac{n_j - n_{j-1}}{(n_j - n_{j-1}) + (n_j - n_{j+1})} \cdot (a_{j+1} - a_j)
+    \]
+\end{enumerate}
+
+\section*{3. Các Đại Lượng Đo Độ Tán Sắc (Toán 12)}
+
+\begin{enumerate}
+    \item \textbf{Khoảng biến thiên ($R$):} 
+    \[
+    R = a_{k+1} - a_1
+    \]
+
+    \item \textbf{Khoảng tứ phân vị ($\Delta_Q$):} 
+    \[
+    \Delta_Q = Q_3 - Q_1
+    \]
+
+    \item \textbf{Phương sai ($s^2$):}
+    \[
+    s^2 = \frac{1}{n} \sum_{i=1}^{k} n_i (x_i - \bar{x})^2 = \left( \frac{1}{n} \sum_{i=1}^{k} n_i x_i^2 \right) - \bar{x}^2
+    \]
+
+    \item \textbf{Độ lệch chuẩn ($s$):}
+    \[
+    s = \sqrt{s^2}
+    \]
+\end{enumerate}
+\section*{Công thức xác định Vùng giá trị ngoại lệ (Outliers)}
+
+Khoảng tứ phân vị:
+\[ IQR = Q_3 - Q_1 \]
+
+Vùng giá trị hợp lệ (không chứa giá trị ngoại lệ):
+\[ \left[ Q_1 - 1.5 \times IQR, \quad Q_3 + 1.5 \times IQR \right] \]
+
+Giá trị $x$ là \textbf{giá trị ngoại lệ} nếu:
+\[ x < Q_1 - 1.5 \times IQR \quad \text{hoặc} \quad x > Q_3 + 1.5 \times IQR \]
+
+
 \drawdashlines{27}
 \newpage
-\drawdashlines{33}
-\newpage
+
 
 % --- CÂU 1 ---
-\questionLinesManual{5}{1}{Khảo sát thời gian tự học trung bình vào buổi tối của học sinh lớp 12A, thu được mẫu số liệu ghép nhóm sau:
+\questionLinesManual{3}{1}{Khảo sát thời gian tự học trung bình vào buổi tối của học sinh lớp 12A, thu được mẫu số liệu ghép nhóm sau:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -36,6 +116,21 @@ Tìm khoảng biến thiên của mẫu số liệu ghép nhóm về thời gian
     \end{tasks}
 }
 
+% --- CÂU 41 ---
+\questionShortAnswer{3}{2}{Một công ty xây dựng khảo sát khách hàng xem họ có nhu cầu mua nhà ở mức giá (triệu đồng/m\(^2\)) nào. Kết quả khảo sát được ghi lại ở bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Mức giá & \([10; 14)\) & \([14; 18)\) & \([18; 22)\) & \([22; 26)\) & \([26; 30)\) \\
+\hline
+Số khách & 54 & 78 & 120 & 45 & 12 \\
+\hline
+\end{tabular}
+\end{center}
+ Công ty nên xây nhà ở mức giá nào để nhiều người có nhu cầu mua nhất?}
+
+
 \textbf{Dùng dữ kiện sau để trả lời các câu 02, 03, 04 phía dưới}
 
 Kết quả khảo sát khối lượng của 30 quả bơ được cho trong bảng sau:
@@ -50,7 +145,7 @@ Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
 \end{tabular}
 \end{center}
 % --- CÂU 2 ---
-\questionLinesManual{0}{2}{Khoảng biến thiên của mẫu số liệu trên là}{%
+\questionLinesManual{0}{3}{Khoảng biến thiên của mẫu số liệu trên là}{%
     \begin{tasks}(4)
         \task 25
         \task 20
@@ -60,7 +155,7 @@ Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
 }
 
 % --- CÂU 3 ---
-\questionLinesManual{0}{3}{Mốt của mẫu số liệu ghép nhóm trên gần bằng}{%
+\questionLinesManual{3}{4}{Mốt của mẫu số liệu ghép nhóm trên gần bằng}{%
     \begin{tasks}(4)
         \task 163,33.
         \task 162,67.
@@ -69,8 +164,23 @@ Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
     \end{tasks}
 }
 
+\newpage
+\textbf{Dùng dữ kiện sau để trả lời các câu 02, 03, 04 phía dưới}
+
+Kết quả khảo sát khối lượng của 30 quả bơ được cho trong bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\begin{tabular}{c} Khối lượng \\ (g) \end{tabular} & $[150;155)$ & $[155;160)$ & $[160;165)$ & $[165;170)$ & $[170;175)$ & $[175;180)$ \\
+\hline
+Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
 % --- CÂU 4 ---
-\questionLinesManual{15}{4}{Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng}{%
+\questionLinesManual{25}{5}{Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng}{%
     \begin{tasks}(4)
         \task 9,34
         \task 9,42
@@ -80,7 +190,7 @@ Số quả & 3 & 5 & 9 & 7 & 4 & 2 \\
 }
 
 % --- CÂU 5 ---
-\questionLinesManual{12}{5}{Mẫu số liệu ghép nhóm thống kê về mức lương của các nhân viên ở công ty X (đơn vị: triệu đồng) được cho trong biểu đồ cột dưới đây:
+\questionLinesManual{18}{6}{Mẫu số liệu ghép nhóm thống kê về mức lương của các nhân viên ở công ty X (đơn vị: triệu đồng) được cho trong biểu đồ cột dưới đây:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.85]
@@ -125,7 +235,7 @@ Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm về mức lư�
 }
 
 % --- CÂU 14 ---
-\questionShortAnswer{8}{6}{Một trại hè về Toán học tổ chức cuộc thi "Khám phá vũ trụ Toán học" cho các học sinh tham gia. Kết quả về điểm của các học sinh được cho trong bảng số liệu ghép nhóm sau:
+\questionShortAnswer{15}{7}{Một trại hè về Toán học tổ chức cuộc thi "Khám phá vũ trụ Toán học" cho các học sinh tham gia. Kết quả về điểm của các học sinh được cho trong bảng số liệu ghép nhóm sau:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -141,7 +251,7 @@ Ban tổ chức muốn lựa chọn ra một danh sách gồm 25\% số học si
 }
 
 % --- CÂU 15 ---
-\questionShortAnswer{15}{7}{Vào mùa thu hoạch cam, bác nông dân đã thu gom và tiến hành thống kê khối lượng của các quả cam.  
+\questionShortAnswer{15}{8}{Vào mùa thu hoạch cam, bác nông dân đã thu gom và tiến hành thống kê khối lượng của các quả cam.  
 Dưới đây là biểu đồ số liệu về khối lượng các quả cam thu được:
 
 \begin{center}
@@ -192,7 +302,7 @@ Trong các quả cam có khối lượng: 225g, 280g, 325g, 430g, 485g, 520g và
 }
 
 % --- CÂU 1 ---
-\questionLinesManual{8}{8}{Độ tuổi của các khách hàng nữ mua hàng thời trang trong một ngày của một cửa hàng được thống kê trong bảng tần số ghép nhóm như sau:
+\questionLinesManual{8}{9}{Độ tuổi của các khách hàng nữ mua hàng thời trang trong một ngày của một cửa hàng được thống kê trong bảng tần số ghép nhóm như sau:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|}
@@ -214,7 +324,7 @@ Phương sai của mẫu số liệu ghép nhóm về độ tuổi của khách 
 }
 
 % --- CÂU 2 ---
-\questionLinesManual{8}{9}{Trong một buổi tập luyện, một vận động viên điền kinh thực hiện 50 lần ném tạ và ghi lại khoảng cách ném được (tính bằng mét). Để phân tích khả năng của vận động viên, huấn luyện viên đã thống kê các cự li ném theo bảng sau:
+\questionLinesManual{8}{10}{Trong một buổi tập luyện, một vận động viên điền kinh thực hiện 50 lần ném tạ và ghi lại khoảng cách ném được (tính bằng mét). Để phân tích khả năng của vận động viên, huấn luyện viên đã thống kê các cự li ném theo bảng sau:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|}
@@ -236,7 +346,7 @@ Tính độ lệch chuẩn của mẫu số liệu ghép nhóm về cự li ném
 }
 
 % --- CÂU 3 ---
-\questionLinesManual{12}{10}{Một nông trường trồng rừng tiến hành đo chiều cao (đơn vị: m) của 100 cây keo 3 năm tuổi để đánh giá sự phát triển của cây. Các số liệu thu thập được sẽ được sử dụng để phân tích và đưa ra nhận định về sự đồng đều trong sinh trưởng của rừng keo. Kết quả thu được cho ở biểu đồ sau:
+\questionLinesManual{12}{11}{Một nông trường trồng rừng tiến hành đo chiều cao (đơn vị: m) của 100 cây keo 3 năm tuổi để đánh giá sự phát triển của cây. Các số liệu thu thập được sẽ được sử dụng để phân tích và đưa ra nhận định về sự đồng đều trong sinh trưởng của rừng keo. Kết quả thu được cho ở biểu đồ sau:
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2, >=stealth]
@@ -295,42 +405,42 @@ Phương sai của mẫu số liệu ghép nhóm về chiều cao của 100 cây
 }
 
 
-% --- CÂU 11 ---
-\questionShortAnswer{8}{11}{Bộ phận kiểm tra chất lượng sản phẩm dùng máy để đo (chính xác đến 0,001mm) độ dày của một chi tiết máy. Kết quả đo 50 sản phẩm được thống kê ở bảng sau:
+% % --- CÂU 11 ---
+% \questionShortAnswer{8}{12}{Bộ phận kiểm tra chất lượng sản phẩm dùng máy để đo (chính xác đến 0,001mm) độ dày của một chi tiết máy. Kết quả đo 50 sản phẩm được thống kê ở bảng sau:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-Độ dày (mm) & \([17;18)\) & \([18;19)\) & \([19;20)\) & \([20;21)\) & \([21;22)\) & \([22;23)\) \\
-\hline
-Số sản phẩm & 2 & 6 & 9 & 12 & 17 & 4 \\
-\hline
-\end{tabular}
-\end{center}
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|c|}
+% \hline
+% Độ dày (mm) & \([17;18)\) & \([18;19)\) & \([19;20)\) & \([20;21)\) & \([21;22)\) & \([22;23)\) \\
+% \hline
+% Số sản phẩm & 2 & 6 & 9 & 12 & 17 & 4 \\
+% \hline
+% \end{tabular}
+% \end{center}
 
-Tính phương sai của mẫu số liệu ghép nhóm trên (kết quả làm tròn đến chữ số thập phân thứ hai).
-}
+% Tính phương sai của mẫu số liệu ghép nhóm trên (kết quả làm tròn đến chữ số thập phân thứ hai).
+% }
 
-% --- CÂU 12 ---
-\questionShortAnswer{8}{12}{Nhằm tìm hiểu về thói quen rèn luyện sức khỏe của học sinh khối 11, một giáo viên thể dục đã thực hiện khảo sát thời gian tập thể dục hàng ngày (đơn vị: phút) của một số học sinh trong khối. Giáo viên này chọn ngẫu nhiên 50 học sinh và ghi nhận số phút mà mỗi học sinh dành cho hoạt động thể dục trong một ngày. Kết quả thu được mẫu số liệu ghép nhóm sau:
+% % --- CÂU 12 ---
+% \questionShortAnswer{8}{13}{Nhằm tìm hiểu về thói quen rèn luyện sức khỏe của học sinh khối 11, một giáo viên thể dục đã thực hiện khảo sát thời gian tập thể dục hàng ngày (đơn vị: phút) của một số học sinh trong khối. Giáo viên này chọn ngẫu nhiên 50 học sinh và ghi nhận số phút mà mỗi học sinh dành cho hoạt động thể dục trong một ngày. Kết quả thu được mẫu số liệu ghép nhóm sau:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-Thời gian (phút) & \([0;15)\) & \([15;30)\) & \([30;45)\) & \([45;60)\) & \([60;75)\) & \([75;90)\) \\
-\hline
-Số học sinh & 13 & 18 & 10 & 5 & 3 & 1 \\
-\hline
-\end{tabular}
-\end{center}
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|c|}
+% \hline
+% Thời gian (phút) & \([0;15)\) & \([15;30)\) & \([30;45)\) & \([45;60)\) & \([60;75)\) & \([75;90)\) \\
+% \hline
+% Số học sinh & 13 & 18 & 10 & 5 & 3 & 1 \\
+% \hline
+% \end{tabular}
+% \end{center}
 
-Độ lệch chuẩn của mẫu số liệu ghép nhóm về thời gian tập thể dục hàng ngày của một số học sinh trên bằng bao nhiêu? (Kết quả làm tròn đến hàng phần mười).
-}
+% Độ lệch chuẩn của mẫu số liệu ghép nhóm về thời gian tập thể dục hàng ngày của một số học sinh trên bằng bao nhiêu? (Kết quả làm tròn đến hàng phần mười).
+% }
 
 
 
 % --- CÂU 14 ---
-\questionShortAnswer{15}{13}{Hai trang trại I và II thử nghiệm nuôi một giống gà mới. Sau 6 tháng, người ta thu hoạch và thống kê cân nặng (đơn vị: kg) của các con gà đó và cho kết quả dưới dạng biểu đồ sau:
+\questionShortAnswer{15}{12}{Hai trang trại I và II thử nghiệm nuôi một giống gà mới. Sau 6 tháng, người ta thu hoạch và thống kê cân nặng (đơn vị: kg) của các con gà đó và cho kết quả dưới dạng biểu đồ sau:
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2, >=stealth]
@@ -402,7 +512,7 @@ Gọi \( x \) là độ lệch chuẩn của mẫu số liệu ghép nhóm về 
 }
 
 % --- CÂU 15 ---
-\questionShortAnswer{15}{14}{Hai khu phố M và N đang được chính quyền địa phương khảo sát nhằm đánh giá cơ cấu dân số, từ đó đưa ra các chính sách phù hợp về phúc lợi xã hội, y tế và quy hoạch đô thị. Để làm điều này, một cuộc điều tra về độ tuổi của cư dân đã được thực hiện, với kết quả thu thập được như sau:
+\questionShortAnswer{15}{13}{Hai khu phố M và N đang được chính quyền địa phương khảo sát nhằm đánh giá cơ cấu dân số, từ đó đưa ra các chính sách phù hợp về phúc lợi xã hội, y tế và quy hoạch đô thị. Để làm điều này, một cuộc điều tra về độ tuổi của cư dân đã được thực hiện, với kết quả thu thập được như sau:
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
@@ -512,179 +622,187 @@ Nếu so sánh theo độ lệch chuẩn thì sự biến động về độ tu�
 }
 
 
-% --- CÂU 7 ---
-\questionTrueFalse{16}{15}{Hiện nay, thời gian sử dụng điện thoại của học sinh quá nhiều dẫn đến suy giảm thị lực. Trung tâm Mắt Kính A tổ chức khám sàng lọc miễn phí cho 200 học sinh của một trường THPT trên địa bàn huyện để kiểm tra tình trạng cận thị của học sinh và thu được mẫu số liệu sau:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-Mức độ cận thị (Diop) & \([0;0,5)\) & \([0,5;1)\) & \([1;1,5)\) & \([1,5;2)\) & \([2;2,5)\) & \([2,5;3)\) \\
-\hline
-Số học sinh & 35 & 40 & 54 & 28 & 25 & 18 \\
-\hline
-\end{tabular}
-\end{center}
-}{
-    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm này bằng 3.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+
+
+
+
+
+
+% % --- CÂU 7 ---
+% \questionTrueFalse{16}{15}{Hiện nay, thời gian sử dụng điện thoại của học sinh quá nhiều dẫn đến suy giảm thị lực. Trung tâm Mắt Kính A tổ chức khám sàng lọc miễn phí cho 200 học sinh của một trường THPT trên địa bàn huyện để kiểm tra tình trạng cận thị của học sinh và thu được mẫu số liệu sau:
+
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|c|}
+% \hline
+% Mức độ cận thị (Diop) & \([0;0,5)\) & \([0,5;1)\) & \([1;1,5)\) & \([1,5;2)\) & \([2;2,5)\) & \([2,5;3)\) \\
+% \hline
+% Số học sinh & 35 & 40 & 54 & 28 & 25 & 18 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% }{
+%     \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm này bằng 3.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm trên bằng 0,5786.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm trên bằng 0,5786.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Tứ phân vị thứ ba của mẫu số liệu ghép nhóm trên bằng 1,875.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Tứ phân vị thứ ba của mẫu số liệu ghép nhóm trên bằng 1,875.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng 1,3.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm trên gần bằng 1,3.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 
 
-% --- CÂU 9 ---
-\questionTrueFalse{33}{16}{Chiều cao (đơn vị: cm) của 36 bé sơ sinh 12 ngày tuổi được chọn ngẫu nhiên ở hai bệnh viện nhi A và B được nghiên cứu thống kê ở biểu đồ dưới đây:
+% % --- CÂU 9 ---
+% \questionTrueFalse{33}{16}{Chiều cao (đơn vị: cm) của 36 bé sơ sinh 12 ngày tuổi được chọn ngẫu nhiên ở hai bệnh viện nhi A và B được nghiên cứu thống kê ở biểu đồ dưới đây:
 
-\begin{center}
-\begin{tikzpicture}[scale=1, >=stealth]
-    % Định nghĩa màu sắc
-    \definecolor{colorA}{RGB}{0, 140, 160} % Màu xanh Bệnh viện A
-    \definecolor{colorB}{RGB}{150, 150, 150} % Màu xám Bệnh viện B
+% \begin{center}
+% \begin{tikzpicture}[scale=1, >=stealth]
+%     % Định nghĩa màu sắc
+%     \definecolor{colorA}{RGB}{0, 140, 160} % Màu xanh Bệnh viện A
+%     \definecolor{colorB}{RGB}{150, 150, 150} % Màu xám Bệnh viện B
 
-    % Chiều sâu 3D
-    \def\dx{0.25}
-    \def\dy{0.25}
+%     % Chiều sâu 3D
+%     \def\dx{0.25}
+%     \def\dy{0.25}
 
-    % 1. Đường lưới ngang và trục Oy
-    \foreach \y in {0, 2, 4, 6, 8, 10, 12} {
-        \draw[gray!30, thin] (0, \y*0.4) -- (12.5, \y*0.4);
-        \draw[gray!30, thin] (0, \y*0.4) -- (\dx, \y*0.4 + \dy);
-        \node[left, font=\small] at (0, \y*0.4) {\y};
-    }
+%     % 1. Đường lưới ngang và trục Oy
+%     \foreach \y in {0, 2, 4, 6, 8, 10, 12} {
+%         \draw[gray!30, thin] (0, \y*0.4) -- (12.5, \y*0.4);
+%         \draw[gray!30, thin] (0, \y*0.4) -- (\dx, \y*0.4 + \dy);
+%         \node[left, font=\small] at (0, \y*0.4) {\y};
+%     }
 
-    % 2. Vẽ cột 3D cho dữ liệu
-    % Cấu trúc: \drawbar{x_pos}{height}{color}{label}
-    \newcommand{\drawbar}[4]{
-        % Mặt trước
-        \fill[#3] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
-        \draw[white, thin] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
+%     % 2. Vẽ cột 3D cho dữ liệu
+%     % Cấu trúc: \drawbar{x_pos}{height}{color}{label}
+%     \newcommand{\drawbar}[4]{
+%         % Mặt trước
+%         \fill[#3] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
+%         \draw[white, thin] (#1, 0) rectangle (#1 + 0.6, #2*0.4);
         
-        % Mặt trên
-        \fill[#3!80!white] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
-        \draw[white, thin] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+%         % Mặt trên
+%         \fill[#3!80!white] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+%         \draw[white, thin] (#1, #2*0.4) -- (#1 + \dx, #2*0.4 + \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
         
-        % Mặt bên phải
-        \fill[#3!60!black] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
-        \draw[white, thin] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+%         % Mặt bên phải
+%         \fill[#3!60!black] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
+%         \draw[white, thin] (#1 + 0.6, 0) -- (#1 + 0.6 + \dx, \dy) -- (#1 + 0.6 + \dx, #2*0.4 + \dy) -- (#1 + 0.6, #2*0.4) -- cycle;
 
-        % Số liệu trên đầu cột
-        \node[above, font=\small] at (#1 + 0.3 + \dx/2, #2*0.4 + \dy) {#4};
-    }
+%         % Số liệu trên đầu cột
+%         \node[above, font=\small] at (#1 + 0.3 + \dx/2, #2*0.4 + \dy) {#4};
+%     }
 
-    % Nhóm [44;46)
-    \drawbar{0.6}{3}{colorA}{3}
-    \drawbar{1.3}{2}{colorB}{2}
+%     % Nhóm [44;46)
+%     \drawbar{0.6}{3}{colorA}{3}
+%     \drawbar{1.3}{2}{colorB}{2}
 
-    % Nhóm [46;48)
-    \drawbar{2.6}{6}{colorA}{6}
-    \drawbar{3.3}{7}{colorB}{7}
+%     % Nhóm [46;48)
+%     \drawbar{2.6}{6}{colorA}{6}
+%     \drawbar{3.3}{7}{colorB}{7}
 
-    % Nhóm [48;50)
-    \drawbar{4.6}{8}{colorA}{8}
-    \drawbar{5.3}{11}{colorB}{11}
+%     % Nhóm [48;50)
+%     \drawbar{4.6}{8}{colorA}{8}
+%     \drawbar{5.3}{11}{colorB}{11}
 
-    % Nhóm [50;52)
-    \drawbar{6.6}{12}{colorA}{12}
-    \drawbar{7.3}{9}{colorB}{9}
+%     % Nhóm [50;52)
+%     \drawbar{6.6}{12}{colorA}{12}
+%     \drawbar{7.3}{9}{colorB}{9}
 
-    % Nhóm [52;54)
-    \drawbar{8.6}{5}{colorA}{5}
-    \drawbar{9.3}{6}{colorB}{6}
+%     % Nhóm [52;54)
+%     \drawbar{8.6}{5}{colorA}{5}
+%     \drawbar{9.3}{6}{colorB}{6}
 
-    % Nhóm [54;56)
-    \drawbar{10.6}{2}{colorA}{2}
-    \drawbar{11.3}{1}{colorB}{1}
+%     % Nhóm [54;56)
+%     \drawbar{10.6}{2}{colorA}{2}
+%     \drawbar{11.3}{1}{colorB}{1}
 
-    % 3. Trục tọa độ và Nhãn trục Ox
-    \draw[gray!60, thick] (0,0) -- (12.8,0);
+%     % 3. Trục tọa độ và Nhãn trục Ox
+%     \draw[gray!60, thick] (0,0) -- (12.8,0);
     
-    \node[below, font=\small] at (1.1, -0.1) {$[44;46)$};
-    \node[below, font=\small] at (3.1, -0.1) {$[46;48)$};
-    \node[below, font=\small] at (5.1, -0.1) {$[48;50)$};
-    \node[below, font=\small] at (7.1, -0.1) {$[50;52)$};
-    \node[below, font=\small] at (9.1, -0.1) {$[52;54)$};
-    \node[below, font=\small] at (11.1, -0.1) {$[54;56)$};
+%     \node[below, font=\small] at (1.1, -0.1) {$[44;46)$};
+%     \node[below, font=\small] at (3.1, -0.1) {$[46;48)$};
+%     \node[below, font=\small] at (5.1, -0.1) {$[48;50)$};
+%     \node[below, font=\small] at (7.1, -0.1) {$[50;52)$};
+%     \node[below, font=\small] at (9.1, -0.1) {$[52;54)$};
+%     \node[below, font=\small] at (11.1, -0.1) {$[54;56)$};
 
-    % 4. Tiêu đề
-    \node[align=center, font=\bfseries] at (6.4, 6.2) {Chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi\\A và B};
+%     % 4. Tiêu đề
+%     \node[align=center, font=\bfseries] at (6.4, 6.2) {Chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi\\A và B};
 
-    % 5. Chú thích (Legend)
-    \begin{scope}[yshift=-1.2cm, xshift=4.2cm, font=\small]
-        \fill[colorA] (-1,0) rectangle (-0.6,0.25);
-        \node[right] at (-0.6,0.12) {Bệnh viện A};
+%     % 5. Chú thích (Legend)
+%     \begin{scope}[yshift=-1.2cm, xshift=4.2cm, font=\small]
+%         \fill[colorA] (-1,0) rectangle (-0.6,0.25);
+%         \node[right] at (-0.6,0.12) {Bệnh viện A};
 
-        \fill[colorB] (2.8,0) rectangle (3.2,0.25);
-        \node[right] at (3.2,0.12) {Bệnh viện B};
-    \end{scope}
+%         \fill[colorB] (2.8,0) rectangle (3.2,0.25);
+%         \node[right] at (3.2,0.12) {Bệnh viện B};
+%     \end{scope}
 
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi A và B cùng bằng 12.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% \end{tikzpicture}
+% \end{center}
+% }{
+%     \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở hai bệnh viện nhi A và B cùng bằng 12.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & 25\% bé sơ sinh 12 ngày tuổi ở bệnh viện nhi A có chiều cao nhỏ hơn hoặc bằng \(\dfrac{155}{3}\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & 25\% bé sơ sinh 12 ngày tuổi ở bệnh viện nhi A có chiều cao nhỏ hơn hoặc bằng \(\dfrac{155}{3}\).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B bằng \(\dfrac{32}{9}\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B bằng \(\dfrac{32}{9}\).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B đồng đều hơn bệnh viện nhi A.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì chiều cao của 36 bé sơ sinh 12 ngày tuổi ở bệnh viện nhi B đồng đều hơn bệnh viện nhi A.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 10 ---
-\questionTrueFalse{16}{17}{Dương và Tú là hai học sinh rất giỏi chơi rubik, hai bạn có thể giải nhiều loại khối rubik khác nhau.  
-Trong một lần luyện giải khối rubik 3×3, hai bạn đã tự thống kê lại thời gian giải rubik trong 30 lần giải liên tiếp ở 2 bảng sau:
+% % --- CÂU 10 ---
+% \questionTrueFalse{16}{17}{Dương và Tú là hai học sinh rất giỏi chơi rubik, hai bạn có thể giải nhiều loại khối rubik khác nhau.  
+% Trong một lần luyện giải khối rubik 3×3, hai bạn đã tự thống kê lại thời gian giải rubik trong 30 lần giải liên tiếp ở 2 bảng sau:
 
-\begin{center}
-\textbf{Bạn Dương}
+% \begin{center}
+% \textbf{Bạn Dương}
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
-\hline
-Số lần & 5 & 8 & 11 & 4 & 2 \\
-\hline
-\end{tabular}
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
+% \hline
+% Số lần & 5 & 8 & 11 & 4 & 2 \\
+% \hline
+% \end{tabular}
 
-\vspace{0.6cm}
+% \vspace{0.6cm}
 
-\textbf{Bạn Tú}
+% \textbf{Bạn Tú}
 
-\vspace{0.2cm}
+% \vspace{0.2cm}
 
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
-\hline
-Số lần & 3 & 6 & 12 & 8 & 1 \\
-\hline
-\end{tabular}
-\end{center}
-}{
-    \textbf{a)} & Thời gian trung bình giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% Thời gian giải rubik (s) & $[8;10)$ & $[10;12)$ & $[12;14)$ & $[14;16)$ & $[16;18)$ \\
+% \hline
+% Số lần & 3 & 6 & 12 & 8 & 1 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% }{
+%     \textbf{a)} & Thời gian trung bình giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Khoảng biến thiên của cả hai mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Khoảng biến thiên của cả hai mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của hai bạn Dương và Tú bằng nhau.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của bạn Tú bằng \( 2,75 \).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Khoảng tứ phân vị của mẫu số liệu ghép nhóm về thời gian giải khối rubik 3×3 của bạn Tú bằng \( 2,75 \).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì thời gian giải khối rubik 3×3 của bạn Dương đồng đều hơn bạn Tú.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Nếu so sánh theo khoảng tứ phân vị thì thời gian giải khối rubik 3×3 của bạn Dương đồng đều hơn bạn Tú.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 
 
@@ -692,141 +810,141 @@ Số lần & 3 & 6 & 12 & 8 & 1 \\
 
 
 
-% --- CÂU 7 ---
-\questionTrueFalse{16}{18}{Trong 31 ngày của tháng 5, thư viện của trường đại học X đã thống kê số lượt sinh viên đến đọc sách mỗi ngày. Dữ liệu được phân nhóm và thống kê trong bảng sau:
+% % --- CÂU 7 ---
+% \questionTrueFalse{16}{18}{Trong 31 ngày của tháng 5, thư viện của trường đại học X đã thống kê số lượt sinh viên đến đọc sách mỗi ngày. Dữ liệu được phân nhóm và thống kê trong bảng sau:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Số sinh viên & \([24;30)\) & \([30;36)\) & \([36;42)\) & \([42;48)\) & \([48;54)\) \\
-\hline
-Số ngày & 3 & 8 & 12 & 6 & 2 \\
-\hline
-\end{tabular}
-\end{center}
-}{
-    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X bằng 30.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% Số sinh viên & \([24;30)\) & \([30;36)\) & \([36;42)\) & \([42;48)\) & \([48;54)\) \\
+% \hline
+% Số ngày & 3 & 8 & 12 & 6 & 2 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% }{
+%     \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X bằng 30.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Trung bình số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X khoảng 32 sinh viên.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Trung bình số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X khoảng 32 sinh viên.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 40,18.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 40,18.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 6,24.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về số sinh viên đến đọc sách mỗi ngày ở thư viện của trường đại học X gần bằng 6,24.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-% --- CÂU 8 ---
-\questionTrueFalse{16}{19}{Một công ty xây dựng đang lên kế hoạch phát triển một khu đô thị mới và muốn tìm hiểu mức giá mà khách hàng có nhu cầu mua nhà nhiều nhất. Để có cơ sở đưa ra quyết định, công ty đã tiến hành khảo sát một số lượng lớn khách hàng về mức giá mà họ quan tâm. Kết quả khảo sát được tổng hợp trong bảng dưới đây:
+% % --- CÂU 8 ---
+% \questionTrueFalse{16}{19}{Một công ty xây dựng đang lên kế hoạch phát triển một khu đô thị mới và muốn tìm hiểu mức giá mà khách hàng có nhu cầu mua nhà nhiều nhất. Để có cơ sở đưa ra quyết định, công ty đã tiến hành khảo sát một số lượng lớn khách hàng về mức giá mà họ quan tâm. Kết quả khảo sát được tổng hợp trong bảng dưới đây:
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Mức giá (triệu đồng/m²) & \([10;14)\) & \([14;18)\) & \([18;22)\) & \([22;26)\) & \([26;30)\) \\
-\hline
-Số khách hàng & 62 & 86 & 128 & 54 & 20 \\
-\hline
-\end{tabular}
-\end{center}
-}{
-    \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà bằng 16.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|}
+% \hline
+% Mức giá (triệu đồng/m²) & \([10;14)\) & \([14;18)\) & \([18;22)\) & \([22;26)\) & \([26;30)\) \\
+% \hline
+% Số khách hàng & 62 & 86 & 128 & 54 & 20 \\
+% \hline
+% \end{tabular}
+% \end{center}
+% }{
+%     \textbf{a)} & Khoảng biến thiên của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà bằng 16.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Giá trị trung bình của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà gần bằng 18,67 (triệu đồng/m²).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Giá trị trung bình của mẫu số liệu ghép nhóm về mức giá mà khách hàng có nhu cầu mua nhà gần bằng 18,67 (triệu đồng/m²).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm trên gần bằng 19,64.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Phương sai của mẫu số liệu ghép nhóm trên gần bằng 19,64.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm trên gần bằng 4,44.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm trên gần bằng 4,44.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 
-% --- CÂU 10 ---
-\questionTrueFalse{33}{20}{Một trung tâm dinh dưỡng muốn đánh giá hiệu quả của một chế độ ăn kiêng mới trong việc giúp giảm cân. Họ tiến hành một nghiên cứu kéo dài 3 tháng trên một số người và cho ra kết quả như sau:
+% % --- CÂU 10 ---
+% \questionTrueFalse{33}{20}{Một trung tâm dinh dưỡng muốn đánh giá hiệu quả của một chế độ ăn kiêng mới trong việc giúp giảm cân. Họ tiến hành một nghiên cứu kéo dài 3 tháng trên một số người và cho ra kết quả như sau:
 
-\begin{center}
-\begin{tikzpicture}[scale=1.2, >=stealth]
-    % Định nghĩa màu sắc cho Nam và Nữ
-    \definecolor{colorNam}{RGB}{0, 140, 160} % Màu xanh
-    \definecolor{colorNu}{RGB}{128, 128, 128} % Màu xám
+% \begin{center}
+% \begin{tikzpicture}[scale=1.2, >=stealth]
+%     % Định nghĩa màu sắc cho Nam và Nữ
+%     \definecolor{colorNam}{RGB}{0, 140, 160} % Màu xanh
+%     \definecolor{colorNu}{RGB}{128, 128, 128} % Màu xám
 
-    % 1. Đường lưới ngang và trục Oy
-    \foreach \y in {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20} {
-        \draw[gray!30, thin] (0, \y*0.25) -- (12, \y*0.25);
-        \node[left, font=\small] at (0, \y*0.25) {\y};
-    }
+%     % 1. Đường lưới ngang và trục Oy
+%     \foreach \y in {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20} {
+%         \draw[gray!30, thin] (0, \y*0.25) -- (12, \y*0.25);
+%         \node[left, font=\small] at (0, \y*0.25) {\y};
+%     }
 
-    % Macro vẽ cột dữ liệu
-    % \drawbar{x_pos}{height}{color}{label}
-    \newcommand{\drawbar}[4]{
-        \fill[#3] (#1, 0) rectangle (#1 + 0.5, #2*0.25);
-        \node[above, font=\small] at (#1 + 0.25, #2*0.25) {#4};
-    }
+%     % Macro vẽ cột dữ liệu
+%     % \drawbar{x_pos}{height}{color}{label}
+%     \newcommand{\drawbar}[4]{
+%         \fill[#3] (#1, 0) rectangle (#1 + 0.5, #2*0.25);
+%         \node[above, font=\small] at (#1 + 0.25, #2*0.25) {#4};
+%     }
 
-    % Nhóm [-1; 0)
-    \drawbar{0.8}{5}{colorNam}{5}
-    \drawbar{1.35}{7}{colorNu}{7}
+%     % Nhóm [-1; 0)
+%     \drawbar{0.8}{5}{colorNam}{5}
+%     \drawbar{1.35}{7}{colorNu}{7}
 
-    % Nhóm [0; 1)
-    \drawbar{3.1}{11}{colorNam}{11}
-    \drawbar{3.65}{18}{colorNu}{18}
+%     % Nhóm [0; 1)
+%     \drawbar{3.1}{11}{colorNam}{11}
+%     \drawbar{3.65}{18}{colorNu}{18}
 
-    % Nhóm [1; 2)
-    \drawbar{5.4}{17}{colorNam}{17}
-    \drawbar{5.95}{14}{colorNu}{14}
+%     % Nhóm [1; 2)
+%     \drawbar{5.4}{17}{colorNam}{17}
+%     \drawbar{5.95}{14}{colorNu}{14}
 
-    % Nhóm [2; 3)
-    \drawbar{7.7}{13}{colorNam}{13}
-    \drawbar{8.25}{9}{colorNu}{9}
+%     % Nhóm [2; 3)
+%     \drawbar{7.7}{13}{colorNam}{13}
+%     \drawbar{8.25}{9}{colorNu}{9}
 
-    % Nhóm [3; 4)
-    \drawbar{10.0}{4}{colorNam}{4}
-    \drawbar{10.55}{2}{colorNu}{2}
+%     % Nhóm [3; 4)
+%     \drawbar{10.0}{4}{colorNam}{4}
+%     \drawbar{10.55}{2}{colorNu}{2}
 
-    % 2. Trục tọa độ và Nhãn trục Ox, Oy
-    \draw[gray!60, thick] (0,0) -- (12.2,0);
-    \draw[gray!60, thick] (0,0) -- (0,5.5);
+%     % 2. Trục tọa độ và Nhãn trục Ox, Oy
+%     \draw[gray!60, thick] (0,0) -- (12.2,0);
+%     \draw[gray!60, thick] (0,0) -- (0,5.5);
 
-    \node[below, font=\small] at (1.325, -0.1) {$[-1; 0)$};
-    \node[below, font=\small] at (3.625, -0.1) {$[0; 1)$};
-    \node[below, font=\small] at (5.925, -0.1) {$[1; 2)$};
-    \node[below, font=\small] at (8.225, -0.1) {$[2; 3)$};
-    \node[below, font=\small] at (10.525, -0.1) {$[3; 4)$};
+%     \node[below, font=\small] at (1.325, -0.1) {$[-1; 0)$};
+%     \node[below, font=\small] at (3.625, -0.1) {$[0; 1)$};
+%     \node[below, font=\small] at (5.925, -0.1) {$[1; 2)$};
+%     \node[below, font=\small] at (8.225, -0.1) {$[2; 3)$};
+%     \node[below, font=\small] at (10.525, -0.1) {$[3; 4)$};
 
-    \node[rotate=90, font=\small] at (-0.9, 2.7) {Số người};
-    \node[font=\small] at (6.125, -0.8) {kilogram};
+%     \node[rotate=90, font=\small] at (-0.9, 2.7) {Số người};
+%     \node[font=\small] at (6.125, -0.8) {kilogram};
 
-    % 3. Tiêu đề
-    \node[align=center, font=\bfseries] at (6.125, 5.8) {Thay đổi cân nặng của một số người};
+%     % 3. Tiêu đề
+%     \node[align=center, font=\bfseries] at (6.125, 5.8) {Thay đổi cân nặng của một số người};
 
-    % 4. Chú thích (Legend)
-    \begin{scope}[yshift=-1.4cm, xshift=3.0cm, font=\small]
-        \fill[colorNam] (0,0) rectangle (0.35, 0.2);
-        \node[right] at (0.35, 0.1) {Số người nam};
+%     % 4. Chú thích (Legend)
+%     \begin{scope}[yshift=-1.4cm, xshift=3.0cm, font=\small]
+%         \fill[colorNam] (0,0) rectangle (0.35, 0.2);
+%         \node[right] at (0.35, 0.1) {Số người nam};
 
-        \fill[colorNu] (3.8,0) rectangle (4.15, 0.2);
-        \node[right] at (4.15, 0.1) {Số người nữ};
-    \end{scope}
+%         \fill[colorNu] (3.8,0) rectangle (4.15, 0.2);
+%         \node[right] at (4.15, 0.1) {Số người nữ};
+%     \end{scope}
 
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & Thay đổi cân nặng trung bình của nam và nữ không bằng nhau.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+% \end{tikzpicture}
+% \end{center}
+% }{
+%     \textbf{a)} & Thay đổi cân nặng trung bình của nam và nữ không bằng nhau.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Phương sai của mẫu số liệu ghép nhóm về thay đổi cân nặng của nam bằng 1,2.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{b)} & Phương sai của mẫu số liệu ghép nhóm về thay đổi cân nặng của nam bằng 1,2.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về thay đổi cân nặng của nữ gần bằng 1,06.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+%     \textbf{c)} & Độ lệch chuẩn của mẫu số liệu ghép nhóm về thay đổi cân nặng của nữ gần bằng 1,06.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Nếu so sánh theo độ lệch chuẩn thì sau ba tháng áp dụng chế độ ăn kiêng, sự biến động về thay đổi cân nặng của nam và nữ như nhau.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+%     \textbf{d)} & Nếu so sánh theo độ lệch chuẩn thì sau ba tháng áp dụng chế độ ăn kiêng, sự biến động về thay đổi cân nặng của nam và nữ như nhau.
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
 
 
