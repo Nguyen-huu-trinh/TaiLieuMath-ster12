@@ -1,0 +1,113 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: Tích phân}{Ứng dụng tích phân trong bài toán chuyển động}{Bài toán chuyển động}
+
+\drawdashlines{27}
+
+% --- CÂU 1 ---
+\questionShortAnswer{0}{1}{Một xe ô tô sau khi chở hết đèn đỏ đã bắt đầu chuyển động. Trong 7 phút đầu tiên vận tốc được biểu thị bằng đồ thị là đường cong parabol; biết rằng sau 5 phút thì xe đạt đến tốc độ cao nhất 900 m/phút và bắt đầu giảm tốc độ. Sau khi đi được 7 phút thì xe chuyển động đều (tham khảo hình vẽ). Quãng đường xe đi được sau 10 phút đầu tiên kể từ khi hết đèn đỏ là bao nhiêu mét?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % Tọa độ các điểm chính (đã scale để hình cân đối)
+    % t: 0 -> 0, 5 -> 2.5, 7 -> 3.5, 10 -> 5.0
+    % v: 900 -> 3.0, v(7) = 360*7 - 36*49 = 756 -> 2.52
+    
+    % Trục tọa độ
+    \draw[->, blue!80!black, thick] (-0.5, 0) -- (6.0, 0) node[below right] {$t \text{ (phút)}$};
+    \draw[->, blue!80!black, thick] (0, -0.5) -- (0, 3.8) node[right] {$v \text{ (m/phút)}$};
+    
+    % Gốc tọa độ O
+    \node[below left] at (0,0) {$O$};
+    \filldraw[fill=red!20, draw=brown!80!black] (0,0) circle (1.5pt);
+
+    % Đường đứt nét (Dashed lines)
+    \draw[dashed, blue!80!black] (0, 3) node[left, black] {$900$} -- (2.5, 3) -- (2.5, 0) node[below, black] {$5$};
+    \draw[dashed, blue!80!black] (3.5, 2.52) -- (3.5, 0) node[below, black] {$7$};
+    \draw[dashed, blue!80!black] (5.0, 2.52) -- (5.0, 0) node[below, black] {$10$};
+
+    % Đồ thị
+    % Parabol: v(t) = -36(t-5)^2 + 900 trong đoạn [0, 7]
+    \draw[ultra thick, red!60!black, domain=0:3.5, samples=100] 
+        plot (\x, {-0.48*(\x-2.5)^2 + 3.0});
+        
+    % Đoạn thẳng nằm ngang (chuyển động đều) từ t = 7 đến t = 10
+    \draw[ultra thick, red!60!black] (3.5, 2.52) -- (5.0, 2.52);
+
+    % Điểm mốc trên đồ thị
+    \filldraw[blue!80!black] (2.5, 3) circle (1pt);
+    \filldraw[blue!80!black] (3.5, 2.52) circle (1pt);
+    \filldraw[blue!80!black] (5.0, 2.52) circle (1pt);
+\end{tikzpicture}
+\end{center}
+}
+
+% --- CÂU 2 ---
+\questionShortAnswer{0}{2}{Một chất điểm chuyển động thẳng trong 19 giây với vận tốc \(v(t)\) (đơn vị: m/s) là hàm số phụ thuộc thời gian \(t\) (đơn vị: giây) có đồ thị như hình vẽ. Quãng đường chất điểm đi được từ lúc xuất phát đến khi dừng lại bằng bao nhiêu mét?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+    % Tọa độ tỉ lệ: x = t/2, y = v/4 để hình cân đối
+    % t = 0 (0,0)
+    % t = 4 (2, 3) [v=12]
+    % t = 13 (6.5, 3) [v=12]
+    % t = 15 (7.5, 4) [v=16 - Đỉnh parabol]
+    % t = 19 (9.5, 0) [v=0]
+
+    % Trục tọa độ
+    \draw[->, thick] (-1, 0) -- (11, 0) node[below] {$t$};
+    \draw[->, thick] (0, -0.8) -- (0, 5) node[left] {$v(t)$};
+
+    % Gốc tọa độ O
+    \node[below left] at (0,0) {$O$};
+
+    % Đường đứt nét (Dashed lines)
+    \draw[dashed] (0, 3) node[left] {$12$} -- (6.5, 3);
+    \draw[dashed] (0, 4) node[left] {$16$} -- (7.5, 4);
+
+    \draw[dashed] (2, 3) -- (2, 0) node[below] {$4$};
+    \draw[dashed] (6.5, 3) -- (6.5, 0) node[below] {$13$};
+    \draw[dashed] (7.5, 4) -- (7.5, 0) node[below] {$15$};
+
+    % Giá trị t = 19
+    \node[below] at (9.5, 0) {$19$};
+
+    % Đồ thị
+    % Đoạn 1: Đoạn thẳng từ O đến (4, 12)
+    \draw[ultra thick] (0, 0) -- (2, 3);
+
+    % Đoạn 2: Đoạn thẳng nằm ngang từ t=4 đến t=13
+    \draw[ultra thick] (2, 3) -- (6.5, 3);
+
+    % Đoạn 3: Parabol đi qua (13,12), đỉnh (15,16), và cắt Oy tại (19,0)
+    % Công thức: v = -t^2 + 30t - 209 => v = -(t-15)^2 + 16
+    \draw[ultra thick, domain=6.5:9.5, samples=100] 
+        plot (\x, {-(\x*2-15)^2/4 + 4});
+
+\end{tikzpicture}
+\end{center}
+}
+
+% --- CÂU 3 ---
+\questionShortAnswer{0}{3}{Để đảm bảo an toàn khi lưu thông trên đường, các xe ô tô khi dừng đèn đỏ phải cách nhau tối thiểu 1m. Một ô tô A đang chạy với vận tốc 12m/s bỗng gặp ô tô B đang dừng đèn đỏ nên ô tô A hãm phanh và chuyển động chậm dần đều với vận tốc được biểu thị bởi công thức \(v_A(t) = 12 - 3t\) (m/s). Hỏi để hai ô tô đạt khoảng cách an toàn khi dừng lại thì ô tô A phải hãm phanh khi cách ô tô B một khoảng ít nhất là bao nhiêu mét?
+}
+
+% --- CÂU 4 ---
+\questionShortAnswer{0}{4}{Một xe ô tô đang chạy với vận tốc 20 m/s thì xe bắt đầu giảm tốc độ để tránh va chạm với chướng ngại vật ở phía trước với vận tốc cho bởi công thức \(v(t) = at + b\) (\(a, b \in \mathbb{R}\)) trong đó \(t\) là thời gian tính bằng giây kể từ khi bắt đầu giảm tốc. Sau 5 giây thì xe dừng hẳn trước chướng ngại vật. Quãng đường từ khi bắt đầu giảm tốc độ đến khi xe dừng hẳn là bao nhiêu mét?
+}
+
+
+
+
+
+
+
+
+
+\end{document}
