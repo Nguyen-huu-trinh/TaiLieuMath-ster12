@@ -194,14 +194,14 @@
     column-sep=20pt,     
     after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
 }
-\definecolor{softgray}{RGB}{140, 140, 145}
+% \definecolor{softgray}{RGB}{140, 140, 145}
 % Hàm vẽ dòng kẻ nháp
 \newcommand{\drawdashlines}[1]{
     \ifnum#1>0
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray, line width=0.3pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                \draw[softgray!80!black, line width=0.3pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
         \end{tikzpicture}
         \par
