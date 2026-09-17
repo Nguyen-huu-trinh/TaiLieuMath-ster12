@@ -17,3 +17,8 @@
 *.swp
 *.bak
 *.tmp
+
+
+*-nht.sty
+*-nht.tex
+*-nht.pdf
