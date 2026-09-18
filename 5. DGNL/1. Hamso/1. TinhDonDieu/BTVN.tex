@@ -1,0 +1,986 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+
+% Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
+\titlebox{Chủ đề: ĐGNL}{Tính đơn điệu của hàm số}{ĐGNL: Tính đơn điệu}
+
+\textit{\textbf{Dạng 1: Tìm m để hàm số đơn điệu trên các khoảng của nó}}
+
+% --- CÂU 1 ---
+\questionLinesManual{0}{1}{Cho hàm số \(y = -\dfrac{1}{3}x^3 + mx^2 + (3m + 2)x + 1\). Tìm tất cả giá trị của \(m\) để hàm số nghịch biến trên \(\mathbb{R}\).}{%
+    \begin{tasks}(2)
+        \task \(\begin{cases} m \geq -1 \\ m \leq -2 \end{cases}\)
+        \task \(-2 \leq m \leq -1\)
+        \task \(-2 < m < -1\)
+        \task \(\begin{cases} m > -1 \\ m < -2 \end{cases}\)
+    \end{tasks}
+}
+
+% --- CÂU 2 ---
+\questionLinesManual{0}{2}{Tìm \(m\) để hàm số \(y = x^3 - 3mx^2 + 3(2m - 1) + 1\) đồng biến trên \(\mathbb{R}\).}{%
+    \begin{tasks}(2)
+        \task Không có giá trị \(m\) thỏa mãn.
+        \task \(m \neq 1\)
+        \task \(m = 1\)
+        \task Luôn thỏa mãn với mọi \(m\).
+    \end{tasks}
+}
+
+% --- CÂU 3 ---
+\questionLinesManual{0}{3}{Tìm điều kiện của tham số thực \(m\) để hàm số \(y = x^3 - 3x^2 + 3(m + 1)x + 2\) đồng biến trên \(\mathbb{R}\).}{%
+    \begin{tasks}(4)
+        \task \(m \geq 2\)
+        \task \(m < 2\)
+        \task \(m < 0\)
+        \task \(m \geq 0\)
+    \end{tasks}
+}
+
+% --- CÂU 4 ---
+\questionLinesManual{0}{4}{Tìm tập hợp tất cả các giá trị của tham số thực \(m\) để hàm số \(y = \dfrac{1}{3}x^3 + mx^2 + 4x - m\) đồng biến trên khoảng \((-\infty; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task \([-2; 2]\)
+        \task \((-\infty; 2)\)
+        \task \((-\infty; -2]\)
+        \task \([2; +\infty)\)
+    \end{tasks}
+}
+
+% --- CÂU 5 ---
+\questionLinesManual{0}{5}{Giá trị của \(m\) để hàm số \(y = \dfrac{1}{3}x^3 - 2mx^2 + (m + 3)x - 5 + m\) đồng biến trên \(\mathbb{R}\) là.}{%
+    \begin{tasks}(4)
+        \task \(-\dfrac{3}{4} \leq m \leq 1\)
+        \task \(m \leq -\dfrac{3}{4}\)
+        \task \(-\dfrac{3}{4} < m < 1\)
+        \task \(m \geq 1\)
+    \end{tasks}
+}
+
+% --- CÂU 6 ---
+\questionLinesManual{0}{6}{Tập hợp tất cả các giá trị của tham số \(m\) để hàm số \(y = x^3 + (m + 1)x^2 + 3x + 2\) đồng biến trên \(\mathbb{R}\) là}{%
+    \begin{tasks}(4)
+        \task \([-4; 2]\)
+        \task \((-4; 2)\)
+        \task \((-\infty; -4] \cup [2; +\infty)\)
+        \task \((-\infty; -4) \cup (2; +\infty)\)
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Hỏi có bao nhiêu số nguyên \(m\) để hàm số \(y = (m^2 - 1)x^3 + (m - 1)x^2 - x + 4\) nghịch biến trên khoảng \((-\infty; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 0
+        \task 3
+        \task 2
+        \task 1
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{0}{8}{Hỏi có tất cả bao nhiêu giá trị nguyên của tham số \(m\) để hàm số hàm số \(y = \dfrac{1}{3}(m^2 - m)x^3 + 2mx^2 + 3x - 2\) đồng biến trên khoảng \((-\infty; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 4
+        \task 5
+        \task 3
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 9 ---
+\questionLinesManual{0}{9}{Tìm tất cả các giá trị của tham số thực \(m\) để hàm số \(y = mx^3 + mx^2 + m(m - 1)x + 2\) đồng biến trên \(\mathbb{R}\).}{%
+    \begin{tasks}(2)
+        \task \(m \leq \dfrac{4}{3}\) và \(m \neq 0\)
+        \task \(m = 0\) hoặc \(m \geq \dfrac{4}{3}\)
+        \task \(m \geq \dfrac{4}{3}\)
+        \task \(m \leq \dfrac{4}{3}\)
+    \end{tasks}
+}
+
+% --- CÂU 10 ---
+\questionLinesManual{0}{10}{Có tất cả bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{m}{3}x^3 - 2mx^2 + (3m + 5)x\) đồng biến trên \(\mathbb{R}\).}{%
+    \begin{tasks}(4)
+        \task 4
+        \task 2
+        \task 5
+        \task 6
+    \end{tasks}
+}
+
+% --- CÂU 11 ---
+\questionLinesManual{0}{11}{Tìm tất cả các giá trị của \(m\) để hàm số \(y = (m - 1)x^3 - 3(m - 1)x^2 + 3x + 2\) đồng biến trên \(\mathbb{R}\)?}{%
+    \begin{tasks}(4)
+        \task \(1 < m \leq 2\)
+        \task \(1 < m < 2\)
+        \task \(1 \leq m \leq 2\)
+        \task \(1 \leq m < 2\)
+    \end{tasks}
+}
+
+% --- CÂU 12 ---
+\questionLinesManual{0}{12}{Số giá trị nguyên của \(m\) để hàm số \(y = (4 - m^2)x^3 + (m - 2)x^2 + x + m - 1\) (1) đồng biến trên \(\mathbb{R}\) bằng.}{%
+    \begin{tasks}(4)
+        \task 5
+        \task 3
+        \task 2
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 13 ---
+\questionLinesManual{0}{13}{Số các giá trị nguyên của tham số \(m\) trong đoạn \([-100; 100]\) để hàm số \(y = mx^3 + mx^2 + (m + 1)x - 3\) nghịch biến trên \(\mathbb{R}\) là:}{%
+    \begin{tasks}(4)
+        \task 200
+        \task 99
+        \task 100
+        \task 201
+    \end{tasks}
+}
+
+% --- CÂU 14 ---
+\questionLinesManual{0}{14}{Tổng bình phương của tất cả các giá trị nguyên của tham số \(m\) để hàm số \(y = (3m^2 - 12)x^3 + 3(m - 2)x^2 - x + 2\) nghịch biến trên \(\mathbb{R}\) là?}{%
+    \begin{tasks}(4)
+        \task 9
+        \task 6
+        \task 5
+        \task 14
+    \end{tasks}
+}
+
+% --- CÂU 15 ---
+\questionLinesManual{0}{15}{Hỏi có bao nhiêu số nguyên \(m\) để hàm số \(y = (m^2 - 1)x^3 + (m - 1)x^2 - x + 4\) nghịch biến trên khoảng \((-\infty; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 1
+        \task 0
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 16 ---
+\questionLinesManual{0}{16}{Cho hàm số \(y = \dfrac{mx + 4m}{x + m}\) với \(m\) là tham số. Gọi \(S\) là tập hợp tất cả các giá trị nguyên của \(m\) để hàm số nghịch biến trên các khoảng xác định. Tìm số phần tử của \(S\).}{%
+    \begin{tasks}(4)
+        \task 4
+        \task Vô số
+        \task 3
+        \task 5
+    \end{tasks}
+}
+
+% --- CÂU 17 ---
+\questionLinesManual{0}{17}{Có tất cả bao nhiêu số nguyên \(m\) để hàm số \(y = \dfrac{(m + 1)x - 2}{x - m}\) đồng biến trên từng khoảng xác định của nó?}{%
+    \begin{tasks}(4)
+        \task 1
+        \task 0
+        \task 2
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 18 ---
+\questionLinesManual{0}{18}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + m^2}{x + 4}\) đồng biến trên từng khoảng xác định của nó?}{%
+    \begin{tasks}(4)
+        \task 5
+        \task 3
+        \task 1
+        \task 2
+    \end{tasks}
+}
+
+% --- CÂU 19 ---
+\questionLinesManual{0}{19}{Tìm tất cả giá trị thực của tham số \(m\) để hàm số \(y = \dfrac{x + 2 - m}{x + 1}\) nghịch biến trên các khoảng mà nó xác định?}{%
+    \begin{tasks}(4)
+        \task \(m \leq 1\)
+        \task \(m \leq -3\)
+        \task \(m < -3\)
+        \task \(m < 1\)
+    \end{tasks}
+}
+
+% --- CÂU 20 ---
+\questionLinesManual{0}{20}{Tìm tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \dfrac{mx - 4}{x - m}\) nghịch biến trên từng khoảng xác định của nó.}{%
+    \begin{tasks}(4)
+        \task \(\begin{cases} m \leq -2 \\ m \geq 2 \end{cases}\)
+        \task \(-2 < m < 2\)
+        \task \(\begin{cases} m < -2 \\ m > 2 \end{cases}\)
+        \task \(-2 \leq m \leq 2\)
+    \end{tasks}
+}
+
+% --- CÂU 21 ---
+\questionLinesManual{0}{21}{Tìm tất cả các giá trị thực của \(m\) để hàm số \(y = \dfrac{mx - 2}{2x - m}\) đồng biến trên mỗi khoảng xác định.}{%
+    \begin{tasks}(4)
+        \task \(\begin{cases} m \leq -2 \\ m \geq 2 \end{cases}\)
+        \task \(-2 < m < 2\)
+        \task \(\begin{cases} m < -2 \\ m > 2 \end{cases}\)
+        \task \(-2 \leq m \leq 2\)
+    \end{tasks}
+}
+
+\textit{\textbf{Dạng 2: Tìm m để hàm số nhất biến đơn điệu trên khoảng cho trước}}
+
+% --- CÂU 22 ---
+\questionLinesManual{0}{22}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \dfrac{x + 2}{x + m}\) đồng biến trên khoảng \((-\infty; -5)\)}{%
+    \begin{tasks}(4)
+        \task \((2; 5]\)
+        \task \([2; 5)\)
+        \task \((2; +\infty)\)
+        \task \((2; 5)\)
+    \end{tasks}
+}
+
+% --- CÂU 23 ---
+\questionLinesManual{0}{23}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \dfrac{x + 3}{x + m}\) đồng biến trên khoảng \((-\infty; -6)\) là}{%
+    \begin{tasks}(4)
+        \task \((3; 6]\)
+        \task \((3; 6)\)
+        \task \((3; +\infty)\)
+        \task \([3; 6)\)
+    \end{tasks}
+}
+
+% --- CÂU 24 ---
+\questionLinesManual{0}{24}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + 2}{x + 3m}\) đồng biến trên khoảng \((-\infty; -6)\).}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 6
+        \task Vô số
+        \task 1
+    \end{tasks}
+}
+
+% --- CÂU 25 ---
+\questionLinesManual{0}{25}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + 1}{x + 3m}\) nghịch biến trên khoảng \((6; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 0
+        \task 6
+        \task 3
+        \task Vô số
+    \end{tasks}
+}
+
+% --- CÂU 26 ---
+\questionLinesManual{0}{26}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + 2}{x + 5m}\) đồng biến trên khoảng \((-\infty; -10)\)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task Vô số
+        \task 1
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 27 ---
+\questionLinesManual{0}{27}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + 6}{x + 5m}\) nghịch biến trên khoảng \((10; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task Vô số
+        \task 4
+        \task 5
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 28 ---
+\questionLinesManual{0}{28}{Tập hợp tất cả các giá trị của tham số \(m\) để hàm số \(y = \dfrac{mx - 4}{x - m}\) đồng biến trên khoảng \((-1; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task \((-2; 1]\)
+        \task \((-2; 2)\)
+        \task \((-2; -1]\)
+        \task \((-2; -1)\)
+    \end{tasks}
+}
+
+% --- CÂU 29 ---
+\questionLinesManual{0}{29}{Tìm tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \dfrac{mx - 1}{m - 4x}\) nghịch biến trên khoảng \(\left(-\infty; \dfrac{1}{4}\right)\).}{%
+    \begin{tasks}(4)
+        \task \(m > 2\)
+        \task \(1 \leq m < 2\)
+        \task \(-2 < m < 2\)
+        \task \(-2 \leq m \leq 2\)
+    \end{tasks}
+}
+
+% --- CÂU 30 ---
+\questionLinesManual{0}{30}{Cho hàm số \(y = \dfrac{mx - 2m + 3}{x + m}\) với \(m\) là tham số. Gọi \(S\) là tập hợp tất cả các giá trị nguyên của \(m\) để hàm số nghịch biến trên khoảng \((2; +\infty)\). Tìm số phần tử của \(S\).}{%
+    \begin{tasks}(4)
+        \task 5
+        \task 3
+        \task 4
+        \task 1
+    \end{tasks}
+}
+
+% --- CÂU 31 ---
+\questionLinesManual{0}{31}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x + 18}{x + 4m}\) nghịch biến trên khoảng \((2; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task Vô số
+        \task 0
+        \task 3
+        \task 5
+    \end{tasks}
+}
+
+% --- CÂU 32 ---
+\questionLinesManual{0}{32}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{mx + 9}{4x + m}\) nghịch biến trên khoảng \((0; 4)\)?}{%
+    \begin{tasks}(4)
+        \task 5
+        \task 11
+        \task 6
+        \task 7
+    \end{tasks}
+}
+
+% --- CÂU 33 ---
+\questionLinesManual{0}{33}{Tìm tất cả các giá trị thực của tham số \(m\) sao cho hàm số \(y = \dfrac{-mx + 3m + 4}{x - m}\) nghịch biến trên khoảng \((1; +\infty)\)}{%
+    \begin{tasks}(4)
+        \task \(-1 < m < 4\)
+        \task \(-1 < m \leq 1\)
+        \task \(\begin{cases} m < -1 \\ m > 4 \end{cases}\)
+        \task \(1 \leq m < 4\)
+    \end{tasks}
+}
+
+% --- CÂU 34 ---
+\questionLinesManual{0}{34}{Có bao nhiêu giá trị nguyên của tham số \(m \in (-2020; 2020)\) sao cho hàm số \(y = \dfrac{3x + 18}{x - m}\) nghịch biến trên khoảng \((-\infty; -3)\)?}{%
+    \begin{tasks}(4)
+        \task 2020
+        \task 2026
+        \task 2018
+        \task 2023
+    \end{tasks}
+}
+
+% --- CÂU 35 ---
+\questionLinesManual{0}{35}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = \dfrac{x + 4}{2x - m}\) nghịch biến trên khoảng \((-3; 4)\).}{%
+    \begin{tasks}(4)
+        \task Vô số
+        \task 1
+        \task 3
+        \task 2
+    \end{tasks}
+}
+
+% --- CÂU 36 ---
+\questionLinesManual{0}{36}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{mx + 4}{x + m}\) nghịch biến trên khoảng \((0; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 1
+        \task 2
+        \task 3
+        \task 5
+    \end{tasks}
+}
+
+
+
+
+\textit{\textbf{Dạng 3: Tìm m để hàm số bậc 3 đơn điệu trên khoảng cho trước}}
+
+% --- CÂU 37 ---
+\questionLinesManual{0}{37}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = x^3 - 3x^2 + (4 - m)x\) đồng biến trên khoảng \((2; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task \((-\infty; 1]\)
+        \task \((-\infty; 4]\)
+        \task \((-\infty; 1)\)
+        \task \((-\infty; 4)\)
+    \end{tasks}
+}
+
+% --- CÂU 38 ---
+\questionLinesManual{0}{38}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = x^3 - 3x^2 + (5 - m)x\) đồng biến trên khoảng \((2; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task \((-\infty; 2)\)
+        \task \((-\infty; 5)\)
+        \task \((-\infty; 5]\)
+        \task \((-\infty; 2]\)
+    \end{tasks}
+}
+
+% --- CÂU 39 ---
+\questionLinesManual{0}{39}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = x^3 - 3x^2 + (2 - m)x\) đồng biến trên khoảng \((2; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task \((-\infty; -1]\)
+        \task \((-\infty; 2)\)
+        \task \((-\infty; -1)\)
+        \task \((-\infty; 2]\)
+    \end{tasks}
+}
+
+% --- CÂU 40 ---
+\questionLinesManual{0}{40}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = x^3 - 3x^2 + (1 - m)x\) đồng biến trên khoảng \((2; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task \((-\infty; -2)\)
+        \task \((-\infty; 1)\)
+        \task \((-\infty; -2]\)
+        \task \((-\infty; 1]\)
+    \end{tasks}
+}
+
+% --- CÂU 41 ---
+\questionLinesManual{0}{41}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = -x^3 - 6x^2 + (4m - 9)x + 4\) nghịch biến trên khoảng \((-\infty; -1)\) là}{%
+    \begin{tasks}(4)
+        \task \(\left(-\infty; -\dfrac{3}{4}\right]\)
+        \task \([0; +\infty)\)
+        \task \((-\infty; 0]\)
+        \task \(\left[-\dfrac{3}{4}; +\infty\right)\)
+    \end{tasks}
+}
+
+% --- CÂU 42 ---
+\questionLinesManual{0}{42}{Cho hàm số \(y = x^3 + 3x^2 - mx - 4\). Tập hợp tất cả các giá trị của tham số \(m\) để hàm số đồng biến trên khoảng \((-\infty; 0)\) là}{%
+    \begin{tasks}(4)
+        \task \((-1; 5)\)
+        \task \((-\infty; -3]\)
+        \task \((-\infty; -4]\)
+        \task \((-1; +\infty)\)
+    \end{tasks}
+}
+
+% --- CÂU 43 ---
+\questionLinesManual{0}{43}{Tìm tất cả các giá trị thực của tham số \(m\) sao cho hàm số \(y = f(x) = \dfrac{mx^3}{3} + 7mx^2 + 14x - m + 2\) giảm trên nửa khoảng \([1; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task \(\left(-\infty; -\dfrac{14}{15}\right]\)
+        \task \(\left[-2; -\dfrac{14}{15}\right]\)
+        \task \(\left[-\dfrac{14}{15}; +\infty\right)\)
+        \task \(\left(-\infty; -\dfrac{14}{15}\right)\)
+    \end{tasks}
+}
+
+
+% --- CÂU 44 ---
+\questionLinesManual{0}{44}{Xác định các giá trị của tham số \(m\) để hàm số \(y = x^3 - 3mx^2 - m\) nghịch biến trên khoảng \((0; 1)\)?}{%
+    \begin{tasks}(4)
+        \task \(m \geq 0\)
+        \task \(m < \dfrac{1}{2}\)
+        \task \(m \leq 0\)
+        \task \(m \geq \dfrac{1}{2}\)
+    \end{tasks}
+}
+
+% --- CÂU 45 ---
+\questionLinesManual{0}{45}{Tìm tất cả các giá trị của tham số \(m\) để hàm số \(y = x^3 + 3x^2 - mx + 1\) đồng biến trên khoảng \((-\infty; 0)\).}{%
+    \begin{tasks}(4)
+        \task \(m \leq 0\)
+        \task \(m \geq -2\)
+        \task \(m \leq -3\)
+        \task \(m \leq -1\)
+    \end{tasks}
+}
+
+% --- CÂU 46 ---
+\questionLinesManual{0}{46}{Tìm tất cả các giá trị thực của tham số \(m\) để hàm số \(y = x^3 - 3mx^2 - 9m^2x\) nghịch biến trên khoảng \((0; 1)\).}{%
+    \begin{tasks}(4)
+        \task \(-1 < m < \dfrac{1}{3}\)
+        \task \(m > \dfrac{1}{3}\)
+        \task \(m < -1\)
+        \task \(m \geq \dfrac{1}{3}\) hoặc \(m \leq -1\)
+    \end{tasks}
+}
+
+% --- CÂU 47 ---
+\questionLinesManual{0}{47}{Tìm các giá trị của tham số \(m\) để hàm số \(y = \dfrac{1}{3}x^3 - mx^2 + (2m - 1)x - m + 2\) nghịch biến trên khoảng \((-2; 0)\).}{%
+    \begin{tasks}(4)
+        \task \(m = 0\)
+        \task \(m > 1\)
+        \task \(m \leq -\dfrac{1}{2}\)
+        \task \(m < -\dfrac{1}{2}\)
+    \end{tasks}
+}
+
+% --- CÂU 48 ---
+\questionLinesManual{0}{48}{Tìm tất cả các giá trị \(m\) để hàm số \(y = x^3 - 3x^2 + mx + 2\) tăng trên khoảng \((1; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task \(m < 3\)
+        \task \(m \geq 3\)
+        \task \(m \neq 3\)
+        \task \(m \leq 3\)
+    \end{tasks}
+}
+
+% --- CÂU 49 ---
+\questionLinesManual{0}{49}{Tập hợp tất cả các giá trị của tham số \(m\) để hàm số \(y = x^3 - mx^2 - (m - 6)x + 1\) đồng biến trên khoảng \((0; 4)\) là:}{%
+    \begin{tasks}(4)
+        \task \((-\infty; 3)\)
+        \task \((-\infty; 3]\)
+        \task \([3; 6]\)
+        \task \((-\infty; 6]\)
+    \end{tasks}
+}
+
+% --- CÂU 50 ---
+\questionLinesManual{0}{50}{Tìm tất cả các giá trị thực của tham số \(m\) sao cho hàm số \(y = 2x^3 - 3x^2 - 6mx + m\) nghịch biến trên khoảng \((-1; 1)\).}{%
+    \begin{tasks}(4)
+        \task \(m \leq -\dfrac{1}{4}\)
+        \task \(m \geq \dfrac{1}{4}\)
+        \task \(m \geq 2\)
+        \task \(m \geq 0\)
+    \end{tasks}
+}
+
+% --- CÂU 51 ---
+\questionLinesManual{0}{51}{Tìm tất cả các giá trị thực của tham số \(m\) sao cho hàm số \(y = x^3 - 6x^2 + mx + 1\) đồng biến trên khoảng \((0; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task \(m \geq 12\)
+        \task \(m \leq 12\)
+        \task \(m \geq 0\)
+        \task \(m \leq 0\)
+    \end{tasks}
+}
+
+% --- CÂU 52 ---
+\questionLinesManual{0}{52}{Tìm \(m\) để hàm số \(y = -x^3 + 3x^2 + 3mx + m - 1\) nghịch biến trên \((0; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task \(m \leq -1\)
+        \task \(m \leq 1\)
+        \task \(m < 1\)
+        \task \(m > -1\)
+    \end{tasks}
+}
+
+% --- CÂU 53 ---
+\questionLinesManual{0}{53}{Gọi \(S\) là tập hợp các giá trị nguyên dương của \(m\) để hàm số \(y = x^3 - 3(2m + 1)x^2 + (12m + 5)x + 2\) đồng biến trên khoảng \((2; +\infty)\). Số phần tử của \(S\) bằng}{%
+    \begin{tasks}(4)
+        \task 1
+        \task 2
+        \task 3
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 54 ---
+\questionLinesManual{0}{54}{Tập hợp tất cả các giá trị của tham số \(m\) để hàm số \(y = x^3 - mx^2 - (m - 6)x + 1\) đồng biến trên khoảng \((0; 4)\) là:}{%
+    \begin{tasks}(4)
+        \task \((-\infty; 6]\)
+        \task \((-\infty; 3)\)
+        \task \((-\infty; 3]\)
+        \task \([3; 6]\)
+    \end{tasks}
+}
+
+% --- CÂU 55 ---
+\questionLinesManual{0}{55}{Có bao nhiêu số nguyên \(m\) để hàm số \(f(x) = \dfrac{1}{3}x^3 - mx^2 + (m + 6)x + \dfrac{2}{3}\) đồng biến trên khoảng \((0; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 9
+        \task 10
+        \task 6
+        \task 5
+    \end{tasks}
+}
+
+% --- CÂU 56 ---
+\questionLinesManual{0}{56}{Tìm tất cả các giá trị thực của tham số \(m\) để hàm số \(y = -x^3 - 6x^2 + (4m - 9)x + 4\) nghịch biến trên khoảng \((-\infty; -1)\) là}{%
+    \begin{tasks}(4)
+        \task \(\left(-\infty; -\dfrac{3}{4}\right]\)
+        \task \(\left[-\dfrac{3}{4}; +\infty\right)\)
+        \task \([0; +\infty)\)
+        \task \((-\infty; 0]\)
+    \end{tasks}
+}
+
+% --- CÂU 57 ---
+\questionLinesManual{0}{57}{Cho hàm số \(y = \dfrac{x^3}{3} - (m - 1)x^2 + 3(m - 1)x + 1\). Số các giá trị nguyên của \(m\) để hàm số đồng biến trên \((1; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task 7
+        \task 4
+        \task 5
+        \task 6
+    \end{tasks}
+}
+
+% --- CÂU 58 ---
+\questionLinesManual{0}{58}{Số giá trị nguyên thuộc khoảng \((-2020; 2020)\) của tham số \(m\) để hàm số \(y = x^3 - 3x^2 - mx + 2019\) đồng biến trên \((0; +\infty)\) là}{%
+    \begin{tasks}(4)
+        \task 2018
+        \task 2019
+        \task 2020
+        \task 2017
+    \end{tasks}
+}
+
+% --- CÂU 59 ---
+\questionLinesManual{0}{59}{Có bao nhiêu giá trị nguyên của \(m\) thuộc \([-2020; 2020]\) để hàm số \(y = x^3 - 6x^2 + mx + 1\) đồng biến trên \((0; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 2004
+        \task 2017
+        \task 2020
+        \task 2009
+    \end{tasks}
+}
+
+% --- CÂU 60 ---
+\questionLinesManual{0}{60}{Cho hàm số \(f(x) = x^3 - (m + 1)x^2 - (2m^2 - 3m + 2)x + 2\). Có bao nhiêu giá trị nguyên của tham số \(m\) sao cho hàm số đã cho đồng biến trên khoảng \((2; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 3
+        \task 4
+        \task 5
+    \end{tasks}
+}
+
+% --- CÂU 61 ---
+\questionLinesManual{0}{61}{Gọi \(S\) là tập hợp tất cả các giá trị nguyên của tham số \(m\) thuộc \((-2020; 2020)\) sao cho hàm số \(y = 2x^3 + mx^2 + 2x\) đồng biến trên khoảng \((-2; 0)\). Tính số phần tử của tập hợp \(S\).}{%
+    \begin{tasks}(4)
+        \task 2025
+        \task 2016
+        \task 2024
+        \task 2023
+    \end{tasks}
+}
+
+% --- CÂU 62 ---
+\questionLinesManual{0}{62}{Với mọi giá trị \(m \geq a\sqrt{b}\), (\(a, b \in \mathbb{Z}\)) thì hàm số \(y = 2x^3 - mx^2 + 2x + 5\) đồng biến trên khoảng \((-2; 0)\). Khi đó \(a - b\) bằng}{%
+    \begin{tasks}(4)
+        \task 1
+        \task -2
+        \task 3
+        \task -5
+    \end{tasks}
+}
+
+
+\textit{\textbf{Dạng 4: Tìm m để hàm số khác đơn điệu trên khoảng cho trước}}
+
+% --- CÂU 63 ---
+\questionLinesManual{0}{63}{Tìm tất cả các giá trị thực của tham số \(m\) sao cho hàm số \(y = \dfrac{\tan x - 2}{\tan x - m}\) đồng biến trên khoảng \(\left(0; \dfrac{\pi}{4}\right)\).}{%
+    \begin{tasks}(2)
+        \task \(m \leq 0\) hoặc \(1 \leq m < 2\)
+        \task \(m \leq 0\)
+        \task \(1 \leq m < 2\)
+        \task \(m \geq 2\)
+    \end{tasks}
+}
+
+% --- CÂU 64 ---
+\questionLinesManual{0}{64}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = x^3 + mx - \dfrac{1}{5x^5}\) đồng biến trên khoảng \((0; +\infty)\)}{%
+    \begin{tasks}(4)
+        \task 0
+        \task 4
+        \task 5
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 65 ---
+\questionLinesManual{0}{65}{Gọi \(S\) là tập hợp tất cả các giá trị của tham số \(m\) để hàm số \(f(x) = \dfrac{1}{5}m^2x^5 - \dfrac{1}{3}mx^3 + 10x^2 - (m^2 - m - 20)x\) đồng biến trên \(\mathbb{R}\). Tổng giá trị của tất cả các phần tử thuộc \(S\) bằng}{%
+    \begin{tasks}(4)
+        \task \(\dfrac{5}{2}\)
+        \task \(-2\)
+        \task \(\dfrac{1}{2}\)
+        \task \(\dfrac{3}{2}\)
+    \end{tasks}
+}
+
+% --- CÂU 66 ---
+\questionLinesManual{0}{66}{Tập hợp các giá trị thực của tham số \(m\) để hàm số \(y = x + 1 + \dfrac{m}{x - 2}\) đồng biến trên mỗi khoảng xác định của nó là}{%
+    \begin{tasks}(4)
+        \task \([0; 1)\)
+        \task \((-\infty; 0]\)
+        \task \([0; +\infty) \setminus \{1\}\)
+        \task \((-\infty; 0)\)
+    \end{tasks}
+}
+
+% --- CÂU 67 ---
+\questionLinesManual{0}{67}{Tìm tất cả các giá trị thực của tham số để hàm số \(y = \dfrac{\cos x - 3}{\cos x - m}\) nghịch biến trên khoảng \(\left(\dfrac{\pi}{2}; \pi\right)\)}{%
+    \begin{tasks}(4)
+        \task \(\begin{cases} 0 \leq m < 3 \\ m \leq -1 \end{cases}\)
+        \task \(\begin{cases} 0 < m < 3 \\ m < -1 \end{cases}\)
+        \task \(m \leq 3\)
+        \task \(m < 3\)
+    \end{tasks}
+}
+
+% --- CÂU 68 ---
+\questionLinesManual{0}{68}{Cho hàm số \(y = \dfrac{(4 - m)\sqrt{6 - x} + 3}{\sqrt{6 - x} + m}\). Có bao nhiêu giá trị nguyên của \(m\) trong khoảng \((-10; 10)\) sao cho hàm số đồng biến trên \((-8; 5)\)?}{%
+    \begin{tasks}(4)
+        \task 14
+        \task 13
+        \task 12
+        \task 15
+    \end{tasks}
+}
+
+% --- CÂU 69 ---
+\questionLinesManual{0}{69}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = \dfrac{1}{4}x^4 + mx - \dfrac{3}{2x}\) đồng biến trên khoảng \((0; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 1
+        \task 3
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 70 ---
+\questionLinesManual{0}{70}{Cho hàm số \(y = \dfrac{\ln x - 4}{\ln x - 2m}\) với \(m\) là tham số. Gọi \(S\) là tập hợp các giá trị nguyên dương của \(m\) để hàm số đồng biến trên khoảng \((1; e)\). Tìm số phần tử của \(S\).}{%
+    \begin{tasks}(4)
+        \task 3
+        \task 2
+        \task 1
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 71 ---
+\questionLinesManual{0}{71}{Tìm \(m\) để hàm số \(y = \dfrac{\cos x - 2}{\cos x - m}\) đồng biến trên khoảng \(\left(0; \dfrac{\pi}{2}\right)\)}{%
+    \begin{tasks}(4)
+        \task \(\begin{cases} m \geq 2 \\ m \leq -2 \end{cases}\)
+        \task \(m > 2\)
+        \task \(\begin{cases} m \leq 0 \\ 1 \leq m < 2 \end{cases}\)
+        \task \(-1 < m < 1\)
+    \end{tasks}
+}
+
+% --- CÂU 72 ---
+\questionLinesManual{0}{72}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = \dfrac{3}{4}x^4 - \dfrac{9}{2}x^2 + (2m + 15)x - 3m + 1\) đồng biến trên khoảng \((0; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 3
+        \task 5
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 73 ---
+\questionLinesManual{0}{73}{Có tất cả bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = 3x + \dfrac{m^2 + 3m}{x + 1}\) đồng biến trên từng khoảng xác định của nó?}{%
+    \begin{tasks}(4)
+        \task 4
+        \task 2
+        \task 1
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 69 ---
+\questionLinesManual{0}{69}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = \dfrac{1}{4}x^4 + mx - \dfrac{3}{2x}\) đồng biến trên khoảng \((0; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 1
+        \task 3
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 70 ---
+\questionLinesManual{0}{70}{Cho hàm số \(y = \dfrac{\ln x - 4}{\ln x - 2m}\) với \(m\) là tham số. Gọi \(S\) là tập hợp các giá trị nguyên dương của \(m\) để hàm số đồng biến trên khoảng \((1; e)\). Tìm số phần tử của \(S\).}{%
+    \begin{tasks}(4)
+        \task 3
+        \task 2
+        \task 1
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 71 ---
+\questionLinesManual{0}{71}{Tìm \(m\) để hàm số \(y = \dfrac{\cos x - 2}{\cos x - m}\) đồng biến trên khoảng \(\left(0; \dfrac{\pi}{2}\right)\)}{%
+    \begin{tasks}(4)
+        \task \(\begin{cases} m \geq 2 \\ m \leq -2 \end{cases}\)
+        \task \(m > 2\)
+        \task \(\begin{cases} m \leq 0 \\ 1 \leq m < 2 \end{cases}\)
+        \task \(-1 < m < 1\)
+    \end{tasks}
+}
+
+% --- CÂU 72 ---
+\questionLinesManual{0}{72}{Có bao nhiêu giá trị nguyên âm của tham số \(m\) để hàm số \(y = \dfrac{3}{4}x^4 - \dfrac{9}{2}x^2 + (2m + 15)x - 3m + 1\) đồng biến trên khoảng \((0; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 3
+        \task 5
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 73 ---
+\questionLinesManual{0}{73}{Có tất cả bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = 3x + \dfrac{m^2 + 3m}{x + 1}\) đồng biến trên từng khoảng xác định của nó?}{%
+    \begin{tasks}(4)
+        \task 4
+        \task 2
+        \task 1
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 74 ---
+\questionLinesManual{0}{74}{Có bao nhiêu giá trị nguyên dương của tham số \(m\) để hàm số \(y = \dfrac{x^2}{2} - mx + \ln(x - 1)\) đồng biến trên khoảng \((1; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 3
+        \task 4
+        \task 2
+        \task 1
+    \end{tasks}
+}
+
+% --- CÂU 75 ---
+\questionLinesManual{0}{75}{Có bao nhiêu giá trị nguyên \(m \in (-10; 10)\) để hàm số \(y = m^2x^4 - 2(4m - 1)x^2 + 1\) đồng biến trên khoảng \((1; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 15
+        \task 6
+        \task 7
+        \task 16
+    \end{tasks}
+}
+
+% --- CÂU 76 ---
+\questionLinesManual{0}{76}{Có bao nhiêu giá trị nguyên của tham số \(m \in [-2018; 2018]\) để hàm số \(y = \sqrt{x^2 + 1} - mx - 1\) đồng biến trên \((-\infty; +\infty)\).}{%
+    \begin{tasks}(4)
+        \task 2017
+        \task 2019
+        \task 2020
+        \task 2018
+    \end{tasks}
+}
+
+% --- CÂU 77 ---
+\questionLinesManual{0}{77}{Tìm tất cả các giá trị của \(m\) để hàm số \(y = 2^{\frac{mx + 1}{x + m}}\) nghịch biến trên \(\left(\dfrac{1}{2}; +\infty\right)\).}{%
+    \begin{tasks}(4)
+        \task \(m \in (-1; 1)\)
+        \task \(m \in \left(\dfrac{1}{2}; 1\right)\)
+        \task \(m \in \left[\dfrac{1}{2}; 1\right]\)
+        \task \(m \in \left[-\dfrac{1}{2}; 1\right)\)
+    \end{tasks}
+}
+
+% --- CÂU 78 ---
+\questionLinesManual{0}{78}{Có bao nhiêu giá trị nguyên của tham số \(m\) để hàm số \(y = \dfrac{x^2 + 2x + m}{x - 1}\) nghịch biến trên khoảng \((1; 3)\) và đồng biến trên khoảng \((4; 6)\).}{%
+    \begin{tasks}(4)
+        \task 6
+        \task 7
+        \task 5
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 79 ---
+\questionLinesManual{0}{79}{Cho hàm số \(y = \dfrac{\sqrt{1 - \ln x} + 1}{\sqrt{1 - \ln x} + m}\). Có bao nhiêu giá trị nguyên của tham số \(m\) thuộc \([-5; 5]\) để hàm số đã cho đồng biến trên khoảng \(\left(\dfrac{1}{e^3}; 1\right)\).}{%
+    \begin{tasks}(4)
+        \task 7
+        \task 6
+        \task 5
+        \task 4
+    \end{tasks}
+}
+
+% --- CÂU 80 ---
+\questionLinesManual{0}{80}{Có bao nhiêu giá trị nguyên dương của \(m\) để hàm số \(y = \dfrac{\ln x - 6}{\ln x - 2m}\) đồng biến trên khoảng \((1; e)\)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 1
+        \task 4
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 81 ---
+\questionLinesManual{0}{81}{Có bao nhiêu số nguyên \(m\) để hàm số \(f(x) = m(2020 + x - 2\cos x) + \sin x - x\) nghịch biến trên \(\mathbb{R}\)?}{%
+    \begin{tasks}(4)
+        \task Vô số
+        \task 2
+        \task 1
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 82 ---
+\questionLinesManual{0}{82}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \ln(x^2 + 4) + mx + 12\) đồng biến trên \(\mathbb{R}\) là}{%
+    \begin{tasks}(4)
+        \task \(\left[\dfrac{1}{2}; +\infty\right)\)
+        \task \(\left(-\dfrac{1}{2}; \dfrac{1}{2}\right)\)
+        \task \(\left(-\infty; -\dfrac{1}{2}\right]\)
+        \task \(\left(\dfrac{1}{2}; +\infty\right)\)
+    \end{tasks}
+}
+
+% --- CÂU 83 ---
+\questionLinesManual{0}{83}{Có tất cả bao nhiêu giá trị nguyên của \(m\) để hàm số \(y = |x^3 - mx^2 + 12x + 2m|\) luôn đồng biến trên khoảng \((1; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 18
+        \task 19
+        \task 21
+        \task 20
+    \end{tasks}
+}
+
+% --- CÂU 84 ---
+\questionLinesManual{0}{84}{Có bao nhiêu giá trị nguyên của tham số \(m\) thuộc khoảng \((-8; 8)\) sao cho hàm số \(y = |-2x^3 + 3mx - 2|\) đồng biến trên khoảng \((1; +\infty)\)?}{%
+    \begin{tasks}(4)
+        \task 10
+        \task 9
+        \task 8
+        \task 11
+    \end{tasks}
+}
+
+% --- CÂU 85 ---
+\questionLinesManual{0}{85}{Gọi \(T\) là tập hợp tất cả các giá trị nguyên dương của tham số \(m\) để hàm số \(y = x^4 - 2mx^2 + 1\) đồng biến trên khoảng \((3; +\infty)\). Tổng giá trị các phần tử của \(T\) bằng}{%
+    \begin{tasks}(4)
+        \task 9
+        \task 45
+        \task 55
+        \task 36
+    \end{tasks}
+}
+
+% --- CÂU 86 ---
+\questionLinesManual{0}{86}{Tìm tập hợp tất cả các giá trị của \(m\) để hàm số \(y = \dfrac{m - \sin x}{\cos^2 x}\) nghịch biến trên \(\left(0; \dfrac{\pi}{6}\right)\).}{%
+    \begin{tasks}(4)
+        \task \(m \geq 1\)
+        \task \(m \leq 2\)
+        \task \(m \leq \dfrac{5}{4}\)
+        \task \(m \leq 0\)
+    \end{tasks}
+}
+
+% --- CÂU 87 ---
+\questionLinesManual{0}{87}{Cho hàm số \(y = f(x)\) có đạo hàm \(f'(x) = 3x^2 + 6x + 4, \forall x \in \mathbb{R}\). Có tất cả bao nhiêu giá trị nguyên thuộc \((-2020; 2020)\) của tham số \(m\) để hàm số \(g(x) = f(x) - (2m + 4)x - 5\) nghịch biến trên \((0; 2)\)}{%
+    \begin{tasks}(4)
+        \task 2008
+        \task 2007
+        \task 2018
+        \task 2019
+    \end{tasks}
+}
+
+% --- CÂU 88 ---
+\questionLinesManual{0}{88}{Có bao nhiêu giá trị nguyên của tham số \(m\) thuộc đoạn \([-10; 10]\) sao cho hàm số \(y = \dfrac{x^4}{4} - \dfrac{mx^3}{3} - \dfrac{x^2}{2} + mx + 2020\) nghịch biến trên khoảng \((0; 1)\)?}{%
+    \begin{tasks}(4)
+        \task 12
+        \task 11
+        \task 9
+        \task 10
+    \end{tasks}
+}
+
+% --- CÂU 89 ---
+\questionLinesManual{0}{89}{Có bao nhiêu số nguyên \(m\) để hàm số \(f(x) = m(2020 + x - 2\cos x) + \sin x - x\) nghịch biến trên \(\mathbb{R}\)?}{%
+    \begin{tasks}(4)
+        \task Vô số
+        \task 2
+        \task 1
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 90 ---
+\questionLinesManual{0}{90}{Tập hợp tất cả các giá trị thực của tham số \(m\) để hàm số \(y = \ln(x^2 + 4) + mx + 12\) đồng biến trên \(\mathbb{R}\) là}{%
+    \begin{tasks}(4)
+        \task \(\left[\dfrac{1}{2}; +\infty\right)\)
+        \task \(\left(-\dfrac{1}{2}; \dfrac{1}{2}\right)\)
+        \task \(\left(-\infty; -\dfrac{1}{2}\right]\)
+        \task \(\left(\dfrac{1}{2}; +\infty\right)\)
+    \end{tasks}
+}
+
+% --- CÂU 91 ---
+\questionLinesManual{0}{91}{Tìm tất cả các giá trị thực của \(m\) để hàm số \(y = 2^{x^3 - x^2 + mx + 1}\) đồng biến trên \((1; 2)\).}{%
+    \begin{tasks}(4)
+        \task \(m > -8\)
+        \task \(m \geq -1\)
+        \task \(m \leq -8\)
+        \task \(m < -1\)
+    \end{tasks}
+}
+
+
+\end{document}
