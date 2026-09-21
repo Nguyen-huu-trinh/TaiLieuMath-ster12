@@ -5,31 +5,36 @@
 
 \titlebox{Chủ đề: Oxyz}{Vecto và các phép toán vecto \\ trong không gian}{Oxyz}
 
+
 % ==========================================
-% I. LÝ THUYẾT TRỌNG TÂM: NHÓM 1
+% I. LÝ THUYẾT TRỌNG TÂM: NHÓM 1 (TRANG 1: 4 Ý ĐẦU HÌNH TO, GIÃN THOÁNG ĐỀU)
 % ==========================================
 \noindent\textbf{\textcolor{deepblue}{\large I. TÓM TẮT TRỌNG TÂM (NHÓM 1: VECTƠ VÀ CÁC QUY TẮC)}}
-\par\vspace{0.25cm}
+\par\vspace{0.4cm}
+
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
 
 % ------------------------------------------
 % MỤC 1: VECTƠ TRONG KHÔNG GIAN
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
+\begin{minipage}[c]{0.63\linewidth}
     \textbf{\textcolor{amberorange}{1. Vectơ trong không gian và Vectơ-không}}
-    \begin{itemize}
+    \begin{itemize}\setlength{\itemsep}{4pt}\setlength{\parskip}{0pt}
         \item Là một đoạn thẳng có hướng: $\vec{AB}$, độ dài $|\vec{AB}| = AB$.
-        \item $\vec{0}$ có điểm đầu trùng điểm cuối ($\vec{AA} = \vec{0}$), có độ dài bằng $0$, cùng phương và cùng hướng với mọi vectơ.
+        \item $\vec{0}$ có điểm đầu trùng điểm cuối $(\vec{AA} = \vec{0})$, \newline
+              có độ dài bằng $0$, cùng phương và cùng hướng với mọi vectơ.
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.35\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \begin{tikzpicture}[scale=1.0, font=\footnotesize]
         \coordinate (A) at (0,0);
-        \coordinate (B) at (2.4,0);
-        \coordinate (D) at (1.0,0.8);
+        \coordinate (B) at (2.8,0);
+        \coordinate (D) at (1.1,0.9);
         \coordinate (C) at ($(B)+(D)-(A)$);
-        \coordinate (A1) at (0,1.4);
+        \coordinate (A1) at (0,1.5);
         \coordinate (B1) at ($(B)+(A1)-(A)$);
         \coordinate (C1) at ($(C)+(A1)-(A)$);
         \coordinate (D1) at ($(D)+(A1)-(A)$);
@@ -38,71 +43,73 @@
         \draw[dashed, softgray!80!black] (A1)--(B1)--(C1)--(D1)--cycle;
         \draw[dashed, softgray!80!black] (A)--(A1) (B)--(B1) (C)--(C1) (D)--(D1);
 
-        \draw[->, >=stealth, line width=1.4pt, amberorange] (A) -- (C1) node[midway, above left] {$\vec{AB}$};
+        \draw[->, >=stealth, line width=1.5pt, amberorange] (A) -- (C1) node[midway, above left] {$\vec{AB}$};
         \fill[deepblue] (A) circle (1.5pt) node[below left] {$A$};
         \fill[deepblue] (C1) circle (1.5pt) node[above right] {$B$};
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 \hrule height 0.4pt \relax
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 
 % ------------------------------------------
 % MỤC 2: CÙNG PHƯƠNG, CÙNG HƯỚNG, BẰNG NHAU
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
+\begin{minipage}[c]{0.63\linewidth}
     \textbf{\textcolor{amberorange}{2. Cùng phương, cùng hướng, bằng nhau}}
-    \begin{itemize}
+    \begin{itemize}\setlength{\itemsep}{4pt}\setlength{\parskip}{0pt}
         \item \textbf{Cùng phương:} Giá song song hoặc trùng nhau.
-        \item \textbf{Cùng hướng / Ngược hướng:} Khi hai vectơ đã cùng phương.
-        \item \textbf{Bằng nhau:} $\vec{a} = \vec{b} \iff \vec{a}, \vec{b} \text{ cùng hướng và } |\vec{a}| = |\vec{b}|$.
+        \item \textbf{Cùng hướng / Ngược hướng:} \newline
+              Khi hai vectơ đã cùng phương.
+        \item \textbf{Bằng nhau:} $\vec{a} = \vec{b} \iff$ \newline
+              $\vec{a}, \vec{b} \text{ cùng hướng và } |\vec{a}| = |\vec{b}|$.
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.35\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
-        \draw[->, >=stealth, deepblue, thick] (0, 1.0) -- (2.2, 1.0);
-        \draw[->, >=stealth, deepblue, thick] (0, 0.65) -- (2.2, 0.65);
-        \node[deepblue, right] at (2.25, 0.82) {cùng hướng};
+    \begin{tikzpicture}[scale=0.95, font=\scriptsize]
+        \draw[->, >=stealth, deepblue, line width=1.1pt] (0, 1.2) -- (2.7, 1.2);
+        \draw[->, >=stealth, deepblue, line width=1.1pt] (0, 0.75) -- (2.7, 0.75);
+        \node[deepblue, font=\footnotesize, right] at (2.75, 0.98) {cùng hướng};
 
-        \draw[->, >=stealth, accentred, thick] (0, 0.05) -- (2.2, 0.05);
-        \draw[<-, >=stealth, accentred, thick] (0, -0.3) -- (2.2, -0.3);
-        \node[accentred, right] at (2.25, -0.12) {ngược hướng};
+        \draw[->, >=stealth, accentred, line width=1.1pt] (0, 0.05) -- (2.7, 0.05);
+        \draw[<-, >=stealth, accentred, line width=1.1pt] (0, -0.4) -- (2.7, -0.4);
+        \node[accentred, font=\footnotesize, right] at (2.75, -0.18) {ngược hướng};
 
-        \draw[->, >=stealth, amberorange, line width=1.3pt] (0, -0.9) -- (2.0, -0.9) node[midway, above] {$\vec{a}$};
-        \draw[->, >=stealth, amberorange, line width=1.3pt] (0, -1.35) -- (2.0, -1.35) node[midway, above] {$\vec{b}$};
-        \node[amberorange, font=\bfseries\scriptsize, right] at (2.25, -1.12) {$\vec{a} = \vec{b}$};
+        \draw[->, >=stealth, amberorange, line width=1.5pt] (0, -1.1) -- (2.4, -1.1) node[midway, above] {$\vec{a}$};
+        \draw[->, >=stealth, amberorange, line width=1.5pt] (0, -1.65) -- (2.4, -1.65) node[midway, above] {$\vec{b}$};
+        \node[amberorange, font=\bfseries\footnotesize, right] at (2.55, -1.38) {$\vec{a} = \vec{b}$};
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 \hrule height 0.4pt \relax
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 
 % ------------------------------------------
 % MỤC 3: QUY TẮC BA ĐIỂM (NỐI ĐUÔI)
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
+\begin{minipage}[c]{0.60\linewidth}
     \textbf{\textcolor{amberorange}{3. Quy tắc ba điểm (Nối đuôi hai vectơ)}}
-    \begin{itemize}
+    \begin{itemize}\setlength{\itemsep}{4pt}\setlength{\parskip}{0pt}
         \item Với ba điểm $A, B, C$ bất kì trong không gian:
-        $$\vec{AB} + \vec{BC} = \vec{AC}$$
+        \[ \vec{AB} + \vec{BC} = \vec{AC} \]
         \item Điểm cuối của vectơ này là điểm đầu của vectơ kia.
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.38\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \begin{tikzpicture}[scale=1.1, font=\footnotesize]
         \coordinate (A) at (0, 0);
-        \coordinate (B) at (1.5, 1.5);
-        \coordinate (C) at (3.0, 0.2);
+        \coordinate (B) at (1.8, 1.7);
+        \coordinate (C) at (3.5, 0.2);
 
-        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[midway, above left] {$\vec{AB}$};
-        \draw[->, >=stealth, deepblue, thick] (B) -- (C) node[midway, above right] {$\vec{BC}$};
-        \draw[->, >=stealth, amberorange, line width=1.3pt] (A) -- (C) node[midway, below] {$\vec{AC}$};
+        \draw[->, >=stealth, deepblue, line width=1.2pt] (A) -- (B) node[midway, above left] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, line width=1.2pt] (B) -- (C) node[midway, above right] {$\vec{BC}$};
+        \draw[->, >=stealth, amberorange, line width=1.5pt] (A) -- (C) node[midway, below] {$\vec{AC}$};
 
         \node[below left] at (A) {$A$};
         \node[above] at (B) {$B$};
@@ -110,34 +117,34 @@
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 \hrule height 0.4pt \relax
-\par\vspace{0.2cm}
+\par\vspace{0.45cm}
 
 % ------------------------------------------
 % MỤC 4: QUY TẮC HÌNH BÌNH HÀNH (CHUNG GỐC)
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
+\begin{minipage}[c]{0.60\linewidth}
     \textbf{\textcolor{amberorange}{4. Quy tắc hình bình hành (Tổng hai cạnh = Đường chéo)}}
-    \begin{itemize}
+    \begin{itemize}\setlength{\itemsep}{4pt}\setlength{\parskip}{0pt}
         \item Nếu $ABCD$ là hình bình hành:
-        $$\vec{AB} + \vec{AD} = \vec{AC}$$
+        \[ \vec{AB} + \vec{AD} = \vec{AC} \]
         \item Áp dụng khi hai vectơ thành phần có cùng điểm xuất phát.
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.38\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \begin{tikzpicture}[scale=1.05, font=\footnotesize]
         \coordinate (A) at (0,0);
-        \coordinate (B) at (2.4,0);
-        \coordinate (D) at (1.0,1.3);
+        \coordinate (B) at (3.0,0);
+        \coordinate (D) at (1.3,1.4);
         \coordinate (C) at ($(B)+(D)-(A)$);
 
         \draw[dashed, softgray!80!black] (D) -- (C) -- (B);
-        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[midway, below] {$\vec{AB}$};
-        \draw[->, >=stealth, deepblue, thick] (A) -- (D) node[midway, above left] {$\vec{AD}$};
-        \draw[->, >=stealth, amberorange, line width=1.3pt] (A) -- (C) node[midway, above] {$\vec{AC}$};
+        \draw[->, >=stealth, deepblue, line width=1.2pt] (A) -- (B) node[midway, below] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, line width=1.2pt] (A) -- (D) node[midway, above left] {$\vec{AD}$};
+        \draw[->, >=stealth, amberorange, line width=1.5pt] (A) -- (C) node[midway, above] {$\vec{AC}$};
 
         \node[below left] at (A) {$A$};
         \node[below right] at (B) {$B$};
@@ -146,31 +153,36 @@
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.2cm}
-\hrule height 0.4pt \relax
-\par\vspace{0.2cm}
+\newpage
+% ==========================================
+% TRANG 2: MỤC 5 & 6 (GIÃN THOÁNG ĐỀU TRANG, HÌNH TO ĐẸP)
+% ==========================================
+\vspace*{0.2cm}
 
 % ------------------------------------------
 % MỤC 5: QUY TẮC HÌNH HỘP
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
-    \textbf{\textcolor{amberorange}{5. Quy tắc hình hộp (Ba cạnh từ một đỉnh = Đường chéo)}}
-    \begin{itemize}
+\begin{minipage}[c]{0.58\linewidth}
+    \textbf{\large\textcolor{amberorange}{5. Quy tắc hình hộp (Ba cạnh = Đường chéo)}}
+    \begin{itemize}\setlength{\itemsep}{6pt}\setlength{\parskip}{0pt}
         \item Cho hình hộp $ABCD.A'B'C'D'$:
-        $$\vec{AB} + \vec{AD} + \vec{AA'} = \vec{AC'}$$
-        \item Tổng ba vectơ cạnh chung đỉnh bằng vectơ đường chéo xuất phát từ đỉnh đó.
+        \[ \vec{AB} + \vec{AD} + \vec{AA'} = \vec{AC'} \]
+        \item Tổng ba vectơ xuất phát từ cùng một đỉnh bằng vectơ đường chéo xuất phát từ đỉnh đó.
+        \item Tương tự tại các đỉnh khác:
+        \[ \vec{BA} + \vec{BC} + \vec{BB'} = \vec{BD'} \]
+        \[ \vec{C'A'} + \vec{C'C} + \vec{C'D'} = \vec{C'B} \]
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.40\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \begin{tikzpicture}[scale=1.1, font=\footnotesize]
         \coordinate (A)   at (0,0);
-        \coordinate (B)   at (2.2,-0.4);
-        \coordinate (D)   at (2.2,0.4);
+        \coordinate (B)   at (2.6,-0.5);
+        \coordinate (D)   at (2.5,0.5);
         \coordinate (C)   at ($(B)+(D)-(A)$);
         
-        \coordinate (A1)  at (0,1.8);
+        \coordinate (A1)  at (0,2.2);
         \coordinate (B1)  at ($(B)+(A1)-(A)$);
         \coordinate (D1)  at ($(D)+(A1)-(A)$);
         \coordinate (C1)  at ($(C)+(A1)-(A)$);
@@ -179,42 +191,63 @@
         \draw[dashed, softgray!80!black] (A1) -- (B1) -- (C1) -- (D1) -- cycle;
         \draw[dashed, softgray!80!black] (A) -- (A1) (B) -- (B1) (C) -- (C1) (D) -- (D1);
 
-        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[below left] {$\vec{AB}$};
-        \draw[->, >=stealth, deepblue, thick] (A) -- (D) node[below right] {$\vec{AD}$};
-        \draw[->, >=stealth, deepblue, thick] (A) -- (A1) node[left] {$\vec{AA'}$};
-        \draw[->, >=stealth, amberorange, line width=1.4pt] (A) -- (C1) node[above right] {$\vec{AC'}$};
-        \fill[deepblue] (A) circle (1.2pt) node[left] {$A$};
+        \draw[->, >=stealth, deepblue, line width=1.1pt] (A) -- (B) node[below left] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, line width=1.1pt] (A) -- (D) node[below right] {$\vec{AD}$};
+        \draw[->, >=stealth, deepblue, line width=1.1pt] (A) -- (A1) node[left] {$\vec{AA'}$};
+        \draw[->, >=stealth, amberorange, line width=1.6pt] (A) -- (C1) node[above right] {$\vec{AC'}$};
+        \fill[deepblue] (A) circle (1.5pt) node[left] {$A$};
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.2cm}
-\hrule height 0.4pt \relax
-\par\vspace{0.2cm}
+\par\vspace{1.0cm}
+\hrule height 0.5pt \relax
+\par\vspace{1.0cm}
 
 % ------------------------------------------
 % MỤC 6: NHÂN VECTƠ VỚI MỘT SỐ
 % ------------------------------------------
 \noindent
-\begin{minipage}[c]{0.66\linewidth}
-    \textbf{\textcolor{amberorange}{6. Nhân vectơ với một số (Điều kiện cùng phương)}}
-    \begin{itemize}
-        \item Độ dài: $|k\vec{a}| = |k| \cdot |\vec{a}|$.
-        \item Hướng: Cùng hướng với $\vec{a}$ khi $k > 0$; ngược hướng khi $k < 0$.
-        \item \textbf{Cùng phương:} $\vec{a} \parallel \vec{b} \iff \vec{a} = k\vec{b}$ (với $\vec{b} \neq \vec{0}$).
+\begin{minipage}[c]{0.63\linewidth}
+    \textbf{\large\textcolor{amberorange}{6. Nhân vectơ với một số (Điều kiện cùng phương)}}
+    \begin{itemize}\setlength{\itemsep}{5pt}\setlength{\parskip}{0pt}
+        \item \textbf{Độ dài:} $|k\vec{a}| = |k| \cdot |\vec{a}|$.
+        \item \textbf{Hướng:}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Cùng hướng với $\vec{a}$ khi $k > 0$.
+            \item Ngược hướng với $\vec{a}$ khi $k < 0$.
+        \end{itemize}
+        \item \textbf{Điều kiện cùng phương:}
+        \[ \vec{a} \parallel \vec{b} \iff \vec{a} = k\vec{b} \quad (k \in \mathbb{R},\ \vec{b} \neq \vec{0}) \]
+        \item Ba điểm phân biệt $A, B, C$ thẳng hàng khi và chỉ khi tồn tại số $k$ sao cho $\vec{AB} = k\vec{AC}$.
     \end{itemize}
 \end{minipage}\hfill
-\begin{minipage}[c]{0.32\linewidth}
+\begin{minipage}[c]{0.35\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
-        \draw[->, >=stealth, deepblue, thick] (0, 0.9) -- (1.2, 0.9) node[midway, above] {$\vec{a}$};
-        \draw[->, >=stealth, deepblue, thick] (0, 0.2) -- (2.4, 0.2) node[midway, above] {$2\vec{a}\ (k > 0)$};
-        \draw[<-, >=stealth, accentred, thick] (0, -0.5) -- (1.2, -0.5) node[midway, below] {$-\vec{a}\ (k < 0)$};
-        \node[amberorange, font=\bfseries\scriptsize, right] at (1.4, -0.15) {$|k\vec{a}| = |k||\vec{a}|$};
+    \begin{tikzpicture}[scale=1.0, font=\scriptsize]
+        % Đường gióng mốc gốc
+        \draw[dashed, softgray!80!black, line width=0.8pt] (0, 1.4) -- (0, -1.3);
+        \node[softgray!80!black, font=\tiny, above] at (0, 1.4) {Gốc};
+
+        % 1. Vectơ a (độ dài 1.1cm)
+        \draw[->, >=stealth, deepblue, line width=1.3pt] (0, 0.9) -- (1.1, 0.9);
+        \node[deepblue, font=\bfseries\scriptsize, right] at (1.15, 0.9) {$\vec{a}$};
+
+        % 2. Vectơ 2a: k = 2 > 0 (độ dài 2.2cm)
+        \draw[->, >=stealth, deepblue, line width=1.3pt] (0, 0.0) -- (2.2, 0.0);
+        \node[deepblue, font=\bfseries\scriptsize, right] at (2.25, 0.0) {$2\vec{a}\ (k>0)$};
+
+        % 3. Vectơ -a: k = -1 < 0 (sang trái 1.1cm)
+        \draw[->, >=stealth, accentred, line width=1.3pt] (0, -0.9) -- (-1.1, -0.9);
+        \node[accentred, font=\bfseries\scriptsize, left] at (-1.15, -0.9) {$-\vec{a}\ (k<0)$};
+        
+        % Chấm tròn gốc
+        \fill[deepblue] (0, 0.9) circle (1.6pt);
+        \fill[deepblue] (0, 0.0) circle (1.6pt);
+        \fill[accentred] (0, -0.9) circle (1.6pt);
     \end{tikzpicture}
 \end{minipage}
 
-\par\vspace{0.6cm}
-
+\vfill
 \newpage
 % ==========================================
 % II. VÍ DỤ MINH HỌA TRÊN LỚP (NHÓM 1)
