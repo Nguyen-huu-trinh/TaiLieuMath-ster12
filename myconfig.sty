@@ -6,11 +6,16 @@
 \usepackage[T5]{fontenc}
 \usepackage{lmodern}
 \usepackage{float}
-% Toán học
+
+% Toán học & Ký hiệu Vectơ
 \usepackage{amsmath, amssymb}
+\usepackage[d]{esvect} % Mũi tên vectơ dài, thanh thoát, phủ kín chữ cái
+\renewcommand{\vec}[1]{\vv{#1}} % Tự động áp dụng cho mọi lệnh \vec
+
 \usepackage{cellspace}
 \setlength\cellspacetoplimit{5pt}    % Khoảng trống tối thiểu phía trên
 \setlength\cellspacebottomlimit{5pt} % Khoảng trống tối thiểu phía dưới
+
 % Căn lề & Bố cục trang
 \usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=60pt]{geometry}
 \usepackage{fancyhdr}
@@ -23,7 +28,6 @@
 \usepackage{graphicx} 
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes.geometric, positioning}
-
 
 % Bảng biểu & Danh sách
 \usepackage{colortbl}
@@ -45,7 +49,6 @@
 \definecolor{accentred}{RGB}{232, 65, 24}
 \definecolor{softgray}{RGB}{220, 220, 222} 
 \definecolor{fbblue}{RGB}{15, 80, 200}
-
 
 % ==========================================
 % 3. CẤU HÌNH HEADER & FOOTER
@@ -113,16 +116,15 @@
 }
 
 % ==========================================
-% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ (CHO PHÉP DÙNG \\ ĐỂ NGẮT DÒNG)
 % ==========================================
 \newcommand{\titlebox}[3]{
-    % Gán nội dung đối số #3 vào biến HeaderRightText
     \gdef\HeaderRightText{#3}
     
     \begin{center}
     \vspace*{-0.5cm}
     \begin{tikzpicture}
-        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        % Khung vô hình định chuẩn kích thước
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
             \begin{minipage}[c]{4.2cm}
                 \centering\vspace{0.1cm}
@@ -130,7 +132,7 @@
                 \vspace{0.1cm}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
-                \centering\vspace{0.15cm}
+                \centering\let\\=\newline\vspace{0.15cm}
                 {\huge\bfseries\sffamily #2 \par}
                 \vspace{0.15cm} 
             \end{minipage}
@@ -150,15 +152,14 @@
         % Viền ngoài
         \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
 
-        % Nội dung Text (Lớp trên cùng)
+        % Nội dung Text (Đã mở khóa \\ để ngắt dòng chủ động)
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
             \begin{minipage}[c]{4.2cm}
                 \centering
-                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
                 \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
-                \centering\vspace{0.15cm}
+                \centering\let\\=\newline\vspace{0.15cm}
                 {\huge\bfseries\sffamily\color{deepblue} #2 \par}
                 \vspace{0.15cm} 
             \end{minipage}
@@ -177,10 +178,9 @@
 }
 
 % ==========================================
-% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI
 % ==========================================
 \newcommand{\questioncore}[2]{
-    % Xóa khoảng cách phía trên, ép sát câu trước
     \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
     \par\nopagebreak
 }
@@ -192,21 +192,46 @@
     item-indent=25pt,     
     label-offset=6pt,    
     column-sep=20pt,     
-    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+    after-item-skip=2pt
 }
-% \definecolor{softgray}{RGB}{140, 140, 145}
-% Hàm vẽ dòng kẻ nháp
+
+% Hàm vẽ dòng kẻ nháp (Nét liền, đậm rõ nét, độc lập với khung tiêu đề)
 \newcommand{\drawdashlines}[1]{
     \ifnum#1>0
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray!80!black, line width=0.3pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                % Nét liền (solid), màu xám đen đậm black!60, độ dày 0.7pt
+                \draw[black!50, line width=0.3pt] 
+                    (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
         \end{tikzpicture}
         \par
     \fi
-    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% Hàm tự động kẻ dòng kín toàn bộ phần còn lại của trang
+\newcommand{\drawdashlinesfull}{%
+    \par\nopagebreak\vspace{-0.75cm}\noindent
+    \begin{tikzpicture}[remember picture, overlay]
+        % Xác định khoảng cách từ vị trí hiện tại xuống mép trên của footer (cách mép dưới trang 1.8cm)
+        \path let \p1 = (0,0), \p2 = (current page.south) in 
+            \pgfextra{
+                % Tính số dòng kẻ có thể vẽ (mỗi dòng cách nhau 0.75cm)
+                \pgfmathsetmacro{\availableHeight}{\y1 - \y2 - 1.8cm}
+                \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.75cm)}
+                \xdef\totalLines{\numLines}
+            };
+        % Vẽ các dòng kẻ kín trang (đồng bộ màu black!50 và độ dày 0.3pt)
+        \ifnum\totalLines>0
+            \foreach \i in {1,...,\totalLines} {
+                \draw[black!50, line width=0.3pt] 
+                    (0, -{\i*0.75cm}) -- (\textwidth-4pt, -{\i*0.75cm});
+            }
+        \fi
+    \end{tikzpicture}%
+    \vfill % Đẩy trang kết thúc hoàn hảo
+    \newpage
 }
 
 % --- Dạng 1: Trắc nghiệm 4 đáp án ---
@@ -231,8 +256,6 @@
     \nopagebreak
     \begin{center}
     \renewcommand{\arraystretch}{1.2}
-    
-    % Tiền tố S giúp cellspace tự động co giãn chiều cao theo công thức toán/phân số
     \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}S{m{12cm}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
         \hline
         \rowcolor{amberorange!20}
@@ -243,7 +266,6 @@
         #4
         \hline
     \end{tabular}
-    
     \renewcommand{\arraystretch}{1}
     \end{center}
     
@@ -252,16 +274,15 @@
     \vspace{0.5cm}
 }
 
-% ----- Dạng 3: Tự luận ngắn -----
+% ----- Dạng 3: Tự luận ngắn (Đã sửa triệt để lỗi group \changefontsize) -----
 \newcommand{\questionShortAnswer}[3]{
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
     \changefontsize[18pt]{12pt}
     \needspace{\calculatedSpace cm}
     
-    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
-    \questioncore{#2}{#3}\par}
+    \questioncore{#2}{#3}
+    \par\nopagebreak
     
-    \nopagebreak
     \begin{flushright}
         \begin{tikzpicture}
             \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 

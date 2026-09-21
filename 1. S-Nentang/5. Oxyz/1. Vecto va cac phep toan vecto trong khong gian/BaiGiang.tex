@@ -1,0 +1,503 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+\titlebox{Chủ đề: Oxyz}{Vecto và các phép toán vecto \\ trong không gian}{Oxyz}
+
+% ==========================================
+% I. LÝ THUYẾT TRỌNG TÂM: NHÓM 1
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large I. TÓM TẮT TRỌNG TÂM (NHÓM 1: VECTƠ VÀ CÁC QUY TẮC)}}
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 1: VECTƠ TRONG KHÔNG GIAN
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{1. Vectơ trong không gian và Vectơ-không}}
+    \begin{itemize}
+        \item Là một đoạn thẳng có hướng: $\vec{AB}$, độ dài $|\vec{AB}| = AB$.
+        \item $\vec{0}$ có điểm đầu trùng điểm cuối ($\vec{AA} = \vec{0}$), có độ dài bằng $0$, cùng phương và cùng hướng với mọi vectơ.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.4,0);
+        \coordinate (D) at (1.0,0.8);
+        \coordinate (C) at ($(B)+(D)-(A)$);
+        \coordinate (A1) at (0,1.4);
+        \coordinate (B1) at ($(B)+(A1)-(A)$);
+        \coordinate (C1) at ($(C)+(A1)-(A)$);
+        \coordinate (D1) at ($(D)+(A1)-(A)$);
+
+        \draw[dashed, softgray!80!black] (A)--(B)--(C)--(D)--cycle;
+        \draw[dashed, softgray!80!black] (A1)--(B1)--(C1)--(D1)--cycle;
+        \draw[dashed, softgray!80!black] (A)--(A1) (B)--(B1) (C)--(C1) (D)--(D1);
+
+        \draw[->, >=stealth, line width=1.4pt, amberorange] (A) -- (C1) node[midway, above left] {$\vec{AB}$};
+        \fill[deepblue] (A) circle (1.5pt) node[below left] {$A$};
+        \fill[deepblue] (C1) circle (1.5pt) node[above right] {$B$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 2: CÙNG PHƯƠNG, CÙNG HƯỚNG, BẰNG NHAU
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{2. Cùng phương, cùng hướng, bằng nhau}}
+    \begin{itemize}
+        \item \textbf{Cùng phương:} Giá song song hoặc trùng nhau.
+        \item \textbf{Cùng hướng / Ngược hướng:} Khi hai vectơ đã cùng phương.
+        \item \textbf{Bằng nhau:} $\vec{a} = \vec{b} \iff \vec{a}, \vec{b} \text{ cùng hướng và } |\vec{a}| = |\vec{b}|$.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
+        \draw[->, >=stealth, deepblue, thick] (0, 1.0) -- (2.2, 1.0);
+        \draw[->, >=stealth, deepblue, thick] (0, 0.65) -- (2.2, 0.65);
+        \node[deepblue, right] at (2.25, 0.82) {cùng hướng};
+
+        \draw[->, >=stealth, accentred, thick] (0, 0.05) -- (2.2, 0.05);
+        \draw[<-, >=stealth, accentred, thick] (0, -0.3) -- (2.2, -0.3);
+        \node[accentred, right] at (2.25, -0.12) {ngược hướng};
+
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (0, -0.9) -- (2.0, -0.9) node[midway, above] {$\vec{a}$};
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (0, -1.35) -- (2.0, -1.35) node[midway, above] {$\vec{b}$};
+        \node[amberorange, font=\bfseries\scriptsize, right] at (2.25, -1.12) {$\vec{a} = \vec{b}$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 3: QUY TẮC BA ĐIỂM (NỐI ĐUÔI)
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{3. Quy tắc ba điểm (Nối đuôi hai vectơ)}}
+    \begin{itemize}
+        \item Với ba điểm $A, B, C$ bất kì trong không gian:
+        $$\vec{AB} + \vec{BC} = \vec{AC}$$
+        \item Điểm cuối của vectơ này là điểm đầu của vectơ kia.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        \coordinate (A) at (0, 0);
+        \coordinate (B) at (1.5, 1.5);
+        \coordinate (C) at (3.0, 0.2);
+
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[midway, above left] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, thick] (B) -- (C) node[midway, above right] {$\vec{BC}$};
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (A) -- (C) node[midway, below] {$\vec{AC}$};
+
+        \node[below left] at (A) {$A$};
+        \node[above] at (B) {$B$};
+        \node[right] at (C) {$C$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 4: QUY TẮC HÌNH BÌNH HÀNH (CHUNG GỐC)
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{4. Quy tắc hình bình hành (Tổng hai cạnh = Đường chéo)}}
+    \begin{itemize}
+        \item Nếu $ABCD$ là hình bình hành:
+        $$\vec{AB} + \vec{AD} = \vec{AC}$$
+        \item Áp dụng khi hai vectơ thành phần có cùng điểm xuất phát.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.4,0);
+        \coordinate (D) at (1.0,1.3);
+        \coordinate (C) at ($(B)+(D)-(A)$);
+
+        \draw[dashed, softgray!80!black] (D) -- (C) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[midway, below] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, thick] (A) -- (D) node[midway, above left] {$\vec{AD}$};
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (A) -- (C) node[midway, above] {$\vec{AC}$};
+
+        \node[below left] at (A) {$A$};
+        \node[below right] at (B) {$B$};
+        \node[right] at (C) {$C$};
+        \node[left] at (D) {$D$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 5: QUY TẮC HÌNH HỘP
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{5. Quy tắc hình hộp (Ba cạnh từ một đỉnh = Đường chéo)}}
+    \begin{itemize}
+        \item Cho hình hộp $ABCD.A'B'C'D'$:
+        $$\vec{AB} + \vec{AD} + \vec{AA'} = \vec{AC'}$$
+        \item Tổng ba vectơ cạnh chung đỉnh bằng vectơ đường chéo xuất phát từ đỉnh đó.
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        \coordinate (A)   at (0,0);
+        \coordinate (B)   at (2.2,-0.4);
+        \coordinate (D)   at (2.2,0.4);
+        \coordinate (C)   at ($(B)+(D)-(A)$);
+        
+        \coordinate (A1)  at (0,1.8);
+        \coordinate (B1)  at ($(B)+(A1)-(A)$);
+        \coordinate (D1)  at ($(D)+(A1)-(A)$);
+        \coordinate (C1)  at ($(C)+(A1)-(A)$);
+
+        \draw[dashed, softgray!80!black] (A) -- (B) -- (C) -- (D) -- cycle;
+        \draw[dashed, softgray!80!black] (A1) -- (B1) -- (C1) -- (D1) -- cycle;
+        \draw[dashed, softgray!80!black] (A) -- (A1) (B) -- (B1) (C) -- (C1) (D) -- (D1);
+
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B) node[below left] {$\vec{AB}$};
+        \draw[->, >=stealth, deepblue, thick] (A) -- (D) node[below right] {$\vec{AD}$};
+        \draw[->, >=stealth, deepblue, thick] (A) -- (A1) node[left] {$\vec{AA'}$};
+        \draw[->, >=stealth, amberorange, line width=1.4pt] (A) -- (C1) node[above right] {$\vec{AC'}$};
+        \fill[deepblue] (A) circle (1.2pt) node[left] {$A$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 6: NHÂN VECTƠ VỚI MỘT SỐ
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.66\linewidth}
+    \textbf{\textcolor{amberorange}{6. Nhân vectơ với một số (Điều kiện cùng phương)}}
+    \begin{itemize}
+        \item Độ dài: $|k\vec{a}| = |k| \cdot |\vec{a}|$.
+        \item Hướng: Cùng hướng với $\vec{a}$ khi $k > 0$; ngược hướng khi $k < 0$.
+        \item \textbf{Cùng phương:} $\vec{a} \parallel \vec{b} \iff \vec{a} = k\vec{b}$ (với $\vec{b} \neq \vec{0}$).
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.32\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
+        \draw[->, >=stealth, deepblue, thick] (0, 0.9) -- (1.2, 0.9) node[midway, above] {$\vec{a}$};
+        \draw[->, >=stealth, deepblue, thick] (0, 0.2) -- (2.4, 0.2) node[midway, above] {$2\vec{a}\ (k > 0)$};
+        \draw[<-, >=stealth, accentred, thick] (0, -0.5) -- (1.2, -0.5) node[midway, below] {$-\vec{a}\ (k < 0)$};
+        \node[amberorange, font=\bfseries\scriptsize, right] at (1.4, -0.15) {$|k\vec{a}| = |k||\vec{a}|$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.6cm}
+
+\newpage
+% ==========================================
+% II. VÍ DỤ MINH HỌA TRÊN LỚP (NHÓM 1)
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large II. VÍ DỤ MINH HỌA TRÊN LỚP (NHÓM 1)}}
+\par\vspace{0.25cm}
+
+% Ví dụ 1: Ý 1 & Ý 2
+\questionLinesManual{0}{1}{Cho tứ diện đều $ABCD$ có cạnh bằng $a$.
+\par
+\textbf{a)} Tính độ dài vectơ $\vec{u} = \vec{AB} - \vec{AC}$.
+\par
+\textbf{b)} Gọi $M, N$ lần lượt là trung điểm của $AB, AC$. Tìm số thực $k$ sao cho $\vec{MN} = k\vec{BC}$ và tính độ dài $|\vec{MN}|$.}{}
+\drawdashlinesfull
+
+% Ví dụ 2: Ý 2 & Ý 6
+\questionLinesManual{0}{2}{Cho hình bình hành $ABCD$ có tâm $O$. 
+\par
+\textbf{a)} Tìm tất cả các vectơ có điểm đầu và điểm cuối là các đỉnh của hình bình hành thỏa mãn bằng vectơ $\vec{AB}$.
+\par
+\textbf{b)} Tìm số thực $k$ thỏa mãn đẳng thức $\vec{AO} = k\vec{CA}$.}{}
+\drawdashlinesfull
+
+% Ví dụ 3: Ý 3 & Ý 4
+\questionLinesManual{0}{3}{Cho tứ diện $ABCD$.
+\par
+\textbf{a)} Rút gọn biểu thức tổng: $\vec{x} = \vec{AB} + \vec{BC} + \vec{CD} + \vec{DA}$.
+\par
+\textbf{b)} Rút gọn biểu thức: $\vec{y} = \vec{AC} - \vec{AD} + \vec{BD}$ về dạng một vectơ có điểm đầu là $B$.}{}
+\drawdashlinesfull
+
+% Ví dụ 4: Ý 4 & Ý 6
+\questionLinesManual{0}{4}{Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình bình hành tâm $O$.
+\par
+\textbf{a)} Rút gọn biểu thức vectơ: $\vec{u} = \vec{SA} + \vec{SC} - (\vec{SB} + \vec{SD})$.
+\par
+\textbf{b)} Cho biết $\vec{SA} + \vec{SC} = k\vec{SO}$. Hãy xác định giá trị của số thực $k$.}{}
+\drawdashlinesfull
+
+% Ví dụ 5: Ý 5
+\questionLinesManual{0}{5}{Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có các kích thước $AB = 3$, $AD = 4$, $AA' = 5$.
+\par
+\textbf{a)} Rút gọn tổng ba vectơ $\vec{v} = \vec{AB} + \vec{AD} + \vec{AA'}$ thành một vectơ đường chéo duy nhất của hình hộp.
+\par
+\textbf{b)} Tính độ dài của vectơ $\vec{v}$.}{}
+\drawdashlinesfull
+
+% Ví dụ 6: Ý 5 & Ý 6
+\questionLinesManual{0}{6}{Cho hình hộp $ABCD.A'B'C'D'$. Gọi $M$ là điểm xác định bởi đẳng thức $\vec{AM} = \dfrac{1}{3}\vec{AC'}$. 
+\par
+Biểu diễn vectơ $\vec{AM}$ theo ba vectơ $\vec{a} = \vec{AB}$, $\vec{b} = \vec{AD}$, $\vec{c} = \vec{AA'}$ dưới dạng $\vec{AM} = x\vec{a} + y\vec{b} + z\vec{c}$. Tính tổng $T = x + y + z$.}{}
+\drawdashlinesfull
+
+\newpage
+
+
+
+
+% ==========================================
+% I. LÝ THUYẾT TRỌNG TÂM: NHÓM 2 (GIÃN ĐỀU 1 TRANG, HÌNH TO RÕ)
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large I. TÓM TẮT TRỌNG TÂM (NHÓM 2: CÁC HỆ THỨC VECTƠ)}}
+\par\vspace{0.35cm}
+
+\setlength{\abovedisplayskip}{6pt}
+\setlength{\belowdisplayskip}{6pt}
+
+% ------------------------------------------
+% MỤC 7: HỆ THỨC TRUNG ĐIỂM
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.65\linewidth}
+    \textbf{\textcolor{amberorange}{7. Hệ thức trung điểm}}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item Điểm $I$ là trung điểm của đoạn thẳng $AB$:
+        \[ \vec{IA} + \vec{IB} = \vec{0} \]
+        \item Với điểm $M$ bất kì trong không gian:
+        \[ \vec{MA} + \vec{MB} = 2\vec{MI} \]
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.33\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (3.2,0);
+        \coordinate (I) at (1.6,0);
+        \coordinate (M) at (1.6,1.8);
+
+        \draw[thick, deepblue] (M) -- (A) -- (B) -- cycle;
+        \draw[->, >=stealth, amberorange, line width=1.4pt] (M) -- (I) node[midway, right] {$\vec{MI}$};
+
+        \fill[deepblue] (A) circle (1.3pt) node[below left] {$A$};
+        \fill[deepblue] (B) circle (1.3pt) node[below right] {$B$};
+        \fill[deepblue] (I) circle (1.3pt) node[below] {$I$};
+        \fill[deepblue] (M) circle (1.3pt) node[above] {$M$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 8: TRỌNG TÂM TAM GIÁC
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.65\linewidth}
+    \textbf{\textcolor{amberorange}{8. Trọng tâm tam giác}}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item Điểm $G$ là trọng tâm của tam giác $ABC$:
+        \[ \vec{GA} + \vec{GB} + \vec{GC} = \vec{0} \]
+        \item Với điểm $M$ bất kì trong không gian:
+        \[ \vec{MA} + \vec{MB} + \vec{MC} = 3\vec{MG} \]
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.33\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
+        \coordinate (A) at (1.5, 2.0);
+        \coordinate (B) at (0, 0);
+        \coordinate (C) at (3.0, 0.2);
+        \coordinate (G) at ($1/3*(A) + 1/3*(B) + 1/3*(C)$);
+
+        \draw[dashed, softgray!80!black] (A) -- (B) -- (C) -- cycle;
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (G) -- (A);
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (G) -- (B);
+        \draw[->, >=stealth, amberorange, line width=1.3pt] (G) -- (C);
+
+        \fill[deepblue] (A) circle (1.3pt) node[above] {$A$};
+        \fill[deepblue] (B) circle (1.3pt) node[below left] {$B$};
+        \fill[deepblue] (C) circle (1.3pt) node[below right] {$C$};
+        \fill[amberorange] (G) circle (1.5pt) node[right] {$G$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 9: TRỌNG TÂM TỨ DIỆN
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.65\linewidth}
+    \textbf{\textcolor{amberorange}{9. Trọng tâm tứ diện}}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item Điểm $G$ là trọng tâm của tứ diện $ABCD$:
+        \[ \vec{GA} + \vec{GB} + \vec{GC} + \vec{GD} = \vec{0} \]
+        \item Với điểm $M$ bất kì trong không gian:
+        \[ \vec{MA} + \vec{MB} + \vec{MC} + \vec{MD} = 4\vec{MG} \]
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.33\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.82, font=\footnotesize]
+        \coordinate (A) at (1.5, 2.2);
+        \coordinate (B) at (0, 0);
+        \coordinate (D) at (1.0, 0.7);
+        \coordinate (C) at (3.0, 0.2);
+        \coordinate (G) at ($0.25*(A) + 0.25*(B) + 0.25*(C) + 0.25*(D)$);
+
+        \draw[dashed, softgray!80!black] (B) -- (D) -- (C) (A) -- (D);
+        \draw[thick, softgray!80!black] (A) -- (B) -- (C) -- cycle;
+
+        \draw[->, >=stealth, amberorange, line width=1.2pt] (G) -- (A);
+        \draw[->, >=stealth, amberorange, line width=1.2pt] (G) -- (B);
+        \draw[->, >=stealth, amberorange, line width=1.2pt] (G) -- (C);
+        \draw[->, >=stealth, amberorange, line width=1.2pt] (G) -- (D);
+
+        \fill[deepblue] (A) circle (1.3pt) node[above] {$A$};
+        \fill[deepblue] (B) circle (1.3pt) node[below left] {$B$};
+        \fill[deepblue] (D) circle (1.3pt) node[left] {$D$};
+        \fill[deepblue] (C) circle (1.3pt) node[right] {$C$};
+        \fill[amberorange] (G) circle (1.5pt) node[above right] {$G$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 10: TÍCH VÔ HƯỚNG VÀ GÓC GIỮA HAI VECTƠ
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.65\linewidth}
+    \textbf{\textcolor{amberorange}{10. Tích vô hướng của hai vectơ}}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item Góc giữa hai vectơ $\vec{a}$ và $\vec{b}$ thỏa mãn: $0^\circ \le (\vec{a}, \vec{b}) \le 180^\circ$.
+        \item Công thức tích vô hướng:
+        \[ \vec{a} \cdot \vec{b} = |\vec{a}| \cdot |\vec{b}| \cdot \cos(\vec{a}, \vec{b}) \]
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.33\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
+        \coordinate (O) at (0,0);
+        \draw[->, >=stealth, deepblue, thick] (O) -- (2.6, 0) node[below] {$\vec{b}$};
+        \draw[->, >=stealth, deepblue, thick] (O) -- (1.7, 1.9) node[above] {$\vec{a}$};
+        \draw[amberorange, line width=1.1pt] (0.65, 0) arc (0:48.2:0.65);
+        \node[amberorange, font=\footnotesize] at (1.0, 0.35) {$\varphi$};
+        \node[font=\scriptsize, deepblue] at (1.9, 1.1) {$0^\circ \le \varphi \le 180^\circ$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 11: VUÔNG GÓC VÀ BÌNH PHƯƠNG VÔ HƯỚNG
+% ------------------------------------------
+\noindent
+\begin{minipage}[c]{0.65\linewidth}
+    \textbf{\textcolor{amberorange}{11. Vuông góc và bình phương vô hướng}}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item Hai vectơ vuông góc khi và chỉ khi tích vô hướng bằng $0$:
+        \[ \vec{a} \perp \vec{b} \iff \vec{a} \cdot \vec{b} = 0 \]
+        \item Bình phương vô hướng bằng bình phương độ dài:
+        \[ \vec{a}^2 = |\vec{a}|^2 \]
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.33\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
+        \coordinate (O) at (0,0);
+        \draw[->, >=stealth, deepblue, thick] (O) -- (2.5,0) node[below] {$\vec{b}$};
+        \draw[->, >=stealth, deepblue, thick] (O) -- (0,2.0) node[left] {$\vec{a}$};
+        \draw[amberorange, line width=1.1pt] (0.4,0) -- (0.4,0.4) -- (0,0.4);
+        \node[amberorange, font=\small\bfseries] at (1.4, 1.1) {$\vec{a}\cdot\vec{b} = 0$};
+    \end{tikzpicture}
+\end{minipage}
+
+\newpage
+
+
+
+
+% ==========================================
+% II. VÍ DỤ MINH HỌA TRÊN LỚP (NHÓM 2)
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large II. VÍ DỤ MINH HỌA TRÊN LỚP (NHÓM 2)}}
+\par\vspace{0.25cm}
+
+% Ví dụ 1: Ý 7 (Hệ thức trung điểm - Tính toán cụ thể)
+\questionLinesManual{0}{1}{Cho tứ diện $ABCD$. Gọi $M, N$ lần lượt là trung điểm của các cạnh $AB$ và $CD$.
+\par
+\textbf{a)} Rút gọn biểu thức tổng: $\vec{u} = \vec{MA} + \vec{MB}$.
+\par
+\textbf{b)} Biết rằng $\vec{AC} + \vec{BD} = k\vec{MN}$. Hãy tìm giá trị của số thực $k$.}{}
+\drawdashlinesfull
+
+% Ví dụ 2: Ý 8 (Trọng tâm tam giác - Phân tích hệ số)
+\questionLinesManual{0}{2}{Cho hình chóp $S.ABC$. Gọi $G$ là trọng tâm của tam giác $ABC$.
+\par
+\textbf{a)} Phân tích vectơ $\vec{SG}$ theo ba vectơ $\vec{SA}$, $\vec{SB}$, $\vec{SC}$ dưới dạng $\vec{SG} = x\vec{SA} + y\vec{SB} + z\vec{SC}$.
+\par
+\textbf{b)} Tính giá trị biểu thức $P = x + y + z$.}{}
+\drawdashlinesfull
+
+% Ví dụ 3: Ý 9 (Trọng tâm tứ diện - Tính tổng hệ số)
+\questionLinesManual{0}{3}{Cho tứ diện $ABCD$ có trọng tâm $G$. Lấy điểm $O$ bất kì trong không gian thỏa mãn:
+$$\vec{OG} = m(\vec{OA} + \vec{OB} + \vec{OC} + \vec{OD})$$
+\par
+\textbf{a)} Tìm giá trị của số thực $m$.
+\par
+\textbf{b)} Khi điểm $O$ trùng với đỉnh $A$, biểu diễn vectơ $\vec{AG}$ theo ba vectơ $\vec{AB}$, $\vec{AC}$ và $\vec{AD}$.}{}
+\drawdashlinesfull
+
+% Ví dụ 4: Ý 10 (Tích vô hướng & Tính góc cụ thể)
+\questionLinesManual{0}{4}{Cho hình chóp tam giác đều $S.ABC$ có tất cả các cạnh đều bằng $a$.
+\par
+\textbf{a)} Xác định góc giữa hai vectơ $\vec{AB}$ và $\vec{AC}$, từ đó tính tích vô hướng $\vec{AB} \cdot \vec{AC}$ theo $a$.
+\par
+\textbf{b)} Tính giá trị tích vô hướng $\vec{SA} \cdot \vec{BC}$.}{}
+\drawdashlinesfull
+
+% Ví dụ 5: Ý 11 (Bình phương vô hướng & Tính độ dài)
+\questionLinesManual{0}{5}{Cho hai vectơ $\vec{a}$ và $\vec{b}$ thỏa mãn $|\vec{a}| = 2$, $|\vec{b}| = 3$ và $(\vec{a}, \vec{b}) = 60^\circ$.
+\par
+\textbf{a)} Tính tích vô hướng $\vec{a} \cdot \vec{b}$.
+\par
+\textbf{b)} Tính độ dài của vectơ tổng $\vec{u} = 2\vec{a} - \vec{b}$.}{}
+\drawdashlinesfull
+
+\end{document}

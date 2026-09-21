@@ -22,3 +22,7 @@
 *-nht.sty
 *-nht.tex
 *-nht.pdf
+
+# macOS system files
+.DS_Store
+**/.DS_Store
