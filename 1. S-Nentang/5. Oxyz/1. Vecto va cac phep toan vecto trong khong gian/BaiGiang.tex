@@ -443,14 +443,22 @@ Biểu diễn vectơ $\vec{AM}$ theo ba vectơ $\vec{a} = \vec{AB}$, $\vec{b} = 
 \end{minipage}\hfill
 \begin{minipage}[c]{0.33\linewidth}
     \centering
-    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
-        \coordinate (O) at (0,0);
-        \draw[->, >=stealth, deepblue, thick] (O) -- (2.6, 0) node[below] {$\vec{b}$};
-        \draw[->, >=stealth, deepblue, thick] (O) -- (1.7, 1.9) node[above] {$\vec{a}$};
-        \draw[amberorange, line width=1.1pt] (0.65, 0) arc (0:48.2:0.65);
-        \node[amberorange, font=\footnotesize] at (1.0, 0.35) {$\varphi$};
-        \node[font=\scriptsize, deepblue] at (1.9, 1.1) {$0^\circ \le \varphi \le 180^\circ$};
-    \end{tikzpicture}
+    \begin{tikzpicture}[scale=1.0, font=\small]
+    \coordinate (O) at (0,0);
+    \coordinate (B) at (2.2,0);
+    \coordinate (A) at (1.5,1.5); % góc 45 độ
+
+    % Vẽ hai vectơ a và b
+    \draw[->, >=stealth, deepblue, line width=1.2pt] (O) -- (B) node[below] {$\vec{b}$};
+    \draw[->, >=stealth, deepblue, line width=1.2pt] (O) -- (A) node[above] {$\vec{a}$};
+
+    % Vẽ cung tròn góc phi
+    \draw[amberorange, line width=1.2pt] (0.6,0) arc (0:45:0.6);
+    \node[amberorange, font=\footnotesize] at (0.85, 0.3) {$\varphi$};
+
+    % Điều kiện góc được đẩy sang phải rõ ràng, không bị đè nét
+    \node[deepblue, font=\scriptsize, anchor=west] at (1.1, 0.85) {$0^\circ \le \varphi \le 180^\circ$};
+\end{tikzpicture}
 \end{minipage}
 
 \par\vspace{0.25cm}
