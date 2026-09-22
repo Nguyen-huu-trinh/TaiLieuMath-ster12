@@ -4,12 +4,20 @@
 % Bảng mã & Font chữ
 \usepackage[utf8]{inputenc}
 \usepackage[T5]{fontenc}
+\usepackage{lmodern}
 \usepackage{float}
-% Toán học
+
+% Toán học & Ký hiệu Vectơ
 \usepackage{amsmath, amssymb}
+\usepackage[d]{esvect} % Mũi tên vectơ dài, thanh thoát, phủ kín chữ cái
+\renewcommand{\vec}[1]{\vv{#1}} % Tự động áp dụng cho mọi lệnh \vec
+
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{5pt}    % Khoảng trống tối thiểu phía trên
+\setlength\cellspacebottomlimit{5pt} % Khoảng trống tối thiểu phía dưới
 
 % Căn lề & Bố cục trang
-\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=15pt]{geometry}
+\usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=60pt]{geometry}
 \usepackage{fancyhdr}
 \usepackage{needspace}
 \usepackage{tkz-tab}
@@ -20,7 +28,6 @@
 \usepackage{graphicx} 
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes.geometric, positioning}
-
 
 % Bảng biểu & Danh sách
 \usepackage{colortbl}
@@ -43,9 +50,8 @@
 \definecolor{softgray}{RGB}{220, 220, 222} 
 \definecolor{fbblue}{RGB}{15, 80, 200}
 
-
 % ==========================================
-% 3. CẤU HÌNH HEADER & FOOTER
+% 3. CẤU HÌNH HEADER & FOOTER (CỐ ĐỊNH KÍCH THƯỚC CHỮ TẤT CẢ CÁC TRANG)
 % ==========================================
 \pagestyle{fancy}
 \fancyhf{}
@@ -77,8 +83,8 @@
         \node[anchor=west, inner sep=0pt] 
             at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
             
-        % Text góc phải Header (Tự động lấy từ đối số thứ 3 của \titlebox)
-        \node[anchor=east, text=white, font=\small\bfseries\sffamily] 
+        % Text góc phải Header (Khóa cứng cỡ chữ 11pt, không bị ảnh hưởng bởi nội dung trang)
+        \node[anchor=east, text=white, font=\fontsize{11pt}{13pt}\selectfont\bfseries\sffamily] 
             at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
     \end{tikzpicture}
 }
@@ -95,31 +101,30 @@
             .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
             ($(current page.south east) + (0, 1.2cm)$) -- cycle;
 
-        % Mạng xã hội
+        % Mạng xã hội (Khóa cứng cỡ chữ 11pt to rõ giống trang 2 & 3)
         \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
-            \small\sffamily
-            \textcolor{fbblue}{\faFacebook\hskip 4pt Toán Anh Huy MATH-STER}
-            \hskip 18pt
-            \textcolor{black}{\faTiktok\hskip 4pt huymathster}
+            \fontsize{11pt}{13pt}\selectfont\sffamily
+            \textcolor{fbblue}{\faFacebook\hskip 5pt Toán Anh Huy MATH-STER}
+            \hskip 20pt
+            \textcolor{black}{\faTiktok\hskip 5pt huymathster}
         };
 
-        % Số trang
-        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\large\bfseries\sffamily, inner sep=4pt, minimum size=0.8cm] 
+        % Số trang (Khóa cứng cỡ chữ 13pt đậm nét)
+        \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\fontsize{13pt}{15pt}\selectfont\bfseries\sffamily, inner sep=3pt, minimum size=0.85cm] 
             at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
     \end{tikzpicture}
 }
 
 % ==========================================
-% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ
+% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ (CHO PHÉP DÙNG \\ ĐỂ NGẮT DÒNG)
 % ==========================================
 \newcommand{\titlebox}[3]{
-    % Gán nội dung đối số #3 vào biến HeaderRightText
     \gdef\HeaderRightText{#3}
     
     \begin{center}
     \vspace*{-0.5cm}
     \begin{tikzpicture}
-        % Khung vô hình (Phantom Box) định chuẩn kích thước
+        % Khung vô hình định chuẩn kích thước
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt, opacity=0] (MainBox) {
             \begin{minipage}[c]{4.2cm}
                 \centering\vspace{0.1cm}
@@ -127,7 +132,7 @@
                 \vspace{0.1cm}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
-                \centering\vspace{0.15cm}
+                \centering\let\\=\newline\vspace{0.15cm}
                 {\huge\bfseries\sffamily #2 \par}
                 \vspace{0.15cm} 
             \end{minipage}
@@ -147,15 +152,14 @@
         % Viền ngoài
         \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
 
-        % Nội dung Text (Lớp trên cùng)
+        % Nội dung Text (Đã mở khóa \\ để ngắt dòng chủ động)
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
             \begin{minipage}[c]{4.2cm}
                 \centering
-                % --- ĐIỀU CHỈNH TỌA ĐỘ LOGO Ở ĐÂY ---
                 \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
-                \centering\vspace{0.15cm}
+                \centering\let\\=\newline\vspace{0.15cm}
                 {\huge\bfseries\sffamily\color{deepblue} #2 \par}
                 \vspace{0.15cm} 
             \end{minipage}
@@ -174,10 +178,9 @@
 }
 
 % ==========================================
-% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI (ÉP SÁT NHAU)
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI
 % ==========================================
 \newcommand{\questioncore}[2]{
-    % Xóa khoảng cách phía trên, ép sát câu trước
     \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
     \par\nopagebreak
 }
@@ -189,21 +192,46 @@
     item-indent=25pt,     
     label-offset=6pt,    
     column-sep=20pt,     
-    after-item-skip=2pt  % Đã giảm tối đa khoảng cách giữa các dòng đáp án A B C D
+    after-item-skip=2pt
 }
-% \definecolor{softgray}{RGB}{140, 140, 145}
-% Hàm vẽ dòng kẻ nháp
+
+% Hàm vẽ dòng kẻ nháp (Nét liền, đậm rõ nét, độc lập với khung tiêu đề)
 \newcommand{\drawdashlines}[1]{
     \ifnum#1>0
         \nopagebreak\vspace{0.1cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[softgray!80!black, line width=0.2pt] (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                % Nét liền (solid), màu xám đen đậm black!60, độ dày 0.7pt
+                \draw[black!50, line width=0.3pt] 
+                    (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
         \end{tikzpicture}
         \par
     \fi
-    % Đã xóa hoàn toàn khoảng cách thừa ở nhánh else
+}
+
+% Hàm tự động kẻ dòng kín toàn bộ phần còn lại của trang
+\newcommand{\drawdashlinesfull}{%
+    \par\nopagebreak\vspace{-0.75cm}\noindent
+    \begin{tikzpicture}[remember picture, overlay]
+        % Xác định khoảng cách từ vị trí hiện tại xuống mép trên của footer (cách mép dưới trang 1.8cm)
+        \path let \p1 = (0,0), \p2 = (current page.south) in 
+            \pgfextra{
+                % Tính số dòng kẻ có thể vẽ (mỗi dòng cách nhau 0.75cm)
+                \pgfmathsetmacro{\availableHeight}{\y1 - \y2 - 1.8cm}
+                \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.75cm)}
+                \xdef\totalLines{\numLines}
+            };
+        % Vẽ các dòng kẻ kín trang (đồng bộ màu black!50 và độ dày 0.3pt)
+        \ifnum\totalLines>0
+            \foreach \i in {1,...,\totalLines} {
+                \draw[black!50, line width=0.3pt] 
+                    (0, -{\i*0.75cm}) -- (\textwidth-4pt, -{\i*0.75cm});
+            }
+        \fi
+    \end{tikzpicture}%
+    \vfill % Đẩy trang kết thúc hoàn hảo
+    \newpage
 }
 
 % --- Dạng 1: Trắc nghiệm 4 đáp án ---
@@ -218,20 +246,21 @@
     \vspace{0.5cm}
 }
 
-% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+% --- Dạng 2: Trắc nghiệm Đúng/Sai (75% kích cỡ chữ & bảng gốc) ---
 \newcommand{\questionTrueFalse}[4]{
-    \scriptsize
-    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
+    \pgfmathsetmacro{\calculatedSpace}{2.5 + #1 * 0.5} 
     \needspace{\calculatedSpace cm}
-    \questioncore{{#2}}{#3}
+    
+    {\fontsize{8.25pt}{10.5pt}\selectfont % Thay đổi cỡ chữ chuẩn đúng 75% so với 11pt gốc
+    \questioncore{#2}{#3}
     
     \nopagebreak
     \begin{flushleft}
-    \renewcommand{\arraystretch}{1.2} % Bóp nhỏ chiều cao của bảng Đ/S
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.4cm}|m{6cm}|>{\centering\arraybackslash}m{1cm}|>{\centering\arraybackslash}m{1cm}|}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|>{\centering\arraybackslash}m{0.6cm}|>{\raggedright\arraybackslash}m{9.0cm}|>{\centering\arraybackslash}m{1.5cm}|>{\centering\arraybackslash}m{1.5cm}|}
         \hline
         \rowcolor{amberorange!20}
-        & \multicolumn{1}{>{\centering\arraybackslash}m{6cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+        \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{9.0cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
         \textbf{\textcolor{deepblue}{Đúng}} & 
         \textbf{\textcolor{deepblue}{Sai}} \\
         \hline
@@ -243,20 +272,21 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
+    \vspace{0.35cm}
+    }
 }
 
-% ----- Dạng 3: Tự luận ngắn -----
+% ----- Dạng 3: Tự luận ngắn (75% kích cỡ chữ & khung đáp án gốc) -----
 \newcommand{\questionShortAnswer}[3]{
-    \scriptsize
-    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
+    \pgfmathsetmacro{\calculatedSpace}{1.2 + #1 * 0.65}
     \needspace{\calculatedSpace cm}
     
-    {\linespread{1.1}\selectfont % Bóp nhỏ giãn dòng của câu tự luận
-    \questioncore{#2}{#3}\par}
+    {\fontsize{8.25pt}{10.5pt}\selectfont % Thay đổi cỡ chữ chuẩn đúng 75%
+    \questioncore{#2}{#3}
+    \par\nopagebreak
     
-    \nopagebreak
     \begin{flushright}
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=0.75, transform shape] % Co toàn bộ ô đáp án về 75%
             \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
                 at (-0.2, 0.4) {Đáp án:};
             \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
@@ -270,5 +300,8 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
-    \vspace{0.5cm}
+    \vspace{0.35cm}
+    }
 }
+% Thiết lập cỡ chữ to rõ đồng bộ cho toàn bộ tài liệu ngay từ trang đầu
+\AtBeginDocument{\changefontsize[18pt]{12pt}}
