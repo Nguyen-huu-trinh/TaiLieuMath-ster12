@@ -122,7 +122,6 @@
 % ==========================================
 % 4. ĐỊNH NGHĨA KHUNG LÝ THUYẾT & TIÊU ĐỀ
 % ==========================================
-% Khung ghi nhớ lý thuyết: có vạch kẻ nhấn bên trái (Left Accent Bar), nền kem siêu nhạt
 \newtcolorbox{theorybox}[1][]{
     enhanced,
     breakable,
@@ -131,7 +130,7 @@
     arc=4pt,
     outer arc=4pt,
     boxrule=0pt,
-    leftrule=3.5pt, % Vạch nhấn màu cam đậm
+    leftrule=3.5pt,
     top=5pt,
     bottom=5pt,
     left=8pt,
@@ -204,26 +203,27 @@
 % ==========================================
 % 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & BÀI TẬP
 % ==========================================
-% Tiêu đề câu hỏi chuẩn thoáng (có khoảng hở trước và sau câu)
-\newcommand{\questioncore}[2]{
-    \par\vspace{0.35cm}\noindent
+% Tiêu đề câu hỏi chuẩn
+\newcommand{\questioncore}[2]{%
+    \par\vspace{0.18cm}\noindent
     \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
-    \par\nopagebreak\vspace{0.12cm}
+    \par\nopagebreak\vspace{0.08cm}%
 }
 
-% Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D chuẩn thoáng đẹp như sách
+% Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D thoáng mắt chuẩn sách in
 \settasks{
     label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
     label-width=16pt,     
     item-indent=28pt,     
     label-offset=6pt,    
     column-sep=15pt,     
-    before-skip=3pt,    % Khoảng cách từ đề bài xuống đáp án
-    after-item-skip=3pt % Khoảng cách giữa các dòng đáp án
+    before-skip=4pt,     % Khoảng cách vừa vặn từ đề bài xuống các phương án
+    after-item-skip=3pt, % Khoảng cách thoáng giữa các dòng đáp án
+    after-skip=2pt       % Khoảng đệm kết thúc
 }
 
 % Hàm vẽ dòng kẻ nháp
-\newcommand{\drawdashlines}[1]{
+\newcommand{\drawdashlines}[1]{%
     \ifnum#1>0
         \nopagebreak\vspace{0.15cm}\noindent 
         \begin{tikzpicture}
@@ -231,8 +231,8 @@
                 \draw[black!50, line width=0.3pt] 
                     (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
-        \end{tikzpicture}
-        \par
+        \end{tikzpicture}%
+        \par\vspace{0.25cm}%
     \fi
 }
 
@@ -257,23 +257,22 @@
     \newpage
 }
 
-% --- Dạng 1: Trắc nghiệm 4 đáp án ---
-\newcommand{\questionLinesManual}[4]{
-    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.65}
-    \needspace{\calculatedSpace cm} 
-    \questioncore{#2}{#3}
-    #4
-    \par\nopagebreak
-    \drawdashlines{#1}
-    \vspace{0.4cm}
+% --- Dạng 1: Trắc nghiệm 4 đáp án (ĐÃ CÂN CHỈNH KHOẢNG CÁCH THOÁNG ĐẸP) ---
+\newcommand{\questionLinesManual}[4]{%
+    \needspace{1.4cm}%
+    \questioncore{#2}{#3}%
+    #4%
+    \drawdashlines{#1}%
+    \ifnum#1=0
+        \par\vspace{0.32cm}% Khoảng thở 0.32cm giữa 2 câu hỏi, chống bí mắt hoàn toàn
+    \fi
 }
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
-\newcommand{\questionTrueFalse}[4]{
+\newcommand{\questionTrueFalse}[4]{%
     \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
-    \needspace{\calculatedSpace cm}
-    \questioncore{#2}{#3}
-    
+    \needspace{\calculatedSpace cm}%
+    \questioncore{#2}{#3}%
     \nopagebreak
     \begin{center}
     \renewcommand{\arraystretch}{1.2}
@@ -289,20 +288,18 @@
     \end{tabular}
     \renewcommand{\arraystretch}{1}
     \end{center}
-    
-    \par\nopagebreak
-    \drawdashlines{#1}
-    \vspace{0.4cm}
+    \drawdashlines{#1}%
+    \ifnum#1=0
+        \par\vspace{0.25cm}%
+    \fi
 }
 
 % --- Dạng 3: Tự luận ngắn ---
-\newcommand{\questionShortAnswer}[3]{
+\newcommand{\questionShortAnswer}[3]{%
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
-    \needspace{\calculatedSpace cm}
-    
-    \questioncore{#2}{#3}
-    \par\nopagebreak
-    
+    \needspace{\calculatedSpace cm}%
+    \questioncore{#2}{#3}%
+    \nopagebreak
     \begin{flushright}
         \begin{tikzpicture}
             \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
@@ -315,17 +312,17 @@
             }
         \end{tikzpicture}
     \end{flushright}
-    
-    \par\nopagebreak
-    \drawdashlines{#1}
-    \vspace{0.4cm}
+    \drawdashlines{#1}%
+    \ifnum#1=0
+        \par\vspace{0.25cm}%
+    \fi
 }
 
 % ==========================================
 % 6. THIẾT LẬP GIÃN DÒNG TOÀN DIỆN (LINE SPACING)
 % ==========================================
-% Khóa cỡ chữ 12pt trên khoảng cách dòng 19.5pt (thoáng, sáng, sạch mắt)
 \AtBeginDocument{%
     \fontsize{12pt}{19.5pt}\selectfont
-    \setlength{\parskip}{3pt}
+    \setlength{\parskip}{0pt}% Khóa không cho các đoạn văn tự sinh khoảng cách thừa
+    \raggedbottom % BẮT BUỘC: Ngăn chặn LaTeX tự ý kéo giãn khoảng cách giữa các câu
 }
