@@ -1,0 +1,708 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% ==========================================
+% TRANG 1: HỆ TRỤC TOẠ ĐỘ, TOẠ ĐỘ VECTƠ & TOẠ ĐỘ ĐIỂM
+% ==========================================
+\titlebox{Chủ đề: Oxyz}{Hệ trục toạ độ\\ trong không gian}{Oxyz: Hệ trục toạ độ}
+
+\par\vspace{0.2cm}
+\noindent\textbf{\textcolor{deepblue}{\large I. TÓM TẮT TRỌNG TÂM LÝ THUYẾT}}
+\par\vspace{0.2cm}
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+% ------------------------------------------
+% MỤC 1: HỆ TRỤC Oxyz
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 1. Hệ trục toạ độ $Oxyz$}}
+\par\vspace{0.1cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+            \item Ba trục $Ox, Oy, Oz$ đôi một vuông góc tại gốc $O$.
+            \item Ba vectơ đơn vị $\vec{i}, \vec{j}, \vec{k}$ trên $Ox, Oy, Oz$:
+            \[ |\vec{i}| = |\vec{j}| = |\vec{k}| = 1 \]
+            \[ \vec{i} \cdot \vec{j} = \vec{j} \cdot \vec{k} = \vec{k} \cdot \vec{i} = 0 \]
+            \item Ba mặt phẳng toạ độ: $(Oxy), (Oyz), (Ozx)$.
+        \end{itemize}
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.9, font=\footnotesize]
+        \coordinate (O) at (0,0);
+        \coordinate (X) at (-1.3,-1.1);
+        \coordinate (Y) at (2.4,0);
+        \coordinate (Z) at (0,2.1);
+
+        \draw[->, >=stealth, deepblue, thick] (O) -- (X) node[below left] {$x$};
+        \draw[->, >=stealth, deepblue, thick] (O) -- (Y) node[right] {$y$};
+        \draw[->, >=stealth, deepblue, thick] (O) -- (Z) node[above] {$z$};
+
+        \draw[->, >=stealth, accentred, line width=1.6pt] (O) -- (-0.65,-0.55) node[left=1pt] {$\vec{i}$};
+        \draw[->, >=stealth, fbblue, line width=1.6pt] (O) -- (1.2,0) node[below=2pt] {$\vec{j}$};
+        \draw[->, >=stealth, goldyellow!90!black, line width=1.6pt] (O) -- (0,1.15) node[left=1pt] {$\vec{k}$};
+
+        \node[deepblue, font=\bfseries\footnotesize, below right=1pt] at (O) {$O$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% ------------------------------------------
+% MỤC 2: TỌA ĐỘ VECTƠ VÀ TỌA ĐỘ ĐIỂM
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 2. Toạ độ của Vectơ và Điểm}}
+\par\vspace{0.1cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        \begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
+            \item \textbf{Toạ độ vectơ:} $\vec{a} = (a_1; a_2; a_3) \iff \vec{a} = a_1\vec{i} + a_2\vec{j} + a_3\vec{k}$.
+            \item \textbf{Toạ độ điểm:} $M(x; y; z) \iff \vec{OM} = x\vec{i} + y\vec{j} + z\vec{k}$.
+            \item \textbf{Toạ độ $\vec{AB}$:} $\vec{AB} = (x_B - x_A;\ y_B - y_A;\ z_B - z_A)$.
+            \item \textit{\textcolor{accentred}{\bfseries Bẫy:}} Luôn lấy \textbf{Cuối trừ Đầu} (tránh nhầm $A - B$).
+        \end{itemize}
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.85, font=\footnotesize]
+        \coordinate (O)   at (0, 0);
+        \coordinate (Mx)  at (-0.8, -0.64);
+        \coordinate (My)  at (1.9, 0);
+        \coordinate (Mz)  at (0, 1.75);
+        
+        \coordinate (Mxy) at (1.1, -0.64);
+        \coordinate (M)   at (1.1, 1.11);
+
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (-1.2, -0.96) node[below left=-1pt] {$x$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (2.4, 0)      node[right=-1pt] {$y$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (0, 2.3)      node[above=-1pt] {$z$};
+
+        \draw[dashed, softgray!80!black, line width=0.7pt] (Mz) -- (M);
+        \draw[dashed, softgray!80!black, line width=0.7pt] (M) -- (Mxy);
+        \draw[dashed, softgray!80!black, line width=0.7pt] (Mxy) -- (Mx);
+        \draw[dashed, softgray!80!black, line width=0.7pt] (Mxy) -- (My);
+
+        \draw[->, >=stealth, amberorange, line width=1.7pt] (O) -- (M);
+        \node[amberorange, font=\bfseries\scriptsize, anchor=north west] at (0.45, 0.55) {$\vec{OM}$};
+
+        \fill[amberorange] (M) circle (2.0pt);
+        \node[right=1pt, font=\scriptsize] at (M) {\textbf{\textcolor{deepblue}{$M(x; y; z)$}}};
+
+        \node[deepblue, font=\bfseries\scriptsize] at (-0.25, -0.2) {$O$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.25cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}}
+\begin{itemize}\setlength{\itemsep}{3.5pt}\setlength{\parskip}{0pt}
+    \item Cho $\vec{u} = 2\vec{i} - 3\vec{j} + 5\vec{k} \implies \vec{u} = \dotfill$
+    \item Cho $\vec{v} = (4;\ 0;\ -1) \implies \vec{v} = \dotfill$
+    \item Cho hai điểm $A(1; 2; -1)$ và $B(3; 0; 4) \implies \vec{AB} = \dotfill$
+\end{itemize}
+
+\newpage
+
+% ==========================================
+% TRANG 2: TRỌN VẸN 3 MẸO NHỚ NHANH
+% ==========================================
+\vspace*{-0.1cm}
+\noindent\textbf{\textcolor{amberorange}{\Large 3. Mẹo nhớ nhanh: Hình chiếu, Đối xứng \& Khoảng cách}}
+\par\vspace{0.15cm}
+
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+
+% ------------------------------------------
+% Ý A: CHIẾU LÊN / ĐIỂM THUỘC
+% ------------------------------------------
+\noindent\textbf{\textcolor{deepblue}{\large a) Chiếu lên / Điểm thuộc:}} \textit{\textcolor{accentred}{Thuộc cái gì có cái đó, chiếu lên cái gì có cái đó (còn lại $= 0$)}}
+\par\vspace{0.06cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}[top=3pt, bottom=3pt]
+        \[
+        M(x; y; z) \xrightarrow[\text{chiếu lên}]{\text{thuộc}}
+        \begin{cases}
+            Ox \to (x;\, 0;\, 0) \quad & (Oxy) \to (x;\, y;\, 0) \\
+            Oy \to (0;\, y;\, 0) \quad & (Oyz) \to (0;\, y;\, z) \\
+            Oz \to (0;\, 0;\, z) \quad & (Oxz) \to (x;\, 0;\, z)
+        \end{cases}
+        \]
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
+        \useasboundingbox (-1.2,-0.8) rectangle (2.3,1.8);
+        \coordinate (O)   at (0, 0);
+        \coordinate (X)   at (-1.1, -0.88);
+        \coordinate (Y)   at (2.1, 0);
+        \coordinate (Z)   at (0, 1.8);
+
+        \coordinate (Mx)  at (-0.7, -0.56);
+        \coordinate (Mxy) at (1.0, -0.56);
+        \coordinate (M)   at (1.0, 1.15);
+
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (X) node[below left=-1pt] {$x$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Y) node[right=-1pt] {$y$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Z) node[above=-1pt] {$z$};
+
+        \draw[dashed, amberorange, line width=0.8pt] (M) -- (Mxy);
+        \draw[dashed, fbblue, line width=0.8pt] (Mxy) -- (Mx);
+
+        \fill[deepblue] (M) circle (2pt) node[right=1pt] {$M(x;y;z)$};
+        \fill[amberorange] (Mxy) circle (2pt) node[below right=-2pt] {$(x;y;0)$};
+        \fill[fbblue] (Mx) circle (2pt) node[left=1pt] {$(x;0;0)$};
+        \node[below left=-1pt] at (O) {$O$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.15cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho điểm $M(2; -3; 5)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+    \item Chiếu lên trục $Ox \longrightarrow \dotfill$
+    \item Chiếu lên trục $Oz \longrightarrow \dotfill$
+    \item Chiếu lên mặt phẳng $(Oxy) \longrightarrow \dotfill$
+    \item Chiếu lên mặt phẳng $(Oyz) \longrightarrow \dotfill$
+\end{itemize}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.15cm}
+
+% ------------------------------------------
+% Ý B: ĐỐI XỨNG
+% ------------------------------------------
+\noindent\textbf{\textcolor{deepblue}{\large b) Đối xứng:}} \textit{\textcolor{accentred}{Đối xứng qua cái gì thì giữ cái đó, còn lại đổi dấu}}
+\par\vspace{0.06cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}[top=3pt, bottom=3pt]
+        \[
+        M(x; y; z) \xrightarrow{\text{đối xứng qua}}
+        \begin{cases}
+            Ox \to (x;\, -y;\, -z) \quad & (Oxy) \to (x;\, y;\, -z) \\
+            Oy \to (-x;\, y;\, -z) \quad & (Oyz) \to (-x;\, y;\, z) \\
+            Oz \to (-x;\, -y;\, z) \quad & (Oxz) \to (x;\, -y;\, z)
+        \end{cases}
+        \]
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
+        \useasboundingbox (-1.2,-1.8) rectangle (2.3,1.8);
+        \coordinate (O)   at (0, 0);
+        \coordinate (X)   at (-1.1, -0.88);
+        \coordinate (Y)   at (2.1, 0);
+        \coordinate (Z)   at (0, 1.8);
+
+        % Điểm trên mặt đáy Oxy: H(x; y; 0)
+        \coordinate (Mx)  at (-0.6, -0.48);
+        \coordinate (My)  at (1.6, 0);
+        \coordinate (H)   at (1.0, -0.48); % Giao điểm trên mặt phẳng (Oxy)
+
+        % M(x; y; z) và M'(x; y; -z) cách đều H đúng 1.1cm (chuẩn đối xứng 1:1)
+        \coordinate (M)   at (1.0, 0.62);
+        \coordinate (Mdx) at (1.0, -1.58);
+
+        % Hệ trục tọa độ
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (X) node[below left=-1pt] {$x$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Y) node[right=-1pt] {$y$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Z) node[above=-1pt] {$z$};
+
+        % Gióng trên mặt (Oxy)
+        \draw[dashed, softgray!80!black, line width=0.6pt] (Mx) -- (H) -- (My);
+
+        % Đoạn gióng từ M xuống đáy H (màu xanh dương fbblue)
+        \draw[dashed, fbblue, line width=0.9pt] (M) -- (H);
+        
+        % Đoạn gióng từ đáy H xuống M' đối xứng (màu đỏ tươi accentred)
+        \draw[dashed, accentred, line width=0.9pt] (H) -- (Mdx);
+
+        % Các điểm
+        \fill[deepblue] (M) circle (2pt) node[right=1pt] {$M(x;y;z)$};
+        \fill[fbblue] (H) circle (1.6pt) node[right=1pt, font=\tiny] {$H(x;y;0)$};
+        \fill[accentred] (Mdx) circle (2pt) node[right=1pt] {$M'$};
+        \node[below left=-1pt] at (O) {$O$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.15cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho điểm $M(2; -3; 5)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+    \item Đối xứng qua trục $Ox \longrightarrow \dotfill$
+    \item Đối xứng qua mặt phẳng $(Oxy) \longrightarrow \dotfill$
+    \item Đối xứng qua mặt phẳng $(Oxz) \longrightarrow \dotfill$
+\end{itemize}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.15cm}
+
+% ------------------------------------------
+% Ý C: KHOẢNG CÁCH
+% ------------------------------------------
+\noindent\textbf{\textcolor{deepblue}{\large c) Khoảng cách:}} \textit{\textcolor{accentred}{Khoảng cách tới cái gì là căn của cái còn thiếu}}
+\par\vspace{0.06cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}[top=3pt, bottom=3pt]
+        \[
+        d(M, \dots) =
+        \begin{cases}
+            Ox \to \sqrt{y^2 + z^2} \\
+            Oy \to \sqrt{x^2 + z^2} \\
+            Oz \to \sqrt{x^2 + y^2}
+        \end{cases}
+        \qquad
+        \begin{cases}
+            (Oxy) \to |z| \\
+            (Oxz) \to |y| \\
+            (Oyz) \to |x|
+        \end{cases}
+        \]
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\scriptsize]
+        \useasboundingbox (-1.2,-0.8) rectangle (2.3,1.8);
+        \coordinate (O)   at (0, 0);
+        \coordinate (X)   at (-1.1, -0.88);
+        \coordinate (Y)   at (2.1, 0);
+        \coordinate (Z)   at (0, 1.8);
+
+        \coordinate (Mx)  at (-0.7, -0.56);
+        \coordinate (Mxy) at (1.0, -0.56);
+        \coordinate (M)   at (1.0, 1.15);
+
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (X) node[below left=-1pt] {$x$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Y) node[right=-1pt] {$y$};
+        \draw[->, >=stealth, deepblue, line width=0.8pt] (O) -- (Z) node[above=-1pt] {$z$};
+
+        \draw[dashed, softgray!80!black, line width=0.7pt] (M) -- (Mxy);
+        \draw[dashed, softgray!80!black, line width=0.7pt] (M) -- (Mx);
+
+        \draw[<->, >=stealth, accentred, line width=0.8pt] ([xshift=3pt]M) -- ([xshift=3pt]Mxy) 
+            node[midway, right=-1pt, font=\tiny\bfseries] {$|z|$};
+        \draw[<->, >=stealth, fbblue, line width=0.8pt] (M) -- (Mx) 
+            node[midway, above left=-2pt, font=\tiny\bfseries] {$\sqrt{y^2+z^2}$};
+
+        \fill[deepblue] (M) circle (2pt) node[right=1pt] {$M$};
+        \node[below left=-1pt] at (O) {$O$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.15cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho điểm $M(2; -3; 5)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+    \item $d(M, Ox) = \dotfill$
+    \item $d(M, Oz) = \dotfill$
+    \item $d(M, (Oxy)) = \dotfill$
+    \item $d(M, (Oxz)) = \dotfill$
+\end{itemize}
+
+\par\vspace{0.35cm}
+\hrule height 0.6pt \relax
+\par\vspace{0.35cm}
+
+% ==========================================
+% NỐI TIẾP LIỀN MẠCH: PHẦN II (KHÔNG DÙNG \newpage)
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large II. CÁC PHÉP TOÁN THEO TOẠ ĐỘ VÀ TÍCH VÔ HƯỚNG}}
+\par\vspace{0.15cm}
+
+% ------------------------------------------
+% MỤC 4: PHÉP TOÁN VECTƠ
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 4. Các phép toán vectơ}}
+\par\vspace{0.06cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        Cho $\vec{a}=(a_1; a_2; a_3)$ và $\vec{b}=(b_1; b_2; b_3)$:
+        \[ \vec{a} \pm \vec{b} = (a_1 \pm b_1;\ a_2 \pm b_2;\ a_3 \pm b_3) \]
+        \[ k\vec{a} = (ka_1;\ ka_2;\ ka_3) \]
+        \[ \vec{a} = \vec{b} \iff a_1 = b_1,\ a_2 = b_2,\ a_3 = b_3 \]
+        \[ \vec{a} \parallel \vec{b} \iff \vec{a} = k\vec{b} \iff \dfrac{a_1}{b_1} = \dfrac{a_2}{b_2} = \dfrac{a_3}{b_3} \]
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.86, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.0,0);
+        \coordinate (D) at (0.8,1.1);
+        \coordinate (C) at ($(B)+(D)-(A)$);
+
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (D) -- (C);
+        \draw[dashed, softgray!80!black] (A) -- (D) (B) -- (C);
+
+        \fill[deepblue] (A) circle (1.5pt) node[below left=-1pt] {$A$};
+        \fill[deepblue] (B) circle (1.5pt) node[below right=-1pt] {$B$};
+        \fill[deepblue] (C) circle (1.5pt) node[above right=-1pt] {$C$};
+        \fill[amberorange] (D) circle (1.8pt) node[above left=-1pt] {$D$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.12cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho $\vec{a} = (1; -2; 3)$, $\vec{b} = (2; 0; -1)$ và $A(1; 0; 2), B(2; -1; 1), C(0; 3; -2)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2.5pt}\setlength{\parskip}{0pt}
+    \item $\vec{a} + \vec{b} = \dotfill$
+    \item $2\vec{a} - 3\vec{b} = \dotfill$
+    \item Tìm $m, n$ để $\vec{u} = (2; m; n) \parallel \vec{a} \implies \dotfill$
+    \item Tọa độ điểm $D$ để $ABCD$ là hình bình hành: $D = \dotfill$
+\end{itemize}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 5: ĐIỂM ĐẶC BIỆT
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 5. Trung điểm đoạn thẳng \& Trọng tâm}}
+\par\vspace{0.06cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+        \item \textbf{Trung điểm $I$ của $AB$:} $I = \dfrac{A + B}{2} \iff x_I = \frac{x_A+x_B}{2};\ y_I = \frac{y_A+y_B}{2};\ z_I = \frac{z_A+z_B}{2}$.
+        \item \textbf{Trọng tâm $G$ của tam giác $ABC$:} $G = \dfrac{A+B+C}{3}$.
+        \item \textbf{Trọng tâm tứ diện $ABCD$:} $G = \dfrac{A+B+C+D}{4}$.
+        \item \textbf{Ba điểm $A, B, C$ thẳng hàng:} $\iff \vec{AB} = k\vec{AC} \iff \dfrac{x_B-x_A}{x_C-x_A} = \dfrac{y_B-y_A}{y_C-y_A} = \dfrac{z_B-z_A}{z_C-z_A}$.
+    \end{itemize}
+\end{theorybox}
+
+\par\vspace{0.12cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho ba điểm $A(1; 2; 3), B(3; 0; -1), C(2; 4; 1)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2.5pt}\setlength{\parskip}{0pt}
+    \item Trung điểm $I$ của đoạn thẳng $AB \longrightarrow \dotfill$
+    \item Trọng tâm $G$ của tam giác $ABC \longrightarrow \dotfill$
+    \item Kiểm tra ba điểm $A, B, C$ có thẳng hàng không: $\dotfill$
+\end{itemize}
+
+\par\vspace{0.2cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.2cm}
+
+% ------------------------------------------
+% MỤC 6: TÍCH VÔ HƯỚNG, KHOẢNG CÁCH VÀ GÓC
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 6. Tích vô hướng, Độ dài và Góc}}
+\par\vspace{0.06cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+            \item \textbf{Tích vô hướng:} $\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$.
+            \item \textbf{Độ dài vectơ:} $|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}$.
+            \item \textbf{Khoảng cách hai điểm:}  
+            \[ AB = \sqrt{(x_B-x_A)^2 + (y_B-y_A)^2 + (z_B-z_A)^2} \]
+            \item \textbf{Điều kiện vuông góc:} $\vec{a} \perp \vec{b} \iff a_1 b_1 + a_2 b_2 + a_3 b_3 = 0$.
+            \item \textbf{Côsin góc hai vectơ:} $\cos(\vec{a}, \vec{b}) = \dfrac{\vec{a} \cdot \vec{b}}{|\vec{a}| \cdot |\vec{b}|}$.
+        \end{itemize}
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.74, font=\footnotesize]
+        \coordinate (O) at (0,0);
+        \coordinate (B) at (1.9,0);
+        \coordinate (A) at (1.3,1.3);
+
+        \draw[->, >=stealth, deepblue, thick] (O) -- (B) node[below] {$\vec{b}$};
+        \draw[->, >=stealth, deepblue, thick] (O) -- (A) node[above] {$\vec{a}$};
+
+        \draw[amberorange, thick] (0.45,0) arc (0:45:0.45);
+        \node[amberorange, font=\scriptsize] at (0.7, 0.22) {$\varphi$};
+
+        \node[draw=accentred, rounded corners=3pt, fill=accentred!10, inner sep=2.5pt, font=\tiny, align=center] 
+            at (0.95, -0.65) {\textbf{\textcolor{accentred}{Lưu ý bẫy:}}\\ Góc 2 vectơ: $0^\circ \le \varphi \le 180^\circ$\\ Góc 2 đt: $0^\circ \le \alpha \le 90^\circ$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.12cm}
+\noindent\textbf{\textcolor{deepblue}{Ví dụ:}} Cho $\vec{u} = (1; 2; -2)$ và $\vec{v} = (2; 1; 2)$:
+\begin{itemize}\setlength{\topsep}{1pt}\setlength{\itemsep}{2.5pt}\setlength{\parskip}{0pt}
+    \item Tích vô hướng $\vec{u} \cdot \vec{v} = \dotfill$
+    \item Kiểm tra tính vuông góc: Hai vectơ $\vec{u}$ và $\vec{v}$ có vuông góc không? $\dotfill$
+    \item Độ dài vectơ $|\vec{u}| = \dotfill$
+    \item Độ dài vectơ $|\vec{v}| = \dotfill$
+    \item Côsin góc giữa hai vectơ: $\cos(\vec{u}, \vec{v}) = \dotfill \implies (\vec{u}, \vec{v}) = \dotfill$
+\end{itemize}
+
+\par\vspace{0.35cm}
+\hrule height 0.6pt \relax
+\par\vspace{0.35cm}
+
+% ==========================================
+% NỐI TIẾP LIỀN MẠCH: PHẦN III
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large III. TÍCH CÓ HƯỚNG VÀ ỨNG DỤNG HÌNH HỌC - THỰC TẾ}}
+\par\vspace{0.15cm}
+
+% ------------------------------------------
+% MỤC 7: TÍCH CÓ HƯỚNG
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 7. Tích có hướng của hai vectơ}}
+\par\vspace{0.08cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
+        \item \textbf{Mẹo tính nhẩm (Nhân chéo trừ nhau $ad - bc$, riêng tọa độ ở giữa đổi dấu):}
+        \[
+        \begin{matrix}
+            \vec{a} = (a_1;\ a_2;\ a_3) \\
+            \vec{b} = (b_1;\ b_2;\ b_3)
+        \end{matrix}
+        \implies [\vec{a}, \vec{b}] = \hspace{6.5cm}
+        \]
+        \item \textbf{Phân biệt quan trọng:}
+        \begin{itemize}\setlength{\itemsep}{1.5pt}
+            \item $\vec{a} \cdot \vec{b}$ là \textbf{tích vô hướng} $\longrightarrow$ kết quả là một \textbf{con số} (dùng xét góc, vuông góc).
+            \item $[\vec{a}, \vec{b}]$ là \textbf{tích có hướng} $\longrightarrow$ kết quả là một \textbf{vectơ} vuông góc với cả $\vec{a}$ và $\vec{b}$.
+        \end{itemize}
+        \item \textbf{Điều kiện cùng phương:} $\vec{a}$ cùng phương $\vec{b} \iff [\vec{a}, \vec{b}] = \vec{0}$.
+        \item \textbf{Điều kiện đồng phẳng:} Ba vectơ $\vec{a}, \vec{b}, \vec{c}$ đồng phẳng $\iff [\vec{a}, \vec{b}] \cdot \vec{c} = 0$.
+        \item \textbf{Diện tích tam giác $ABC$:} $S_{ABC} = \dfrac{1}{2} \left| [\vec{AB}, \vec{AC}] \right|$.
+        \item \textbf{Diện tích hình bình hành $ABCD$:} $S_{ABCD} = \left| [\vec{AB}, \vec{AD}] \right|$.
+        \item \textbf{Thể tích tứ diện $ABCD$:} $V_{ABCD} = \dfrac{1}{6} \left| [\vec{AB}, \vec{AC}] \cdot \vec{AD} \right|$.
+        \item \textbf{Thể tích chóp đáy là hình bình hành/HCN $S.ABCD$:} $V_{S.ABCD} = \dfrac{1}{3} \left| [\vec{AB}, \vec{AD}] \cdot \vec{AS} \right|$.
+        \item \textbf{Thể tích lăng trụ tam giác $ABC.A'B'C'$:} $V = \dfrac{1}{2} \left| [\vec{AB}, \vec{AC}] \cdot \vec{AA'} \right|$.
+        \item \textbf{Thể tích khối hộp $ABCD.A'B'C'D'$:} $V = \left| [\vec{AB}, \vec{AD}] \cdot \vec{AA'} \right|$.
+    \end{itemize}
+\end{theorybox}
+
+\par\vspace{0.2cm}
+% ------------------------------------------
+% CÁC HÌNH VẼ MINH HỌA GIẢI THÍCH THÊM CÔNG THỨC
+% ------------------------------------------
+\noindent
+\begin{minipage}[t]{0.24\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2.2,0);
+        \coordinate (C) at (1.2,1.4);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (C);
+        \draw[softgray!80!black] (B) -- (C);
+        \fill[deepblue] (A) circle (1.2pt) node[below left=-1pt] {$A$};
+        \fill[deepblue] (B) circle (1.2pt) node[below right=-1pt] {$B$};
+        \fill[deepblue] (C) circle (1.2pt) node[above=-1pt] {$C$};
+    \end{tikzpicture}\\[2pt]
+    \textbf{\textcolor{amberorange}{\footnotesize 1. Tam giác $ABC$}}\\[2pt]
+    {\footnotesize $S_{\Delta} = \dots\dots\dots\dots\dots$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.24\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1.8,0);
+        \coordinate (D) at (0.7,1.15);
+        \coordinate (C) at ($(B)+(D)-(A)$);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (D);
+        \draw[dashed, softgray!80!black] (D) -- (C) -- (B);
+        \fill[deepblue] (A) circle (1.2pt) node[below left=-1pt] {$A$};
+        \fill[deepblue] (B) circle (1.2pt) node[below right=-1pt] {$B$};
+        \fill[deepblue] (C) circle (1.2pt) node[above right=-1pt] {$C$};
+        \fill[deepblue] (D) circle (1.2pt) node[above left=-1pt] {$D$};
+    \end{tikzpicture}\\[2pt]
+    \textbf{\textcolor{amberorange}{\footnotesize 2. Hình bình hành}}\\[2pt]
+    {\footnotesize $S_{\text{hbh}} = \dots\dots\dots\dots\dots$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.24\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\footnotesize]
+        \coordinate (A) at (0.2,0);
+        \coordinate (B) at (2.0,0);
+        \coordinate (C) at (1.2,0.65);
+        \coordinate (D) at (0.9,1.6);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (D);
+        \draw[->, >=stealth, deepblue, thick, dashed] (A) -- (C);
+        \draw[softgray!80!black] (D) -- (B) (D) -- (C) (B) -- (C);
+        \fill[deepblue] (A) circle (1.2pt) node[below left=-1pt] {$A$};
+        \fill[deepblue] (B) circle (1.2pt) node[below right=-1pt] {$B$};
+        \fill[deepblue] (C) circle (1.2pt) node[right=1pt] {$C$};
+        \fill[deepblue] (D) circle (1.2pt) node[above=-1pt] {$D$};
+    \end{tikzpicture}\\[2pt]
+    \textbf{\textcolor{amberorange}{\footnotesize 3. Tứ diện $ABCD$}}\\[2pt]
+    {\footnotesize $V_{\text{tứ diện}} = \dots\dots\dots\dots$}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.24\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.72, font=\footnotesize]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (1.5,0);
+        \coordinate (D) at (0.6,0.45);
+        \coordinate (C) at ($(B)+(D)-(A)$);
+        \coordinate (A1) at (0,1.15);
+        \coordinate (B1) at ($(B)+(A1)-(A)$);
+        \coordinate (D1) at ($(D)+(A1)-(A)$);
+        \coordinate (C1) at ($(C)+(A1)-(A)$);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (B);
+        \draw[->, >=stealth, deepblue, thick] (A) -- (A1);
+        \draw[->, >=stealth, deepblue, thick, dashed] (A) -- (D);
+        \draw[softgray!80!black] (A1) -- (B1) -- (C1) -- (D1) -- cycle;
+        \draw[softgray!80!black] (B) -- (B1) (C) -- (C1) (B) -- (C);
+        \draw[dashed, softgray!80!black] (D) -- (C) (D) -- (D1);
+        \fill[deepblue] (A) circle (1.2pt) node[below left=-1pt] {$A$};
+    \end{tikzpicture}\\[2pt]
+    \textbf{\textcolor{amberorange}{\footnotesize 4. Khối hộp}}\\[2pt]
+    {\footnotesize $V_{\text{hộp}} = \dots\dots\dots\dots\dots$}
+\end{minipage}
+
+\par\vspace{0.3cm}
+\questionLinesManual{0}{hỏi}{Trong không gian $Oxyz$, cho bốn điểm $A(1; 0; 0)$, $B(0; 2; 0)$, $C(0; 0; 3)$ và $D(1; 1; 1)$.}{%
+    \textbf{a)} Tìm toạ độ các vectơ $\vec{AB}, \vec{AC}$ và tính tích có hướng $[\vec{AB}, \vec{AC}]$.\par\vspace{0.1cm}
+    \textbf{b)} Tính diện tích tam giác $ABC$ và thể tích của khối tứ diện $ABCD$.
+}
+\drawdashlinesfull
+
+\par\vspace{0.25cm}
+% ------------------------------------------
+% MỤC 8: CÁC BÀI TOÁN THỰC TẾ (VẬT LÝ & VỊ TRÍ KHÔNG GIAN)
+% ------------------------------------------
+\noindent\textbf{\textcolor{amberorange}{\large 8. Các bài toán thực tế (Vật lý \& Vị trí không gian)}}
+\par\vspace{0.1cm}
+
+% --- MÔ HÌNH 1: CÂN BẰNG LỰC ---
+\noindent\textbf{\textcolor{deepblue}{\large a) Mô hình cân bằng lực (Vật lý):}}
+\par\vspace{0.08cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+            \item Lực là một vectơ: Trọng lực $\vec{P}$, lực căng $\vec{T}$, lực kéo $\vec{F}$.
+            \item Trọng lực hướng thẳng đứng xuống dưới: $\vec{P} = (0; 0; -P)$ ($P = mg$).
+            \item \textbf{Điều kiện cân bằng lực:} Vật đứng yên cân bằng khi:
+            \[ \vec{F}_1 + \vec{F}_2 + \vec{P} = \vec{0} \iff \vec{F}_2 = -(\vec{F}_1 + \vec{P}) \]
+        \end{itemize}
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.82, font=\footnotesize]
+        \coordinate (CeilL) at (-1.7, 1.6);
+        \coordinate (CeilR) at (1.7, 1.6);
+        \coordinate (O)     at (0, 0.4);
+        \coordinate (P)     at (0, -1.1);
+
+        \draw[deepblue, line width=1.4pt] (CeilL) -- (CeilR);
+        \foreach \x in {-1.5,-1.1,...,1.5} {
+            \draw[softgray!80!black, line width=0.8pt] (\x, 1.6) -- (\x+0.2, 1.85);
+        }
+
+        \draw[softgray!80!black, line width=0.9pt] (CeilL) -- (O) -- (CeilR);
+        \draw[->, >=stealth, fbblue, line width=1.5pt] (O) -- (-1.0, 1.1) node[above left=-2pt] {$\vec{F}_1$};
+        \draw[->, >=stealth, fbblue, line width=1.5pt] (O) -- (1.0, 1.1) node[above right=-2pt] {$\vec{F}_2$};
+        \draw[->, >=stealth, accentred, line width=1.6pt] (O) -- (P) node[right=2pt] {$\vec{P}$};
+
+        \node[regular polygon, regular polygon sides=3, rotate=180, fill=goldyellow, draw=amberorange, line width=1pt, inner sep=2.5pt] 
+            at (0, -0.15) {};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.15cm}
+\questionLinesManual{6}{hỏi}{Một chiếc đèn chùm nặng $50\text{ N}$ có trọng lực $\vec{P} = (0; 0; -50)\text{ N}$ được giữ cố định cân bằng nhờ hai sợi dây cáp. Biết lực căng của sợi cáp thứ nhất là $\vec{F}_1 = (15; -20; 25)\text{ N}$. Tìm toạ độ lực căng $\vec{F}_2$ của sợi cáp thứ hai.}{}
+
+\par\vspace{0.25cm}
+\hrule height 0.4pt \relax
+\par\vspace{0.25cm}
+
+% --- MÔ HÌNH 2: THIẾT BỊ BAY & RADAR ---
+\noindent\textbf{\textcolor{deepblue}{\large b) Mô hình quỹ đạo thiết bị bay \& Trạm Radar:}}
+\par\vspace{0.08cm}
+
+\noindent
+\begin{minipage}[c]{0.67\linewidth}
+    \begin{theorybox}
+        \begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+            \item Vị trí trạm radar thường chọn làm gốc toạ độ $O(0; 0; 0)$.
+            \item Quãng đường bay thẳng từ vị trí $A$ đến vị trí $B$:
+            \[ s = AB = \sqrt{(x_B-x_A)^2 + (y_B-y_A)^2 + (z_B-z_A)^2} \]
+            \item Độ cao của máy bay tại điểm $M(x; y; z)$ chính là: $h = z_M$ (với mặt đất là mặt phẳng $(Oxy)$).
+        \end{itemize}
+    \end{theorybox}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.31\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.78, font=\scriptsize]
+        \coordinate (O) at (0,0);
+        \coordinate (X) at (-1.1,-0.8);
+        \coordinate (Y) at (2.0,0);
+        \coordinate (Z) at (0,1.8);
+        
+        \coordinate (A) at (0.4, 0.6);
+        \coordinate (B) at (1.6, 1.4);
+
+        \draw[->, >=stealth, softgray!80!black] (O) -- (X) node[below left=-1pt] {$x$};
+        \draw[->, >=stealth, softgray!80!black] (O) -- (Y) node[right=-1pt] {$y$};
+        \draw[->, >=stealth, softgray!80!black] (O) -- (Z) node[above=-1pt] {$z$};
+
+        \fill[deepblue] (O) circle (2pt) node[below left=-1pt] {Radar $O$};
+        \draw[deepblue, thick] (O) arc (0:60:0.4);
+
+        \draw[->, >=stealth, accentred, line width=1.4pt] (A) -- (B) node[midway, above left=-1pt] {$s$};
+        \fill[accentred] (A) circle (1.8pt) node[left=1pt] {$A$};
+        \fill[amberorange] (B) circle (2.2pt) node[above right=-1pt] {$B$};
+        
+        \draw[dashed, softgray!80!black] (B) -- (1.6, 0.4) node[midway, right] {$h$};
+    \end{tikzpicture}
+\end{minipage}
+
+\par\vspace{0.15cm}
+\questionLinesManual{6}{hỏi}{Một máy bay đang di chuyển trên đường bay thẳng từ điểm $A(2; 1; 1)\text{ km}$ đến điểm $B(6; 4; 13)\text{ km}$ so với trạm kiểm soát không lưu tại gốc toạ độ $O$. Tính độ dài quãng đường máy bay đã di chuyển và độ cao của máy bay khi tới điểm $B$.}{}
+
+\newpage
+
+% ==========================================
+% PHẦN BÀI TẬP VÍ DỤ MINH HỌA TRÊN LỚP
+% ==========================================
+\noindent\textbf{\textcolor{deepblue}{\large IV. VÍ DỤ MINH HỌA TRÊN LỚP}}
+\par\vspace{-0.15cm}
+
+\questioncore{1}{Trong không gian $Oxyz$, cho điểm $M(2; -3; 5)$ và vectơ $\vec{u} = 2\vec{i} - \vec{j} + 4\vec{k}$.}
+\par\vspace{0.2cm}
+\textbf{a)} Tìm toạ độ của vectơ $\vec{u}$ và toạ độ vectơ $\vec{OM}$. \par\vspace{0.15cm}
+\textbf{b)} Tìm toạ độ hình chiếu vuông góc của điểm $M$ lần lượt lên các trục $Ox, Oz$ và mặt phẳng $(Oxy)$. \par\vspace{0.15cm}
+\textbf{c)} Tìm toạ độ điểm $M'$ đối xứng với điểm $M$ qua mặt phẳng $(Oxz)$ và tính khoảng cách từ điểm $M$ đến trục $Oy$.
+\drawdashlinesfull
+
+\questioncore{2}{Trong không gian $Oxyz$, cho ba điểm $A(1; 2; -1)$, $B(2; -1; 3)$ và $C(-2; 3; 1)$.}
+\par\vspace{0.2cm}
+\textbf{a)} Tìm toạ độ các vectơ $\vec{AB}$ và $\vec{AC}$. Chứng minh ba điểm $A, B, C$ không thẳng hàng. \par\vspace{0.15cm}
+\textbf{b)} Tìm toạ độ điểm $D$ sao cho tứ giác $ABCD$ là hình bình hành. \par\vspace{0.15cm}
+\textbf{c)} Tìm toạ độ trọng tâm $G$ của tam giác $ABC$ và toạ độ điểm $M$ thoả mãn $\vec{AM} = 2\vec{AB} - 3\vec{BC}$.
+\drawdashlinesfull
+
+\questioncore{3}{Trong không gian $Oxyz$, cho hai vectơ $\vec{a} = (1; 0; -2)$, $\vec{b} = (2; -2; 1)$ và điểm $C(3; -1; 0)$.}
+\par\vspace{0.2cm}
+\textbf{a)} Tính tích vô hướng $\vec{a} \cdot \vec{b}$ và độ dài $|\vec{a}|, |\vec{b}|$. Từ đó tính côsin của góc giữa hai vectơ $\vec{a}$ và $\vec{b}$. \par\vspace{0.15cm}
+\textbf{b)} Tìm toạ độ vectơ tích có hướng $[\vec{a}, \vec{b}]$. Tính diện tích hình bình hành căng bởi hai vectơ $\vec{a}$ và $\vec{b}$. \par\vspace{0.15cm}
+\textbf{c)} Tìm toạ độ điểm $M$ thuộc trục $Ox$ sao cho vectơ $\vec{CM}$ vuông góc với vectơ $\vec{a}$.
+\drawdashlinesfull
+
+\end{document}

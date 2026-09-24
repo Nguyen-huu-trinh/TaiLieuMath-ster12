@@ -13,8 +13,8 @@
 \renewcommand{\vec}[1]{\vv{#1}} % Tự động áp dụng cho mọi lệnh \vec
 
 \usepackage{cellspace}
-\setlength\cellspacetoplimit{5pt}    % Khoảng trống tối thiểu phía trên
-\setlength\cellspacebottomlimit{5pt} % Khoảng trống tối thiểu phía dưới
+\setlength\cellspacetoplimit{5pt}    % Khoảng trống tối thiểu phía trên bảng
+\setlength\cellspacebottomlimit{5pt} % Khoảng trống tối thiểu phía dưới bảng
 
 % Căn lề & Bố cục trang
 \usepackage[top=2.2cm, bottom=1.5cm, left=1cm, right=1cm, headheight=60pt]{geometry}
@@ -28,6 +28,10 @@
 \usepackage{graphicx} 
 \usepackage{tikz}
 \usetikzlibrary{calc, shapes.geometric, positioning}
+
+% Khung hộp nâng cao (tcolorbox)
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
 
 % Bảng biểu & Danh sách
 \usepackage{colortbl}
@@ -51,7 +55,7 @@
 \definecolor{fbblue}{RGB}{15, 80, 200}
 
 % ==========================================
-% 3. CẤU HÌNH HEADER & FOOTER (CỐ ĐỊNH KÍCH THƯỚC CHỮ TẤT CẢ CÁC TRANG)
+% 3. CẤU HÌNH HEADER & FOOTER
 % ==========================================
 \pagestyle{fancy}
 \fancyhf{}
@@ -83,7 +87,7 @@
         \node[anchor=west, inner sep=0pt] 
             at ($(current page.north west) + (0cm, -0.8cm)$) {\includegraphics[height=2.0cm]{../../../image/logo-header.png}};
             
-        % Text góc phải Header (Khóa cứng cỡ chữ 11pt, không bị ảnh hưởng bởi nội dung trang)
+        % Text góc phải Header (Khóa cứng cỡ chữ 11pt)
         \node[anchor=east, text=white, font=\fontsize{11pt}{13pt}\selectfont\bfseries\sffamily] 
             at ($(current page.north east) + (-0.8cm, -0.5cm)$) {\HeaderRightText};
     \end{tikzpicture}
@@ -101,7 +105,7 @@
             .. controls ($(current page.south east) + (-3cm, 0.8cm)$) and ($(current page.south east) + (-1.5cm, 1.2cm)$) .. 
             ($(current page.south east) + (0, 1.2cm)$) -- cycle;
 
-        % Mạng xã hội (Khóa cứng cỡ chữ 11pt to rõ giống trang 2 & 3)
+        % Mạng xã hội
         \node[anchor=west, inner sep=0pt] at ($(current page.south west) + (1cm, 0.8cm)$) {
             \fontsize{11pt}{13pt}\selectfont\sffamily
             \textcolor{fbblue}{\faFacebook\hskip 5pt Toán Anh Huy MATH-STER}
@@ -109,15 +113,35 @@
             \textcolor{black}{\faTiktok\hskip 5pt huymathster}
         };
 
-        % Số trang (Khóa cứng cỡ chữ 13pt đậm nét)
+        % Số trang
         \node[circle, fill=white, draw=amberorange, line width=1.5pt, text=deepblue, font=\fontsize{13pt}{15pt}\selectfont\bfseries\sffamily, inner sep=3pt, minimum size=0.85cm] 
             at ($(current page.south east) + (-1.2cm, 0.6cm)$) {\thepage};
     \end{tikzpicture}
 }
 
 % ==========================================
-% 4. ĐỊNH NGHĨA MACRO: KHUNG TIÊU ĐỀ (CHO PHÉP DÙNG \\ ĐỂ NGẮT DÒNG)
+% 4. ĐỊNH NGHĨA KHUNG LÝ THUYẾT & TIÊU ĐỀ
 % ==========================================
+% Khung ghi nhớ lý thuyết: có vạch kẻ nhấn bên trái (Left Accent Bar), nền kem siêu nhạt
+\newtcolorbox{theorybox}[1][]{
+    enhanced,
+    breakable,
+    colback=lightamber!35,
+    colframe=amberorange,
+    arc=4pt,
+    outer arc=4pt,
+    boxrule=0pt,
+    leftrule=3.5pt, % Vạch nhấn màu cam đậm
+    top=5pt,
+    bottom=5pt,
+    left=8pt,
+    right=8pt,
+    before skip=5pt,
+    after skip=5pt,
+    #1
+}
+
+% Macro: Khung Tiêu Đề
 \newcommand{\titlebox}[3]{
     \gdef\HeaderRightText{#3}
     
@@ -152,7 +176,7 @@
         % Viền ngoài
         \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
 
-        % Nội dung Text (Đã mở khóa \\ để ngắt dòng chủ động)
+        % Nội dung Text
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
             \begin{minipage}[c]{4.2cm}
                 \centering
@@ -178,30 +202,32 @@
 }
 
 % ==========================================
-% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & BÀI TẬP
 % ==========================================
+% Tiêu đề câu hỏi chuẩn thoáng (có khoảng hở trước và sau câu)
 \newcommand{\questioncore}[2]{
-    \noindent \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
-    \par\nopagebreak
+    \par\vspace{0.35cm}\noindent
+    \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
+    \par\nopagebreak\vspace{0.12cm}
 }
 
-% Cấu hình hiển thị đáp án trắc nghiệm
+% Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D chuẩn thoáng đẹp như sách
 \settasks{
     label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
-    label-width=15pt,     
-    item-indent=25pt,     
+    label-width=16pt,     
+    item-indent=28pt,     
     label-offset=6pt,    
-    column-sep=20pt,     
-    after-item-skip=2pt
+    column-sep=15pt,     
+    before-skip=3pt,    % Khoảng cách từ đề bài xuống đáp án
+    after-item-skip=3pt % Khoảng cách giữa các dòng đáp án
 }
 
-% Hàm vẽ dòng kẻ nháp (Nét liền, đậm rõ nét, độc lập với khung tiêu đề)
+% Hàm vẽ dòng kẻ nháp
 \newcommand{\drawdashlines}[1]{
     \ifnum#1>0
-        \nopagebreak\vspace{0.1cm}\noindent 
+        \nopagebreak\vspace{0.15cm}\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                % Nét liền (solid), màu xám đen đậm black!60, độ dày 0.7pt
                 \draw[black!50, line width=0.3pt] 
                     (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
@@ -214,15 +240,12 @@
 \newcommand{\drawdashlinesfull}{%
     \par\nopagebreak\vspace{-0.75cm}\noindent
     \begin{tikzpicture}[remember picture, overlay]
-        % Xác định khoảng cách từ vị trí hiện tại xuống mép trên của footer (cách mép dưới trang 1.8cm)
         \path let \p1 = (0,0), \p2 = (current page.south) in 
             \pgfextra{
-                % Tính số dòng kẻ có thể vẽ (mỗi dòng cách nhau 0.75cm)
                 \pgfmathsetmacro{\availableHeight}{\y1 - \y2 - 1.8cm}
                 \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.75cm)}
                 \xdef\totalLines{\numLines}
             };
-        % Vẽ các dòng kẻ kín trang (đồng bộ màu black!50 và độ dày 0.3pt)
         \ifnum\totalLines>0
             \foreach \i in {1,...,\totalLines} {
                 \draw[black!50, line width=0.3pt] 
@@ -230,7 +253,7 @@
             }
         \fi
     \end{tikzpicture}%
-    \vfill % Đẩy trang kết thúc hoàn hảo
+    \vfill
     \newpage
 }
 
@@ -242,7 +265,7 @@
     #4
     \par\nopagebreak
     \drawdashlines{#1}
-    \vspace{0.5cm}
+    \vspace{0.4cm}
 }
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
@@ -269,10 +292,10 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
-    \vspace{0.5cm}
+    \vspace{0.4cm}
 }
 
-% ----- Dạng 3: Tự luận ngắn (Đã sửa triệt để lỗi group \changefontsize) -----
+% --- Dạng 3: Tự luận ngắn ---
 \newcommand{\questionShortAnswer}[3]{
     \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
     \needspace{\calculatedSpace cm}
@@ -295,8 +318,14 @@
     
     \par\nopagebreak
     \drawdashlines{#1}
-    \vspace{0.5cm}
+    \vspace{0.4cm}
 }
 
-% Thiết lập cỡ chữ to rõ đồng bộ cho toàn bộ tài liệu ngay từ trang đầu
-\AtBeginDocument{\changefontsize[18pt]{12pt}}
+% ==========================================
+% 6. THIẾT LẬP GIÃN DÒNG TOÀN DIỆN (LINE SPACING)
+% ==========================================
+% Khóa cỡ chữ 12pt trên khoảng cách dòng 19.5pt (thoáng, sáng, sạch mắt)
+\AtBeginDocument{%
+    \fontsize{12pt}{19.5pt}\selectfont
+    \setlength{\parskip}{3pt}
+}
