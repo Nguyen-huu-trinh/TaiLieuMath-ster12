@@ -201,25 +201,25 @@
 }
 
 % ==========================================
-% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & BÀI TẬP
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & BÀI TẬP (CHỐNG TÁCH TRANG TRIỆT ĐỂ)
 % ==========================================
 % Tiêu đề câu hỏi chuẩn
 \newcommand{\questioncore}[2]{%
-    \par\vspace{0.18cm}\noindent
+    \par\vspace{0.15cm}\noindent
     \textbf{\textcolor{deepblue}{Câu #1.} \textcolor{accentred}{[STER]}} #2
     \par\nopagebreak\vspace{0.08cm}%
 }
 
-% Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D thoáng mắt chuẩn sách in
+% Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D
 \settasks{
     label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
     label-width=16pt,     
     item-indent=28pt,     
     label-offset=6pt,    
     column-sep=15pt,     
-    before-skip=4pt,     % Khoảng cách vừa vặn từ đề bài xuống các phương án
-    after-item-skip=3pt, % Khoảng cách thoáng giữa các dòng đáp án
-    after-skip=2pt       % Khoảng đệm kết thúc
+    before-skip=4pt,     
+    after-item-skip=3pt, 
+    after-skip=2pt       
 }
 
 % Hàm vẽ dòng kẻ nháp
@@ -232,7 +232,7 @@
                     (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
             }
         \end{tikzpicture}%
-        \par\vspace{0.25cm}%
+        \par\nopagebreak\vspace{0.25cm}%
     \fi
 }
 
@@ -257,64 +257,71 @@
     \newpage
 }
 
-% --- Dạng 1: Trắc nghiệm 4 đáp án (ĐÃ CÂN CHỈNH KHOẢNG CÁCH THOÁNG ĐẸP) ---
+% --- Dạng 1: Trắc nghiệm 4 đáp án (KHÓA KHỐI NGUYÊN VẸN) ---
 \newcommand{\questionLinesManual}[4]{%
-    \needspace{1.4cm}%
-    \questioncore{#2}{#3}%
-    #4%
-    \drawdashlines{#1}%
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \questioncore{#2}{#3}%
+        \nopagebreak
+        #4%
+        \nopagebreak
+        \drawdashlines{#1}%
+    \end{minipage}%
     \ifnum#1=0
-        \par\vspace{0.32cm}% Khoảng thở 0.32cm giữa 2 câu hỏi, chống bí mắt hoàn toàn
+        \par\vspace{0.32cm}%
     \fi
 }
 
-% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+% --- Dạng 2: Trắc nghiệm Đúng/Sai (CHỐNG RỚT BẢNG MỆNH ĐỀ TRIỆT ĐỂ) ---
 \newcommand{\questionTrueFalse}[4]{%
-    \pgfmathsetmacro{\calculatedSpace}{3.0 + #1 * 0.65} 
-    \needspace{\calculatedSpace cm}%
-    \questioncore{#2}{#3}%
-    \nopagebreak
-    \begin{center}
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}S{m{12cm}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
-        \hline
-        \rowcolor{amberorange!20}
-        \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
-        \textbf{\textcolor{deepblue}{Đúng}} & 
-        \textbf{\textcolor{deepblue}{Sai}} \\
-        \hline
-        #4
-        \hline
-    \end{tabular}
-    \renewcommand{\arraystretch}{1}
-    \end{center}
-    \drawdashlines{#1}%
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \questioncore{#2}{#3}%
+        \nopagebreak\vspace{0.1cm}
+        {\centering
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}S{m{12cm}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+            \hline
+            \rowcolor{amberorange!20}
+            \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+            \textbf{\textcolor{deepblue}{Đúng}} & 
+            \textbf{\textcolor{deepblue}{Sai}} \\
+            \hline
+            #4
+            \hline
+        \end{tabular}
+        \par}%
+        \nopagebreak
+        \drawdashlines{#1}%
+    \end{minipage}%
     \ifnum#1=0
-        \par\vspace{0.25cm}%
+        \par\vspace{0.32cm}%
     \fi
 }
 
-% --- Dạng 3: Tự luận ngắn ---
+% --- Dạng 3: Tự luận ngắn / Điền khuyết (KHÓA DÍNH Ô ĐÁP ÁN VỚI ĐỀ BÀI) ---
 \newcommand{\questionShortAnswer}[3]{%
-    \pgfmathsetmacro{\calculatedSpace}{1.5 + #1 * 0.8}
-    \needspace{\calculatedSpace cm}%
-    \questioncore{#2}{#3}%
-    \nopagebreak
-    \begin{flushright}
-        \begin{tikzpicture}
-            \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
-                at (-0.2, 0.4) {Đáp án:};
-            \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
-            \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
-                (0,0) rectangle (3.0, 0.8);
-            \foreach \x in {0.75, 1.5, 2.25} {
-                \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
-            }
-        \end{tikzpicture}
-    \end{flushright}
-    \drawdashlines{#1}%
+    \par\noindent
+    \begin{minipage}{\linewidth}
+        \questioncore{#2}{#3}%
+        \nopagebreak\vspace{0.1cm}
+        \begin{flushright}
+            \begin{tikzpicture}
+                \node[anchor=east, font=\small\bfseries\sffamily, text=deepblue] 
+                    at (-0.2, 0.4) {Đáp án:};
+                \fill[goldyellow, rounded corners=3pt] (0.08, -0.08) rectangle (3.08, 0.72);
+                \draw[draw=deepblue, fill=white, line width=1.2pt, rounded corners=3pt] 
+                    (0,0) rectangle (3.0, 0.8);
+                \foreach \x in {0.75, 1.5, 2.25} {
+                    \draw[draw=deepblue, line width=0.6pt] (\x, 0) -- (\x, 0.8);
+                }
+            \end{tikzpicture}
+        \end{flushright}
+        \nopagebreak
+        \drawdashlines{#1}%
+    \end{minipage}%
     \ifnum#1=0
-        \par\vspace{0.25cm}%
+        \par\vspace{0.32cm}%
     \fi
 }
 
