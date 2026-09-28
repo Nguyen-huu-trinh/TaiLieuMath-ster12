@@ -1,0 +1,717 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: NỀN TẢNG TƯ DUY CỐT LÕI (3 CÂU HỎI VỪA KHÍT TRANG)
+% =========================================================================
+\titlebox{Chủ đề: Oxyz}{Phương trình mặt phẳng}{Oxyz: Phương trình mặt phẳng}
+
+\vspace{-0.25cm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faLightbulb\hskip 6pt I. NỀN TẢNG: CẦN GÌ ĐỂ VIẾT PHƯƠNG TRÌNH MẶT PHẲNG?}}
+    \par\vspace{4pt}
+    \begin{minipage}[c]{0.63\linewidth}
+        Để xác định duy nhất mặt phẳng $(\alpha)$, ta luôn cần đủ \textbf{2 yếu tố}:
+        \[
+            \begin{cases} 
+                \textbf{1 Điểm đi qua:} & M_0(x_0; y_0; z_0) \\ 
+                \textbf{1 Véctơ pháp tuyến:} & \vec{n}_{(\alpha)} = (A; B; C) \neq \vec{0} \quad (\text{giá } \perp (\alpha))
+            \end{cases}
+        \]
+        \textbf{Phương trình tổng quát:}
+        \[
+            A(x - x_0) + B(y - y_0) + C(z - z_0) = 0 \iff Ax + By + Cz + D = 0.
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.35\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.0,0) -- (5.2,1.3) -- (1.2,1.3) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(\alpha)$};
+            
+            \coordinate (M0) at (1.9, 0.6);
+            \fill[deepblue] (M0) circle (2pt);
+            \node[deepblue, above=2pt, font=\small] at (M0) {$M_0(x_0; y_0; z_0)$};
+            
+            \coordinate (H) at (3.3, 0.6);
+            \draw[->, >=stealth, line width=1.3pt, accentred] (H) -- ++(0, 1.7) node[above, font=\small] {$\vec{n}_{(\alpha)}$};
+            \draw[accentred] ($(H)+(0,0.22)$) -- ($(H)+(0.22,0.22)$) -- ($(H)+(0.22,0)$);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.1cm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faCogs\hskip 6pt II. TƯ DUY: LÀM GÌ KHI ĐỀ BÀI CHƯA CHO SẴN VÉCTƠ PHÁP TUYẾN?}}
+    \par\vspace{4pt}
+    \begin{minipage}[c]{0.68\linewidth}
+        \textbf{\textcolor{accentred}{\faAngleDoubleRight\hskip 4pt Nguyên tắc:}} Nếu bài toán \textbf{chưa cho sẵn} VTPT $\vec{n}_{(\alpha)}$, ta hãy tìm \textbf{2 véctơ} $\vec{a}$ và $\vec{b}$ không cùng phương sao cho:
+        \[
+            \begin{cases} 
+                \vec{a} \text{ song song hoặc nằm trên } (\alpha) \\ 
+                \vec{b} \text{ song song hoặc nằm trên } (\alpha) 
+            \end{cases}
+            \implies \begin{cases} \vec{n}_{(\alpha)} \perp \vec{a} \\ \vec{n}_{(\alpha)} \perp \vec{b} \end{cases}
+        \]
+        \textbf{\textcolor{amberorange}{\faKey\hskip 4pt Hành động:}} Dùng tích có hướng để tạo VTPT:
+        \[
+            \mathbf{\vec{n}_{(\alpha)} = [\vec{a}, \vec{b}]}.
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.30\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \coordinate (O) at (0,0);
+            \draw[fill=lightamber!35, draw=deepblue!40, dashed] (-0.3,-0.2) -- (2.3,-0.1) -- (2.0,1.2) -- (-0.6,1.1) -- cycle;
+            
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (O) -- (1.9, 0.15) node[right, font=\small] {$\vec{a}$};
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (O) -- (0.8, 0.95) node[above right, font=\small] {$\vec{b}$};
+            
+            \draw[->, >=stealth, line width=1.3pt, accentred] (O) -- (0, 1.9) node[above, font=\small] {$\vec{n} = [\vec{a}, \vec{b}]$};
+            
+            \draw[accentred] (0, 0.25) -- (0.25, 0.27) -- (0.25, 0.02);
+            \draw[accentred] (0, 0.25) -- (0.16, 0.38) -- (0.16, 0.16);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.05cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(\alpha)\colon 2x - 3y + z - 5 = 0$. Một véctơ pháp tuyến của $(\alpha)$ có tọa độ là:
+}{%
+\begin{tasks}(4)
+    \task $\vec{n}_1 = (2; 3; 1)$
+    \task $\vec{n}_2 = (2; -3; 1)$
+    \task $\vec{n}_3 = (2; -3; -5)$
+    \task $\vec{n}_4 = (-3; 1; -5)$
+\end{tasks}
+}
+
+\vspace{-0.1cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, điểm nào dưới đây thuộc mặt phẳng $(P)\colon x - 2y + 3z - 1 = 0$?
+}{%
+\begin{tasks}(4)
+    \task $M(1; 1; 1)$
+    \task $N(2; 1; 0)$
+    \task $P(0; 1; 1)$
+    \task $Q(1; 0; 0)$
+\end{tasks}
+}
+
+\vspace{-0.1cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, mặt phẳng $(P)$ có cặp véctơ chỉ phương là $\vec{a} = (1; 0; 2)$ và $\vec{b} = (0; 1; -1)$. Một véctơ pháp tuyến của $(P)$ là:
+}{%
+\begin{tasks}(4)
+    \task $\vec{n} = (-2; 1; 1)$
+    \task $\vec{n} = (2; 1; 1)$
+    \task $\vec{n} = (-2; -1; 1)$
+    \task $\vec{n} = (2; -1; 1)$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 2: DẠNG 1 (MỖI MẶT 1 DẠNG - 8 DÒNG KẺ KÍN TRANG)
+% =========================================================================
+\dangbox{Dạng 1}{Mặt phẳng đi qua một điểm và có Véctơ pháp tuyến (VTPT)}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } A(x_0; y_0; z_0) \\ 
+                \text{VTPT } \vec{n}_{(P)} = (A; B; C) 
+            \end{cases}
+        \]
+        $\implies (P)\colon A(x - x_0) + B(y - y_0) + C(z - z_0) = 0$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.05]
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.2,0) -- (5.4,1.4) -- (1.2,1.4) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(P)$};
+            
+            \coordinate (A) at (1.8, 0.65);
+            \fill[deepblue] (A) circle (2pt);
+            \node[deepblue, above=2pt, font=\small] at (A) {$A$};
+            
+            \coordinate (H) at (3.4, 0.65);
+            \draw[->, >=stealth, line width=1.3pt, accentred] (H) -- ++(0, 1.8) node[above, font=\small] {$\vec{n}_{(P)}$};
+            \draw[accentred] ($(H)+(0,0.22)$) -- ($(H)+(0.22,0.22)$) -- ($(H)+(0.22,0)$);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(\alpha)$ đi qua điểm $M(2; -1; 1)$ và nhận véctơ $\vec{n} = (3; 2; -4)$ làm véctơ pháp tuyến.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(P)$ đi qua gốc tọa độ $O(0;0;0)$ và nhận véctơ $\vec{n} = (-1; 4; 2)$ làm véctơ pháp tuyến.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 3: DẠNG 2 (MỖI MẶT 1 DẠNG - 8 DÒNG KẺ KÍN TRANG)
+% =========================================================================
+\dangbox{Dạng 2}{Viết phương trình mặt phẳng $(P)$ qua $A$ và song song với $(Q)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } A(x_0; y_0; z_0) \\ 
+                \text{VTPT } \vec{n}_{(P)} = \vec{n}_{(Q)} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            \draw[thick, fill=white, draw=deepblue] (0,1.5) -- (4.0,1.5) -- (5.2,2.7) -- (1.2,2.7) -- cycle;
+            \draw[deepblue, thin] (0.5,1.5) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 1.78) {$(P)$};
+            
+            \coordinate (A) at (1.8, 2.05);
+            \fill[deepblue] (A) circle (2pt);
+            \node[deepblue, above=2pt, font=\small] at (A) {$A$};
+            
+            \draw[thick, fill=softgray!35, draw=deepblue] (0,0) -- (4.0,0) -- (5.2,1.2) -- (1.2,1.2) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(Q)$};
+            
+            \draw[line width=1.1pt, deepblue] (3.1, 0.6) -- (3.1, 2.05);
+            \draw[->, >=stealth, line width=1.3pt, accentred] (3.1, 2.05) -- ++(0, 1.5) node[above, font=\small] {$\vec{n}_{(P)} = \vec{n}_{(Q)}$};
+            \draw[accentred] (3.1, 0.82) -- (3.32, 0.82) -- (3.32, 0.6);
+            \draw[accentred] (3.1, 2.27) -- (3.32, 2.27) -- (3.32, 2.05);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $A(3; 2; 1)$ và mặt phẳng $(P)\colon x - 3y + 2z - 2 = 0$. Viết phương trình mặt phẳng $(Q)$ đi qua điểm $A$ và song song với mặt phẳng $(P)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(\alpha)$ đi qua điểm $M(1; -2; 3)$ đồng thời song song với mặt phẳng tọa độ $(Oxy)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 4: DẠNG 3 (MỖI MẶT 1 DẠNG - 8 DÒNG KẺ KÍN TRANG)
+% =========================================================================
+\dangbox{Dạng 3}{Viết phương trình mặt phẳng trung trực của đoạn thẳng $AB$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } I\left(\dfrac{x_A+x_B}{2}; \dfrac{y_A+y_B}{2}; \dfrac{z_A+z_B}{2}\right) \\[6pt]
+                \text{VTPT } \vec{n}_{(P)} = \vec{AB} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            \draw[thick, fill=white, draw=deepblue] (0,0.9) -- (4.0,0.9) -- (5.2,2.1) -- (1.2,2.1) -- cycle;
+            \draw[deepblue, thin] (0.5,0.9) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 1.18) {$(P)$};
+            
+            \coordinate (I) at (2.6, 1.5);
+            \fill[accentred] (I) circle (2pt) node[right=3pt, font=\small] {$I$};
+            
+            \coordinate (A) at (2.6, 3.0);
+            \coordinate (B) at (2.6, 0.0);
+            
+            \draw[thick, deepblue] (A) -- (I);
+            \draw[dashed, thick, deepblue] (I) -- (2.6, 0.9);
+            \draw[thick, deepblue] (2.6, 0.9) -- (B);
+            
+            \fill[deepblue] (A) circle (2pt) node[above, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[below, font=\small] {$B$};
+            
+            \draw[accentred] (2.6, 1.75) -- (2.85, 1.75) -- (2.85, 1.5);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian với hệ tọa độ $Oxyz$, cho hai điểm $A(4; 0; 1)$ và $B(-2; 2; 3)$. Viết phương trình mặt phẳng trung trực của đoạn thẳng $AB$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1; 3; -2)$ và $B(3; -1; 4)$. Viết phương trình mặt phẳng trung trực $(\alpha)$ của đoạn thẳng $AB$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 5: DẠNG 4 (MỖI MẶT 1 DẠNG - 8 DÒNG KẺ KÍN TRANG)
+% =========================================================================
+\dangbox{Dạng 4}{Viết phương trình mặt phẳng qua $M$ và vuông góc đường nối $AB$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } M(x_0; y_0; z_0) \\ 
+                \text{VTPT } \vec{n}_{(P)} = \vec{AB} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.0,0) -- (5.2,1.4) -- (1.2,1.4) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(P)$};
+            
+            \coordinate (M) at (1.8, 0.65);
+            \fill[deepblue] (M) circle (2pt);
+            \node[deepblue, above=2pt, font=\small] at (M) {$M$};
+            
+            \draw[thick, deepblue] (3.3, 0.7) -- (3.3, 2.3) node[above, font=\small] {$A$};
+            \draw[dashed, thick, deepblue] (3.3, 0.7) -- (3.3, 0.0);
+            \draw[thick, deepblue] (3.3, 0.0) -- (3.3, -0.6) node[below, font=\small] {$B$};
+            
+            \draw[->, >=stealth, line width=1.3pt, accentred] (3.3, 0.7) -- ++(0, 1.2) node[left=2pt, font=\small] {$\vec{AB}$};
+            \draw[accentred] (3.3, 0.95) -- (3.55, 0.95) -- (3.55, 0.7);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1; -2; 3)$ và $B(3; 0; -1)$. Viết phương trình mặt phẳng $(P)$ đi qua gốc tọa độ $O$ và vuông góc với đường nối hai điểm $A, B$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho tam giác $ABC$ có $A(2; 1; -1)$, $B(0; 3; 1)$, $C(-1; 2; 4)$. Viết phương trình mặt phẳng qua $A$ và vuông góc với cạnh $BC$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 6: DẠNG 5 (MỖI MẶT 1 DẠNG - HÌNH VẼ ĐÃ TÁCH THOÁNG ĐIỂM M)
+% =========================================================================
+\dangbox{Dạng 5}{Viết phương trình mặt phẳng qua $M$ và có cặp VTCP $\vec{a}, \vec{b}$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } M(x_0; y_0; z_0) \\ 
+                \text{VTPT } \vec{n}_{(P)} = [\vec{a}, \vec{b}] 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Mặt phẳng (P)
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.2,0) -- (5.4,1.4) -- (1.2,1.4) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(P)$};
+            
+            % Điểm M đứng riêng một vị trí thoáng bên trái
+            \coordinate (M) at (1.5, 0.65);
+            \fill[deepblue] (M) circle (2pt);
+            \node[deepblue, below=2pt, font=\small] at (M) {$M$};
+            
+            % VTPT n đứng góc riêng đâm thẳng lên, không đè lên M
+            \coordinate (H) at (2.6, 0.55);
+            \draw[->, >=stealth, line width=1.3pt, accentred] (H) -- ++(0, 1.7) node[above, font=\small] {$\vec{n} = [\vec{a}, \vec{b}]$};
+            \draw[accentred] ($(H)+(0,0.2)$) -- ($(H)+(0.2,0.2)$) -- ($(H)+(0.2,0)$);
+
+            % Cặp VTCP a và b nằm lệch bên phải thoáng đãng
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (3.4, 0.95) -- ++(1.3, 0.0) node[above, font=\small] {$\vec{a}$};
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (3.2, 0.3) -- ++(1.4, 0.2) node[below right, font=\small] {$\vec{b}$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, mặt phẳng $(P)$ đi qua điểm $A(1; 2; 0)$ và nhận cặp véctơ $\vec{u}_1 = (1; 0; 2)$, $\vec{u}_2 = (-1; 1; 1)$ làm cặp véctơ chỉ phương. Viết phương trình của mặt phẳng $(P)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(\alpha)$ đi qua điểm $M(2; -1; 3)$ đồng thời song song với giá của hai véctơ $\vec{a} = (2; 1; -1)$ và $\vec{b} = (0; 3; 2)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 7: DẠNG 6 (MỖI MẶT 1 DẠNG - ĐÃ TÁCH NHÃN (P) VÀ ĐIỂM A)
+% =========================================================================
+\dangbox{Dạng 6}{Viết phương trình mặt phẳng đi qua ba điểm $A, B, C$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (ABC)\colon \begin{cases} 
+                \text{Qua } A \text{ (hoặc } B, C\text{)} \\ 
+                \text{VTPT } \vec{n}_{(ABC)} = [\vec{AB}, \vec{AC}] 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Mặt phẳng (P)
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.2,0) -- (5.4,1.4) -- (1.2,1.4) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(P)$};
+            
+            % Đẩy cụm A, B, C sang phải, cách xa góc (P)
+            \coordinate (A) at (1.8, 0.45);
+            \coordinate (B) at (3.0, 1.05);
+            \coordinate (C) at (4.0, 0.4);
+            
+            \fill[deepblue] (A) circle (2pt) node[below left=1pt, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[above=2pt, font=\small] {$B$};
+            \fill[deepblue] (C) circle (2pt) node[right=2pt, font=\small] {$C$};
+            
+            \draw[->, >=stealth, line width=1.0pt, deepblue] (A) -- (B);
+            \draw[->, >=stealth, line width=1.0pt, deepblue] (A) -- (C);
+            
+            % VTPT n đâm lên từ đỉnh A
+            \draw[->, >=stealth, line width=1.3pt, accentred] (A) -- ++(0, 1.6) node[above, font=\small] {$\vec{n} = [\vec{AB}, \vec{AC}]$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian với hệ tọa độ $Oxyz$, cho ba điểm $A(1; -3; 2)$, $B(1; 0; 1)$ và $C(2; 3; 0)$. Viết phương trình mặt phẳng $(ABC)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho ba điểm $M(0; 1; 2)$, $N(2; -1; 0)$ và $P(1; 1; 3)$. Viết phương trình mặt phẳng $(MNP)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 8: DẠNG 7 (MỖI MẶT 1 DẠNG - ĐÃ NÂNG VTPT CỦA Q LÊN CAO)
+% =========================================================================
+\dangbox{Dạng 7}{Viết phương trình mặt phẳng qua hai điểm $A, B$ và vuông góc với $(Q)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } A \text{ (hoặc } B\text{)} \\ 
+                \text{VTPT } \vec{n}_{(P)} = [\vec{AB}, \vec{n}_{(Q)}] 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Mặt phẳng (P) nằm ngang
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (3.6,0) -- (4.8,1.3) -- (1.2,1.3) -- cycle;
+            \draw[deepblue, thin] (0.5,0) arc (0:45:0.5);
+            \node[deepblue, font=\bfseries\small] at (0.8, 0.28) {$(P)$};
+            
+            % Mặt phẳng (Q) dựng đứng vuông góc ở phía sau bên phải (giữ y nguyên hình cũ)
+            \draw[thick, fill=softgray!35, opacity=0.85, draw=deepblue] (3.4,0) -- (4.6,1.3) -- (4.6,2.7) -- (3.4,1.4) -- cycle;
+            \node[deepblue, font=\bfseries\small] at (4.3, 2.4) {$(Q)$};
+            
+            % Véc-tơ n_(Q) đâm ngang sang trái trên không trung (thoáng, không dính mép)
+            \draw[->, >=stealth, line width=1.3pt, accentred] (4.0, 1.9) -- ++(-1.4, 0) node[above left=1pt, font=\small] {$\vec{n}_{(Q)}$};
+            
+            % Véc-tơ AB vẽ XÉO theo mặt phẳng (P): A ở gần (dưới), B ở xa (trên)
+            \coordinate (A) at (1.5, 0.35);
+            \coordinate (B) at (2.4, 0.95);
+            \fill[deepblue] (A) circle (2pt) node[below=2pt, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[right=2pt, font=\small] {$B$};
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (A) -- (B) node[midway, below right=1pt, font=\small] {$\vec{AB}$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1; 0; 1)$, $B(0; 2; 3)$ và mặt phẳng $(Q)\colon x + y - z + 1 = 0$. Viết phương trình mặt phẳng $(P)$ đi qua hai điểm $A, B$ đồng thời vuông góc với $(Q)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(2; -1; 0)$, $B(1; 1; -2)$ và mặt phẳng $(P)\colon 2x - y + z - 5 = 0$. Viết phương trình mặt phẳng $(\alpha)$ chứa đoạn thẳng $AB$ và vuông góc với $(P)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 9: DẠNG 8 (MỖI MẶT 1 DẠNG - VẼ LẠI 3D RÕ RÀNG KHÔNG ĐÈ NHAU)
+% =========================================================================
+\dangbox{Dạng 8}{Viết phương trình mặt phẳng qua $M$ và vuông góc với $(\alpha), (\beta)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (P)\colon \begin{cases} 
+                \text{Qua } M(x_0; y_0; z_0) \\ 
+                \text{VTPT } \vec{n}_{(P)} = [\vec{n}_{(\alpha)}, \vec{n}_{(\beta)}] 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+    % 1. Mở rộng chiều ngang mặt phẳng (P) thật dài và thoáng
+    \draw[thick, fill=white, draw=deepblue] (0,0) -- (6.6,0) -- (8.0,1.6) -- (1.4,1.6) -- cycle;
+    \draw[deepblue, thin] (0.6,0) arc (0:45:0.6);
+    \node[deepblue, font=\bfseries\small] at (0.9, 0.3) {$(P)$};
+
+    % 2. Điểm M và VTPT n_(P) đứng ở góc trái
+    \coordinate (M) at (1.3, 0.45);
+    \fill[deepblue] (M) circle (2pt) node[below=2pt, font=\small] {$M$};
+    \draw[->, >=stealth, line width=1.3pt, accentred] (M) -- ++(0, 1.9) node[above, font=\small] {$\vec{n}_{(P)} = [\vec{n}_{(\alpha)}, \vec{n}_{(\beta)}]$};
+    \draw[accentred] ($(M)+(0,0.22)$) -- ($(M)+(0.22,0.22)$) -- ($(M)+(0.22,0)$);
+
+    % 3. Gáy giao tuyến đứng phía sau
+    \coordinate (G_bot) at (4.7, 0.85);
+    \coordinate (G_top) at ($(G_bot)+(0, 1.6)$);
+
+    % Mặt phẳng (alpha) xoè sang trái
+    \coordinate (A_bot) at (3.1, 0.35);
+    \coordinate (A_top) at ($(A_bot)+(0, 1.6)$);
+    \draw[thick, fill=softgray!40, opacity=0.85, draw=deepblue] (G_bot) -- (A_bot) -- (A_top) -- (G_top) -- cycle;
+    \node[deepblue, font=\bfseries\small, above=2pt] at (A_top) {$(\alpha)$};
+
+    % Mặt phẳng (beta) xoè sang phải
+    \coordinate (B_bot) at (6.1, 0.35);
+    \coordinate (B_top) at ($(B_bot)+(0, 1.6)$);
+    \draw[thick, fill=lightamber!40, opacity=0.85, draw=deepblue] (G_bot) -- (B_bot) -- (B_top) -- (G_top) -- cycle;
+    \node[deepblue, font=\bfseries\small, above=2pt] at (B_top) {$(\beta)$};
+
+    % Đường gáy giao tuyến
+    \draw[line width=1.2pt, deepblue] (G_bot) -- (G_top);
+
+    % 4. VTPT n_(alpha): Đâm vuông góc hẳn ra ngoài không gian phía trước
+    \coordinate (O_A) at ($(A_bot)!0.5!(G_top)$);
+    \draw[->, >=stealth, line width=1.3pt, amberorange] (O_A) -- ++(0.7, -0.6) node[below right=-2pt, font=\small] {$\vec{n}_{(\alpha)}$};
+    \draw[amberorange, thin] ($(O_A)+(0.15, -0.13)$) -- ($(O_A)+(0.15, -0.13)+(0, 0.16)$) -- ($(O_A)+(0, 0.16)$);
+
+    % 5. VTPT n_(beta): Đâm vuông góc hẳn ra ngoài không gian phía trước
+    \coordinate (O_B) at ($(B_bot)!0.5!(G_top)$);
+    \draw[->, >=stealth, line width=1.3pt, amberorange] (O_B) -- ++(-0.7, -0.6) node[below left=-2pt, font=\small] {$\vec{n}_{(\beta)}$};
+    \draw[amberorange, thin] ($(O_B)+(-0.15, -0.13)$) -- ($(O_B)+(-0.15, -0.13)+(0, 0.16)$) -- ($(O_B)+(0, 0.16)$);
+\end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng đi qua điểm $A(1; 1; 1)$ đồng thời vuông góc với cả hai mặt phẳng $(\alpha)\colon x + y - z - 2 = 0$ và $(\beta)\colon x - y + z - 1 = 0$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(P)$ đi qua gốc tọa độ $O(0;0;0)$ đồng thời vuông góc với hai mặt phẳng $(Q)\colon 2x - y + 3z - 1 = 0$ và $(R)\colon x + 2y - z + 4 = 0$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 10: DẠNG 9 (MỖI MẶT 1 DẠNG - ĐOẠN CHẮN & LƯU Ý GỌN ĐẸP)
+% =========================================================================
+\dangbox{Dạng 9}{Phương trình mặt phẳng theo đoạn chắn}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.56\linewidth}
+        Mặt phẳng $(P)$ cắt ba trục tọa độ lần lượt tại:
+        \[
+            A(a; 0; 0), \quad B(0; b; 0), \quad C(0; 0; c) \quad (a, b, c \neq 0).
+        \]
+        \textbf{Phương trình đoạn chắn:}
+        \[
+            (P)\colon \dfrac{x}{a} + \dfrac{y}{b} + \dfrac{z}{c} = 1.
+        \]
+        \textbf{\textcolor{accentred}{\faExclamationTriangle\hskip 4pt Sai lầm thường gặp:}}
+        \par\vspace{2pt}
+        \begin{itemize}
+            \item[\textcolor{teal}{\faCheck}] \textbf{VTPT đúng:} $\vec{n} = \left(\dfrac{1}{a}; \dfrac{1}{b}; \dfrac{1}{c}\right)$
+            \item[\textcolor{accentred}{\faTimes}] \textbf{Sai lầm:} $\vec{n} \neq (a; b; c)$
+        \end{itemize}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.42\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+            % Hệ trục tọa độ Oxyz
+            \draw[->, >=stealth, line width=0.8pt] (0,0) -- (3.2,0) node[right, font=\small] {$y$};
+            \draw[->, >=stealth, line width=0.8pt] (0,0) -- (0,2.8) node[above, font=\small] {$z$};
+            \draw[->, >=stealth, line width=0.8pt] (0,0) -- (-1.4,-1.4) node[below left, font=\small] {$x$};
+            \node[below left=1pt, font=\small] at (0,0) {$O$};
+            
+            % Tọa độ 3 điểm A, B, C
+            \coordinate (A) at (-0.9,-0.9);
+            \coordinate (B) at (2.2,0);
+            \coordinate (C) at (0,2.1);
+            
+            % Mặt phẳng chắn ABC
+            \draw[thick, deepblue, fill=goldyellow!30, fill opacity=0.7] (A) -- (B) -- (C) -- cycle;
+            
+            % Vẽ điểm và gắn nhãn tọa độ đầy đủ, rõ ràng
+            \fill[deepblue] (A) circle (1.8pt);
+            \node[deepblue, left=2pt, font=\footnotesize] at (A) {$A(a;0;0)$};
+            
+            \fill[deepblue] (B) circle (1.8pt);
+            \node[deepblue, below right=1pt, font=\footnotesize] at (B) {$B(0;b;0)$};
+            
+            \fill[deepblue] (C) circle (1.8pt);
+            \node[deepblue, left=2pt, font=\footnotesize] at (C) {$C(0;0;c)$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian với hệ tọa độ $Oxyz$, cho ba điểm $A(2; 0; 0)$, $B(0; -1; 0)$ và $C(0; 0; 3)$. Viết phương trình tổng quát của mặt phẳng $(ABC)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(P)$ đi qua điểm $M(1; 2; 3)$ và cắt ba tia tọa độ $Ox, Oy, Oz$ lần lượt tại $A, B, C$ sao cho $OA = OB = OC > 0$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 11: VỊ TRÍ TƯƠNG ĐỐI CỦA HAI MẶT PHẲNG (KHÓA GỌN 1 TRANG DUY NHẤT)
+% =========================================================================
+\dangbox{Chuyên đề 1}{Vị trí tương đối của hai mặt phẳng trong không gian}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faCompass\hskip 6pt VỊ TRÍ TƯƠNG ĐỐI CỦA HAI MẶT PHẲNG}}
+    \par\vspace{3pt}
+    Cho hai mặt phẳng có phương trình tổng quát:
+    \[
+        \begin{array}{r@{\;}l@{\quad}l}
+            (\alpha)\colon & A_1x + B_1y + C_1z + D_1 = 0 & \text{có VTPT } \vec{n}_{(\alpha)} = (A_1; B_1; C_1) \\[3pt]
+            (\beta)\colon  & A_2x + B_2y + C_2z + D_2 = 0 & \text{có VTPT } \vec{n}_{(\beta)} = (A_2; B_2; C_2)
+        \end{array}
+    \]
+    Khi đó, mối quan hệ không gian giữa $(\alpha)$ và $(\beta)$ được xác định bởi:
+    \begin{itemize}
+        \item \textbf{Cắt nhau:} $\vec{n}_{(\alpha)}$ và $\vec{n}_{(\beta)}$ không cùng phương $\iff A_1 : B_1 : C_1 \neq A_2 : B_2 : C_2$.
+        \item \textbf{Vuông góc:} $(\alpha) \perp (\beta) \iff \vec{n}_{(\alpha)} \cdot \vec{n}_{(\beta)} = 0 \iff A_1A_2 + B_1B_2 + C_1C_2 = 0$.
+        \item \textbf{Song song:} $(\alpha) \parallel (\beta) \iff \dfrac{A_1}{A_2} = \dfrac{B_1}{B_2} = \dfrac{C_1}{C_2} \neq \dfrac{D_1}{D_2}$.
+        \item \textbf{Trùng nhau:} $(\alpha) \equiv (\beta) \iff \dfrac{A_1}{A_2} = \dfrac{B_1}{B_2} = \dfrac{C_1}{C_2} = \dfrac{D_1}{D_2}$.
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.15cm}
+
+\questionLinesManual{4}{hỏi}{%
+Trong không gian $Oxyz$, xác định vị trí tương đối giữa hai mặt phẳng $(P)\colon 2x - y + 3z - 4 = 0$ và $(Q)\colon 4x - 2y + 6z - 5 = 0$.
+}{}
+
+\vspace{0.2cm}
+
+\questionLinesManual{4}{hỏi}{%
+Tìm tất cả các giá trị của tham số $m$ để hai mặt phẳng $(P)\colon 2x + my + 3z - 5 = 0$ và $(Q)\colon mx - y + (m-1)z + 2 = 0$ vuông góc với nhau.
+}{}
+
+\vspace{0.2cm}
+
+\questionLinesManual{4}{hỏi}{%
+Tìm tất cả các giá trị của tham số $m$ để hai mặt phẳng $(P)\colon x + 2y - z + 1 = 0$ và $(Q)\colon 2x + 4y - mz + m^2 = 0$ song song với nhau.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 12: CÔNG THỨC KHOẢNG CÁCH (TRỌN VẸN 1 MẶT)
+% =========================================================================
+\dangbox{Chuyên đề 2}{Công thức khoảng cách trong không gian $Oxyz$}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faRulerCombined\hskip 6pt CÔNG THỨC TÍNH KHOẢNG CÁCH}}
+    \par\vspace{4pt}
+    \begin{enumerate}
+        \item \textbf{Khoảng cách từ điểm $M_0(x_0; y_0; z_0)$ đến mặt phẳng $(\alpha)\colon Ax + By + Cz + D = 0$:}
+        \[
+            d(M_0, (\alpha)) = \dfrac{|A x_0 + B y_0 + C z_0 + D|}{\sqrt{A^2 + B^2 + C^2}}.
+        \]
+        \item \textbf{Khoảng cách giữa hai mặt phẳng song song} $(\alpha)\colon Ax + By + Cz + D_1 = 0$ và $(\beta)\colon Ax + By + Cz + D_2 = 0$:
+        \[
+            d((\alpha), (\beta)) = \dfrac{|D_1 - D_2|}{\sqrt{A^2 + B^2 + C^2}}.
+        \]
+    \end{enumerate}
+\end{theorybox}
+
+\vspace{0.2cm}
+
+\questionLinesManual{4}{hỏi}{%
+Trong không gian $Oxyz$, tính khoảng cách từ điểm $M(1; -2; 3)$ đến mặt phẳng $(P)\colon 2x - y + 2z - 1 = 0$.
+}{}
+
+\vspace{0.25cm}
+
+\questionLinesManual{4}{hỏi}{%
+Trong không gian $Oxyz$, cho hai mặt phẳng song song $(P)\colon 2x + 2y - z + 3 = 0$ và $(Q)\colon 2x + 2y - z - 6 = 0$. Tính khoảng cách giữa hai mặt phẳng $(P)$ và $(Q)$.
+}{}
+
+\vspace{0.25cm}
+
+\questionLinesManual{4}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt phẳng $(\alpha)$ song song với mặt phẳng $(P)\colon x - 2y + 2z - 3 = 0$ và cách gốc tọa độ $O$ một khoảng bằng $2$.
+}{}
+
+\end{document}

@@ -1,3 +1,7 @@
+% =========================================================================
+% TÀI LIỆU TOÁN THPT ANH HUY MATH-STER - FILE CẤU HÌNH CHUẨN (MYCONFIG.STY)
+% =========================================================================
+
 % ==========================================
 % 1. KHAI BÁO GÓI THƯ VIỆN (PACKAGES)
 % ==========================================
@@ -67,7 +71,6 @@
 % --- Header ---
 \fancyhead[C]{
     \begin{tikzpicture}[remember picture, overlay]
-        
         % Dải màu trang trí góc trên
         \path[fill=deepblue] (current page.north west) -- (current page.north east) 
             -- ($(current page.north east) + (0, -1.6cm)$) 
@@ -140,7 +143,7 @@
     #1
 }
 
-% Macro: Khung Tiêu Đề
+% Macro: Khung Tiêu Đề Đầu Trang
 \newcommand{\titlebox}[3]{
     \gdef\HeaderRightText{#3}
     
@@ -201,7 +204,7 @@
 }
 
 % ==========================================
-% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & BÀI TẬP (CHỐNG TÁCH TRANG TRIỆT ĐỂ)
+% 5. ĐỊNH NGHĨA MACRO: CẤU TRÚC CÂU HỎI & DÒNG KẺ NHÁP
 % ==========================================
 % Tiêu đề câu hỏi chuẩn
 \newcommand{\questioncore}[2]{%
@@ -222,14 +225,14 @@
     after-skip=2pt       
 }
 
-% Hàm vẽ dòng kẻ nháp
+% Hàm vẽ dòng kẻ nháp (Giãn cách chuẩn 0.85cm)
 \newcommand{\drawdashlines}[1]{%
     \ifnum#1>0
-        \nopagebreak\vspace{0.15cm}\noindent 
+        \nopagebreak\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
                 \draw[black!50, line width=0.3pt] 
-                    (0,-{\i*0.75}) -- (\textwidth-4pt,-{\i*0.75});
+                    (0,-{\i*0.85cm}) -- (\textwidth-4pt,-{\i*0.85cm});
             }
         \end{tikzpicture}%
         \par\nopagebreak\vspace{0.25cm}%
@@ -243,13 +246,13 @@
         \path let \p1 = (0,0), \p2 = (current page.south) in 
             \pgfextra{
                 \pgfmathsetmacro{\availableHeight}{\y1 - \y2 - 1.8cm}
-                \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.75cm)}
+                \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.85cm)}
                 \xdef\totalLines{\numLines}
             };
         \ifnum\totalLines>0
             \foreach \i in {1,...,\totalLines} {
                 \draw[black!50, line width=0.3pt] 
-                    (0, -{\i*0.75cm}) -- (\textwidth-4pt, -{\i*0.75cm});
+                    (0, -{\i*0.85cm}) -- (\textwidth-4pt, -{\i*0.85cm});
             }
         \fi
     \end{tikzpicture}%
@@ -257,7 +260,7 @@
     \newpage
 }
 
-% --- Dạng 1: Trắc nghiệm 4 đáp án (KHÓA KHỐI NGUYÊN VẸN) ---
+% --- Dạng 1: Trắc nghiệm / Tự luận (ĐÃ NỚI RỘNG KHOẢNG CÁCH DÒNG ĐẦU) ---
 \newcommand{\questionLinesManual}[4]{%
     \par\noindent
     \begin{minipage}{\linewidth}
@@ -265,6 +268,10 @@
         \nopagebreak
         #4%
         \nopagebreak
+        % Nếu là câu tự luận (#4 để rỗng {}), hạ sâu xuống 0.85cm (bằng hẳn 1 hàng kẻ)
+        \if\relax\detokenize{#4}\relax
+            \vspace{0.85cm}%
+        \fi
         \drawdashlines{#1}%
     \end{minipage}%
     \ifnum#1=0
@@ -272,7 +279,7 @@
     \fi
 }
 
-% --- Dạng 2: Trắc nghiệm Đúng/Sai (CHỐNG RỚT BẢNG MỆNH ĐỀ TRIỆT ĐỂ) ---
+% --- Dạng 2: Trắc nghiệm Đúng/Sai ---
 \newcommand{\questionTrueFalse}[4]{%
     \par\noindent
     \begin{minipage}{\linewidth}
@@ -299,7 +306,7 @@
     \fi
 }
 
-% --- Dạng 3: Tự luận ngắn / Điền khuyết (KHÓA DÍNH Ô ĐÁP ÁN VỚI ĐỀ BÀI) ---
+% --- Dạng 3: Tự luận ngắn / Điền khuyết ---
 \newcommand{\questionShortAnswer}[3]{%
     \par\noindent
     \begin{minipage}{\linewidth}
@@ -332,4 +339,15 @@
     \fontsize{12pt}{19.5pt}\selectfont
     \setlength{\parskip}{0pt}% Khóa không cho các đoạn văn tự sinh khoảng cách thừa
     \raggedbottom % BẮT BUỘC: Ngăn chặn LaTeX tự ý kéo giãn khoảng cách giữa các câu
+}
+
+\newcommand{\dangbox}[2]{%
+    \par\vspace{0.15cm}\noindent
+    \begin{tikzpicture}
+        \node[fill=deepblue, text=white, font=\bfseries\sffamily\fontsize{11pt}{13pt}\selectfont, 
+              rounded corners=3pt, inner xsep=8pt, inner ysep=4pt] (Title) {#1};
+        \node[anchor=west, text=deepblue, font=\bfseries\sffamily\fontsize{11.5pt}{13.5pt}\selectfont] 
+              at (Title.east) {\hskip 6pt #2};
+    \end{tikzpicture}%
+    \par\nopagebreak\vspace{0.1cm}%
 }
