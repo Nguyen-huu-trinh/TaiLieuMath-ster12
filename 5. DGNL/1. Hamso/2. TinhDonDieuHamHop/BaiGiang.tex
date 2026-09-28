@@ -1,0 +1,357 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+\titlebox{CHUYÊN ĐỀ 1: ĐẠO HÀM \& ỨNG DỤNG}{TÍNH ĐƠN ĐIỆU HÀM ẨN -- HÀM HỢP\\ (BÀI GIẢNG PHÂN DẠNG VẬN DỤNG CAO 8+ 9+)}{Toán 12: Đơn điệu hàm hợp}
+
+% ==========================================================
+% DẠNG 1: ĐƠN ĐIỆU HÀM HỢP g(x) = f[u(x)]
+% ==========================================================
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large DẠNG 1: TÍNH ĐƠN ĐIỆU CỦA HÀM SỐ $g(x) = f[u(x)]$}}
+    \par\vspace{0.15cm}
+    \textbf{1. Đạo hàm hàm hợp:} $g'(x) = u'(x) \cdot f'[u(x)]$.
+    \par\vspace{0.1cm}
+    \textbf{2. Điều kiện đơn điệu:}
+    \begin{itemize}
+        \item Hàm số $g(x)$ đồng biến trên $K \iff g'(x) \ge 0, \, \forall x \in K$.
+        \item Hàm số $g(x)$ nghịch biến trên $K \iff g'(x) \le 0, \, \forall x \in K$.
+    \end{itemize}
+    \textbf{3. Lưu ý sống còn:}
+    \begin{itemize}
+        \item Đồ thị $f'(x)$ cắt ngang qua trục hoành $\rightarrow$ Nghiệm đơn (đổi dấu).
+        \item Đồ thị $f'(x)$ tiếp xúc trục hoành $\rightarrow$ Nghiệm kép (không đổi dấu $\rightarrow$ bỏ qua).
+        \item \textit{Mẹo trắc nghiệm (15s):} Chọn $x_0$ thuộc từng khoảng đáp án, tính $g'(x_0)$ rồi tra đồ thị để loại trừ.
+    \end{itemize}
+\end{theorybox}
+
+% --- VÍ DỤ 1 ---
+\questionLinesManual{5}{1}{(Đề Tham Khảo 2018) Cho hàm số $y=f(x)$. Hàm số $y=f'(x)$ có đồ thị như hình vẽ bên.
+
+\medskip
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+    Hàm số $y=f(2-x)$ đồng biến trên khoảng nào dưới đây?
+    \begin{tasks}(2)
+        \task $(2;+\infty)$
+        \task $(-2;1)$
+        \task $(-\infty;-2)$
+        \task $(1;3)$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.55, >=stealth]
+        % Trục tọa độ
+        \draw[->, thick] (-2.2, 0) -- (5.0, 0) node[below] {$x$};
+        \draw[->, thick] (0, -2.0) -- (0, 2.3) node[left] {$y$};
+        \node[below left, font=\footnotesize] at (0, 0) {$O$};
+        
+        % Đồ thị y = f'(x)
+        \draw[very thick, deepblue, domain=-1.7:4.4, samples=100] 
+            plot (\x, {-0.2*(\x*\x - 1)*(\x - 4)});
+        \node[right, deepblue, font=\scriptsize] at (3.0, 1.9) {$y=f'(x)$};
+        
+        % Điểm cắt
+        \node[below left, font=\footnotesize] at (-1, 0) {$-1$};
+        \node[below right, font=\footnotesize] at (1, 0) {$1$};
+        \node[below right, font=\footnotesize] at (4, 0) {$4$};
+        
+        \fill[deepblue] (-1, 0) circle (1.8pt);
+        \fill[deepblue] (1, 0) circle (1.8pt);
+        \fill[deepblue] (4, 0) circle (1.8pt);
+    \end{tikzpicture}
+\end{minipage}
+}{%
+}
+
+% --- VÍ DỤ 2 ---
+\questionLinesManual{5}{2}{(Mã đề 104 - 2019) Cho hàm số $f(x)$, bảng xét dấu của $f'(x)$ như sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|ccccccccc}
+$x$ & $-\infty$ & & $-3$ & & $-1$ & & $1$ & & $+\infty$ \\
+\hline
+$f'(x)$ & & $-$ & $0$ & $+$ & $0$ & $-$ & $0$ & $+$ & 
+\end{tabular}
+\end{center}
+Hàm số $y=f(5-2x)$ đồng biến trên khoảng nào dưới đây?}{%
+    \begin{tasks}(4)
+        \task $(3;4)$
+        \task $(1;3)$
+        \task $(-\infty;-3)$
+        \task $(4;5)$
+    \end{tasks}
+}
+
+% --- VÍ DỤ 3 ---
+\questionLinesManual{5}{3}{(Chuyên Thái Nguyên 2019) Cho hàm số $y=f(x)$ có đạo hàm $f'(x)$ trên $\mathbb{R}$. Hình vẽ bên là đồ thị của hàm số $y=f'(x)$.
+
+\medskip
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+    Hàm số $g(x)=f(x-x^2)$ nghịch biến trên khoảng nào trong các khoảng dưới đây?
+    \begin{tasks}(2)
+        \task $\left(-\dfrac{3}{2};+\infty\right)$
+        \task $\left(-\infty;\dfrac{3}{2}\right)$
+        \task $\left(\dfrac{1}{2};+\infty\right)$
+        \task $\left(-\infty;\dfrac{1}{2}\right)$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.6, >=stealth]
+        % Trục tọa độ
+        \draw[->, thick] (-1.0, 0) -- (3.2, 0) node[below] {$x$};
+        \draw[->, thick] (0, -0.6) -- (0, 3.2) node[left] {$y$};
+        \node[below left, font=\footnotesize] at (0, 0) {$O$};
+        
+        % Parabol đỉnh (1.5, -0.25) cắt tại 1 và 2, qua (0, 2)
+        \draw[very thick, deepblue, domain=-0.5:2.6, samples=100] 
+            plot (\x, {2*(\x - 1)*(\x - 2)});
+        \node[left, deepblue, font=\scriptsize] at (0, 2) {$2$};
+        \node[below, deepblue, font=\footnotesize] at (1, 0) {$1$};
+        \node[below, deepblue, font=\footnotesize] at (2, 0) {$2$};
+        
+        \fill[deepblue] (0, 2) circle (1.8pt);
+        \fill[deepblue] (1, 0) circle (1.8pt);
+        \fill[deepblue] (2, 0) circle (1.8pt);
+    \end{tikzpicture}
+\end{minipage}
+}{%
+}
+
+% --- VÍ DỤ 4 ---
+\questionLinesManual{6}{4}{(Đề Thi Công Bằng KHTN) Cho hàm số $f'(x)$ có bảng xét dấu như sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|ccccccccc}
+$x$ & $-\infty$ & & $-2$ & & $1$ & & $3$ & & $+\infty$ \\
+\hline
+$f'(x)$ & & $-$ & $0$ & $+$ & $0$ & $+$ & $0$ & $-$ & 
+\end{tabular}
+\end{center}
+Hàm số $y=f(x^2+2x)$ nghịch biến trên khoảng nào dưới đây?}{%
+    \begin{tasks}(4)
+        \task $(-2;1)$
+        \task $(-4;-3)$
+        \task $(0;1)$
+        \task $(-2;-1)$
+    \end{tasks}
+}
+
+\newpage
+% ==========================================================
+% DẠNG 2: ĐƠN ĐIỆU HÀM TỔNG g(x) = f[u(x)] + v(x)
+% ==========================================================
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large DẠNG 2: TÍNH ĐƠN ĐIỆU CỦA HÀM TỔNG $g(x) = f[u(x)] + v(x)$}}
+    \par\vspace{0.15cm}
+    \textbf{1. Đạo hàm:} $g'(x) = u'(x) \cdot f'[u(x)] + v'(x)$.
+    \par\vspace{0.1cm}
+    \textbf{2. Phương pháp tương giao đồ thị:}
+    Đưa về phương trình hoành độ giao điểm dạng: $f'(t) = h(t)$.
+    \begin{itemize}
+        \item Hàm số đồng biến khi đồ thị $y = f'(t)$ nằm \textbf{phía trên} đường thẳng/đường cong $y = h(t)$.
+        \item Hàm số nghịch biến khi đồ thị $y = f'(t)$ nằm \textbf{phía dưới} đường thẳng/đường cong $y = h(t)$.
+    \end{itemize}
+    \textbf{3. Phương pháp đánh giá dấu từng phần:}
+    Nếu trên khoảng $(a; b)$ cả hai biểu thức $u'(x) \cdot f'[u(x)]$ và $v'(x)$ cùng mang một dấu ($\ge 0$ hoặc $\le 0$) thì kết luận được ngay chiều biến thiên.
+\end{theorybox}
+
+% --- VÍ DỤ 5 ---
+\questionLinesManual{6}{5}{(Đề Tham Khảo 2020) Cho hàm số $f(x)$. Hàm số $y=f'(x)$ có đồ thị như hình vẽ bên.
+
+\medskip
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+    Hàm số $g(x) = f(1-2x) + x^2 - x$ nghịch biến trên khoảng nào dưới đây?
+    \begin{tasks}(2)
+        \task $\left(1;\dfrac{3}{2}\right)$
+        \task $\left(0;\dfrac{1}{2}\right)$
+        \task $(-2;-1)$
+        \task $(2;3)$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.55, >=stealth]
+        % Trục tọa độ
+        \draw[->, thick] (-3.2, 0) -- (5.2, 0) node[below] {$x$};
+        \draw[->, thick] (0, -2.6) -- (0, 2.4) node[left] {$y$};
+        \node[below left, font=\footnotesize] at (0, 0) {$O$};
+        
+        % Đồ thị f'(x)
+        \draw[very thick, deepblue, domain=-3.0:4.6, samples=100] 
+            plot (\x, {-0.1*(\x+2)*\x*(\x-4) + 0.1*\x});
+        
+        % Đường thẳng y = x/2
+        \draw[thick, dashed, amberorange, domain=-2.5:4.5] plot (\x, {0.5*\x});
+        \node[above left, amberorange, font=\scriptsize] at (4.5, 2.2) {$y=\dfrac{x}{2}$};
+        
+        % Điểm giao
+        \fill[deepblue] (-2, 1) circle (1.8pt);
+        \fill[deepblue] (0, 0) circle (1.8pt);
+        \fill[deepblue] (4, -2) circle (1.8pt);
+        
+        % Gióng tọa độ
+        \draw[dotted] (-2,0) -- (-2,1) -- (0,1) node[right, font=\scriptsize] {$1$};
+        \draw[dotted] (4,0) node[above, font=\scriptsize] {$4$} -- (4,-2) -- (0,-2) node[left, font=\scriptsize] {$-2$};
+        \node[below, font=\scriptsize] at (-2,0) {$-2$};
+    \end{tikzpicture}
+\end{minipage}
+}{%
+}
+
+% --- VÍ DỤ 6 ---
+\questionLinesManual{6}{6}{(Đề Tham Khảo 2019) Cho hàm số $f(x)$ có bảng xét dấu của đạo hàm như sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|ccccccccccc}
+$x$ & $-\infty$ & & $1$ & & $2$ & & $3$ & & $4$ & & $+\infty$ \\
+\hline
+$f'(x)$ & & $-$ & $0$ & $+$ & $0$ & $+$ & $0$ & $-$ & $0$ & $+$ & 
+\end{tabular}
+\end{center}
+Hàm số $y=3f(x+2)-x^3+3x$ đồng biến trên khoảng nào dưới đây?}{%
+    \begin{tasks}(4)
+        \task $(-\infty;-1)$
+        \task $(-1;0)$
+        \task $(0;2)$
+        \task $(1;+\infty)$
+    \end{tasks}
+}
+
+% --- VÍ DỤ 7 ---
+\questionLinesManual{6}{7}{(THPT Hoàng Hoa Thám) Cho hàm số $y=f(x)$ liên tục trên $\mathbb{R}$. Hàm số $y=f'(x)$ có đồ thị như hình vẽ bên.
+
+\medskip
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+    Hàm số $g(x)=f(x-1)+\dfrac{2019-2018x}{2018}$ đồng biến trên khoảng nào dưới đây?
+    \begin{tasks}(2)
+        \task $(2;3)$
+        \task $(0;1)$
+        \task $(-1;0)$
+        \task $(1;2)$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.6, >=stealth]
+        % Trục tọa độ
+        \draw[->, thick] (-1.8, 0) -- (3.2, 0) node[below] {$x$};
+        \draw[->, thick] (0, -1.8) -- (0, 2.2) node[left] {$y$};
+        \node[below left, font=\footnotesize] at (0, 0) {$O$};
+        
+        % Đồ thị f'(x)
+        \draw[very thick, deepblue, domain=-1.2:2.4, samples=100] 
+            plot (\x, {(\x+1)*(\x-1)*(\x-2)*0.8 + 1});
+        
+        % Đường thẳng y = 1
+        \draw[thick, dashed, amberorange] (-1.5, 1) -- (2.8, 1) node[right, font=\scriptsize] {$y=1$};
+        
+        % Các mốc cắt
+        \draw[dotted] (-1, 0) node[below, font=\scriptsize] {$-1$} -- (-1, 1);
+        \draw[dotted] (1, 0) node[below, font=\scriptsize] {$1$} -- (1, 1);
+        \draw[dotted] (2, 0) node[below, font=\scriptsize] {$2$} -- (2, 1);
+        \fill[deepblue] (-1, 1) circle (1.8pt);
+        \fill[deepblue] (1, 1) circle (1.8pt);
+        \fill[deepblue] (2, 1) circle (1.8pt);
+    \end{tikzpicture}
+\end{minipage}
+}{%
+}
+
+\newpage
+% ==========================================================
+% DẠNG 3: BÀI TOÁN HÀM HỢP CHỨA THAM SỐ m (VẬN DỤNG CAO)
+% ==========================================================
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large DẠNG 3: BÀI TOÁN HÀM HỢP CHỨA THAM SỐ $m$}}
+    \par\vspace{0.15cm}
+    \textbf{Bài toán:} Tìm $m$ để hàm số $g(x) = f[u(x, m)]$ đơn điệu trên khoảng $(a; b)$.
+    \par\vspace{0.1cm}
+    \textbf{Quy trình giải bài toán tập con:}
+    \begin{enumerate}
+        \item Tính đạo hàm: $g'(x) = u'_x(x, m) \cdot f'[u(x, m)]$.
+        \item Giả sử $u'_x > 0, \, \forall x \in (a; b)$: Để hàm số nghịch biến $\iff f'[u] \le 0, \, \forall x \in (a; b)$.
+        \item Tìm tập giá trị của $u(x, m)$ khi $x \in (a; b)$, giả sử là $(\alpha; \beta)$.
+        \item Yêu cầu bài toán tương đương: $(\alpha; \beta) \subset (t_1; t_2)$ (với $(t_1; t_2)$ là khoảng làm $f'(t) \le 0$).
+        \item Giải hệ bất phương trình: $\begin{cases} t_1 \le \alpha \\ \beta \le t_2 \end{cases}$ và đếm số nghiệm nguyên của $m$.
+    \end{enumerate}
+\end{theorybox}
+
+% --- VÍ DỤ 8 ---
+\questionLinesManual{6}{8}{(Chuyên Nguyễn Bỉnh Khiêm) Cho hàm số $y=f(x)$ có đạo hàm trên $\mathbb{R}$ và bảng xét dấu đạo hàm như hình vẽ sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c|ccccccccccc}
+$x$ & $-\infty$ & & $-10$ & & $-2$ & & $3$ & & $8$ & & $+\infty$ \\
+\hline
+$f'(x)$ & & $+$ & $0$ & $+$ & $0$ & $-$ & $0$ & $-$ & $0$ & $+$ & 
+\end{tabular}
+\end{center}
+Có bao nhiêu số nguyên $m$ để hàm số $y=f(x^3+4x+m)$ nghịch biến trên khoảng $(-1;1)$?}{%
+    \begin{tasks}(4)
+        \task $3$
+        \task $0$
+        \task $1$
+        \task $2$
+    \end{tasks}
+}
+
+% --- VÍ DỤ 9 ---
+\questionLinesManual{6}{9}{(Chuyên Lê Hồng Phong Nam Định 2019) Cho hàm số $y=f(x)$ có đạo hàm liên tục trên $\mathbb{R}$. Đồ thị hàm số $y=f'(x)$ như hình vẽ bên.
+
+\medskip
+\noindent
+\begin{minipage}[c]{0.62\linewidth}
+    Gọi $S$ là tập hợp các giá trị nguyên $m\in[-5;5]$ để hàm số $g(x)=f(x+m)$ nghịch biến trên khoảng $(1;2)$. Hỏi $S$ có bao nhiêu phần tử?
+    \begin{tasks}(2)
+        \task $4$
+        \task $3$
+        \task $6$
+        \task $5$
+    \end{tasks}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.35\linewidth}
+    \centering
+    \begin{tikzpicture}[scale=0.6, >=stealth]
+        % Trục tọa độ
+        \draw[->, thick] (-1.5, 0) -- (4.2, 0) node[below] {$x$};
+        \draw[->, thick] (0, -1.8) -- (0, 2.2) node[left] {$y$};
+        \node[below left, font=\footnotesize] at (0, 0) {$O$};
+        
+        % Đồ thị f'(x) qua 0, 1, 3
+        \draw[very thick, deepblue, domain=-0.8:3.6, samples=100] 
+            plot (\x, {-0.6*\x*(\x-1)*(\x-3)});
+        
+        \node[below, font=\scriptsize] at (1, 0) {$1$};
+        \node[below right, font=\scriptsize] at (3, 0) {$3$};
+        
+        \fill[deepblue] (0, 0) circle (1.8pt);
+        \fill[deepblue] (1, 0) circle (1.8pt);
+        \fill[deepblue] (3, 0) circle (1.8pt);
+    \end{tikzpicture}
+\end{minipage}
+}{%
+}
+
+% --- VÍ DỤ 10 ---
+\questionLinesManual{6}{10}{Cho hàm số $f(x)$ có đạo hàm trên $\mathbb{R}$ là $f'(x)=(x-1)(x+3)$. Có bao nhiêu giá trị nguyên của tham số $m$ thuộc đoạn $[-10;20]$ để hàm số $y=f(x^2+3x-m)$ đồng biến trên khoảng $(0;2)$?}{%
+    \begin{tasks}(4)
+        \task $18$
+        \task $17$
+        \task $16$
+        \task $20$
+    \end{tasks}
+}
+
+\vfill
+\begin{center}
+    \textbf{--- HẾT BÀI GIẢNG ---}
+\end{center}
+
+\end{document}
