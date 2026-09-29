@@ -43,6 +43,7 @@
 \usepackage{makecell}
 \usepackage{multirow}
 \usepackage{tasks}
+\usepackage{multido}
 
 % Biểu tượng
 \usepackage{fontawesome5}
@@ -220,8 +221,8 @@
     item-indent=28pt,     
     label-offset=6pt,    
     column-sep=15pt,     
-    before-skip=4pt,     
-    after-item-skip=3pt, 
+    before-skip=3pt,     % Khoảng cách vừa vặn từ đề bài xuống đáp án
+    after-item-skip=6pt, % Khoảng cách giữa 2 hàng đáp án: rộng rãi, không đè phân số
     after-skip=2pt       
 }
 
@@ -231,7 +232,7 @@
         \nopagebreak\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
-                \draw[black!50, line width=0.3pt] 
+                \draw[black!25, line width=0.4pt] 
                     (0,-{\i*0.85cm}) -- (\textwidth-4pt,-{\i*0.85cm});
             }
         \end{tikzpicture}%
@@ -251,7 +252,7 @@
             };
         \ifnum\totalLines>0
             \foreach \i in {1,...,\totalLines} {
-                \draw[black!50, line width=0.3pt] 
+                \draw[black!25, line width=0.4pt] 
                     (0, -{\i*0.85cm}) -- (\textwidth-4pt, -{\i*0.85cm});
             }
         \fi
@@ -260,23 +261,32 @@
     \newpage
 }
 
-% --- Dạng 1: Trắc nghiệm / Tự luận (ĐÃ NỚI RỘNG KHOẢNG CÁCH DÒNG ĐẦU) ---
+% --- Dạng 1: Trắc nghiệm / Tự luận (CHỐNG CẮT TRANG & TỰ ĐỘNG NỚI DÒNG KHI CÓ PHÂN SỐ) ---
 \newcommand{\questionLinesManual}[4]{%
     \par\noindent
     \begin{minipage}{\linewidth}
-        \questioncore{#2}{#3}%
-        \nopagebreak
-        #4%
-        \nopagebreak
-        % Nếu là câu tự luận (#4 để rỗng {}), hạ sâu xuống 0.85cm (bằng hẳn 1 hàng kẻ)
-        \if\relax\detokenize{#4}\relax
-            \vspace{0.85cm}%
+        % Thiết lập cơ chế tự né va chạm chữ khi có phân số cục bộ:
+        \fontsize{12pt}{18pt}\selectfont
+        \setlength{\lineskiplimit}{3pt}% Nếu khoảng hở giữa 2 dòng < 3pt thì kích hoạt đệm
+        \setlength{\lineskip}{5pt}% Tự động nới thêm 5pt chỉ riêng tại dòng có phân số
+        
+        \noindent\textbf{Câu #2. \textcolor{accentred}{[STER]}} #3\par
+        \vspace{2pt}
+        #4\par
+        \ifnum#1>0
+            \vspace{18pt}% Khoảng cách thoáng giữa hàng đáp án cuối và dòng kẻ đầu tiên
+            \noindent
+            \begin{tikzpicture}
+                \foreach \i in {1,...,#1} {
+                    \draw[black!25, line width=0.4pt] (0, -{\i*0.85cm}) -- (\textwidth-4pt, -{\i*0.85cm});
+                }
+            \end{tikzpicture}\par
+            \vspace{4pt}
+        \else
+            \vspace{6pt}
         \fi
-        \drawdashlines{#1}%
     \end{minipage}%
-    \ifnum#1=0
-        \par\vspace{0.32cm}%
-    \fi
+    \par\vspace{0.22cm}% Khoảng cách ngăn cách giữa các câu
 }
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
@@ -336,7 +346,7 @@
 % 6. THIẾT LẬP GIÃN DÒNG TOÀN DIỆN (LINE SPACING)
 % ==========================================
 \AtBeginDocument{%
-    \fontsize{12pt}{19.5pt}\selectfont
+    \fontsize{12pt}{18.5pt}\selectfont % Giữ độ giãn dòng tự nhiên của LaTeX cho toàn bộ văn bản
     \setlength{\parskip}{0pt}% Khóa không cho các đoạn văn tự sinh khoảng cách thừa
     \raggedbottom % BẮT BUỘC: Ngăn chặn LaTeX tự ý kéo giãn khoảng cách giữa các câu
 }
