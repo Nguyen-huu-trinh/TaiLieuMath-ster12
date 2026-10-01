@@ -1,3 +1,11 @@
+% Bản sửa tương thích: giữ nguyên tên macro, số đối số và đường dẫn ảnh.
+\NeedsTeXFormat{LaTeX2e}
+% Tên gói khớp tên đang được nạp, kể cả ../../../myconfig.
+\makeatletter
+\edef\sterPackageName{\@currpath\@currname}
+\expandafter\ProvidesPackage\expandafter{\sterPackageName}[2026/10/01 MATH-STER compatible fixes]
+\makeatother
+
 % =========================================================================
 % TÀI LIỆU TOÁN THPT ANH HUY MATH-STER - FILE CẤU HÌNH CHUẨN (MYCONFIG.STY)
 % =========================================================================
@@ -14,6 +22,13 @@
 % Toán học & Ký hiệu Vectơ
 \usepackage{amsmath, amssymb}
 \usepackage[d]{esvect} % Mũi tên vectơ dài, thanh thoát, phủ kín chữ cái
+% esvect chỉ khai báo vài cỡ chữ cố định. Khai báo các khoảng liên tục
+% để cỡ 11.5pt, 4.16667pt... được co giãn thực sự, không thay bằng cỡ khác.
+\input{uesvect.fd}
+\DeclareFontShape{U}{esvect}{m}{n}{%
+  <-6> vect5 <6-7> vect6 <7-8> vect7
+  <8-9> vect8 <9-10> vect9 <10-> vect10
+}{}
 \renewcommand{\vec}[1]{\vv{#1}} % Tự động áp dụng cho mọi lệnh \vec
 
 \usepackage{cellspace}
@@ -183,7 +198,7 @@
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
             \begin{minipage}[c]{4.2cm}
                 \centering
-                \hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}
+                \makebox[\linewidth][c]{\hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
                 \centering\let\\=\newline\vspace{0.15cm}
@@ -217,7 +232,8 @@
 % Cấu hình hiển thị đáp án trắc nghiệm A, B, C, D
 \settasks{
     label=\textbf{\textcolor{amberorange}{\Alph*.}}, 
-    label-width=16pt,     
+    label-width=16pt,
+    item-format=\raggedright,     
     item-indent=28pt,     
     label-offset=6pt,    
     column-sep=15pt,     
@@ -229,11 +245,11 @@
 % Hàm vẽ dòng kẻ nháp (Giãn cách chuẩn 0.85cm)
 \newcommand{\drawdashlines}[1]{%
     \ifnum#1>0
-        \nopagebreak\noindent 
+        \par\nopagebreak\noindent 
         \begin{tikzpicture}
             \foreach \i in {1,...,#1} {
                 \draw[black!25, line width=0.4pt] 
-                    (0,-{\i*0.85cm}) -- (\textwidth-4pt,-{\i*0.85cm});
+                    (0,-{\i*0.85cm}) -- (\linewidth-4pt,-{\i*0.85cm});
             }
         \end{tikzpicture}%
         \par\nopagebreak\vspace{0.25cm}%
@@ -247,13 +263,13 @@
         \path let \p1 = (0,0), \p2 = (current page.south) in 
             \pgfextra{
                 \pgfmathsetmacro{\availableHeight}{\y1 - \y2 - 1.8cm}
-                \pgfmathsetmacro{\numLines}{int(\availableHeight / 0.85cm)}
+                \pgfmathtruncatemacro{\numLines}{max(0,int(\availableHeight / 0.85cm))}
                 \xdef\totalLines{\numLines}
             };
         \ifnum\totalLines>0
             \foreach \i in {1,...,\totalLines} {
                 \draw[black!25, line width=0.4pt] 
-                    (0, -{\i*0.85cm}) -- (\textwidth-4pt, -{\i*0.85cm});
+                    (0, -{\i*0.85cm}) -- (\linewidth-4pt, -{\i*0.85cm});
             }
         \fi
     \end{tikzpicture}%
@@ -265,6 +281,7 @@
 \newcommand{\questionLinesManual}[4]{%
     \par\noindent
     \begin{minipage}{\linewidth}
+        \setlength{\parindent}{0pt}% Hộp con không cộng thêm thụt đầu dòng.
         % Thiết lập cơ chế tự né va chạm chữ khi có phân số cục bộ:
         \fontsize{12pt}{18pt}\selectfont
         \setlength{\lineskiplimit}{3pt}% Nếu khoảng hở giữa 2 dòng < 3pt thì kích hoạt đệm
@@ -278,7 +295,7 @@
             \noindent
             \begin{tikzpicture}
                 \foreach \i in {1,...,#1} {
-                    \draw[black!25, line width=0.4pt] (0, -{\i*0.85cm}) -- (\textwidth-4pt, -{\i*0.85cm});
+                    \draw[black!25, line width=0.4pt] (0, -{\i*0.85cm}) -- (\linewidth-4pt, -{\i*0.85cm});
                 }
             \end{tikzpicture}\par
             \vspace{4pt}
@@ -290,17 +307,20 @@
 }
 
 % --- Dạng 2: Trắc nghiệm Đúng/Sai ---
+\newlength{\sterTrueFalseWidth}
 \newcommand{\questionTrueFalse}[4]{%
     \par\noindent
     \begin{minipage}{\linewidth}
+        \setlength{\parindent}{0pt}% Hộp con không cộng thêm thụt đầu dòng.
         \questioncore{#2}{#3}%
         \nopagebreak\vspace{0.1cm}
         {\centering
         \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{|>{\centering\arraybackslash}m{0.8cm}|>{\raggedright\arraybackslash}S{m{12cm}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
+        \setlength{\sterTrueFalseWidth}{\dimexpr\linewidth-5cm-8\tabcolsep-5\arrayrulewidth\relax}
+        \begin{tabular}{|>{\centering\arraybackslash}m{1cm}|>{\raggedright\arraybackslash}S{m{\sterTrueFalseWidth}}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2cm}|}
             \hline
             \rowcolor{amberorange!20}
-            \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{12cm}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
+            \textbf{STT} & \multicolumn{1}{|>{\centering\arraybackslash}m{\sterTrueFalseWidth}|}{\textbf{\textcolor{deepblue}{Mệnh đề}}} & 
             \textbf{\textcolor{deepblue}{Đúng}} & 
             \textbf{\textcolor{deepblue}{Sai}} \\
             \hline
@@ -320,6 +340,7 @@
 \newcommand{\questionShortAnswer}[3]{%
     \par\noindent
     \begin{minipage}{\linewidth}
+        \setlength{\parindent}{0pt}% Hộp con không cộng thêm thụt đầu dòng.
         \questioncore{#2}{#3}%
         \nopagebreak\vspace{0.1cm}
         \begin{flushright}
@@ -347,17 +368,26 @@
 % ==========================================
 \AtBeginDocument{%
     \fontsize{12pt}{18.5pt}\selectfont % Giữ độ giãn dòng tự nhiên của LaTeX cho toàn bộ văn bản
+    \setlength{\emergencystretch}{2em}% Cho phép giãn dòng khi đoạn văn khó ngắt.
     \setlength{\parskip}{0pt}% Khóa không cho các đoạn văn tự sinh khoảng cách thừa
     \raggedbottom % BẮT BUỘC: Ngăn chặn LaTeX tự ý kéo giãn khoảng cách giữa các câu
 }
 
+% Đo bề rộng nhãn, dành phần còn lại cho tiêu đề dạng.
+\newlength{\sterDangLabelWidth}
 \newcommand{\dangbox}[2]{%
     \par\vspace{0.15cm}\noindent
     \begin{tikzpicture}
-        \node[fill=deepblue, text=white, font=\bfseries\sffamily\fontsize{11pt}{13pt}\selectfont, 
+        \node[fill=deepblue, text=white, font=\bfseries\sffamily\fontsize{11pt}{13pt}\selectfont,
               rounded corners=3pt, inner xsep=8pt, inner ysep=4pt] (Title) {#1};
-        \node[anchor=west, text=deepblue, font=\bfseries\sffamily\fontsize{11.5pt}{13.5pt}\selectfont] 
-              at (Title.east) {\hskip 6pt #2};
+        \pgfextractx{\sterDangLabelWidth}{%
+            \pgfpointdiff{\pgfpointanchor{Title}{west}}{\pgfpointanchor{Title}{east}}%
+        }
+        \node[anchor=west, xshift=6pt, inner xsep=0pt,
+              text width=\dimexpr\linewidth-\sterDangLabelWidth-7pt\relax,
+              align=left, text=deepblue,
+              font=\bfseries\sffamily\fontsize{11.5pt}{13.5pt}\selectfont]
+              at (Title.east) {#2};
     \end{tikzpicture}%
     \par\nopagebreak\vspace{0.1cm}%
 }
