@@ -598,19 +598,24 @@ Trong không gian $Oxyz$, cho mặt phẳng tọa độ $(Oxy)$ và hai đườn
     \begin{minipage}[c]{0.40\linewidth}
         \centering
         \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
-            \draw[thick, draw=deepblue] (0, 0.4) -- (4.2, 1.8) node[right, font=\bfseries\small] {$d$};
-            
-            \coordinate (A) at (1.0, 0.73);
-            \coordinate (M) at (2.1, 1.1);
-            \coordinate (B) at (3.2, 1.47);
-            
-            \fill[deepblue] (M) circle (2pt) node[above=2pt, font=\small] {$M$};
-            \fill[accentred] (A) circle (2pt) node[below right=1pt, font=\small] {$A$};
-            \fill[accentred] (B) circle (2pt) node[below right=1pt, font=\small] {$B$};
+    % Đường thẳng d xuyên qua
+    \draw[thick, draw=deepblue] (0, 0.4) -- (4.4, 1.8) node[right, font=\bfseries\small] {$d$};
+    
+    % Tọa độ các điểm trên d
+    \coordinate (A) at (1.1, 0.75);
+    \coordinate (M) at (2.2, 1.1);
+    \coordinate (B) at (3.3, 1.45);
+    
+    \fill[deepblue] (M) circle (2pt) node[above=2pt, font=\small] {$M$};
+    \fill[accentred] (A) circle (2pt) node[below right=1pt, font=\small] {$A$};
+    \fill[accentred] (B) circle (2pt) node[below right=1pt, font=\small] {$B$};
 
-            \draw[thick, draw=softgray!90] (0.5, 1.7) -- (1.5, -0.3) node[below, font=\small] {$d_1$};
-            \draw[thick, draw=softgray!90] (2.7, 2.5) -- (3.7, 0.5) node[below, font=\small] {$d_2$};
-        \end{tikzpicture}
+    % d1 nghiêng sang trái (góc tù)
+    \draw[thick, draw=softgray!90] (0.4, 2.0) -- (1.8, -0.5) node[below, font=\small] {$d_1$};
+    
+    % d2 nghiêng ngược lại sang phải (rõ ràng chéo nhau, không hề song song)
+    \draw[thick, draw=softgray!90] (3.9, 2.2) -- (2.7, 0.7) node[below left=-1pt, font=\small] {$d_2$};
+\end{tikzpicture}
     \end{minipage}
 \end{theorybox}
 
