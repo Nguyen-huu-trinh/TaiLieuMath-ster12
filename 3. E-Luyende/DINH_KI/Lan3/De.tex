@@ -7,234 +7,239 @@
 \begin{document}
 
 % Truyền 3 tham số: {Nhãn cam} {Chữ to chính giữa} {Chữ ở góc phải Header}
-\titlebox{Chủ đề: định kì}{Đề kiểm tra định kì lần 3}{Đề định kì}
+\titlebox{Chủ đề: định kì}{Đề kiểm tra định kỳ lần 3}{Đề định kì}
 
 \textit{\textbf{Phần I: Thí sinh trả lời từ câu 1 đến câu 12, mỗi câu thí sinh chỉ chọn một phương án}}
 
 \vspace{0.5cm}
 
 
+
 % --- CÂU 1 ---
-\questionLinesManual{0}{1}{Hàm số nào dưới đây đồng biến trên khoảng \((-\infty; +\infty)\)?}{%
+\questionLinesManual{0}{1}{Hàm số nào trong bốn hàm số được liệt kê dưới đây không có cực trị?}{%
     \begin{tasks}(4)
-        \task \(y = x^4 + 3x^2\)
-        \task \(y = \dfrac{x - 2}{x + 1}\)
-        \task \(y = 3x^3 + 3x - 2\)
-        \task \(y = 2x^3 - 5x + 1\)
+        \task \( y = \dfrac{2x - 3}{x + 2} \)
+        \task \( y = x^4 \)
+        \task \( y = -x^3 + x \)
+        \task \( y = |x + 2| \)
     \end{tasks}
 }
 
 % --- CÂU 2 ---
-\questionLinesManual{0}{2}{Giá trị nhỏ nhất của hàm số \( f(x) = x + \dfrac{1}{x} \) trên nửa khoảng \([2; +\infty)\) là:}{%
+\questionLinesManual{0}{2}{Với \( x \in [-\pi; \pi] \), phương trình \( \cos x = \dfrac{\sqrt{3}}{2} \) có bao nhiêu nghiệm?}{%
     \begin{tasks}(4)
+        \task 1
         \task 2
-        \task \(\dfrac{5}{2}\)
-        \task 0
-        \task \(\dfrac{7}{2}\)
+        \task 3
+        \task 4
     \end{tasks}
 }
 
 % --- CÂU 3 ---
-\questionLinesManual{0}{3}{Biết hàm số \( y = \dfrac{x + a}{x + 1} \) (\( a \) là số thực cho trước, \( a \neq 1 \)) có đồ thị như hình bên. Mệnh đề nào dưới đây đúng?
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8, >=latex]
-    % Giới hạn vùng hiển thị bằng lệnh \clip
-    \clip (-5, -3) rectangle (5, 4);
-
-    % 1. Trục tọa độ Ox, Oy
-    \draw[->, black] (-5, 0) -- (5, 0) node[below left, black] {$x$};
-    \draw[->, black] (0, -3) -- (0, 4) node[below right, black] {$y$};
-
-    % Gốc tọa độ O
-    \node[below left] at (0, 0) {$O$};
-
-    % 2. Các đường tiệm cận (màu xanh dương)
-    % Tiệm cận đứng x = -1
-    \draw[black] (-1, -3) -- (-1, 4);
-
-    % Tiệm cận ngang y = 1
-    \draw[black] (-5, 1) -- (5, 1);
-
-    % 3. Đồ thị hàm số y = (x - 2) / (x + 1)
-    % Nhánh bên trái tiệm cận đứng (x < -1)
-    \draw[very thick, smooth, domain=-5:-1.05, samples=150] 
-        plot (\x, {(\x - 1)/(\x + 1)});
-
-    % Nhánh bên phải tiệm cận đứng (x > -1)
-    \draw[very thick, smooth, domain=-0.95:5, samples=150] 
-        plot (\x, {(\x - 1)/(\x + 1)});
-\end{tikzpicture}
-\end{center}
-}{%
+\questionLinesManual{0}{3}{Cho cấp số nhân \( (u_n) \) có số hạng đầu \( u_1 = 5 \) và công bội \( q = -2 \). Tính \( S_6 \).}{%
     \begin{tasks}(4)
-        \task \( y' < 0, \, \forall x \neq -1 \)
-        \task \( y' > 0, \, \forall x \neq -1 \)
-        \task \( y' < 0, \, \forall x \in \mathbb{R} \)
-        \task \( y' > 0, \, \forall x \in \mathbb{R} \)
+        \task \( S_6 = -\dfrac{155}{3} \)
+        \task \( S_6 = -\dfrac{315}{3} \)
+        \task \( S_6 = -315 \)
+        \task \( S_6 = 315 \)
     \end{tasks}
 }
 
 % --- CÂU 4 ---
-\questionLinesManual{0}{4}{Cho góc \( \alpha \) thỏa \( \cot \alpha = \dfrac{3}{4} \) và \( 0^\circ < \alpha < 90^\circ \). Khẳng định nào sau đây đúng?}{%
+\questionLinesManual{0}{4}{Tập nghiệm của bất phương trình \( 10^{2x+3} \leq \dfrac{1}{10} \) là}{%
     \begin{tasks}(4)
-        \task \( \cos \alpha = \dfrac{4}{5} \)
-        \task \( \sin \alpha = \dfrac{4}{5} \)
-        \task \( \sin \alpha = -\dfrac{4}{5} \)
-        \task \( \cos \alpha = -\dfrac{4}{5} \)
+        \task \((-2; +\infty)\)
+        \task \((-\infty; -2)\)
+        \task \((-\infty; -2]\)
+        \task \([-2; +\infty)\)
     \end{tasks}
 }
 
+% % --- CÂU 5 ---
+% \questionLinesManual{0}{5}{Nếu \( \displaystyle\int_{-3}^{1} f(x) \, dx = -2 \) thì \( \displaystyle\int_{-3}^{1} \left[ 2 - 5f(x) \right] \, dx \) bằng}{%
+%     \begin{tasks}(4)
+%         \task 18
+%         \task 6
+%         \task 12
+%         \task -4
+%     \end{tasks}
+% }
+
 % --- CÂU 5 ---
-\questionLinesManual{0}{5}{Cho cấp số cộng \((u_n)\) có \(u_1 = -2\) và công sai \(d = 3\). Tìm số hạng tổng quát \(u_n\) của cấp số cộng đó.}{%
+\questionLinesManual{0}{5}{Thời gian truy cập Internet mỗi buổi tối của một nhóm học sinh được thống kê trong bảng sau
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Thời gian (phút) & \([10,5; 12,5)\) & \([12,5; 14,5)\) & \([14,5; 16,5)\) & \([16,5; 18,5)\) & \([18,5; 20,5]\) \\
+\hline
+Số học sinh & 3 & 12 & 15 & 24 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+Khoảng tứ phân vị của mẫu số liệu đã cho bằng:}{%
     \begin{tasks}(4)
-        \task \(u_n = 3n + 5\)
-        \task \(u_n = 3n - 5\)
-        \task \(u_n = 3n - 1\)
-        \task \(u_n = 3n + 1\)
+        \task \(\dfrac{83}{6}\)
+        \task \(\dfrac{43}{3}\)
+        \task \(\dfrac{19}{6}\)
+        \task \(\dfrac{35}{2}\)
     \end{tasks}
 }
 
 % --- CÂU 6 ---
-\questionLinesManual{0}{6}{Cho hàm số \(y = f(x)\) liên tục trên \(\mathbb{R} \setminus \{1\}\) và có bảng xét dấu của đạo hàm \(f'(x)\) như hình vẽ dưới đây. Số điểm cực trị của hàm số \(y = f(x)\) là
+\questionLinesManual{0}{6}{Cho hàm số \( y = \dfrac{x-1}{x+1} \) có đồ thị \( (C) \). Có bao nhiêu điểm thuộc đồ thị \( (C) \) sao cho tiếp tuyến của đồ thị \( (C) \) tại các điểm đó song song với đường thẳng \( y = 2x + 7 \)?}{%
+    \begin{tasks}(4)
+        \task 2
+        \task 1
+        \task 0
+        \task 3
+    \end{tasks}
+}
+
+% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Số giao điểm của đồ thị hàm số \( y = x^3 + 3x^2 \) và đồ thị hàm số \( y = 3x^2 + 3x \) là}{%
+    \begin{tasks}(4)
+        \task 3
+        \task 1
+        \task 2
+        \task 0
+    \end{tasks}
+}
+
+% --- CÂU 8 ---
+\questionLinesManual{0}{8}{Cho hàm số \( y = f(x) \) có bảng xét dấu đạo hàm như sau:
 
 \begin{center}
 \begin{tikzpicture}
     \tkzTabInit[lgt=1.5, espcl=2.5]
     {$x$ /1, $f'(x)$ /1}
-    {$-\infty$, $-2$, $1$, $2$, $3$, $+\infty$}
-    \tkzTabLine{, +, 0, -, d, +, 0, -, d, +, }
+    {$-\infty$, $-1$, $0$, $1$, $+\infty$}
+    \tkzTabLine{, -, d, -, 0, +, 0, -}
 \end{tikzpicture}
 \end{center}
-}{%
-    \begin{tasks}(4)
-        \task 1
-        \task 2
-        \task 4
-        \task 3
+
+Mệnh đề nào sau đây đúng?}{%
+    \begin{tasks}(2)
+        \task \(\max\limits_{(-1;1]} f(x) = f(0)\)
+        \task \(\max\limits_{(0;+\infty)} f(x) = f(1)\)
+        \task \(\min\limits_{(-\infty;-1]} f(x) = f(-1)\)
+        \task \(\min\limits_{(-1;+\infty)} f(x) = f(0)\)
     \end{tasks}
 }
 
-
-% --- CÂU 7 ---
-\questionLinesManual{0}{7}{Cho \( \log_2 a = 5, \log_2 b = 7; a, b > 0 \). Giá trị của \( \log_2 (a^2 b^3) \) bằng}{%
-    \begin{tasks}(4)
-        \task 12
-        \task 31
-        \task 35
-        \task 13
-    \end{tasks}
-}
-
-% --- CÂU 8 ---
-\questionLinesManual{0}{8}{Cho hàm số \(y = f(x)\) có đạo hàm trên \(\mathbb{R}\) và hàm số \(y = f'(x)\) là hàm số bậc ba có đồ thị là đường cong trong hình vẽ. Hàm số \(y = f(x)\) không nghịch biến trên khoảng nào sau đây?
-
-\begin{center}
-\begin{tikzpicture}[>=stealth, scale=1]
-    % Hệ trục tọa độ
-    \draw[->, thick] (-3.8, 0) -- (2.5, 0) node[above left] {$x$};
-    \draw[->, thick] (0, -4.8) -- (0, 2) node[below left] {$y$};
-    \node[below left] at (0, 0) {$O$};
-
-    % Các đường gióng đứt nét
-    \draw[dashed] (-3, 0) -- (-3, -4) -- (0, -4);
-    \draw[dashed] (-1, 0) -- (-1, -2) -- (0, -2);
-
-    % Đồ thị hàm số y = x^3 + 3x^2 - 4
-    \draw[thick, smooth, samples=150, domain=-3.1:1.15] 
-        plot (\x, {(\x)^3 + 3*(\x)^2 - 4});
-
-    % Nhãn đồ thị
-    \node[right] at (1.1, 1.2) {$y = f'(x)$};
-
-    % Nhãn số trên các trục tọa độ
-    \node[above] at (-3, 0) {$-3$};
-    \node[above] at (-2, 0) {$-2$};
-    \node[above] at (-1, 0) {$-1$};
-    \node[below right] at (1, 0) {$1$};
-    \node[right] at (0, -2) {$-2$};
-    \node[right] at (0, -4) {$-4$};
-
-    % Các điểm nhấn (chấm tròn)
-    \filldraw (0, 0) circle (1.2pt);
-    \filldraw (-2, 0) circle (1.2pt);
-    \filldraw (1, 0) circle (1.2pt);
-    \filldraw (-3, -4) circle (1.2pt);
-    \filldraw (0, -4) circle (1.2pt);
-\end{tikzpicture}
-\end{center}
-}{%
-    \begin{tasks}(4)
-        \task \((-\infty; 1)\)
-        \task \((-2; 0)\)
-        \task \((-1; 2)\)
-        \task \((-1; 1)\)
-    \end{tasks}
-}
+% % --- CÂU 9 ---
+% \questionLinesManual{0}{9}{Cho \( F(x) \) là một nguyên hàm của hàm số \( f(x) = e^x + 2x \) thỏa mãn \( F(0) = \dfrac{3}{2} \). Tìm \( F(x) \).}{%
+%     \begin{tasks}(2)
+%         \task \( F(x) = e^x + x^2 + \dfrac{1}{2} \)
+%         \task \( F(x) = e^x + x^2 + \dfrac{5}{2} \)
+%         \task \( F(x) = e^x + x^2 + \dfrac{3}{2} \)
+%         \task \( F(x) = 2e^x + x^2 - \dfrac{1}{2} \)
+%     \end{tasks}
+% }
 
 % --- CÂU 9 ---
-\questionLinesManual{0}{9}{Hàm số nào sau đây có một tiệm cận?}{%
+\questionLinesManual{0}{9}{Một cái hộp chứa 6 viên bi màu đỏ và 4 viên bi màu xanh. Lấy ngẫu nhiên hai viên bi từ cái hộp đó. Tính xác suất để hai viên bi lấy được đều là viên bi màu xanh.}{%
     \begin{tasks}(4)
-        \task \( y = \dfrac{x+3}{2x-1} \)
-        \task \( y = \dfrac{x^2 + 3x - 2}{x+3} \)
-        \task \( y = \dfrac{4}{x-1} \)
-        \task \( y = \dfrac{2x}{x^2 + 1} \)
+        \task \(\dfrac{7}{9}\)
+        \task \(\dfrac{7}{24}\)
+        \task \(\dfrac{11}{12}\)
+        \task \(\dfrac{2}{15}\)
     \end{tasks}
 }
 
+% % --- CÂU 10 ---
+% \questionLinesManual{0}{10}{Cho một vật thể giới hạn bởi hai mặt phẳng vuông góc với trục \( Ox \) tại các điểm có hoành độ \( x = -1 \) và \( x = 1 \). Một mặt phẳng vuông góc với trục \( Ox \) tại \( x(-1 \leq x \leq 1) \) cắt vật thể đó theo một mặt cắt là hình vuông có cạnh bằng \( \sqrt{1 - x^4} \). Thể tích của vật thể đó bằng}{%
+%     \begin{tasks}(4)
+%         \task \( \dfrac{4}{5} \)
+%         \task \( \dfrac{4\pi}{5} \)
+%         \task \( \dfrac{8}{5} \)
+%         \task \( \dfrac{8\pi}{5} \)
+%     \end{tasks}
+% }
+
 % --- CÂU 10 ---
-\questionLinesManual{0}{10}{Cho hàm số \(y = \left( \dfrac{3}{5} \right)^{x^2 - 2x + 3}\). Trong các khẳng định sau khẳng định nào đúng?}{%
-    \begin{tasks}(2)
-        \task Hàm số đồng biến trên \(\mathbb{R}\).
-        \task Hàm số nghịch biến trên \(\mathbb{R}\).
-        \task Hàm số đồng biến trên khoảng \((-\infty; 1)\).
-        \task Hàm số đồng biến trên khoảng \((1; +\infty)\).
+\questionLinesManual{0}{10}{Thống kê điểm kiểm tra giữa kì 1 môn Toán của 30 học sinh lớp 12C1 của một trường THPT được ghi lại ở bảng sau:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Điểm & \([2; 4)\) & \([4; 6)\) & \([6; 8)\) & \([8; 10)\) \\
+\hline
+Số học sinh & 4 & 8 & 11 & 7 \\
+\hline
+\end{tabular}
+\end{center}
+
+Trung vị của mẫu số liệu gốc thuộc khoảng nào trong các khoảng dưới đây?}{%
+    \begin{tasks}(4)
+        \task \([2; 4)\)
+        \task \([4; 6)\)
+        \task \([6; 8)\)
+        \task \([8; 10)\)
     \end{tasks}
 }
 
 % --- CÂU 11 ---
-\questionLinesManual{0}{11}{Cho hàm số \( y = ax^3 + bx^2 + cx + d \) có đồ thị như hình vẽ bên. Mệnh đề nào dưới đây đúng?
+\questionLinesManual{0}{11}{Cho hàm số \( y = f(x) \) có đồ thị như hình vẽ
 
 \begin{center}
-\begin{tikzpicture}[scale=0.8, >=latex]
+\begin{tikzpicture}[scale=0.75, >=latex]
 
     % 1. Lưới ô vuông
-    \draw[gray!30, thin] (-3.5, -3.5) grid (3.5, 3.5);
+    \draw[gray!30, thin] (-4.5, -4.5) grid (3.5, 5.5);
 
     % 2. Trục tọa độ Ox, Oy
-    \draw[->, thick] (-3.5, 0) -- (3.5, 0) node[below left] {$x$};
-    \draw[->, thick] (0, -3.5) -- (0, 3.5) node[below left] {$y$};
+    \draw[->, thick] (-4.5, 0) -- (3.5, 0) node[below left] {$x$};
+    \draw[->, thick] (0, -4.5) -- (0, 5.5) node[below left] {$y$};
 
     % Gốc tọa độ O
     \node[below left] at (0, 0) {$O$};
 
-    % 3. Đồ thị hàm số bậc ba y = f(x) = -0.6*x^3 + 0.9*x^2 + 1.8*x - 2
-    % Cực tiểu tại x ≈ -0.62 (y ≈ -2.57) nằm bên trái Oy, bên dưới Ox
-    % Cắt Oy tại (0, -2) < 0
-    % Cực đại tại x ≈ 1.62 (y ≈ 3.7) nằm bên phải Oy, bên trên Ox
-    % Nhánh bên phải đi xuống (a < 0)
-    \draw[very thick, gray!80!black, smooth, domain=-2:2.8, samples=200] 
-        plot (\x, {-0.6*\x*\x*\x + 0.9*\x*\x + 1.8*\x - 2});
+    % 3. Đồ thị hàm số bậc ba y = f(x) = 0.5*x^3 + 1.5*x^2 - 2
+    % Cực đại tại (-2, 2) và cực tiểu tại (0, -2)
+    \draw[very thick, gray!80!black, smooth, domain=-3.2:1.3, samples=200] 
+        plot (\x, {\x*\x*\x + 3*\x*\x - 2});
+
+    % 4. Các đường nét đứt cực trị (-2, 2)
+    \draw[dashed, thick, black] (-2, 0) -- (-2, 2) -- (0, 2);
+
+    % 5. Đánh dấu các nhãn số trên trục
+    \node[below] at (-2, 0) {$-2$};
+    \node[left] at (0, 2) {$2$};
+    \node[left] at (0, -2) {$-2$};
+    \node[left] at (0, -4) {$-4$};
+    \node[left] at (0, 4) {$4$};
 
 \end{tikzpicture}
 \end{center}
-}{%
-    \begin{tasks}(2)
-        \task \( a < 0, \, b > 0, \, c > 0, \, d < 0 \)
-        \task \( a < 0, \, b < 0, \, c > 0, \, d < 0 \)
-        \task \( a > 0, \, b < 0, \, c < 0, \, d > 0 \)
-        \task \( a < 0, \, b > 0, \, c < 0, \, d < 0 \)
+
+Số tiệm cận đứng của đồ thị hàm số \( y = \dfrac{2019}{f(x) - 1} \) là}{%
+    \begin{tasks}(4)
+        \task 1
+        \task 2
+        \task 3
+        \task 4
     \end{tasks}
 }
 
+% % --- CÂU 12 ---
+% \questionLinesManual{0}{12}{Cho \( \displaystyle\int_{0}^{1} \left( \dfrac{1}{x+1} - \dfrac{1}{x+2} \right) dx = a \ln 2 + b \ln 3 \) với \(a, b\) là các số nguyên. Mệnh đề nào dưới đây đúng?}{%
+%     \begin{tasks}(4)
+%         \task \(a + 2b = 0\)
+%         \task \(a + b = 2\)
+%         \task \(a - 2b = 0\)
+%         \task \(a + b = -2\)
+%     \end{tasks}
+% }
 
 % --- CÂU 12 ---
-\questionLinesManual{0}{12}{Cho hàm số \(y = f(x)\) có đạo hàm là \(f'(x) = (x-1)(x-2)^2(x+3), \forall x \in \mathbb{R}\). Số điểm cực trị của hàm số đã cho là}{%
+\questionLinesManual{0}{12}{Cho hai biến cố \(A, B\) sao cho \(P(A) = 0,5; P(B) = 0,4; P(A|B) = 0,3\). Khi đó \(P(B|A)\) bằng}{%
     \begin{tasks}(4)
-        \task 2
-        \task 3
-        \task 1
-        \task 0
+        \task \(\dfrac{3}{25}\)
+        \task \(\dfrac{4}{25}\)
+        \task \(\dfrac{6}{25}\)
+        \task \(\dfrac{1}{5}\)
     \end{tasks}
 }
 
@@ -242,245 +247,189 @@
 
 \vspace{0.3cm}
 
+% \questionTrueFalse{0}{13}{Cho hàm số \( y = \sqrt{x+2} \) (\( x \geq -2 \)) và đường thẳng \( y = x \).
+% \begin{center}
+%     \begin{tikzpicture}[scale=1.1, >=latex]
+%     % Giới hạn vùng hiển thị bằng \clip
+%     \clip (-2.8, -2.2) rectangle (3.5, 3.2);
 
-\questionTrueFalse{0}{13}{Cho hàm số  
-\( y = ax + b + \dfrac{c}{x + d} \quad (a, b, c, d \in \mathbb{R}) \) 
-có đồ thị như hình vẽ sau:
+%     % 1. Trục tọa độ Ox, Oy
+%     \draw[->, thick] (-2.8, 0) -- (3.3, 0) node[below] {$x$};
+%     \draw[->, thick] (0, -2.2) -- (0, 3.0) node[right] {$y$};
+%     \node[below right] at (0, 0) {$O$};
 
-\begin{center}
-\begin{tikzpicture}[scale=0.4, >=latex]
-    % Giới hạn vùng hiển thị bằng \clip
-    \clip (-5.5, -7.5) rectangle (2.7, 8.7);
+%     % 2. Đồ thị hàm số y = sqrt(x + 2)
+%     \draw[ultra thick, black, domain=-2:3.2, samples=150] plot (\x, {sqrt(\x + 2)});
+%     \node[above left] at (0, 1.5) {$y = \sqrt{x+2}$};
 
-    % 1. Trục tọa độ Ox, Oy
-    \draw[->, thick] (-5.5, 0) -- (2.5, 0) node[below] {$x$};
-    \draw[->, thick] (0, -7.5) -- (0, 8.5) node[right] {$y$};
-    \node[below right] at (0, 0) {$O$};
+%     % 3. Đường thẳng y = x
+%     \draw[ultra thick, blue, domain=-2.0:2.8, samples=2] plot (\x, {\x});
+%     \node[above left, blue] at (3, 2.7) {$y = x$};
 
-    % 2. Tiệm cận đứng x = -2
-    \draw[thick, gray!80!black] (-2, -7.5) -- (-2, 8.5);
+%     % 4. Đánh dấu các điểm mốc trên trục Ox
+%     \fill[black] (-2, 0) circle (1.5pt) node[below] {$-2$};
+%     \fill[black] (2, 0) circle (1.5pt) node[below] {$2$};
 
-    % 3. Tiệm cận xiên y = -2x - 4
-    \draw[thick, gray!80!black, domain=-5.5:2.5, samples=2] plot (\x, {-2*\x - 4});
+%     % 5. Ký hiệu góc vuông tại gốc tọa độ O
+%     \draw[thin] (0.2, 0) -- (0.2, 0.2) -- (0, 0.2);
 
-    % 4. Hai nhánh đồ thị y = -2x - 4 - 2/(x+2)
-    % Nhánh bên trái tiệm cận đứng (x < -2)
-    \draw[very thick, brown!60!black, smooth, domain=-5.5:-2.2, samples=100] 
-        plot (\x, {-2*\x - 4 - 2/(\x + 2)});
+% \end{tikzpicture}
+% \end{center}
+% }{
+%     \textbf{a)} & Diện tích hình phẳng \( D \) giới hạn bởi đồ thị hàm số \( y = \sqrt{x+2} \) (\( x \geq -2 \)), trục tung, trục hoành và đường thẳng \( x = 2 \) là \( S_D = \dfrac{16}{3} - \dfrac{4\sqrt{2}}{3} \) (đvdt).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{b)} & Diện tích hình phẳng giới hạn bởi đồ thị hàm số \( y = \sqrt{x+2} \) và đường thẳng \( y = x \), hai đường thẳng \( x = 0 \), \( x = 2 \) là \( S = \dfrac{10}{3} - \dfrac{2\sqrt{2}}{9} \) (đvdt).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{c)} & Thể tích khối tròn xoay tạo thành khi quay hình phẳng giới hạn bởi đường thẳng \( y = x \), trục hoành, hai đường thẳng \( x = 1 \), \( x = 3 \) quanh trục \( Ox \) là \( 5\pi \) (đvtt).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+%     \textbf{d)} & Thể tích khối tròn xoay tạo thành khi quay hình phẳng \( D \) quanh trục \( Ox \) là \( 6\pi \) (đvtt).
+%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+% }
 
-    % Nhánh bên phải tiệm cận đứng (x > -2)
-    \draw[very thick, brown!60!black, smooth, domain=-1.8:1.5, samples=100] 
-        plot (\x, {-2*\x - 4 - 2/(\x + 2)});
-
-    % 5. Đánh dấu các điểm mốc và nhãn số
-    \node[below left] at (-2, 0) {$-2$};
-    \fill[black] (0, -4) circle (3.5pt) node[right] {$-4$};
-    \fill[black] (0, -5) circle (3.5pt) node[left] {$-5$};
-
-\end{tikzpicture}
-\end{center}
-}{
-    \textbf{a)} & Đồ thị hàm số đã cho có tiệm cận đứng là đường thẳng \( x = -2 \).
+% --- CÂU 13 ---
+\questionTrueFalse{0}{13}{Bạn An đang làm đề ôn tập theo ba mức độ dễ, trung bình và khó. Xác suất để An hoàn thành câu dễ là 0,8; hoàn thành câu trung bình là 0,6 và hoàn thành câu khó là 0,15. Làm đúng mỗi câu dễ An được 0,1 điểm, làm đúng mỗi câu trung bình An được 0,25 điểm và làm đúng mỗi câu khó An được 0,5 điểm.}{
+    \textbf{a)} & Xác suất để An làm ba câu thuộc ba loại và đúng cả ba câu là 72\%.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Giá trị \( b = -4 \).
+    \textbf{b)} & Khi An làm 3 câu thuộc ba loại khác nhau. Xác suất để An làm đúng 2 trong số 3 câu là 0,45.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Đồ thị hàm số đã cho có tiệm cận xiên là đường thẳng \( y = 2x - 4 \).
+    \textbf{c)} & Khi An làm 3 câu thì xác suất để An làm đúng 3 câu đủ ba loại cao hơn xác suất An làm sai 3 câu ở mức độ trung bình.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Hàm số đã cho là \( y = -2x - 4 - \dfrac{2}{x + 2} \).
+    \textbf{d)} & Xác suất để An làm 5 câu và đạt đúng 2 điểm lớn hơn 0,2\%.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
+\questionTrueFalse{0}{14}{Người ta bơm xăng vào bình xăng của một xe ô tô. Biết rằng thể tích \( V \) (tính theo lít) của lượng xăng trong bình xăng được tính theo thời gian bơm xăng \( t \) (phút) được cho bởi công thức:  
+\(V(t) = 300 \left( t^2 - t^3 \right) + 4,5\)  
+với \( 0 \leq t \leq 0,5 \).  
 
-% --- CÂU 14 ---
-\questionTrueFalse{0}{14}{Một hạt chuyển động thẳng trên trục \(Ox\) và xuất phát tại \(O\). Phương trình chuyển động của hạt là \(x(t) = t - 2\ln(t+1)\), đơn vị: mét, trong đó \(t\) là thời gian tính bằng giây. Hàm số \(v(t) = x'(t)\), đơn vị: mét/giây, biểu thị vận tốc chuyển động của hạt.}{
-    \textbf{a)} & \(v(t) = 2 - \dfrac{3}{t+1}\).
+Gọi \( V'(t) \) là tốc độ tăng thể tích tại thời điểm \( t \) với \( 0 \leq t \leq 0,5 \). Biết 1 lít xăng có giá là 21.000 đồng.}{
+    \textbf{a)} & Lượng xăng ban đầu trong bình là 1,5 lít.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Vận tốc ban đầu của hạt là \(2\) m/s.
+    \textbf{b)} & Sau khi bơm 30 giây thì bình xăng đầy. Số tiền người mua phải trả là 787.500 đồng.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Vận tốc tức thời tại thời điểm \(t = 1\) s là \(0\) m/s.
+    \textbf{c)} & Khi xăng chảy vào bình xăng thì tốc độ tăng thể tích là lớn nhất vào thời điểm ở giây thứ 21.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Quãng đường hạt đi được trong 4 giây đầu tiên, làm tròn kết quả đến hàng phần trăm, là \(1,55\) m.
+    \textbf{d)} & Phương trình \(V'(t) = 0\) có hai nghiệm phân biệt trên đoạn \(\left[ 0; \dfrac{1}{2} \right]\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
-% \questionTrueFalse{0}{14}{Cho đồ thị hàm số \( C: y = x^3 - 2x^2 - 3x + 4 \). Đường thẳng \( d: y = 2x - 2 \) cắt đồ thị \( C \) thành 2 miền có diện tích là \( S_1 \) và \( S_2 \) như hình vẽ.
+\questionTrueFalse{0}{15}{Để loại bỏ \( x \) chất gây ô nhiễm không khí từ khí thải của một nhà máy, người ta ước tính chi phí cần bỏ ra là:  
+\(C(x) = \dfrac{300x}{100 - x} \quad (\text{triệu đồng}) \quad 0 \leq x < 100.\)  
+Xét tính đúng sai của mệnh đề sau:}{
+    \textbf{a)} & \(C'(x) = -\dfrac{30000}{(100 - x)^2} \quad \text{với mọi } x \in [0; 100)\).
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{b)} & Để loại bỏ được 50\% chất gây ô nhiễm cần 300 triệu đồng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{c)} & Chi phí bỏ ra luôn tăng khi \( x \) tăng.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+    
+    \textbf{d)} & Không thể loại bỏ 100\% chất gây ô nhiễm dù bỏ ra chi phí là bao nhiêu đi chăng nữa.
+    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+
+% \questionTrueFalse{0}{16}{Để tham gia lễ hội hóa trang, bạn An dự định làm một chiếc mặt nạ nửa mặt bằng chất liệu giấy cứng. Hình dạng của chiếc mặt nạ được bạn thiết kế trên mặt phẳng tọa độ \( Oxy \), là phần hình phẳng giới hạn bởi hai đường parabol \( (P_1), (P_2) \) lần lượt có đỉnh là gốc tọa độ \( O \) và điểm có tọa độ \( (0; 4) \), cùng nhận trục \( Oy \) làm trục đối xứng và cùng đi qua điểm \( M(5; 6) \). Mỗi đơn vị trên các trục tọa độ có độ dài 3 cm. Sau đó, bạn vẽ hai hình thoi bằng nhau có độ dài các đường chéo là \( 2\sqrt{2} \, \text{cm} \) và \( 4\sqrt{2} \, \text{cm} \) để khoét làm mắt.
 
 % \begin{center}
-% \begin{tikzpicture}[scale=0.8, >=latex]
+% \begin{tikzpicture}[scale=0.75, >=latex]
 %     % Giới hạn vùng hiển thị bằng \clip
-%     \clip (-3.2, -6.8) rectangle (7, 5.5);
+%     \clip (-6.2, -1.2) rectangle (6.5, 7.2);
 
-%     % 1. Tô màu các miền diện tích S1 và S2
-%     % Miền S1: từ x = -2 đến x = 1 (Đồ thị C ở trên, đường d ở dưới)
-%     \fill[gray!40] plot[domain=-2:1, samples=100] (\x, {\x*\x*\x - 2*\x*\x - 3*\x + 4}) 
-%         -- plot[domain=1:-2, samples=100] (\x, {2*\x - 2}) -- cycle;
+%     % 1. Tô màu nền xanh có họa tiết lưới cho phần giới hạn giữa hai parabol
+%     \begin{scope}
+%         \clip plot[domain=-5:5, samples=100] (\x, {2/25*\x*\x + 4}) 
+%             -- plot[domain=5:-5, samples=100] (\x, {6/25*\x*\x}) -- cycle;
+        
+%         % Đổ màu nền xanh nhạt
+%         \fill[cyan!40] (-6, -1) rectangle (6, 7);
+%         % Vẽ họa tiết lưới ô vuông
+%         \draw[step=0.25cm, white, thin] (-6, -1) grid (6, 7);
 
-%     % Miền S2: từ x = 1 đến x = 3 (Đường d ở trên, đồ thị C ở dưới)
-%     \fill[gray!50] plot[domain=1:3, samples=100] (\x, {2*\x - 2}) 
-%         -- plot[domain=3:1, samples=100] (\x, {\x*\x*\x - 2*\x*\x - 3*\x + 4}) -- cycle;
+%         % Đè hai mắt (hình thoi/tứ giác) bằng màu trắng
+%         \fill[white] (1.8, 3.8) -- (3.3, 4.3) -- (2.8, 2.7) -- (1.5, 2.3) -- cycle;
+%         \fill[white] (-1.8, 3.8) -- (-3.3, 4.3) -- (-2.8, 2.7) -- (-1.5, 2.3) -- cycle;
+%     \end{scope}
 
-%     % 2. Hệ trục tọa độ Ox, Oy
-%     \draw[->, thick] (-3.2, 0) -- (4.2, 0) node[below] {$x$};
-%     \draw[->, thick] (0, -6.8) -- (0, 5.2) node[right] {$y$};
+%     % 2. Trục tọa độ Ox, Oy
+%     \draw[->, thick] (-5.8, 0) -- (6.2, 0) node[below] {$x$};
+%     \draw[->, thick] (0, -0.8) -- (0, 6.8) node[left] {$y$};
 %     \node[below left] at (0, 0) {$O$};
 
-%     % 3. Đồ thị hàm số bậc ba (C): y = x^3 - 2x^2 - 3x + 4
-%     \draw[ultra thick, black, domain=-2.1:3.1, samples=150] 
-%         plot (\x, {\x*\x*\x - 2*\x*\x - 3*\x + 4});
+%     % 3. Vẽ hai đường Parabol
+%     % Parabol P1 (đường nét đỏ ở dưới)
+%     \draw[thick, red!70!black, domain=-5:5, samples=120] plot (\x, {6/25*\x*\x});
+    
+%     % Parabol P2 (đường nét tím/xanh ở trên)
+%     \draw[thick, violet, domain=-5:5, samples=120] plot (\x, {2/25*\x*\x + 4});
 
-%     % 4. Đường thẳng d: y = 2x - 2
-%     \draw[ultra thick, black, domain=-2.3:3.8, samples=2] plot (\x, {2*\x - 2});
+%     % 4. Vẽ các mắt hình thoi (viền tím)
+%     \draw[thick, violet] (1.8, 3.8) -- (3.3, 4.3) -- (2.8, 2.7) -- (1.5, 2.3) -- cycle;
+%     \draw[thick, violet] (-1.8, 3.8) -- (-3.3, 4.3) -- (-2.8, 2.7) -- (-1.5, 2.3) -- cycle;
 
-%     % 5. Nhãn các miền và tên hàm số
-%     \node[font=\large] at (-0.6, 1.8) {$S_1$};
-%     \node[font=\large] at (1.8, 0.8) {$S_2$};
+%     % 5. Các đường nét đứt định vị điểm M(5, 6) và đỉnh (0, 4)
+%     \draw[dashed, thick] (5, 0) node[below] {$5$} -- (5, 6) -- (0, 6) node[left] {$6$};
+%     \fill[black] (5, 6) circle (2pt) node[above right] {$M$};
+    
+%     \node[above left] at (0, 4) {$4$};
 
-%     \node[right] at (3.5, 4.8) {$y = 2x - 2$};
-%     \node[below] at (2.8, -2) {$y = x^3 - 2x^2 - 3x + 4$};
+%     % 6. Tên các đường Parabol
+%     \node[above left] at (-2.8, 5) {$(P_2)$};
+%     \node[below left] at (-3, 2.2) {$(P_1)$};
 
 % \end{tikzpicture}
 % \end{center}
 % }{
-%     \textbf{a)} & Diện tích hình phẳng giới hạn bởi đồ thị \( C \) và đường thẳng \( d \) bằng \(\dfrac{253}{12}\).
+%     \textbf{a)} & Diện tích hai hình thoi được khoét để làm mắt là: \( 16 \, \text{cm}^2 \).
 %     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-%     \textbf{b)} & Đường thẳng \( d \) cắt \( C \) tại ba điểm phân biệt \( A(-2; -6); B(1; 0); C(3; 4) \).
+%     \textbf{b)} & Phương trình của parabol \( (P_1) \):  
+%     \( y = \dfrac{6}{25} x^2 \) và phương trình của parabol \( (P_2) \):  
+%     \( y = \dfrac{2}{25} x^2 + 4 \).
 %     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-%     \textbf{c)} & Diện tích hình phẳng giới hạn bởi đồ thị \( C, Ox \) và đường thẳng \( x = -1; x = 2 \) bằng \(\dfrac{21}{4}\).
+%     \textbf{c)} & Diện tích phần hình phẳng giới hạn bởi \( (P_1) \) và \( (P_2) \) là: \(\dfrac{40}{3}\) (đơn vị diện tích).
 %     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-%     \textbf{d)} & Tỉ số \(\dfrac{S_1}{S_2} = \dfrac{63}{16}\).
-%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-% }
-
-% \questionTrueFalse{0}{15}{Khối chỏm cầu có bán kính \( R = 10 \) và chiều cao \( h = 8 \) sinh ra khi quay hình phẳng giới hạn bởi cung tròn có phương trình \( y = \sqrt{100 - x^2} \), trục hoành và hai đường thẳng \( x = 2, x = 10 \) xung quanh trục \( Ox \).
-
-% \begin{center}
-% \begin{tikzpicture}[scale=0.9, >=latex]
-%     % Giới hạn vùng hiển thị bằng \clip
-%     \clip (-2.8, -2.7) rectangle (10.0, 3.2);
-
-%     % ==================== HÌNH 1: HỆ TRỤC Oxyz & CHỎM CẦU TRÒN XOAY ====================
-%     \begin{scope}[shift={(0,0)}]
-%         % 1. Tô màu phần chỏm cầu (miền xám)
-%         \fill[gray!40] (0.6, 0) -- (2.2, 0) 
-%             arc [start angle=0, end angle=75, radius=2.2] 
-%             -- cycle;
-
-%         % 2. Các trục tọa độ
-%         \draw[->, thick] (0, 0) -- (2.8, 0) node[below] {$x$};
-%         \draw[->, thick] (0, -2.5) -- (0, 2.8) node[left] {$y$};
-%         \node[below left] at (0, 0) {$O$};
-
-%         % 3. Cung tròn nửa cầu y = sqrt(R^2 - x^2)
-%         \draw[very thick] (0, 2.2) arc (90:-90:2.2);
-
-%         % 4. Mặt đáy chỏm cầu: Nửa sau NÉT ĐỨT, nửa trước NÉT LIỀN
-%         \draw[very thick] (0.6, 2.15) arc [start angle=90, end angle=270, x radius=0.35, y radius=2.15];
-%         \draw[dashed] (0.6, 2.15) arc [start angle=90, end angle=-90, x radius=0.35, y radius=2.15];
-%         \draw[dashed] (0.6, 2.15)-- (0.6,0);
-
-%         \node[below, font=\small] at (1.4, -0.2) {$h$};
-
-%         % Điểm R
-%         \node[below right, font=\small] at (2.2, 0) {$R$};
-
-%         % Nhãn phương trình
-%         \node[above right, font=\small] at (0.9, 1.8) {$y = \sqrt{R^2 - x^2}$};
-%     \end{scope}
-
-%     % ==================== HÌNH 2: KHỐI CẦU VÀ CHỎM CẦU ====================
-%     % Đã tăng khoảng cách x (shift={(6.2,0)}) để 2 hình xa nhau hơn
-%     \begin{scope}[shift={(6.2,0)}]
-%         % 1. Tô màu phần chỏm cầu bên trên
-%         \fill[gray!40] (0, 1.1) ellipse (1.9cm and 0.45cm);
-%         \fill[gray!40] (-1.9, 1.1) arc [start angle=150, end angle=30, radius=2.2] -- cycle;
-
-%         % 2. Mặt cầu bên ngoài
-%         \draw[very thick] (0,0) circle (2.2cm);
-
-%         % 3. Đường xích đạo: Nửa sau NÉT ĐỨT, nửa trước NÉT LIỀN
-%         \draw[thick, dashed] (-2.2, 0) arc [start angle=180, end angle=0, x radius=2.2, y radius=0.55];
-%         \draw[very thick] (-2.2, 0) arc [start angle=180, end angle=360, x radius=2.2, y radius=0.55];
-
-%         % 4. Đáy chỏm cầu: Nửa sau NÉT ĐỨT, nửa trước NÉT LIỀN
-%         \draw[thick, dashed] (-1.9, 1.1) arc [start angle=180, end angle=0, x radius=1.9, y radius=0.45];
-%         \draw[very thick] (-1.9, 1.1) arc [start angle=180, end angle=360, x radius=1.9, y radius=0.45];
-
-%         % 5. Các điểm tâm
-%         \fill[black] (0, 0) circle (1.8pt);
-%         \fill[black] (0, 1.1) circle (1.8pt);
-
-%         % 6. Bán kính R (nét đứt từ tâm ra viền phải)
-%         \draw[thick, dashed] (0,0) -- (2.2,0);
-%         \node[above, font=\small] at (1.1, 0) {$R$};
-
-%         % 7. Kích thước chiều cao h bên phải
-%         \draw[<->, >=stealth, thin] (2.4, 1.1) -- (2.4, 2.2);
-%         \draw[thin] (1.9, 1.1) -- (2.5, 1.1);
-%         \draw[thin] (0, 2.2) -- (2.5, 2.2);
-%         \node[right, font=\small] at (2.4, 1.65) {$h$};
-%     \end{scope}
-
-% \end{tikzpicture}
-% \end{center}
-% }{
-%     \textbf{a)} & Khoảng cách từ tâm của khối cầu đến khối chỏm cầu bằng 6.
-%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-%     \textbf{b)} & Thể tích của khối chỏm cầu \( V_1 \) được tính theo công thức  
-%     \(V_1 = \pi \displaystyle\int_{0}^{10} \left( \sqrt{100 - x^2} \right) dx.\)
-%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-%     \textbf{c)} & Thể tích của khối chỏm cầu \( V_1 = \dfrac{112\pi}{3} \).
-%     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-%     \textbf{d)} & Gọi \( V_2 \) là thể tích của nửa khối cầu có bán kính bằng 6. Tỉ số thể tích \( \dfrac{V_1}{V_2} = \dfrac{7}{27} \).
+%     \textbf{d)} & Diện tích giấy được bạn An sử dụng để làm chiếc mặt nạ này là \( 224 \, \text{cm}^2 \).
 %     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 % }
 
 
-% --- CÂU 15 ---
-\questionTrueFalse{0}{15}{Trong một bể xử lý nước thải, số lượng vi khuẩn gây hại tại thời điểm \(t\) được kí hiệu bằng \(N(t)\), đơn vị: con. Người ta nhận thấy trong giai đoạn đầu, tốc độ biến thiên của số lượng vi khuẩn tuân theo quy luật hàm mũ và được mô hình hóa bởi \(N'(t) = Ae^{kt}\), trong đó \(A, k\) là các hằng số dương, \(t\) là thời gian, đơn vị: giờ. Từ các nghiên cứu thực nghiệm, người ta ước lượng được \(A = 1000\ln 2\) và tại thời điểm \(t = 1\) giờ có 3000 vi khuẩn, \(N'(1) = 2000\ln 2\). Biết mức độ an toàn cho phép là không quá 65000 vi khuẩn.}{
-    \textbf{a)} & \(k = \ln 2\).
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{b)} & Số vi khuẩn tại thời điểm \(t = 5\) giờ là 34000 con.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{c)} & Số lượng vi khuẩn bắt đầu vượt ngưỡng an toàn từ sau thời điểm \(t = 6\) giờ.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
-    
-    \textbf{d)} & Tại thời điểm \(t = 6\) giờ người ta tiến hành xử lý để giảm số lượng vi khuẩn theo quy luật \(M(t) = 65000e^{-0,25(t-6)}\), với \(t \geq 6\). Khi đó, sau \(4\ln 2\) giờ kể từ khi bắt đầu xử lý, số vi khuẩn còn lại 32500 con.
-    & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
-}
+% --- CÂU 16 ---
+\questionTrueFalse{0}{16}{Giả sử kết quả khảo sát khu vực \(A\) và \(B\) về độ tuổi kết hôn của một số phụ nữ vừa lập gia đình được cho ở bảng sau:
 
-\questionTrueFalse{0}{16}{Một trang trại cần xây một bể chứa nước hình trụ bằng bê tông (có nắp đậy) để chứa \( 60(m^3) \) nước tưới tiêu. Chi phí xây dựng chủ yếu phụ thuộc vào diện tích bề mặt bê tông cần sử dụng (diện tích toàn phần của bể tính theo phần bên trong của bể). Theo hợp đồng với nhà thầu xây dựng, chi phí mỗi mét vuông xây dựng theo cách tính trên là 1,5 triệu đồng. Gọi \( r \) là bán kính đáy và \( h \) là chiều cao của bể (đơn vị tính của \( r, h \) là mét).
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.4\textwidth]{images/trunuoc.png}
-\end{figure}
-
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Tuổi kết hôn & \([19; 22)\) & \([22; 25)\) & \([25; 28)\) & \([28; 31)\) & \([31; 34)\) \\
+\hline
+Số phụ nữ ở khu vực \(A\) & 10 & 27 & 31 & 25 & 7 \\
+\hline
+Số phụ nữ ở khu vực \(B\) & 47 & 40 & 11 & 2 & 0 \\
+\hline
+\end{tabular}
+\end{center}
 }{
-    \textbf{a)} & Thể tích của bể là: \(V = \pi r^2 h = 60(m^3)\).
+    \textbf{a)} & Số phụ nữ tham gia khảo sát ở mỗi khu vực \(A\) và \(B\) là 100 người.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{b)} & Diện tích toàn phần \( S_{tp} \) của bể chứa nước được biểu diễn theo bán kính \( r \) là  
-    \(S_{tp}(r) = \pi r^2 + \dfrac{120}{r}(m^2)\).
+    \textbf{b)} & Khoảng biến thiên của mẫu số liệu ghép nhóm ứng với khu vực \(B\) là 15 (tuổi).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{c)} & Để tiết kiệm chi phí nhất, bể nên được xây với bán kính đáy là  
-    \(r = \sqrt[3]{\dfrac{30}{\pi}}(m)\).
+    \textbf{c)} & Xét độ tuổi kết hôn trung bình thì phụ nữ ở khu vực \(A\) kết hôn sớm hơn phụ nữ ở khu vực \(B\).
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
     
-    \textbf{d)} & Chi phí thấp nhất để xây dựng bể chứa nước nói trên là 127 triệu đồng (làm tròn kết quả đến hàng đơn vị).
+    \textbf{d)} & Nếu so sánh theo độ lệch chuẩn thì phụ nữ ở khu vực \(B\) có độ tuổi kết hôn đồng đều hơn.
     & \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
 }
 
@@ -488,92 +437,226 @@ có đồ thị như hình vẽ sau:
 
 \vspace{0.3cm}
 
-\questionShortAnswer{0}{17}{Giả sử số lượng tế bào của một quần thể nấm men tại môi trường nuôi cấy trong phòng thí nghiệm được mô hình hóa bằng hàm số  
-\(P(t) = \dfrac{a}{b + e^{-0.75t}}\) (với \(a, b \in \mathbb{R}\)), trong đó thời gian \(t\) được tính bằng giờ. Đạo hàm của hàm số \(y = P(t)\) biểu thị tốc độ sinh trưởng của nấm men (tính bằng tế bào/giờ) tại thời điểm \(t\) (giờ). Tại thời điểm ban đầu \(t = 0\), quần thể có 20 tế bào và tốc độ sinh trưởng là 10 tế bào/giờ. Tìm số lượng tế bào của quần thể nấm men tại thời điểm tốc độ sinh trưởng của quần thể đạt mức tối đa.
+\questionShortAnswer{0}{17}{Một doanh nghiệp dự định sản xuất không quá 300 sản phẩm.  
+Nếu doanh nghiệp sản xuất \( x \) sản phẩm (\( 1 \leq x \leq 300 \)) thì doanh thu nhận được khi bán hết số sản phẩm đó là  
+\( F(x) = -2x^2 + 1312x \) (nghìn đồng), trong khi chi phí sản xuất bình quân cho một sản phẩm là  
+\( G(x) = x^2 - 77x + 1000 + \dfrac{40000}{x} \) (nghìn đồng). Lợi nhuận thu được của doanh nghiệp (tính theo đơn vị triệu đồng) đạt giá trị lớn nhất bằng bao nhiêu (làm tròn kết quả đến hàng đơn vị).
 }
 
-\questionShortAnswer{0}{18}{Một khu vui chơi giải trí giành cho trẻ em đang có kế hoạch điều chỉnh giá vé để tăng lợi nhuận. Sau khi khảo sát thị trường, người ta xác định được rằng: nếu giá vé vào cửa là 50000/người thì trung bình có 500 người đến. Nhưng nếu tăng thêm 1000/người thì sẽ mất 10 khách hàng hoặc giảm đi 1000/người thì sẽ có thêm 10 khách hàng trong số trung bình. Biết rằng, trung bình, mỗi khách hàng còn đem lại 5000 lợi nhuận trong các dịch vụ đi kèm. Hỏi giá vé vào cửa là bao nhiêu nghìn đồng để thu nhập là lớn nhất?
-
-}
-
-% \questionShortAnswer{0}{19}{Khu vườn nhà ông Ba có dạng hình tròn, bán kính 10 m. Ông Ba dự định trồng hoa Hồng ở khu vực \( S_1 \) và hoa Ly ở khu vực hình bán nguyên \( S_2 \). Với \( S_1 \) là phần diện tích giới hạn bởi đường parabol đi qua tâm hình tròn và \( S_2 \) là phần diện tích giới hạn bởi nửa đường elip không chứa tâm hình tròn (kích thước như hình vẽ). Biết rằng kinh phí trồng hoa Hồng là 100.000 đồng/ \( m^2 \), kinh phí trồng hoa Ly là 150.000 đồng/ \( m^2 \). Hỏi ông Ba phải mất bao nhiêu triệu đồng để trồng hoa lên hai khu đất đó (làm tròn kết quả đến hàng phần mười).
+% \questionShortAnswer{0}{18}{Trên cửa sổ có dạng hình chữ nhật của ngôi nhà một doanh nghiệp kinh doanh hải sản, họa sĩ cần thiết kế logo hình con cá. Logo là hình phẳng giới hạn bởi hai parabol với các kích thước được cho trong hình bên dưới (đơn vị trên mỗi trục tọa độ là \( dm \)). Họa sĩ cần tính diện tích của logo để báo giá cho doanh nghiệp đó trước khi kí hợp đồng. Diện tích của logo bằng \( x \, dm^2 \). Tìm \( x \) (kết quả làm tròn đến hàng đơn vị).
 
 % \begin{center}
-% \begin{tikzpicture}[scale=0.35, >=latex]
-%     % Giới hạn vùng hiển thị bằng \clip
-%     \clip (-11, -11) rectangle (11, 11);
+% \begin{tikzpicture}[scale=0.6, >=latex]
+%     % Phần thân cá (từ x = -5 đến x = 5)
+%     \fill[gray!60] plot[domain=-5:5, samples=100] (\x, {-3/25*\x*\x + 3})
+%         -- plot[domain=5:-5, samples=100] (\x, {4/25*\x*\x - 4}) -- cycle;
 
-%     % 1. Tô màu các miền S1 và S2
-%     % Miền S1 (đỏ nhạt)
-%     \fill[red!50] plot[domain=-8:8, samples=100] (\x, {sqrt(100 - \x*\x)}) 
-%         -- plot[domain=8:-8, samples=100] (\x, {3/32*\x*\x}) -- cycle;
+%     % Phần đuôi cá (từ x = -7 đến x = -5)
+%     \fill[gray!60] plot[domain=-6:-5, samples=100] (\x, {4/25*\x*\x - 4})
+%         -- (-5, 0) -- plot[domain=-5:-6, samples=100] (\x, {-3/25*\x*\x + 3}) -- cycle;
 
-%     % Miền S2 (xanh nhạt)
-%     \fill[cyan!40] plot[domain=-10:10, samples=100] (\x, {-sqrt(100 - \x*\x)}) 
-%         -- plot[domain=10:-10, samples=100] (\x, {-0.5*sqrt(100 - \x*\x)}) -- cycle;
+%     % 2. Khung hình chữ nhật ngoài
+%     \draw[thick] (-6, -4) rectangle (5, 3);
 
-%     % 2. Đường tròn khu vườn
-%     \draw[very thick, black] (0,0) circle (10cm);
+%     % 3. Trục tọa độ Ox, Oy
+%     \draw[->, thick] (-8, 0) -- (7, 0) node[below] {$x$};
+%     \draw[->, thick] (0, -4.8) -- (0, 4.2) node[left] {$y$};
+%     \node[below left] at (0, 0) {$O$};
 
-%     % 3. Đường thẳng đường kính ngang
-%     \draw[thin, black!60] (-10,0) -- (10,0);
+%     % 4. Vẽ hai đường Parabol
+%     % y = f(x)
+%     \draw[very thick, domain=-6:5, samples=100] plot (\x, {-3/25*(\x-5)*(\x+5)});
+%     % y = g(x)
+%     \draw[very thick, domain=-6:5, samples=100] plot (\x, {4/25*(\x-5)*(\x+5)});
 
-%     % 4. Parabol chứa S1 (màu tím/xanh đậm)
-%     \draw[very thick, violet, domain=-9.5:9.5, samples=100] plot (\x, {3/32*\x*\x});
+%     % 5. Cung tròn mang cá và mắt cá
+%     \draw[thick] (3, 1.75) arc [start angle=150, end angle=225, radius=3];
+    
+%     % ĐÃ SỬA: Vẽ mắt cá đúng cú pháp
+%     \draw[fill=gray!60, thick] (3.6, 0.5) circle (0.2cm);  % ĐÃ SỬA
+%     \fill[black] (3.6, 0.5) circle (0.08cm);
+%     \draw[thick] (3.6, 0.5) circle (0.3cm);
 
-%     % 5. Nửa Elip chứa S2 (màu tím/xanh đậm)
-%     \draw[very thick, violet, domain=-10:10, samples=100] plot (\x, {-0.5*sqrt(100 - \x*\x)});
+%     % 6. Tên các đỉnh/điểm mốc
+%     \node[below left] at (-6, -3.2) {$A$};
+%     \node[above left] at (-6, 2.5) {$B$};
+%     \node[below right] at (-5, 0) {$C$};
+%     \node[above right] at (0, 3) {$D$};
+%     \node[above right] at (5, 0) {$E$};
+%     \node[above right] at (0, -4) {$G$};
 
-%     % 6. Các đường kích thước và mũi tên
-%     % Kích thước 16m
-%     \draw[<->, >=stealth, thick] (-8, 6) -- (8, 6);
-%     \node[below, font=\large] at (0, 6) {$16\text{m}$};
+%     % 7. Nhãn công thức hàm số
+%     \node[above] at (-1.8, 1) {$y=f(x)$};
+%     \node[below] at (-1.8, -1.5) {$y=g(x)$};
 
-%     % Kích thước 6m
-%     \draw[<->, >=stealth, thick] (-8, 0) -- (-8, 6);
-%     \node[right, font=\large] at (-8, 2) {$6\text{m}$};
+%     % 8. Kích thước và mũi tên đo đạc
+%     % Bên phải
+%     \draw[<->, >=stealth, thin] (6, 0) -- (6, 3);
+%     \node[right] at (6, 1.5) {$3\text{dm}$};
+    
+%     \draw[<->, >=stealth, thin] (6, -4) -- (6, 0);
+%     \node[right] at (6, -2) {$4\text{dm}$};
 
-%     % Kích thước 5m
-%     \draw[<->, >=stealth, thick] (0, 0) -- (0, -5);
-%     \node[right, font=\large] at (0, -2.5) {$5\text{m}$};
+%     % Bên dưới
+%     \draw[<->, >=stealth, thin] (-6, -4.5) -- (-5, -4.5);
+%     \node[below] at (-5.5, -4.5) {$2\text{dm}$};
 
-%     % 7. Tên các miền S1, S2
-%     \node[font=\Huge\bfseries] at (0, 7.5) {$S_1$};
-%     \node[font=\Huge\bfseries] at (0, -7.5) {$S_2$};
+%     \draw[<->, >=stealth, thin] (-5, -4.5) -- (0, -4.5);
+%     \node[below] at (-2.5, -4.5) {$5\text{dm}$};
+
+%     \draw[<->, >=stealth, thin] (0, -4.5) -- (5, -4.5);
+%     \node[below] at (2.5, -4.5) {$5\text{dm}$};
 
 % \end{tikzpicture}
 % \end{center}
 % }
 
+% --- CÂU 18 ---
+\questionShortAnswer{0}{18}{Một nhà đầu tư phân loại các dự án trong một chu kỳ đầu tư thành 3 loại: ít rủi ro, rủi ro trung bình và rủi ro cao. Tỷ lệ các dự án các loại đó tương ứng là 20\%; 45\% và 35\%. Kinh nghiệm cho thấy tỷ lệ các dự án gặp rủi ro khi đầu tư tương ứng là 5\%; 20\% và 40\%. Nếu một dự án gặp rủi ro sau kỳ đầu tư thì khả năng dự án rủi ro lớn nhất là bao nhiêu phần trăm (làm tròn đến hàng phần chục)?
+}
 
-% --- CÂU 19 ---
-\questionShortAnswer{0}{19}{Một giáo viên theo dõi sự tiến bộ của học sinh qua thang đo điểm, được mô hình hoá bằng hàm số \(f(x) = x^3 + ax^2 + bx + c\) với \(a, b, c\) là các hệ số. Trong đó, \(x\) (\(0 \leq x \leq 9, x \in \mathbb{N}\)) là số tháng kể từ đầu năm học và \(f(x)\) là điểm trong tháng thứ \(x\). Qua theo dõi, giáo viên ghi nhận tháng đầu tiên học sinh đạt 19 điểm, sau đó giảm trong tháng thứ hai và đến tháng thứ ba học sinh đạt mức điểm thấp nhất trong năm học, là 3 điểm. Kể từ tháng thứ ba trở đi, điểm của học sinh tăng lên. Tính điểm của học sinh đó ở tháng thứ sáu.
+\questionShortAnswer{0}{19}{Cho một bờ hồ hình bán nguyệt có bán kính bằng \( 4km \), đường kính \( PR \) như hình vẽ sau:
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9, >=stealth]
+    % Giới hạn vùng hiển thị
+    \clip (-4.8, -1.2) rectangle (4.8, 4.8);
+
+    % 1. Đất bên dưới đường kính PR (gạch chéo)
+    \fill[pattern=north east lines, pattern color=gray!80] (-4.2, -0.3) rectangle (4.2, 0);
+
+    % 2. Bờ hồ hình bán nguyệt
+    \draw[very thick] (4, 0) arc [start angle=0, end angle=180, radius=4];
+    \draw[very thick] (-4, 0) -- (4, 0);
+
+    % 3. Các đường nối PQ (chèo thuyền), QR (chạy bộ), QR nét đứt, OQ
+    \draw[thick] (-4, 0) -- (1.5, 3.708); % PQ
+    \draw[thick, dashed] (1.5, 3.708) -- (4, 0); % QR thẳng
+
+    % Mũi tên chỉ hướng chèo thuyền PQ
+    \draw[thick, ->] (-4, 0) -- (-1.25, 1.854);
+
+    % Mũi tên chỉ hướng chạy bộ dọc cung QR
+    \draw[thick, ->] (1.5, 3.708) arc [start angle=67.97, end angle=30, radius=4];
+
+    % 4. Các điểm mốc P, Q, R, O
+    \fill[black] (-4, 0) circle (2.5pt) node[below left, font=\large] {$P$};
+    \fill[black] (4, 0) circle (2.5pt) node[below right, font=\large] {$R$};
+    \fill[black] (0, 0) circle (2.5pt) node[below, font=\large] {$O$};
+    \fill[black] (1.5, 3.708) circle (2.5pt) node[above, font=\large] {$Q$};
+
+\end{tikzpicture}
+\end{center}
+
+Từ điểm \( P \) anh Bắp chèo một chiếc thuyền với vận tốc \( 5 \, km/h \) đến điểm \( Q \) trên bờ hồ, rồi chạy bộ dọc theo thành hồ đến vị trí \( R \) với vận tốc \( 8 \, km/h \). Thời gian lớn nhất mà anh Bắp đi chuyển từ \( P \) đến \( R \) là bao nhiêu (thời gian tính bằng giờ, kết quả làm tròn đến hàng phần trăm)?
+
+
+}
+
+% \questionShortAnswer{0}{20}{Một bình gốm (có dạng như hình vẽ) có đường kính đáy là 20cm, đường kính lớn nhất của thân thùng là 36cm, chiều cao thùng là 50cm, cạnh bên hông của thùng có hình dạng của một parabol. Thể tích của bình gốm đó là bao nhiêu lít (kết quả làm tròn đến hàng phần chục).
+
+% \begin{center}
+% \begin{tikzpicture}[scale=0.12 , >=latex]
+%     % Giới hạn vùng hiển thị
+%     \clip (-28, -32) rectangle (28, 32);
+
+%     % 1. Vẽ thân bình gốm (2 đường parabol hai bên)
+%     \draw[very thick] plot[domain=-20:20, samples=100] ({-8/625*\x*\x + 18}, \x);
+%     \draw[very thick] plot[domain=-20:20, samples=100] ({-( -8/625*\x*\x + 18)}, \x);
+
+%     % 2. Mặt đáy trên (elip đầy đủ)
+%     \draw[very thick] (0, 20) ellipse (12.8cm and 4cm);
+
+%     % 3. Đường xích đạo giữa (nửa sau nét đứt, nửa trước nét liền)
+%     \draw[very thick, dashed] (-18, 0) arc [start angle=180, end angle=0, x radius=18, y radius=6];
+%     \draw[very thick] (-18, 0) arc [start angle=180, end angle=360, x radius=18, y radius=6];
+
+%     % 4. Mặt đáy dưới (nửa sau nét đứt, nửa trước nét liền)
+%     \draw[very thick, dashed] (-12.8, -20) arc [start angle=180, end angle=0, x radius=12.8, y radius=4];
+%     \draw[very thick] (-12.8, -20) arc [start angle=180, end angle=360, x radius=12.8, y radius=4];
+
+%     % 5. Trục đối xứng giữa (nét đứt) và các nét gióng đứng
+%     \draw[dashed, thick] (0, -20) -- (0, 20);
+%     \draw[dashed, thin] (-12.8, -20) -- (-12.8, 20);
+%     \draw[dashed, thin] (12.8, -20) -- (12.8, 20);
+%     \draw[dashed, thin] (-12.8, -20) -- (12.8, -20);
+%     % 6. Các kích thước và mũi tên đo đạc
+%     % Đường kính đáy trên: 20cm
+%     \draw[<->, >=stealth, thick] (-12.8, 20) -- (12.8, 20);
+%     \node[above, font=\small] at (0, 20) {$20\text{ cm}$};
+
+%     % Đường kính giữa: 36cm
+%     \draw[<->, >=stealth, thick] (-18, 0) -- (18, 0);
+%     \node[above, font=\small] at (6, 0) {$36\text{ cm}$};
+
+%     % Chiều cao: 50cm
+    
+%     \node[left, font=\small] at (0, -12.5) {$50\text{ cm}$};
+
+% \end{tikzpicture}
+% \end{center}
+% }
+
+% --- CÂU 20 ---
+\questionShortAnswer{0}{20}{Hình vẽ dưới đây mô tả một cây cầu vượt có mặt cắt đứng là một phần parabol nối hai điểm \(A, B\) và nhận đường trung trực của đoạn \(AB\) làm trục đối xứng, \(AB = 400\) m. Khoảng cách từ đỉnh cây cầu đến \(AB\) bằng 8 m. Xét tiếp tuyến \(\Delta\) tại điểm \(M\) trên mặt cầu, người ta quy ước \(\tan(\Delta, d)\) là độ dốc tại \(M\) của mặt cầu, với \(d\) là đường thẳng đi qua hai điểm \(A, B\). Độ dốc lớn nhất của mặt cầu là bao nhiêu?
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/Cau20.png}
+\end{figure}
 }
 
 
-\questionShortAnswer{0}{20}{Sau khi phát hiện một bệnh dịch, các chuyên gia y tế ước tính số người nhiễm bệnh kể từ ngày xuất hiện bệnh nhân đầu tiên đến ngày thứ \( t \) là  
-\(f(t) = 180t + 42t^2 - t^3, \, t = 0, 1, \ldots, 30.\)  
-Nếu coi \( f(t) \) là hàm số xác định trên đoạn \([0; 30]\) thì đạo hàm \( f'(t) \) được xem là tốc độ truyền bệnh (đơn vị: người/ngày) tại thời điểm \( t \). Hỏi trong 30 ngày đó, có bao nhiêu ngày mà tốc độ truyền bệnh giảm?}
-
-% --- CÂU 21 ---
-\questionShortAnswer{0}{21}{Có hai xã \(A, B\) cùng ở một bên bờ sông. Khoảng cách từ hai xã đó đến bờ sông lần lượt là \(AA' = 500\) (m), \(BB' = 600\) (m). Người ta đo được \(A'B' = 2200\) (m) như hình vẽ dưới đây. Các kỹ sư muốn xây dựng một trạm cung cấp nước sạch nằm bên bờ sông cho người dân của hai xã sử dụng. Để tiết kiệm chi phí, các kỹ sư phải chọn một vị trí \(M\) của trạm cung cấp nước sạch đó trên đoạn \(A'B'\) sao cho tổng khoảng cách từ hai xã đến vị trí \(M\) là nhỏ nhất. Giá trị nhỏ nhất của tổng khoảng cách đó bằng bao nhiêu mét? (Làm tròn kết quả đến hàng đơn vị).
+\questionShortAnswer{0}{21}{Khi sản xuất vỏ lon sữa DUTCH LADY, các nhà sản xuất luôn đặt tiêu chí sao cho chi phí sản xuất vỏ lon là nhỏ nhất. Biết rằng lon sữa có hình trụ và thể tích của lon sữa là \( 530 \, \text{cm}^3 \). Khi diện tích toàn phần của lon sữa nhỏ nhất thì bán kính đáy của nó bằng bao nhiêu centimet? (làm tròn kết quả đến hàng phần trăm)
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/Cau21.png}
+    \includegraphics[width=0.3\textwidth]{images/LonSua.png}
 \end{figure}
 
 }
 
-\questionShortAnswer{0}{22}{Một chiếc cổng hình Parabol có chiều cao \( 9 \, m \), khoảng cách giữa hai chân cổng là \( 6 \, m \). Để vận chuyển thùng hàng hình chữ nhật qua cổng, người ta dùng một xe kéo có chiều cao \( 1 \, m \). Biết rằng mặt cắt của thùng hàng qua cổng là hình chữ nhật, hỏi diện tích hình chữ nhật đó lớn nhất là bao nhiêu \( m^2 \) để xe chở thùng hàng có thể đi qua được cổng (kết quả làm tròn đến hàng phần chục).
+\questionShortAnswer{0}{22}{Một máng nước có thiết diện là một hình thang cân, với các kích thước của máng được cho như trong hình vẽ. Nước được bơm vào máng với tốc độ là 4 lít/phút. Hỏi tốc độ dâng lên của mực nước vào thời điểm mà mực nước trong máng cao \( 2dm \) là bao nhiêu dm/phút (\( t = 0 \) là lúc bắt đầu bơm nước) (kết quả làm tròn đến hàng phần trăm)?
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/Xetai.png}
-\end{figure}
+\begin{center}
+\begin{tikzpicture}[scale=0.8, >=stealth]
+      % Mặt trước (hình thang cân)
+    \coordinate (A) at (-1.5, 0);   % Đáy nhỏ trái
+    \coordinate (B) at (0.5, 0);    % Đáy nhỏ phải
+    \coordinate (C) at (1.5, 2.5);  % Đáy lớn phải
+    \coordinate (D) at (-2.5, 2.5); % Đáy lớn trái
 
+    % Mặt sau (dịch chuyển theo véc-tơ (6, 1.2))
+    \coordinate (A') at (4.5, 1.2);
+    \coordinate (B') at (6.5, 1.2);
+    \coordinate (C') at (7.5, 3.7);
+    \coordinate (D') at (3.5, 3.7);
+
+    % 1. Các cạnh nét đứt (bị che khuất)
+    \draw[thick, dashed] (A) -- (A');
+    \draw[thick, dashed] (A') -- (B');
+    \draw[thick, dashed] (A') -- (D');
+
+    % 2. Các cạnh nét liền (nhìn thấy)
+    \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle; % Mặt trước
+    \draw[thick] (B) -- (B');
+    \draw[thick] (C) -- (C');
+    \draw[thick] (D) -- (D');
+    \draw[thick] (B') -- (C') -- (D'); % Mặt sau
+
+    % 3. Đường cao thiết diện
+    \draw[thick] (D) -- (-2.5, 0);
+    \draw[thick] (-2.5, 0) -- (A);
+
+    % 4. Các nhãn kích thước
+    \node[above, font=\small] at (0.8, 3.3) {$12\text{dm}$};
+    \node[below, font=\small] at (-0.2, 2.5) {$6\text{dm}$};
+    \node[below, font=\small] at (-0.5, 0) {$3\text{dm}$};
+    \node[left, font=\small] at (-2.5, 1.25) {$3\text{dm}$};
+
+\end{tikzpicture}
+\end{center}
 }
-
 
 \end{document}
 
-%Câu 6D, 8C, 10C, 12A, Câu 15: DSDD, câu 19: 84, Câu 21: 2460
+%5C, 9D, 10C,12C, 13 SSDS, 16 DSDD, 18   , 20 0.08
