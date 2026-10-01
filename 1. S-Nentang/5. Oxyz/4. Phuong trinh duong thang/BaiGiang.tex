@@ -1,0 +1,997 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: NỀN TẢNG ĐƯỜNG THẲNG TRONG KHÔNG GIAN (KHÓA GỌN 3 CÂU NHẬN BIẾT)
+% =========================================================================
+\titlebox{Chủ đề: Oxyz}{Phương trình đường thẳng}{Oxyz: Phương trình đường thẳng}
+
+\vspace{-0.25cm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faLightbulb\hskip 6pt NỀN TẢNG: CẦN GÌ ĐỂ VIẾT PHƯƠNG TRÌNH ĐƯỜNG THẲNG?}}
+    \par\vspace{4pt}
+    \begin{minipage}[c]{0.65\linewidth}
+        Để xác định duy nhất đường thẳng $d$, ta luôn cần đủ \textbf{2 yếu tố}:
+        \[
+            \begin{cases} 
+                \textbf{1 Điểm đi qua:} & M_0(x_0; y_0; z_0) \\ 
+                \textbf{1 Véctơ chỉ phương:} & \vec{u} = (a; b; c) \neq \vec{0} \quad (\text{giá } /\!/ \text{ hoặc trùng } d)
+            \end{cases}
+        \]
+        \textbf{1. Phương trình tham số của đường thẳng $d$ ($t \in \mathbb{R}$):}
+        \[
+            \begin{cases} x = x_0 + at \\ y = y_0 + bt \\ z = z_0 + ct \end{cases}
+        \]
+        \textbf{2. Phương trình chính tắc của đường thẳng $d$ (khi $abc \neq 0$):}
+        \[
+            \dfrac{x - x_0}{a} = \dfrac{y - y_0}{b} = \dfrac{z - z_0}{c}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.32\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            % Đường thẳng d
+            \draw[thick, draw=deepblue] (-0.3,-0.3) -- (3.5,2.1) node[right, font=\bfseries\small] {$d$};
+            
+            % Điểm M0
+            \coordinate (M0) at (1.1, 0.54);
+            \fill[deepblue] (M0) circle (2pt);
+            \node[deepblue, below right=1pt, font=\small] at (M0) {$M_0(x_0; y_0; z_0)$};
+            
+            % Vector u
+            \coordinate (Ustart) at (0.3, 1.4);
+            \draw[->, >=stealth, line width=1.3pt, accentred] (Ustart) -- ++(1.8, 1.08) node[above left, font=\small] {$\vec{u}$};
+            \draw[dashed, draw=accentred!50] ($(Ustart)+(-0.3,-0.18)$) -- ++(2.4, 1.44);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.15cm}
+
+
+% Câu 1: Khai thác cả Điểm đi qua và VTCP từ dạng Tham số
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho đường thẳng $d\colon \begin{cases} x = 2 - 3t \\ y = 1 + 2t \\ z = -4 + t \end{cases}$. Đường thẳng $d$ đi qua điểm nào và có một véctơ chỉ phương là véctơ nào dưới đây?
+\begin{tasks}(2)
+    \task Đi qua $M(2; 1; -4)$ và $\vec{u} = (-3; 2; 1)$.
+    \task Đi qua $N(-3; 2; 1)$ và $\vec{u} = (2; 1; -4)$.
+    \task Đi qua $P(-2; -1; 4)$ và $\vec{u} = (-3; 2; 1)$.
+    \task Đi qua $Q(2; 1; -4)$ và $\vec{u} = (3; 2; 1)$.
+\end{tasks}
+}{}
+
+\vspace{0.25cm}
+
+% Câu 2: Khai thác cả Điểm đi qua và VTCP từ dạng Chính tắc
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho đường thẳng $d\colon \dfrac{x - 1}{2} = \dfrac{y + 2}{-3} = \dfrac{z - 4}{1}$. Đường thẳng $d$ đi qua điểm nào và có một véctơ chỉ phương là véctơ nào dưới đây?
+}{%
+\begin{tasks}(2)
+    \task Đi qua $P(1; -2; 4)$ và $\vec{u} = (2; -3; 1)$.
+    \task Đi qua $M(-1; 2; -4)$ và $\vec{u} = (2; -3; 1)$.
+    \task Đi qua $P(1; -2; 4)$ và $\vec{u} = (2; 3; 1)$.
+    \task Đi qua $Q(-1; 2; -4)$ và $\vec{u} = (-2; 3; 1)$.
+\end{tasks}
+}
+
+\newpage
+
+
+\newpage
+
+% =========================================================================
+% TRANG 2: DẠNG 1 (QUA 1 ĐIỂM + VTCP)
+% =========================================================================
+\dangbox{Dạng 1}{Viết phương trình đường thẳng qua một điểm và có VTCP}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Đường thẳng $d$ xác định bởi:
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M(x_0; y_0; z_0) \\ 
+                \text{VTCP } \vec{u}_d = (a; b; c) 
+            \end{cases}
+        \]
+        \begin{itemize}
+            \item \textbf{Phương trình tham số ($t \in \mathbb{R}$):}
+            \[
+                \begin{cases} 
+                    x = x_0 + at \\ 
+                    y = y_0 + bt \\ 
+                    z = z_0 + ct 
+                \end{cases}
+            \]
+            \item \textbf{Phương trình chính tắc (khi $abc \neq 0$):}
+            \[
+                \dfrac{x - x_0}{a} = \dfrac{y - y_0}{b} = \dfrac{z - z_0}{c}
+            \]
+        \end{itemize}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Đường thẳng d
+            \draw[thick, draw=deepblue] (0,0.2) -- (4.2,2.2) node[right, font=\bfseries\small] {$d$};
+            
+            % Điểm M0
+            \coordinate (M) at (1.5, 0.91);
+            \fill[deepblue] (M) circle (2pt);
+            \node[deepblue, below right=1pt, font=\small] at (M) {$M(x_0;y_0;z_0)$};
+            
+            % Vector u_d
+            \draw[->, >=stealth, line width=1.3pt, accentred] (2.4, 1.34) -- ++(1.4, 0.67) node[above left, font=\small] {$\vec{u}_d$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số và phương trình chính tắc của đường thẳng $d$ đi qua điểm $M(2; -1; 3)$ và có véctơ chỉ phương $\vec{u} = (3; 1; -2)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số của đường thẳng $\Delta$ đi qua gốc tọa độ $O(0;0;0)$ và nhận véctơ $\vec{u} = (2; -3; 5)$ làm véctơ chỉ phương.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 3: DẠNG 2 (ĐI QUA HAI ĐIỂM)
+% =========================================================================
+\dangbox{Dạng 2}{Viết phương trình đường thẳng đi qua hai điểm phân biệt $A, B$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } A \text{ (hoặc } B\text{)} \\ 
+                \text{VTCP } \vec{u}_d = \vec{AB} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            \draw[thick, draw=deepblue] (0,0.3) -- (4.2,2.0) node[right, font=\bfseries\small] {$d$};
+            
+            \coordinate (A) at (1.0, 0.7);
+            \coordinate (B) at (3.0, 1.51);
+            
+            \fill[deepblue] (A) circle (2pt) node[above left=1pt, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[below right=1pt, font=\small] {$B$};
+            
+            \draw[->, >=stealth, line width=1.3pt, accentred] (A) -- (B) node[midway, above left, font=\small] {$\vec{u}_d = \vec{AB}$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số và chính tắc của đường thẳng $d$ đi qua hai điểm $A(1; 2; -1)$ và $B(2; -1; 1)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{12}{hỏi}{%
+Trong không gian $Oxyz$, cho tam giác $ABC$ có $A(2; 1; 0)$, $B(0; -1; 2)$ và $C(4; 3; -2)$. Viết phương trình đường trung tuyến kẻ từ đỉnh $A$ của tam giác $ABC$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 4: DẠNG 3 (SONG SONG VỚI ĐƯỜNG THẲNG ĐÃ BIẾT)
+% =========================================================================
+\dangbox{Dạng 3}{Viết phương trình đường thẳng qua $M$ và song song với $\Delta$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M \\ 
+                \text{VTCP } \vec{u}_d = \vec{u}_\Delta 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Đường thẳng Delta
+            \draw[thick, draw=softgray!80] (0,0.4) -- (3.8,1.9) node[right, font=\bfseries\small] {$\Delta$};
+            \draw[->, >=stealth, line width=1.1pt, deepblue] (1.2, 0.87) -- ++(1.4, 0.55) node[above left, font=\small] {$\vec{u}_\Delta$};
+            
+            % Đường thẳng d
+            \draw[thick, draw=deepblue] (0,1.6) -- (3.8,3.1) node[right, font=\bfseries\small] {$d$};
+            \coordinate (M) at (1.0, 1.99);
+            \fill[deepblue] (M) circle (2pt) node[above left=1pt, font=\small] {$M$};
+            \draw[->, >=stealth, line width=1.3pt, accentred] (M) -- ++(1.4, 0.55) node[above left, font=\small] {$\vec{u}_d = \vec{u}_\Delta$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số của đường thẳng $d$ đi qua điểm $A(2; 1; -3)$ và song song với đường thẳng $\Delta\colon \dfrac{x - 1}{2} = \dfrac{y + 3}{-1} = \dfrac{z}{4}$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số của đường thẳng $d$ đi qua điểm $M(1; -2; 4)$ và song song với trục hoành $Ox$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 5: DẠNG 4 (VUÔNG GÓC VỚI MẶT PHẲNG)
+% =========================================================================
+\dangbox{Dạng 4}{Viết phương trình đường thẳng qua $M$ và vuông góc với mặt phẳng $(P)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M \\ 
+                \text{VTCP } \vec{u}_d = \vec{n}_{(P)} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+            % Mặt phẳng (P)
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (3.8,0) -- (4.8,1.2) -- (1.0,1.2) -- cycle;
+            \draw[deepblue, thin] (0.4,0) arc (0:45:0.4);
+            \node[deepblue, font=\bfseries\small] at (0.65, 0.22) {$(P)$};
+            
+            % Đường thẳng d vuông góc đâm xuyên
+            \coordinate (H) at (2.4, 0.6);
+            \draw[thick, deepblue] (H) -- (2.4, 2.3) node[above, font=\bfseries\small] {$d$};
+            \draw[dashed, thick, deepblue] (H) -- (2.4, -0.3);
+            
+            \coordinate (M) at (2.4, 1.8);
+            \fill[deepblue] (M) circle (1.8pt) node[right=2pt, font=\small] {$M$};
+            
+            \draw[->, >=stealth, line width=1.3pt, accentred] (H) -- ++(0, 1.0) node[left=1pt, font=\small] {$\vec{u}_d = \vec{n}_P$};
+            \draw[accentred] (2.4, 0.8) -- (2.6, 0.8) -- (2.6, 0.6);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình chính tắc của đường thẳng $d$ đi qua gốc tọa độ $O$ và vuông góc với mặt phẳng $(P)\colon 2x - 3y + z - 5 = 0$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{12}{hỏi}{%
+Trong không gian $Oxyz$, cho tam giác $ABC$ có ba đỉnh $A(1; 0; 0)$, $B(0; 2; 0)$, $C(0; 0; 3)$. Viết phương trình tham số của đường thẳng $d$ đi qua trực tâm $H$ của tam giác $ABC$ và vuông góc với mặt phẳng $(ABC)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 6: DẠNG 5 (GIAO TUYẾN CỦA HAI MẶT PHẲNG)
+% =========================================================================
+\dangbox{Dạng 5}{Viết phương trình đường thẳng là giao tuyến của hai mặt phẳng}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.62\linewidth}
+        \[
+            d\colon \begin{cases} 
+                \text{VTCP } \vec{u}_d = [\vec{n}_{(P)}, \vec{n}_{(Q)}] \\[8pt]
+                \text{Điểm } A \in d\colon \text{Cho } z=0 \text{ (hoặc } x=0, y=0\text{)}, \\
+                \phantom{\text{Điểm } A \in d\colon} \text{giải hệ } \begin{cases} (P) \\ (Q) \end{cases} \text{tìm 2 ẩn còn lại.}
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.36\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95, line join=round, line cap=round]
+            % Tọa độ các đỉnh chuẩn hình học không gian
+            \coordinate (TL1) at (0, 2.1);     % Đỉnh trên trái (mặt sau)
+            \coordinate (BL1) at (0, 0.5);     % Đáy dưới trái (mặt sau)
+            \coordinate (TR)  at (2.4, 1.7);   % Đỉnh trên của d
+            \coordinate (BR)  at (2.4, -0.2);  % Chân đáy của d
+
+            \coordinate (TL2) at (0.7, 1.25);  % Đỉnh trên trái (mặt trước)
+            \coordinate (BL2) at (0.7, -0.65); % Đáy dưới trái (mặt trước)
+
+            % Giao điểm giữa cạnh đáy mặt sau (BL1--BR) và cạnh đứng mặt trước (TL2--BL2)
+            % Cạnh đứng có hoành độ x = 0.7 => y = 0.5 + (0.7/2.4)*(-0.2 - 0.5) ≈ 0.3
+            \coordinate (X) at (0.7, 0.296);
+
+            % --- 1. MẶT PHẲNG PHÍA SAU ---
+            \draw[line width=1.1pt, draw=deepblue] (TL1) -- (TR);
+            \draw[line width=1.1pt, draw=deepblue] (TL1) -- (BL1);
+            \draw[line width=1.1pt, draw=deepblue] (BL1) -- (X);        % Đoạn đáy nhìn thấy ngoài
+            \draw[dashed, line width=1.0pt, draw=deepblue] (X) -- (BR); % Đoạn đáy khuất sau mặt trước
+
+            % --- 2. MẶT PHẲNG PHÍA TRƯỚC (đè lên trước) ---
+            \draw[line width=1.1pt, draw=deepblue] (TL2) -- (TR);
+            \draw[line width=1.1pt, draw=deepblue] (TL2) -- (BL2);
+            \draw[line width=1.1pt, draw=deepblue] (BL2) -- (BR);
+
+            % --- 3. ĐƯỜNG GIAO TUYẾN d VÀ ĐIỂM A ---
+            \draw[line width=1.5pt, draw=deepblue] (TR) -- (BR);
+            
+            \coordinate (A) at ($(TR)!0.48!(BR)$);
+            \fill[deepblue] (A) circle (2pt);
+            \node[right=2pt, font=\bfseries\small, deepblue] at (A) {$A$};
+            \node[left=3pt, font=\itshape\Large, deepblue] at ($(TR)!0.62!(BR)$) {$d$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{9}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình tham số của đường thẳng $d$ là giao tuyến của hai mặt phẳng $(P)\colon x + 2y - z - 3 = 0$ và $(Q)\colon 2x - y + z - 1 = 0$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{9}{hỏi}{%
+Trong không gian $Oxyz$, cho hai mặt phẳng $(\alpha)\colon 2x - y + 3z - 6 = 0$ và $(\beta)\colon x + 2y - z + 2 = 0$. Tìm một điểm thuộc giao tuyến của $(\alpha)$ và $(\beta)$ có cao độ $z = 0$, từ đó lập phương trình chính tắc của giao tuyến.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 7: DẠNG 6 (VUÔNG GÓC VỚI HAI ĐƯỜNG THẲNG)
+% =========================================================================
+\dangbox{Dạng 6}{Viết phương trình đường thẳng qua $M$ và vuông góc với $d_1, d_2$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M \\ 
+                \text{VTCP } \vec{u}_d = [\vec{u}_{d_1}, \vec{u}_{d_2}] 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95, line join=round, line cap=round, >=stealth]
+    % Đường d nằm ngang
+    \draw[thick, draw=deepblue] (0, 0) -- (4.8, 0) node[below left=2pt, font=\bfseries\small] {$d$};
+
+    % --- ĐƯỜNG d1 (thẳng đứng vuông góc với d) ---
+    \coordinate (H1) at (1.1, 0);
+    \draw[thick, draw=softgray!90] (1.1, -0.9) -- (1.1, 1.7) node[below right=2pt, font=\small] at (1.1, -0.1) {$d_1$};
+    
+    % Ký hiệu góc vuông tại d1
+    \draw[accentred, thin] (0.9, 0) -- (0.9, 0.2) -- (1.1, 0.2);
+    
+    % Vectơ u_{d1}
+    \draw[->, line width=1.1pt, accentred] (1.25, 0) -- (1.25, 1.1) node[above right=-1pt, font=\footnotesize] {$\vec{u}_{d_1}$};
+
+    % --- ĐƯỜNG d2 (nghiêng vuông góc với d) ---
+    \coordinate (H2) at (3.3, 0);
+    \draw[thick, draw=softgray!90] (2.9, -0.9) -- (3.9, 1.7) node[below left=2pt, font=\small] at (3.3, -0.1) {$d_2$};
+    
+    % Ký hiệu góc vuông tại d2 (xoay theo hướng xiên)
+    \draw[accentred, thin] (3.08, 0) -- (3.14, 0.16) -- (3.36, 0.16);
+    
+    % Vectơ u_{d2}
+    \draw[->, line width=1.1pt, accentred] (3.5, 0) -- (3.9, 0.95) node[above right=-1pt, font=\footnotesize] {$\vec{u}_{d_2}$};
+\end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình chính tắc của đường thẳng $\Delta$ đi qua điểm $M(1; -1; 2)$ đồng thời vuông góc với cả hai đường thẳng $d_1\colon \dfrac{x}{1} = \dfrac{y - 1}{2} = \dfrac{z + 1}{-1}$ và $d_2\colon \dfrac{x - 1}{2} = \dfrac{y}{1} = \dfrac{z - 2}{1}$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình đường thẳng $d$ đi qua điểm $A(2; 0; -1)$ đồng thời song song với hai mặt phẳng $(P)\colon 2x - y + z - 3 = 0$ và $(Q)\colon x + 2y - z + 5 = 0$.
+}{}
+
+\newpage
+
+% =========================================================================
+% DẠNG 7: QUA ĐIỂM, VUÔNG GÓC VÀ CẮT DELTA
+% =========================================================================
+\dangbox{Dạng 7}{Viết phương trình đường thẳng qua điểm, vuông góc và cắt $\Delta$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $H = d \cap \Delta \implies H(t) \in \Delta$.
+        \[
+            d \perp \Delta \iff \vec{AH} \cdot \vec{u}_\Delta = 0 \implies \text{tìm } t \implies \text{tọa độ } H.
+        \]
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } A \\ 
+                \text{VTCP } \vec{u}_d = \vec{AH} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95, >=stealth]
+            \draw[thick, draw=deepblue] (0, 0.4) -- (3.6, 0.9) node[right, font=\bfseries\small] {$\Delta$};
+            
+            \coordinate (H) at (1.8, 0.65);
+            \coordinate (A) at (1.6, 2.1);
+            
+            \draw[thick, draw=accentred] (A) -- (H);
+            \draw[thick, draw=accentred] (H) -- ($(H)!0.4!(2.0, -0.6)$) node[below, font=\bfseries\small] {$d$};
+            
+            \fill[deepblue] (A) circle (2pt) node[above=2pt, font=\small] {$A$};
+            \fill[accentred] (H) circle (2pt);
+            \node[below right=2pt, font=\small, accentred] at (H) {$H$};
+            
+            \draw[accentred, thin] ($(H)+(-0.03, 0.22)$) -- ($(H)+(0.19, 0.25)$) -- ($(H)+(0.22, 0.03)$);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $A(1; 0; -2)$ và đường thẳng $\Delta\colon \dfrac{x - 1}{2} = \dfrac{y + 1}{-1} = \dfrac{z}{1}$. Viết phương trình tham số của đường thẳng $d$ đi qua $A$, vuông góc và cắt $\Delta$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $M(2; -1; 3)$ và đường thẳng $\Delta\colon \begin{cases} x = 1 + 2t \\ y = -2 + t \\ z = 1 - t \end{cases}$. Tìm tọa độ hình chiếu vuông góc $H$ của $M$ lên $\Delta$, từ đó viết phương trình chính tắc của đường thẳng đi qua $M$ và cắt $\Delta$ tại $H$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 8: QUA M, CẮT d1 VÀ VUÔNG GÓC d2
+% =========================================================================
+\dangbox{Dạng 8}{Viết phương trình đường thẳng qua $M$, cắt $d_1$ và vuông góc $d_2$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $H = d \cap d_1 \implies H(t) \in d_1$.
+        \[
+            d \perp d_2 \iff \vec{MH} \cdot \vec{u}_{d_2} = 0 \implies \text{tìm } t \implies \text{tọa độ } H.
+        \]
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M \\ 
+                \text{VTCP } \vec{u}_d = \vec{MH} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            \draw[thick, draw=deepblue] (-0.2, 0.8) -- (4.2, 0.8) node[right, font=\bfseries\small] {$d$};
+            
+            \coordinate (H) at (1.5, 0.8);
+            \coordinate (M) at (2.7, 0.8);
+            \fill[deepblue] (H) circle (2pt) node[above left=1pt, font=\small] {$H$};
+            \fill[deepblue] (M) circle (2pt) node[above=2pt, font=\small] {$M$};
+            \draw[->, >=stealth, line width=1.2pt, accentred] (M) -- (H) node[midway, below=1pt, font=\footnotesize] {$\vec{u}_d$};
+
+            \draw[thick, draw=softgray!90] (0.8, -0.4) -- (2.2, 2.0) node[above, font=\small] {$d_1$};
+            \draw[thick, draw=softgray!90] (3.6, -0.4) -- (3.6, 2.0) node[above, font=\small] {$d_2$};
+            \draw[->, >=stealth, line width=1.1pt, accentred] (3.6, 0.8) -- (3.6, 0.0) node[right=1pt, font=\footnotesize] {$\vec{u}_{d_2}$};
+            \draw[accentred, thin] (3.6, 0.98) -- (3.42, 0.98) -- (3.42, 0.8);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $M(1; 0; 2)$ và hai đường thẳng $d_1\colon \dfrac{x - 1}{2} = \dfrac{y}{1} = \dfrac{z + 1}{-1}$, $d_2\colon \dfrac{x}{1} = \dfrac{y - 2}{-2} = \dfrac{z + 1}{3}$. Viết phương trình tham số của đường thẳng $d$ đi qua $M$, cắt $d_1$ và vuông góc với $d_2$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình chính tắc của đường thẳng $d$ đi qua điểm $A(2; -1; 1)$, vuông góc với trục $Oz$ và cắt đường thẳng $\Delta\colon \begin{cases} x = 1 + 3t \\ y = -2 + t \\ z = 2 - t \end{cases}$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 9: NẰM TRONG MẶT PHẲNG (P) VÀ CẮT CẢ d1, d2
+% =========================================================================
+\dangbox{Dạng 9}{Viết phương trình đường thẳng nằm trong $(P)$ và cắt cả $d_1, d_2$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Tìm tọa độ 2 giao điểm:
+        \[
+            A = d_1 \cap (P), \quad B = d_2 \cap (P)
+        \]
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } A \text{ (hoặc } B\text{)} \\ 
+                \text{VTCP } \vec{u}_d = \vec{AB} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (4.2,0) -- (5.2,1.5) -- (1.0,1.5) -- cycle;
+            \node[deepblue, font=\bfseries\small] at (0.6, 0.3) {$(P)$};
+
+            \coordinate (A) at (1.8, 0.7);
+            \coordinate (B) at (3.6, 0.8);
+            
+            \draw[line width=1.3pt, draw=accentred] (1.0, 0.65) -- (4.4, 0.85) node[right, font=\bfseries\small] {$d$};
+            \fill[deepblue] (A) circle (2pt) node[below=2pt, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[below=2pt, font=\small] {$B$};
+
+            % d1 nghiêng dốc sang phải
+            \draw[thick, draw=softgray!90] (1.3, 1.9) -- (A);
+            \draw[dashed, thick, draw=softgray!90] (A) -- (2.1, -0.1) node[below, font=\small] {$d_1$};
+
+            % d2 nghiêng dốc sang trái (lệch hẳn góc so với d1, không còn song song)
+            \draw[thick, draw=softgray!90] (3.9, 1.9) -- (B);
+            \draw[dashed, thick, draw=softgray!90] (B) -- (3.3, -0.2) node[below, font=\small] {$d_2$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon x + y + z - 4 = 0$ và hai đường thẳng $d_1\colon \dfrac{x - 1}{2} = \dfrac{y - 2}{1} = \dfrac{z}{-1}$, $d_2\colon \dfrac{x - 3}{1} = \dfrac{y + 1}{-1} = \dfrac{z - 2}{2}$. Viết phương trình chính tắc của đường thẳng $d$ nằm trong $(P)$ đồng thời cắt cả $d_1$ và $d_2$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt phẳng tọa độ $(Oxy)$ và hai đường thẳng $\Delta_1\colon \begin{cases} x = 1 + t \\ y = 2 - t \\ z = 1 + 2t \end{cases}$, $\Delta_2\colon \begin{cases} x = -2 + 3t' \\ y = 1 - t' \\ z = -2 + t' \end{cases}$. Viết phương trình tham số của đường thẳng $d$ nằm trong $(Oxy)$ và cắt cả $\Delta_1, \Delta_2$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 10: QUA M VÀ CẮT CẢ HAI ĐƯỜNG THẲNG d1, d2
+% =========================================================================
+\dangbox{Dạng 10}{Viết phương trình đường thẳng qua $M$ và cắt hai đường thẳng $d_1, d_2$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $A = d \cap d_1 \implies A(t)$ và $B = d \cap d_2 \implies B(t')$.
+        \[
+            M, A, B \text{ thẳng hàng } \iff \vec{MA} = k \vec{MB} \implies \text{tìm } t, t' \implies A, B.
+        \]
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } M \\ 
+                \text{VTCP } \vec{u}_d = \vec{MA} \text{ (hoặc } \vec{AB}\text{)} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            \draw[thick, draw=deepblue] (0, 0.4) -- (4.2, 1.8) node[right, font=\bfseries\small] {$d$};
+            
+            \coordinate (A) at (1.0, 0.73);
+            \coordinate (M) at (2.1, 1.1);
+            \coordinate (B) at (3.2, 1.47);
+            
+            \fill[deepblue] (M) circle (2pt) node[above=2pt, font=\small] {$M$};
+            \fill[accentred] (A) circle (2pt) node[below right=1pt, font=\small] {$A$};
+            \fill[accentred] (B) circle (2pt) node[below right=1pt, font=\small] {$B$};
+
+            \draw[thick, draw=softgray!90] (0.5, 1.7) -- (1.5, -0.3) node[below, font=\small] {$d_1$};
+            \draw[thick, draw=softgray!90] (2.7, 2.5) -- (3.7, 0.5) node[below, font=\small] {$d_2$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $M(1; 1; 1)$ và hai đường thẳng $d_1\colon \dfrac{x - 2}{1} = \dfrac{y + 1}{2} = \dfrac{z}{-1}$, $d_2\colon \dfrac{x + 1}{2} = \dfrac{y - 1}{1} = \dfrac{z - 1}{1}$. Viết phương trình tham số của đường thẳng $d$ đi qua điểm $M$ đồng thời cắt cả hai đường thẳng $d_1$ và $d_2$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình đường thẳng $d$ đi qua gốc tọa độ $O$ đồng thời cắt cả hai đường thẳng $d_1\colon \begin{cases} x = 1 + t \\ y = 2 - t \\ z = 3t \end{cases}$ và $d_2\colon \begin{cases} x = 2 - 2t' \\ y = -1 + t' \\ z = 1 + 3t' \end{cases}$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 11: SONG SONG VỚI DELTA VÀ CẮT d1, d2
+% =========================================================================
+\dangbox{Dạng 11}{Viết phương trình đường thẳng song song $\Delta$ và cắt $d_1, d_2$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $A = d \cap d_1 \implies A(t)$ và $B = d \cap d_2 \implies B(t')$.
+        \[
+            d \mathbin{/\!/} \Delta \iff \vec{AB} = k \vec{u}_\Delta \implies \text{tìm } t, t' \implies \text{tọa độ } A.
+        \]
+        \[
+            d\colon \begin{cases} 
+                \text{Qua } A \\ 
+                \text{VTCP } \vec{u}_d = \vec{u}_\Delta 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            \draw[thick, draw=softgray!90] (0.2, 2.2) -- (3.8, 2.2) node[right, font=\bfseries\small] {$\Delta$};
+            \draw[->, >=stealth, line width=1.1pt, accentred] (1.3, 2.2) -- ++(1.2, 0) node[above=1pt, font=\footnotesize] {$\vec{u}_\Delta$};
+
+            \draw[thick, draw=deepblue] (0.2, 1.0) -- (4.2, 1.0) node[right, font=\bfseries\small] {$d$};
+            \coordinate (A) at (1.2, 1.0);
+            \coordinate (B) at (3.1, 1.0);
+            \fill[accentred] (A) circle (2pt) node[below left=1pt, font=\small] {$A$};
+            \fill[accentred] (B) circle (2pt) node[below right=1pt, font=\small] {$B$};
+
+            \draw[thick, draw=softgray!90] (0.5, 1.8) -- (1.8, 0.1) node[below, font=\small] {$d_1$};
+            \draw[thick, draw=softgray!90] (3.6, 1.9) -- (2.6, 0.1) node[below, font=\small] {$d_2$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho đường thẳng $\Delta\colon \dfrac{x - 1}{1} = \dfrac{y + 2}{-1} = \dfrac{z}{2}$ và hai đường thẳng $d_1\colon \dfrac{x - 2}{2} = \dfrac{y - 1}{1} = \dfrac{z + 1}{-1}$, $d_2\colon \dfrac{x}{1} = \dfrac{y + 1}{2} = \dfrac{z - 2}{1}$. Viết phương trình tham số của đường thẳng $d$ song song với $\Delta$ đồng thời cắt cả $d_1$ và $d_2$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình chính tắc của đường thẳng $d$ song song với trục $Oz$ đồng thời cắt cả hai đường thẳng $d_1\colon \begin{cases} x = 2 + t \\ y = 1 - t \\ z = 3t \end{cases}$ và $d_2\colon \begin{cases} x = 1 - 2t' \\ y = 3 + t' \\ z = 2 - t' \end{cases}$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 12: ĐƯỜNG VUÔNG GÓC CHUNG CỦA HAI ĐƯỜNG THẲNG CHÉO NHAU
+% =========================================================================
+\dangbox{Dạng 12}{Lập phương trình đường vuông góc chung của hai đường thẳng chéo nhau}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $A = \Delta \cap d_1 \implies A(t)$ và $B = \Delta \cap d_2 \implies B(t')$.
+        \[
+            \begin{cases} 
+                \vec{AB} \cdot \vec{u}_{d_1} = 0 \\ 
+                \vec{AB} \cdot \vec{u}_{d_2} = 0 
+            \end{cases} 
+            \implies \text{tìm } t, t' \implies \text{tọa độ } A, B.
+        \]
+        \[
+            \Delta\colon \begin{cases} 
+                \text{Qua } A \\ 
+                \text{VTCP } \vec{u}_\Delta = \vec{AB} 
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue] (0.2, 1.8) -- (3.8, 2.3) node[right, font=\bfseries\small] {$d_1$};
+            \draw[thick, draw=deepblue] (0.2, 0.4) -- (3.8, -0.1) node[right, font=\bfseries\small] {$d_2$};
+            
+            \coordinate (A) at (2.0, 2.05);
+            \coordinate (B) at (2.0, 0.15);
+            
+            \fill[deepblue] (A) circle (2pt) node[above=2pt, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[below=2pt, font=\small] {$B$};
+            
+            \draw[line width=1.3pt, accentred] (A) -- (B) node[midway, right=2pt, font=\small] {$\Delta$};
+            
+            \draw[accentred] (2.0, 1.83) -- (2.22, 1.86) -- (2.22, 2.08);
+            \draw[accentred] (2.0, 0.37) -- (2.22, 0.34) -- (2.22, 0.12);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{15}{hỏi}{%
+Trong không gian $Oxyz$, cho hai đường thẳng chéo nhau $d_1\colon \dfrac{x - 1}{2} = \dfrac{y - 2}{1} = \dfrac{z + 1}{2}$ và $d_2\colon \dfrac{x + 1}{1} = \dfrac{y - 1}{1} = \dfrac{z - 2}{-1}$. Tìm tọa độ hai điểm $A \in d_1, B \in d_2$ sao cho $AB$ là đoạn vuông góc chung của $d_1$ và $d_2$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{3}{hỏi}{%
+Từ kết quả tìm được ở câu trên, hãy viết phương trình tham số của đường thẳng $\Delta$ là đường vuông góc chung của hai đường thẳng $d_1$ và $d_2$.
+}{}
+
+\newpage
+% =========================================================================
+% DẠNG 13: HÌNH CHIẾU VUÔNG GÓC CỦA ĐIỂM LÊN MẶT PHẲNG
+% =========================================================================
+\dangbox{Dạng 13}{Tìm hình chiếu vuông góc của điểm lên mặt phẳng}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Tìm hình chiếu vuông góc $H$ của điểm $M$ lên $(P)$:
+        \begin{enumerate}
+            \item Viết phương trình đường thẳng $\Delta$ qua $M$ và $\Delta \perp (P)$:
+            \[
+                \Delta\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_\Delta = \vec{n}_{(P)} \end{cases}
+            \]
+            \item Tọa độ $H$ là giao điểm của $\Delta$ và $(P)$ ($H = \Delta \cap (P)$).
+        \end{enumerate}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            % Mặt phẳng (P)
+            \draw[thick, fill=white, draw=deepblue] (0,0) -- (3.8,0) -- (4.8,1.3) -- (1.0,1.3) -- cycle;
+            \node[deepblue, font=\bfseries\small] at (0.6, 0.25) {$(P)$};
+
+            % Tọa độ
+            \coordinate (H) at (2.4, 0.65);
+            \coordinate (M) at (2.4, 2.3);
+
+            % Đường thẳng delta vuông góc đâm xuyên
+            \draw[thick, draw=accentred] (M) -- (H);
+            \draw[dashed, thick, draw=accentred] (H) -- (2.4, -0.3) node[below, font=\bfseries\small] {$\Delta$};
+
+            % Điểm M và H
+            \fill[deepblue] (M) circle (2pt) node[above right=1pt, font=\small] {$M$};
+            \fill[accentred] (H) circle (2pt) node[below right=1pt, font=\small] {$H$};
+
+            % Ký hiệu vuông góc
+            \draw[accentred, thin] (2.4, 0.85) -- (2.6, 0.85) -- (2.6, 0.65);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $M(1; -2; 3)$ và mặt phẳng $(P)\colon 2x - y + 2z + 1 = 0$. Tìm tọa độ hình chiếu vuông góc $H$ của điểm $M$ lên mặt phẳng $(P)$, từ đó tìm tọa độ điểm $M'$ đối xứng với $M$ qua mặt phẳng $(P)$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(\alpha)\colon x + 2y - z - 6 = 0$. Tìm tọa độ hình chiếu vuông góc của gốc tọa độ $O$ lên mặt phẳng $(\alpha)$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% DẠNG 14: HÌNH CHIẾU VUÔNG GÓC CỦA ĐIỂM LÊN ĐƯỜNG THẲNG
+% =========================================================================
+\dangbox{Dạng 14}{Tìm hình chiếu vuông góc của điểm lên đường thẳng}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Tìm hình chiếu vuông góc $H$ của điểm $M$ lên đường thẳng $d$:
+        \[
+            \begin{cases}
+                H \in d \implies H(t) \\
+                MH \perp d \iff \vec{MH} \cdot \vec{u}_d = 0
+            \end{cases}
+        \]
+        Giải tìm $t \implies$ Tọa độ hình chiếu $H$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92, line join=round, line cap=round]
+            % Đường thẳng d nằm nghiêng nhẹ
+            \draw[thick, draw=deepblue] (0.2, 0.4) -- (4.0, 1.0) node[right, font=\bfseries\small] {$d$};
+
+            \coordinate (H) at (2.0, 0.7);
+            \coordinate (M) at (1.8, 2.2);
+
+            % Đoạn MH vuông góc
+            \draw[thick, draw=accentred] (M) -- (H);
+
+            % Điểm M và H
+            \fill[deepblue] (M) circle (2pt) node[above=2pt, font=\small] {$M$};
+            \fill[accentred] (H) circle (2pt);
+            \node[below right=2pt, font=\small, accentred] at (H) {$H$};
+
+            % Ký hiệu vuông góc xoay theo phương đường d
+            \draw[accentred, thin] ($(H)+(-0.03, 0.22)$) -- ($(H)+(0.19, 0.25)$) -- ($(H)+(0.22, 0.03)$);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $A(2; 1; -1)$ và đường thẳng $d\colon \dfrac{x - 1}{2} = \dfrac{y + 2}{1} = \dfrac{z - 3}{-1}$. Tìm tọa độ hình chiếu vuông góc $H$ của điểm $A$ lên đường thẳng $d$.
+}{}
+\drawdashlinesfull
+
+\vspace{0.35cm}
+
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $M(1; 3; -2)$ và đường thẳng $\Delta\colon \begin{cases} x = 2 + t \\ y = -1 - t \\ z = 1 + 2t \end{cases}$. Tìm tọa độ điểm $M'$ đối xứng với điểm $M$ qua đường thẳng $\Delta$.
+}{}
+\drawdashlinesfull
+
+\newpage
+% =========================================================================
+% CHUYÊN ĐỀ 1: CÔNG THỨC KHOẢNG CÁCH
+% =========================================================================
+\dangbox{Chuyên đề}{Công thức tính khoảng cách liên quan đến đường thẳng}
+
+\begin{theorybox}
+    \textbf{1. Khoảng cách từ điểm $A$ đến đường thẳng $d$:}
+    \[
+        d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d \end{cases} 
+        \implies d(A, d) = \frac{\left| [\vec{AM}, \vec{u}_d] \right|}{|\vec{u}_d|}
+    \]
+    
+    \vspace{0.15cm}
+    \textbf{2. Khoảng cách giữa hai đường thẳng $d_1$ và $d_2$:}
+    \[
+        d_1\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_1 \end{cases}, \quad 
+        d_2\colon \begin{cases} \text{Qua } N \\ \text{VTCP } \vec{u}_2 \end{cases}
+    \]
+    \begin{itemize}
+        \item \textbf{Trường hợp 1 ($d_1 \mathbin{/\!/} d_2$):} $d(d_1, d_2) = d(M, d_2) = \dfrac{\left| [\vec{MN}, \vec{u}_2] \right|}{|\vec{u}_2|}$.
+        \item \textbf{Trường hợp 2 ($d_1, d_2$ chéo nhau):} Đặt $\vec{u} = [\vec{u}_1, \vec{u}_2] \implies d(d_1, d_2) = \dfrac{\left| \vec{MN} \cdot \vec{u} \right|}{|\vec{u}|}$.
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% Câu 1: Điểm đến đường thẳng
+\questionLinesManual{14}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $A(2; 1; -1)$ và đường thẳng $d\colon \dfrac{x - 1}{2} = \dfrac{y + 1}{1} = \dfrac{z}{-2}$. Tính khoảng cách từ điểm $A$ đến đường thẳng $d$.
+}{}
+
+\vspace{0.35cm}
+
+% Câu 2: Hai đường thẳng song song
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, cho hai đường thẳng:
+\[
+    d_1\colon \frac{x - 1}{2} = \frac{y + 2}{-1} = \frac{z - 3}{1} \quad \text{và} \quad 
+    d_2\colon \frac{x + 2}{2} = \frac{y - 1}{-1} = \frac{z + 1}{1}
+\]
+Tính khoảng cách giữa hai đường thẳng $d_1$ và $d_2$.
+}{}
+
+\vspace{0.35cm}
+
+% Câu 3: Hai đường thẳng chéo nhau
+\questionLinesManual{10}{hỏi}{%
+Trong không gian $Oxyz$, cho hai đường thẳng:
+\[
+    d_1\colon \begin{cases} x = 1 + t \\ y = 2 - t \\ z = -1 + 2t \end{cases} \quad \text{và} \quad 
+    d_2\colon \frac{x - 2}{2} = \frac{y + 1}{1} = \frac{z - 1}{-1}
+\]
+Chứng minh $d_1$ và $d_2$ chéo nhau, từ đó tính khoảng cách giữa $d_1$ và $d_2$.
+}{}
+
+\newpage
+% =========================================================================
+% CHUYÊN ĐỀ 2: VỊ TRÍ TƯƠNG ĐỐI GIỮA HAI ĐƯỜNG THẲNG
+% =========================================================================
+\dangbox{Chuyên đề}{Vị trí tương đối giữa hai đường thẳng}
+
+\begin{theorybox}
+    Cho hai đường thẳng:
+    \[
+        d_1\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_1 \end{cases} \quad \text{và} \quad 
+        d_2\colon \begin{cases} \text{Qua } N \\ \text{VTCP } \vec{u}_2 \end{cases}.
+        \quad \text{Đặt } \vec{u} = [\vec{u}_1, \vec{u}_2]
+    \]
+    
+    \vspace{0.1cm}
+    \centering
+    \begin{tikzpicture}[>=stealth, font=\small]
+        % Gốc: Tích có hướng hai VTCP
+        \node[draw=deepblue, thick, rounded corners=4pt, fill=white, inner sep=5pt] (root) at (0, 0) {$[\vec{u}_1, \vec{u}_2]$};
+
+        % Nhánh trên: = 0 (cùng phương)
+        \node[draw=deepblue, rounded corners=4pt, fill=white, inner sep=4pt] (node_up) at (4.5, 1.3) {$[\vec{MN}, \vec{u}_1]$};
+        \draw[thick, draw=deepblue] (root) -- (1.5, 1.3) node[midway, above left=1pt, font=\footnotesize\bfseries, accentred] {$= \vec{0}$} -- (node_up);
+
+        % Nhánh con nhánh trên: Trùng / Song song
+        \coordinate (end_trung) at (8.0, 1.9);
+        \coordinate (end_ss) at (8.0, 0.7);
+        \draw[thick, draw=deepblue] (node_up) -- (6.3, 1.9) node[midway, above=1pt, font=\footnotesize\bfseries, accentred] {$= \vec{0}$} -- (end_trung) 
+            node[right, font=\bfseries] {$d_1 \equiv d_2$};
+        \draw[thick, draw=deepblue] (node_up) -- (6.3, 0.7) node[midway, below=1pt, font=\footnotesize\bfseries, accentred] {$\neq \vec{0}$} -- (end_ss) 
+            node[right, font=\bfseries] {$d_1 \mathbin{/\!/} d_2$};
+
+        % Nhánh dưới: \neq 0 (không cùng phương)
+        \node[draw=deepblue, rounded corners=4pt, fill=white, inner sep=4pt] (node_down) at (4.5, -1.3) {$\vec{MN} \cdot \vec{u}$};
+        \draw[thick, draw=deepblue] (root) -- (1.5, -1.3) node[midway, below left=1pt, font=\footnotesize\bfseries, accentred] {$\neq \vec{0}$} -- (node_down);
+
+        % Nhánh con nhánh dưới: Cắt nhau / Chéo nhau
+        \coordinate (end_cat) at (8.0, -0.7);
+        \coordinate (end_cheo) at (8.0, -1.9);
+        \draw[thick, draw=deepblue] (node_down) -- (6.3, -0.7) node[midway, above=1pt, font=\footnotesize\bfseries, accentred] {$= 0$} -- (end_cat) 
+            node[right, font=\bfseries] {$d_1 \text{ cắt } d_2$};
+        \draw[thick, draw=deepblue] (node_down) -- (6.3, -1.9) node[midway, below=1pt, font=\footnotesize\bfseries, accentred] {$\neq 0$} -- (end_cheo) 
+            node[right, font=\bfseries] {$d_1 \text{ chéo } d_2$};
+    \end{tikzpicture}
+\end{theorybox}
+
+\vspace{0.2cm}
+
+% Câu 1: Trùng nhau
+\questionLinesManual{11}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai đường thẳng:
+\[
+    d_1\colon \frac{x - 1}{2} = \frac{y + 1}{-1} = \frac{z - 2}{3} \quad \text{và} \quad 
+    d_2\colon \begin{cases} x = 3 - 4t \\ y = -2 + 2t \\ z = 5 - 6t \end{cases}
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 2: Song song
+\questionLinesManual{11}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai đường thẳng:
+\[
+    d_1\colon \frac{x - 2}{1} = \frac{y}{2} = \frac{z + 1}{-1} \quad \text{và} \quad 
+    d_2\colon \frac{x + 1}{-2} = \frac{y - 3}{-4} = \frac{z}{2}
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 3: Cắt nhau
+\questionLinesManual{11}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối và tìm tọa độ giao điểm (nếu có) của hai đường thẳng:
+\[
+    d_1\colon \begin{cases} x = 1 + 2t \\ y = -1 + t \\ z = 2 - t \end{cases} \quad \text{và} \quad 
+    d_2\colon \frac{x - 3}{1} = \frac{y}{2} = \frac{z - 1}{1}
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 4: Chéo nhau
+\questionLinesManual{11}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai đường thẳng:
+\[
+    d_1\colon \frac{x - 1}{1} = \frac{y + 2}{2} = \frac{z}{3} \quad \text{và} \quad 
+    d_2\colon \frac{x + 2}{2} = \frac{y - 1}{1} = \frac{z - 1}{1}
+\]
+}{}
+
+\end{document}
