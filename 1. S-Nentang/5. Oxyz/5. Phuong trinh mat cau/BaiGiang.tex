@@ -1,0 +1,673 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: NỀN TẢNG VỀ PHƯƠNG TRÌNH MẶT CẦU TRONG KHÔNG GIAN
+% =========================================================================
+\titlebox{Chủ đề: Oxyz}{Phương trình mặt cầu}{Oxyz: Phương trình mặt cầu}
+
+\vspace{-0.25cm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\faLightbulb\hskip 6pt NỀN TẢNG: CẦN GÌ ĐỂ XÁC ĐỊNH MẶT CẦU?}}
+    \par\vspace{4pt}
+    \begin{minipage}[c]{0.65\linewidth}
+        Để xác định duy nhất mặt cầu $(S)$, ta luôn cần đủ \textbf{2 yếu tố}:
+        \[
+            \begin{cases} 
+                \textbf{Tâm:} & I(a; b; c) \\ 
+                \textbf{Bán kính:} & R > 0
+            \end{cases}
+        \]
+        \textbf{1. Dạng chính tắc của mặt cầu $(S)$:}
+        \[
+            (x - a)^2 + (y - b)^2 + (z - c)^2 = R^2
+        \]
+        \textbf{2. Dạng khai triển tổng quát:}
+        \[
+            x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0
+        \]
+        \textbf{Điều kiện để là phương trình mặt cầu:}
+        \[
+            \mathbf{a^2 + b^2 + c^2 - d > 0}
+        \]
+        Khi đó, tâm là $I(a; b; c)$ và bán kính $R = \sqrt{a^2 + b^2 + c^2 - d}$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.32\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue] (0,0) circle (1.5cm);
+            \draw[thick, draw=deepblue] (-1.5,0) arc (180:360:1.5cm and 0.45cm);
+            \draw[dashed, draw=deepblue] (1.5,0) arc (0:180:1.5cm and 0.45cm);
+            
+            \coordinate (I) at (0,0);
+            \fill[deepblue] (I) circle (2pt) node[left=2pt, font=\small] {$I$};
+            
+            \coordinate (M) at (1.06, -1.06);
+            \fill[deepblue] (M) circle (2pt) node[below right, font=\small] {$M$};
+            \draw[thick, accentred] (I) -- (M) node[midway, above right, font=\footnotesize] {$R$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.15cm}
+
+% Câu 1: Tìm tâm và bán kính từ dạng chính tắc
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x - 1)^2 + (y + 2)^2 + (z - 4)^2 = 9$. Tìm tọa độ tâm $I$ và độ dài bán kính $R$ của mặt cầu $(S)$.
+\begin{tasks}(2)
+    \task $I(1; -2; 4)$ và $R = 3$.
+    \task $I(-1; 2; -4)$ và $R = 3$.
+    \task $I(1; -2; 4)$ và $R = 9$.
+    \task $I(-1; 2; -4)$ và $R = 9$.
+\end{tasks}
+}{}
+
+\vspace{0.2cm}
+
+% Câu 2: Tìm tâm và bán kính từ dạng khai triển tổng quát
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2 + y^2 + z^2 - 4x + 2y - 6z - 2 = 0$. Tìm tọa độ tâm $I$ và độ dài bán kính $R$ của mặt cầu $(S)$.
+\begin{tasks}(2)
+    \task $I(-2; 1; -3)$ và $R = 4$.
+    \task $I(2; -1; 3)$ và $R = 4$.
+    \task $I(2; -1; 3)$ và $R = 16$.
+    \task $I(-4; 2; -6)$ và $R = \sqrt{14}$.
+\end{tasks}
+}{}
+
+\vspace{0.2cm}
+
+% Câu 3: Điều kiện để là phương trình mặt cầu
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, tìm tất cả các giá trị thực của tham số $m$ để phương trình $x^2 + y^2 + z^2 - 2x + 4y - 4z + m = 0$ là phương trình của một mặt cầu.
+\begin{tasks}(2)
+    \task $m < 9$.
+    \task $m \le 9$.
+    \task $m > 9$.
+    \task $m < 21$.
+\end{tasks}
+}{}
+
+\newpage
+
+\newpage
+
+% =========================================================================
+% TRANG 2: DẠNG 1 (BIẾT TÂM I VÀ BÁN KÍNH R)
+% =========================================================================
+\dangbox{Dạng 1}{Viết phương trình mặt cầu biết tâm $I(a; b; c)$ và bán kính $R$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Mặt cầu $(S)$ xác định bởi:
+        \[
+            (S)\colon \begin{cases} 
+                \text{Tâm } I(a; b; c) \\ 
+                \text{Bán kính } R
+            \end{cases}
+        \]
+        \textbf{Phương trình chính tắc của mặt cầu $(S)$:}
+        \[
+            (x - a)^2 + (y - b)^2 + (z - c)^2 = R^2
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+            \draw[thick, draw=deepblue] (0,0) circle (1.4cm);
+            \draw[thick, draw=deepblue] (-1.4,0) arc (180:360:1.4cm and 0.4cm);
+            \draw[dashed, draw=deepblue] (1.4,0) arc (0:180:1.4cm and 0.4cm);
+            
+            \coordinate (I) at (0,0);
+            \fill[deepblue] (I) circle (2pt) node[left=2pt, font=\small] {$I$};
+            \coordinate (Rpt) at (1.4, 0);
+            \draw[thick, accentred] (I) -- (Rpt) node[midway, above, font=\footnotesize] {$R$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(2; -1; 3)$ và bán kính $R = 4$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm là gốc tọa độ $O(0;0;0)$ và bán kính $R = \sqrt{5}$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 3: DẠNG 2 (TÂM I VÀ ĐI QUA ĐIỂM A)
+% =========================================================================
+\dangbox{Dạng 2}{Viết phương trình mặt cầu có tâm $I$ và đi qua điểm $A$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (S)\colon \begin{cases} 
+                \text{Tâm } I(a; b; c) \\ 
+                \text{Bán kính } R = IA
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+            \draw[thick, draw=deepblue] (0,0) circle (1.4cm);
+            \draw[thick, draw=deepblue] (-1.4,0) arc (180:360:1.4cm and 0.4cm);
+            \draw[dashed, draw=deepblue] (1.4,0) arc (0:180:1.4cm and 0.4cm);
+            
+            \coordinate (I) at (0,0);
+            \coordinate (A) at (1.0, 0.98);
+            \fill[deepblue] (I) circle (2pt) node[below left=1pt, font=\small] {$I$};
+            \fill[accentred] (A) circle (2pt) node[above right=1pt, font=\small] {$A$};
+            
+            \draw[thick, accentred] (I) -- (A);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(2; -1; 1)$ và đi qua điểm $A(1; 2; -1)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(-3; 0; 2)$ và đi qua gốc tọa độ $O(0;0;0)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 4: DẠNG 3 (ĐƯỜNG KÍNH AB)
+% =========================================================================
+\dangbox{Dạng 3}{Viết phương trình mặt cầu có đường kính $AB$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (S)\colon \begin{cases} 
+                \text{Tâm } I \text{ là trung điểm của đoạn } AB \\[4pt]
+                \text{Bán kính } R = \dfrac{AB}{2} = IA
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.95]
+            \draw[thick, draw=deepblue] (0,0) circle (1.4cm);
+            \draw[thick, draw=deepblue] (-1.4,0) arc (180:360:1.4cm and 0.4cm);
+            \draw[dashed, draw=deepblue] (1.4,0) arc (0:180:1.4cm and 0.4cm);
+            
+            \coordinate (A) at (-1.4, 0);
+            \coordinate (B) at (1.4, 0);
+            \coordinate (I) at (0, 0);
+            
+            \draw[thick, accentred] (A) -- (B);
+            \fill[deepblue] (A) circle (2pt) node[left, font=\small] {$A$};
+            \fill[deepblue] (B) circle (2pt) node[right, font=\small] {$B$};
+            \fill[accentred] (I) circle (2pt) node[below=2pt, font=\small] {$I$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(2; 4; 1)$ và $B(-2; 2; -3)$. Viết phương trình mặt cầu $(S)$ nhận đoạn thẳng $AB$ làm đường kính.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1; -3; 2)$ và $B(3; 1; -4)$. Viết phương trình mặt cầu $(S)$ có đường kính là $AB$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 5: DẠNG 4 (TIẾP XÚC TRỤC HOẶC MẶT PHẲNG TỌA ĐỘ)
+% =========================================================================
+\dangbox{Dạng 4}{Viết phương trình mặt cầu tâm $I$ tiếp xúc trục hoặc mặt phẳng tọa độ}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (S)\colon \begin{cases} 
+                \text{Tâm } I(a; b; c) \\[4pt]
+                \text{Bán kính } R = d(I, \text{trục hoặc mp tọa độ})
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue, fill=white] (-1.8,-1.2) -- (1.8,-1.2) -- (2.4,-0.4) -- (-1.2,-0.4) -- cycle;
+            \node[deepblue, font=\footnotesize] at (1.5,-1.0) {$(Oxy)$};
+            
+            \draw[thick, draw=deepblue] (0,0.3) circle (1.2cm);
+            \draw[thick, draw=deepblue] (-1.2,0.3) arc (180:360:1.2cm and 0.35cm);
+            \draw[dashed, draw=deepblue] (1.2,0.3) arc (0:180:1.2cm and 0.35cm);
+            
+            \coordinate (I) at (0,0.3);
+            \coordinate (H) at (0,-0.9);
+            \fill[deepblue] (I) circle (2pt) node[left=2pt, font=\small] {$I$};
+            \fill[accentred] (H) circle (2pt) node[below=1pt, font=\small] {$H$};
+            \draw[dashed, thick, accentred] (I) -- (H) node[midway, right=1pt, font=\footnotesize] {$R$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(1; -2; 3)$ và tiếp xúc với mặt phẳng tọa độ $(Oxy)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{7}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(-3; 2; 1)$ và tiếp xúc với trục hoành $Ox$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 6: DẠNG 5 (TIẾP XÚC VỚI MẶT PHẲNG (P))
+% =========================================================================
+\dangbox{Dạng 5}{Viết phương trình mặt cầu tâm $I$ và tiếp xúc với mặt phẳng $(P)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        \[
+            (S)\colon \begin{cases} 
+                \text{Tâm } I(a; b; c) \\[4pt]
+                \text{Bán kính } R = d(I, (P))
+            \end{cases}
+        \]
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue, fill=white] (-1.8,-1.2) -- (1.8,-1.2) -- (2.4,-0.3) -- (-1.2,-0.3) -- cycle;
+            \node[deepblue, font=\bfseries\footnotesize] at (1.8,-0.9) {$(P)$};
+            
+            \draw[thick, draw=deepblue] (0,0.4) circle (1.2cm);
+            \draw[thick, draw=deepblue] (-1.2,0.4) arc (180:360:1.2cm and 0.35cm);
+            \draw[dashed, draw=deepblue] (1.2,0.4) arc (0:180:1.2cm and 0.35cm);
+            
+            \coordinate (I) at (0,0.4);
+            \coordinate (H) at (0,-0.8);
+            \fill[deepblue] (I) circle (2pt) node[left=2pt, font=\small] {$I$};
+            \fill[accentred] (H) circle (2pt) node[below=1pt, font=\small] {$H$};
+            \draw[dashed, thick, accentred] (I) -- (H) node[midway, right=1pt, font=\footnotesize] {$R=d$};
+            \draw[accentred] (0,-0.6) -- (0.2,-0.6) -- (0.2,-0.8);
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $I(2; 1; -2)$ và mặt phẳng $(P)\colon 2x - 2y + z + 5 = 0$. Viết phương trình mặt cầu $(S)$ có tâm $I$ và tiếp xúc với mặt phẳng $(P)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ có tâm $I(1; -1; 2)$ và tiếp xúc với mặt phẳng $(Q)\colon x + 2y - 2z - 6 = 0$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 7: DẠNG 6 (ĐI QUA BỐN ĐIỂM KHÔNG ĐỒNG PHẲNG)
+% =========================================================================
+\dangbox{Dạng 6}{Viết phương trình mặt cầu đi qua bốn điểm $A, B, C, D$ không đồng phẳng}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $(S)\colon x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0$.
+        \begin{itemize}
+            \item $A, B, C, D \in (S)$ không đồng phẳng $\implies 4$ phương trình.
+        \end{itemize}
+        Giải hệ 4 phương trình bậc nhất 4 ẩn tìm $a, b, c, d$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue] (0,0) circle (1.4cm);
+            \draw[thick, draw=deepblue] (-1.4,0) arc (180:360:1.4cm and 0.4cm);
+            \draw[dashed, draw=deepblue] (1.4,0) arc (0:180:1.4cm and 0.4cm);
+            
+            \coordinate (A) at (-0.9, 0.7);
+            \coordinate (B) at (1.0, 0.8);
+            \coordinate (C) at (-0.4, -1.0);
+            \coordinate (D) at (1.1, -0.6);
+            
+            \fill[deepblue] (A) circle (1.8pt) node[above left, font=\footnotesize] {$A$};
+            \fill[deepblue] (B) circle (1.8pt) node[above right, font=\footnotesize] {$B$};
+            \fill[deepblue] (C) circle (1.8pt) node[below left, font=\footnotesize] {$C$};
+            \fill[deepblue] (D) circle (1.8pt) node[below right, font=\footnotesize] {$D$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ đi qua gốc tọa độ $O(0;0;0)$ và ba điểm $A(2; 0; 0)$, $B(0; 4; 0)$, $C(0; 0; 6)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{9}{hỏi}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu $(S)$ ngoại tiếp tứ diện $ABCD$ với $A(1; 1; 1)$, $B(1; 2; 1)$, $C(1; 1; 2)$, $D(2; 1; 1)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 8: DẠNG 7 (QUA 3 ĐIỂM VÀ TÂM THUỘC MẶT PHẲNG (P))
+% =========================================================================
+\dangbox{Dạng 7}{Mặt cầu qua ba điểm $A, B, C$ và có tâm thuộc mặt phẳng $(P)$}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi $(S)\colon x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0$.
+        \begin{itemize}
+            \item $A, B, C \in (S) \implies 3$ phương trình.
+            \item Tâm $I(a; b; c) \in (P) \implies 1$ phương trình.
+        \end{itemize}
+        Giải hệ 4 phương trình bậc nhất 4 ẩn tìm $a, b, c, d$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue, fill=white] (-1.8,-0.2) -- (1.8,-0.2) -- (2.4,0.6) -- (-1.2,0.6) -- cycle;
+            \node[deepblue, font=\bfseries\footnotesize] at (1.8,0.1) {$(P)$};
+            
+            \draw[thick, draw=deepblue] (0,0.2) circle (1.3cm);
+            \draw[thick, draw=deepblue] (-1.3,0.2) arc (180:360:1.3cm and 0.35cm);
+            \draw[dashed, draw=deepblue] (1.3,0.2) arc (0:180:1.3cm and 0.35cm);
+            
+            \coordinate (I) at (0,0.2);
+            \fill[deepblue] (I) circle (2pt) node[below right=1pt, font=\small] {$I$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho ba điểm $A(1; 0; 0)$, $B(0; 1; 0)$, $C(0; 0; 1)$. Viết phương trình mặt cầu $(S)$ đi qua ba điểm $A, B, C$ và có tâm thuộc mặt phẳng $(P)\colon x + y + z - 3 = 0$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho ba điểm $A(1; 1; 0)$, $B(0; 2; 1)$, $C(1; 0; 2)$. Viết phương trình mặt cầu $(S)$ đi qua ba điểm $A, B, C$ và có tâm thuộc mặt phẳng tọa độ $(Oxy)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 9: DẠNG 8 (CẮT MẶT PHẲNG THEO GIAO TUYẾN ĐƯỜNG TRÒN)
+% =========================================================================
+\dangbox{Dạng 8}{Mặt cầu tâm $I$ cắt mặt phẳng $(P)$ theo thiết diện đường tròn}
+
+\begin{theorybox}
+    \begin{minipage}[c]{0.58\linewidth}
+        Gọi:
+        \begin{itemize}
+            \item $d = d(I, (P))$ là khoảng cách từ tâm $I$ đến $(P)$.
+            \item $r$ là bán kính đường tròn giao tuyến.
+        \end{itemize}
+        \textbf{Mối liên hệ định lý Pytago:}
+        \[
+            R^2 = d^2 + r^2
+        \]
+        Chu vi $C = 2\pi r$, diện tích hình tròn $S = \pi r^2$.
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{0.40\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=0.92]
+            \draw[thick, draw=deepblue, fill=white] (-1.8,-0.5) -- (1.8,-0.5) -- (2.4,0.4) -- (-1.2,0.4) -- cycle;
+            
+            \draw[thick, draw=accentred] (0,-0.1) ellipse (0.9cm and 0.3cm);
+            
+            \draw[thick, draw=deepblue] (0,0.5) circle (1.4cm);
+            
+            \coordinate (I) at (0,0.5);
+            \coordinate (H) at (0,-0.1);
+            \coordinate (M) at (0.9,-0.1);
+            
+            \fill[deepblue] (I) circle (2pt) node[left=2pt, font=\small] {$I$};
+            \fill[accentred] (H) circle (1.8pt) node[below left, font=\footnotesize] {$H$};
+            \fill[accentred] (M) circle (1.8pt);
+            
+            \draw[dashed, thick, deepblue] (I) -- (H) node[midway, left=1pt, font=\footnotesize] {$d$};
+            \draw[dashed, thick, accentred] (H) -- (M) node[midway, below=1pt, font=\footnotesize] {$r$};
+            \draw[thick, accentred] (I) -- (M) node[midway, above right=1pt, font=\footnotesize] {$R$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $I(1; 2; -2)$ và mặt phẳng $(P)\colon 2x + 2y - z + 5 = 0$. Viết phương trình mặt cầu $(S)$ có tâm $I$ và cắt mặt phẳng $(P)$ theo giao tuyến là một đường tròn có bán kính $r = 4$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho điểm $I(2; -1; 3)$ và mặt phẳng $(Q)\colon x - 2y + 2z - 1 = 0$. Viết phương trình mặt cầu $(S)$ có tâm $I$ và cắt mặt phẳng $(Q)$ theo thiết diện là một hình tròn có diện tích bằng $16\pi$.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 10: CHUYÊN ĐỀ VỊ TRÍ TƯƠNG ĐỐI CỦA ĐIỂM VÀ MẶT CẦU
+% =========================================================================
+\dangbox{Chuyên đề}{Vị trí tương đối của điểm và mặt cầu}
+
+\begin{theorybox}
+    Cho mặt cầu $(S)$ có tâm $I$, bán kính $R$ và một điểm $M$ tùy ý trong không gian. Khi đó vị trí tương đối giữa điểm $M$ và mặt cầu $(S)$ được xác định bởi:
+    \begin{itemize}
+        \item \textbf{$M$ nằm trong mặt cầu:} $\iff IM < R$.
+        \item \textbf{$M$ nằm trên mặt cầu:} $\iff IM = R$.
+        \item \textbf{$M$ nằm ngoài mặt cầu:} $\iff IM > R$.
+    \end{itemize}
+    \vspace{0.05cm}
+    \centering
+    \begin{tikzpicture}[scale=0.92]
+        \draw[thick, draw=deepblue] (0,0) circle (1.4cm);
+        \draw[thick, draw=deepblue] (-1.4,0) arc (180:360:1.4cm and 0.4cm);
+        \draw[dashed, draw=deepblue] (1.4,0) arc (0:180:1.4cm and 0.4cm);
+        
+        \coordinate (I) at (0,0);
+        \coordinate (M1) at (-0.5, 0.4);
+        \coordinate (M2) at (1.0, 0.98);
+        \coordinate (M3) at (2.0, 0.7);
+        
+        \fill[deepblue] (I) circle (2pt) node[left=1pt, font=\small] {$I$};
+        \fill[accentred] (M1) circle (2pt) node[below=1pt, font=\footnotesize] {$M_1 \text{ (trong)}$};
+        \fill[accentred] (M2) circle (2pt) node[above right=1pt, font=\footnotesize] {$M_2 \text{ (trên)}$};
+        \fill[accentred] (M3) circle (2pt) node[above right=1pt, font=\footnotesize] {$M_3 \text{ (ngoài)}$};
+        
+        \draw[dashed, thick, deepblue] (I) -- (M2);
+    \end{tikzpicture}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 25$. Xét vị trí tương đối của các điểm $A(1; -2; 3)$, $B(4; 2; 3)$, $C(5; 1; 3)$ đối với mặt cầu $(S)$.
+}{}
+
+\vspace{0.35cm}
+
+\questionLinesManual{8}{hỏi}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2 + y^2 + z^2 - 4x + 2y - 2z - 3 = 0$ và điểm $M(m; 1; -1)$. Tìm tất cả các giá trị thực của tham số $m$ để điểm $M$ nằm ngoài mặt cầu $(S)$.
+}{}
+
+\newpage
+
+% =========================================================================
+% CHUYÊN ĐỀ: VỊ TRÍ TƯƠNG ĐỐI CỦA HAI MẶT CẦU (ĐỦ 6 TRƯỜNG HỢP)
+% =========================================================================
+\dangbox{Chuyên đề}{Vị trí tương đối của hai mặt cầu $(S_1)$ và $(S_2)$}
+
+\begin{theorybox}
+    Cho $(S_1)$ có tâm $I_1$, bán kính $R_1$ và $(S_2)$ có tâm $I_2$, bán kính $R_2$ ($R_1 \ge R_2$). Đặt khoảng cách giữa hai tâm $d = I_1I_2$:
+    \begin{itemize}
+        \item \textbf{1. Trùng nhau:} $d = 0$ và $R_1 = R_2$ (tức $I_1 \equiv I_2$).
+        \item \textbf{2. Ở ngoài nhau:} $d > R_1 + R_2$.
+        \item \textbf{3. Tiếp xúc ngoài:} $d = R_1 + R_2$.
+        \item \textbf{4. Cắt nhau theo đường tròn:} $|R_1 - R_2| < d < R_1 + R_2$.
+        \item \textbf{5. Tiếp xúc trong:} $d = R_1 - R_2 > 0$.
+        \item \textbf{6. Đựng nhau (trong nhau):} $d < R_1 - R_2$ (khi $d=0, R_1 > R_2$ là hai mặt cầu đồng tâm).
+    \end{itemize}
+    \vspace{0.05cm}
+    \centering
+    \begin{tikzpicture}[scale=0.72, >=stealth]
+        % 1. Trùng nhau
+        \draw[thick, deepblue] (0,0) circle (0.85cm);
+        \draw[dashed, thick, accentred] (0,0) circle (0.85cm);
+        \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1 \equiv I_2$};
+        \node[font=\scriptsize\bfseries, deepblue] at (0,-1.2) {1. Trùng nhau};
+
+        % 2. Ngoài nhau
+        \begin{scope}[xshift=3.0cm]
+            \draw[thick, deepblue] (0,0) circle (0.8cm);
+            \draw[thick, accentred] (1.7,0) circle (0.5cm);
+            \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1$};
+            \fill[accentred] (1.7,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_2$};
+            \draw[dashed] (0,0) -- (1.7,0);
+            \node[font=\scriptsize\bfseries, deepblue] at (0.85,-1.2) {2. Ngoài nhau};
+        \end{scope}
+
+        % 3. Tiếp xúc ngoài
+        \begin{scope}[xshift=6.4cm]
+            \draw[thick, deepblue] (0,0) circle (0.8cm);
+            \draw[thick, accentred] (1.3,0) circle (0.5cm);
+            \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1$};
+            \fill[accentred] (1.3,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_2$};
+            \draw[dashed] (0,0) -- (1.3,0);
+            \node[font=\scriptsize\bfseries, deepblue] at (0.65,-1.2) {3. TX ngoài};
+        \end{scope}
+
+        % 4. Cắt nhau
+        \begin{scope}[xshift=9.5cm]
+            \draw[thick, deepblue] (0,0) circle (0.8cm);
+            \draw[thick, accentred] (0.9,0) circle (0.55cm);
+            \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1$};
+            \fill[accentred] (0.9,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_2$};
+            \draw[dashed] (0,0) -- (0.9,0);
+            \node[font=\scriptsize\bfseries, deepblue] at (0.45,-1.2) {4. Cắt nhau};
+        \end{scope}
+
+        % 5. Tiếp xúc trong
+        \begin{scope}[xshift=12.4cm]
+            \draw[thick, deepblue] (0,0) circle (0.9cm);
+            \draw[thick, accentred] (0.45,0) circle (0.45cm);
+            \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1$};
+            \fill[accentred] (0.45,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_2$};
+            \draw[dashed] (0,0) -- (0.45,0);
+            \node[font=\scriptsize\bfseries, deepblue] at (0.25,-1.2) {5. TX trong};
+        \end{scope}
+
+        % 6. Đựng nhau
+        \begin{scope}[xshift=15.1cm]
+            \draw[thick, deepblue] (0,0) circle (0.9cm);
+            \draw[thick, accentred] (0.2,0) circle (0.35cm);
+            \fill[deepblue] (0,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_1$};
+            \fill[accentred] (0.2,0) circle (1.5pt) node[below=1pt, font=\scriptsize] {$I_2$};
+            \draw[dashed] (0,0) -- (0.2,0);
+            \node[font=\scriptsize\bfseries, deepblue] at (0.1,-1.2) {6. Đựng nhau};
+        \end{scope}
+    \end{tikzpicture}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% --- VÍ DỤ 1: TRÙNG NHAU ---
+\questionLinesManual{5}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon (x - 2)^2 + (y + 1)^2 + (z - 3)^2 = 16 \quad \text{và} \quad (S_2)\colon x^2 + y^2 + z^2 - 4x + 2y - 6z - 2 = 0
+\]
+}{}
+
+\vspace{0.2cm}
+
+% --- VÍ DỤ 2: Ở NGOÀI NHAU ---
+\questionLinesManual{5}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon (x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 4 \quad \text{và} \quad (S_2)\colon (x - 4)^2 + (y - 6)^2 + (z - 3)^2 = 4
+\]
+}{}
+
+\vspace{0.2cm}
+
+% --- VÍ DỤ 3: TIẾP XÚC NGOÀI ---
+\questionLinesManual{5}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon x^2 + y^2 + z^2 = 9 \quad \text{và} \quad (S_2)\colon (x - 3)^2 + (y - 4)^2 + z^2 = 4
+\]
+}{}
+
+\vspace{0.25cm}
+
+% --- VÍ DỤ 4: CẮT NHAU ---
+\questionLinesManual{6}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon (x - 1)^2 + (y + 1)^2 + (z - 2)^2 = 16 \quad \text{và} \quad (S_2)\colon (x + 2)^2 + (y - 3)^2 + z^2 = 9
+\]
+}{}
+
+\vspace{0.25cm}
+
+% --- VÍ DỤ 5: TIẾP XÚC TRONG ---
+\questionLinesManual{6}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon x^2 + y^2 + z^2 = 25 \quad \text{và} \quad (S_2)\colon (x - 1)^2 + (y - 2)^2 + (z - 2)^2 = 4
+\]
+}{}
+
+\vspace{0.25cm}
+
+% --- VÍ DỤ 6: ĐỰNG NHAU ---
+\questionLinesManual{0}{hỏi}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa hai mặt cầu:
+\[
+    (S_1)\colon (x - 1)^2 + (y + 2)^2 + (z - 1)^2 = 36 \quad \text{và} \quad (S_2)\colon (x - 2)^2 + (y + 1)^2 + z^2 = 4
+\]
+}{}
+\drawdashlinesfull
+
+\end{document}

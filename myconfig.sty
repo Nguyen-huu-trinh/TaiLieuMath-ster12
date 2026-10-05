@@ -159,7 +159,7 @@
     #1
 }
 
-% Macro: Khung Tiêu Đề Đầu Trang
+% Macro: Khung Tiêu Đề Đầu Trang (ĐÃ CĂN CHỈNH LOGO CHUẨN TRỌNG TÂM)
 \newcommand{\titlebox}[3]{
     \gdef\HeaderRightText{#3}
     
@@ -194,11 +194,12 @@
         % Viền ngoài
         \draw[deepblue, line width=1.5pt, rounded corners=8pt] (MainBox.south west) rectangle (MainBox.north east);
 
-        % Nội dung Text
+% Nội dung Text & Logo Căn Giữa Hoàn Hảo (Kích thước to đầy đặn)
         \node[text width=16cm, inner xsep=0pt, inner ysep=16pt] at (MainBox.center) {
             \begin{minipage}[c]{4.2cm}
                 \centering
-                \makebox[\linewidth][c]{\hspace*{-0.5cm}\raisebox{-0.2cm}{\includegraphics[width=5.5cm]{../../../image/logo.png}}}
+                % Căn giữa trọng tâm ô 4.2cm, tăng độ lớn lên 5.1cm
+                \makebox[4.2cm][c]{\raisebox{0.08cm}{\includegraphics[width=5.1cm]{../../../image/logo.png}}}
             \end{minipage}%
             \begin{minipage}[c]{11.5cm}
                 \centering\let\\=\newline\vspace{0.15cm}
