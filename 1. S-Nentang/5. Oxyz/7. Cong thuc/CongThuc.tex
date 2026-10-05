@@ -1,0 +1,624 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% SỔ TAY TỔNG HỢP OXYZ (LÝ THUYẾT & CÁC DẠNG TOÁN)
+% =========================================================================
+\titlebox{Tổng ôn Oxyz}{Sổ tay Công thức \& Các dạng Toán}{Oxyz: Sổ tay Công thức}
+
+\vspace{-0.2cm}
+
+% =========================================================================
+% PHẦN I: HỆ TRỤC TỌA ĐỘ VÀ VECTƠ
+% =========================================================================
+\dangbox{Phần I}{Hệ trục tọa độ, Vectơ \& Điểm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Tọa độ Vectơ và Điểm (Mỗi công thức 1 dòng)}}
+    \begin{itemize}\setlength{\itemsep}{5pt}
+        \item $\vec{a} = (a_1; a_2; a_3) \iff \vec{a} = a_1\vec{i} + a_2\vec{j} + a_3\vec{k}$
+        \item $M(x; y; z) \iff \vec{OM} = x\vec{i} + y\vec{j} + z\vec{k}$
+        \item $\vec{AB} = (x_B - x_A;\ y_B - y_A;\ z_B - z_A)$ (Luôn lấy tọa độ Điểm Cuối trừ Điểm Đầu)
+        \item Cho $\vec{a} = (a_1; a_2; a_3)$ và $\vec{b} = (b_1; b_2; b_3) \implies \vec{a} \pm \vec{b} = (a_1 \pm b_1;\ a_2 \pm b_2;\ a_3 \pm b_3)$
+        \item $k\vec{a} = (ka_1;\ ka_2;\ ka_3)$
+        \item $\vec{a} = \vec{b} \iff \begin{cases} a_1 = b_1 \\ a_2 = b_2 \\ a_3 = b_3 \end{cases}$
+        \item $\vec{a} \parallel \vec{b} \iff \vec{a} = k\vec{b} \iff \dfrac{a_1}{b_1} = \dfrac{a_2}{b_2} = \dfrac{a_3}{b_3}$
+        \item Trung điểm $I$ của đoạn thẳng $AB$: $I\left(\dfrac{x_A + x_B}{2};\; \dfrac{y_A + y_B}{2};\; \dfrac{z_A + z_B}{2}\right)$
+        \item Trọng tâm $G$ của tam giác $ABC$: $G\left(\dfrac{x_A + x_B + x_C}{3};\; \dfrac{y_A + y_B + y_C}{3};\; \dfrac{z_A + z_B + z_C}{3}\right)$
+        \item Trọng tâm $G$ của tứ diện $ABCD$: $G\left(\dfrac{x_A + x_B + x_C + x_D}{4};\; \dfrac{y_A + y_B + y_C + y_D}{4};\; \dfrac{z_A + z_B + z_C + z_D}{4}\right)$
+        \item Ba điểm $A, B, C$ thẳng hàng $\iff \vec{AB} = k\vec{AC}$
+    \end{itemize}
+
+    \vspace{0.15cm}
+    \textbf{\textcolor{deepblue}{\large 2. Tích vô hướng, Độ dài và Tích có hướng}}
+    \begin{itemize}\setlength{\itemsep}{5pt}
+        \item Tích vô hướng: $\vec{a} \cdot \vec{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$
+        \item Điều kiện vuông góc: $\vec{a} \perp \vec{b} \iff \vec{a} \cdot \vec{b} = 0 \iff a_1 b_1 + a_2 b_2 + a_3 b_3 = 0$
+        \item Độ dài của vectơ: $|\vec{a}| = \sqrt{a_1^2 + a_2^2 + a_3^2}$
+        \item Tích có hướng: $[\vec{a}, \vec{b}] = \left( a_2b_3 - a_3b_2;\; a_3b_1 - a_1b_3;\; a_1b_2 - a_2b_1 \right)$
+        \item Điều kiện đồng phẳng: Ba vectơ $\vec{a}, \vec{b}, \vec{c}$ đồng phẳng $\iff [\vec{a}, \vec{b}] \cdot \vec{c} = 0$
+        \item Diện tích tam giác $ABC$: $S_{ABC} = \dfrac{1}{2} \left| [\vec{AB}, \vec{AC}] \right|$
+        \item Diện tích hình bình hành $ABCD$: $S_{ABCD} = \left| [\vec{AB}, \vec{AD}] \right|$
+        \item Thể tích khối tứ diện $ABCD$: $V_{ABCD} = \dfrac{1}{6} \left| [\vec{AB}, \vec{AC}] \cdot \vec{AD} \right|$
+        \item Thể tích hình hộp $ABCD.A'B'C'D'$: $V = \left| [\vec{AB}, \vec{AD}] \cdot \vec{AA'} \right|$
+    \end{itemize}
+
+    \vspace{0.15cm}
+    \textbf{\textcolor{amberorange}{\large 3. Mẹo nhớ nhanh (Khẩu quyết)}}
+    \begin{itemize}\setlength{\itemsep}{6pt}
+        \item \textbf{Chiếu lên / Điểm thuộc:} Thuộc cái gì có cái đó, chiếu lên cái gì có cái đó, còn lại bằng $0$.
+        \item \textbf{Đối xứng:} Đối xứng qua cái gì thì giữ nguyên cái đó, các tọa độ còn lại đổi dấu.
+        \item \textbf{Khoảng cách:} Khoảng cách tới cái gì là căn bậc hai của bình phương các tọa độ còn thiếu.
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+% =========================================================================
+% PHẦN II: MẶT PHẲNG
+% =========================================================================
+\dangbox{Phần II}{Phương trình Mặt phẳng}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Nền tảng \& Phương trình tổng quát}}
+    \[
+        (P)\colon \begin{cases} 
+            \text{Điểm đi qua } M_0(x_0; y_0; z_0) \\ 
+            \text{VTPT } \vec{n}_{(P)} = (A; B; C) \neq \vec{0}
+        \end{cases}
+    \]
+    Phương trình tổng quát: $A(x - x_0) + B(y - y_0) + C(z - z_0) = 0 \iff Ax + By + Cz + D = 0$.
+    \par\vspace{3pt}
+    \textit{Quy tắc tìm VTPT khi chưa có:} Tìm 2 véctơ $\vec{a}, \vec{b}$ có giá song song hoặc nằm trong mặt phẳng $\implies \vec{n} = [\vec{a}, \vec{b}]$.
+
+    \vspace{0.2cm}
+    \textbf{\textcolor{amberorange}{\large 2. Các dạng viết phương trình mặt phẳng cốt lõi}}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item \textbf{Dạng 1: Mặt phẳng qua một điểm và có VTPT}
+        \[
+            (P)\colon \begin{cases} \text{Qua } A(x_0; y_0; z_0) \\ \text{VTPT } \vec{n}_{(P)} = (A; B; C) \end{cases}
+        \]
+
+        \item \textbf{Dạng 2: Mặt phẳng qua $A$ và song song với mặt phẳng $(Q)$}
+        \[
+            (P)\colon \begin{cases} \text{Qua } A(x_0; y_0; z_0) \\ \text{VTPT } \vec{n}_{(P)} = \vec{n}_{(Q)} \end{cases}
+        \]
+
+        \item \textbf{Dạng 3: Mặt phẳng trung trực của đoạn thẳng $AB$}
+        \[
+            (P)\colon \begin{cases} \text{Qua trung điểm } I = \dfrac{A + B}{2} \\ \text{VTPT } \vec{n}_{(P)} = \vec{AB} \end{cases}
+        \]
+
+        \item \textbf{Dạng 4: Mặt phẳng qua điểm $M$ và vuông góc với đường nối hai điểm $A, B$}
+        \[
+            (P)\colon \begin{cases} \text{Qua } M(x_0; y_0; z_0) \\ \text{VTPT } \vec{n}_{(P)} = \vec{AB} \end{cases}
+        \]
+
+        \item \textbf{Dạng 5: Mặt phẳng qua $M$ và có cặp VTCP $\vec{a}, \vec{b}$}
+        \[
+            (P)\colon \begin{cases} \text{Qua } M(x_0; y_0; z_0) \\ \text{VTPT } \vec{n}_{(P)} = [\vec{a}, \vec{b}] \end{cases}
+        \]
+
+        \item \textbf{Dạng 6: Mặt phẳng đi qua ba điểm phân biệt không thẳng hàng $A, B, C$}
+        \[
+            (ABC)\colon \begin{cases} \text{Qua } A \text{ (hoặc } B, C\text{)} \\ \text{VTPT } \vec{n}_{(ABC)} = [\vec{AB}, \vec{AC}] \end{cases}
+        \]
+
+        \item \textbf{Dạng 7: Mặt phẳng qua hai điểm $A, B$ và vuông góc với mặt phẳng $(Q)$}
+        \[
+            (P)\colon \begin{cases} \text{Qua } A \text{ (hoặc } B\text{)} \\ \text{VTPT } \vec{n}_{(P)} = [\vec{AB}, \vec{n}_{(Q)}] \end{cases}
+        \]
+
+        \item \textbf{Dạng 8: Mặt phẳng qua điểm $M$ và vuông góc với cả hai mặt phẳng $(\alpha), (\beta)$}
+        \[
+            (P)\colon \begin{cases} \text{Qua } M(x_0; y_0; z_0) \\ \text{VTPT } \vec{n}_{(P)} = [\vec{n}_{(\alpha)}, \vec{n}_{(\beta)}] \end{cases}
+        \]
+
+        \item \textbf{Dạng 9: Phương trình mặt phẳng theo đoạn chắn}
+        \[
+            (P)\colon \begin{cases} \text{Cắt } Ox, Oy, Oz \text{ lần lượt tại } A(a; 0; 0), B(0; b; 0), C(0; 0; c) \implies \dfrac{x}{a} + \dfrac{y}{b} + \dfrac{z}{c} = 1 \\[5pt] \text{VTPT } \vec{n}_{(P)} = \left(\dfrac{1}{a};\; \dfrac{1}{b};\; \dfrac{1}{c}\right) \end{cases}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+% =========================================================================
+% PHẦN III: ĐƯỜNG THẲNG
+% =========================================================================
+\dangbox{Phần III}{Phương trình Đường thẳng}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Nền tảng \& Phương trình đường thẳng}}
+    \[
+        d\colon \begin{cases} 
+            \text{Điểm đi qua } M_0(x_0; y_0; z_0) \\ 
+            \text{VTCP } \vec{u}_d = (a; b; c) \neq \vec{0}
+        \end{cases}
+    \]
+    PT tham số: $\begin{cases} x = x_0 + at \\ y = y_0 + bt \\ z = z_0 + ct \end{cases}$. \qquad PT chính tắc ($abc \neq 0$): $\dfrac{x - x_0}{a} = \dfrac{y - y_0}{b} = \dfrac{z - z_0}{c}$.
+
+    \vspace{0.2cm}
+    \textbf{\textcolor{amberorange}{\large 2. Các dạng viết phương trình đường thẳng cơ bản}}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item \textbf{Dạng 1: Qua một điểm $M$ và có VTCP $\vec{u}$}
+        \[
+            d\colon \begin{cases} \text{Qua } M(x_0; y_0; z_0) \\ \text{VTCP } \vec{u}_d = (a; b; c) \end{cases}
+        \]
+
+        \item \textbf{Dạng 2: Đi qua hai điểm phân biệt $A$ và $B$}
+        \[
+            d\colon \begin{cases} \text{Qua } A \text{ (hoặc } B\text{)} \\ \text{VTCP } \vec{u}_d = \vec{AB} \end{cases}
+        \]
+
+        \item \textbf{Dạng 3: Đi qua điểm $M$ và song song với đường thẳng $\Delta$}
+        \[
+            d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d = \vec{u}_\Delta \end{cases}
+        \]
+
+        \item \textbf{Dạng 4: Đi qua điểm $M$ và vuông góc với mặt phẳng $(P)$}
+        \[
+            d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d = \vec{n}_{(P)} \end{cases}
+        \]
+
+        \item \textbf{Dạng 5: Đường thẳng là giao tuyến của hai mặt phẳng $(P)$ và $(Q)$}
+        \[
+            d\colon \begin{cases} \text{VTCP } \vec{u}_d = [\vec{n}_{(P)}, \vec{n}_{(Q)}] \\ \text{Điểm } A \in d\colon \text{Cho } z=0 \text{ (hoặc } x=0, y=0\text{)}, \text{ giải hệ } \begin{cases} (P) \\ (Q) \end{cases} \text{tìm 2 ẩn còn lại} \end{cases}
+        \]
+
+        \item \textbf{Dạng 6: Đi qua điểm $M$ và vuông góc với cả hai đường thẳng $d_1, d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d = [\vec{u}_{d_1}, \vec{u}_{d_2}] \end{cases}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+\begin{theorybox}
+    \textbf{\textcolor{amberorange}{\large 3. Các dạng toán nâng cao của đường thẳng (Kèm hướng làm chi tiết)}}
+    \begin{itemize}\setlength{\itemsep}{10pt}
+        \item \textbf{Dạng 7: Đi qua điểm $A$, vuông góc và cắt đường thẳng $\Delta$}
+        \[
+            d\colon \begin{cases} \text{Qua } A \\ \text{VTCP } \vec{u}_d = \vec{AH} \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Gọi giao điểm $H = d \cap \Delta \implies$ Tham số hóa tọa độ điểm $H(t) \in \Delta$.
+            \item Vì $d \perp \Delta \iff \vec{AH} \cdot \vec{u}_\Delta = 0 \implies$ Giải phương trình ẩn $t$ tìm tọa độ $H$.
+            \item Lập phương trình đường thẳng $d$ đi qua $A$ và nhận $\vec{AH}$ làm VTCP.
+        \end{enumerate}
+
+        \item \textbf{Dạng 8: Đi qua điểm $M$, cắt đường thẳng $d_1$ và vuông góc với đường thẳng $d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d = \vec{MH} \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Gọi giao điểm $H = d \cap d_1 \implies$ Tham số hóa tọa độ điểm $H(t) \in d_1$.
+            \item Vì $d \perp d_2 \iff \vec{MH} \cdot \vec{u}_{d_2} = 0 \implies$ Giải phương trình tìm $t \implies$ Tọa độ $H$.
+            \item Lập phương trình đường thẳng $d$ đi qua $M$ và nhận $\vec{MH}$ làm VTCP.
+        \end{enumerate}
+
+        \item \textbf{Dạng 9: Nằm trong mặt phẳng $(P)$ và cắt cả hai đường thẳng $d_1, d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } A \text{ (hoặc } B\text{)} \\ \text{VTCP } \vec{u}_d = \vec{AB} \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Tìm tọa độ hai giao điểm: $A = d_1 \cap (P)$ và $B = d_2 \cap (P)$ bằng cách thế phương trình tham số vào $(P)$.
+            \item Đường thẳng $d$ chính là đường thẳng đi qua hai điểm phân biệt $A$ và $B$.
+        \end{enumerate}
+
+        \item \textbf{Dạng 10: Đi qua điểm $M$ và cắt cả hai đường thẳng $d_1, d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_d = \vec{MA} \text{ (hoặc } \vec{AB}\text{)} \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Gọi $A = d \cap d_1 \implies A(t)$ và $B = d \cap d_2 \implies B(t')$.
+            \item Vì $M, A, B$ cùng thuộc $d$ nên $M, A, B$ thẳng hàng $\iff \vec{MA} = k\vec{MB}$ (hoặc $[\vec{MA}, \vec{MB}] = \vec{0}$).
+            \item Giải hệ tìm được $t, t' \implies$ Tọa độ điểm $A$ và $B$. Viết phương trình $d$ qua $M$ và có VTCP $\vec{MA}$.
+        \end{enumerate}
+
+        \item \textbf{Dạng 11: Song song với đường thẳng $\Delta$ và cắt cả hai đường thẳng $d_1, d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } A \\ \text{VTCP } \vec{u}_d = \vec{u}_\Delta \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Gọi $A = d \cap d_1 \implies A(t)$ và $B = d \cap d_2 \implies B(t')$.
+            \item Vì $d // \Delta \iff \vec{AB}$ cùng phương $\vec{u}_\Delta \iff \vec{AB} = k\vec{u}_\Delta$ (hoặc $[\vec{AB}, \vec{u}_\Delta] = \vec{0}$).
+            \item Giải hệ tìm được $t, t' \implies$ Tọa độ điểm $A$. Viết phương trình $d$ qua $A$ nhận $\vec{u}_\Delta$ làm VTCP.
+        \end{enumerate}
+
+        \item \textbf{Dạng 12: Lập phương trình đường vuông góc chung của hai đường thẳng chéo nhau $d_1, d_2$}
+        \[
+            d\colon \begin{cases} \text{Qua } A \\ \text{VTCP } \vec{u}_d = \vec{AB} \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Gọi đoạn vuông góc chung là $AB$ với $A(t) \in d_1$ và $B(t') \in d_2$.
+            \item Thiết lập hệ điều kiện: $\begin{cases} \vec{AB} \cdot \vec{u}_{d_1} = 0 \\ \vec{AB} \cdot \vec{u}_{d_2} = 0 \end{cases} \implies$ Giải hệ tìm được $t, t' \implies$ Tọa độ $A, B$.
+            \item Viết phương trình đường vuông góc chung qua $A$ và có VTCP $\vec{AB}$.
+        \end{enumerate}
+    \end{itemize}
+
+    \vspace{0.15cm}
+    \textbf{\textcolor{deepblue}{\large 4. Các bài toán tìm hình chiếu vuông góc và điểm đối xứng}}
+    \begin{itemize}\setlength{\itemsep}{10pt}
+        \item \textbf{Dạng 13: Tìm hình chiếu vuông góc $H$ của điểm $M$ lên mặt phẳng $(P)$}
+        \[
+            \Delta\colon \begin{cases} \text{Qua } M \\ \text{VTCP } \vec{u}_\Delta = \vec{n}_{(P)} \end{cases} \implies H = \Delta \cap (P)
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Viết phương trình đường thẳng $\Delta$ đi qua $M$ và vuông góc với $(P)$ (nhận $\vec{n}_{(P)}$ làm VTCP).
+            \item Tọa độ hình chiếu $H$ chính là giao điểm của đường thẳng $\Delta$ và mặt phẳng $(P)$.
+            \item Tọa độ điểm $M'$ đối xứng với $M$ qua mặt phẳng $(P)$ được tính bằng công thức: $M' = 2H - M$.
+        \end{enumerate}
+
+        \item \textbf{Dạng 14: Tìm hình chiếu vuông góc $H$ của điểm $M$ lên đường thẳng $d$}
+        \[
+            \begin{cases} H \in d \implies H(t) \\ MH \perp d \iff \vec{MH} \cdot \vec{u}_d = 0 \end{cases}
+        \]
+        \textbf{Hướng làm:}
+        \begin{enumerate}
+            \item Tham số hóa tọa độ điểm $H(t) \in d$.
+            \item Sử dụng điều kiện vuông góc: $\vec{MH} \cdot \vec{u}_d = 0 \implies$ Giải tìm nghiệm $t \implies$ Tọa độ $H$.
+            \item Tọa độ điểm $M'$ đối xứng với $M$ qua đường thẳng $d$ được tính bằng công thức: $M' = 2H - M$.
+        \end{enumerate}
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+% =========================================================================
+% PHẦN IV: MẶT CẦU
+% =========================================================================
+\dangbox{Phần IV}{Phương trình Mặt cầu}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Nền tảng \& Điều kiện}}
+    \[
+        (S)\colon \begin{cases} 
+            \text{Tâm } I(a; b; c) \\ 
+            \text{Bán kính } R > 0 
+        \end{cases}
+    \]
+    \begin{itemize}\setlength{\itemsep}{4pt}
+        \item Phương trình chính tắc: $(x - a)^2 + (y - b)^2 + (z - c)^2 = R^2$
+        \item Phương trình tổng quát: $x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0$
+        \item Điều kiện là phương trình mặt cầu: $a^2 + b^2 + c^2 - d > 0$
+        \item Bán kính mặt cầu: $R = \sqrt{a^2 + b^2 + c^2 - d}$
+    \end{itemize}
+
+    \vspace{0.2cm}
+    \textbf{\textcolor{amberorange}{\large 2. Các dạng viết phương trình mặt cầu cốt lõi}}
+    \begin{itemize}\setlength{\itemsep}{8pt}
+        \item \textbf{Dạng 1: Biết tâm $I(a; b; c)$ và bán kính $R$}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I(a; b; c) \\ \text{Bán kính } R \end{cases} \implies (x - a)^2 + (y - b)^2 + (z - c)^2 = R^2
+        \]
+
+        \item \textbf{Dạng 2: Biết tâm $I$ và đi qua điểm $A$}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I(a; b; c) \\ \text{Bán kính } R = IA = |\vec{IA}| \end{cases}
+        \]
+
+        \item \textbf{Dạng 3: Mặt cầu có đường kính là đoạn thẳng $AB$}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I \text{ là trung điểm } AB\colon I = \dfrac{A + B}{2} \\[5pt] \text{Bán kính } R = \dfrac{AB}{2} = IA \end{cases}
+        \]
+
+        \item \textbf{Dạng 4: Mặt cầu tâm $I$ tiếp xúc với các trục hoặc mặt phẳng tọa độ}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I(a; b; c) \\ \text{Bán kính } R = d(I, \text{trục hoặc mp tọa độ}) \end{cases}
+        \]
+
+        \item \textbf{Dạng 5: Mặt cầu tâm $I$ tiếp xúc với mặt phẳng $(P)$}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I(a; b; c) \\ \text{Bán kính } R = d(I, (P)) = \dfrac{|Ax_I + By_I + Cz_I + D|}{\sqrt{A^2 + B^2 + C^2}} \end{cases}
+        \]
+
+        \item \textbf{Dạng 6: Đi qua bốn điểm không đồng phẳng $A, B, C, D$ (Mặt cầu ngoại tiếp tứ diện)}
+        \[
+            (S)\colon \begin{cases} \text{Phương trình tổng quát: } x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0 \\ \text{Hệ phương trình: Thay tọa độ } 4 \text{ điểm vào tìm } a, b, c, d \end{cases}
+        \]
+        \textbf{Hướng làm:} Lập hệ 4 phương trình bậc nhất 4 ẩn bằng cách lần lượt thay tọa độ của $A, B, C, D$ vào phương trình tổng quát rồi bấm máy tính giải tìm $a, b, c, d$.
+
+        \item \textbf{Dạng 7: Đi qua ba điểm $A, B, C$ và có tâm $I$ thuộc mặt phẳng $(P)$}
+        \[
+            (S)\colon \begin{cases} \text{Phương trình tổng quát: } x^2 + y^2 + z^2 - 2ax - 2by - 2cz + d = 0 \\ \text{Hệ phương trình: } 3 \text{ PT từ } A, B, C \text{ và } 1 \text{ PT từ } I(a; b; c) \in (P) \end{cases}
+        \]
+        \textbf{Hướng làm:} Thay tọa độ $A, B, C$ vào phương trình tổng quát được 3 phương trình; thay tọa độ tâm $I(a; b; c)$ vào phương trình của $(P)$ được phương trình thứ 4. Giải hệ 4 ẩn tìm $a, b, c, d$.
+
+        \item \textbf{Dạng 8: Cắt mặt phẳng $(P)$ theo thiết diện là đường tròn giao tuyến có bán kính $r$}
+        \[
+            (S)\colon \begin{cases} \text{Tâm } I(a; b; c) \\ \text{Bán kính } R = \sqrt{d^2(I, (P)) + r^2} \end{cases}
+        \]
+        \textbf{Hướng làm:} Tính khoảng cách $d = d(I, (P))$. Áp dụng định lý Pytago $R = \sqrt{d^2 + r^2}$ để xác định bán kính $R$ của mặt cầu.
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+% =========================================================================
+% PHẦN V: GÓC VÀ KHOẢNG CÁCH (KHÔNG BỊ TRÀN KHUNG)
+% =========================================================================
+\dangbox{Phần V}{Bảng tra cứu Góc \& Khoảng cách}
+
+\begin{theorybox}
+    \vspace{4pt}
+    \begin{center}
+        \textbf{\textcolor{deepblue}{\large Quy tắc tính góc chung:}}\hskip 14pt
+        {\Large\color{accentred} $\mathbf{\dfrac{\text{Tích vô hướng}}{\text{Tích độ dài}}}$}
+    \end{center}
+    
+    \vspace{8pt}
+    \centering
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{@{} l @{\hskip 12pt} l @{\hskip 28pt} r @{}}
+        $\bullet$ \ $\cos$ không trị: & 2 vectơ $(\vec{a} \text{ và } \vec{b})$ & (có thể $> 90^\circ$) \\
+                                      & $\widehat{ACB}$ (dùng $\vec{CA}$ và $\vec{CB}$) & \\
+        $\bullet$ \ $\cos$ có trị:     & 2 đường thẳng, 2 mặt phẳng            & (phải $\le 90^\circ$) \\
+        $\bullet$ \ $\sin$ có trị:     & đường thẳng và mặt phẳng              & (phải $\le 90^\circ$) \\
+    \end{tabular}
+    \vspace{4pt}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large Bảng công thức khoảng cách toàn tập}}
+    \setlength{\lineskip}{6pt}
+    \par\vspace{8pt}
+
+    \textbf{\textcolor{amberorange}{1. Hai điểm $A$ và $B$:}}
+    \[
+        AB = |\vec{AB}| = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}
+    \]
+
+    \textbf{\textcolor{amberorange}{2. Điểm $A$ tới đường thẳng $d$:}}
+    \[
+        d \begin{cases} M \\ \vec{u}_d \end{cases} \implies d(A, d) = \frac{\left| [\vec{AM}, \vec{u}_d] \right|}{|\vec{u}_d|}
+    \]
+
+    \textbf{\textcolor{amberorange}{3. Hai đường thẳng song song $d_1 // d_2$:}}
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases}, \quad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases} 
+        \implies d(d_1, d_2) = \frac{\left| [\vec{MN}, \vec{u}_1] \right|}{|\vec{u}_1|} = \frac{\left| [\vec{MN}, \vec{u}_2] \right|}{|\vec{u}_2|}
+    \]
+
+    \textbf{\textcolor{amberorange}{4. Hai đường thẳng chéo nhau (2 vectơ không tỉ lệ):}}
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases}, \quad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases}
+        \implies \text{Gọi } \vec{u} = [\vec{u}_1, \vec{u}_2] \implies d(d_1, d_2) = \frac{\left| \vec{MN} \cdot \vec{u} \right|}{|\vec{u}|}
+    \]
+
+    \textbf{\textcolor{amberorange}{5. Điểm $A(x_0; y_0; z_0)$ đến mặt phẳng $(P)\colon Ax + By + Cz + D = 0$:}}
+    \[
+        d(A, (P)) = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}
+    \]
+
+    \textbf{\textcolor{amberorange}{6. Hai mặt phẳng song song $(P) // (Q)$:}}
+    \[
+        \text{Lấy 1 điểm } A \in (P) \implies d((P), (Q)) = d(A, (Q))
+    \]
+
+    \textbf{\textcolor{amberorange}{7. Đường thẳng $d$ song song với mặt phẳng $(P)$ ($d // (P)$):}}
+    \[
+        \text{Lấy 1 điểm } M \in d \implies d(d, (P)) = d(M, (P))
+    \]
+\end{theorybox}
+
+\newpage
+
+% =========================================================================
+% PHẦN VI: VỊ TRÍ TƯƠNG ĐỐI (TRỌN VẸN 4 MỤC CHUẨN ĐẸP TỪ BÀI GIẢNG CUỐI)
+% =========================================================================
+\dangbox{Phần VI}{Vị trí tương đối trong không gian $Oxyz$}
+
+\vspace{0.1cm}
+
+% -------------------------------------------------------------------------
+% MỤC 1: ĐIỂM VỚI MẶT CẦU, MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Điểm với Mặt cầu, Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M$ với Mặt cầu $(S)$ (tâm $I$, bán kính $R$):}}
+    \begin{itemize}
+        \item Tính $IM$ và so sánh với $R$:
+        \[
+            \begin{cases}
+                IM > R \implies \text{Điểm } M \text{ nằm ngoài mặt cầu} \\
+                IM = R \implies \text{Điểm } M \text{ nằm trên mặt cầu} \\
+                IM < R \implies \text{Điểm } M \text{ nằm trong mặt cầu}
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M(x_M; y_M; z_M)$ với Mặt phẳng $(P)\colon Ax + By + Cz + D = 0$:}}
+    \begin{itemize}
+        \item Thay tọa độ $M(x_M; y_M; z_M)$ vào $(P)$:
+        \[
+            \begin{cases}
+                Ax_M + By_M + Cz_M + D = 0 \implies M \in (P) \\
+                Ax_M + By_M + Cz_M + D \neq 0 \implies M \notin (P)
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M(x_M; y_M; z_M)$ với Đường thẳng $d$:}}
+    \begin{itemize}
+        \item \textbf{Dạng chính tắc } $d\colon \dfrac{x - x_0}{A} = \dfrac{y - y_0}{B} = \dfrac{z - z_0}{C}$: Thay tọa độ $M$ vào $d$:
+        \[
+            \begin{cases}
+                \dfrac{x_M - x_0}{A} = \dfrac{y_M - y_0}{B} = \dfrac{z_M - z_0}{C} \implies M \in d \\[8pt]
+                \dfrac{x_M - x_0}{A} \neq \dfrac{y_M - y_0}{B} \neq \dfrac{z_M - z_0}{C} \text{ (1 trong 3 phân số khác nhau)} \implies M \notin d
+            \end{cases}
+        \]
+        \item \textbf{Dạng tham số } $d\colon \begin{cases} x = x_0 + At \\ y = y_0 + Bt \\ z = z_0 + Ct \end{cases}$: Thay tọa độ $M$ vào hệ:
+        \[
+            \begin{cases}
+                \begin{cases} x_M = x_0 + At \\ y_M = y_0 + Bt \\ z_M = z_0 + Ct \end{cases} \implies \text{cho cùng giá trị } t \implies M \in d \\[14pt]
+                \begin{cases} x_M = x_0 + At \\ y_M = y_0 + Bt \\ z_M = z_0 + Ct \end{cases} \implies \text{không cho cùng giá trị } t \implies M \notin d
+            \end{cases}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\newpage
+
+% -------------------------------------------------------------------------
+% MỤC 2: MẶT CẦU VỚI MẶT CẦU, MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 2. Mặt cầu với Mặt cầu, Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Hai mặt cầu $(S_1)\begin{cases} I_1 \\ R_1 \end{cases}$ và $(S_2)\begin{cases} I_2 \\ R_2 \end{cases}$ (So sánh độ dài $I_1I_2$ với $R_1, R_2$):}}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabular}{l l}
+        $\bullet$ \ $I_1I_2 > R_1 + R_2$ & : 2 mặt cầu ở ngoài nhau \\
+        $\bullet$ \ $I_1I_2 = R_1 + R_2$ & : 2 mặt cầu tiếp xúc ngoài \\
+        $\bullet$ \ $|R_1 - R_2| < I_1I_2 < R_1 + R_2$ & : 2 mặt cầu cắt nhau \\
+        $\bullet$ \ $I_1I_2 = |R_1 - R_2|$ & : 2 mặt cầu tiếp xúc trong \\
+        $\bullet$ \ $I_1I_2 < |R_1 - R_2|$ & : 2 mặt cầu chứa nhau \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Mặt phẳng $(P)$ với Mặt cầu $(S)$ (Tính $d(I, (P))$ và so sánh với bán kính $R$):}}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabular}{l l l}
+        $\bullet$ \ $d(I, (P)) > R$ & : Mặt phẳng không cắt mặt cầu & (0 điểm chung) \\
+        $\bullet$ \ $d(I, (P)) = R$ & : Mặt phẳng tiếp xúc mặt cầu & (1 điểm chung) \\
+        $\bullet$ \ $d(I, (P)) < R$ & : Mặt phẳng cắt mặt cầu & (giao tuyến là đường tròn) \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Đường thẳng $d$ với Mặt cầu $(S)$ (Tính $d(I, d)$ và so sánh với bán kính $R$):}}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabular}{l l l}
+        $\bullet$ \ $d(I, d) > R$ & : Đường thẳng không cắt mặt cầu & (0 điểm chung) \\
+        $\bullet$ \ $d(I, d) = R$ & : Đường thẳng tiếp xúc mặt cầu & (1 điểm chung) \\
+        $\bullet$ \ $d(I, d) < R$ & : Đường thẳng cắt mặt cầu & (2 điểm chung) \\
+    \end{tabular}
+    \end{center}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% -------------------------------------------------------------------------
+% MỤC 3: MẶT PHẲNG VÀ MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 3. Mặt phẳng với Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Mặt phẳng $(P)\colon Ax+By+Cz+D=0$ và Mặt phẳng $(Q)\colon A'x+B'y+C'z+D'=0$:}}
+    \begin{itemize}
+        \item Xét tỉ lệ 2 vectơ pháp tuyến $\vec{n}_P$ và $\vec{n}_Q$:
+    \end{itemize}
+    \renewcommand{\arraystretch}{1.45}
+    \begin{center}
+    \begin{tabular}{l @{\hskip 25pt} l}
+        $\bullet$ \ $A : B : C \neq A' : B' : C'$ & $\implies (P) \text{ cắt } (Q)$ \\[6pt]
+        $\bullet$ \ $\dfrac{A}{A'} = \dfrac{B}{B'} = \dfrac{C}{C'} = \dfrac{D}{D'}$ & $\implies (P) \equiv (Q)$ \\[6pt]
+        $\bullet$ \ $\dfrac{A}{A'} = \dfrac{B}{B'} = \dfrac{C}{C'} \neq \dfrac{D}{D'}$ & $\implies (P) // (Q)$ \\[6pt]
+        $\bullet$ \ $A \cdot A' + B \cdot B' + C \cdot C' = 0$ & $\implies (P) \perp (Q)$ \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Đường thẳng $d$ và Mặt phẳng $(P)$:}}
+    \begin{itemize}
+        \item Thay $x, y, z$ của đường thẳng trong phương trình tham số vào phương trình mặt phẳng $(P)$ để tìm nghiệm $t$:
+    \end{itemize}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabular}{l @{\hskip 12pt} l}
+        $\bullet$ \ Vô nghiệm & $\implies d // (P)$ \quad (dạng $0t = 2$) \\
+        $\bullet$ \ Có 1 nghiệm & $\implies d \text{ cắt } (P)$ \quad (thay $t \implies$ tọa độ giao điểm) \\
+        $\bullet$ \ Vô số nghiệm & $\implies d \subset (P)$ \quad (dạng $0t = 0$) \\
+        $\bullet$ \ $\vec{u}$ tỉ lệ với $\vec{n}$ & $\implies d \perp (P)$ \\
+    \end{tabular}
+    \end{center}
+\end{theorybox}
+
+% -------------------------------------------------------------------------
+% MỤC 4: ĐƯỜNG THẲNG VÀ ĐƯỜNG THẲNG (SƠ ĐỒ CÂY CHIỀU NGANG RỘNG RÃI)
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 4. Đường thẳng và Đường thẳng}}
+    \par\vspace{4pt}
+
+    \noindent
+    Cho hai đường thẳng:
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases} \qquad\qquad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases}
+    \]
+    \[
+        \text{Gọi } \vec{u} = [\vec{u}_1, \vec{u}_2]
+    \]
+    \vspace{4pt}
+
+    \centering
+    \begin{tikzpicture}[
+        xscale=1.05, yscale=0.92,
+        font=\fontsize{11.5pt}{14pt}\selectfont,
+        branch/.style={draw=accentred, line width=1.3pt, rounded corners=3pt},
+        cond/.style={text=accentred, font=\bfseries\fontsize{11pt}{13pt}\selectfont},
+        txt/.style={text=deepblue, font=\bfseries\sffamily\fontsize{12pt}{14pt}\selectfont}
+    ]
+        % Gốc bên trái: [u1, u2]
+        \node[anchor=east] (root) at (0, 0) {$[\vec{u}_1, \vec{u}_2]$};
+
+        % Cột mốc giữa: [MN, u1] và MN . u
+        \node[anchor=west] (mid_top) at (4.2, 1.8) {$[\vec{MN}, \vec{u}_1]$};
+        \node[anchor=west] (mid_bot) at (4.2, -1.8) {$\vec{MN} \cdot \vec{u}$};
+
+        % Cột kết quả bên phải
+        \node[txt, anchor=west] (res_trung) at (9.6, 2.5) {$d_1 \equiv d_2$};
+        \node[txt, anchor=west] (res_songsong) at (9.6, 1.1) {$d_1 // d_2$};
+        \node[txt, anchor=west] (res_cat) at (9.6, -1.1) {$d_1 \text{ cắt } d_2$};
+        \node[txt, anchor=west] (res_cheo) at (9.6, -2.5) {$d_1 \text{ chéo } d_2$};
+
+        % --- NHÁNH CẤP 1 (Từ Gốc sang Cột Giữa) ---
+        % Nhánh trên (= 0)
+        \draw[branch] (root.east) -- (1.5, 0) -- (2.8, 1.8) -- (mid_top.west);
+        \node[cond, above] at (2.6, 1.8) {$= \vec{0}$};
+
+        % Nhánh dưới (khác 0)
+        \draw[branch] (root.east) -- (1.5, 0) -- (2.8, -1.8) -- (mid_bot.west);
+        \node[cond, above] at (2.6, -1.8) {$\neq \vec{0}$};
+
+        % --- NHÁNH CẤP 2 (Từ Cột Giữa sang Kết Quả) ---
+        % Từ [MN, u1] rẽ ra Trùng / Song Song
+        \draw[branch] (mid_top.east) -- ++(0.5, 0) -- ++(1.4, 0.7) -- (res_trung.west);
+        \node[cond, above=1pt] at ($(mid_top.east) + (1.2, 0.4)$) {$= \vec{0}$};
+
+        \draw[branch] (mid_top.east) -- ++(0.5, 0) -- ++(1.4, -0.7) -- (res_songsong.west);
+        \node[cond, below=1pt] at ($(mid_top.east) + (1.2, -0.4)$) {$\neq \vec{0}$};
+
+        % Từ MN . u rẽ ra Cắt / Chéo
+        \draw[branch] (mid_bot.east) -- ++(0.8, 0) -- ++(1.4, 0.7) -- (res_cat.west);
+        \node[cond, above=1pt] at ($(mid_bot.east) + (1.5, 0.4)$) {$= 0$};
+
+        \draw[branch] (mid_bot.east) -- ++(0.8, 0) -- ++(1.4, -0.7) -- (res_cheo.west);
+        \node[cond, below=1pt] at ($(mid_bot.east) + (1.5, -0.4)$) {$\neq 0$};
+    \end{tikzpicture}
+    \vspace{4pt}
+\end{theorybox}
+
+
+\end{document}

@@ -1,0 +1,505 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% PHẦN I: GÓC TRONG KHÔNG GIAN OXYZ
+% =========================================================================
+\titlebox{Chuyên đề: Oxyz}{Bổ sung kiến thức Oxyz}{Oxyz: Bổ sung kiến thức}
+
+\vspace{-0.2cm}
+
+\dangbox{Phần I}{Góc trong không gian $Oxyz$}
+
+\vspace{0.1cm}
+
+\begin{theorybox}
+    \vspace{2pt}
+    \begin{center}
+        {\Large\color{accentred} $\mathbf{\dfrac{\text{Tích vô hướng}}{\text{Tích độ dài}}}$}
+    \end{center}
+    
+    \vspace{6pt}
+    \centering
+    \renewcommand{\arraystretch}{1.55}
+    \begin{tabular}{@{} l @{\hskip 12pt} l @{\hskip 36pt} r @{}}
+        $\bullet$ \ $\cos$ không trị: & 2 vectơ $(\vec{a} \text{ và } \vec{b})$ & (có thể $> 90^\circ$) \\
+                                      & $\widehat{ACB}$ (dùng $\vec{CA}$ và $\vec{CB}$) & \\
+        $\bullet$ \ $\cos$ có trị:     & 2 đường thẳng, 2 mặt phẳng            & (phải $\le 90^\circ$) \\
+        $\bullet$ \ $\sin$ có trị:     & đường thẳng và mặt phẳng              & (phải $\le 90^\circ$) \\
+    \end{tabular}
+    \vspace{2pt}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% Câu 1: Góc giữa hai vectơ
+\questionLinesManual{6}{1}{%
+Trong không gian $Oxyz$, cho hai vectơ $\vec{a} = (1; 0; -1)$ và $\vec{b} = (-1; 1; 0)$. Tính số đo góc giữa hai vectơ $\vec{a}$ và $\vec{b}$.
+}{}
+
+\vspace{0.25cm}
+
+% Câu 2: Góc đỉnh tam giác ACB
+\questionLinesManual{6}{2}{%
+Trong không gian $Oxyz$, cho ba điểm $A(2; 1; 0)$, $B(1; 2; 0)$ và $C(1; 1; 0)$. Tính số đo góc $\widehat{ACB}$.
+}{}
+
+\newpage
+
+% Câu 3: Góc giữa hai đường thẳng
+\questionLinesManual{6}{3}{%
+Trong không gian $Oxyz$, tính cosin của góc giữa hai đường thẳng:
+\[
+    d_1\colon \frac{x - 1}{2} = \frac{y + 2}{1} = \frac{z}{-2} \quad \text{và} \quad d_2\colon \frac{x + 1}{-1} = \frac{y}{2} = \frac{z - 3}{2}
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 4: Góc giữa hai mặt phẳng
+\questionLinesManual{6}{4}{%
+Trong không gian $Oxyz$, tính số đo của góc tạo bởi hai mặt phẳng:
+\[
+    (P)\colon x + y - 2z + 1 = 0 \quad \text{và} \quad (Q)\colon 2x - y + z - 5 = 0
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 5: Góc giữa đường thẳng và mặt phẳng
+\questionLinesManual{0}{5}{%
+Trong không gian $Oxyz$, cho đường thẳng $d\colon \dfrac{x - 1}{1} = \dfrac{y + 1}{2} = \dfrac{z - 3}{-1}$ và mặt phẳng $(P)\colon 2x + y + z - 4 = 0$. Tính số đo của góc tạo bởi đường thẳng $d$ và mặt phẳng $(P)$.
+}{}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN II: LÝ THUYẾT KHOẢNG CÁCH TRONG KHÔNG GIAN OXYZ
+% =========================================================================
+\dangbox{Phần II}{Khoảng cách trong không gian $Oxyz$}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \setlength{\lineskip}{4pt}
+    
+    \textbf{\textcolor{deepblue}{1. Hai điểm $A$ và $B$:}}
+    \[
+        |\vec{AB}| = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2 + (z_B - z_A)^2}
+    \]
+
+    \textbf{\textcolor{deepblue}{2. Khoảng cách từ điểm $A$ tới đường thẳng $d$:}}
+    \[
+        d \begin{cases} M \\ \vec{u}_d \end{cases} \implies d(A, d) = \frac{\left| [\vec{AM}, \vec{u}_d] \right|}{|\vec{u}_d|}
+    \]
+
+    \textbf{\textcolor{deepblue}{3. Khoảng cách của 2 đường thẳng $d_1 // d_2$:}}
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases}, \quad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases} 
+        \implies d(d_1, d_2) = \frac{\left| [\vec{MN}, \vec{u}_1] \right|}{|\vec{u}_1|} = \frac{\left| [\vec{MN}, \vec{u}_2] \right|}{|\vec{u}_2|}
+    \]
+
+    \textbf{\textcolor{deepblue}{4. Khoảng cách của 2 đường thẳng chéo nhau (2 vectơ không tỉ lệ):}}
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases}, \quad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases}
+    \]
+    \[
+        \text{Gọi } \vec{u} = [\vec{u}_1, \vec{u}_2] \implies d(d_1, d_2) = \frac{\left| \vec{MN} \cdot \vec{u} \right|}{|\vec{u}|}
+    \]
+
+    \textbf{\textcolor{deepblue}{5. Khoảng cách từ điểm $A(x_0; y_0; z_0)$ đến mặt phẳng $(P)\colon Ax + By + Cz + D = 0$:}}
+    \[
+        d(A, (P)) = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}
+    \]
+
+    \textbf{\textcolor{deepblue}{6. Khoảng cách giữa 2 mặt phẳng //, \ $((P) // (Q)$):}}
+    \[
+        \text{Lấy 1 điểm } A \in (P) \implies d((P), (Q)) = d(A, (Q))
+    \]
+
+    \textbf{\textcolor{deepblue}{7. Tính khoảng cách của đường thẳng $d$ và mặt phẳng $(P)$ ($d // (P)$):}}
+    \[
+        \text{Lấy 1 điểm } M \in d \implies d(d, (P)) = d(M, (P))
+    \]
+\end{theorybox}
+
+\newpage
+
+% Câu 1: Khoảng cách giữa 2 điểm
+\questionLinesManual{5}{1}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1; -2; 3)$ và $B(3; 2; -1)$. Tính khoảng cách giữa hai điểm $A$ và $B$.
+}{}
+
+\vspace{0.25cm}
+
+% Câu 2: Khoảng cách từ điểm tới đường thẳng
+\questionLinesManual{9}{2}{%
+Trong không gian $Oxyz$, cho điểm $A(1; 0; 2)$ và đường thẳng $d\colon \dfrac{x - 2}{1} = \dfrac{y + 1}{2} = \dfrac{z}{-1}$. Tính khoảng cách từ điểm $A$ đến đường thẳng $d$.
+}{}
+
+% Câu 3: Khoảng cách 2 đường thẳng song song
+\questionLinesManual{9}{3}{%
+Trong không gian $Oxyz$, tính khoảng cách giữa hai đường thẳng song song $d_1 // d_2$:
+\[
+    d_1\colon \frac{x - 1}{2} = \frac{y + 1}{1} = \frac{z - 2}{-1} \quad \text{và} \quad d_2\colon \frac{x}{2} = \frac{y - 2}{1} = \frac{z + 1}{-1}
+\]
+}{}
+
+\vspace{0.25cm}
+
+% Câu 4: Khoảng cách 2 đường thẳng chéo nhau
+\questionLinesManual{13}{4}{%
+Trong không gian $Oxyz$, tính khoảng cách giữa hai đường thẳng chéo nhau:
+\[
+    d_1\colon \frac{x - 1}{1} = \frac{y}{2} = \frac{z + 1}{-1} \quad \text{và} \quad d_2\colon \frac{x + 2}{-2} = \frac{y - 1}{1} = \frac{z}{1}
+\]
+}{}
+
+% Câu 5: Khoảng cách từ điểm đến mặt phẳng
+\questionLinesManual{13}{5}{%
+Trong không gian $Oxyz$, tính khoảng cách từ điểm $A(2; -1; 3)$ đến mặt phẳng $(P)\colon 2x - 2y + z + 1 = 0$.
+}{}
+
+\vspace{0.25cm}
+
+% Câu 6: Khoảng cách giữa 2 mặt phẳng song song
+\questionLinesManual{13}{6}{%
+Trong không gian $Oxyz$, tính khoảng cách giữa hai mặt phẳng song song $(P) // (Q)$ với:
+\[
+    (P)\colon 2x - y + 2z - 4 = 0 \quad \text{và} \quad (Q)\colon 2x - y + 2z + 5 = 0
+\]
+}{}
+
+% Câu 7: Khoảng cách giữa đường thẳng và mặt phẳng song song
+\questionLinesManual{13}{7}{%
+Trong không gian $Oxyz$, cho đường thẳng $d\colon \dfrac{x - 1}{1} = \dfrac{y + 2}{-1} = \dfrac{z}{2}$ và mặt phẳng $(P)\colon 2x + 4y + z - 2 = 0$. Biết rằng $d // (P)$, hãy tính khoảng cách giữa đường thẳng $d$ và mặt phẳng $(P)$.
+}{}
+
+% =========================================================================
+% PHẦN III: VỊ TRÍ TƯƠNG ĐỐI TRONG KHÔNG GIAN OXYZ
+% =========================================================================
+\dangbox{Phần III}{Vị trí tương đối trong không gian $Oxyz$}
+
+\vspace{0.15cm}
+
+% -------------------------------------------------------------------------
+% MỤC 1: ĐIỂM VỚI MẶT CẦU, MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 1. Điểm với Mặt cầu, Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M$ với Mặt cầu $(S)$ (tâm $I$, bán kính $R$):}}
+    \begin{itemize}
+        \item Tính $IM$ và so sánh với $R$:
+        \[
+            \begin{cases}
+                IM > R \implies \text{Điểm } M \text{ nằm ngoài mặt cầu} \\
+                IM = R \implies \text{Điểm } M \text{ nằm trên mặt cầu} \\
+                IM < R \implies \text{Điểm } M \text{ nằm trong mặt cầu}
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M(x_M; y_M; z_M)$ với Mặt phẳng $(P)\colon Ax + By + Cz + D = 0$:}}
+    \begin{itemize}
+        \item Thay tọa độ $M(x_M; y_M; z_M)$ vào $(P)$:
+        \[
+            \begin{cases}
+                Ax_M + By_M + Cz_M + D = 0 \implies M \in (P) \\
+                Ax_M + By_M + Cz_M + D \neq 0 \implies M \notin (P)
+            \end{cases}
+        \]
+    \end{itemize}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Điểm $M(x_M; y_M; z_M)$ với Đường thẳng $d$:}}
+    \begin{itemize}
+        \item \textbf{Dạng chính tắc } $d\colon \dfrac{x - x_0}{A} = \dfrac{y - y_0}{B} = \dfrac{z - z_0}{C}$: Thay tọa độ $M$ vào $d$:
+        \[
+            \begin{cases}
+                \dfrac{x_M - x_0}{A} = \dfrac{y_M - y_0}{B} = \dfrac{z_M - z_0}{C} \implies M \in d \\[8pt]
+                \dfrac{x_M - x_0}{A} \neq \dfrac{y_M - y_0}{B} \neq \dfrac{z_M - z_0}{C} \text{ (1 trong 3 phân số khác nhau)} \implies M \notin d
+            \end{cases}
+        \]
+        \item \textbf{Dạng tham số } $d\colon \begin{cases} x = x_0 + At \\ y = y_0 + Bt \\ z = z_0 + Ct \end{cases}$: Thay tọa độ $M$ vào hệ:
+        \[
+            \begin{cases}
+                \begin{cases} x_M = x_0 + At \\ y_M = y_0 + Bt \\ z_M = z_0 + Ct \end{cases} \implies \text{cho cùng giá trị } t \implies M \in d \\[14pt]
+                \begin{cases} x_M = x_0 + At \\ y_M = y_0 + Bt \\ z_M = z_0 + Ct \end{cases} \implies \text{không cho cùng giá trị } t \implies M \notin d
+            \end{cases}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% VÍ DỤ MỤC 1.1: ĐIỂM VỚI MẶT CẦU (Đủ trong, trên, ngoài)
+\questionLinesManual{13}{1}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x - 1)^2 + (y + 2)^2 + (z - 3)^2 = 25$. Xét vị trí tương đối của các điểm $A(1; 1; 0)$, $B(1; -2; 8)$ và $C(5; 2; 3)$ đối với mặt cầu $(S)$.
+}{}
+
+
+% VÍ DỤ MỤC 1.2: ĐIỂM VỚI MẶT PHẲNG (Đủ thuộc và không thuộc)
+\questionLinesManual{13}{2}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon 2x - 3y + z - 5 = 0$. Xét xem trong hai điểm $M(1; -1; 0)$ và $N(2; 1; 3)$, điểm nào thuộc $(P)$ và điểm nào không thuộc $(P)$?
+}{}
+
+\vspace{0.25cm}
+
+% VÍ DỤ MỤC 1.3: ĐIỂM VỚI ĐƯỜNG THẲNG CHÍNH TẮC & THAM SỐ
+\questionLinesManual{0}{3}{%
+Trong không gian $Oxyz$:
+\begin{enumerate}
+    \item[a)] Cho đường thẳng chính tắc $d_1\colon \dfrac{x - 1}{2} = \dfrac{y + 2}{-1} = \dfrac{z - 3}{1}$. Xét xem các điểm $A(3; -3; 4)$ và $B(5; -4; 6)$ có thuộc $d_1$ hay không?
+    \item[b)] Cho đường thẳng tham số $d_2\colon \begin{cases} x = 2 + t \\ y = -1 + 2t \\ z = 3 - t \end{cases}$. Xét xem các điểm $C(3; 1; 2)$ và $D(1; -3; 5)$ có thuộc $d_2$ hay không?
+\end{enumerate}
+}{}
+
+\drawdashlinesfull
+
+\newpage
+
+% -------------------------------------------------------------------------
+% MỤC 2: MẶT CẦU VỚI MẶT CẦU, MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 2. Mặt cầu với Mặt cầu, Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+    \textbf{\textcolor{amberorange}{$\bullet$ Hai mặt cầu $(S_1)\begin{cases} I_1 \\ R_1 \end{cases}$ và $(S_2)\begin{cases} I_2 \\ R_2 \end{cases}$ (So sánh độ dài $I_1I_2$ với $R_1, R_2$):}}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{center}
+    \begin{tabular}{l l}
+        $\bullet$ \ $I_1I_2 > R_1 + R_2$ & : 2 mặt cầu ở ngoài nhau \\
+        $\bullet$ \ $I_1I_2 = R_1 + R_2$ & : 2 mặt cầu tiếp xúc ngoài \\
+        $\bullet$ \ $|R_1 - R_2| < I_1I_2 < R_1 + R_2$ & : 2 mặt cầu cắt nhau \\
+        $\bullet$ \ $I_1I_2 = |R_1 - R_2|$ & : 2 mặt cầu tiếp xúc trong \\
+        $\bullet$ \ $I_1I_2 < |R_1 - R_2|$ & : 2 mặt cầu chứa nhau \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Mặt phẳng $(P)$ với Mặt cầu $(S)$ (Tính $d(I, (P))$ và so sánh với bán kính $R$):}}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{center}
+    \begin{tabular}{l l l}
+        $\bullet$ \ $d(I, (P)) > R$ & : Mặt phẳng không cắt mặt cầu & (0 điểm chung) \\
+        $\bullet$ \ $d(I, (P)) = R$ & : Mặt phẳng tiếp xúc mặt cầu & (1 điểm chung) \\
+        $\bullet$ \ $d(I, (P)) < R$ & : Mặt phẳng cắt mặt cầu & (giao tuyến là đường tròn) \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Đường thẳng $d$ với Mặt cầu $(S)$ (Tính $d(I, d)$ và so sánh với bán kính $R$):}}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{center}
+    \begin{tabular}{l l l}
+        $\bullet$ \ $d(I, d) > R$ & : Đường thẳng không cắt mặt cầu & (0 điểm chung) \\
+        $\bullet$ \ $d(I, d) = R$ & : Đường thẳng tiếp xúc mặt cầu & (1 điểm chung) \\
+        $\bullet$ \ $d(I, d) < R$ & : Đường thẳng cắt mặt cầu & (2 điểm chung) \\
+    \end{tabular}
+    \end{center}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\newpage
+
+% VÍ DỤ MỤC 2.1: HAI MẶT CẦU (Đủ cả 6 trường hợp kể cả trùng nhau)
+\questionLinesManual{0}{4}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa mặt cầu $(S_1)\colon x^2 + y^2 + z^2 = 25$ với từng mặt cầu sau:
+\begin{enumerate}
+    \item[a)] $(S_a)\colon (x - 6)^2 + (y - 8)^2 + z^2 = 9$.
+    \item[b)] $(S_b)\colon (x - 6)^2 + (y - 8)^2 + z^2 = 25$.
+    \item[c)] $(S_c)\colon (x - 3)^2 + (y - 4)^2 + z^2 = 4$.
+    \item[d)] $(S_d)\colon (x - 3)^2 + (y - 4)^2 + z^2 = 100$.
+    \item[e)] $(S_e)\colon (x - 1)^2 + (y - 2)^2 + z^2 = 1$.
+    \item[f)] $(S_f)\colon x^2 + y^2 + z^2 = 25$.
+\end{enumerate}
+}{}
+\drawdashlinesfull
+
+
+% VÍ DỤ MỤC 2.2: MẶT PHẲNG VỚI MẶT CẦU (Đủ không cắt, tiếp xúc, cắt)
+\questionLinesManual{0}{5}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x - 1)^2 + (y - 2)^2 + (z + 1)^2 = 9$. Xét vị trí tương đối của mặt cầu $(S)$ đối với từng mặt phẳng sau:
+\begin{enumerate}
+    \item[a)] $(P_1)\colon 2x + 2y - z + 8 = 0$.
+    \item[b)] $(P_2)\colon 2x - 2y + z + 12 = 0$.
+    \item[c)] $(P_3)\colon 2x + y + 2z - 5 = 0$.
+\end{enumerate}
+}{}
+\drawdashlinesfull
+
+\vspace{0.25cm}
+
+% VÍ DỤ MỤC 2.3: ĐƯỜNG THẲNG VỚI MẶT CẦU (Đủ không cắt, tiếp xúc, cắt)
+\questionLinesManual{0}{6}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2 + y^2 + z^2 = 9$. Xét vị trí tương đối của mặt cầu $(S)$ đối với từng đường thẳng sau:
+\begin{enumerate}
+    \item[a)] $d_1\colon \dfrac{x - 4}{2} = \dfrac{y - 2}{1} = \dfrac{z - 2}{-2}$.
+    \item[b)] $d_2\colon \dfrac{x - 1}{2} = \dfrac{y - 2}{1} = \dfrac{z - 2}{-2}$.
+    \item[c)] $d_3\colon \dfrac{x}{2} = \dfrac{y}{1} = \dfrac{z}{-2}$.
+\end{enumerate}
+}{}
+
+\drawdashlinesfull
+
+% -------------------------------------------------------------------------
+% MỤC 3: MẶT PHẲNG VÀ MẶT PHẲNG, ĐƯỜNG THẲNG
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 3. Mặt phẳng với Mặt phẳng, Đường thẳng}}
+    \par\vspace{6pt}
+
+\textbf{\textcolor{amberorange}{$\bullet$ Mặt phẳng $(P)\colon Ax+By+Cz+D=0$ và Mặt phẳng $(Q)\colon A'x+B'y+C'z+D'=0$:}}
+    \begin{itemize}
+        \item Xét tỉ lệ 2 vectơ pháp tuyến $\vec{n}_P$ và $\vec{n}_Q$:
+    \end{itemize}
+    \renewcommand{\arraystretch}{1.45}
+    \begin{center}
+    \begin{tabular}{l @{\hskip 25pt} l}
+        $\bullet$ \ $A : B : C \neq A' : B' : C'$ & $\implies (P) \text{ cắt } (Q)$ \\[6pt]
+        $\bullet$ \ $\dfrac{A}{A'} = \dfrac{B}{B'} = \dfrac{C}{C'} = \dfrac{D}{D'}$ & $\implies (P) \equiv (Q)$ \\[6pt]
+        $\bullet$ \ $\dfrac{A}{A'} = \dfrac{B}{B'} = \dfrac{C}{C'} \neq \dfrac{D}{D'}$ & $\implies (P) // (Q)$ \\[6pt]
+        $\bullet$ \ $A \cdot A' + B \cdot B' + C \cdot C' = 0$ & $\implies (P) \perp (Q)$ \\
+    \end{tabular}
+    \end{center}
+
+    \vspace{4pt}
+    \textbf{\textcolor{amberorange}{$\bullet$ Đường thẳng $d$ và Mặt phẳng $(P)$:}}
+    \begin{itemize}
+        \item Thay $x, y, z$ của đường thẳng trong phương trình tham số vào phương trình mặt phẳng $(P)$ để tìm nghiệm $t$:
+    \end{itemize}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{center}
+    \begin{tabular}{l @{\hskip 12pt} l}
+        $\bullet$ \ Vô nghiệm & $\implies d // (P)$ \quad (dạng $0t = 2$) \\
+        $\bullet$ \ Có 1 nghiệm & $\implies d \text{ cắt } (P)$ \quad (thay $t \implies$ tọa độ giao điểm) \\
+        $\bullet$ \ Vô số nghiệm & $\implies d \subset (P)$ \quad (dạng $0t = 0$) \\
+        $\bullet$ \ $\vec{u}$ tỉ lệ với $\vec{n}$ & $\implies d \perp (P)$ \\
+    \end{tabular}
+    \end{center}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% VÍ DỤ MỤC 3.1: HAI MẶT PHẲNG (Đủ trùng, //, vuông góc, cắt)
+\questionLinesManual{7}{7}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon 2x - y + 2z - 3 = 0$. Xét vị trí tương đối giữa mặt phẳng $(P)$ và từng mặt phẳng sau:
+\begin{enumerate}
+    \item[a)] $(Q_1)\colon 4x - 2y + 4z - 6 = 0$.
+    \item[b)] $(Q_2)\colon 4x - 2y + 4z + 5 = 0$.
+    \item[c)] $(Q_3)\colon x + 2y + 4 = 0$.
+    \item[d)] $(Q_4)\colon x + y + z - 1 = 0$.
+\end{enumerate}
+}{}
+
+\newpage
+
+% VÍ DỤ MỤC 3.2: ĐƯỜNG THẲNG VÀ MẶT PHẲNG (Đủ //, cắt, nằm trong, vuông góc)
+\questionLinesManual{0}{8}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon 2x + y - z - 3 = 0$. Xét vị trí tương đối giữa mặt phẳng $(P)$ và từng đường thẳng sau (nếu cắt nhau, hãy tìm tọa độ giao điểm):
+\begin{enumerate}
+    \item[a)] $d_1\colon \begin{cases} x = 1 + t \\ y = -2t \\ z = 1 \end{cases}$.
+    \item[b)] $d_2\colon \begin{cases} x = 2 + t \\ y = 1 + t \\ z = 2t \end{cases}$.
+    \item[c)] $d_3\colon \begin{cases} x = 1 + t \\ y = 1 - 2t \\ z = 0 \end{cases}$.
+    \item[d)] $d_4\colon \begin{cases} x = 2t \\ y = t \\ z = -t \end{cases}$.
+\end{enumerate}
+}{}
+
+\drawdashlinesfull
+
+\newpage
+
+% -------------------------------------------------------------------------
+% MỤC 4: ĐƯỜNG THẲNG VÀ ĐƯỜNG THẲNG (SƠ ĐỒ CÂY THEO CHIỀU NGANG)
+% -------------------------------------------------------------------------
+\begin{theorybox}
+    \textbf{\textcolor{deepblue}{\large 4. Đường thẳng và Đường thẳng}}
+    \par\vspace{4pt}
+
+    \noindent
+    Cho hai đường thẳng:
+    \[
+        d_1 \begin{cases} M \\ \vec{u}_1 \end{cases} \qquad\qquad d_2 \begin{cases} N \\ \vec{u}_2 \end{cases}
+    \]
+    \[
+        \text{Gọi } \vec{u} = [\vec{u}_1, \vec{u}_2]
+    \]
+    \vspace{4pt}
+
+    \centering
+    \begin{tikzpicture}[
+        xscale=1.1, yscale=0.95,
+        font=\fontsize{11.5pt}{14pt}\selectfont,
+        branch/.style={draw=accentred, line width=1.3pt, rounded corners=3pt},
+        cond/.style={text=accentred, font=\bfseries\fontsize{11pt}{13pt}\selectfont},
+        txt/.style={text=deepblue, font=\bfseries\sffamily\fontsize{12pt}{14pt}\selectfont}
+    ]
+        % Gốc bên trái: [u1, u2]
+        \node[anchor=east] (root) at (0, 0) {$[\vec{u}_1, \vec{u}_2]$};
+
+        % Cột mốc giữa: [MN, u1] và MN . u
+        \node[anchor=west] (mid_top) at (4.5, 1.8) {$[\vec{MN}, \vec{u}_1]$};
+        \node[anchor=west] (mid_bot) at (4.5, -1.8) {$\vec{MN} \cdot \vec{u}$};
+
+        % Cột kết quả bên phải
+        \node[txt, anchor=west] (res_trung) at (10.0, 2.5) {$d_1 \equiv d_2$};
+        \node[txt, anchor=west] (res_songsong) at (10.0, 1.1) {$d_1 // d_2$};
+        \node[txt, anchor=west] (res_cat) at (10.0, -1.1) {$d_1 \text{ cắt } d_2$};
+        \node[txt, anchor=west] (res_cheo) at (10.0, -2.5) {$d_1 \text{ chéo } d_2$};
+
+        % --- NHÁNH CẤP 1 (Từ Gốc sang Cột Giữa) ---
+        % Nhánh trên (= 0)
+        \draw[branch] (root.east) -- (1.6, 0) -- (3.0, 1.8) -- (mid_top.west);
+        \node[cond, above] at (2.8, 1.8) {$= \vec{0}$};
+
+        % Nhánh dưới (khác 0)
+        \draw[branch] (root.east) -- (1.6, 0) -- (3.0, -1.8) -- (mid_bot.west);
+        \node[cond, above] at (2.8, -1.8) {$\neq \vec{0}$};
+
+        % --- NHÁNH CẤP 2 (Từ Cột Giữa sang Kết Quả) ---
+        % Từ [MN, u1] rẽ ra Trùng / Song Song
+        \draw[branch] (mid_top.east) -- ++(0.5, 0) -- ++(1.4, 0.7) -- (res_trung.west);
+        \node[cond, above=1pt] at ($(mid_top.east) + (1.2, 0.4)$) {$= \vec{0}$};
+
+        \draw[branch] (mid_top.east) -- ++(0.5, 0) -- ++(1.4, -0.7) -- (res_songsong.west);
+        \node[cond, below=1pt] at ($(mid_top.east) + (1.2, -0.4)$) {$\neq \vec{0}$};
+
+        % Từ MN . u rẽ ra Cắt / Chéo
+        \draw[branch] (mid_bot.east) -- ++(0.8, 0) -- ++(1.4, 0.7) -- (res_cat.west);
+        \node[cond, above=1pt] at ($(mid_bot.east) + (1.5, 0.4)$) {$= 0$};
+
+        \draw[branch] (mid_bot.east) -- ++(0.8, 0) -- ++(1.4, -0.7) -- (res_cheo.west);
+        \node[cond, below=1pt] at ($(mid_bot.east) + (1.5, -0.4)$) {$\neq 0$};
+    \end{tikzpicture}
+    \vspace{4pt}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+% VÍ DỤ MỤC 4.1: TRÙNG NHAU VÀ SONG SONG //
+\questionLinesManual{0}{9}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa từng cặp đường thẳng sau:
+\begin{enumerate}
+    \item[a)] $d_1\colon \dfrac{x - 1}{2} = \dfrac{y + 1}{1} = \dfrac{z - 2}{-1}$ và $d_2\colon \dfrac{x - 3}{4} = \dfrac{y}{2} = \dfrac{z - 1}{-2}$.
+    \item[b)] $d_1\colon \dfrac{x - 1}{2} = \dfrac{y + 1}{1} = \dfrac{z - 2}{-1}$ và $d_3\colon \dfrac{x}{2} = \dfrac{y - 2}{1} = \dfrac{z + 1}{-1}$.
+\end{enumerate}
+}{}
+
+\drawdashlinesfull
+\newpage
+
+% VÍ DỤ MỤC 4.2: CẮT NHAU VÀ CHÉO NHAU
+\questionLinesManual{0}{10}{%
+Trong không gian $Oxyz$, xét vị trí tương đối giữa từng cặp đường thẳng sau (nếu cắt nhau, hãy tìm tọa độ giao điểm):
+\begin{enumerate}
+    \item[a)] $d_1\colon \dfrac{x - 1}{1} = \dfrac{y - 2}{2} = \dfrac{z + 1}{-1}$ và $d_2\colon \dfrac{x - 2}{2} = \dfrac{y - 4}{1} = \dfrac{z + 2}{1}$.
+    \item[b)] $d_1\colon \dfrac{x - 1}{1} = \dfrac{y}{2} = \dfrac{z + 1}{-1}$ và $d_3\colon \dfrac{x + 2}{-2} = \dfrac{y - 1}{1} = \dfrac{z}{1}$.
+\end{enumerate}
+}{}
+\drawdashlinesfull
+
+\end{document}

@@ -1,0 +1,620 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: CÂU 1 -> CÂU 6 (NỀN TẢNG, NHẬN BIẾT & ĐIỀU KIỆN MẶT CẦU)
+% =========================================================================
+\titlebox{BÀI TẬP VỀ NHÀ}{Oxyz: PHƯƠNG TRÌNH MẶT CẦU}{Oxyz: Phương trình mặt cầu}
+
+\questionLinesManual{0}{1}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x+3)^2+y^2+(z-4)^2=16$. Tọa độ tâm $I$ và bán kính $R$ của mặt cầu $(S)$ là:
+}{%
+\begin{tasks}(2)
+    \task $I(-3;0;4), R=4$
+    \task $I(3;0;-4), R=4$
+    \task $I(-3;0;4), R=16$
+    \task $I(3;0;-4), R=16$
+\end{tasks}
+}
+
+\questionLinesManual{0}{2}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2+(y-2)^2+(z+1)^2=6$. Đường kính của mặt cầu $(S)$ bằng:
+}{%
+\begin{tasks}(4)
+    \task $12$
+    \task $\sqrt{6}$
+    \task $3$
+    \task $2\sqrt{6}$
+\end{tasks}
+}
+
+\questionLinesManual{0}{3}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2+y^2+z^2+2x-2y-6z+3=0$. Bán kính của $(S)$ bằng:
+}{%
+\begin{tasks}(4)
+    \task $\sqrt{41}$
+    \task $2\sqrt{2}$
+    \task $8$
+    \task $\sqrt{6}$
+\end{tasks}
+}
+
+\questionLinesManual{0}{4}{%
+Trong không gian $Oxyz$, phương trình nào sau đây là phương trình của một mặt cầu?
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+z^2-2x+4z-1=0$
+    \task $x^2+z^2+3x-2y+4z-1=0$
+    \task $x^2+y^2+z^2+2xy-4y+4z-1=0$
+    \task $x^2+y^2+z^2-2x+2y-4z+8=0$
+\end{tasks}
+}
+
+\questionLinesManual{0}{5}{%
+Trong không gian $Oxyz$, phương trình nào sau đây \textbf{không} phải là phương trình của một mặt cầu?
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+z^2+x-2y+4z-3=0$
+    \task $2x^2+2y^2+2z^2-x-y-z=0$
+    \task $2x^2+2y^2+2z^2-4x+2y+2z+16=0$
+    \task $x^2+y^2+z^2-2x+2y-2z-8=0$
+\end{tasks}
+}
+
+\questionLinesManual{0}{6}{%
+Trong không gian $Oxyz$, cho các phương trình sau. Phương trình nào xác định một mặt cầu có tâm $I(1;-2;1)$?
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+z^2-2x+4y-2z+10=0$
+    \task $x^2+y^2+z^2-2x+4y-2z-3=0$
+    \task $x^2+y^2+z^2+2x-4y+2z-3=0$
+    \task $2x^2+2y^2+2z^2-2x+4y-2z-1=0$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 2: CÂU 7 -> CÂU 12 (THAM SỐ m, VỊ TRÍ ĐIỂM VỚI MẶT CẦU)
+% =========================================================================
+
+\questionLinesManual{5}{7}{%
+Trong không gian $Oxyz$, tìm tất cả các giá trị của tham số $m$ để phương trình $x^2+y^2+z^2-4x+2my+6z+13=0$ là phương trình của một mặt cầu.
+}{%
+\begin{tasks}(4)
+    \task $m > 0$
+    \task $m \ne 0$
+    \task $m \in \mathbb{R}$
+    \task $m < 0$
+\end{tasks}
+}
+
+\questionLinesManual{5}{8}{%
+Trong không gian $Oxyz$, tìm tất cả các giá trị thực của tham số $m$ để phương trình $x^2+y^2+z^2-2(m+2)x+4my+19m-6=0$ là phương trình của một mặt cầu.
+}{%
+\begin{tasks}(2)
+    \task $1 < m < 2$
+    \task $m < 1$ hoặc $m > 2$
+    \task $-2 \le m \le 1$
+    \task $m < -2$ hoặc $m > 1$
+\end{tasks}
+}
+
+\questionLinesManual{0}{9}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x-1)^2+(y-2)^2+(z-3)^2=9$ và điểm $M(1;2;1)$. Vị trí tương đối của điểm $M$ đối với mặt cầu $(S)$ là:
+}{%
+\begin{tasks}(2)
+    \task $M$ nằm trong mặt cầu $(S)$
+    \task $M$ nằm ngoài mặt cầu $(S)$
+    \task $M$ nằm trên mặt cầu $(S)$
+    \task $M$ trùng với tâm mặt cầu $(S)$
+\end{tasks}
+}
+
+\questionLinesManual{0}{10}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x-2)^2+(y+1)^2+(z-1)^2=16$. Trong các điểm sau đây, điểm nào nằm trên mặt cầu $(S)$?
+}{%
+\begin{tasks}(4)
+    \task $P(6;-1;1)$
+    \task $N(2;-1;1)$
+    \task $M(2;-1;4)$
+    \task $Q(0;0;0)$
+\end{tasks}
+}
+
+\questionLinesManual{5}{11}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon (x-3)^2+(y-2)^2+(z+1)^2=25$ và điểm $M(3;m;2)$. Tìm tất cả các giá trị thực của tham số $m$ để điểm $M$ nằm ngoài mặt cầu $(S)$.
+}{%
+\begin{tasks}(2)
+    \task $-2 < m < 6$
+    \task $m < -2$ hoặc $m > 6$
+    \task $-6 < m < 2$
+    \task $-2 \le m \le 6$
+\end{tasks}
+}
+
+\questionLinesManual{5}{12}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2+y^2+z^2-4x+2y-2z-3=0$ và điểm $A(m;1;2)$. Tìm tất cả các giá trị thực của tham số $m$ để điểm $A$ nằm trên mặt cầu $(S)$.
+}{%
+\begin{tasks}(4)
+    \task $m=1$ hoặc $m=3$
+    \task $m=0$ hoặc $m=4$
+    \task $m=-1$ hoặc $m=5$
+    \task $m=2$ hoặc $m=-2$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 3: CÂU 13 -> CÂU 18 (DẠNG 1: TÂM & BÁN KÍNH, DẠNG 2: TÂM & QUA ĐIỂM)
+% =========================================================================
+
+\questionLinesManual{5}{13}{%
+Trong không gian $Oxyz$, mặt cầu có tâm $I(1;-4;1)$ và bán kính $R=4$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y+4)^2+(z-1)^2=16$
+    \task $(x-1)^2+(y+4)^2+(z-1)^2=2$
+    \task $(x-1)^2+(y-4)^2+(z+1)^2=16$
+    \task $(x-1)^2+(y+4)^2+(z-1)^2=4$
+\end{tasks}
+}
+
+\questionLinesManual{5}{14}{%
+Trong không gian $Oxyz$, mặt cầu có tâm $I(-4;5;2)$ và đường kính bằng $10$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $(x+4)^2+(y-5)^2+(z-2)^2=25$
+    \task $(x-4)^2+(y+5)^2+(z+2)^2=25$
+    \task $(x-4)^2+(y+5)^2+(z+2)^2=100$
+    \task $(x+4)^2+(y-5)^2+(z-2)^2=100$
+\end{tasks}
+}
+
+\questionLinesManual{5}{15}{%
+Trong không gian $Oxyz$, mặt cầu có tâm $I(1;1;1)$ và diện tích bằng $4\pi$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-1)^2+(z-1)^2=4$
+    \task $(x+1)^2+(y+1)^2+(z+1)^2=1$
+    \task $(x-1)^2+(y-1)^2+(z-1)^2=1$
+    \task $(x+1)^2+(y+1)^2+(z+1)^2=4$
+\end{tasks}
+}
+
+\questionLinesManual{5}{16}{%
+Trong không gian $Oxyz$, cho hai điểm $I(2;3;4)$ và $A(1;2;3)$. Phương trình mặt cầu có tâm $I$ và đi qua điểm $A$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x+2)^2+(y+3)^2+(z+4)^2=3$
+    \task $(x-2)^2+(y-3)^2+(z-4)^2=45$
+    \task $(x-2)^2+(y-3)^2+(z-4)^2=3$
+    \task $(x+2)^2+(y+3)^2+(z+4)^2=9$
+\end{tasks}
+}
+
+\questionLinesManual{5}{17}{%
+Trong không gian $Oxyz$, cho điểm $I(1;-4;3)$ và điểm $A(5;-3;2)$. Phương trình mặt cầu tâm $I$ đi qua $A$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y+4)^2+(z-3)^2=18$
+    \task $(x-1)^2+(y-4)^2+(z-3)^2=18$
+    \task $(x-1)^2+(y+4)^2+(z-3)^2=16$
+    \task $(x-1)^2+(y-4)^2+(z-3)^2=16$
+\end{tasks}
+}
+
+\questionLinesManual{5}{18}{%
+Trong không gian $Oxyz$, cho hai điểm $I(0;0;-3)$ và $M(4;0;0)$. Phương trình của mặt cầu tâm $I$ đi qua $M$ là:
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+(z+3)^2=25$
+    \task $x^2+y^2+(z+3)^2=5$
+    \task $x^2+y^2+(z-3)^2=25$
+    \task $x^2+y^2+(z-3)^2=5$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 4: CÂU 19 -> CÂU 24 (DẠNG 3: ĐƯỜNG KÍNH, DẠNG 4: TIẾP XÚC TRỤC/MẶT TỌA ĐỘ)
+% =========================================================================
+
+\questionLinesManual{5}{19}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1;-2;3)$ và $B(-1;4;1)$. Phương trình mặt cầu nhận đoạn thẳng $AB$ làm đường kính là:
+}{%
+\begin{tasks}(2)
+    \task $x^2+(y-1)^2+(z-2)^2=11$
+    \task $x^2+(y-1)^2+(z-2)^2=44$
+    \task $(x-1)^2+(y+2)^2+(z-3)^2=11$
+    \task $x^2+(y+1)^2+(z+2)^2=11$
+\end{tasks}
+}
+
+\questionLinesManual{5}{20}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1;1;1)$ và $B(1;-1;3)$. Phương trình mặt cầu có đường kính $AB$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+y^2+(z-2)^2=8$
+    \task $(x-1)^2+y^2+(z-2)^2=2$
+    \task $(x+1)^2+y^2+(z+2)^2=2$
+    \task $(x+1)^2+y^2+(z+2)^2=8$
+\end{tasks}
+}
+
+\questionLinesManual{5}{21}{%
+Trong không gian $Oxyz$, cho hai điểm $A(1;2;3)$ và $B(5;4;-1)$. Phương trình mặt cầu đường kính $AB$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-3)^2+(y-3)^2+(z-1)^2=36$
+    \task $(x-3)^2+(y-3)^2+(z-1)^2=9$
+    \task $(x-3)^2+(y-3)^2+(z-1)^2=6$
+    \task $(x+3)^2+(y+3)^2+(z+1)^2=9$
+\end{tasks}
+}
+
+\questionLinesManual{5}{22}{%
+Trong không gian $Oxyz$, cho hai điểm $A(2;-1;-3)$ và $B(0;3;-1)$. Phương trình của mặt cầu đường kính $AB$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-1)^2+(z+2)^2=6$
+    \task $(x-1)^2+(y-1)^2+(z+2)^2=24$
+    \task $(x+1)^2+(y+1)^2+(z-2)^2=6$
+    \task $(x+1)^2+(y+1)^2+(z-2)^2=24$
+\end{tasks}
+}
+
+\questionLinesManual{5}{23}{%
+Trong không gian $Oxyz$, phương trình mặt cầu tâm $I(1;2;3)$ và tiếp xúc với mặt phẳng tọa độ $(Oyz)$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=4$
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=1$
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=9$
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=13$
+\end{tasks}
+}
+
+\questionLinesManual{5}{24}{%
+Trong không gian $Oxyz$, cho điểm $I(0;2;3)$. Phương trình mặt cầu có tâm $I$ và tiếp xúc với trục $Oy$ là:
+}{%
+\begin{tasks}(2)
+    \task $x^2+(y+2)^2+(z+3)^2=3$
+    \task $x^2+(y-2)^2+(z-3)^2=4$
+    \task $x^2+(y-2)^2+(z-3)^2=9$
+    \task $x^2+(y+2)^2+(z+3)^2=2$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 5: CÂU 25 -> CÂU 30 (DẠNG 4 TIẾP XÚC TRỤC, DẠNG 5 TIẾP XÚC MẶT PHẲNG (P))
+% =========================================================================
+
+\questionLinesManual{5}{25}{%
+Trong không gian $Oxyz$, cho điểm $M(1;-2;3)$. Gọi $I$ là hình chiếu vuông góc của $M$ trên trục $Ox$. Phương trình mặt cầu tâm $I$ bán kính $IM$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+y^2+z^2=13$
+    \task $(x+1)^2+y^2+z^2=13$
+    \task $(x-1)^2+y^2+z^2=\sqrt{13}$
+    \task $(x+1)^2+y^2+z^2=17$
+\end{tasks}
+}
+
+\questionLinesManual{5}{26}{%
+Trong không gian $Oxyz$, cho điểm $A(1;2;3)$. Phương trình mặt cầu tâm $A$ và tiếp xúc với mặt phẳng $(\alpha)\colon x-2y+2z+3=0$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=2$
+    \task $(x+1)^2+(y+2)^2+(z+3)^2=4$
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=4$
+    \task $(x-1)^2+(y-2)^2+(z-3)^2=16$
+\end{tasks}
+}
+
+\questionLinesManual{5}{27}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu có tâm $I(2;1;-4)$ và tiếp xúc với mặt phẳng $(\alpha)\colon x-2y+2z-7=0$.
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+z^2-4x-2y+8z-4=0$
+    \task $x^2+y^2+z^2+4x-2y+8z-4=0$
+    \task $x^2+y^2+z^2-4x-2y+8z+4=0$
+    \task $x^2+y^2+z^2+4x+2y-8z-4=0$
+\end{tasks}
+}
+
+\questionLinesManual{5}{28}{%
+Trong không gian $Oxyz$, phương trình mặt cầu có tâm $I(3;1;0)$ và tiếp xúc với mặt phẳng $(P)\colon 2x+2y-z+1=0$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x+3)^2+(y+1)^2+z^2=3$
+    \task $(x-3)^2+(y-1)^2+z^2=9$
+    \task $(x-3)^2+(y-1)^2+z^2=3$
+    \task $(x+3)^2+(y+1)^2+z^2=9$
+\end{tasks}
+}
+
+\questionLinesManual{5}{29}{%
+Trong không gian $Oxyz$, viết phương trình mặt cầu tâm $I(-1;2;3)$ và tiếp xúc với mặt phẳng $(P)\colon 2x-y-2z+1=0$.
+}{%
+\begin{tasks}(2)
+    \task $(x+1)^2+(y-2)^2+(z-3)^2=4$
+    \task $(x+1)^2+(y-2)^2+(z-3)^2=9$
+    \task $(x+1)^2+(y-2)^2+(z-3)^2=3$
+    \task $(x+1)^2+(y-2)^2+(z-3)^2=2$
+\end{tasks}
+}
+
+\questionLinesManual{5}{30}{%
+Trong không gian $Oxyz$, cho điểm $I(1;-1;1)$ và mặt phẳng $(\alpha)\colon 2x+y-2z+10=0$. Mặt cầu $(S)$ tâm $I$ tiếp xúc với $(\alpha)$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y+1)^2+(z-1)^2=9$
+    \task $(x-1)^2+(y+1)^2+(z-1)^2=1$
+    \task $(x+1)^2+(y-1)^2+(z+1)^2=9$
+    \task $(x+1)^2+(y-1)^2+(z+1)^2=3$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 6: CÂU 31 -> CÂU 36 (DẠNG 6: BỐN ĐIỂM, DẠNG 7: TÂM THUỘC MẶT PHẲNG)
+% =========================================================================
+
+\questionLinesManual{5}{31}{%
+Trong không gian $Oxyz$, mặt cầu $(S)$ đi qua bốn điểm $A(3;3;0)$, $B(3;0;3)$, $C(0;3;3)$ và $D(3;3;3)$ có bán kính bằng:
+}{%
+\begin{tasks}(4)
+    \task $R=\dfrac{3\sqrt{3}}{2}$
+    \task $R=\dfrac{27}{4}$
+    \task $R=3\sqrt{3}$
+    \task $R=\dfrac{3}{2}$
+\end{tasks}
+}
+
+\questionLinesManual{5}{32}{%
+Trong không gian $Oxyz$, mặt cầu đi qua bốn điểm $A(6;-2;3)$, $B(0;1;6)$, $C(2;0;-1)$ và $D(4;1;0)$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $x^2+y^2+z^2-4x+2y-6z+3=0$
+    \task $x^2+y^2+z^2-4x+2y-6z-3=0$
+    \task $x^2+y^2+z^2+4x+4y-6z-3=0$
+    \task $x^2+y^2+z^2-4x+2y+6z-3=0$
+\end{tasks}
+}
+
+\questionLinesManual{5}{33}{%
+Trong không gian $Oxyz$, bán kính mặt cầu ngoại tiếp tứ diện $OABC$ với $A(-1;0;0)$, $B(0;0;2)$, $C(0;-3;0)$ bằng:
+}{%
+\begin{tasks}(4)
+    \task $\dfrac{\sqrt{14}}{3}$
+    \task $\dfrac{\sqrt{14}}{4}$
+    \task $\dfrac{\sqrt{14}}{2}$
+    \task $\sqrt{14}$
+\end{tasks}
+}
+
+\questionLinesManual{5}{34}{%
+Trong không gian $Oxyz$, cho ba điểm $A(1;2;-4)$, $B(1;-3;1)$, $C(2;2;3)$. Đường kính của mặt cầu $(S)$ đi qua ba điểm trên và có tâm nằm trên mặt phẳng $(Oxy)$ là:
+}{%
+\begin{tasks}(4)
+    \task $2\sqrt{13}$
+    \task $2\sqrt{41}$
+    \task $2\sqrt{26}$
+    \task $2\sqrt{11}$
+\end{tasks}
+}
+
+\questionLinesManual{5}{35}{%
+Trong không gian $Oxyz$, cho ba điểm $A(2;0;1)$, $B(1;0;0)$, $C(1;1;1)$. Phương trình mặt cầu đi qua ba điểm $A, B, C$ và có tâm thuộc mặt phẳng $(P)\colon x+y+z-2=0$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+y^2+(z-1)^2=1$
+    \task $(x-1)^2+y^2+(z-1)^2=4$
+    \task $(x-3)^2+(y-1)^2+(z+2)^2=1$
+    \task $(x-3)^2+(y-1)^2+(z+2)^2=4$
+\end{tasks}
+}
+
+\questionLinesManual{5}{36}{%
+Trong không gian $Oxyz$, cho ba điểm $A(3;1;1)$, $B(0;1;4)$, $C(-1;-3;1)$ và mặt phẳng $(P)\colon x+y-2z+4=0$. Mặt cầu $(S)$ đi qua $A, B, C$ và có tâm thuộc $(P)$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $(x+1)^2+(y-1)^2+(z+2)^2=3$
+    \task $(x-1)^2+(y+1)^2+(z-2)^2=9$
+    \task $(x+1)^2+(y-1)^2+(z+2)^2=9$
+    \task $(x-1)^2+(y+1)^2+(z+2)^2=3$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 7: CÂU 37 -> CÂU 42 (DẠNG 8: THIẾT DIỆN ĐƯỜNG TRÒN, CHU VI & DIỆN TÍCH)
+% =========================================================================
+
+\questionLinesManual{5}{37}{%
+Trong không gian $Oxyz$, cho điểm $I(2;-2;3)$. Viết phương trình mặt cầu tâm $I$, cắt trục $Ox$ tại hai điểm $A, B$ sao cho $AB=2\sqrt{3}$.
+}{%
+\begin{tasks}(2)
+    \task $(x-2)^2+(y+2)^2+(z-3)^2=16$
+    \task $(x-2)^2+(y+2)^2+(z-3)^2=20$
+    \task $(x-2)^2+(y+2)^2+(z-3)^2=25$
+    \task $(x-2)^2+(y+2)^2+(z-3)^2=9$
+\end{tasks}
+}
+
+\questionLinesManual{5}{38}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon x+2y-2z+3=0$ và mặt cầu $(S)$ có tâm $I(0;-2;1)$. Biết mặt phẳng $(P)$ cắt mặt cầu $(S)$ theo giao tuyến là một đường tròn có diện tích $2\pi$. Phương trình của mặt cầu $(S)$ là:
+}{%
+\begin{tasks}(2)
+    \task $x^2+(y+2)^2+(z+1)^2=2$
+    \task $x^2+(y+2)^2+(z-1)^2=3$
+    \task $x^2+(y+2)^2+(z+1)^2=3$
+    \task $x^2+(y+2)^2+(z-1)^2=6$
+\end{tasks}
+}
+
+\questionLinesManual{5}{39}{%
+Trong không gian $Oxyz$, cho mặt phẳng $(P)\colon x-2y+2z-2=0$ và điểm $I(-1;2;-1)$. Viết phương trình mặt cầu $(S)$ có tâm $I$ và cắt mặt phẳng $(P)$ theo giao tuyến là đường tròn có bán kính $r=5$.
+}{%
+\begin{tasks}(2)
+    \task $(x+1)^2+(y-2)^2+(z+1)^2=25$
+    \task $(x+1)^2+(y-2)^2+(z+1)^2=16$
+    \task $(x-1)^2+(y+2)^2+(z-1)^2=34$
+    \task $(x+1)^2+(y-2)^2+(z+1)^2=34$
+\end{tasks}
+}
+
+\questionLinesManual{5}{40}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)$ có tâm $I(1;2;1)$ và cắt mặt phẳng $(P)\colon 2x-y+2z+7=0$ theo một đường tròn có đường kính bằng $8$. Phương trình mặt cầu $(S)$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-2)^2+(z-1)^2=81$
+    \task $(x-1)^2+(y-2)^2+(z-1)^2=25$
+    \task $(x+1)^2+(y+2)^2+(z+1)^2=9$
+    \task $(x-1)^2+(y-2)^2+(z-1)^2=5$
+\end{tasks}
+}
+
+\questionLinesManual{5}{41}{%
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon x^2+y^2+z^2=1$ và mặt phẳng $(P)\colon x+2y-2z+1=0$. Bán kính $r$ của đường tròn giao tuyến của $(S)$ và $(P)$ bằng:
+}{%
+\begin{tasks}(4)
+    \task $r=\dfrac{1}{3}$
+    \task $r=\dfrac{2\sqrt{2}}{3}$
+    \task $r=\dfrac{1}{2}$
+    \task $r=\dfrac{\sqrt{2}}{2}$
+\end{tasks}
+}
+
+\questionLinesManual{5}{42}{%
+Trong không gian $Oxyz$, cho điểm $I(1;3;-1)$ và mặt phẳng $(P)\colon 2x-y+2z-3=0$. Phương trình mặt cầu tâm $I$ cắt mặt phẳng $(P)$ theo một đường tròn có chu vi bằng $2\pi$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-1)^2+(y-3)^2+(z+1)^2=5$
+    \task $(x-1)^2+(y-3)^2+(z+1)^2=\sqrt{5}$
+    \task $(x+1)^2+(y+3)^2+(z-1)^2=5$
+    \task $(x-1)^2+(y-3)^2+(z+1)^2=3$
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 8: CÂU 43 -> CÂU 46 (VỊ TRÍ TƯƠNG ĐỐI 2 MẶT CẦU: TRÙNG, NGOÀI, TIẾP XÚC NGOÀI)
+% =========================================================================
+
+\questionLinesManual{6}{43}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon (x-3)^2+(y+1)^2+(z-3)^2=16$ và $(S_2)\colon x^2+y^2+z^2-6x+2y-6z+3=0$. Vị trí tương đối của $(S_1)$ và $(S_2)$ là:
+}{%
+\begin{tasks}(2)
+    \task Cắt nhau theo đường tròn
+    \task Trùng nhau
+    \task Tiếp xúc trong nhau
+    \task Ở ngoài nhau
+\end{tasks}
+}
+
+\questionLinesManual{6}{44}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon (x-1)^2+y^2+(z+2)^2=4$ và $(S_2)\colon (x+3)^2+(y-3)^2+(z-10)^2=9$. Khoảng cách giữa hai tâm $d=I_1I_2$ và vị trí tương đối giữa $(S_1)$ và $(S_2)$ là:
+}{%
+\begin{tasks}(2)
+    \task $d=13$, hai mặt cầu ở ngoài nhau
+    \task $d=5$, hai mặt cầu tiếp xúc ngoài
+    \task $d=13$, hai mặt cầu cắt nhau
+    \task $d=7$, hai mặt cầu ở ngoài nhau
+\end{tasks}
+}
+
+\questionLinesManual{6}{45}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon (x-1)^2+(y-1)^2+z^2=4$ và $(S_2)$ có tâm $I_2(9;1;6)$. Biết $(S_2)$ tiếp xúc ngoài với $(S_1)$, phương trình của mặt cầu $(S_2)$ là:
+}{%
+\begin{tasks}(2)
+    \task $(x-9)^2+(y-1)^2+(z-6)^2=64$
+    \task $(x-9)^2+(y-1)^2+(z-6)^2=144$
+    \task $(x-9)^2+(y-1)^2+(z-6)^2=36$
+    \task $(x+9)^2+(y+1)^2+(z+6)^2=25$
+\end{tasks}
+}
+
+\questionLinesManual{6}{46}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon x^2+y^2+z^2=9$ và $(S_2)\colon (x-3)^2+(y-4)^2+z^2=4$. Khẳng định nào sau đây là đúng?
+}{%
+\begin{tasks}(2)
+    \task $(S_1)$ và $(S_2)$ cắt nhau theo đường tròn
+    \task $(S_1)$ và $(S_2)$ tiếp xúc ngoài nhau
+    \task $(S_1)$ và $(S_2)$ tiếp xúc trong nhau
+    \task $(S_1)$ và $(S_2)$ ở ngoài nhau
+\end{tasks}
+}
+
+\newpage
+
+% =========================================================================
+% TRANG 9: CÂU 47 -> CÂU 50 (CẮT NHAU, ĐỰNG NHAU, THAM SỐ m & KHÓA KÍN TRANG)
+% =========================================================================
+
+\questionLinesManual{6}{47}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon (x-1)^2+(y+1)^2+(z-2)^2=16$ và $(S_2)\colon (x+2)^2+(y-3)^2+z^2=9$. Vị trí tương đối của $(S_1)$ và $(S_2)$ là:
+}{%
+\begin{tasks}(2)
+    \task Cắt nhau theo một đường tròn
+    \task Ở ngoài nhau
+    \task Tiếp xúc ngoài nhau
+    \task Tiếp xúc trong nhau
+\end{tasks}
+}
+
+\questionLinesManual{6}{48}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon x^2+y^2+z^2=36$ và $(S_2)\colon (x-1)^2+(y-2)^2+(z-2)^2=4$. Vị trí tương đối của hai mặt cầu là:
+}{%
+\begin{tasks}(2)
+    \task $(S_1)$ và $(S_2)$ tiếp xúc trong nhau
+    \task $(S_1)$ và $(S_2)$ tiếp xúc ngoài nhau
+    \task $(S_1)$ và $(S_2)$ cắt nhau theo đường tròn
+    \task $(S_2)$ đựng trong lòng $(S_1)$
+\end{tasks}
+}
+
+\questionLinesManual{6}{49}{%
+Trong không gian $Oxyz$, tìm tất cả các giá trị thực của tham số $m$ để mặt cầu $(S_m)\colon x^2+y^2+z^2-2x+4y-6z+m=0$ tiếp xúc ngoài với mặt cầu $(S')\colon (x-4)^2+(y-2)^2+(z-3)^2=4$.
+}{%
+\begin{tasks}(4)
+    \task $m=5$
+    \task $m=10$
+    \task $m=-5$
+    \task $m=9$
+\end{tasks}
+}
+
+\questionLinesManual{0}{50}{%
+Trong không gian $Oxyz$, cho hai mặt cầu $(S_1)\colon x^2+y^2+z^2+4x+2y+z=0$ và $(S_2)\colon x^2+y^2+z^2-2x-y-z=0$. Mặt phẳng chứa đường tròn giao tuyến của $(S_1)$ và $(S_2)$ có phương trình là:
+}{%
+\begin{tasks}(2)
+    \task $6x+3y+2z=0$
+    \task $2x+y+2z=0$
+    \task $6x-3y+2z=0$
+    \task $x+2y+3z=0$
+\end{tasks}
+}
+\drawdashlinesfull
+
+% =========================================================================
+% BẢNG ĐÁP ÁN BTVN 50 CÂU PHƯƠNG TRÌNH MẶT CẦU (ĐÃ KIỂM TRA ĐỘC LẬP - ẨN TRONG CODE)
+% -------------------------------------------------------------------------
+% 1.A   2.D   3.B   4.A   5.C   6.B   7.B   8.B   9.A   10.A
+% 11.B  12.B  13.A  14.A  15.C  16.C  17.A  18.A  19.A  20.B
+% 21.B  22.A  23.B  24.C  25.A  26.C  27.A  28.B  29.B  30.A
+% 31.A  32.B  33.C  34.C  35.A  36.B  37.A  38.B  39.D  40.B
+% 41.B  42.A  43.B  44.A  45.A  46.B  47.A  48.D  49.A  50.A
+% =========================================================================
+
+\end{document}
