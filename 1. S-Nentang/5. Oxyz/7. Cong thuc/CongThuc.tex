@@ -493,6 +493,47 @@
     \end{tabular}
     \end{center}
 
+    \vspace{0.25cm}
+    \begin{center}
+    \begin{tikzpicture}[
+        xscale=1.05,
+        font=\fontsize{11pt}{13pt}\selectfont
+    ]
+        % Nhãn I1I2 ở đầu bên trái
+        \node[font=\bfseries\large, color=deepblue] at (-1.2, 0) {$I_1I_2$};
+
+        % Đoạn thẳng chính
+        \draw[line width=1.3pt, color=deepblue] (0, 0) -- (10.5, 0);
+
+        % 2 mốc phân chia
+        \draw[line width=1.2pt, color=deepblue] (3.2, -0.15) -- (3.2, 0.15);
+        \node[above=6pt, font=\bfseries\large, color=deepblue] at (3.2, 0) {$|R_1 - R_2|$};
+        \fill[accentred] (3.2, 0) circle (2.5pt);
+
+        \draw[line width=1.2pt, color=deepblue] (7.3, -0.15) -- (7.3, 0.15);
+        \node[above=6pt, font=\bfseries\large, color=deepblue] at (7.3, 0) {$R_1 + R_2$};
+        \fill[accentred] (7.3, 0) circle (2.5pt);
+
+        % Dưới mốc: Tiếp xúc trong & Tiếp xúc ngoài
+        \draw[->, >=stealth, thick, accentred] (3.2, -0.55) -- (3.2, -0.15);
+        \node[below=2pt, font=\bfseries\sffamily, color=accentred] at (3.2, -0.55) {tiếp xúc trong};
+
+        \draw[->, >=stealth, thick, accentred] (7.3, -0.55) -- (7.3, -0.15);
+        \node[below=2pt, font=\bfseries\sffamily, color=accentred] at (7.3, -0.55) {tiếp xúc ngoài};
+
+        % Trên các khoảng: đựng - cắt - ngoài
+        \node[above=2pt, font=\bfseries\sffamily, color=deepblue] at (1.6, 0.55) {đựng};
+        \draw[->, >=stealth, thick, deepblue] (1.6, 0.55) -- (1.6, 0.15);
+
+        \node[above=2pt, font=\bfseries\sffamily, color=deepblue] at (5.25, 0.55) {cắt};
+        \draw[->, >=stealth, thick, deepblue] (5.25, 0.55) -- (5.25, 0.15);
+
+        \node[above=2pt, font=\bfseries\sffamily, color=deepblue] at (8.9, 0.55) {ngoài};
+        \draw[->, >=stealth, thick, deepblue] (8.9, 0.55) -- (8.9, 0.15);
+    \end{tikzpicture}
+    \end{center}
+    \vspace{0.15cm}
+
     \vspace{4pt}
     \textbf{\textcolor{amberorange}{$\bullet$ Mặt phẳng $(P)$ với Mặt cầu $(S)$ (Tính $d(I, (P))$ và so sánh với bán kính $R$):}}
     \renewcommand{\arraystretch}{1.4}
@@ -517,6 +558,7 @@
 \end{theorybox}
 
 \vspace{0.25cm}
+\newpage
 
 % -------------------------------------------------------------------------
 % MỤC 3: MẶT PHẲNG VÀ MẶT PHẲNG, ĐƯỜNG THẲNG
