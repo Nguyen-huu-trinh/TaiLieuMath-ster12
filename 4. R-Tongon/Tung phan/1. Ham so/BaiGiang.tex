@@ -1,0 +1,831 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: KỸ THUẬT XÉT DẤU & ĐẠO HÀM NHANH (MỖI Ý LÀ 1 CÂU RIÊNG)
+% =========================================================================
+\titlebox{Hàm số: Đơn điệu}{Tổng ôn: Tính đơn điệu của hàm số}{Kỹ năng xét dấu \& Đạo hàm nhanh}
+
+\vspace{-0.25cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Bậc 1 ($ax+b$):} Phải cùng, trái trái.
+        \item \textbf{Bậc 2 ($ax^2+bx+c$):} Trong trái, ngoài cùng.
+        \item \textbf{Nhiễm dấu:} Bội lẻ $\to$ đan dấu; Bội chẵn $\to$ không đổi dấu. Khoảng ngoài cùng bên phải cùng dấu với hệ số của mũ lớn nhất.
+        \item \textbf{Đạo hàm nhanh:}
+        \[
+            \left(\frac{ax+b}{cx+d}\right)' = \frac{ad - bc}{(cx+d)^2}; \qquad \left(\frac{ax^2+bx+c}{dx+e}\right)' = \frac{ad \cdot x^2 + 2ae \cdot x + (be - cd)}{(dx+e)^2}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.1cm}
+
+\questionLinesManual{3}{1}{%
+Xét dấu biểu thức bậc nhất: $f(x) = 2x - 6$.
+}{}
+
+\questionLinesManual{3}{2}{%
+Xét dấu biểu thức bậc nhất: $g(x) = -x + 3$.
+}{}
+
+\questionLinesManual{3}{3}{%
+Xét dấu tam thức bậc hai: $h(x) = x^2 - 3x + 2$.
+}{}
+
+\questionLinesManual{3}{4}{%
+Xét dấu tam thức bậc hai: $k(x) = -x^2 + 4x - 3$.
+}{}
+
+\questionLinesManual{3}{5}{%
+Lập trục xét dấu của biểu thức đa thức: $y = x^5(x-1)(x+1)^3(x-3)^2$.
+}{}
+
+\questionLinesManual{3}{6}{%
+Tính nhanh đạo hàm của hàm số: $y = \dfrac{2x+3}{x-4}$.
+}{}
+
+\questionLinesManual{3}{7}{%
+Tính nhanh đạo hàm của hàm số: $y = \dfrac{2-x}{2x+1}$.
+}{}
+
+\questionLinesManual{3}{8}{%
+Tính nhanh đạo hàm của hàm số: $y = \dfrac{x^2 - 2x + 3}{x - 1}$.
+}{}
+
+\questionLinesManual{3}{9}{%
+Tính nhanh đạo hàm của hàm số: $y = \dfrac{2x^2 + x - 3}{x + 2}$.
+}{}
+
+\newpage
+
+
+
+% =========================================================================
+% TRANG 2: TÍNH ĐƠN ĐIỆU (ĐỒ THỊ -> DÒNG KẺ GIẢNG -> KHUNG TỔNG KẾT Ở CUỐI)
+% =========================================================================
+\dangbox{TRỌNG TÂM}{Tính đơn điệu}
+
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tcolorbox}[colback=lightamber!40, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\small\bfseries
+        ĐT là $f(x) \longrightarrow \begin{cases} \text{ĐB khi } \nearrow \text{ (đi lên)} \\ \text{NB khi } \searrow \text{ (đi xuống)} \end{cases}$
+    \end{tcolorbox}
+
+    \vspace{0.15cm}
+    \centering
+    \begin{tikzpicture}[scale=0.85, line join=round, line cap=round, font=\footnotesize]
+        \draw[->, thick, black!60] (-2.2,0) -- (2.6,0) node[below] {$x$};
+        \draw[->, thick, black!60] (0,-2.5) -- (0,2.8) node[left] {$y$};
+        \node[below left] at (0,0) {$O$};
+
+        % Đồ thị chuẩn f(x)
+        \draw[deepblue, very thick, smooth, domain=-1.9:1.9] plot (\x, {-(\x)^3 + 3*(\x)});
+        \node[above right, deepblue] at (1.4,1.4) {$y = f(x)$};
+
+        % Tọa độ các điểm đặc biệt
+        \draw[dashed, black!40] (-1,0) node[above] {\tiny $-1$} -- (-1,-2) -- (0,-2) node[right] {\tiny $-2$};
+        \draw[dashed, black!40] (1,0) node[below] {\tiny $1$} -- (1,2) -- (0,2) node[left] {\tiny $2$};
+        
+        \fill (-1,-2) circle (1.5pt);
+        \fill (1,2) circle (1.5pt);
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tcolorbox}[colback=lightamber!40, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\small\bfseries
+        ĐT là $f'(x) \longrightarrow \begin{cases} \text{ĐB khi trên } Ox \; (f'>0) \\ \text{NB khi dưới } Ox \; (f'<0) \end{cases}$
+    \end{tcolorbox}
+
+    \vspace{0.15cm}
+    \centering
+    \begin{tikzpicture}[scale=0.85, line join=round, line cap=round, font=\footnotesize]
+        \draw[->, thick, black!60] (-2.2,0) -- (2.6,0) node[below] {$x$};
+        \draw[->, thick, black!60] (0,-2.5) -- (0,2.8) node[left] {$y$};
+        \node[below left] at (0,0) {$O$};
+
+        % Cùng một dạng đường cong chuẩn f'(x)
+        \draw[accentred, very thick, smooth, domain=-1.9:1.9] plot (\x, {-(\x)^3 + 3*(\x)});
+        \node[above right, accentred] at (1.4,1.4) {$y = f'(x)$};
+
+        \fill ({-sqrt(3)},0) circle (1.5pt) node[above left] {\tiny $-\sqrt{3}$};
+        \fill ({sqrt(3)},0) circle (1.5pt) node[below right] {\tiny $\sqrt{3}$};
+        \fill (0,0) circle (1.5pt);
+    \end{tikzpicture}
+\end{minipage}
+
+\vspace{0.25cm}
+
+% Dòng kẻ nháp trực tiếp ngay dưới đồ thị để giảng bài (6 dòng)
+\drawdashlines{12}
+
+\vfill
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item $f(x)$: xét \textbf{giá trị}.
+        \item $f'(x)$: xét \textbf{ĐB, NB, Cực trị}.
+        \item \textbf{Kết luận ĐB, NB:} 
+        Dùng từ \textbf{``và''} hoặc dấu \textbf{chấm phẩy (;)}. \textcolor{accentred}{\textbf{CẤM}} dùng $\cup$ hoặc $\backslash$.
+        \item \textbf{Không thể ĐB, NB trên $\mathbb{R}$:} Lượng giác, hàm có ĐK (mẫu, căn), hàm bậc chẵn.
+        \item \textbf{Mũ \& Logarit:}
+        \begin{itemize}
+            \item $a > 1 \implies$ \textbf{ĐB} (VD: $2^x, \; \log_2 x$).
+            \item $0 < a < 1 \implies$ \textbf{NB} (VD: $0{,}5^x, \; \log_{0{,}9} x$).
+        \end{itemize}
+    \end{itemize}
+\end{theorybox}
+
+
+
+
+
+
+\newpage
+
+% =========================================================================
+% TRANG: CỰC TRỊ QUA ĐỒ THỊ f(x) VÀ f'(x) (DÒNG KẺ GIẢNG BÀI)
+% =========================================================================
+\dangbox{TRỌNG TÂM}{Cực trị của hàm số}
+
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tcolorbox}[colback=lightamber!40, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\small\bfseries
+        ĐT là $f(x) \longrightarrow \text{Cực trị là các \textcolor{accentred}{điểm uốn}} \begin{cases} \text{Đỉnh } \cap \to \text{CĐ} \\ \text{Đáy } \cup \to \text{CT} \end{cases}$
+    \end{tcolorbox}
+
+    \vspace{0.2cm}
+    \centering
+    \begin{tikzpicture}[scale=0.9, line join=round, line cap=round, font=\small]
+        \draw[->, thick, black!60] (-2.2,0) -- (2.6,0) node[below] {$x$};
+        \draw[->, thick, black!60] (0,-2.5) -- (0,2.8) node[left] {$y$};
+        \node[below left] at (0,0) {$O$};
+
+        % Đồ thị chuẩn f(x)
+        \draw[deepblue, very thick, smooth, domain=-1.9:1.9] plot (\x, {-(\x)^3 + 3*(\x)});
+        \node[above right, deepblue] at (1.2,1.8) {$y = f(x)$};
+
+        % Tọa độ các điểm đặc biệt
+        \draw[dashed, black!40] (-1,0) node[above] {\footnotesize $-1$} -- (-1,-2) -- (0,-2) node[right] {\footnotesize $-2$};
+        \draw[dashed, black!40] (1,0) node[below] {\footnotesize $1$} -- (1,2) -- (0,2) node[left] {\footnotesize $2$};
+        
+        \fill[accentred] (-1,-2) circle (2.2pt) node[below=2pt] {\bfseries Cực tiểu};
+        \fill[accentred] (1,2) circle (2.2pt) node[above=2pt] {\bfseries Cực đại};
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{tcolorbox}[colback=lightamber!40, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\small\bfseries
+        ĐT là $f'(x) \longrightarrow \text{Cực trị là \textcolor{accentred}{giao với $Ox$}} \begin{cases} \text{Cắt xuyên qua } Ox \\ (\text{Bỏ tiếp xúc}) \end{cases}$
+    \end{tcolorbox}
+
+    \vspace{0.2cm}
+    \centering
+    \begin{tikzpicture}[scale=0.9, line join=round, line cap=round, font=\small]
+        \draw[->, thick, black!60] (-2.2,0) -- (2.6,0) node[below] {$x$};
+        \draw[->, thick, black!60] (0,-2.5) -- (0,2.8) node[left] {$y$};
+        \node[below left] at (0,0) {$O$};
+
+        % Cùng một dạng đường cong chuẩn f'(x)
+        \draw[accentred, very thick, smooth, domain=-1.9:1.9] plot (\x, {-(\x)^3 + 3*(\x)});
+        \node[above right, accentred] at (1.2,1.8) {$y = f'(x)$};
+
+        \fill[deepblue] ({-sqrt(3)},0) circle (2.2pt) node[above left] {\footnotesize $-\sqrt{3}$};
+        \fill[deepblue] (0,0) circle (2.2pt) node[below right] {\footnotesize $0$};
+        \fill[deepblue] ({sqrt(3)},0) circle (2.2pt) node[below right] {\footnotesize $\sqrt{3}$};
+    \end{tikzpicture}
+\end{minipage}
+
+\vspace{0.4cm}
+
+% Dòng kẻ nháp dài giảng bài trực tiếp trên lớp
+
+
+% =========================================================================
+% TRANG: BẢNG XÉT DẤU - SO SÁNH LN/NN - CÁC BBT BẪY - KHUNG KẾT LUẬN CUỐI
+% =========================================================================
+\dangbox{LUYỆN TẬP}{Đổi dấu đạo hàm \& Cực trị}
+
+\vspace{0.15cm}
+
+\questionLinesManual{0}{1}{%
+Cho hàm số $y = f(x)$ có bảng xét dấu đạo hàm như sau:
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.2,espcl=1.6]{$x$/0.75, $y'$/0.8}{$-\infty$, $0$, $1$, $2$, $3$, $4$, $+\infty$}
+    \tkzTabLine{ , +, 0, -, d, +, 0, -, d, +, 0, -, }
+\end{tikzpicture}
+\end{center}
+\begin{itemize}\setlength{\itemsep}{3pt}
+    \item[a)] Hàm số liên tục trên $\mathbb{R}$ có bao nhiêu cực trị? $\longrightarrow$ \textbf{Đáp án:} \dotfill
+    \item[b)] Hàm số liên tục trên $\mathbb{R} \setminus \{1\}$ có bao nhiêu cực trị? $\longrightarrow$ \textbf{Đáp án:} \dotfill
+\end{itemize}
+}{}
+
+\vspace{0.15cm}
+
+% SO SÁNH CỰC TRỊ VÀ MAX - MIN
+\dangbox{SO SÁNH}{Cực trị (CĐ, CT) \quad VS \quad Lớn nhất, Nhỏ nhất (LN, NN)}
+
+\vspace{0.15cm}
+
+\noindent
+\begin{minipage}[t]{0.485\linewidth}
+    \begin{tcolorbox}[colback=lightamber!30, colframe=deepblue, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\large\bfseries\color{deepblue}
+        CỰC TRỊ (CĐ, CT) -- ĐỊA PHƯƠNG
+    \end{tcolorbox}
+    \vspace{-0.1cm}
+    \begin{itemize}\setlength{\itemsep}{2pt}\normalsize
+        \item Nằm tại đỉnh ngọn / đáy lõm.
+        \item Có thể có \textbf{nhiều CĐ, CT}.
+        \item $y_{\text{CĐ}}$ \textbf{có thể nhỏ hơn} $y_{\text{CT}}$.
+    \end{itemize}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.85, font=\small]
+        \draw[->, thick, black!60] (-2.2,0) -- (2.4,0);
+        \draw[->, thick, black!60] (0,-2.3) -- (0,2.4);
+        
+        \draw[deepblue, very thick] (-2,-2) .. controls (-1,-0.3) .. (-0.3,-2);
+        \fill[accentred] (-0.95,-0.65) circle (2.5pt) node[left=2pt] {\bfseries CĐ};
+        
+        \draw[deepblue, very thick] (0.3,2) .. controls (1,0.3) .. (2,2);
+        \fill[accentred] (0.95,0.65) circle (2.5pt) node[right=2pt] {\bfseries CT};
+        
+        \node[text=accentred, font=\footnotesize\bfseries] at (0,-2.6) {$y_{\text{CĐ}} < y_{\text{CT}}$};
+    \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\linewidth}
+    \begin{tcolorbox}[colback=lightamber!30, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=5pt, bottom=5pt]
+        \centering\large\bfseries\color{amberorange}
+        LỚN NHẤT, NHỎ NHẤT (LN, NN) -- TOÀN CỤC
+    \end{tcolorbox}
+    \vspace{-0.1cm}
+    \begin{itemize}\setlength{\itemsep}{2pt}\normalsize
+        \item Điểm cao nhất / thấp nhất toàn miền.
+        \item Có \textbf{tối đa 1 LN, 1 NN}.
+        \item Chạm $\pm\infty$ hoặc không có dấu ``='' $\to$ \textbf{KXD}.
+    \end{itemize}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.85, font=\small]
+        \draw[->, thick, black!60] (-0.3,0) -- (3.6,0);
+        \draw[->, thick, black!60] (0,-0.3) -- (0,2.8);
+        
+        \draw[amberorange, line width=1.5pt] (0.5,0.3) .. controls (1.2,2.2) and (1.8,0.6) .. (3.1,2.4);
+        \fill[deepblue] (0.5,0.3) circle (2.5pt) node[below right=2pt] {\bfseries NN};
+        \fill[deepblue] (3.1,2.4) circle (2.5pt) node[above left=2pt] {\bfseries LN};
+    \end{tikzpicture}
+    \end{center}
+\end{minipage}
+
+\vspace{0.2cm}
+
+% CÁC BBT BẪY MAX - MIN
+\dangbox{LUYỆN TẬP BBT}{Xác định LN, NN (Cảnh giác các bẫy thường gặp)}
+
+\vspace{0.15cm}
+
+\questionLinesManual{0}{2}{%
+Xác định GTLN, GTNN của hàm số qua các bảng biến thiên sau:
+}{}
+
+\vspace{-0.1cm}
+
+% BBT 1
+\noindent\textbf{a) Bảng biến thiên 1:}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.2,espcl=2]{$x$/0.7, $y$/1.5}{$-\infty$, $2$, $3$, $4$, $5$}
+    \tkzTabVar{ -/ , +D-/ $10$, +/ $9$, -/ $1$ }
+\end{tikzpicture}
+\end{center}
+\vspace{-0.2cm}
+\begin{itemize}\setlength{\itemsep}{2pt}\small
+    \item $\text{GTLN} = $ \dotfill (\textit{Giải thích: Tại $x=2$ không xác định, không có dấu bằng $\to$ Không có GTLN}).
+    \item $\text{GTNN} = $ \dotfill (\textit{Giải thích: Bằng $1$ khi $x = 5$}).
+\end{itemize}
+
+\vspace{0.25cm}
+
+% BBT 2
+\noindent\textbf{b) Bảng biến thiên 2:}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.2,espcl=2]{$x$/0.7, $y'$/0.65, $y$/1.5}{$-\infty$, $1$, $2$, $3$, $+\infty$}
+    \tkzTabLine{ , +, d, -, 0, +, 0, -, }
+    \tkzTabVar{-/ $2$, +/ $10$, -/ $5$, +/ $9$, -/ $1$ }
+\end{tikzpicture}
+\end{center}
+\vspace{-0.2cm}
+\begin{itemize}\setlength{\itemsep}{2pt}\small
+    \item $\text{GTLN} = $ \dotfill (\textit{Giải thích: Bằng $10$ tại $x=1$ dù tại $x=1$ không có đạo hàm}).
+    \item $\text{GTNN} = $ \dotfill (\textit{Giải thích: Khi $x \to +\infty$ thì $y \to 1$ là tiệm cận ngang, không chạm $1 \to$ Không có GTNN}).
+\end{itemize}
+
+\vspace{0.25cm}
+
+% BBT 3
+\noindent\textbf{c) Bảng biến thiên 3:}
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.2,espcl=2]{$x$/0.7, $y'$/0.65, $y$/1.5}{$-\infty$, $1$, $2$, $3$, $+\infty$}
+    \tkzTabLine{ , +, 0, -, 0, +, d, , }
+    \tkzTabVar{-/ $-\infty$, +/ $5$, -/ $2$, +D-/ $10$, -/ }
+\end{tikzpicture}
+\end{center}
+\vspace{-0.2cm}
+\begin{itemize}\setlength{\itemsep}{2pt}\small
+    \item $\text{GTLN} = $ \dotfill (\textit{Giải thích: Giá trị tiến tới $10$ nhưng tại $x=3$ hàm số hai gạch $\| \to$ Không có GTLN}).
+    \item $\text{GTNN} = $ \dotfill (\textit{Giải thích: Nhánh trái tiến ra $-\infty \to$ Không có GTNN}).
+\end{itemize}
+
+\vspace{0.3cm}
+
+% KHUNG KẾT LUẬN Ở CUỐI CÙNG
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Cực trị hàm số:} Cực trị là \textbf{nghiệm bội lẻ} của $f'(x) = 0$ và \textbf{phải xác định trên $f(x)$}.
+        \item \textbf{Phân biệt thuật ngữ:}\vspace{2pt}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Hàm số đạt cực trị tại $x = \dots$ (\textit{Điểm cực trị của hàm số})
+            \item Giá trị cực trị $y = \dots$ (\textit{Cực trị / Cực đại / Cực tiểu})
+            \item Điểm cực trị của đồ thị hàm số là $(x; y) = \dots$
+        \end{itemize}
+        \item \textbf{Bản chất LN, NN:} Là giá trị chặn trên/chặn dưới \textbf{phải tồn tại dấu bằng} tại một điểm thuộc miền xác định.
+    \end{itemize}
+\end{theorybox}
+
+
+
+
+
+
+
+\newpage
+
+% =========================================================================
+% TRANG: ĐẶC TRƯNG HÀM SỐ BẬC BA y = ax^3 + bx^2 + cx + d
+% =========================================================================
+\dangbox{HÀM SỐ BẬC BA}{Các dạng Đồ thị \& Kỹ năng trọng tâm}
+
+\vspace{0.15cm}
+
+% 1. CÁC DẠNG ĐỒ THỊ BẬC BA
+\noindent
+\begin{minipage}[t]{0.485\linewidth}
+    \begin{tcolorbox}[colback=lightamber!30, colframe=deepblue, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=4pt, bottom=4pt]
+        \centering\bfseries\color{deepblue}
+        Trường hợp $a > 0$ (Nhánh cuối đi lên)
+    \end{tcolorbox}
+    \vspace{0.05cm}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        % Có 2 cực trị
+        \draw[->, black!50] (-1.6,0) -- (1.6,0);
+        \draw[->, black!50] (0,-1.4) -- (0,1.6);
+        \draw[deepblue, very thick, smooth, domain=-1.35:1.35] plot (\x, {(\x)^3 - 1.1*(\x)});
+        \node[above] at (0,1.6) {\tiny 2 Cực trị};
+
+        % Không có cực trị
+        \begin{scope}[xshift=3.2cm]
+            \draw[->, black!50] (-1.4,0) -- (1.4,0);
+            \draw[->, black!50] (0,-1.4) -- (0,1.6);
+            \draw[deepblue, very thick, smooth, domain=-1.2:1.2] plot (\x, {0.6*(\x)^3 + 0.5*(\x)});
+            \node[above] at (0,1.6) {\tiny Không cực trị};
+        \end{scope}
+    \end{tikzpicture}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.485\linewidth}
+    \begin{tcolorbox}[colback=lightamber!30, colframe=amberorange, boxrule=0.8pt, arc=3pt, left=4pt, right=4pt, top=4pt, bottom=4pt]
+        \centering\bfseries\color{amberorange}
+        Trường hợp $a < 0$ (Nhánh cuối đi xuống)
+    \end{tcolorbox}
+    \vspace{0.05cm}
+    \begin{center}
+    \begin{tikzpicture}[scale=0.75, font=\footnotesize]
+        % Có 2 cực trị
+        \draw[->, black!50] (-1.6,0) -- (1.6,0);
+        \draw[->, black!50] (0,-1.4) -- (0,1.6);
+        \draw[amberorange, very thick, smooth, domain=-1.35:1.35] plot (\x, {-(\x)^3 + 1.1*(\x)});
+        \node[above] at (0,1.6) {\tiny 2 Cực trị};
+
+        % Không có cực trị
+        \begin{scope}[xshift=3.2cm]
+            \draw[->, black!50] (-1.4,0) -- (1.4,0);
+            \draw[->, black!50] (0,-1.4) -- (0,1.6);
+            \draw[amberorange, very thick, smooth, domain=-1.2:1.2] plot (\x, {-0.6*(\x)^3 - 0.5*(\x)});
+            \node[above] at (0,1.6) {\tiny Không cực trị};
+        \end{scope}
+    \end{tikzpicture}
+    \end{center}
+\end{minipage}
+
+\vspace{0.15cm}
+
+% 2. BẢN CHẤT XÉT DẤU a, b, c, d
+\begin{theorybox}
+    \textbf{Xét dấu $a, b, c, d$ của hàm số $y = ax^3 + bx^2 + cx + d$:}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Dấu $a$:} Nhìn nhánh cuối bên phải: \textbf{đi lên} $\implies a > 0$; \textbf{đi xuống} $\implies a < 0$.
+        \item \textbf{Dấu $d$:} Đồ thị cắt trục $Oy$ tại điểm $(0; d)$: \textbf{nằm trên $Ox$} $\implies d > 0$; \textbf{nằm dưới $Ox$} $\implies d < 0$.
+        \item \textbf{Dấu $b, c$:} Dùng 2 hoành độ cực trị $x_1, x_2$ theo định lý Vi-ét của phương trình $y' = 0$:
+        \[
+            x_1 + x_2 = -\frac{2b}{3a} \qquad \text{và} \qquad x_1 \cdot x_2 = \frac{c}{3a}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.15cm}
+
+% 3. CÁC CÁCH TÌM PHƯƠNG TRÌNH BẬC BA & ĐƯỜNG THẲNG ĐI QUA 2 ĐIỂM CỰC TRỊ
+\dangbox{KỸ THUẬT}{Tìm phương trình hàm số \& Viết ĐT qua 2 cực trị}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \textbf{1. Các cách tìm hàm số bậc ba $y = ax^3 + bx^2 + cx + d$:}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+        \item \textbf{Cách 1 (Lập hệ 4 phương trình):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Dùng toạ độ các điểm đồ thị đi qua.
+            \item Dùng toạ độ các điểm cực trị ($y'(x_0) = 0$).
+        \end{itemize}
+        \item \textbf{Cách 2 (Dùng tương giao):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Cắt trục $Ox$ tại 3 điểm phân biệt: $f(x) = a(x - x_1)(x - x_2)(x - x_3)$.
+            \item Tiếp xúc $Ox$ tại $x_1$ và cắt tại $x_2$: $f(x) = a(x - x_1)^2(x - x_2)$.
+        \end{itemize}
+    \end{itemize}
+
+    \vspace{0.1cm}
+    \textbf{2. Phương trình đường thẳng đi qua 2 điểm Cực trị:}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+        \item Đường thẳng đi qua 2 điểm cực trị chính là \textbf{phần dư của phép chia} $\dfrac{y}{y'}$:
+        \[
+            y = y' \cdot Q(x) + \underbrace{(Ax + B)}_{\text{phần dư}} \implies \text{Phương trình ĐT là: } y = Ax + B.
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\vspace{0.2cm}
+
+% =========================================================================
+% BÀI TẬP RÈN LUYỆN: 4 CÂU RIÊNG BIỆT
+% =========================================================================
+
+% CÂU 1: XÉT DẤU a, b, c, d
+\questionLinesManual{5}{1}{%
+Cho hàm số $y = ax^3 + bx^2 + cx + d$ có đồ thị như hình vẽ bên. Hãy xác định dấu của các hệ số $a, b, c, d$.
+\begin{center}
+\begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \draw[->, thick, black!60] (-1.8,0) -- (3.6,0) node[below] {$x$};
+    \draw[->, thick, black!60] (0,-2.6) -- (0,2.6) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    \draw[deepblue, very thick, smooth, domain=-1.05:3.05] plot (\x, {0.8*(\x)^3 - 2.4*(\x)^2 + 1.8});
+    \fill[accentred] (0,1.8) circle (2pt) node[above right] {CĐ};
+    \fill[accentred] (2,-1.4) circle (2pt) node[below right] {CT};
+\end{tikzpicture}
+\end{center}
+}{}
+
+% CÂU 2: TÌM HÀM SỐ BẬC BA BẰNG CÁCH LẬP HỆ PHƯƠNG TRÌNH
+\questionLinesManual{10}{2}{%
+Tìm phương trình hàm số bậc ba $y = ax^3 + bx^2 + cx + d$ có đồ thị như hình vẽ bên bằng cách \textbf{lập hệ phương trình}.
+\begin{center}
+\begin{tikzpicture}[scale=0.8, font=\footnotesize]
+    \draw[->, thick, black!60] (-2.2,0) -- (2.6,0) node[below] {$x$};
+    \draw[->, thick, black!60] (0,-2.6) -- (0,2.6) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % y = -x^3 + 3x
+    \draw[deepblue, very thick, smooth, domain=-1.8:1.8] plot (\x, {-(\x)^3 + 3*(\x)});
+    
+    \draw[dashed, black!40] (-1,0) node[above] {$-1$} -- (-1,-2) -- (0,-2) node[right] {$-2$};
+    \draw[dashed, black!40] (1,0) node[below] {$1$} -- (1,2) -- (0,2) node[left] {$2$};
+    
+    \fill[accentred] (-1,-2) circle (2pt) node[below left] {$A(-1; -2)$};
+    \fill[accentred] (1,2) circle (2pt) node[above right] {$B(1; 2)$};
+    \fill[black] (0,0) circle (1.8pt);
+\end{tikzpicture}
+\end{center}
+}{}
+
+% CÂU 3: TÌM HÀM SỐ BẬC BA BẰNG PHƯƠNG PHÁP TƯƠNG GIAO
+\questionLinesManual{6}{3}{%
+Tìm phương trình hàm số bậc ba $y = f(x)$ có đồ thị như hình vẽ bên bằng \textbf{phương pháp tương giao} (tiếp xúc $Ox$ tại $x=-1$ và cắt $Ox$ tại $x=2$, đi qua điểm $(0; 2)$).
+\begin{center}
+\begin{tikzpicture}[scale=0.8, font=\footnotesize]
+    \draw[->, thick, black!60] (-2.2,0) -- (3.2,0) node[below] {$x$};
+    \draw[->, thick, black!60] (0,-1.6) -- (0,3.2) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % y = -(x+1)^2 * (x-2) = -x^3 + 3x + 2
+    \draw[deepblue, very thick, smooth, domain=-1.9:2.35] plot (\x, {-((\x)+1)^2 * ((\x)-2)});
+    
+    \fill[accentred] (-1,0) circle (2.2pt) node[below=2pt] {$-1$};
+    \fill[accentred] (2,0) circle (2.2pt) node[below=2pt] {$2$};
+    \fill[deepblue] (0,2) circle (2pt) node[above right] {$(0; 2)$};
+\end{tikzpicture}
+\end{center}
+}{}
+
+% CÂU 4: ĐƯỜNG THẲNG ĐI QUA 2 ĐIỂM CỰC TRỊ (PHÉP CHIA y / y')
+\questionLinesManual{10}{4}{%
+Cho hàm số bậc ba $y = 2x^3 - 3x^2 - 12x + 1$. Hãy tìm phương trình đường thẳng đi qua hai điểm cực trị của đồ thị hàm số bằng cách lấy phần dư của phép chia $\dfrac{y}{y'}$.
+}{}
+
+
+
+
+
+
+\newpage
+
+% =========================================================================
+% TRANG: KHẢO SÁT HÀM SỐ HỮU TỶ (PHÂN THỨC)
+% =========================================================================
+\dangbox{HÀM HỮU TỶ}{1. Hàm bậc nhất / bậc nhất: $y = \dfrac{ax+b}{cx+d}$}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+        \item \textbf{Đạo hàm:} $y' = \dfrac{ad - bc}{(cx + d)^2}$
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item \textbf{Đồng biến} trên từng khoảng xác định $\iff ad - bc > 0$.
+            \item \textbf{Nghịch biến} trên từng khoảng xác định $\iff ad - bc < 0$.
+        \end{itemize}
+        \item \textbf{Cực trị:} Hàm số \textcolor{accentred}{\textbf{KHÔNG CÓ CỰC TRỊ}}.
+        \item \textbf{Tiệm cận:}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Tiệm cận đứng (\textbf{TCĐ}): $x = -\dfrac{d}{c}$ (nghiệm của mẫu).
+            \item Tiệm cận ngang (\textbf{TCN}): $y = \dfrac{a}{c}$ (hệ số $x$ tử chia mẫu).
+        \end{itemize}
+        \item \textbf{Cách tìm các hệ số $a, b, c, d$:}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Dùng đường tiệm cận đứng (\textbf{TCĐ}) và tiệm cận ngang (\textbf{TCN}).
+            \item Dùng \textbf{điểm đi qua} cụ thể trên đồ thị.
+            \item Dùng \textbf{giao điểm} với trục tung $Oy$ ($x=0 \implies y=\frac{b}{d}$) và trục hoành $Ox$ ($y=0 \implies x=-\frac{b}{a}$).
+        \end{itemize}
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.25cm}
+
+\dangbox{HÀM HỮU TỶ}{2. Hàm bậc hai / bậc nhất: $y = \dfrac{ax^2+bx+c}{dx+e}$}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+        \item \textbf{Tách phần nguyên (chia đa thức):}
+        \[
+            y = \frac{ax^2+bx+c}{dx+e} = Ax + B + \frac{C}{dx+e}
+        \]
+        \item \textbf{Số điểm cực trị:} Hàm số có \textbf{0} hoặc \textbf{2 điểm cực trị}.
+        \item \textbf{Tiệm cận:}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Tiệm cận đứng (\textbf{TCĐ}): $x = -\dfrac{e}{d}$ (nghiệm của mẫu).
+            \item Tiệm cận xiên (\textbf{TCX}): $y = Ax + B$ (phần thương sau khi chia).
+        \end{itemize}
+        \item \textbf{Phương trình đường thẳng đi qua 2 điểm Cực trị:}
+        \[
+            y = \frac{(\text{tử})'}{(\text{mẫu})'} = \frac{2ax + b}{d}
+        \]
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.25cm}
+\vspace{0.2cm}
+
+% =========================================================================
+% BÀI TẬP VÍ DỤ: HÀM SỐ HỮU TỶ (4 CÂU ĐIỂN HÌNH)
+% =========================================================================
+
+% CÂU 1: ĐỌC TIỆM CẬN & TÍNH ĐƠN ĐIỆU HÀM BẬC NHẤT / BẬC NHẤT
+\questionLinesManual{4}{1}{%
+Cho hàm số $y = \dfrac{ax+b}{cx+d}$ có đồ thị như hình vẽ bên.
+\begin{center}
+\begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \draw[->, thick, black!60] (-2.5,0) -- (4.2,0) node[below] {$x$};
+    \draw[->, thick, black!60] (0,-2.5) -- (0,3.8) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+
+    % Tiệm cận đứng x = 1, Tiệm cận ngang y = 1
+    \draw[dashed, accentred, thick] (1,-2.4) -- (1,3.6) node[above] {$x=1$};
+    \draw[dashed, accentred, thick] (-2.4,1) -- (4.0,1) node[right] {$y=1$};
+
+    % Đồ thị y = (x - 2) / (x - 1) = 1 - 1/(x-1) (đồng biến từng khoảng)
+    \draw[deepblue, very thick, smooth, domain=-2.2:0.7] plot (\x, {((\x)-2)/((\x)-1)});
+    \draw[deepblue, very thick, smooth, domain=1.3:3.8] plot (\x, {((\x)-2)/((\x)-1)});
+
+    \fill[black] (2,0) circle (1.8pt) node[below] {$2$};
+    \fill[black] (0,2) circle (1.8pt) node[left] {$2$};
+\end{tikzpicture}
+\end{center}
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item[a)] Xác định phương trình đường tiệm cận đứng và tiệm cận ngang của đồ thị hàm số.
+    \item[b)] Xét dấu của biểu thức $ad - bc$ và kết luận về tính đơn điệu của hàm số.
+\end{itemize}
+}{}
+
+% CÂU 2: TÌM HỆ SỐ CỦA HÀM SỐ BẬC NHẤT / BẬC NHẤT
+\questionLinesManual{12}{2}{%
+Tìm các hệ số $a, b, c$ của hàm số $y = \dfrac{ax + 2}{bx + c}$ biết đồ thị hàm số có tiệm cận đứng là $x = 2$, tiệm cận ngang là $y = 1$ và cắt trục hoành tại điểm $(-2; 0)$.
+}{}
+
+% CÂU 3: TÌM TIỆM CẬN ĐỨNG, TIỆM CẬN XIÊN & CỰC TRỊ HÀM BẬC HAI / BẬC NHẤT
+\questionLinesManual{12}{3}{%
+Cho hàm số $y = \dfrac{x^2 - x + 1}{x - 1}$.
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item[a)] Tách phần nguyên của hàm số và xác định phương trình tiệm cận đứng, tiệm cận xiên.
+    \item[b)] Tìm toạ độ các điểm cực trị của đồ thị hàm số đã cho.
+\end{itemize}
+}{}
+
+% CÂU 4: VIẾT PHƯƠNG TRÌNH ĐT QUA 2 ĐIỂM CỰC TRỊ BẰNG ĐẠO HÀM NHANH
+\questionLinesManual{12}{4}{%
+Cho hàm số $y = \dfrac{2x^2 + 3x - 1}{x + 2}$. Viết phương trình đường thẳng đi qua hai điểm cực trị của đồ thị hàm số bằng công thức $y = \dfrac{(\text{tử})'}{(\text{mẫu})'}$.
+}{}
+
+
+
+
+
+\newpage
+
+% =========================================================================
+% TRANG: ĐƯỜNG TIỆM CẬN CỦA ĐỒ THỊ HÀM SỐ & TÂM ĐỐI XỨNG
+% =========================================================================
+\dangbox{TIỆM CẬN}{Quy tắc nhận diện \& Kỹ thuật bấm máy tính (CALC)}
+
+\vspace{0.2cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{3pt}
+        \item \textbf{Tiệm cận đứng (TCĐ: $x = x_0$):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Bản chất: Gần như tìm \textbf{Điều kiện (TXĐ)} $\to$ Cho mẫu bằng $0$.
+            \item \textbf{Đối với hàm phân số:} Sau khi tìm nghiệm ở mẫu, thay thử lên tử:
+            \[
+                \text{Thế lên tử} \longrightarrow \begin{cases} \neq 0 \implies \textbf{LẤY} \\ = 0 \text{ hoặc không xác định} \implies \textcolor{accentred}{\textbf{KHÔNG LẤY}} \end{cases}
+            \]
+        \end{itemize}
+
+        \item \textbf{Tiệm cận ngang (TCN: $y = y_0$):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Bấm máy tính: \textbf{CALC} cho $x \to \pm\infty$ (nhập $10^{10}$ và $-10^{10}$).
+        \end{itemize}
+
+        \item \textbf{Tiệm cận xiên (TCX: $y = ax + b$):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item Với những hàm khó mà đề bài yêu cầu tìm TCX $\to$ \textbf{Bấm máy tính}.
+            \item \textbf{Bắt buộc} phải CALC kiểm tra cả \textcolor{accentred}{$+\infty$} và \textcolor{accentred}{$-\infty$}:
+            \[
+                a = \lim_{x \to \pm\infty} \frac{y}{x} \qquad \text{và} \qquad b = \lim_{x \to \pm\infty} (y - ax)
+            \]
+        \end{itemize}
+
+        \item \textbf{Đọc tiệm cận từ Bảng biến thiên (BBT):}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item \textbf{Khác bản chất là Tiệm cận:} Phải có sự kết hợp giữa \textbf{VÔ CÙNG} ($\pm\infty$) và \textbf{SỐ}:
+            \[
+                \begin{cases} 
+                    x \to x_0 \quad (\text{SỐ}) \implies y \to \pm\infty \quad (\textbf{VÔ CÙNG}) \implies \text{\textbf{TCĐ: }} x = x_0 \\
+                    x \to \pm\infty \quad (\textbf{VÔ CÙNG}) \implies y \to y_0 \quad (\text{SỐ}) \implies \text{\textbf{TCN: }} y = y_0
+                \end{cases}
+            \]
+        \end{itemize}
+
+        \item \textbf{Tâm đối xứng \& Tính chẵn -- lẻ:}
+        \begin{itemize}\setlength{\itemsep}{2pt}
+            \item \textbf{Tâm đối xứng (TĐX):} Là \textbf{giao điểm} của 2 đường tiệm cận.
+            \item \textbf{Hàm số lẻ:} $f(-x) = -f(x) \iff f(x) = -f(-x) \implies$ Nhận gốc toạ độ \textbf{$O(0;0)$ làm tâm đối xứng}.
+            \item \textbf{Hàm số chẵn:} $f(-x) = f(x) \implies$ Nhận \textbf{trục tung $Oy$ làm trục đối xứng}.
+        \end{itemize}
+    \end{itemize}
+\end{theorybox}
+
+\vspace{0.3cm}
+
+\vspace{0.2cm}
+
+% =========================================================================
+% BÀI TẬP VÍ DỤ: ĐƯỜNG TIỆM CẬN CỦA ĐỒ THỊ HÀM SỐ
+% =========================================================================
+
+% CÂU 1: TCĐ & TCN (BẪY THẾ TỬ - TRIỆT TIÊU NGHIỆM MẪU)
+\questionLinesManual{10}{1}{%
+Tìm số đường tiệm cận đứng và tiệm cận ngang của đồ thị hàm số:
+\[
+    y = \frac{x^2 - 3x + 2}{x^2 - 4}
+\]
+}{}
+
+% CÂU 2: BẤM MÁY CALC TÌM TIỆM CẬN XIÊN CỦA HÀM CHỨA CĂN
+\questionLinesManual{10}{2}{%
+Cho hàm số $y = \sqrt{x^2 + 2x} - x$. Bằng phương pháp bấm máy tính (CALC kiểm tra tại $+\infty$ và $-\infty$), hãy xác định các đường tiệm cận ngang và tiệm cận xiên của đồ thị hàm số đã cho.
+}{}
+
+% CÂU 3: ĐỌC TIỆM CẬN TỪ BẢNG BIẾN THIÊN (CẢNH GIÁC SỐ VÀ VÔ CÙNG)
+\questionLinesManual{10}{3}{%
+Cho hàm số $y = f(x)$ có bảng biến thiên như sau:
+\begin{center}
+\begin{tikzpicture}
+    \tkzTabInit[lgt=1.2,espcl=2.2]{$x$/0.7, $y'$/0.65, $y$/1.5}{$-\infty$, $-1$, $2$, $+\infty$}
+    \tkzTabLine{ , +, d, -, d, +, }
+    \tkzTabVar{-/ $1$, +D+/ $+\infty$ / $-\infty$, -D+/ $-3$ / $+\infty$, -/ $2$ }
+\end{tikzpicture}
+\end{center}
+Hỏi đồ thị hàm số đã cho có tất cả bao nhiêu đường tiệm cận (đứng và ngang)? Hãy chỉ rõ phương trình của từng đường tiệm cận.
+}{}
+
+% CÂU 4: TÂM ĐỐI XỨNG LÀ GIAO CỦA HAI ĐƯỜNG TIỆM CẬN
+\questionLinesManual{10}{4}{%
+Xác định toạ độ tâm đối xứng của đồ thị hàm số $y = \dfrac{2x^2 - 3x + 5}{x - 1}$ bằng cách tìm giao điểm của hai đường tiệm cận (TCĐ và TCX).
+}{}
+
+\newpage
+\drawdashlinesfull
+
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+\newpage
+\drawdashlinesfull
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
