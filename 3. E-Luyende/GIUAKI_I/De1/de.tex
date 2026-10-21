@@ -1,0 +1,231 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+% ==========================================
+% BẮT ĐẦU NỘI DUNG TÀI LIỆU
+% ==========================================
+\begin{document}
+\titlebox{ĐỀ 01}{ĐỀ ÔN TẬP GIỮA HỌC KÌ I}{Ôn tập GKI}
+% PHẦN I: TRẮC NGHIỆM NHIỀU PHƯƠNG ÁN LỰA CHỌN (CÂU 1 -> CÂU 12)
+% =========================================================================
+\textit{\textbf{Phần I: Thí sinh trả lời từ câu 1 đến câu 12, mỗi câu thí sinh chỉ chọn một phương án.}}\vspace{0.35cm}% --- CÂU 1 ---
+\questionLinesManual{0}{1}{Cho hàm số $y=f(x)$ có bảng biến thiên như sau:
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.5, espcl=2.2, deltacl=0.6]
+{$x$ / 0.8, $f'(x)$ / 0.7, $f(x)$ / 1.8}
+{$-\infty$, $-1$, $1$, $+\infty$}
+\tkzTabLine{ , +, 0, -, 0, +, }
+\tkzTabVar{-/ $-\infty$, +/ $7$, -/ $3$, +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+Giá trị cực tiểu của hàm số đã cho bằng}{%
+\begin{tasks}(4)
+\task $-1$
+\task $1$
+\task $3$
+\task $7$
+\end{tasks}
+}% --- CÂU 2 ---
+\questionLinesManual{0}{2}{Số đường tiệm cận của đồ thị hàm số $y=\dfrac{2x}{x^2-4}$ là}{%
+\begin{tasks}(4)
+\task $0$
+\task $3$
+\task $4$
+\task $1$
+\end{tasks}
+}% --- CÂU 3 ---
+\questionLinesManual{0}{3}{Trong không gian $Oxyz$, cho điểm $M(1;2;-3)$. Tọa độ của điểm đối xứng với $M$ qua mặt phẳng $(Oyz)$ là}{%
+\begin{tasks}(4)
+\task $(1;-2;-3)$
+\task $(-1;2;-3)$
+\task $(1;2;3)$
+\task $(-1;-2;-3)$
+\end{tasks}
+}% --- CÂU 4 ---
+\questionLinesManual{0}{4}{Đồ thị hàm số nào sau đây nhận đường thẳng $x=-1$ làm tiệm cận đứng?}{%
+\begin{tasks}(4)
+\task $y=\dfrac{3x-1}{x+1}$
+\task $y=\dfrac{-x+1}{x+2}$
+\task $y=\dfrac{x+1}{x-2}$
+\task $y=\dfrac{2x+1}{x-1}$
+\end{tasks}
+}% --- CÂU 5 ---
+\questionLinesManual{0}{5}{Cho hàm số bậc bốn $y=f(x)$. Hàm số $y=f'(x)$ có đồ thị là đường cong trong hình vẽ bên dưới. Mệnh đề nào dưới đây đúng?
+\begin{center}
+\begin{tikzpicture}[scale=0.85, >=stealth]
+\draw[->, thick] (-3,0) -- (3.2,0) node[below] {$x$};
+\draw[->, thick] (0,-2.5) -- (0,2.8) node[left] {$y$};
+\node[below left] at (0,0) {$O$};
+\draw[very thick, color=deepblue, smooth, domain=-2.3:2.2, samples=120]
+plot (\x, {0.5*(\x)(\x - 2)(\x + 2)});
+\fill (-2,0) circle (1.5pt) node[below left] {$-2$};
+\fill (2,0) circle (1.5pt) node[below left] {$2$};
+\end{tikzpicture}
+\end{center}
+}{%
+\begin{tasks}(2)
+\task Hàm số $f(x)$ nghịch biến trên khoảng $(-1;1)$.
+\task Hàm số $f(x)$ nghịch biến trên khoảng $(0;2)$.
+\task Hàm số $f(x)$ đồng biến trên khoảng $(-2;1)$.
+\task Hàm số $f(x)$ đồng biến trên khoảng $(1;2)$.
+\end{tasks}
+}% --- CÂU 6 ---
+\questionLinesManual{0}{6}{Trong không gian $Oxyz$, cho hai vectơ $\vec{u}(1;a;2)$, $\vec{v}(-3;9;b)$ cùng phương. Tính $a^2+b^2$.}{%
+\begin{tasks}(4)
+\task $3$
+\task $15$
+\task $45$
+\task $0$
+\end{tasks}
+}% --- CÂU 7 ---
+\questionLinesManual{0}{7}{Hàm số $y=f(x)$ có đạo hàm $f'(x)=x^2(x+1)^2(x+2)$, $\forall x \in \mathbb{R}$. Khẳng định nào sau đây đúng?}{%
+\begin{tasks}(2)
+\task Hàm số đồng biến trên các khoảng $(-\infty;-2)$ và $(0;+\infty)$.
+\task Hàm số nghịch biến trên các khoảng $(-2;-1)$ và $(0;+\infty)$.
+\task Hàm số đồng biến trên khoảng $(-2;+\infty)$.
+\task Hàm số đồng biến trên khoảng $(-\infty;-2)$.
+\end{tasks}
+}% --- CÂU 8 ---
+\questionLinesManual{0}{8}{Giá trị lớn nhất của hàm số $y=x+e^{2x}$ trên đoạn $[0;1]$ bằng}{%
+\begin{tasks}(4)
+\task $1$
+\task $2e$
+\task $e^2+1$
+\task $e^2$
+\end{tasks}
+}% --- CÂU 9 ---
+\questionLinesManual{0}{9}{Số điểm cực trị của hàm số $y=\sqrt{2x-x^2}$ là}{%
+\begin{tasks}(4)
+\task $1$
+\task $3$
+\task $2$
+\task $0$
+\end{tasks}
+}% --- CÂU 10 ---
+\questionLinesManual{0}{10}{Trong không gian $Oxyz$, cho tam giác $ABC$ với $A(8;9;2)$, $B(3;5;1)$, $C(11;10;4)$. Số đo góc $A$ của tam giác $ABC$ là}{%
+\begin{tasks}(4)
+\task $150^\circ$
+\task $60^\circ$
+\task $120^\circ$
+\task $30^\circ$
+\end{tasks}
+}% --- CÂU 11 ---
+\questionLinesManual{0}{11}{Tìm giá trị nhỏ nhất của hàm số $f(x)=x-5+\dfrac{1}{x}$ trên khoảng $(0;+\infty)$.}{%
+\begin{tasks}(4)
+\task $\min\limits_{(0;+\infty)} f(x) = -5$
+\task $\min\limits_{(0;+\infty)} f(x) = -3$
+\task $\min\limits_{(0;+\infty)} f(x) = 2$
+\task $\min\limits_{(0;+\infty)} f(x) = 3$
+\end{tasks}
+}% --- CÂU 12 ---
+\questionLinesManual{0}{12}{Cho hình lăng trụ $ABC.A'B'C'$. Gọi $M$ là trung điểm của $BB'$. Đặt $\vec{CA}=\vec{a}$, $\vec{CB}=\vec{b}$, $\vec{AA'}=\vec{c}$. Khẳng định nào dưới đây là đúng?}{%
+\begin{tasks}(2)
+\task $\vec{AM}=\vec{a}+\vec{c}-\dfrac{1}{2}\vec{b}$
+\task $\vec{AM}=\vec{b}+\vec{c}-\dfrac{1}{2}\vec{a}$
+\task $\vec{AM}=\vec{a}-\vec{c}+\dfrac{1}{2}\vec{b}$
+\task $\vec{AM}=\vec{b}-\vec{a}+\dfrac{1}{2}\vec{c}$
+\end{tasks}
+}% =========================================================================
+% PHẦN II: TRẮC NGHIỆM ĐÚNG / SAI (CÂU 13 -> CÂU 16)
+% =========================================================================
+\textit{\textbf{Phần II: Thí sinh trả lời từ câu 13 đến câu 16; trong mỗi ý a), b), c), d) ở mỗi câu, thí sinh chọn đúng hoặc sai.}}\vspace{0.3cm}% --- CÂU 13 (Tương ứng Câu 1 phần II) ---
+\questionTrueFalse{0}{13}{Cho hàm số $f(x)=-x^4+8x^2+2024$.}{
+\textbf{a)} & Hàm số đã cho nghịch biến trên khoảng $(2;+\infty)$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+\textbf{b)} & Tập xác định của hàm số đã cho là $D=\mathbb{R}$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{c)} & Hàm số đã cho có đạo hàm là $f'(x)=-4x^3-16x$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{d)} & Đồ thị hàm số có ba điểm cực trị $A, B, C$ lập thành một tam giác. Chu vi tam giác $ABC$ lớn hơn 35.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}
+% --- CÂU 14 (Tương ứng Câu 2 phần II) ---
+\questionTrueFalse{0}{14}{Trong không gian với hệ tọa độ $Oxyz$, cho tam giác $ABC$ có $A(1;-2;0)$, $B(-3;2;4)$, $C(-4;3;2)$.}{
+\textbf{a)} & $G(-2;1;2)$ là trọng tâm tam giác $ABC$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline\textbf{b)} & $M(x;y;z)$ là trung điểm $AB$. Khi đó $y-x=2z-3$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{c)} & Gọi $N$ là giao điểm của đường thẳng $BC$ và mặt phẳng $(Oxy)$, khi đó tỉ số $\dfrac{BN}{CN}=\dfrac{1}{2}$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{d)} & $\vec{AB}=(-4;4;4)$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}% --- CÂU 15 (Tương ứng Câu 3 phần II) ---
+\questionTrueFalse{0}{15}{Cho hàm số $y=x\ln x$.}{
+\textbf{a)} & Giá trị lớn nhất của hàm số trên khoảng $(0;1)$ là $0$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline\textbf{b)} & Hàm số không có giá trị lớn nhất trên tập xác định.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{c)} & Hàm số có đạo hàm $y'=1$, $\forall x>0$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{d)} & Hàm số đạt giá trị nhỏ nhất tại $x=\dfrac{1}{e}$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}% --- CÂU 16 (Tương ứng Câu 4 phần II) ---
+\questionTrueFalse{0}{16}{Trong không gian, cho hai vectơ $\vec{a}$ và $\vec{b}$ cùng có độ dài bằng $1$ và góc giữa hai vectơ đó là $45^\circ$.}{
+\textbf{a)} & $\vec{a}^2=1$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline\textbf{b)} & $\vec{a}\cdot\vec{b}=\dfrac{\sqrt{2}}{2}$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{c)} & $\vert{}\vec{a}+\vec{b}\vert{}=2$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\ \hline
+
+\textbf{d)} & $(\vec{a}+\vec{b})^2=2-\sqrt{2}$.
+& \textcolor{amberorange}{$\bigcirc$} & \textcolor{amberorange}{$\bigcirc$} \\
+}% =========================================================================
+% PHẦN III: TRẮC NGHIỆM TRẢ LỜI NGẮN (CÂU 17 -> CÂU 22)
+% =========================================================================
+\textit{\textbf{Phần III: Thí sinh trả lời từ câu 17 đến câu 22.}}\vspace{0.3cm}% --- CÂU 17 (Tương ứng Câu 1 phần III) ---
+\questionShortAnswer{0}{17}{Cho hàm số $f(x)=\dfrac{x^3}{3}-\dfrac{x^2}{2}-6x+\dfrac{3}{4}$. Số giá trị $x$ nguyên thuộc khoảng nghịch biến của hàm số là bao nhiêu?}% --- CÂU 18 (Tương ứng Câu 2 phần III) ---
+\questionShortAnswer{0}{18}{Một chiếc gậy có chiều dài $2{,}5\text{ m}$ được đặt trong góc phòng như hình sau đây. Một đầu gậy nằm trên sàn, cách hai bức tường lần lượt là $1\text{ m}$ và $0{,}8\text{ m}$. Đầu còn lại của chiếc gậy nằm trên mép tường. Chọn hệ trục tọa độ như hình vẽ. Tính khoảng cách từ vị trí chính giữa $M$ của chiếc gậy đến sàn nhà (làm tròn đến hai chữ số thập phân sau dấu phẩy).\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+% Mặt sàn Oxy
+\fill[softgray!60] (0,0) -- (3.5,0) -- (1.8,-1.5) -- (-1.7,-1.5) -- cycle;% Các trục toạ độ
+\draw[->, thick] (0,0) -- (0,3.5) node[above] {$z$};
+\draw[->, thick] (0,0) -- (4,0) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.2,-1.9) node[below left] {$x$};
+\node[above left] at (0,0) {$O$};
+
+% Tọa độ các điểm gậy
+\coordinate (A) at (0,2.6); % Đầu trên tường
+\coordinate (B) at (1.6,-1.1); % Đầu dưới sàn
+\coordinate (M) at ($(A)!0.5!(B)$); % Trung điểm M
+
+% Hình chiếu của điểm B lên 2 trục Ox, Oy
+\draw[dashed, thick] (B) -- (2.8,0) node[midway, below right, font=\small] {$1\text{ m}$};
+\draw[dashed, thick] (B) -- (-1.2,-1.05) node[midway, below, font=\small] {$0{,}8\text{ m}$};
+
+% Cây gậy
+\draw[line width=1.6pt, deepblue] (A) -- (B) node[midway, above right, text=black, font=\small] {$2{,}5\text{ m}$};
+\fill[accentred] (M) circle (2.2pt) node[left=2pt, font=\small, text=black] {$M$};
+\fill[black] (A) circle (1.8pt);
+\fill[black] (B) circle (1.8pt);
+\end{tikzpicture}
+\end{center}
+}% --- CÂU 19 (Tương ứng Câu 3 phần III) ---
+\questionShortAnswer{0}{19}{Trong $5$ giây đầu tiên, một chất điểm chuyển động theo phương trình $s(t)=t^3-6t^2+14t+1$, trong đó $t$ tính bằng giây và $s$ tính bằng mét. Tại thời điểm nào trong $5$ giây đầu tiên thì vận tốc tức thời của chất điểm đạt giá trị nhỏ nhất?}% --- CÂU 20 (Tương ứng Câu 4 phần III) ---
+\questionShortAnswer{0}{20}{Tổng giá trị lớn nhất và giá trị nhỏ nhất của hàm số $y=\cos 2x+3x+2025$ trên đoạn $[-\pi;\pi]$ bằng bao nhiêu?}% --- CÂU 21 (Tương ứng Câu 5 phần III) ---
+\questionShortAnswer{0}{21}{Khi loại thuốc A được tiêm vào bệnh nhân, nồng độ $(\text{mg/L})$ của thuốc trong máu sau $x$ phút (kể từ khi bắt đầu tiêm) được xác định bởi công thức: $C(x)=\dfrac{30x}{x^2+2}$. Để đưa ra những lời khuyên và cách xử lí phù hợp cho bệnh nhân, ta cần tìm khoảng thời gian mà nồng độ của thuốc trong máu đang tăng. Hãy cho biết hàm nồng độ thuốc trong máu $C(x)$ đạt giá trị cực đại là bao nhiêu trong khoảng thời gian $6$ phút sau khi tiêm (kết quả làm tròn đến hàng phần mười)?}% --- CÂU 22 (Tương ứng Câu 6 phần III) ---
+\questionShortAnswer{0}{22}{Trong không gian $Oxyz$, cho hai điểm $A(6;2;1)$, $B(2;3;-1)$. Gọi điểm $M(0;b;c)\in(Oyz)$ sao cho $MA+MB$ đạt giá trị nhỏ nhất. Tính $b-\dfrac{1}{2}c$.}\end{document}
+% =========================================================================
+% ĐÁP ÁN THAM KHẢO TỪ ĐỀ GỐC
+% =========================================================================
+% PHẦN I:
+% 1.C | 2.B | 3.B | 4.A | 5.B | 6.C | 7.C | 8.C | 9.A | 10.A | 11.B | 12.D
+%
+% PHẦN II:
+% 13. a) Đúng - b) Đúng - c) Sai - d) Đúng
+% 14. a) Đúng - b) Đúng - c) Sai - d) Đúng
+% 15. a) Sai  - b) Đúng - c) Sai - d) Đúng
+% 16. a) Đúng - b) Đúng - c) Sai - d) Sai
+%
+% PHẦN III:
+% 17: 4
+% 18: 1,07
+% 19: 2
+% 20: 4052
+% 21: 10,6
+% 22: 3
