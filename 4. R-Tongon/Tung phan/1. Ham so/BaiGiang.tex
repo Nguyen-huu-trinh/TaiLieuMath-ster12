@@ -763,59 +763,206 @@ Hỏi đồ thị hàm số đã cho có tất cả bao nhiêu đường tiệm 
 Xác định toạ độ tâm đối xứng của đồ thị hàm số $y = \dfrac{2x^2 - 3x + 5}{x - 1}$ bằng cách tìm giao điểm của hai đường tiệm cận (TCĐ và TCX).
 }{}
 
-\newpage
-\drawdashlinesfull
+
+
+
+
+
+
 
 
 \newpage
-\drawdashlinesfull
 
-\newpage
-\drawdashlinesfull
-
-\newpage
-\drawdashlinesfull
-
-\newpage
-\drawdashlinesfull
-
-\newpage
-\drawdashlinesfull
+% =========================================================================
+% TỔNG ÔN: 6 DẠNG TOÁN THỰC TẾ & TỐI ƯU HÀM SỐ (KÈM VÍ DỤ ĐIỂN HÌNH)
+% =========================================================================
 
 \newpage
 \drawdashlinesfull
+% -------------------------------------------------------------------------
+% DẠNG 1: TỐC ĐỘ THAY ĐỔI CỦA MỘT ĐẠI LƯỢNG
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 1}{Tốc độ thay đổi của một đại lượng (TĐTĐ $\equiv$ Đạo hàm)}
 
-\newpage
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Nguyên tắc cốt lõi:} Cần tìm Max/Min hay tính tốc độ của cái gì $\longrightarrow$ \textbf{Lập hàm số của cái đó} $\to$ \textbf{Đạo hàm} $\to$ \textbf{Lập BBT / Bấm Mode 8 / Bấm $\dfrac{d}{dx} + \text{SHIFT SOLVE}$}.
+        \item \textbf{Mối liên hệ đạo hàm thực tế:}
+        \begin{itemize}\setlength{\itemsep}{1pt}
+            \item Quãng đường $s(t) \xrightarrow{\quad (\cdot)' \quad} v(t) = s'(t)$ (Vận tốc là TĐTĐ của quãng đường).
+            \item Vận tốc $v(t) \xrightarrow{\quad (\cdot)' \quad} a(t) = v'(t)$ (Gia tốc là TĐTĐ của vận tốc).
+            \item Nồng độ thuốc $C(t) \xrightarrow{\quad (\cdot)' \quad} C'(t)$ (Tốc độ phản ứng / thay đổi nồng độ thuốc).
+            \item Nhiệt độ $T(t) \xrightarrow{\quad (\cdot)' \quad} T'(t)$ (Tốc độ thay đổi nhiệt độ).
+        \end{itemize}
+    \end{itemize}
+\end{theorybox}
+
+\questionLinesManual{0}{1}{%
+Nhiệt độ $T$ (đơn vị: $^{\circ}$C) trong khoảng từ 6h sáng đến 18h tối tại một thành phố được mô hình hóa bởi hàm số:
+\[
+    T(t) = -\frac{1}{36}t^3 + \frac{1}{8}t^2 + \frac{7}{2}t - 2 \quad (0 \le t \le 12)
+\]
+với $t$ là thời gian tính theo giờ kể từ 6h sáng. Hỏi tốc độ thay đổi nhiệt độ đạt giá trị lớn nhất vào lúc mấy giờ sáng?
+}{}
 \drawdashlinesfull
 
+
+% -------------------------------------------------------------------------
+% DẠNG 2: TỐI ƯU DIỆN TÍCH & THỂ TÍCH
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 2}{Tối ưu Diện tích \& Thể tích (Min -- Max DT, TT)}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Bước 1 (Đặt ẩn):} Đặt biến cho kích thước thay đổi (cạnh $x$, chiều rộng $y$, chiều cao $h$).
+        \item \textbf{Bước 2 (Rút về 1 ẩn):} Dùng dữ kiện cố định đề cho (chu vi rào, diện tích xung quanh, thể tích chứa cố định) để rút ẩn này theo ẩn kia.
+        \item \textbf{Bước 3 (Khảo sát):} Lập hàm mục tiêu $S(x)$ hoặc $V(x) \longrightarrow$ Đạo hàm giải phương trình tìm nghiệm hoặc dùng BĐT Cauchy để tìm dấu bằng.
+    \end{itemize}
+\end{theorybox}
+
+\questionLinesManual{0}{2}{%
+Một chủ trang trại có 150 mét lưới thép muốn rào 2 chuồng hình chữ nhật sát nhau và sát một con sông (cạnh bờ sông không phải rào). Hỏi diện tích lớn nhất có thể bao quanh 2 chuồng là bao nhiêu mét vuông?
+\begin{center}
+\begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \draw[thick, deepblue] (-0.5,1.8) -- (5.5,1.8) node[right] {Bờ sông};
+    \draw[very thick, amberorange] (0,1.8) -- (0,0) -- (5,0) -- (5,1.8);
+    \draw[very thick, amberorange] (2.5,0) -- (2.5,1.8);
+    \node[left] at (0,0.9) {$x$};
+    \node[right] at (2.5,0.9) {$x$};
+    \node[right] at (5,0.9) {$x$};
+    \node[below] at (2.5,0) {$y$};
+\end{tikzpicture}
+\end{center}
+}{}
+
+\drawdashlinesfull
 \newpage
+
+% -------------------------------------------------------------------------
+% DẠNG 3: BÀI TOÁN KINH TẾ (DOANH THU, LỢI NHUẬN, CHI PHÍ)
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 3}{Lợi nhuận (LN), Doanh thu (DT) \& Chi phí (CP)}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Công thức gốc:} $\text{Lợi nhuận} = \text{Doanh thu} - \text{Chi phí} \iff P(x) = R(x) - C(x)$.
+        \item \textbf{Lưu ý bẫy đề bài:}
+        \begin{itemize}\setlength{\itemsep}{1pt}
+            \item Nếu đề cho chi phí hoặc đơn giá trên \textbf{mỗi sản phẩm / mỗi người} $\longrightarrow$ Phải \textbf{nhân thêm $x$} để ra tổng số tiền.
+            \item Nếu đề cho trực tiếp hàm \textbf{tổng chi phí / tổng doanh thu} $\longrightarrow$ Lắp trực tiếp vào công thức lợi nhuận.
+        \end{itemize}
+    \end{itemize}
+\end{theorybox}
+
+\questionLinesManual{0}{3}{%
+Sau kì thi, nhóm bạn dự tính nếu mời $x$ khách thì tổng tiền mừng nhận được là $F(x) = -0{,}03x^2 + 800x$ (nghìn đồng). Trong khi đó, chi phí ăn bình quân cho mỗi khách là $G(x) = \dfrac{50000}{x} + 450$ (nghìn đồng). Hỏi phải mời bao nhiêu khách để nhóm bạn thu được lợi nhuận lớn nhất?
+}{}
+
 \drawdashlinesfull
 
+% -------------------------------------------------------------------------
+% DẠNG 4: MIN - MAX QUÃNG ĐƯỜNG & THỜI GIAN
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 4}{Tối ưu Quãng đường \& Thời gian di chuyển}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Công thức gốc:} Thời gian di chuyển $t = \dfrac{s}{v}$.
+        \item \textbf{Quy tắc lập hàm:} Khi đi qua hai môi trường có vận tốc khác nhau ($v_1, v_2$):
+        \[
+            t(x) = \frac{s_1(x)}{v_1} + \frac{s_2(x)}{v_2}
+        \]
+        \item \textbf{Công cụ hình học đưa về 1 ẩn:} Dùng định lý Pytago ($s = \sqrt{d^2 + x^2}$) hoặc định lý hàm cos, tam giác đồng dạng.
+    \end{itemize}
+\end{theorybox}
+
+\questionLinesManual{0}{4}{%
+Một đường ống dẫn nước sạch nối từ nhà máy $A$ trên bờ biển đến hòn đảo $C$. Khoảng cách ngắn nhất từ đảo về bờ biển là $BC = 12\text{ km}$, khoảng cách $BA = 40\text{ km}$. Đặt ống dưới đất (đoạn $AS$) tốn $300\text{ nghìn đồng/km}$, đặt dưới nước (đoạn $SC$) tốn $500\text{ nghìn đồng/km}$. Hỏi chi phí thấp nhất để lắp đặt đường ống từ $A$ đến $C$ là bao nhiêu triệu đồng?
+\begin{center}
+\begin{tikzpicture}[scale=0.75, font=\footnotesize]
+    \draw[thick, black!60] (-0.5,0) -- (6.5,0);
+    \draw[thick] (0,0) node[below] {$B$} -- (0,2) node[above] {$C$} node[midway, left] {$12$};
+    \draw[thick, deepblue] (0,2) -- (3,0) node[below] {$S$} node[midway, above right] {dưới nước};
+    \draw[thick, accentred] (3,0) -- (6,0) node[below] {$A$} node[midway, below] {$x$};
+    \node[below] at (1.5,0) {$40-x$};
+\end{tikzpicture}
+\end{center}
+}{}
+
+\drawdashlinesfull
 \newpage
+
+% -------------------------------------------------------------------------
+% DẠNG 5: ỨNG DỤNG KHẢO SÁT ĐỒ THỊ VÀO THỰC TẾ
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 5}{Ứng dụng Khảo sát Đồ thị (Đọc đồ thị \& Dựng hàm số)}
+
+\vspace{0.15cm}
+
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Phương pháp tương giao:}
+        \begin{itemize}\setlength{\itemsep}{1pt}
+            \item Cắt đường $y = y_0$ tại 3 hoành độ $x_1, x_2, x_3 \implies f(x) - y_0 = k(x-x_1)(x-x_2)(x-x_3)$.
+            \item Tiếp xúc tại $x_1$ và cắt tại $x_2 \implies f(x) - y_0 = k(x-x_1)^2(x-x_2)$.
+        \end{itemize}
+        \item \textbf{Xác định hệ số $k$:} Thay toạ độ 1 điểm đặc biệt hoặc điểm cực trị ($y'(x_0) = 0$).
+    \end{itemize}
+\end{theorybox}
+
+\questionLinesManual{0}{5}{%
+Một phần đường chạy của tàu lượn siêu tốc được mô phỏng bởi đồ thị hàm số bậc ba $y = f(x)$. Biết đường chạy xuất phát từ điểm $A(0; 30)$, đi qua các điểm $C(50; 30)$, $D(80; 30)$ và đạt độ cao thấp nhất là $6\text{ m}$ tại vị trí $x = 20$. Hãy xác định độ cao lớn nhất mà tàu lượn đạt được.
+\begin{center}
+\begin{tikzpicture}[scale=0.6, font=\footnotesize]
+    \draw[->, thick, black!60] (-0.5,0) -- (9.5,0) node[below] {$x$};
+    \draw[->, thick, black!60] (0,-0.5) -- (0,4.5) node[left] {$y$};
+    \draw[dashed, red] (0,3) -- (8.5,3);
+    \fill[black] (0,3) circle (2pt) node[left] {$A(0;30)$};
+    \fill[black] (5,3) circle (2pt) node[above right] {$C(50;30)$};
+    \fill[black] (8,3) circle (2pt) node[above right] {$D(80;30)$};
+    \draw[deepblue, very thick, smooth, domain=0:9] plot (\x, {-(1/15)*(\x)*(\x - 5)*(\x - 8) + 3});
+\end{tikzpicture}
+\end{center}
+}{}
+
 \drawdashlinesfull
 
+% -------------------------------------------------------------------------
+% DẠNG 6: BÀI TOÁN BƠM NƯỚC & TỐC ĐỘ NƯỚC DÂNG
+% -------------------------------------------------------------------------
+\dangbox{DẠNG 6}{Bài toán Bơm nước \& Tốc độ dâng của mực nước ($h'$)}
 
+\vspace{0.15cm}
 
+\begin{theorybox}
+    \begin{itemize}\setlength{\itemsep}{2pt}
+        \item \textbf{Công thức tính nhanh tốc độ dâng:} $h' = \dfrac{q}{S(h)}$ ($q$ là tốc độ bơm, $S(h)$ là diện tích mặt thoáng nước ở độ cao $h$).
+        \item \textbf{Quy trình 4 bước:}
+        \begin{enumerate}\setlength{\itemsep}{1pt}
+            \item $V = q \cdot t$ (Thể tích nước đã bơm vào).
+            \item Lập biểu thức thể tích $V(h)$ theo chiều cao $h$ (dùng tỉ số Talet).
+            \item Giải phương trình $V(h) = q \cdot t \implies$ Tìm chiều cao $h$.
+            \item Tính $S(h) \implies h' = \dfrac{q}{S(h)}$.
+        \end{enumerate}
+    \end{itemize}
+\end{theorybox}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\questionLinesManual{5}{6}{%
+Một bể nước hình nón ngược có bán kính miệng nón $R = 2\text{ m}$ và chiều cao $H = 4\text{ m}$. Ban đầu bể không có nước, người ta bơm nước vào bể với tốc độ không đổi $q = 2\text{ m}^3/\text{phút}$.
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item[a)] Sau 4 phút bơm, mực nước trong bể cao bao nhiêu mét?
+    \item[b)] Tại thời điểm 5 phút, tốc độ dâng lên của mực nước là bao nhiêu mét/phút?
+\end{itemize}
+}{}
+\drawdashlinesfull
 
 
 
