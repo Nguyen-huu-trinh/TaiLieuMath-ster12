@@ -4,331 +4,321 @@
 \begin{document}
 
 % Tiêu đề đầu tài liệu
-\titlebox{KIỂM TRA VẤN ĐÁP \& TỰ LUẬN}{TỔNG ÔN TRỌNG TÂM HÀM SỐ (CHUẨN THPTQG)}{MATH-STER: ÔN TẬP HÀM SỐ}
+\titlebox{BÀI KIỂM TRA ĐỊNH KỲ}{CHUYÊN ĐỀ HÀM SỐ: NỀN TẢNG \& THỰC TẾ (ĐỀ SỐ 02)}{MATH-STER: KIỂM TRA HÀM SỐ}
 
 % =========================================================================
-% DẠNG 1: ĐẠO HÀM NHANH
+% DẠNG 1: ĐẠO HÀM NHANH PHÂN THỨC
 % =========================================================================
 \dangbox{DẠNG 1}{Kỹ năng tính nhanh đạo hàm phân thức}
 
 \questioncore{1}{Áp dụng công thức đạo hàm nhanh để tính đạo hàm của các hàm số sau:
 \begin{enumerate}
-    \item $y = \dfrac{2x+3}{x-4}$
-    \item $y = \dfrac{2-x}{2x+1}$
-    \item $y = \dfrac{x^2-2x+3}{x-1}$
-    \item $y = \dfrac{2x^2+x-3}{x+2}$
+    \item $y = \dfrac{3x - 1}{x + 2}$
+    \item $y = \dfrac{4 - 3x}{x - 1}$
+    \item $y = \dfrac{x^2 - 3x + 4}{x - 2}$
+    \item $y = \dfrac{3x^2 - 2x + 1}{2x - 1}$
 \end{enumerate}
 }
 
 % =========================================================================
-% DẠNG 2: ĐỒ THỊ f(x)
+% DẠNG 2: KHẢO SÁT TỪ ĐỒ THỊ y = f(x)
 % =========================================================================
 \newpage
 \dangbox{DẠNG 2}{Khảo sát tính đơn điệu và cực trị từ đồ thị $y = f(x)$}
 
-\questioncore{2}{Cho hàm số bậc ba $y = f(x)$ có đồ thị như hình vẽ:
+\questioncore{2}{Cho hàm số bậc ba $y = f(x)$ có đồ thị như hình vẽ bên dưới:
 \begin{center}
 \begin{tikzpicture}[scale=0.9, >=stealth]
-    \draw[->, line width=0.8pt] (-2.2,0) -- (2.5,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-2.8) -- (0,2.8) node[left] {$y$};
+    \draw[->, line width=0.8pt] (-2.2,0) -- (3.2,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-4.5) -- (0,2.5) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
-    \draw[dashed] (1,0) -- (1,2) -- (0,2);
-    \draw[dashed] (-1,0) -- (-1,-2) -- (0,-2);
-    \node[below] at (1,0) {$1$};
-    \node[above] at (-1,0) {$-1$};
-    \node[left] at (0,2) {$2$};
-    \node[right] at (0,-2) {$-2$};
-    \draw[domain=-1.75:1.75, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {-(\x)^3 + 3*(\x)});
-    \node[right, deepblue] at (1.3,1.8) {$y = f(x)$};
+    
+    \draw[dashed] (2,0) -- (2,-4) -- (0,-4);
+    \node[below] at (2,0) {$2$};
+    \node[left] at (0,-4) {$-4$};
+    
+    \draw[domain=-1.0:3.05, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {(\x)^3 - 3*(\x)^2});
+    \node[right, deepblue] at (2.4,-1) {$y = f(x)$};
 \end{tikzpicture}
 \end{center}
 Dựa vào đồ thị, hãy:
 \begin{enumerate}
-    \item Tìm các khoảng đồng biến và nghịch biến của hàm số $y = f(x)$.
-    \item Xác định các điểm cực đại, điểm cực tiểu của hàm số và giá trị cực trị tương ứng.
+    \item Xác định các khoảng đồng biến và nghịch biến của hàm số $y = f(x)$.
+    \item Xác định tọa độ điểm cực đại và tọa độ điểm cực tiểu của đồ thị hàm số.
 \end{enumerate}
 }
 
 % =========================================================================
-% DẠNG 3: ĐỒ THỊ f'(x)
+% DẠNG 3: KHẢO SÁT TỪ ĐỒ THỊ y = f'(x) (ĐÃ SỬA CHUẨN CÂN ĐỐI)
 % =========================================================================
 \newpage
 \dangbox{DẠNG 3}{Khảo sát tính đơn điệu và cực trị từ đồ thị $y = f'(x)$}
 
-\questioncore{3}{Cho hàm số $y = f(x)$ có đạo hàm $f'(x)$ liên tục trên $\mathbb{R}$. Đồ thị của hàm số $y = f'(x)$ được cho như hình vẽ bên dưới:
+\questioncore{3}{Cho hàm số $y = f(x)$ có đạo hàm $f'(x)$ liên tục trên $\mathbb{R}$. Đồ thị của hàm số đạo hàm $y = f'(x)$ được cho như hình vẽ bên dưới:
 \begin{center}
-\begin{tikzpicture}[scale=0.9, >=stealth]
-    \draw[->, line width=0.8pt] (-2.5,0) -- (2.5,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-2.5) -- (0,2.5) node[left] {$y$};
+\begin{tikzpicture}[scale=0.95, >=stealth]
+    % Trục toạ độ thoáng và mũi tên chuẩn
+    \draw[->, line width=0.8pt] (-3.2,0) -- (3.2,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-2.8) -- (0,2.8) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
-    \node[above left] at (-1.732,0) {$-\sqrt{3}$};
-    \node[below right] at (1.732,0) {$\sqrt{3}$};
-    \draw[domain=-2.1:2.1, smooth, variable=\x, line width=1.2pt, accentred] 
-        plot ({\x}, {-(\x)^3 + 3*(\x)});
-    \node[above right, accentred] at (1.1,2.0) {$y = f'(x)$};
+    
+    \node[below left] at (-2,0) {$-2$};
+    \node[below right] at (2,0) {$2$};
+    
+    % f'(x) = -0.4*x*(x-2)*(x+2) = -0.4*x^3 + 1.6*x (Cực đại ~ 1.23, Cực tiểu ~ -1.23)
+    \draw[domain=-2.45:2.45, smooth, variable=\x, line width=1.2pt, accentred] 
+        plot ({\x}, {-0.4*(\x)*((\x)-2)*((\x)+2)});
+    \node[above right, accentred] at (1.1,1.5) {$y = f'(x)$};
+    
+    \filldraw[deepblue] (-2,0) circle (2pt);
+    \filldraw[deepblue] (0,0) circle (2pt);
+    \filldraw[deepblue] (2,0) circle (2pt);
 \end{tikzpicture}
 \end{center}
-Dựa vào đồ thị đạo hàm $y = f'(x)$, hãy:
+Dựa vào đồ thị của $y = f'(x)$, hãy:
 \begin{enumerate}
     \item Xác định các khoảng đồng biến và nghịch biến của hàm số $y = f(x)$.
-    \item Tìm các điểm cực đại, điểm cực tiểu của hàm số $y = f(x)$.
+    \item Tìm các điểm cực đại và điểm cực tiểu của hàm số $y = f(x)$.
 \end{enumerate}
 }
 
 % =========================================================================
-% DẠNG 4: CÂU HỎI VẤN ĐÁP VỀ TIỆM CẬN
+% DẠNG 4: BÀI TẬP TÌM TIỆM CẬN
 % =========================================================================
 \newpage
-\dangbox{DẠNG 4}{Câu hỏi kiểm tra vấn đáp về tiệm cận}
+\dangbox{DẠNG 4}{Bài tập vận dụng tìm tiệm cận}
 
-\questioncore{4}{Nêu định nghĩa và cách tìm đường tiệm cận đứng (TCĐ) của đồ thị hàm số.}
-
-\questioncore{5}{Nêu định nghĩa và cách tìm đường tiệm cận ngang (TCN) của đồ thị hàm số.}
-
-\questioncore{6}{Nêu định nghĩa và cách tìm đường tiệm cận xiên (TCX) của đồ thị hàm số.}
-
-% =========================================================================
-% DẠNG 5: BÀI TẬP TÌM TIỆM CẬN
-% =========================================================================
-\newpage
-\dangbox{DẠNG 5}{Bài tập ví dụ tìm tiệm cận}
-
-\questioncore{7}{Tìm tất cả các đường tiệm cận đứng và tiệm cận ngang của đồ thị hàm số:
-$$y = \frac{x^2 - 3x + 2}{x^2 - 4}$$
+\questioncore{4}{Tìm tất cả các đường tiệm cận đứng và tiệm cận ngang của đồ thị hàm số:
+$$y = \frac{2x^2 - 5x + 3}{x^2 - 1}$$
 }
 
-\questioncore{8}{Tìm phương trình đường tiệm cận đứng và đường tiệm cận xiên của đồ thị hàm số:
-$$y = \frac{x^2 - x + 1}{x - 1}$$
+\questioncore{5}{Tìm phương trình đường tiệm cận đứng và đường tiệm cận xiên của đồ thị hàm số:
+$$y = \frac{x^2 - 3x + 5}{x + 1}$$
 }
 
-\questioncore{9}{Tìm các đường tiệm cận ngang và tiệm cận xiên của đồ thị hàm số:
-$$y = \sqrt{x^2 + 2x} - x$$
+\questioncore{6}{Tìm phương trình các đường tiệm cận ngang và tiệm cận xiên của đồ thị hàm số chứa căn thức sau:
+$$y = \sqrt{4x^2 + 4x} - 2x$$
 }
 
 % =========================================================================
-% DẠNG 6: TÌM HÀM SỐ BẬC BA TỪ ĐỒ THỊ
+% DẠNG 5: TÌM HÀM SỐ BẬC BA TỪ ĐỒ THỊ
 % =========================================================================
 \newpage
-\dangbox{DẠNG 6}{Xác định hàm số bậc ba từ đồ thị}
+\dangbox{DẠNG 5}{Xác định hàm số bậc ba từ đồ thị}
 
-\questioncore{10}{Đồ thị hàm số bậc ba $y = ax^3 + bx^2 + cx + d$ đi qua gốc tọa độ $O(0;0)$, đạt cực tiểu tại $A(-1;-2)$ và cực đại tại $B(1;2)$ như hình vẽ:
+\questioncore{7}{Đồ thị hàm số bậc ba $y = ax^3 + bx^2 + cx + d$ đi qua điểm $(0;-2)$, đạt cực đại tại $B(1;2)$ và cực tiểu tại $C(3;-2)$ như hình vẽ bên dưới:
 \begin{center}
-\begin{tikzpicture}[scale=0.85, >=stealth]
-    \draw[->, line width=0.8pt] (-2.5,0) -- (2.5,0) node[below] {$x$};
+\begin{tikzpicture}[scale=0.9, >=stealth]
+    \draw[->, line width=0.8pt] (-1.2,0) -- (4.2,0) node[below] {$x$};
     \draw[->, line width=0.8pt] (0,-3.2) -- (0,3.2) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
-    \draw[dashed] (-1,0) -- (-1,-2) -- (0,-2);
+    
     \draw[dashed] (1,0) -- (1,2) -- (0,2);
-    \node[above] at (-1,0) {$-1$};
+    \draw[dashed] (3,0) -- (3,-2) -- (0,-2);
+    
     \node[below] at (1,0) {$1$};
-    \node[right] at (0,-2) {$-2$};
+    \node[above] at (3,0) {$3$};
     \node[left] at (0,2) {$2$};
-    \draw[domain=-1.7:1.7, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {-(\x)^3 + 3*(\x)});
-    \filldraw[accentred] (-1,-2) circle (2pt) node[below] {$A(-1;-2)$};
+    \node[left] at (0,-2) {$-2$};
+    
+    \draw[domain=-0.25:3.75, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {(\x)^3 - 6*(\x)^2 + 9*(\x) - 2});
+        
     \filldraw[accentred] (1,2) circle (2pt) node[above] {$B(1;2)$};
+    \filldraw[accentred] (3,-2) circle (2pt) node[below] {$C(3;-2)$};
+    \filldraw[deepblue] (0,-2) circle (2pt);
 \end{tikzpicture}
 \end{center}
-Hãy xác định phương trình của hàm số bậc ba đó.}
+Hãy xác định công thức của hàm số $y = f(x)$.
+}
 
-\questioncore{11}{Đồ thị hàm số bậc ba $y = f(x)$ tiếp xúc với trục hoành tại điểm $x = -1$, cắt trục hoành tại điểm $x = 2$ và cắt trục tung tại điểm $(0;2)$ như hình vẽ:
+\newpage
+\questioncore{8}{Đồ thị hàm số bậc ba $y = f(x)$ cắt trục tung tại điểm $(0;4)$, cắt trục hoành tại điểm có hoành độ $x = -1$ và tiếp xúc với trục hoành tại điểm có hoành độ $x = 2$ như hình vẽ:
 \begin{center}
 \begin{tikzpicture}[scale=0.85, >=stealth]
-    \draw[->, line width=0.8pt] (-2.2,0) -- (3,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-2.5) -- (0,3.5) node[left] {$y$};
+    \draw[->, line width=0.8pt] (-2,0) -- (3.2,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-1.5) -- (0,4.8) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
+    
     \node[below left] at (-1,0) {$-1$};
     \node[below] at (2,0) {$2$};
-    \node[right] at (0,2) {$2$};
-    \draw[domain=-1.6:2.4, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {-((\x)+1)^2 * ((\x)-2)});
+    \node[left] at (0,4) {$4$};
+    
+    \draw[domain=-1.25:2.55, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {((\x)+1)*((\x)-2)^2});
+        
     \filldraw[accentred] (-1,0) circle (2pt);
     \filldraw[accentred] (2,0) circle (2pt);
-    \filldraw[deepblue] (0,2) circle (2pt);
+    \filldraw[deepblue] (0,4) circle (2pt);
 \end{tikzpicture}
 \end{center}
-Hãy xác định công thức của hàm số $y = f(x)$.}
+Áp dụng phương pháp tương giao, hãy tìm công thức của hàm số $y = f(x)$.
+}
 
 % =========================================================================
-% DẠNG 7: TÌM HÀM SỐ HỮU TỶ TỪ ĐỒ THỊ
+% DẠNG 6: TÌM HÀM SỐ HỮU TỶ TỪ ĐỒ THỊ
 % =========================================================================
 \newpage
-\dangbox{DẠNG 7}{Xác định hàm số hữu tỷ từ đồ thị}
+\dangbox{DẠNG 6}{Xác định hàm số hữu tỷ từ đồ thị}
 
-\questioncore{12}{Cho hàm số bậc nhất trên bậc nhất $y = \dfrac{ax+b}{cx+d}$ có đồ thị như hình vẽ:
+\questioncore{9}{Cho hàm số bậc nhất trên bậc nhất $y = \dfrac{ax+b}{cx+d}$ có đồ thị như hình vẽ:
 \begin{center}
 \begin{tikzpicture}[scale=0.85, >=stealth]
-    \draw[->, line width=0.8pt] (-2.5,0) -- (4,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-2.5) -- (0,4) node[left] {$y$};
+    \draw[->, line width=0.8pt] (-3.5,0) -- (4,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-3.5) -- (0,4) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
     
-    \draw[dashed, line width=0.9pt, accentred] (1,-2.5) -- (1,4) node[above] {$x=1$};
-    \draw[dashed, line width=0.9pt, accentred] (-2.5,1) -- (4,1) node[right] {$y=1$};
+    \draw[dashed, line width=0.9pt, accentred] (1,-3.2) -- (1,3.8) node[above right] {$x=1$};
+    \draw[dashed, line width=0.9pt, accentred] (-3.2,1) -- (3.8,1) node[above left] {$y=1$};
     
-    \draw[domain=-2.5:0.75, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {((\x)-2)/((\x)-1)});
-    \draw[domain=1.25:3.8, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {((\x)-2)/((\x)-1)});
+    \draw[domain=-3.2:0.65, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {((\x)+1)/((\x)-1)});
+    \draw[domain=1.35:3.8, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {((\x)+1)/((\x)-1)});
         
-    \filldraw[deepblue] (0,2) circle (2pt) node[left] {$2$};
-    \filldraw[deepblue] (2,0) circle (2pt) node[below] {$2$};
+    \filldraw[deepblue] (0,-1) circle (2pt) node[left] {$-1$};
+    \filldraw[deepblue] (-1,0) circle (2pt) node[below] {$-1$};
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}
-    \item Xác định phương trình các đường tiệm cận đứng, tiệm cận ngang và xét dấu của biểu thức $ad - bc$.
-    \item Tìm các hệ số $a, b, c$ của hàm số dạng $y = \dfrac{ax+2}{bx+c}$ biết đồ thị đi qua các điểm và có tiệm cận như hình.
+    \item Xác định phương trình tiệm cận đứng, tiệm cận ngang và xét dấu của biểu thức $ad - bc$.
+    \item Tìm các hệ số $a, b, c$ của hàm số dạng $y = \dfrac{ax + 1}{bx + c}$ biết đồ thị đi qua các điểm như hình.
 \end{enumerate}
 }
 
-\questioncore{13}{Cho hàm số bậc hai trên bậc nhất $y = \dfrac{x^2 - x + 1}{x - 1}$ có đồ thị như hình vẽ:
+\newpage
+\questioncore{10}{Cho hàm số bậc hai trên bậc nhất $y = \dfrac{x^2 - 2x + 2}{x - 1}$ có đồ thị như hình vẽ bên dưới:
 \begin{center}
 \begin{tikzpicture}[scale=0.85, >=stealth]
-    \draw[->, line width=0.8pt] (-2.5,0) -- (4.5,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-3) -- (0,4.5) node[left] {$y$};
+    \draw[->, line width=0.8pt] (-3,0) -- (4.2,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-4) -- (0,4) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
     
-    \draw[dashed, line width=0.9pt, accentred] (1,-3) -- (1,4.5) node[above] {$x=1$};
-    \draw[dashed, line width=0.9pt, amberorange] (-2.5,-2.5) -- (4,4) node[right] {$y=x$};
+    \draw[dashed, line width=0.9pt, accentred] (1,-3.8) -- (1,3.8);
+    \draw[dashed, line width=0.9pt, amberorange] (-2.8,-3.8) -- (4,3);
     
     \draw[domain=-2.2:0.72, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {((\x)^2 - (\x) + 1)/((\x) - 1)});
+        plot ({\x}, {((\x)^2 - 2*(\x) + 2)/((\x) - 1)});
     \draw[domain=1.28:3.8, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {((\x)^2 - (\x) + 1)/((\x) - 1)});
-        
-    \filldraw[accentred] (0,-1) circle (2pt) node[left] {$(0;-1)$};
-    \filldraw[accentred] (2,3) circle (2pt) node[right] {$(2;3)$};
+        plot ({\x}, {((\x)^2 - 2*(\x) + 2)/((\x) - 1)});
 \end{tikzpicture}
 \end{center}
-Hãy xác định phương trình tiệm cận đứng, tiệm cận xiên và tọa độ hai điểm cực trị của đồ thị hàm số.}
+Dựa vào công thức và đồ thị hàm số đã cho, hãy:
+\begin{enumerate}
+    \item Tìm phương trình đường tiệm cận đứng và đường tiệm cận xiên của đồ thị hàm số.
+    \item Xác định tọa độ các điểm cực trị của đồ thị hàm số.
+\end{enumerate}
+}
 
 % =========================================================================
-% DẠNG 8: BÀI TOÁN THỰC TẾ & TỐI ƯU HÓA (ĐỀ MỚI HOÀN TOÀN)
+% DẠNG 7: BÀI TOÁN THỰC TẾ & TỐI ƯU HÓA
 % =========================================================================
 \newpage
-\dangbox{DẠNG 8}{Ứng dụng đạo hàm giải quyết bài toán thực tế}
+\dangbox{DẠNG 7}{Ứng dụng đạo hàm giải quyết bài toán thực tế}
 
-\questioncore{14}{Sau khi bệnh nhân được tiêm một liều kháng sinh, nồng độ thuốc $C(t)$ (đơn vị: mg/lít) trong máu sau $t$ giờ được xác định bởi hàm số:
-$$C(t) = -\frac{1}{18}t^3 + \frac{1}{2}t^2 + 8t \quad (0 \le t \le 10)$$
-Hỏi tốc độ tăng nồng độ thuốc trong máu của bệnh nhân đạt giá trị lớn nhất sau khi tiêm bao nhiêu giờ?}
+\questioncore{11}{Một xưởng sản xuất đang gia nhiệt cho một thanh hợp kim. Nhiệt độ $T$ (đơn vị: $^\circ\text{C}$) của thanh hợp kim sau $t$ phút nung ($0 \le t \le 10$) được xác định bởi hàm số:
+$$T(t) = -\frac{1}{15}t^3 + t^2 + 16t + 25$$
+Hỏi tốc độ tăng nhiệt độ của thanh hợp kim đạt giá trị lớn nhất tại thời điểm nào?}
 
-\vspace{3cm}
-
-\questioncore{15}{Một hợp tác xã nông nghiệp dự định dùng $240\text{ m}$ hàng rào lưới thép để ngăn một khu đất trống tựa lưng vào bức tường rào bê tông có sẵn thành 3 ô chuồng hình chữ nhật giống nhau (như hình vẽ, bờ tường bê tông không cần rào):
+\newpage
+\questioncore{12}{Một hộ gia đình dự định dùng $120\text{ m}$ lưới rào thép để vây quanh một mảnh đất hình chữ nhật sát một bức tường rào đá có sẵn thành 2 khoang chứa nông sản bằng nhau (như hình vẽ, cạnh áp sát tường đá không cần rào):
 \begin{center}
 \begin{tikzpicture}[scale=0.85, >=stealth]
-    \draw[line width=2pt, gray!80] (-0.8,0) -- (6.8,0) node[right, black] {Bức tường bê tông};
-    \draw[line width=1.2pt, deepblue] (0,0) -- (0,2.2) -- (6,2.2) -- (6,0);
-    \draw[line width=1.2pt, deepblue] (2,0) -- (2,2.2);
-    \draw[line width=1.2pt, deepblue] (4,0) -- (4,2.2);
-    \node at (1,1.1) {Ô 1};
-    \node at (3,1.1) {Ô 2};
-    \node at (5,1.1) {Ô 3};
-    \draw[<->] (-0.3,0) -- (-0.3,2.2) node[midway, left] {$x$};
-    \draw[<->] (0,2.5) -- (6,2.5) node[midway, above] {$y$};
+    \draw[line width=2.5pt, gray!90] (-0.5,0) -- (6.5,0) node[right, black] {Tường đá};
+    \draw[line width=1.2pt, deepblue] (0,0) -- (0,2.5) -- (6,2.5) -- (6,0);
+    \draw[line width=1.2pt, deepblue] (3,0) -- (3,2.5);
+    \node at (1.5,1.25) {Khoang 1};
+    \node at (4.5,1.25) {Khoang 2};
+    \draw[<->] (-0.3,0) -- (-0.3,2.5) node[midway, left] {$x$};
+    \draw[<->] (0,2.8) -- (6,2.8) node[midway, above] {$y$};
 \end{tikzpicture}
 \end{center}
-Hỏi tổng diện tích lớn nhất của 3 ô chuồng thu được là bao nhiêu mét vuông?}
-\vspace{3cm}
-
-\questioncore{16}{Một xưởng cơ khí chính xác sản xuất linh kiện vi mạch. Nếu mỗi tháng xuất xưởng $x$ trăm linh kiện thì doanh thu nhận được ước tính theo hàm $R(x) = -0{,}05x^2 + 650x$ (triệu đồng). Chi phí sản xuất trung bình cho mỗi trăm linh kiện được cho bởi công thức:
-$$C_{tb}(x) = \frac{32000}{x} + 250 \quad (\text{triệu đồng})$$
-Hỏi xưởng cơ khí cần sản xuất bao nhiêu trăm linh kiện trong một tháng để đạt được lợi nhuận tối đa?}
-
-\vspace{3cm}
+Hỏi diện tích lớn nhất mà hộ gia đình có thể rào được là bao nhiêu mét vuông?}
 
 \newpage
-\questioncore{17}{Để cấp điện cho một cụm dân cư trên đảo $D$, người ta kéo đường cáp tải điện từ nhà máy phát điện $M$ đặt trên bờ biển. Khoảng cách vuông góc ngắn nhất từ đảo $D$ vào đất liền tại điểm $H$ là $DH = 9\text{ km}$, khoảng cách dọc theo bờ biển từ $H$ đến nhà máy $M$ là $HM = 27\text{ km}$. Chi phí kéo dây cáp trên đất liền từ nhà máy $M$ đến trạm trung chuyển $K$ ($K$ nằm giữa $H$ và $M$) là $400$ triệu đồng/km, chi phí ngầm hóa đáy biển từ $K$ ra đảo $D$ là $500$ triệu đồng/km:
+\questioncore{13}{Một công ty sản xuất đồ gia dụng ước tính nếu sản xuất và bán ra $x$ nghìn sản phẩm mỗi tháng thì doanh thu đạt được là $R(x) = -0{,}04x^2 + 500x$ (triệu đồng). Chi phí sản xuất trung bình cho mỗi nghìn sản phẩm được mô hình bởi:
+$$C_{tb}(x) = \frac{18000}{x} + 180 \quad (\text{triệu đồng})$$
+Hỏi công ty cần sản xuất bao nhiêu nghìn sản phẩm mỗi tháng để thu về lợi nhuận tối đa?}
+
+\newpage
+\questioncore{14}{Người ta cần lắp đặt đường dây cáp viễn thông từ trạm điều khiển đất liền $A$ đến một trạm thu phát trên hải đảo $C$. Khoảng cách ngắn nhất từ đảo $C$ vào bờ biển tại $B$ là $BC = 15\text{ km}$, khoảng cách dọc bờ biển là $BA = 36\text{ km}$. Chi phí đặt cáp ngầm dưới biển từ $C$ đến trạm tiếp sóng $S$ ($S$ nằm giữa $B$ và $A$) là $500$ triệu đồng/km, chi phí rải cáp trên đất liền từ $S$ về $A$ là $300$ triệu đồng/km:
 \begin{center}
-\begin{tikzpicture}[scale=0.22, >=stealth]
-    \coordinate (H) at (0,0);
-    \coordinate (D) at (0,9);
-    \coordinate (K) at (12,0);
-    \coordinate (M) at (27,0);
+\begin{tikzpicture}[scale=0.18, >=stealth]
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (0,15);
+    \coordinate (S) at (11.25,0);
+    \coordinate (A) at (36,0);
     
-    \draw[line width=1.2pt] (H) -- (M) node[below] {$M$};
-    \draw[line width=1.2pt] (H) -- (D) node[above] {$D$};
-    \draw[line width=1.2pt, dashed, deepblue] (D) -- (K);
+    \draw[line width=1.2pt] (B) -- (A) node[below] {$A$};
+    \draw[line width=1.2pt] (B) -- (C) node[above] {$C$};
+    \draw[line width=1.2pt, dashed, deepblue] (C) -- (S);
     
-    \node[below] at (H) {$H$};
-    \node[below] at (K) {$K$};
-    \node[left] at (0,4.5) {$9\text{ km}$};
-    \node[above] at (6,4.5) {Dưới đáy biển};
-    \node[below] at (19.5,0) {Trên đất liền};
-    \draw[<->] (0,-3.5) -- (27,-3.5) node[midway, below] {$27\text{ km}$};
+    \node[below] at (B) {$B$};
+    \node[below] at (S) {$S$};
+    \node[left] at (0,7.5) {$15\text{ km}$};
+    \node[above] at (5.5,7.5) {Cáp ngầm biển};
+    \node[below] at (23.5,0) {Cáp trên đất};
+    \draw[<->] (0,-4) -- (36,-4) node[midway, below] {$36\text{ km}$};
 \end{tikzpicture}
 \end{center}
-Tìm chi phí thấp nhất để hoàn thành công trình đường dây tải điện trên (tính bằng tỉ đồng).}
+Tìm chi phí thấp nhất để hoàn thành việc lắp đặt đường dây cáp viễn thông trên.}
 
-\vspace{3cm}
-
-\questioncore{18}{Một phần đường chạy thử nghiệm của phương tiện lượn trên đệm từ được mô phỏng bởi đồ thị hàm số bậc ba $y = f(x)$ như hình vẽ:
+\newpage
+\questioncore{15}{Một đường trượt thử nghiệm trong công viên nước được thiết kế theo dạng đường cong bậc ba $y = f(x)$ như hình vẽ bên dưới:
 \begin{center}
-\begin{tikzpicture}[scale=0.09, >=stealth]
-    % Trục tọa độ
-    \draw[->, line width=0.8pt] (-5,0) -- (105,0) node[below] {$x$};
-    \draw[->, line width=0.8pt] (0,-4) -- (0,45) node[left] {$y$};
+\begin{tikzpicture}[scale=0.1, >=stealth]
+    \draw[->, line width=0.8pt] (-5,0) -- (82,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-4) -- (0,32) node[left] {$y$};
     \node[below left] at (0,0) {$O$};
     
-    % Đường cao độ chuẩn y = 20
-    \draw[dashed, line width=0.6pt, black!40] (0,20) -- (90,20);
+    \draw[dashed, line width=0.6pt, black!40] (0,20) -- (70,20);
     \node[left] at (0,20) {$20$};
     
-    % Vẽ nhánh đồ thị: f(x) = -(1/3500)*x*(x-60)*(x-90) + 20
-    \draw[domain=0:96, smooth, variable=\x, line width=1.2pt, deepblue] 
-        plot ({\x}, {-(1/3500)*(\x)*((\x)-60)*((\x)-90) + 20});
+    % Hàm số chuẩn: f(x) = -(1/2000)*x*(x-50)*(x-70) + 20
+    \draw[domain=0:76, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {-(1/2000)*(\x)*((\x)-50)*((\x)-70) + 20});
         
-    % Các điểm giao trên đường y = 20
-    \filldraw[accentred] (0,20) circle (16pt) node[above left] {$A(0;20)$};
-    \filldraw[accentred] (60,20) circle (16pt) node[above left] {$C(60;20)$};
-    \filldraw[accentred] (90,20) circle (16pt) node[above right] {$D(90;20)$};
+    \filldraw[accentred] (0,20) circle (14pt) node[above left] {$A(0;20)$};
+    \filldraw[accentred] (50,20) circle (14pt) node[above left] {$C(50;20)$};
+    \filldraw[accentred] (70,20) circle (14pt) node[above right] {$D(70;20)$};
     
-    % Điểm trũng nhất tại x = 20, y = 4
-    \draw[dashed, line width=0.6pt, black!50] (20,0) -- (20,4) -- (0,4);
+    \draw[dashed, line width=0.6pt, black!50] (20,0) -- (20,5) -- (0,5);
     \node[below] at (20,0) {$20$};
-    \node[left] at (0,4) {$4$};
-    \filldraw[deepblue] (20,4) circle (16pt) node[below right] {\small Điểm võng};
+    \node[left] at (0,5) {$5$};
+    \filldraw[deepblue] (20,5) circle (14pt) node[below] {\small Điểm võng};
 \end{tikzpicture}
 \end{center}
-Biết đường chạy xuất phát từ điểm $A(0;20)$, đi qua các điểm $C(60;20)$, $D(90;20)$ và đạt độ cao thấp nhất là $4\text{ m}$ tại vị trí có hoành độ $x = 20$. Hãy xác định độ cao lớn nhất mà phương tiện đạt được trên quỹ đạo chạy.}
-\vspace{3cm}
-\newpage
+Biết đường trượt xuất phát từ điểm $A(0;20)$, đi qua các điểm $C(50;20)$, $D(70;20)$ và đạt độ cao thấp nhất là $5\text{ m}$ tại vị trí có hoành độ $x = 20$. Hãy xác định độ cao lớn nhất mà đường trượt đạt được.}
 
-\questioncore{19}{Một bể chứa nước chữa cháy có dạng hình lăng trụ đứng với đáy là tam giác vuông cân tại đỉnh đáy, chiều dài máng $L = 8\text{ m}$ và độ sâu tối đa $H = 2\text{ m}$ (mép trên miệng máng rộng $W = 4\text{ m}$) như hình vẽ:
+\newpage
+\questioncore{16}{Một bồn chứa nước sạch có dạng hình lăng trụ đứng với đáy là tam giác vuông cân tại đỉnh đáy, chiều dài thân bồn $L = 6\text{ m}$ và độ sâu tối đa $H = 2\text{ m}$ (mép trên miệng bồn rộng $W = 4\text{ m}$) như hình vẽ:
 \begin{center}
 \begin{tikzpicture}[scale=0.9, >=stealth]
-    % Đỉnh đáy và các điểm mặt trước
     \coordinate (O) at (0,0);
     \coordinate (A) at (-2,2);
     \coordinate (B) at (2,2);
     
-    % Chiều sâu không gian lăng trụ (vector trượt)
-    \coordinate (shift) at (4,1.5);
+    \coordinate (shift) at (3.5,1.2);
     \coordinate (O2) at ($(O)+(shift)$);
     \coordinate (A2) at ($(A)+(shift)$);
     \coordinate (B2) at ($(B)+(shift)$);
     
-    % Mặt nước ở độ cao h
     \coordinate (M) at (-1.2,1.2);
     \coordinate (N) at (1.2,1.2);
     \coordinate (M2) at ($(M)+(shift)$);
     \coordinate (N2) at ($(N)+(shift)$);
     
-    % Vùng nước
     \fill[cyan!20, opacity=0.8] (O) -- (M) -- (M2) -- (O2) -- cycle;
     \fill[cyan!30, opacity=0.8] (O) -- (N) -- (N2) -- (O2) -- cycle;
     \fill[cyan!40, opacity=0.8] (M) -- (N) -- (N2) -- (M2) -- cycle;
     
-    % Viền bể lăng trụ
     \draw[line width=1.1pt, deepblue] (A) -- (O) -- (B) -- cycle;
     \draw[line width=1.1pt, deepblue] (A) -- (A2) -- (B2) -- (B);
     \draw[line width=1.1pt, deepblue] (O) -- (O2) -- (B2);
     \draw[dashed, line width=0.8pt, deepblue!60] (O2) -- (A2);
     
-    % Kích thước chiều dài L = 8m
-    \draw[<->, line width=0.7pt] ($(B)+(0.2,-0.1)$) -- ($(B2)+(0.2,-0.1)$) node[midway, below right] {$L = 8\text{ m}$};
-    
-    % Mặt trước: chiều cao h và độ sâu H
+    \draw[<->, line width=0.7pt] ($(B)+(0.2,-0.1)$) -- ($(B2)+(0.2,-0.1)$) node[midway, below right] {$L = 6\text{ m}$};
     \draw[dashed, line width=0.6pt] (0,2) -- (O);
     \draw[dashed, line width=0.6pt] (M) -- (N);
     \draw[<->, line width=0.6pt] (-2.3,0) -- (-2.3,2) node[midway, left] {$H = 2\text{ m}$};
@@ -336,14 +326,11 @@ Biết đường chạy xuất phát từ điểm $A(0;20)$, đi qua các điể
     \draw[<->, line width=0.6pt] (-2,2.2) -- (2,2.2) node[midway, above] {$W = 4\text{ m}$};
 \end{tikzpicture}
 \end{center}
-Ban đầu bể không có nước, người ta bơm nước vào bể với tốc độ không đổi $q = 1{,}6\text{ m}^3/\text{phút}$.
+Ban đầu bồn hoàn toàn không có nước, người ta bơm nước vào bồn với lưu lượng không đổi $q = 1{,}2\text{ m}^3/\text{phút}$.
 \begin{enumerate}
-    \item Sau 5 phút bơm, mực nước $h$ trong bể cao bao nhiêu mét?
-    \item Tại thời điểm mực nước trong bể đạt độ cao $h = 1\text{ m}$, tốc độ dâng lên của mực nước là bao nhiêu mét/phút?
+    \item Sau 5 phút bơm, mực nước trong bồn cao bao nhiêu mét?
+    \item Tại thời điểm mực nước trong bồn đạt $h = 1{,}5\text{ m}$, tốc độ dâng lên của mực nước là bao nhiêu mét/phút?
 \end{enumerate}
 }
 
 \end{document}
-```<FollowUp>
-Bạn có muốn tôi chèn thêm các dòng kẻ ô ly hoặc dòng chấm lửng (theo macro có sẵn trong myconfig) dưới mỗi câu để học sinh có không gian viết lời giải trực tiếp vào đề không?
-</FollowUp>
