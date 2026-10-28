@@ -1,0 +1,118 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% =========================================================================
+% BÀI TẬP ĐIỂM DANH: XÁC SUẤT CƠ BẢN VÀ XÁC SUẤT CỔ ĐIỂN (10 CÂU)
+% Dạng trả lời ngắn. Đáp án được ghi dưới từng câu bằng comment.
+% =========================================================================
+\titlebox{Xác suất}{Xác suất cơ bản \\ Xác suất cổ điển}{Xác suất: Xác suất cơ bản và xác suất cổ điển}
+
+\vspace{-0.25cm}
+
+% --- Câu 1 (Câu 6 trong tài liệu gốc) ---
+\questionShortAnswer{0}{1}{%
+    Gieo một con xúc xắc cân đối và đồng chất một lần.
+    Gọi $A$ là biến cố ``xuất hiện mặt 1 chấm'', $B$ là biến cố ``xuất hiện mặt có số chấm lẻ''.
+    Tính $P(A\mid B)$ (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,33.
+% Kiểm tra: P(A|B) = (1/6)/(3/6) = 1/3.
+
+
+% --- Câu 2 (Câu 7 trong tài liệu gốc) ---
+\questionShortAnswer{0}{2}{%
+    Một phòng thí nghiệm thực hiện hai thí nghiệm độc lập.
+    Xác suất thành công của mỗi thí nghiệm là $0{,}8$.
+    Phòng được coi là hoàn thành nhiệm vụ nếu có ít nhất một thí nghiệm thành công.
+    Tính xác suất phòng hoàn thành nhiệm vụ (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,96.
+% Kiểm tra: P = 1 - (1 - 0,8)^2 = 0,96.
+
+
+% --- Câu 3 (Câu 8 trong tài liệu gốc) ---
+\questionShortAnswer{0}{3}{%
+    Một máy ép thủy lực có hai động cơ $A$ và $B$ hoạt động độc lập.
+    Xác suất động cơ $A$ chạy tốt là $0{,}8$; xác suất động cơ $B$ chạy tốt là $0{,}75$.
+    Máy hoạt động nếu có ít nhất một động cơ chạy tốt.
+    Tính xác suất máy hoạt động (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,95.
+% Kiểm tra: P = 1 - (1 - 0,8)(1 - 0,75) = 0,95.
+
+
+% --- Câu 4 (Câu 11 trong tài liệu gốc) ---
+\questionShortAnswer{0}{4}{%
+    Một hộp đựng 7 quả cầu trắng và 3 quả cầu đỏ, các quả cầu có cùng kích thước và khối lượng.
+    Lấy ngẫu nhiên đồng thời 4 quả cầu.
+    Tính xác suất trong 4 quả lấy được có đúng 2 quả đỏ (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,30.
+% Kiểm tra: P = C_3^2 C_7^2 / C_{10}^4 = 3/10.
+
+
+% --- Câu 5 (Câu 12 trong tài liệu gốc) ---
+\questionShortAnswer{0}{5}{%
+    Một bình có 50 viên bi cùng kích thước và chất liệu, gồm 30 bi đen và 20 bi trắng.
+    Lấy ngẫu nhiên lần lượt 2 viên bi, không hoàn lại.
+    Tính xác suất lấy được bi đen ở lần thứ nhất và bi trắng ở lần thứ hai (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,24.
+% Kiểm tra: P = (30/50)(20/49) = 12/49.
+
+
+% --- Câu 6 (Câu 4 trong tài liệu gốc) ---
+\questionShortAnswer{0}{6}{%
+    Một công ty đấu thầu hai dự án.
+    Xác suất thắng dự án 1 và dự án 2 lần lượt là $50\%$ và $60\%$; xác suất thắng cả hai là $40\%$.
+    Biết công ty không thắng dự án 1, tính xác suất công ty thắng dự án 2 (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,40.
+% Kiểm tra: P = (0,6 - 0,4)/(1 - 0,5) = 0,4.
+
+
+% --- Câu 7 (Câu 1 trong tài liệu gốc) ---
+\questionShortAnswer{0}{7}{%
+    Hai người gọi điện thoại đến hai số khác nhau nhưng đều quên chữ số cuối.
+    Mỗi người thử ngẫu nhiên các chữ số từ 0 đến 9, không lặp lại chữ số đã thử; hai người thử độc lập.
+    Tính xác suất ít nhất một người gọi đúng mà không phải thử quá hai lần (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,36.
+% Kiểm tra: P = 1 - (1 - 2/10)^2 = 0,36.
+
+
+% --- Câu 8 (Câu 3 trong tài liệu gốc) ---
+\questionShortAnswer{0}{8}{%
+    Hộp I có 6 bi đỏ và 4 bi xanh; hộp II có 5 bi đỏ và 5 bi xanh.
+    Các viên bi có cùng kích thước và khối lượng.
+    Minh lấy ngẫu nhiên một bi từ hộp I; Như lấy ngẫu nhiên một bi từ hộp II, độc lập với Minh.
+    Biết có ít nhất một bi đỏ được lấy ra, xác suất Như lấy được bi đỏ là $\dfrac ab$ (phân số tối giản, $a,b$ nguyên dương).
+    Tính $a-b$.
+}
+% Đáp án: -3.
+% Kiểm tra: P = (1/2)/(1 - (4/10)(5/10)) = 5/8; a - b = 5 - 8 = -3.
+
+
+% --- Câu 9 (Câu 17 trong tài liệu gốc) ---
+\questionShortAnswer{0}{9}{%
+    Một người môi giới có 8 chìa khóa ứng với 8 ngôi nhà, mỗi chìa chỉ mở được đúng một nhà.
+    Có 3 nhà không khóa cửa.
+    Người đó chọn ngẫu nhiên 3 chìa mang theo, rồi chọn ngẫu nhiên một trong 8 nhà để vào, độc lập với việc chọn chìa.
+    Tính xác suất người đó vào được nhà (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,61.
+% Kiểm tra: P = 3/8 + (5/8)(3/8) = 39/64.
+
+
+% --- Câu 10 (Câu 18 trong tài liệu gốc) ---
+\questionShortAnswer{0}{10}{%
+    Một trường có 8 giáo viên Toán gồm 3 nữ và 5 nam, cùng 4 giáo viên Vật lý đều là nam.
+    Chọn ngẫu nhiên một đoàn 3 người.
+    Tính xác suất đoàn có đủ hai môn Toán và Vật lý, đồng thời có cả nam và nữ (làm tròn đến hàng phần trăm).
+}
+% Đáp án: 0,41.
+% Kiểm tra: P = [C_4^2 C_3^1 + C_4^1(C_8^2 - C_5^2)]/C_{12}^3 = 9/22.
+
+\end{document}

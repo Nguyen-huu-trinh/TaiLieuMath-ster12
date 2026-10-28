@@ -1,0 +1,355 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+
+% Bảng trống dùng ở phần xác suất có điều kiện.
+\newcommand{\bangtrong}{%
+    \begin{center}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{|c|p{1.7cm}|p{1.7cm}|c|}
+            \hline
+            & $B$ & $\overline B$ & Tổng \\
+            \hline
+            $A$ & & & \\
+            \hline
+            $\overline A$ & & & \\
+            \hline
+            Tổng & & & $1$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+}
+
+\begin{document}
+
+% =========================================================================
+% TRANG 1: NỀN TẢNG XÁC SUẤT VÀ NGÔN NGỮ BIẾN CỐ
+% =========================================================================
+\titlebox{Xác suất}{Xác suất cơ bản \\ Xác suất cổ điển}{Xác suất: Xác suất cơ bản và xác suất cổ điển}
+
+\begin{theorybox}
+    \textbf{I. NỀN TẢNG}
+    \[
+        \underbrace{\Omega}_{\text{Mọi kết quả}}\qquad\supset\qquad\underbrace{A}_{\text{Kết quả thuận lợi}}
+    \]
+    \[
+        \boxed{P(A)=\frac{n(A)}{n(\Omega)}}\qquad\text{(các kết quả đồng khả năng).}
+    \]
+\end{theorybox}
+
+% --- Câu 1 ---
+\questionLinesManual{4}{1}{%
+    Gieo một xúc xắc cân đối.
+    Gọi $A$: ``xuất hiện mặt chẵn''.
+    Hãy viết $\Omega$, $A$ và tính $P(A)$.
+}{}
+
+\begin{theorybox}
+    \textbf{II. ĐỌC ĐÚNG BIẾN CỐ}
+    \[
+        \begin{array}{c|c@{\qquad}c|c}
+            \overline A&\text{Không }A&A\cap B&\text{Cả hai}\\[5pt]
+            A\cup B&\text{Ít nhất một}&A\cap\overline B&\text{Chỉ }A
+        \end{array}
+    \]
+\end{theorybox}
+
+% --- Câu 2 ---
+\questionLinesManual{3}{2}{%
+    Lấy một bi từ mỗi hộp.
+    Gọi $A$: ``hộp I lấy đỏ'', $B$: ``hộp II lấy đỏ''.
+    Viết biến cố: cả hai đỏ; ít nhất một đỏ; đúng một đỏ; không có bi đỏ.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 2: DẠNG 1
+% =========================================================================
+\dangbox{1}{Ít nhất một và đúng một: khác nhau ở đâu?}
+
+\begin{theorybox}
+    \begin{minipage}{.58\linewidth}
+        \[
+            \boxed{P(A\cup B)=P(A)+P(B)-P(A\cap B)}
+        \]
+        \[
+            \boxed{P(\text{đúng một})=P(A)+P(B)-2P(A\cap B)}
+        \]
+    \end{minipage}\hfill
+    \begin{minipage}{.39\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=.7]
+            \draw[deepblue,thick] (-2,-1.3) rectangle (3,1.3);
+            \fill[goldyellow!25] (0,0) circle(1);
+            \fill[goldyellow!25] (1.2,0) circle(1);
+            \begin{scope}
+                \clip (0,0) circle(1);
+                \fill[amberorange!65] (1.2,0) circle(1);
+
+            \end{scope}
+            \draw[deepblue,thick] (0,0) circle(1);
+            \draw[deepblue,thick] (1.2,0) circle(1);
+            \node at (-.45,0){$A$};
+            \node at (1.65,0){$B$};
+            \node[below] at (.6,-1.35){$A\cap B$: phần chung};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+% --- Câu 3 ---
+\questionLinesManual{7}{3}{%
+    Một công ty có xác suất thắng dự án 1 là $0{,}5$, thắng dự án 2 là $0{,}6$, thắng cả hai là $0{,}4$.
+    Tính xác suất thắng ít nhất một dự án và xác suất thắng đúng một dự án.
+}{}
+
+% --- Câu 4 ---
+\questionLinesManual{7}{4}{%
+    Cho $P(A)=0{,}6$, $P(B)=0{,}5$, $P(A\cap B)=0{,}3$.
+    Tính xác suất không có biến cố nào xảy ra và xác suất chỉ có $A$ xảy ra.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 3: DẠNG 2
+% =========================================================================
+\dangbox{2}{Ít nhất một: nghĩ đến biến cố đối}
+
+\begin{theorybox}
+    \[
+        \boxed{P(\overline A)=1-P(A)}
+    \]
+    \[
+        \text{Ít nhất một}\quad\overset{\text{đối}}{\longleftrightarrow}\quad\text{Không có lần nào}.
+    \]
+    \[
+        A,B\text{ độc lập}\ \Rightarrow\ \boxed{P(A\cap B)=P(A)P(B)}.
+    \]
+    \[
+        \boxed{P(A\cup B)=1-P(\overline A)P(\overline B)}\quad\text{(khi độc lập).}
+    \]
+\end{theorybox}
+
+% --- Câu 5 ---
+\questionLinesManual{7}{5}{%
+    Hai thí nghiệm độc lập, mỗi thí nghiệm thành công với xác suất $0{,}8$.
+    Tính xác suất có ít nhất một thí nghiệm thành công.
+}{}
+
+% --- Câu 6 ---
+\questionLinesManual{7}{6}{%
+    Hai người gọi điện đều quên chữ số cuối.
+    Mỗi người thử ngẫu nhiên từ 0 đến 9, không lặp số đã thử; hai người thử độc lập.
+    Tính xác suất ít nhất một người gọi đúng mà không phải thử quá hai lần.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 4: DẠNG 3
+% =========================================================================
+\dangbox{3}{Biết rằng: đang xét trong tập nào?}
+
+\begin{theorybox}
+    \begin{minipage}{.6\linewidth}
+        \[
+            \boxed{P(A\mid B)=\frac{P(A\cap B)}{P(B)}}\quad[P(B)>0].
+        \]
+        \[
+            \underbrace{A}_{\text{Cần tìm}}\ \big|\ \underbrace{B}_{\text{Đã biết}}
+        \]
+    \end{minipage}\hfill
+    \begin{minipage}{.36\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=.75]
+            \draw[deepblue,thick] (-1.7,-1.3) rectangle (2.7,1.3);
+            \fill[goldyellow!35] (1,0) circle(1);
+            \begin{scope}
+                \clip (0,0) circle(1);
+                \fill[amberorange!70] (1,0) circle(1);
+
+            \end{scope}
+            \draw[deepblue] (0,0) circle(1);
+            \draw[deepblue,thick] (1,0) circle(1);
+            \node at (-.5,0){$A$};
+            \node at (1.5,0){$B$};
+            \node[below] at (.5,-1.35){Chỉ xét trong $B$};
+        \end{tikzpicture}
+    \end{minipage}
+\end{theorybox}
+
+% --- Câu 7 ---
+\questionLinesManual{7}{7}{%
+    Gieo một xúc xắc cân đối.
+    Biết xuất hiện số chấm lẻ, tính xác suất xuất hiện mặt 1 chấm.
+}{}
+
+% --- Câu 8 ---
+\questionLinesManual{7}{8}{%
+    Một công ty có $P(A)=0{,}5$, $P(B)=0{,}6$, $P(A\cap B)=0{,}4$, với $A,B$ là thắng dự án 1, 2.
+    Biết công ty không thắng dự án 1, tính xác suất thắng dự án 2.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 5: DẠNG 4
+% =========================================================================
+\dangbox{4}{Đếm số cách: chọn nhóm hay xếp thứ tự?}
+
+\begin{theorybox}
+    \[
+        \begin{array}{c|c|c}
+            \text{Chọn nhóm}&\text{Chọn và xếp thứ tự}&\text{Xếp tất cả}\\[7pt]
+            \displaystyle C_n^k=\frac{n!}{k!(n-k)!}&\displaystyle A_n^k=\frac{n!}{(n-k)!}&P_n=n!
+        \end{array}
+    \]
+    \[
+        \boxed{P(A)=\frac{\text{Số cách chọn thỏa yêu cầu}}{\text{Tổng số cách chọn}}}\quad\text{(đồng khả năng).}
+    \]
+    \centering Đổi chỗ có tạo kết quả khác?\quad Không $\to C_n^k$;\quad Có $\to A_n^k$.
+\end{theorybox}
+
+% --- Câu 9 ---
+\questionLinesManual{7}{9}{%
+    Hộp có 7 bi trắng và 3 bi đỏ.
+    Lấy ngẫu nhiên đồng thời 4 bi.
+    Tính xác suất lấy được đúng 2 bi đỏ.
+}{}
+
+% --- Câu 10 ---
+\questionLinesManual{7}{10}{%
+    Vẫn hộp trên, lấy ngẫu nhiên đồng thời 4 bi.
+    Tính xác suất lấy được ít nhất một bi đỏ.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 6: DẠNG 5
+% =========================================================================
+\dangbox{5}{Rút lần lượt: sau lần đầu còn lại gì?}
+
+\begin{theorybox}
+    \[
+        \boxed{P(A\cap B)=P(A)\,P(B\mid A)}
+    \]
+    \begin{center}
+        \begin{tikzpicture}[>=stealth]
+            \node[draw=deepblue,rounded corners,inner sep=7pt] (a) {Ban đầu: $n$ vật};
+            \node[draw=amberorange,rounded corners,inner sep=7pt,] (b) at (8,0) {Còn $n-1$ vật};
+            \draw[->,thick,deepblue] (a)--node[above=5pt]{Không hoàn lại}(b);
+        \end{tikzpicture}
+    \end{center}
+    \centering Có hoàn lại và xáo trộn $\Rightarrow$ số lượng trở về như cũ.
+\end{theorybox}
+
+% --- Câu 11 ---
+\questionLinesManual{7}{11}{%
+    Bình có 30 bi đen và 20 bi trắng.
+    Lấy lần lượt 2 bi không hoàn lại.
+    Tính xác suất lần đầu lấy bi đen, lần thứ hai lấy bi trắng.
+}{}
+
+% --- Câu 12 ---
+\questionLinesManual{7}{12}{%
+    Với bình trên, tính xác suất lấy được hai bi khác màu khi rút lần lượt 2 bi không hoàn lại.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 7: DẠNG 6
+% =========================================================================
+\dangbox{6}{Biết có ít nhất một: xác định đúng điều kiện}
+
+\begin{theorybox}
+    \[
+        \text{Điều đã biết: }A\cup B\qquad\text{Điều cần tìm: }B.
+    \]
+    \[
+        B\subset A\cup B\quad\Rightarrow\quad
+        \boxed{P(B\mid A\cup B)=\frac{P(B)}{P(A\cup B)}}.
+    \]
+    \centering ``Có bi đỏ'' gồm cả trường hợp hai bi cùng đỏ.
+\end{theorybox}
+
+% --- Câu 13 ---
+\questionLinesManual{7}{13}{%
+    Hộp I có 6 bi đỏ, 4 bi xanh; hộp II có 5 bi đỏ, 5 bi xanh.
+    Lấy độc lập một bi từ mỗi hộp.
+    Biết có bi đỏ được lấy, tính xác suất bi lấy từ hộp II là đỏ.
+}{}
+
+% --- Câu 14 ---
+\questionLinesManual{7}{14}{%
+    Gieo hai xúc xắc cân đối một cách độc lập.
+    Biết có ít nhất một con xuất hiện mặt 6, tính xác suất cả hai con đều xuất hiện mặt 6.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 8: DẠNG 7
+% =========================================================================
+\dangbox{7}{Hai điều kiện: chia trường hợp không trùng nhau}
+
+\begin{theorybox}
+    \[
+        \text{Chọn nhóm}\ \longrightarrow\ n(\Omega)=C_n^k.
+    \]
+    \[
+        \text{Các trường hợp rời nhau}\ \Rightarrow\ \boxed{n(A)=N_1+N_2+\cdots}.
+    \]
+    \centering Trong mỗi trường hợp: thực hiện nhiều bước $\Rightarrow$ nhân số cách.
+\end{theorybox}
+
+% --- Câu 15 ---
+\questionLinesManual{7}{15}{%
+    Có 3 giáo viên nữ Toán, 5 giáo viên nam Toán và 4 giáo viên nam Vật lý.
+    Chọn ngẫu nhiên 3 người.
+    Tính xác suất đoàn có đủ hai môn và đủ hai giới.
+}{}
+
+% --- Câu 16 ---
+\questionLinesManual{7}{16}{%
+    Hộp có 4 bi đỏ, 3 bi xanh và 2 bi vàng.
+    Chọn ngẫu nhiên đồng thời 3 bi.
+    Tính xác suất nhóm được chọn có đúng hai màu.
+}{}
+
+\newpage
+
+% =========================================================================
+% TRANG 9: DẠNG 8
+% =========================================================================
+\dangbox{8}{Hai xác suất có điều kiện: dùng bảng bốn ô}
+
+\begin{theorybox}
+    \[
+        t=P(\overline A\cap\overline B),\quad x=P(A\cap\overline B),\quad y=P(\overline A\cap B).
+    \]
+    \[
+        \boxed{P(A\mid\overline B)=\frac{x}{x+t}}\qquad
+        \boxed{P(B\mid\overline A)=\frac{y}{y+t}}.
+    \]
+    \centering Tổng bốn ô $=1$;\qquad $P(A\cup B)=1-t$.
+\end{theorybox}
+
+% --- Câu 17 ---
+\questionLinesManual{0}{17}{%
+    Cho $P(A\mid\overline B)=3/5$, $P(B\mid\overline A)=2/3$ và $P(A\cap B)=1/10$.
+    Tính $P(A\cup B)$.
+}{}
+
+\bangtrong
+\drawdashlines{4}
+
+% --- Câu 18 ---
+\questionLinesManual{6}{18}{%
+    Cho $P(A\mid\overline B)=2/5$, $P(B\mid\overline A)=4/7$ và $P(A\cap B)=0{,}1$.
+    Tính $P(A\cup B)$.
+}{}
+
+\end{document}
