@@ -1,0 +1,468 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+% Tiêu đề đầu tài liệu
+\titlebox{TỔNG ÔN TRỌNG TÂM}{NGUYÊN HÀM - TÍCH PHÂN \& ỨNG DỤNG THỰC TẾ}{MATH-STER: TỔNG ÔN}
+
+% =========================================================================
+% PHẦN 1: NGUYÊN HÀM CƠ BẢN
+% =========================================================================
+\dangbox{PHẦN 1}{Nguyên hàm: Lưu ý cốt lõi}
+
+\begin{theorybox}
+\begin{itemize}
+    \item Nếu thay $x$ thành $ax+b$ thì phải nhân thêm $\dfrac{1}{a}$.
+    \item Chỉ tách khi là phép cộng trừ, không được tách khi là phép nhân chia.
+\end{itemize}
+\end{theorybox}
+
+\questioncore{1}{Tìm các họ nguyên hàm sau:
+\begin{enumerate}
+    \item $\displaystyle \int (3x^2 - 2x + 2025)\,\mathrm{d}x$
+    \item $\displaystyle \int \left(\frac{1}{x^3} + \frac{3}{x^2}\right)\mathrm{d}x$
+    \item $\displaystyle \int \frac{1}{2x+3}\,\mathrm{d}x$
+    \item $\displaystyle \int (\sin x + \cos 3x)\,\mathrm{d}x$
+    \item $\displaystyle \int (e^{3x} + 7^x)\,\mathrm{d}x$
+    \item $\displaystyle \int \frac{2x^4+3}{x^2}\,\mathrm{d}x$
+\end{enumerate}
+}
+\drawdashlinesfull
+
+\questioncore{2}{Cho $F(x)$ là một nguyên hàm của $f(x) = -3x^2 + 4x + 2$ thỏa mãn $F(1) = 2$. Tính $F(-1)$.}
+\drawdashlinesfull
+
+\questioncore{3}{Cho hàm số $f(x)$ xác định trên $\mathbb{R} \setminus \left\{\dfrac{1}{2}\right\}$ có $f'(x) = \dfrac{2}{2x-1}$, $f(0) = 1$ và $f(1) = 2$. Tính $P = f(-1) + f(3)$.}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 2: TÍCH PHÂN
+% =========================================================================
+\dangbox{PHẦN 2}{Tích phân \& Tính chất}
+
+\begin{theorybox}
+\begin{itemize}
+    \item $\displaystyle \int_a^b f(x)\,\mathrm{d}x = F(b) - F(a)$; \quad $\displaystyle \int_a^b f'(x)\,\mathrm{d}x = f(b) - f(a)$.
+    \item $\displaystyle \int_a^a f(x)\,\mathrm{d}x = 0$
+    \item $\displaystyle \int_a^b f(x)\,\mathrm{d}x = -\int_b^a f(x)\,\mathrm{d}x$
+    \item $\displaystyle \int_a^b k \cdot f(x)\,\mathrm{d}x = k \cdot \int_a^b f(x)\,\mathrm{d}x$
+    \item $\displaystyle \int_a^b [f(x) \pm g(x)]\,\mathrm{d}x = \int_a^b f(x)\,\mathrm{d}x \pm \int_a^b g(x)\,\mathrm{d}x$
+    \item $\displaystyle \int_a^b f(x)\,\mathrm{d}x + \int_b^c f(x)\,\mathrm{d}x = \int_a^c f(x)\,\mathrm{d}x$
+\end{itemize}
+\end{theorybox}
+
+\questioncore{4}{Cho đồ thị hàm số $y = f(x)$ cắt trục hoành tạo thành hai phần diện tích $A$ và $B$ như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    \draw[->, line width=0.8pt] (-2.5,0) -- (2.5,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-1.8) -- (0,1.8) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    \fill[amberorange!30] plot[domain=-1.5:0] (\x, {0.9*(\x)*((\x)+1.5)*((\x)-1.5)}) -- cycle;
+    \fill[cyan!30] plot[domain=0:1.5] (\x, {0.9*(\x)*((\x)+1.5)*((\x)-1.5)}) -- cycle;
+    
+    \draw[domain=-1.8:1.8, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {0.9*(\x)*((\x)+1.5)*((\x)-1.5)});
+        
+    \node[deepblue] at (-0.75,-0.6) {$A$};
+    \node[deepblue] at (0.75,0.6) {$B$};
+    
+    \node[above left] at (-1.5,0) {$a$};
+    \node[below right] at (0,0) {$b$};
+    \node[below right] at (1.5,0) {$c$};
+    
+    \filldraw[deepblue] (-1.5,0) circle (1.5pt);
+    \filldraw[deepblue] (0,0) circle (1.5pt);
+    \filldraw[deepblue] (1.5,0) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+Biểu diễn các tích phân sau theo diện tích $A$ và $B$:
+\begin{enumerate}
+    \item $\displaystyle \int_a^c f(x)\,\mathrm{d}x$
+    \item $\displaystyle \int_a^c |f(x)|\,\mathrm{d}x$
+    \item $\left| \displaystyle \int_a^c f(x)\,\mathrm{d}x \right|$
+\end{enumerate}
+}
+\drawdashlinesfull
+
+\questioncore{5}{Biết $\displaystyle \int_0^1 f(x)\,\mathrm{d}x = -1$ và $\displaystyle \int_0^3 f(x)\,\mathrm{d}x = 5$. Tính $I = \displaystyle \int_1^3 f(x)\,\mathrm{d}x$.}
+\drawdashlinesfull
+
+\questioncore{6}{Cho hàm số $f(x)$ có $f(0) = 4$ và $f'(x) = 2\sin x + 1$. Tính $I = \displaystyle \int_0^{\frac{\pi}{4}} f(x)\,\mathrm{d}x$.}
+\drawdashlinesfull
+
+\questioncore{7}{Biết $\displaystyle \int_1^3 \frac{x+2}{x}\,\mathrm{d}x = a + b\ln c$ với $a, b, c \in \mathbb{Z}$ và $c < 9$. Tính $S = a + b + c$.}
+\drawdashlinesfull
+
+\questioncore{8}{Biết $\displaystyle \int_{-1}^0 \frac{3x^2+5x-1}{x-2}\,\mathrm{d}x = a\ln\frac{2}{3} + b$ với $a, b \in \mathbb{R}$. Tính $T = a + 4b$.}
+\drawdashlinesfull
+
+\questioncore{9}{Biết $\displaystyle \int_1^2 \frac{\mathrm{d}x}{(x+1)(2x+1)} = a\ln 2 + b\ln 3 + c\ln 5$ ($a, b, c \in \mathbb{Z}$). Tính $a + b + c$.}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 3: CÔNG THỨC DIỆN TÍCH & THỂ TÍCH
+% =========================================================================
+\dangbox{PHẦN 3}{Công thức Diện tích \& Thể tích}
+
+\begin{theorybox}
+\begin{itemize}
+    \item \textbf{Diện tích hình phẳng:}
+    $$S = \int_a^b |f(x)|\,\mathrm{d}x = \int_a^b |f(x) - g(x)|\,\mathrm{d}x$$
+    \item \textbf{Thể tích khối tròn xoay quanh $Ox$:}
+    $$V = \pi \int_a^b |f(x)|^2\,\mathrm{d}x$$
+    $$V = \pi \int_a^b |f^2(x) - g^2(x)|\,\mathrm{d}x$$
+    \textit{(Lưu ý: Không viết nhầm thành $\pi \int_a^b [f(x) - g(x)]^2\,\mathrm{d}x$)}
+    \item \textbf{Thể tích vật thể cắt thiết diện là hình (không có $\pi$, không bình phương):}
+    $$V = \int_a^b S(x)\,\mathrm{d}x$$
+    \item \textbf{Lưu ý số lượng đường giới hạn:}
+    \par Nếu đề cho giới hạn bởi bao nhiêu đường 
+    \par $\implies$ phần hình phẳng $S, V$ phải được bao quanh bởi đúng bấy nhiêu đường.
+\end{itemize}
+\end{theorybox}
+
+% =========================================================================
+% PHẦN 4: NÂNG CAO - DIỆN TÍCH HÌNH PHẲNG (HÌNH THỰC TẾ)
+% =========================================================================
+\newpage
+\dangbox{PHẦN 4}{Ứng dụng tích phân tính diện tích thực tế}
+
+\questioncore{10}{Mặt cắt ngang của một cổng chào bằng sắt gồm phần phía trên là một đường cong parabol đỉnh tại $(0;2)$, hai chân cổng đặt tại $(-2{,}5;0)$ và $(2{,}5;0)$, chiều cao hai mép bên là $1{,}5\text{ m}$ như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    % 1. Tô màu phần hình chữ nhật phía dưới (tuyệt đối vuông vức)
+    \fill[cyan!25] (-2.5,0) rectangle (2.5,1.5);
+    
+    % 2. Tô màu phần vòm cong parabol phía trên
+    \fill[cyan!25] (-2.5,1.5) -- plot[domain=-2.5:2.5] (\x, {-0.08*(\x)^2 + 2}) -- (2.5,1.5) -- cycle;
+    
+    % Trục toạ độ Oxy
+    \draw[->, line width=0.8pt] (-3.4,0) -- (3.4,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-0.3) -- (0,2.6) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Hai trụ bên thẳng đứng
+    \draw[line width=1.3pt, deepblue] (-2.5,0) -- (-2.5,1.5);
+    \draw[line width=1.3pt, deepblue] (2.5,0) -- (2.5,1.5);
+    
+    % Đường cong parabol y = -0.08x^2 + 2
+    \draw[domain=-2.5:2.5, smooth, variable=\x, line width=1.3pt, deepblue] 
+        plot ({\x}, {-0.08*(\x)^2 + 2});
+        
+    % Đường nét đứt mép trụ
+    \draw[dashed, line width=0.6pt, deepblue!70] (-2.5,1.5) -- (2.5,1.5);
+    
+    % Kích thước chiều cao 1,5m
+    \draw[dashed, line width=0.5pt, black!50] (2.5,1.5) -- (2.9,1.5);
+    \draw[<->, line width=0.6pt] (2.9,0) -- (2.9,1.5) node[midway, right] {\small $1{,}5\text{ m}$};
+    
+    % Kích thước chiều cao 2m
+    \draw[dashed, line width=0.5pt, black!50] (0,2) -- (3.6,2);
+    \draw[dashed, line width=0.5pt, black!50] (2.5,0) -- (3.6,0);
+    \draw[<->, line width=0.6pt] (3.6,0) -- (3.6,2) node[midway, right] {\small $2\text{ m}$};
+    
+    % Kích thước bề rộng 5m
+    \draw[dashed, line width=0.5pt, black!50] (-2.5,0) -- (-2.5,-0.75);
+    \draw[dashed, line width=0.5pt, black!50] (2.5,0) -- (2.5,-0.75);
+    \draw[<->, line width=0.6pt] (-2.5,-0.7) -- (2.5,-0.7) node[midway, fill=white, inner sep=2pt] {\small $5\text{ m}$};
+    
+    % Tọa độ các điểm mốc
+    \node[above left] at (-2.5,0) {\small $-2{,}5$};
+    \node[above right] at (2.5,0) {\small $2{,}5$};
+    \node[left] at (0,2) {\small $2$};
+    
+    \filldraw[accentred] (0,2) circle (2pt);
+    \filldraw[deepblue] (-2.5,1.5) circle (1.8pt);
+    \filldraw[deepblue] (2.5,1.5) circle (1.8pt);
+\end{tikzpicture}
+\end{center}
+Biết đơn giá hoàn thiện là $700.000\text{ đồng/m}^2$. Tính số tiền cần trả để làm cổng chào trên.}
+\drawdashlinesfull
+
+% =========================================================================
+% CÂU 11: BỒN HOA ELIP VÀ PARABOL (CHUẨN TỌA ĐỘ VÀ GIAO ĐIỂM NGUYÊN)
+% =========================================================================
+\questioncore{11}{Một khuôn viên trang trí hình elip có phương trình $\dfrac{x^2}{16} + \dfrac{y^2}{4} = 1$ (độ dài trục lớn $8\text{ m}$, trục bé $4\text{ m}$). Người ta làm bồn hoa bên trong (phần tô màu) giới hạn bởi hai đường cong parabol đỉnh tại gốc $O(0;0)$, đối xứng nhau qua trục $Ox$ và đi qua các giao điểm có hoành độ $x = -2$ và $x = 2$ trên elip như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    \draw[->, line width=0.8pt] (-4.8,0) -- (4.8,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-2.6) -- (0,2.6) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    % Miền bồn hoa chuẩn: 2 nhánh parabol chung đỉnh O(0;0), qua (+-2; +-sqrt(3))
+    % y = (sqrt(3)/4)*x^2 và y = -(sqrt(3)/4)*x^2
+    \fill[amberorange!35] (0,0) plot[domain=-2:2] (\x, {0.433*(\x)^2}) -- plot[domain=2:-2] (\x, {-0.433*(\x)^2}) -- cycle;
+    
+    % Đường Elip x^2/16 + y^2/4 = 1
+    \draw[line width=1.3pt, deepblue] (0,0) ellipse (4cm and 2cm);
+    
+    % Hai đường Parabol chung đỉnh O(0,0)
+    \draw[domain=-2.35:2.35, smooth, variable=\x, line width=1.1pt, accentred] 
+        plot ({\x}, {0.433*(\x)^2});
+    \draw[domain=-2.35:2.35, smooth, variable=\x, line width=1.1pt, accentred] 
+        plot ({\x}, {-0.433*(\x)^2});
+        
+    % Đường gióng thẳng đứng tại x = -2 và x = 2
+    \draw[dashed, line width=0.6pt] (-2,-1.732) -- (-2,1.732);
+    \draw[dashed, line width=0.6pt] (2,-1.732) -- (2,1.732);
+    
+    \node[below right] at (4,0) {$4$};
+    \node[below left] at (-4,0) {$-4$};
+    \node[above left] at (0,2) {$2$};
+    \node[below left] at (0,-2) {$-2$};
+    \node[below] at (-2,0) {$-2$};
+    \node[below] at (2,0) {$2$};
+    
+    \filldraw[accentred] (0,0) circle (2pt);
+    \filldraw[deepblue] (-2,1.732) circle (1.8pt);
+    \filldraw[deepblue] (2,1.732) circle (1.8pt);
+    \filldraw[deepblue] (-2,-1.732) circle (1.8pt);
+    \filldraw[deepblue] (2,-1.732) circle (1.8pt);
+\end{tikzpicture}
+\end{center}
+Tính diện tích của phần bồn hoa được tô màu.}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 5: NÂNG CAO - THỂ TÍCH TRÒN XOAY & THIẾT DIỆN (HÌNH THỰC TẾ)
+% =========================================================================
+\dangbox{PHẦN 5}{Ứng dụng tích phân tính thể tích thực tế}
+
+\questioncore{12}{Một chiếc mũ Noel có hình dáng là một khối tròn xoay quanh trục thẳng đứng. Mặt cắt qua trục của chiếc mũ gồm một phần hình trụ bên dưới chiều cao $6\text{ cm}$, bán kính đáy $10\text{ cm}$ và phần bên trên là một đường cong parabol có đỉnh tại $B$, chiều cao $OB = 20\text{ cm}$ như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[scale=0.85, >=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (B) at (0,4);
+    \coordinate (A1) at (-2,0);
+    \coordinate (A2) at (2,0);
+    \coordinate (D1) at (-2,-1.2);
+    \coordinate (D2) at (2,-1.2);
+    
+    \draw[dashed, line width=0.8pt] (0,-1.5) -- (B);
+    
+    \draw[domain=-2:2, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {4 - (\x)^2});
+        
+    \draw[line width=1.2pt, deepblue] (A1) -- (D1);
+    \draw[line width=1.2pt, deepblue] (A2) -- (D2);
+    \draw[line width=1.2pt, deepblue] (A1) -- (A2);
+    \draw[line width=1.2pt, deepblue] (D1) arc (180:360:2cm and 0.5cm);
+    \draw[dashed, line width=0.8pt, deepblue] (D1) arc (180:0:2cm and 0.5cm);
+    
+    \node[above] at (B) {$B$};
+    \node[below left] at (O) {$O$};
+    \node[right] at (0,2) {$20\text{ cm}$};
+    \node[right] at (0,-0.6) {$6\text{ cm}$};
+    \node[above] at (1,0) {$10\text{ cm}$};
+    \filldraw[accentred] (B) circle (2pt);
+    \filldraw[deepblue] (O) circle (2pt);
+\end{tikzpicture}
+\end{center}
+Tính thể tích của chiếc mũ (làm tròn kết quả đến hàng đơn vị).}
+\drawdashlinesfull
+
+\questioncore{13.1}{Một cái màn chụp có dạng như hình vẽ bên. Biết rằng mặt cắt của cái màn theo mặt phẳng song song với mặt phẳng đáy và cách mặt đáy một khoảng $x\text{ (m)}$, $0 \le x \le 2$, là một hình vuông cạnh bằng $\sqrt{4 - x^2}\text{ (m)}$. Thể tích của cái màn là bao nhiêu mét khối? (Làm tròn kết quả đến hàng phần mười.)
+\begin{center}
+\begin{tikzpicture}[x=1cm, y=1cm, >=stealth]
+    % --- 1. TỌA ĐỘ CƠ SỞ (TÍNH THEO HỆ TRỤC CHIẾU ĐO THỰC TẾ) ---
+    \coordinate (Top) at (0, 3.2);          % Đỉnh vòm chung
+    
+    % Mặt đáy hình bình hành (kích thước ngang 3.8, xiên (1.9, 1.7))
+    \coordinate (A) at (-3.0, -1.3);        % Góc trước - trái
+    \coordinate (B) at (0.8, -1.3);         % Góc trước - phải
+    \coordinate (C) at (2.7, 0.4);          % Góc sau - phải
+    \coordinate (D) at (-1.1, 0.4);         % Góc sau - trái (khuất)
+
+    % Tâm đáy và đỉnh trục thẳng đứng
+    \coordinate (O_bot) at (-0.15, -0.45);  % Tâm đáy
+    \coordinate (O_cut) at (-0.15, 1.35);   % Tâm thiết diện
+
+    % --- 2. VẼ KHUNG ĐÁY ---
+    \draw[line width=1.1pt, deepblue] (A) -- (B) -- (C);
+    \draw[dashed, line width=0.8pt, deepblue!70] (A) -- (D) -- (C);
+
+    % --- 3. CÁC ĐƯỜNG VÒM CONG BÊN NGOÀI ---
+    % Cung vòm ngoài cùng bên trái (từ A cong đều lên Top)
+    \draw[line width=1.1pt, deepblue] (A) to[out=74, in=190] (Top);
+
+    % Cung vòm cong bên phải (từ Top khum vòng xuống góc C)
+    \draw[line width=1.1pt, deepblue] (Top) to[out=-5, in=105] (C);
+
+    % Sống vòm giữa mặt trước (từ góc B cong lên Top)
+    \draw[line width=1.1pt, deepblue] (B) to[out=95, in=-65] (Top);
+
+    % Sống vòm giữa mặt sau nét đứt (từ góc D cong lên Top)
+    \draw[dashed, line width=0.8pt, deepblue!70] (D) to[out=88, in=215] (Top);
+
+    % --- 4. MẶT CẮT THIẾT DIỆN TẠI ĐỘ CAO x (KHỚP HOÀN TOÀN CÁC ĐỈNH) ---
+    % M_A nằm chính xác trên cung vòm trái (x = -2.35, y = 0.68)
+    \coordinate (M_A) at (-2.35, 0.68);
+    % M_B nằm chính xác trên sống vòm trước (x = 0.64, y = 0.68)
+    \coordinate (M_B) at (0.64, 0.68);
+    % M_C nằm chính xác trên cung vòm phải (x = 2.15, y = 2.12)
+    \coordinate (M_C) at (2.15, 2.12);
+    % M_D nằm chính xác trên sống vòm sau nét đứt (x = -0.84, y = 2.12)
+    \coordinate (M_D) at (-0.84, 2.12);
+
+    % Hai cạnh trước nhìn thấy (nét liền)
+    \draw[line width=1.1pt, deepblue] (M_A) -- (M_B) -- (M_C);
+    % Hai cạnh sau bị khuất (nét đứt)
+    \draw[dashed, line width=0.8pt, deepblue!70] (M_A) -- (M_D) -- (M_C);
+
+    % Ký hiệu nhãn cạnh \sqrt{4 - x^2} bên cạnh phải
+    \node[below right] at ($(M_B)!0.4!(M_C) + (0.05, 0.08)$) {$\sqrt{4-x^2}$};
+
+    % --- 5. ĐƯỜNG TRỤC THẲNG ĐỨNG ĐỘ CAO x ---
+    \draw[dashed, line width=0.8pt] (O_bot) -- (Top);
+
+    % Hai điểm mốc tâm tròn đen
+    \filldraw[black] (O_bot) circle (1.6pt);
+    \filldraw[black] (O_cut) circle (1.6pt);
+
+    % Chữ x nằm thoáng bên trái trục, ở khoảng giữa 2 chấm tròn
+    \node[left] at (-0.2, 0.35) {$x$};
+\end{tikzpicture}
+\end{center}
+Tính thể tích không gian bên trong của cái màn chụp đó.}
+\drawdashlinesfull
+
+\questionShortAnswer{0}{13.2}{Cho vật thể có đáy là hình tròn có bán kính bằng $1$ (tham khảo hình vẽ). Khi cắt vật thể bằng mặt phẳng vuông góc với trục $Ox$ tại điểm có hoành độ $x$ ($-1 \le x \le 1$) thì được thiết diện là một tam giác đều. Thể tích $V$ của vật thể đó là bao nhiêu? (Làm tròn đến hàng phần trăm.)
+\begin{center}
+    \includegraphics[width=0.45\linewidth]{images/cau20.png}
+\end{center}
+}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 6: NÂNG CAO - BÀI TOÁN CHUYỂN ĐỘNG
+% =========================================================================
+\dangbox{PHẦN 6}{Nâng cao: Ứng dụng tích phân trong bài toán chuyển động}
+
+\begin{theorybox}
+\begin{itemize}
+    \item $\displaystyle \int_a^b |v(t)|\,\mathrm{d}t$: Quãng đường thực tế đi được.
+    \item $\displaystyle \int_a^b v(t)\,\mathrm{d}t$: Độ dịch chuyển (vị trí sau trừ vị trí đầu).
+    \item Chú ý mốc thời gian: Luôn xác định thời điểm ban đầu $t=0$ để tìm hằng số $C$ và đặt đúng cận thời gian.
+\end{itemize}
+\end{theorybox}
+
+\questioncore{14}{Một ô tô sau khi dừng chờ hết đèn đỏ đã bắt đầu chuyển động. Trong 7 phút đầu tiên, vận tốc của xe được biểu thị bằng một parabol có đỉnh tại $t = 5$, đạt vận tốc lớn nhất $900\text{ m/phút}$. Sau 7 phút thì xe chuyển sang chuyển động thẳng đều với vận tốc không đổi như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[xscale=0.85, yscale=0.45, >=stealth]
+    \draw[->, line width=0.8pt] (-0.5,0) -- (11.5,0) node[below] {$t\text{ (phút)}$};
+    \draw[->, line width=0.8pt] (0,-0.5) -- (0,10.5) node[left] {$v\text{ (m/phút)}$};
+    \node[below left] at (0,0) {$O$};
+    
+    \draw[domain=0:7, smooth, variable=\t, line width=1.2pt, deepblue] 
+        plot ({\t}, {-0.36*(\t)^2 + 3.6*(\t)});
+    \draw[line width=1.2pt, deepblue] (7,7.56) -- (10,7.56);
+    
+    \draw[dashed] (5,0) -- (5,9) -- (0,9);
+    \draw[dashed] (7,0) -- (7,7.56) -- (0,7.56);
+    \draw[dashed] (10,0) -- (10,7.56);
+    
+    \node[below] at (5,0) {$5$};
+    \node[below] at (7,0) {$7$};
+    \node[below] at (10,0) {$10$};
+    \node[left] at (0,9) {$900$};
+    \node[left] at (0,7.56) {$756$};
+\end{tikzpicture}
+\end{center}
+Tính tổng quãng đường xe ô tô đi được trong 10 phút đầu tiên kể từ lúc hết đèn đỏ.}
+\drawdashlinesfull
+
+\questioncore{15}{Để đảm bảo an toàn giao thông, các xe ô tô khi dừng chờ đèn đỏ phải giữ khoảng cách tối thiểu là $1\text{ m}$. Một ô tô $A$ đang di chuyển với vận tốc $12\text{ m/s}$ thì phát hiện ô tô $B$ đang dừng phía trước, người lái xe đạp phanh chuyển động chậm dần đều với quy luật vận tốc $v_A(t) = 12 - 3t$ (m/s). Hỏi để hai ô tô đạt khoảng cách an toàn khi xe $A$ dừng hẳn thì xe $A$ phải bắt đầu hãm phanh khi cách xe $B$ một khoảng cách tối thiểu là bao nhiêu mét?}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 7: TỐC ĐỘ THAY ĐỔI ĐẠI LƯỢNG & KINH TẾ
+% =========================================================================
+\dangbox{PHẦN 7}{Nâng cao: Tốc độ thay đổi đại lượng \& Mô hình kinh tế}
+
+\begin{theorybox}
+\textbf{1. Hướng làm vi phân tách biến:}
+$$\frac{C'(t)}{C(t)} = -k \iff \int \frac{C'(t)}{C(t)}\,\mathrm{d}t = \int -k\,\mathrm{d}t \iff \ln|C(t)| = -kt + C_0 \iff C(t) = C_0 \cdot e^{-kt}$$
+$$\frac{V'(t)}{\sqrt{V(t)}} = -k \iff 2\int \frac{V'(t)}{2\sqrt{V(t)}}\,\mathrm{d}t = \int -k\,\mathrm{d}t \iff \sqrt{V(t)} = -\frac{1}{2}kt + C_0$$
+
+\textbf{2. Kinh tế dùng tích phân:}
+\begin{itemize}
+    \item Chi phí biên $\xrightarrow{\int}$ Chi phí $C(x)$.
+    \item Doanh thu biên $\xrightarrow{\int}$ Doanh thu $R(x)$.
+    \item Lợi nhuận biên $\xrightarrow{\int}$ Lợi nhuận $P(x) = R(x) - C(x)$.
+    \item Thặng dư tiêu dùng (TDTD): Sự chênh lệch giữa số tiền người mua sẵn sàng trả và số tiền thực tế phải trả.
+    \item Thặng dư sản xuất (TDSX): Sự chênh lệch giữa giá bán thực tế và giá vốn (chi phí sản xuất).
+\end{itemize}
+\end{theorybox}
+
+\questioncore{16}{Ở giai đoạn thải trừ thuốc sau khi uống, nồng độ thuốc $C(t)$ (mg/l) trong máu thỏa mãn $\dfrac{C'(t)}{C(t)} = -k$ ($k > 0$). Ban đầu ($t=0$), nồng độ là $12\text{ mg/l}$; sau 6 giờ còn lại $3\text{ mg/l}$. Sau bao nhiêu giờ thì nồng độ còn lại bằng $2\text{ mg/l}$? (Làm tròn đến hàng phần mười).}
+\drawdashlinesfull
+
+\questioncore{17}{Một bể chứa nước hình trụ đầy $144$ lít nước. Mở van xả, nước thoát ra ngoài với tốc độ $V'(t) = -k\sqrt{V(t)}$ ($k > 0$, $t$ tính theo phút). Sau 10 phút, lượng nước còn lại là $64$ lít. Sau bao nhiêu phút kể từ lúc mở van thì bể cạn hoàn toàn?}
+\drawdashlinesfull
+
+\questioncore{18}{Một cơ sở sản xuất chiếu cói có chi phí biên cho mỗi chiếc chiếu là $C'(x) = 3x^2 - 4x + 10$ (nghìn đồng), chi phí cố định ban đầu là $500$ nghìn đồng. Giá bán cố định $270$ nghìn đồng/chiếc. Tính lợi nhuận tối đa mà cơ sở có thể thu về trong một ngày ($0 \le x \le 20$).}
+\drawdashlinesfull
+
+% =========================================================================
+% PHẦN 8: KỸ NĂNG ĐỔI TRỤC & ĐỔI CẬN THEO TRỤC OY
+% =========================================================================
+\dangbox{PHẦN 8}{Kỹ năng Đổi trục \& Đổi cận theo trục $Oy$}
+
+\begin{theorybox}
+\textbf{Nguyên tắc xoay quanh trục $Oy$:}
+\begin{itemize}
+    \item Đổi hàm số từ dạng $y = f(x) \implies x = g(y)$.
+    \item Cận tích phân chuyển từ cận hoành độ sang cận tung độ: $y \in [c; d]$.
+    \item Công thức thể tích tròn xoay quay quanh trục $Oy$:
+    $$V_y = \pi \int_c^d [g(y)]^2\,\mathrm{d}y \quad \text{hoặc} \quad V_y = \pi \int_c^d |g_1^2(y) - g_2^2(y)|\,\mathrm{d}y$$
+\end{itemize}
+\end{theorybox}
+
+\questioncore{19}{Cho hình phẳng $(H)$ giới hạn bởi đường cong $y = \sqrt{x}$, trục tung và đường thẳng $y = 2$:
+\begin{center}
+\begin{tikzpicture}[scale=1.1, >=stealth]
+    \draw[->, line width=0.8pt] (-0.5,0) -- (4.5,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-0.5) -- (0,2.8) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    \fill[cyan!25] (0,0) plot[domain=0:4] (\x, {sqrt(\x)}) -- (0,2) -- cycle;
+    
+    \draw[domain=0:4.2, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {sqrt(\x)});
+    \draw[line width=1pt, accentred] (0,2) -- (4,2);
+    
+    \draw[dashed] (4,0) -- (4,2);
+    \node[left] at (0,2) {$2$};
+    \node[below] at (4,0) {$4$};
+\end{tikzpicture}
+\end{center}
+Thực hiện đổi cận và rút hàm theo $y$ để tính thể tích khối tròn xoay khi quay hình phẳng $(H)$ xung quanh trục $Oy$.}
+\drawdashlinesfull
+
+\questioncore{20}{Một chiếc ly rượu có phần chứa rượu bên trong được tạo thành khi quay một nhánh parabol $y = x^2$ ($0 \le x \le 2$, đơn vị đo là $\text{cm}$) xung quanh trục tung $Oy$ như hình vẽ:
+\begin{center}
+\begin{tikzpicture}[scale=1, >=stealth]
+    \draw[->, line width=0.8pt] (-2.5,0) -- (2.5,0) node[below] {$x$};
+    \draw[->, line width=0.8pt] (0,-0.5) -- (0,4.8) node[left] {$y$};
+    \node[below left] at (0,0) {$O$};
+    
+    \fill[amberorange!25, opacity=0.8] plot[domain=-2:2] (\x, {(\x)^2}) -- cycle;
+    
+    \draw[domain=-2:2, smooth, variable=\x, line width=1.2pt, deepblue] 
+        plot ({\x}, {(\x)^2});
+        
+    \draw[line width=1pt, deepblue] (0,4) ellipse (2cm and 0.4cm);
+    \draw[dashed, line width=0.7pt] (-2,4) -- (-2,0) node[below] {$-2$};
+    \draw[dashed, line width=0.7pt] (2,4) -- (2,0) node[below] {$2$};
+    \node[left] at (0,4) {$4$};
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}
+    \item Biến đổi hàm số $y = x^2$ theo biến $y$ và xác định cận chạy trên trục $Oy$.
+    \item Thiết lập tích phân và tính dung tích tối đa của chiếc ly rượu đó.
+\end{enumerate}
+}
+\drawdashlinesfull
+
+\end{document}
