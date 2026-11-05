@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+\titlebox{Xác suất}{Xác suất toàn phần \\ Bayes và sơ đồ cây}{Xác suất: Toàn phần, Bayes và sơ đồ cây}
+
+\begin{theorybox}
+\textbf{I. CÔNG THỨC CẦN NHỚ}
+\[
+\boxed{P(\overline A)=1-P(A)}\qquad\boxed{P(AB)=P(A)P(B\mid A)}.
+\]
+\[
+\boxed{P(B)=P(AB)+P(\overline A B)}.
+\]
+\[
+\boxed{P(A\mid B)=\frac{P(AB)}{P(B)}}\quad[P(B)>0].
+\]
+\end{theorybox}
+\begin{theorybox}
+\textbf{II. SƠ ĐỒ CÂY}
+
+
+\begin{tikzpicture}[>=stealth,every node/.style={font=\small}]
+\node (o) at (0,0) {Bắt đầu};
+\node (a) at (4,1) {$A$}; \node (na) at (4,-1) {$\overline A$};
+\node (b) at (8,1.6) {$B$}; \node (nb) at (8,.4) {$\overline B$};
+\node (c) at (8,-.4) {$B$}; \node (nc) at (8,-1.6) {$\overline B$};
+\draw[->,deepblue,thick] (o)--node[above]{$P(A)$}(a);
+\draw[->,deepblue,thick] (o)--node[below]{$P(\overline A)$}(na);
+\draw[->,amberorange,thick] (a)--node[above]{$P(B\mid A)$}(b);
+\draw[->] (a)--node[below]{$P(\overline B\mid A)$}(nb);
+\draw[->,amberorange,thick] (na)--node[above]{$P(B\mid\overline A)$}(c);
+\draw[->] (na)--node[below]{$P(\overline B\mid\overline A)$}(nc);
+\end{tikzpicture}
+
+\[
+\text{Theo một đường: nhân.}\qquad\text{Gộp các đường: cộng.}
+\]
+\end{theorybox}
+\begin{theorybox}
+\textbf{III. CÔNG CỤ ĐẾM}
+\[
+\boxed{C_n^k=\frac{n!}{k!(n-k)!}}\qquad
+P=\frac{\text{Số cách chọn thỏa yêu cầu}}{\text{Tổng số cách chọn}}.
+\]
+\centering Áp dụng khi các cách chọn đồng khả năng.
+\end{theorybox}
+
+
+
+
+\begin{theorybox}
+\textbf{HƯỚNG LÀM CHUNG}
+\[
+\text{Đặt ẩn nếu cần}\ \longrightarrow\ \text{Có mấy bước?}\ \longrightarrow\ \text{Mỗi bước có mấy nhánh?}
+\]
+\centering Vẽ cây theo dữ kiện đề cho, rồi tính theo yêu cầu.
+\end{theorybox}
+
+
+\newpage
+
+% Biên soạn từ câu 7 trong PDF bài 2.
+\questionLinesManual{0}{1}{%
+Hộp I có 7 bi xanh và một số bi vàng; hộp II có 8 bi xanh, 5 bi vàng. Chuyển ngẫu nhiên 1 bi từ hộp I sang hộp II, rồi rút ngẫu nhiên 1 bi ở hộp II. Xác suất rút được bi vàng là $95/238$. Tính tổng số bi ban đầu trong hộp I.
+}{}
+\drawdashlinesfull
+
+% Biên soạn từ câu 14 trong PDF bài 2.
+\questionLinesManual{0}{2}{%
+Một đội bóng thi đấu hai trận, mỗi trận chỉ có thắng hoặc thua. Xác suất thắng trận đầu là $0{,}4$, thắng trận sau là $0{,}5$. Nếu thắng trận đầu, xác suất thắng trận sau gấp ba lần trường hợp thua trận đầu. Xác suất thắng đúng một trận bằng $a/b$ tối giản. Tính $2a+b$.
+}{}
+\drawdashlinesfull
+
+\newpage
+
+% Biên soạn từ câu 5 trong PDF bài 2.
+\questionLinesManual{0}{3}{%
+Có 2 xạ thủ loại I và 8 xạ thủ loại II. Xác suất bắn trúng của mỗi xạ thủ loại I là $0{,}9$, loại II là $0{,}7$. Chọn ngẫu nhiên 2 người, mỗi người bắn một viên. Giả sử các phát bắn độc lập khi đã biết người bắn. Tính xác suất cả hai viên đều trúng (làm tròn đến hàng phần trăm).
+}{}
+\drawdashlinesfull
+
+% Biên soạn từ câu 78 trong PDF bài 2.
+\questionLinesManual{0}{4}{%
+Hộp I có 4 bi xanh, 1 bi đỏ; hộp II có 3 bi xanh, 6 bi đỏ. Chuyển ngẫu nhiên đồng thời 2 bi từ hộp I sang hộp II, rồi lấy đồng thời 2 bi từ hộp II. Biết hai bi lấy ra đều xanh, tính xác suất hai bi chuyển sang khác màu (làm tròn đến hàng phần trăm).
+}{}
+\drawdashlinesfull
+
+\newpage
+
+
+
+% Biên soạn từ câu 26 trong PDF bài 2.
+\questionLinesManual{0}{5}{%
+Nhà máy có $2\%$ sản phẩm lỗi. Hệ thống 1 báo lỗi với xác suất $95\%$ nếu sản phẩm lỗi, $1\%$ nếu không lỗi; hệ thống 2 có các xác suất tương ứng $90\%$ và $5\%$. Hai hệ thống hoạt động độc lập khi đã biết sản phẩm lỗi hay không lỗi. Biết cả hai cùng báo lỗi, tính xác suất sản phẩm không lỗi (làm tròn đến hàng phần nghìn).
+}{}
+\drawdashlinesfull
+
+% Biên soạn từ câu 68 trong PDF bài 2.
+\questionLinesManual{0}{6}{%
+Có hai xúc xắc sáu mặt: một chiếc cân đối; chiếc còn lại có xác suất ra mặt 6 là $2/3$, các mặt khác có xác suất bằng nhau. Chọn ngẫu nhiên một chiếc rồi tung ba lần độc lập với chiếc đã chọn. Biết hai lần đầu đều ra mặt 6, xác suất lần thứ ba ra mặt 1 bằng $p/q$ tối giản. Tính $p+q$.
+}{}
+\drawdashlinesfull
+
+\newpage
+
+
+
+% Biên soạn từ câu 80 trong PDF bài 2.
+\questionLinesManual{0}{7}{%
+Hộp có 12 bi xanh, 6 bi đỏ. Chiến rút ngẫu nhiên 1 bi và bỏ ra ngoài. Nếu Chiến rút xanh, Thắng rút đồng thời 2 bi; nếu Chiến rút đỏ, Thắng rút đồng thời 4 bi từ hộp còn lại. Biết Thắng rút được ít nhất một bi khác màu với bi của Chiến, tính xác suất Chiến đã rút đỏ (làm tròn đến hàng phần trăm).
+}{}
+\drawdashlinesfull
+
+% Biên soạn từ câu 91 trong PDF bài 2.
+\questionLinesManual{0}{8}{%
+Hộp I có 3 bi trắng, 2 bi đen; hộp II có 1 bi trắng, 4 bi đen; hộp III có 4 bi đen. Gieo xúc xắc cân đối. Nếu chẵn, chuyển ngẫu nhiên đồng thời 2 bi từ hộp I sang hộp II, rồi rút đồng thời 2 bi từ hộp II; nếu lẻ, thực hiện tương tự với hộp III. Biết hai bi rút cuối đều đen, tính xác suất xúc xắc ra chẵn (làm tròn đến hàng phần trăm).
+}{}
+\drawdashlinesfull
+
+\newpage
+
+
+
+% Biên soạn từ câu 74 trong PDF bài 2.
+\questionLinesManual{0}{9}{%
+Hộp I có 5 bi xanh, 1 bi đỏ; hộp II có 4 bi đỏ. Chuyển ngẫu nhiên đồng thời 3 bi từ hộp I sang hộp II, rồi lấy đồng thời 2 bi từ hộp II. Biết hai bi lấy ra cùng màu, tính xác suất ba bi chuyển sang cùng màu.
+}{}
+\drawdashlinesfull
+
+% Biên soạn từ câu 92 trong PDF bài 2.
+\questionLinesManual{0}{10}{%
+Hộp I có 6 bi đỏ, 4 bi trắng; hộp II có 4 bi đỏ, 6 bi trắng; hộp III có 5 bi đỏ, 5 bi trắng. Rút ngẫu nhiên 1 bi từ mỗi hộp I, II rồi chuyển sang hộp III. Sau đó rút ngẫu nhiên đồng thời 2 bi từ hộp III. Biết hai bi cuối khác màu, xác suất cả hai chính là hai bi vừa chuyển bằng $p/q$ tối giản. Tính $p+q$.
+}{}
+\drawdashlinesfull
+
+\end{document}
