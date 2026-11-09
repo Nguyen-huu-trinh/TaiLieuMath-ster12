@@ -1,0 +1,250 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{../../../myconfig} % Gọi file cấu hình từ ngoài gốc vào
+
+\begin{document}
+
+\titlebox{Nền tảng}{Quy tắc đếm \\ và tổ hợp cơ bản}{Nền tảng: Quy tắc đếm và tổ hợp cơ bản}
+
+\begin{theorybox}
+\textbf{1. MỘT LỰA CHỌN HAY NHIỀU BƯỚC?}
+
+\noindent\textbf{Quy tắc cộng:} chọn một trong các trường hợp không trùng nhau.
+\[
+\text{Trường hợp 1: }m\text{ cách};\qquad\text{trường hợp 2: }n\text{ cách}
+\quad\Rightarrow\quad\boxed{m+n}.
+\]
+\noindent\textbf{Quy tắc nhân:} làm lần lượt hai bước. Bước đầu có $m$ cách; với mỗi cách đó, bước sau có $n$ cách:
+\[
+\underbrace{m}_{\text{Bước 1}}\cdot\underbrace{n}_{\text{Bước 2}}
+\quad\Rightarrow\quad\boxed{mn}.
+\]
+\centering Chia trường hợp: cộng.\qquad Chia bước: nhân.
+\end{theorybox}
+
+\questionLinesManual{5}{1}{%
+Tủ sách có 4 quyển truyện và 3 quyển sách khoa học, tất cả khác nhau.
+\par\noindent a) Chọn đúng một quyển để đọc: có bao nhiêu cách?
+\par\noindent b) Chọn một quyển truyện và một quyển sách khoa học: có bao nhiêu cách?
+\par\noindent Ý nào dùng cộng, ý nào dùng nhân?
+}{}
+
+\questionLinesManual{5}{2}{%
+Một cửa hàng có 3 loại bánh, 2 loại sữa và 4 loại nước trái cây. Một suất ăn gồm một bánh và một đồ uống; đồ uống là sữa hoặc nước trái cây. Có bao nhiêu suất ăn khác nhau? Thử tính bằng hai cách.
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{2. LẬP SỐ: ĐẾM SỐ LỰA CHỌN Ở MỖI HÀNG}
+
+\[
+\overline{abc}=100a+10b+c,\qquad a\ne0.
+\]
+\noindent\textbf{Được lặp:} một chữ số có thể dùng nhiều lần.\par
+\noindent\textbf{Các chữ số khác nhau:} mỗi chữ số chỉ dùng một lần.
+\[
+\text{Từ }0,1,2,3\text{ lập số có ba chữ số khác nhau:}
+\]
+\[
+\begin{array}{c|c|c}
+\text{Chọn }a&\text{Chọn }b&\text{Chọn }c\\\hline
+3\text{ cách}&3\text{ cách}&2\text{ cách}
+\end{array}
+\quad\Rightarrow\quad3\cdot3\cdot2=18.
+\]
+\centering Hàng đầu tránh $0$; các hàng sau được dùng $0$ nếu chưa dùng.
+\end{theorybox}
+
+\questionLinesManual{7}{3}{%
+Từ các chữ số $0,1,2,3,4$, lập được bao nhiêu số có ba chữ số?
+\par\noindent a) Được phép lặp chữ số.
+\par\noindent b) Các chữ số khác nhau. Ghi số cách chọn ở từng hàng rồi tính.
+}{}
+
+\questionLinesManual{7}{4}{%
+Từ các chữ số $0,1,2,3,4,5$, lập được bao nhiêu số có bốn chữ số khác nhau và nhỏ hơn $4000$?
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{3. CÓ ĐIỀU KIỆN Ở HÀNG NÀO, XÉT HÀNG ĐÓ TRƯỚC}
+
+\[
+\begin{array}{c|c}
+\text{Số chẵn}&\text{Cuối }0,2,4,6,8\\
+\text{Số lẻ}&\text{Cuối }1,3,5,7,9\\
+\text{Chia hết cho }5&\text{Cuối }0\text{ hoặc }5
+\end{array}
+\]
+\noindent\textbf{Dùng những chữ số đề cho:} chọn chữ số cuối trước, rồi chọn chữ số đầu và các hàng còn lại.\par
+\smallskip
+\noindent\textbf{Không lặp, có chữ số $0$:} tách cuối $0$ và cuối khác $0$.
+\[
+\begin{array}{c|l}
+\text{Cuối }0&\text{Hàng đầu tránh }0\\
+\text{Cuối khác }0&\text{Hàng đầu tránh }0\text{ và chữ số cuối}
+\end{array}
+\]
+\end{theorybox}
+
+\questionLinesManual{7}{5}{%
+Từ các chữ số $0,1,2,3,4,5$, lập được bao nhiêu số lẻ có ba chữ số khác nhau? Nên chọn chữ số ở hàng nào trước?
+}{}
+
+\questionLinesManual{7}{6}{%
+Từ các chữ số $0,1,2,3,4,5$, lập được bao nhiêu số có ba chữ số khác nhau:
+\par\noindent a) là số chẵn;
+\par\noindent b) chia hết cho $5$? Với mỗi ý, chia trường hợp theo chữ số cuối.
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{4. LIỆT KÊ KHÔNG SÓT, KHÔNG TRÙNG}
+
+\noindent\textbf{Lập số:} giữ chữ số đầu, tăng dần chữ số sau; hết nhóm mới đổi chữ số đầu.
+\[
+\text{Từ }1,2,4:\qquad12,14\ ;\quad21,24\ ;\quad41,42.
+\]
+\noindent\textbf{Chọn bộ ba số khác nhau:} viết $a<b<c$ để một bộ chỉ tính một lần.
+\[
+\text{Giữ }a\ \longrightarrow\ \text{tăng }b\ \longrightarrow\ \text{tìm }c.
+\]
+\noindent\textit{Ví dụ:} Chọn ba số từ $1$ đến $6$, tổng bằng $9$: tìm $c=9-a-b$, chỉ nhận $b<c\le6$.
+\[
+(1,2,6),\qquad(1,3,5),\qquad(2,3,4).
+\]
+\centering Chọn bộ: đổi thứ tự không tạo bộ mới. Lập số: đổi thứ tự có thể tạo số mới.
+\end{theorybox}
+
+\questionLinesManual{7}{7}{%
+Từ các chữ số $0,1,3,4$, liệt kê theo thứ tự tăng dần các số có hai chữ số khác nhau. Đếm các số vừa viết và kiểm tra bằng quy tắc nhân.
+}{}
+
+\questionLinesManual{7}{8}{%
+Chọn ba số khác nhau từ $1$ đến $8$ có tổng bằng $13$. Liệt kê các bộ dưới dạng $a<b<c$. Có bao nhiêu bộ?
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{5. HOÁN VỊ: XẾP TẤT CẢ}
+
+\noindent Xếp $n$ phần tử khác nhau vào $n$ vị trí, mỗi phần tử dùng đúng một lần:
+\[
+\boxed{P_n=n(n-1)\cdots2\cdot1=n!}.
+\]
+\noindent\textit{Ví dụ:} Xếp 4 quyển sách khác nhau vào một hàng:
+\[
+\underbrace{4}_{\text{Chỗ 1}}\cdot\underbrace{3}_{\text{Chỗ 2}}\cdot
+\underbrace{2}_{\text{Chỗ 3}}\cdot\underbrace{1}_{\text{Chỗ 4}}=4!=24.
+\]
+\noindent\textbf{Có vị trí cố định:} đặt phần tử đó trước, rồi xếp phần còn lại.\par
+\smallskip
+\centering $1!=1$, $2!=2$, $3!=6$, $4!=24$; quy ước $0!=1$.
+\end{theorybox}
+
+\questionLinesManual{7}{9}{%
+Có 6 quyển sách khác nhau, gồm một quyển Toán.
+\par\noindent a) Xếp cả 6 quyển thành một hàng có bao nhiêu cách?
+\par\noindent b) Quyển Toán phải nằm ở vị trí đầu bên trái: có bao nhiêu cách?
+}{}
+
+\questionLinesManual{7}{10}{%
+Xếp 7 học sinh khác nhau, trong đó có An và Bình, thành một hàng.
+\par\noindent a) An đứng đầu, Bình đứng cuối: có bao nhiêu cách?
+\par\noindent b) An và Bình đứng ở hai đầu, không quy định ai đứng ở đầu nào: có bao nhiêu cách?
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{6. CHỈNH HỢP: CHỌN VÀ PHÂN VAI HOẶC XẾP THỨ TỰ}
+
+\noindent Chọn $k$ phần tử từ $n$ phần tử khác nhau, có xét thứ tự và không lặp:
+\[
+\boxed{A_n^k=n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}}\quad(1\le k\le n).
+\]
+\noindent\textit{Ví dụ:} Có 5 bạn, chọn một trưởng và một phó:
+\[
+\underbrace{5}_{\text{Trưởng}}\cdot\underbrace{4}_{\text{Phó}}=A_5^2=20.
+\]
+\centering An làm trưởng, Bình làm phó khác Bình làm trưởng, An làm phó.\par
+\smallskip
+\centering Chọn bao nhiêu vị trí thì nhân bấy nhiêu thừa số.
+\end{theorybox}
+
+\questionLinesManual{7}{11}{%
+Có 8 học sinh. Chọn một nhóm trưởng, một thư ký và một báo cáo viên; mỗi em chỉ giữ một vai trò. Có bao nhiêu cách? Tính bằng quy tắc nhân rồi viết bằng kí hiệu chỉnh hợp.
+}{}
+
+\questionLinesManual{7}{12}{%
+Từ các chữ số $1,2,3,4,5,6$, lập được bao nhiêu số có ba chữ số khác nhau? Viết kết quả bằng quy tắc nhân và bằng kí hiệu chỉnh hợp.
+}{}
+
+\newpage
+
+\begin{theorybox}
+\textbf{7. TỔ HỢP: CHỌN NHÓM KHÔNG PHÂN VAI}
+
+\noindent Chọn $k$ phần tử từ $n$ phần tử khác nhau, không xét thứ tự:
+\[
+\boxed{C_n^k=\frac{A_n^k}{k!}=\frac{n!}{k!(n-k)!}}\quad(0\le k\le n).
+\]
+\noindent\textit{Ví dụ:} Chọn hai bạn từ 5 bạn. Cặp $AB$ và $BA$ là cùng một nhóm:
+\[
+C_5^2=\frac{5\cdot4}{2!}=10.
+\]
+\noindent Với nhóm ba bạn, $3!=6$ thứ tự đều chỉ là một nhóm nên chia cho $3!$.\par
+\smallskip
+\centering Xếp tất cả: $P_n$.\quad Chọn có thứ tự: $A_n^k$.\quad Chọn nhóm: $C_n^k$.
+\end{theorybox}
+
+\questionLinesManual{7}{13}{%
+Có 8 học sinh.
+\par\noindent a) Chọn một nhóm 3 em không phân vai: có bao nhiêu cách?
+\par\noindent b) Chọn ba em làm nhóm trưởng, thư ký, báo cáo viên: có bao nhiêu cách? Giải thích vì sao hai kết quả khác nhau.
+}{}
+
+\questionLinesManual{7}{14}{%
+Một nhóm có 5 nam và 4 nữ.
+\par\noindent a) Chọn một đội 3 người bất kỳ: có bao nhiêu cách?
+\par\noindent b) Chọn một đội gồm đúng 2 nam, 1 nữ: có bao nhiêu cách?
+}{}
+
+
+
+% ĐÁP ÁN VÀ KIỂM TRA - CHỈ HIỂN THỊ TRONG MÃ NGUỒN
+
+% Câu 1: a) 4+3=7; b) 4*3=12.
+
+% Câu 2: 3*(2+4)=18; hoac 3*2+3*4=18.
+
+% Câu 3: a) 4*5*5=100; b) 4*4*3=48.
+
+% Câu 4: Hang nghin 1,2,3: 3*5*4*3=180.
+
+% Câu 5: 3*4*4=48.
+
+% Câu 6: a) 5*4+2*4*4=52; b) 5*4+4*4=36.
+
+% Câu 7: 10,13,14,30,31,34,40,41,43: 9 so.
+
+% Câu 8: (1,4,8),(1,5,7),(2,3,8),(2,4,7),(2,5,6),(3,4,6): 6 bo.
+
+% Câu 9: a) 6!=720; b) 5!=120.
+
+% Câu 10: a) 5!=120; b) 2*5!=240.
+
+% Câu 11: A_8^3=8*7*6=336.
+
+% Câu 12: A_6^3=6*5*4=120.
+
+% Câu 13: a) C_8^3=56; b) A_8^3=336. Moi nhom co 3!=6 cach phan vai.
+
+% Câu 14: a) C_9^3=84; b) C_5^2*C_4^1=40.
+
+
+
+\end{document}
