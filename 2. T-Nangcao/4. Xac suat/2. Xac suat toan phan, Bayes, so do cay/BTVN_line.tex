@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{article}
+
+\IfFileExists{../../../myconfig.sty}{%
+    \usepackage{../../../myconfig}
+}{%
+    \usepackage{Bai2-BTVN/myconfig}
+    \graphicspath{{Bai2-BTVN/2. T-Nangcao/4. Xac suat/2. Xac suat toan phan Bayes so do cay/}}
+}
+
+\begin{document}
+
+\titlebox{Xác suất}{Xác suất toàn phần \\ Bayes và sơ đồ cây}{Xác suất: Toàn phần, Bayes và sơ đồ cây}
+
+\vspace{-0.25cm}
+
+\begin{center}\textit{Ghi xác suất dưới dạng số thập phân, làm tròn đến hàng phần trăm.}\end{center}
+
+
+
+% Câu 30 trong tài liệu gốc.
+\questionShortAnswer{0}{1}{%
+    Tỉ lệ bò mắc bệnh X tại một địa phương là $25\%$. Nếu bò mắc bệnh, xét nghiệm dương tính với xác suất $84\%$; nếu không mắc bệnh, xét nghiệm vẫn dương tính với xác suất $8\%$. Chọn ngẫu nhiên một con bò, biết kết quả xét nghiệm dương tính. Tính xác suất con bò thực sự mắc bệnh.
+}
+\drawdashlinesfull
+
+% Câu 48 trong tài liệu gốc.
+\questionShortAnswer{0}{2}{%
+    Một trường có bốn lớp chuyên Toán, Tin, Lý, Hóa. Số học sinh các lớp tỉ lệ với $1{,}5:0{,}8:1:1$. Tỉ lệ trúng tuyển vào các ngành đại học top đầu tương ứng là $65\%$, $35\%$, $55\%$, $45\%$. Chọn ngẫu nhiên một học sinh, biết học sinh đó đã trúng tuyển vào nhóm ngành này. Tính xác suất học sinh thuộc lớp Tin hoặc Hóa.
+}
+\drawdashlinesfull
+
+% Câu 49 trong tài liệu gốc.
+\questionShortAnswer{0}{3}{%
+    Tại một viện dưỡng lão, $25\%$ người mắc bệnh tim mạch. Tỉ lệ hút thuốc trong nhóm mắc bệnh là một số dương và gấp 2 lần tỉ lệ hút thuốc trong nhóm không mắc bệnh. Chọn ngẫu nhiên một người, biết người đó hút thuốc. Tính xác suất người đó mắc bệnh tim mạch.
+}
+\drawdashlinesfull
+
+% Câu 62 trong tài liệu gốc.
+\questionShortAnswer{0}{4}{%
+    Một cặp sinh đôi có thể cùng trứng hoặc khác trứng. Cặp cùng trứng luôn cùng giới tính; cặp khác trứng có xác suất cùng giới tính là $1/2$. Thống kê cho thấy $34\%$ cặp sinh đôi cùng là trai và $30\%$ cùng là gái. Chọn ngẫu nhiên một cặp, biết cặp đó cùng giới tính. Tính xác suất cặp đó cùng trứng.
+}
+\drawdashlinesfull
+
+% Câu 20 trong tài liệu gốc.
+\questionShortAnswer{0}{5}{%
+    Xác suất trời mưa là $1/3$. Nếu mưa, xác suất ùn tắc là $1/2$; nếu không mưa, xác suất ùn tắc là $1/4$. Xác suất An đi làm trễ là $1/2$ khi vừa mưa vừa ùn tắc, là $1/8$ khi không mưa và không ùn tắc, và là $1/4$ trong hai trường hợp còn lại. Biết An đi làm trễ, tính xác suất hôm đó trời mưa.
+}
+\drawdashlinesfull
+
+% Câu 36 trong tài liệu gốc.
+\questionShortAnswer{0}{6}{%
+    Có $2\%$ tập tin chứa mã độc. Với tập tin có mã độc, xác suất bộ lọc 1 cảnh báo là $0{,}9$, bộ lọc 2 cảnh báo là $0{,}8$, cả hai cùng cảnh báo là $0{,}75$. Với tập tin không có mã độc, xác suất không bộ lọc nào cảnh báo là $0{,}93$. Biết một tập tin bị ít nhất một bộ lọc cảnh báo, tính xác suất tập tin có mã độc.
+}
+\drawdashlinesfull
+
+% Câu 76 trong tài liệu gốc.
+\questionShortAnswer{0}{7}{%
+    Chuồng I có 6 thỏ đực, 4 thỏ cái; chuồng II có 4 thỏ đực, 5 thỏ cái. Chuyển ngẫu nhiên 1 con từ chuồng I sang chuồng II, rồi chọn ngẫu nhiên đồng thời 3 con từ chuồng II. Biết số thỏ đực trong ba con nhiều hơn số thỏ cái. Tính xác suất con chuyển sang là thỏ đực.
+}
+\drawdashlinesfull
+
+% Câu 77 trong tài liệu gốc.
+\questionShortAnswer{0}{8}{%
+    Đội I có 8 nam, 4 nữ; đội II có 7 nam, 3 nữ. Chuyển ngẫu nhiên đồng thời 2 người từ đội I sang đội II. Sau đó chọn ngẫu nhiên đồng thời 2 người của đội II. Biết hai người được chọn gồm 1 nam và 1 nữ, tính xác suất trong đó có đúng 1 người vừa chuyển từ đội I sang.
+}
+\drawdashlinesfull
+
+% Câu 88 trong tài liệu gốc.
+\questionShortAnswer{0}{9}{%
+    Chuồng A có 9 dê trắng, 8 dê đen; chuồng B có 5 dê trắng, 6 dê đen. Chuyển ngẫu nhiên đồng thời 3 con từ A sang B, rồi chọn ngẫu nhiên đồng thời 2 con từ B. Biết hai con chọn cuối đều trắng, tính xác suất cả hai đều là dê vừa chuyển từ A sang.
+}
+\drawdashlinesfull
+
+% Câu 89 trong tài liệu gốc.
+\questionShortAnswer{0}{10}{%
+    Túi có bốn thẻ ghi 1, 2, 3, 4. Hộp A có 8 bóng trắng, 8 bóng đen; hộp B rỗng. Mỗi lần rút ngẫu nhiên một thẻ rồi trả lại túi: nếu ra 1, chuyển 1 bóng trắng từ A sang B; nếu ra 2 hoặc 3, chuyển 1 trắng và 1 đen; nếu ra 4, chuyển 2 trắng và 1 đen. Thực hiện độc lập 4 lần rút thẻ. Biết hộp B có 8 bóng, tính xác suất hộp B có đúng 2 bóng đen.
+}
+\drawdashlinesfull
+
+% ========================================================================
+% ĐÁP ÁN VÀ KIỂM TRA - CHỈ HIỂN THỊ TRONG MÃ NGUỒN
+% ========================================================================
+
+% Câu 1: 0,78. Chính xác: 7/9.
+% Kiểm tra: 0,25*0,84/(0,25*0,84+0,75*0,08)=7/9.
+
+% Câu 2: 0,32. Chính xác: 146/451.
+% Kiểm tra: (0,8*0,35+1*0,45)/(1,5*0,65+0,8*0,35+1*0,55+1*0,45)=146/451.
+
+% Câu 3: 0,40. Chính xác: 2/5.
+% Kiểm tra: Dat x=P(hut|khong benh)>0; P=0,25*2x/(0,25*2x+0,75*x)=2/5.
+
+% Câu 4: 0,44. Chính xác: 7/16.
+% Kiểm tra: Dat x=P(cung trung): x+(1-x)/2=0,64 -> x=0,28; P=0,28/0,64=7/16.
+
+% Câu 5: 0,55. Chính xác: 6/11.
+% Kiểm tra: P(mua va tre)=1/3*(1/2*1/2+1/2*1/4)=1/8; P(tre)=11/48; P=6/11.
+
+% Câu 6: 0,22. Chính xác: 95/438.
+% Kiểm tra: Khong gia su hai bo loc doc lap: du kien giao=0,75. P(canh bao|doc)=0,9+0,8-0,75=0,95; P(canh bao|sach)=0,07; P=95/438.
+
+% Câu 7: 0,69. Chính xác: 9/13.
+% Kiểm tra: Neu chuyen duc: P(>=2 duc)=[C_5^3+C_5^2*C_5^1]/C_10^3. Neu chuyen cai: [C_4^3+C_4^2*C_6^1]/C_10^3. Bayes -> 9/13.
+
+% Câu 8: 0,29. Chính xác: 286/995.
+% Kiểm tra: k nam chuyen: w=C_8^k*C_4^(2-k)/C_12^2. Mau cong w*(7+k)*(5-k)/66=995/2178; tu cong w*[3k+7(2-k)]/66=13/99.
+
+% Câu 9: 0,04. Chính xác: 27/637.
+% Kiểm tra: Cong theo k de trang chuyen: w=C_9^k*C_8^(3-k)/C_17^3; tu cong w*C_k^2/C_14^2=27/3094; mau cong w*C_(5+k)^2/C_14^2=7/34.
+
+% Câu 10: 0,09. Chính xác: 3/35.
+% Kiểm tra: Dem 4^4 chuoi the dong kha nang. Co 70 chuoi cho 8 bong, 6 chuoi dong thoi cho 2 den; P=3/35.
+
+% Câu 6: bỏ giả thiết độc lập trong đề gốc vì mâu thuẫn với xác suất giao đã cho.
+
+\end{document}

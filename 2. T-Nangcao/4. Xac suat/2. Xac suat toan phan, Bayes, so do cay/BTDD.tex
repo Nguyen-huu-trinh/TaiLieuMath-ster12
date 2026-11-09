@@ -1,0 +1,177 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{../../../myconfig}
+
+\begin{document}
+
+\titlebox{Xác suất}{Xác suất toàn phần \\ Bayes và sơ đồ cây}{Xác suất: Toàn phần, Bayes và sơ đồ cây}
+
+\vspace{-0.25cm}
+
+\begin{center}\textit{Ghi xác suất dưới dạng số thập phân, làm tròn đến hàng phần trăm.}\end{center}
+
+% Câu 2 trong tài liệu gốc.
+\questionShortAnswer{0}{1}{%
+    Giải bóng đá có 20 đội. Một đội đang xếp thứ 5 được bốc thăm gặp ngẫu nhiên một trong 19 đội còn lại. Nếu gặp đội xếp trên, xác suất thắng và thua lần lượt là $0{,}2$ và $0{,}5$; nếu gặp đội xếp dưới, các xác suất tương ứng là $0{,}5$ và $0{,}3$. Tính xác suất đội đó hòa trận đấu.
+}
+
+% Câu 4 trong tài liệu gốc.
+\questionShortAnswer{0}{2}{%
+    Lô thứ nhất có 10 sản phẩm loại I, 3 sản phẩm loại II; lô thứ hai có 9 sản phẩm loại I, 2 sản phẩm loại II. Từ mỗi lô lấy ngẫu nhiên 1 sản phẩm và bỏ ra ngoài, rồi dồn toàn bộ sản phẩm còn lại vào lô thứ ba. Rút ngẫu nhiên 1 sản phẩm từ lô thứ ba. Tính xác suất rút được sản phẩm loại I.
+}
+
+% Câu 6 trong tài liệu gốc.
+\questionShortAnswer{0}{3}{%
+    Chi nhánh A có 30 nhân viên kỹ thuật và 15 nhân viên hành chính. Chi nhánh B có 20 nhân viên kỹ thuật và 20 nhân viên hành chính. Chuyển ngẫu nhiên 1 người từ A sang B, rồi chọn ngẫu nhiên đồng thời 2 người từ B. Tính xác suất cả hai người được chọn đều làm hành chính.
+}
+
+% Câu 9 trong tài liệu gốc.
+\questionShortAnswer{0}{4}{%
+    Một cuộc thi gồm ba vòng. Vòng I lấy $80\%$ thí sinh vào vòng II; vòng II lấy $60\%$ số thí sinh của vòng này vào vòng III; vòng III trao giải cho $40\%$ số thí sinh của vòng III. Chọn ngẫu nhiên một thí sinh tham gia từ vòng I. Tính xác suất thí sinh đó không đạt giải.
+}
+
+% Câu 13 trong tài liệu gốc.
+\questionShortAnswer{0}{5}{%
+    Hộp I có $a$ bi đỏ, 2 bi xanh; hộp II có $b$ bi đỏ, 3 bi xanh; hộp III có 6 bi đỏ, 4 bi xanh. Rút ngẫu nhiên độc lập 1 bi từ mỗi hộp. Biết xác suất có ít nhất một bi đỏ là $0{,}976$ và xác suất cả ba bi đều đỏ là $0{,}336$. Tính xác suất có đúng hai bi đỏ.
+}
+
+% Câu 18 trong tài liệu gốc.
+\questionShortAnswer{0}{6}{%
+    Hộp I có 9 bi trắng, 2 bi xanh; hộp II có 4 bi trắng, 5 bi xanh. Rút ngẫu nhiên 1 bi từ mỗi hộp và bỏ ra ngoài, rồi dồn toàn bộ bi còn lại vào hộp III đang rỗng. Rút ngẫu nhiên 1 bi từ hộp III. Tính xác suất bi này màu xanh.
+}
+
+% Câu 19 trong tài liệu gốc.
+\questionShortAnswer{0}{7}{%
+    Hộp ban đầu chứa 6 thẻ ghi các số từ 1 đến 6. Nam rút ngẫu nhiên 1 thẻ, xem số rồi bỏ lại. Nếu số đó nguyên tố, Nam thêm hai thẻ 7, 8; nếu không nguyên tố, Nam thêm ba thẻ 7, 8, 9. Sau đó Việt rút ngẫu nhiên đồng thời 3 thẻ. Tính xác suất ba số Việt rút được lập thành một cấp số cộng.
+}
+
+% Câu 21 trong tài liệu gốc.
+\questionShortAnswer{0}{8}{%
+    Hộp I có 7 thăm Giải tích, 3 thăm Hình học; hộp II có 6 thăm Giải tích, 4 thăm Hình học. Giáo viên rút ngẫu nhiên đồng thời 2 thăm từ hộp I và 4 thăm từ hộp II, gộp thành 6 thăm. Học sinh rút ngẫu nhiên đồng thời 2 trong 6 thăm này. Tính xác suất có ít nhất một thăm Giải tích.
+}
+
+% Câu 24 trong tài liệu gốc.
+\questionShortAnswer{0}{9}{%
+    Một căn bệnh có $1\%$ dân số mắc phải. Nếu một người mắc bệnh, xét nghiệm cho kết quả dương tính với xác suất $98\%$; nếu không mắc bệnh, xét nghiệm cho kết quả âm tính với xác suất $98\%$. Biết một người xét nghiệm dương tính, tính xác suất người đó thực sự mắc bệnh.
+}
+
+% Câu 34 trong tài liệu gốc.
+\questionShortAnswer{0}{10}{%
+    Có $5\%$ tin nhắn trên một mạng viễn thông là quảng cáo. Trong số tin quảng cáo, $80\%$ chứa chữ ``sale; trong số tin không quảng cáo, $2\%$ chứa chữ này. Chọn ngẫu nhiên một tin nhắn, biết tin đó chứa chữ ``sale. Tính xác suất đây là tin quảng cáo.
+}
+
+% Câu 35 trong tài liệu gốc.
+\questionShortAnswer{0}{11}{%
+    Tỉ lệ thư rác trong một hệ thống thư điện tử là $3\%$. Bộ lọc chặn một thư rác với xác suất $0{,}95$ và chặn nhầm một thư không phải thư rác với xác suất $0{,}01$. Chọn ngẫu nhiên một thư, biết thư đó bị chặn. Tính xác suất đây là thư rác.
+}
+
+% Câu 39 trong tài liệu gốc.
+\questionShortAnswer{0}{12}{%
+    Trong số sinh viên nam của một trường, $85\%$ là người bản địa; trong số sinh viên nữ, $90\%$ là người bản địa. Chọn ngẫu nhiên độc lập 1 nam và 1 nữ. Biết hai người gồm 1 người bản địa và 1 sinh viên quốc tế. Tính xác suất sinh viên quốc tế là nữ.
+}
+
+% Câu 40 trong tài liệu gốc.
+\questionShortAnswer{0}{13}{%
+    Trong một nhóm học sinh, $69\%$ thường xuyên dùng điện thoại thông minh. Tỉ lệ học tập sa sút ở nhóm này gấp 3 lần tỉ lệ ở nhóm còn lại. Chọn ngẫu nhiên một học sinh, biết học sinh đó có kết quả học tập sa sút. Tính xác suất học sinh đó thuộc nhóm thường xuyên dùng điện thoại thông minh.
+}
+
+% Câu 44 trong tài liệu gốc.
+\questionShortAnswer{0}{14}{%
+    Một trường có $48\%$ học sinh nữ. Tỉ lệ tham gia tư vấn tuyển sinh trong nhóm nữ là $18\%$, trong nhóm nam là $15\%$. Chọn ngẫu nhiên một học sinh, biết học sinh đó có tham gia tư vấn tuyển sinh. Tính xác suất học sinh đó là nam.
+}
+
+% Câu 47 trong tài liệu gốc.
+\questionShortAnswer{0}{15}{%
+    Một nhóm người cao tuổi có $60\%$ là nam. Tỉ lệ cao huyết áp trong nhóm nam gấp $1{,}5$ lần tỉ lệ trong nhóm nữ. Chọn ngẫu nhiên một người, biết người đó bị cao huyết áp. Tính xác suất người đó là nam.
+}
+
+% Câu 51 trong tài liệu gốc.
+\questionShortAnswer{0}{16}{%
+    Một trường có $60\%$ học sinh chọn khối D để xét tuyển đại học. Nếu chọn khối D, xác suất đỗ là $0{,}7$; nếu không chọn khối D, xác suất đỗ là $0{,}8$. Chọn ngẫu nhiên một học sinh, biết học sinh đó đã đỗ đại học. Tính xác suất học sinh đó chọn khối D.
+}
+
+% Câu 54 trong tài liệu gốc.
+\questionShortAnswer{0}{17}{%
+    Xác suất An được đi mua sắm cùng mẹ là $2/5$. Nếu đi cùng mẹ, xác suất An được mua đồ chơi là $70\%$. Biết xác suất An đi cùng mẹ khi An được mua đồ chơi là $14/23$. Tính xác suất An được mua đồ chơi nếu không đi cùng mẹ.
+}
+
+% Câu 61 trong tài liệu gốc.
+\questionShortAnswer{0}{18}{%
+    Vườn I trồng $70\%$ số cây của một dự án, vườn II trồng phần còn lại. Tỉ lệ cây sống ở hai vườn lần lượt là $94\%$ và $92\%$. Xác suất thời tiết đẹp là $80\%$: khi đó chọn đều ngẫu nhiên một cây trong cả hai vườn. Nếu thời tiết xấu, chỉ chọn đều ngẫu nhiên một cây ở vườn I. Giả sử thời tiết lúc chọn không làm thay đổi tỉ lệ sống đã cho. Biết cây được chọn còn sống, tính xác suất cây thuộc vườn I.
+}
+
+% Câu 70 trong tài liệu gốc.
+\questionShortAnswer{0}{19}{%
+    Đài truyền hình phát chương trình A với xác suất $0{,}55$, B với xác suất $0{,}45$. Nếu phát A, tín hiệu bị đổi thành B với xác suất $2/9$, còn lại thu đúng A. Nếu phát B, tín hiệu bị đổi thành A với xác suất $1/5$, bị mất hoàn toàn với xác suất $1/4$, còn lại thu đúng B. Biết TV thu được một chương trình, tính xác suất chương trình thu được đúng với chương trình đã phát.
+}
+
+% Câu 72 trong tài liệu gốc.
+\questionShortAnswer{0}{20}{%
+    Mỗi thùng trong kho có 24 lon. Thùng loại I có 5 lon quá hạn; thùng loại II có 3 lon quá hạn. Số thùng loại I gấp đôi số thùng loại II. Chọn ngẫu nhiên một thùng, rồi rút ngẫu nhiên đồng thời 10 lon. Biết có đúng 2 lon quá hạn trong 10 lon rút được. Tính xác suất đã chọn thùng loại I.
+}
+
+% =========================================================================
+% ĐÁP ÁN VÀ KIỂM TRA - CHỈ HIỂN THỊ TRONG MÃ NGUỒN
+% =========================================================================
+
+% Câu 1: 0,22. Chính xác: 21/95.
+% Kiểm tra: (4/19)*0,3 + (15/19)*0,2 = 21/95.
+
+% Câu 2: 0,79. Chính xác: 1245/1573.
+% Kiểm tra: [19 - 10/13 - 9/11]/22 = 1245/1573.
+
+% Câu 3: 0,24. Chính xác: 59/246.
+% Kiểm tra: (30/45)*C_20^2/C_41^2 + (15/45)*C_21^2/C_41^2 = 59/246.
+
+% Câu 4: 0,81. Chính xác: 101/125.
+% Kiểm tra: 1 - 0,8*0,6*0,4 = 101/125.
+
+% Câu 5: 0,45. Chính xác: 113/250.
+% Kiểm tra: Dat p,q la xac suat do o I,II: pq=0,56; (1-p)(1-q)=0,06; p+q=1,5. P=0,4pq+0,6(p+q-2pq)=0,452.
+
+% Câu 6: 0,35. Chính xác: 310/891.
+% Kiểm tra: [7 - 2/11 - 5/9]/18 = 310/891.
+
+% Câu 7: 0,20. Chính xác: 17/84.
+% Kiểm tra: Co 12 bo CSC trong 1..8; 16 bo trong 1..9. P=(1/2)*12/56+(1/2)*16/84=17/84.
+
+% Câu 8: 0,88. Chính xác: 988/1125.
+% Kiểm tra: P(hai Hinh)= (1/15)*(3/45)+(6/15)*(6/45)+(8/15)*(3/10)*(4/10). P=988/1125.
+
+% Câu 9: 0,33. Chính xác: 49/148.
+% Kiểm tra: 0,01*0,98/(0,01*0,98+0,99*0,02)=49/148.
+
+% Câu 10: 0,68. Chính xác: 40/59.
+% Kiểm tra: 0,05*0,8/(0,05*0,8+0,95*0,02)=40/59.
+
+% Câu 11: 0,75. Chính xác: 285/382.
+% Kiểm tra: 0,03*0,95/(0,03*0,95+0,97*0,01)=285/382.
+
+% Câu 12: 0,39. Chính xác: 17/44.
+% Kiểm tra: 0,85*0,1/(0,85*0,1+0,15*0,9)=17/44.
+
+% Câu 13: 0,87. Chính xác: 207/238.
+% Kiểm tra: Dat ty le sa sut nhom con lai la x>0: 0,69*3x/(0,69*3x+0,31*x)=207/238.
+
+% Câu 14: 0,47. Chính xác: 65/137.
+% Kiểm tra: 0,52*0,15/(0,52*0,15+0,48*0,18)=65/137.
+
+% Câu 15: 0,69. Chính xác: 9/13.
+% Kiểm tra: Dat ty le benh o nu la x>0: 0,6*1,5x/(0,6*1,5x+0,4*x)=9/13.
+
+% Câu 16: 0,57. Chính xác: 21/37.
+% Kiểm tra: 0,6*0,7/(0,6*0,7+0,4*0,8)=21/37.
+
+% Câu 17: 0,30. Chính xác: 3/10.
+% Kiểm tra: Dat x=P(do choi|khong di). (2/5)*0,7/[(2/5)*0,7+(3/5)*x]=14/23; x=3/10.
+
+% Câu 18: 0,76. Chính xác: 893/1169.
+% Kiểm tra: P(vuon I)=0,8*0,7+0,2=0,76; Bayes = 893/1169.
+
+% Câu 19: 0,76. Chính xác: 2431/3195.
+% Kiểm tra: [0,55*(7/9)+0,45*(11/20)]/[1-0,45*(1/4)] = 2431/3195.
+
+% Câu 20: 0,71. Chính xác: 52/73.
+% Kiểm tra: [2*C_5^2*C_19^8]/[2*C_5^2*C_19^8+C_3^2*C_21^8] = 52/73.
+
+\end{document}
